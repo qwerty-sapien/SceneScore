@@ -35,3 +35,11 @@ Network/API loss → approved cached plan or visibly manual plan. Headset loss/b
 
 ## Approval and resource boundaries
 The user approves musical content and event-rule compliance; the integrator approves shared interface changes. Participant recording requires consent and verified device settings. Capability preconditions include schemas, paths, permission, cost and concurrency budgets. Cache content/config/tool-version hashes; revalidate approval on reuse. Hardware capture and CPU-heavy renders cannot overlap a participant session. Record exact jobs and stop them on task exit.
+
+## Phase 2 implemented boundary
+
+The four module namespaces are now implemented and mounted through the integrator's loopback service. Muse has explicit operator CLI capture and read-only diagnostics; Blender exports are bounded trusted-script CLI jobs with saved-bundle queries; music uses an original catalogue and bounded offline procedural renderer; arranger compiles canonical scene/music inputs into reviewable events and optional data-only provider proposals. No module starts a job at import. The service has no live playback loop.
+
+Module-specific sidecars preserve rich geometry, musical part metadata and typed arranger policy without silently expanding frozen 0.1 records. Approved hashes bind actual bundle content and policy/brief settings. The legacy one-record generic capability signatures are not sufficient for multi-record planning/render requests; those domain dispatcher adapters remain unregistered pending a versioned integration design. This is reported separately from implemented module APIs.
+
+Candidate transition audition and approved performance preparation share a pure local compiler. The former cannot create human approval. Candidate pitched synthesis fades inside declared ScoreEvent ends; original catalogue synthesis retains documented natural releases. Nonpitched Foley remains exact scene-time data awaiting the audio execution/integration track. Real hardware timing and human audition are independent release gates.

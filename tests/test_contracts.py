@@ -166,7 +166,7 @@ def test_stream_duplicates_and_accounted_packet_loss():
 
 def test_api_and_websocket_are_fixture_only():
     with TestClient(app) as client:
-        assert client.get('/health').json()['mode'] == 'synthetic_fixture_only'
+        assert client.get('/health').json()['mode'] == 'local_authoring_modules'
         assert client.post('/contracts/validate',json=f('SceneManifest')).status_code == 200
         assert client.post('/contracts/validate',json=f('bad-units')).status_code == 422
         assert client.post('/capabilities/run',json=f('CapabilityRequest')).status_code == 501

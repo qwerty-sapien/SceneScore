@@ -366,15 +366,16 @@ def import_plan(payload: bytes, ctx, policy, brief):
     return plan  # Exact incoming bytes are separately retained for approval.
 
 
-class ApprovedSession:
-    """Prepared local event family. No provider reference; cannot replace active plan."""
-    def __init__(self, payload, approval, ctx, policy=Policy(), brief="Original blues/ragtime swing; restrained bossa accompaniment"):
-        self._plan = approved_payload(payload, approval, [ctx.scene_hash, ctx.composition_hash])
+class TransitionPreview:
+    """Audition-only local candidate family; never an approved performance session."""
+    def __init__(self, plan, ctx, policy=Policy(), brief="Original blues/ragtime swing; restrained bossa accompaniment"):
+        self._plan = deepcopy(plan)
+        self._approved = False
         validate_plan(self._plan, ctx, policy, brief)
         self._ctx, self._policy = deepcopy(ctx), policy
         self._events = compile_preview(ctx, self._plan, policy, brief)
         self._plan = deepcopy(self._plan)
-        self._plan_hash = hashlib.sha256(payload).hexdigest()
+        self._plan_hash = digest(plan)
         self.tonic = ctx.composition["key_map"][0]["tonic_pc"]
         self.requests = set()
         self.boundaries = set()
@@ -466,8 +467,17 @@ class ApprovedSession:
         self._events = changed
         self.boundaries.add(boundary)
         self.tonic = to_pc
-        result = {"status": "prepared", "source_mode": source_mode, "boundary_tick": boundary, "signed_semitones": delta,
+        result = {"status": "prepared" if self._approved else "preview_only", "source_mode": source_mode, "boundary_tick": boundary, "signed_semitones": delta,
                   "tonic_pc": to_pc, "mode": c["key_map"][0]["mode"], "policy_id": self._plan["motion_policy"]["id"],
                   "plan_hash": self._plan_hash, "audition_status": "AUDITION_PENDING"}
         self.transitions.append(result)
         return result
+
+
+class ApprovedSession(TransitionPreview):
+    """Exact approval is required to construct a performance preparation session."""
+    def __init__(self, payload, approval, ctx, policy=Policy(), brief="Original blues/ragtime swing; restrained bossa accompaniment"):
+        plan = approved_payload(payload, approval, [ctx.scene_hash, ctx.composition_hash])
+        super().__init__(plan, ctx, policy, brief)
+        self._plan_hash = hashlib.sha256(payload).hexdigest()
+        self._approved = True

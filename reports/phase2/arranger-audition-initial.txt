@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/agent/Desktop/SceneScore/tools/wave2_audition.py", line 59, in <module>
+    main()
+    ~~~~^^
+  File "/Users/agent/Desktop/SceneScore/tools/wave2_audition.py", line 34, in main
+    raise ValueError('expected_unapproved_preview_transition')
+ValueError: expected_unapproved_preview_transition

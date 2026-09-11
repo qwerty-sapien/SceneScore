@@ -17,3 +17,7 @@ Resume only with the user's next phase instruction in [RUNBOOK](docs/RUNBOOK.md)
 ## Phase 1 implementation baseline
 
 The authorized Phase 1 established contract 0.1 and the minimal synthetic harness. Run `make install`, `make doctor`, `make test`; read handoffs/01.md and services/local/README.md before a Phase 2 worktree. Do not mistake fake-clock fixtures or the status shell for a finished application. The core must work with keyboard/labelled replay; Muse is optional. Preserve the explicit original swing/bossa creative traits in VISION. No future phase runs without the user's authorization.
+
+## Completed Phase 2 wave baseline
+
+The user authorized 2A/B/C/D in parallel; all four modules now exist. Read reports/phase2/GATE.md and the four 02 handoffs before future work. Root `make test` includes module tests; mounted routes provide local queries/preview only. Generic single-record domain registry dispatch remains unregistered. Frozen 0.1 schema/locks are unchanged. No actual audio executor/performance UI or transport integration is implied. Distinguish TransitionPreview (unapproved audition-only) from ApprovedSession (exact human approval required); neither starts audio. Music candidates remain AUDITION_PENDING and Foley is a separate event stream. No Phase 2E/3A/3B/4 work runs without the next user instruction.

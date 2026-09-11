@@ -1,0 +1,35 @@
+{
+  "status": "PASSED",
+  "retained_branches": [
+    "wave2/02A",
+    "wave2/02B",
+    "wave2/02C",
+    "wave2/02D"
+  ],
+  "results": [
+    {
+      "worktree": "/private/tmp/scenescore-wave2-04j2z7nl/02A",
+      "returncode": 0,
+      "stderr": "",
+      "removed": true
+    },
+    {
+      "worktree": "/private/tmp/scenescore-wave2-04j2z7nl/02B",
+      "returncode": 0,
+      "stderr": "",
+      "removed": true
+    },
+    {
+      "worktree": "/private/tmp/scenescore-wave2-04j2z7nl/02C",
+      "returncode": 0,
+      "stderr": "",
+      "removed": true
+    },
+    {
+      "worktree": "/private/tmp/scenescore-wave2-04j2z7nl/02D",
+      "returncode": 0,
+      "stderr": "",
+      "removed": true
+    }
+  ]
+}

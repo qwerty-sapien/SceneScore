@@ -1,6 +1,6 @@
 PYTHON ?= /usr/local/bin/python3
 UV = uv --no-managed-python --no-python-downloads
-RUN = PYTHONPATH=src .venv/bin/python
+RUN = PYTHONPATH=.:src .venv/bin/python
 .PHONY: install doctor test-contracts test typecheck dev-replay assets demo service check-locks
 install:
 	$(UV) sync --locked --python $(PYTHON)
@@ -16,7 +16,7 @@ test-contracts:
 
 test: test-contracts
 	$(RUN) -m pytest -q
-	.venv/bin/ruff check src tests tools/*.py
+	.venv/bin/ruff check src tests modules tools/*.py
 	npm run typecheck
 	npm run build
 
@@ -32,4 +32,4 @@ dev-replay assets demo:
 	$(RUN) -m scenescore.cli $@
 
 service:
-	PYTHONPATH=src .venv/bin/uvicorn scenescore.service:app --host 127.0.0.1 --port 8765
+	PYTHONPATH=.:src .venv/bin/uvicorn scenescore.service:app --host 127.0.0.1 --port 8765

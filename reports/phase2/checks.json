@@ -1,0 +1,112 @@
+{
+  "phase": "2-wave-ABCD",
+  "status": "IMPLEMENTATION_GATE_PASSED_WITH_EXPLICIT_PENDING_EMPIRICAL_GATES",
+  "frozen_base": "8ff514ce7e1c7e6162165bc5bc8c7f9018612588",
+  "contract_version": "0.1",
+  "worker_commits": {
+    "02A": [
+      "9454a33fcf933746a1e399882453d6519e889bca"
+    ],
+    "02B": [
+      "108f0204f4c463f107189607c34008843f77aca5"
+    ],
+    "02C": [
+      "70c186b63006c8e4d8efb63ece4e4445976abade",
+      "d85b88405a4a050d08582f9d25803dd1bfa342b2",
+      "aa76630ced7ae52b9c897afc9844e67d9a192339"
+    ],
+    "02D": [
+      "8849318574521cd3a0b43b4b37eefd415ee16deb"
+    ]
+  },
+  "commands": [
+    {
+      "command": "make test",
+      "status": "passed",
+      "evidence": "reports/phase2/make-test-final.txt",
+      "python_tests": 243,
+      "typescript_tests": 65,
+      "lint": "passed",
+      "typecheck": "passed",
+      "existing_shell_build": "passed"
+    },
+    {
+      "command": "make doctor",
+      "status": "passed",
+      "scope": "software prerequisites, not external product readiness",
+      "evidence": "reports/phase2/doctor.txt"
+    },
+    {
+      "command": ".venv/bin/python tools/verify_sources.py",
+      "status": "passed",
+      "evidence": "reports/phase2/sources.txt"
+    },
+    {
+      "command": "PYTHONPATH=.:src .venv/bin/python tools/wave2_audition.py",
+      "status": "passed",
+      "scope": "unapproved evaluated-scene/music candidate WAVs; Foley excluded",
+      "evidence": "reports/phase2/arranger-audition.json"
+    },
+    {
+      "command": "frozen schema hash and RAGTM ZIP byte comparison",
+      "status": "passed",
+      "evidence": "reports/phase2/source-integrity.json"
+    },
+    {
+      "command": "worker artifact byte preservation audit",
+      "status": "passed",
+      "evidence": "reports/phase2/preserved-artifacts.json"
+    },
+    {
+      "command": "exact task process/mount and worktree cleanup checks",
+      "status": "passed",
+      "evidence": [
+        "reports/phase2/process-cleanup.json",
+        "reports/phase2/worktree-cleanup.json"
+      ]
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "evidence": "integrator terminal exit 0"
+    }
+  ],
+  "tracked_failures_resolved": [
+    {
+      "issue": "Sandbox rejected temporary tsx IPC socket",
+      "evidence": "reports/phase2/make-test.txt",
+      "resolution": "same complete suite passed with scoped approval"
+    },
+    {
+      "issue": "Initial audition request at12s held under actual world-Z policy",
+      "evidence": "reports/phase2/arranger-audition-initial.txt",
+      "resolution": "recorded actual descending tower motion and explicitly chose18s; default horizontal focus still correctly holds"
+    },
+    {
+      "issue": "Conservative sample-work estimate96.4MB exceeded default64MiB",
+      "evidence": "reports/phase2/arranger-audition-budget-rejected.txt",
+      "resolution": "explicit bounded128MiB candidate budget, within renderer256MiB maximum; completed"
+    }
+  ],
+  "gate_evidence": {
+    "02A": "modules/muse/acquisition/evidence/checks.json",
+    "02B": "artifacts/blender/phase2b-gate.json",
+    "02C": "modules/music/fixtures/validation-48k.json",
+    "02D": "reports/phase2/arranger-audition.json"
+  },
+  "pending": {
+    "muse": "HARDWARE_UNVERIFIED; no live capture/accuracy",
+    "openai": "NOT_RUN; API key/model unset; billing/access unverified",
+    "human_audition": "AUDITION_PENDING; no human approval created",
+    "av_output_timing": "NOT_RUN",
+    "performance_ui_audio_executor": "02E_NOT_STARTED",
+    "training": "03A_NOT_STARTED",
+    "transport_integration": "03B_NOT_STARTED",
+    "release": "04_NOT_STARTED",
+    "organizer_preparation_rules": "UNVERIFIED"
+  },
+  "release_status": "NOT_READY",
+  "dependencies_changed": false,
+  "frozen_contract_changed": false,
+  "artifact_policy": "Large actual media retained under ignored artifacts; exact hashes tracked; original source archives unchanged."
+}

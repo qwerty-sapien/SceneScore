@@ -319,3 +319,12 @@ def test_approved_context_is_defensive_copy(ctx):
     for row in session.ctx.states:
         row["velocity_m_s"] = [0, 0, -.2]
     assert session.request("unchanged", 1)["signed_semitones"] == 2
+
+
+def test_unapproved_transition_audition_stays_preview_only(ctx):
+    from modules.arranger.core import TransitionPreview
+    preview = TransitionPreview(baseline(ctx), ctx)
+    result = preview.request("review", 1)
+    assert result["status"] == "preview_only"
+    assert result["audition_status"] == "AUDITION_PENDING"
+    assert any(e["phrasing"] == "new-tonic-arrival" for e in preview.events)

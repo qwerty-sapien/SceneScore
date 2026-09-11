@@ -1,6 +1,6 @@
 {
-  "document_version": "0.1-phase1",
-  "status": "CONTRACT_HARNESS_TESTED_PRODUCT_NOT_IMPLEMENTED",
+  "document_version": "0.1-phase2-wave",
+  "status": "MODULES_TESTED_PRODUCT_NOT_READY",
   "source_root": ".brief/",
   "requirements": [
     {
@@ -39,8 +39,8 @@
       "planned_tests": [
         "MAP-identity"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02D.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-004",
@@ -52,8 +52,8 @@
       "planned_tests": [
         "EEG-device"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "HARDWARE_UNVERIFIED; fake adapter/precondition tests only; no live capture"
     },
     {
       "id": "SS-005",
@@ -65,8 +65,8 @@
       "planned_tests": [
         "EEG-local-labels"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02A.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-006",
@@ -104,8 +104,8 @@
       "planned_tests": [
         "GEST-grammar"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02A.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-009",
@@ -131,8 +131,8 @@
       "planned_tests": [
         "MAP-signed"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02D.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-011",
@@ -144,8 +144,8 @@
       "planned_tests": [
         "CTRL-quality"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "suppression/quality/rearm module tests passed; uninterrupted actual audio requires 02E/03B"
     },
     {
       "id": "SS-012",
@@ -157,8 +157,8 @@
       "planned_tests": [
         "GEO-evaluated"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02B.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-013",
@@ -170,8 +170,8 @@
       "planned_tests": [
         "GEO-evidence"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02B.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-014",
@@ -183,8 +183,8 @@
       "planned_tests": [
         "MUSIC-symbolic"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02C.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-015",
@@ -210,8 +210,8 @@
       "planned_tests": [
         "PLAN-approval"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "approval/cache/refusal/failure fixture checks passed; live API NOT_RUN; real human approval absent"
     },
     {
       "id": "SS-017",
@@ -317,8 +317,8 @@
       "planned_tests": [
         "BASELINE-lineage"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02A.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-025",
@@ -357,8 +357,8 @@
       "planned_tests": [
         "ASSET-scenes"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02B.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-028",
@@ -370,8 +370,8 @@
       "planned_tests": [
         "ASSET-music"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02C.md and reports/phase2; real device/human audition/output integration remain separate"
     },
     {
       "id": "SS-029",
@@ -409,8 +409,8 @@
       "planned_tests": [
         "MUSIC-creative-identity"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "module_implemented",
+      "evidence_status": "technical checks in handoffs/02C.md and reports/phase2; real device/human audition/output integration remain separate"
     }
   ]
 }

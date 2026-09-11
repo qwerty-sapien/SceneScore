@@ -1,0 +1,2 @@
+{"pid": 90920, "outputs": "/Users/agent/Desktop/SceneScore/artifacts/arranger/evaluated-hero-audition", "render_budget_s_each": 120}
+{"status": "TECHNICAL_CANDIDATES_RENDERED", "audition_status": "AUDITION_PENDING"}

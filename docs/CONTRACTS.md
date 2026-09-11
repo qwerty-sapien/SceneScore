@@ -35,3 +35,9 @@ Validate referential integrity, lane conflict resolution and allowed transitions
 Approval verification binds exact payload bytes plus scene/composition hashes; schema review_status alone is not execution approval. Provider projection, synthetic approval and audio-manifest fixtures are not actual model responses, human approvals or media. For domain-specific scientific, geometric and musical validations, consult EVALUATION and phase cards; no passing placeholder represents them.
 
 Module mounting/adapter signatures: services/local/README.md. Generated declarations must match the canonical schema after `npm run generate`. Domain capability wrappers may need versioned contract amendments; workers must not silently expand the frozen schema.
+
+## Phase 2 module supplements
+
+Canonical 0.1/freeze remains unchanged. Geometry-rich summaries, parts/rests and arranger `Policy` are explicitly module-versioned supplements, never extra fields silently added to canonical records. Arranger hashes cover the entire supplied scene/state/event set and the composition plus exact groove; policy/compiler/brief hash binds the approved numeric rules. Source ordering is canonicalized where it affects output. A sparse compact motion summary can be adequate for planning but inadequate for causal conducting; unavailable coverage holds.
+
+`TransitionPreview` is unapproved audition data. `ApprovedSession` additionally checks the exact payload bytes, approval decision and current input hashes. The future executor must still validate canonical ControlAction quality, expiry, approved-plan hash and clock mapping. Neither compiler starts audio or treats a provenance label as hardware verification. Candidate pitched renderer envelopes fit inside declared intervals, including their fades; catalogue renders use separately documented natural release tails.

@@ -1,0 +1,13 @@
+{"pid": 89089, "outputs": "/Users/agent/Desktop/SceneScore/artifacts/arranger/evaluated-hero-audition", "render_budget_s_each": 120}
+Traceback (most recent call last):
+  File "/Users/agent/Desktop/SceneScore/tools/wave2_audition.py", line 59, in <module>
+    main()
+    ~~~~^^
+  File "/Users/agent/Desktop/SceneScore/tools/wave2_audition.py", line 46, in main
+    measurements[name] = render_events(pitched_brush, out/(name+'.wav'), duration_s=duration,
+                         ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                       sample_rate=48000, output_root=ROOT/'artifacts/arranger')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/agent/Desktop/SceneScore/modules/music/render.py", line 473, in render_events
+    raise ValueError('candidate_sample_work_budget')
+ValueError: candidate_sample_work_budget

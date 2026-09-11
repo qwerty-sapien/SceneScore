@@ -7,7 +7,7 @@
     "unverified"
   ],
   "status_semantics": "available is observed local presence only, not end-to-end compatibility. unavailable means absent in this project at inspection, not permanent host incapability. unverified means not checked.",
-  "observed_at": "2026-09-11 Phase 1",
+  "observed_at": "2026-09-12 Phase 2 wave",
   "resources": [
     {
       "id": "python",
@@ -37,8 +37,8 @@
     },
     {
       "id": "blender",
-      "status": "unverified",
-      "evidence": "not on PATH; app binary/version unverified"
+      "status": "unavailable",
+      "evidence": "Blender 5.2.1 LTS actually exercised from supplied DMG; temporary mount detached at teardown; remount/configure for new renders. Existing bundles remain usable."
     },
     {
       "id": "muse.device",
@@ -90,7 +90,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "AcquisitionMetadata",
       "output_schema": "EEGChunk",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local Muse transport",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -118,7 +118,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "EEGChunk",
       "output_schema": "EEGChunk",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local replay",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -146,7 +146,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "RunManifest",
       "output_schema": "EvaluationReport",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local evaluator",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -174,7 +174,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "SceneManifest",
       "output_schema": "SceneManifest",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "Blender CLI",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -202,7 +202,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "SceneManifest",
       "output_schema": "ObjectState",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "Blender evaluated exporter",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -230,7 +230,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "SceneManifest",
       "output_schema": "SceneManifest",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local summarizer",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -258,7 +258,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "CompositionSpec",
       "output_schema": "CompositionSpec",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local catalogue",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -286,7 +286,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "ArrangementPlan",
       "output_schema": "ArrangementPlan",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local baseline / configured provider",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -314,7 +314,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "ArrangementPlan",
       "output_schema": "ArrangementPlan",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local semantic validator",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -342,7 +342,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "ScoreEvent",
       "output_schema": "AudioAssetManifest",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local renderer",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -370,7 +370,7 @@
       "implementation_status": "NOT_IMPLEMENTED",
       "input_schema": "RunManifest",
       "output_schema": "EvaluationReport",
-      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "prerequisites": "Generic single-record dispatcher adapter not registered. For implemented module-level APIs/CLIs see module_implementations and handoffs; legacy schema does not represent multi-record bundles.",
       "adapter": "local measured-output evaluator",
       "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
       "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
@@ -418,5 +418,27 @@
       "fallback": "none; reject invalid data",
       "approval_requirement": "Phase 1 harness authorized"
     }
-  ]
+  ],
+  "module_implementations": {
+    "2A": {
+      "status": "IMPLEMENTED_MODULE",
+      "interface": "modules.muse.acquisition.api:router",
+      "hardware": "HARDWARE_UNVERIFIED"
+    },
+    "2B": {
+      "status": "IMPLEMENTED_MODULE",
+      "interface": "modules.blender.api:router",
+      "render_evidence": "artifacts/blender/phase2b-gate.json"
+    },
+    "2C": {
+      "status": "IMPLEMENTED_MODULE",
+      "interface": "modules.music.api:router",
+      "audition": "AUDITION_PENDING"
+    },
+    "2D": {
+      "status": "IMPLEMENTED_MODULE",
+      "interface": "modules.arranger.api:router",
+      "live_api": "NOT_RUN"
+    }
+  }
 }
