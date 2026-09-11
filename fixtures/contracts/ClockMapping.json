@@ -1,0 +1,23 @@
+{
+  "kind": "ClockMapping",
+  "schema_version": "0.1",
+  "id": "clockmapping-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "source_clock": "device",
+  "destination_clock": "transport",
+  "source_epoch": "fixture-1",
+  "destination_epoch": "transport-1",
+  "source_anchor_s": 0,
+  "destination_anchor_s": 10,
+  "rate": 1.001,
+  "uncertainty_s": 0.01,
+  "valid_from_s": 0,
+  "valid_until_s": 100
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "design-seed-1",
+  "status": "DESIGN_DEFAULTS_NOT_CALIBRATED",
+  "profiles": [
+    {
+      "id": "double_modulate_mvp",
+      "default": true,
+      "enabled_gestures": [
+        "double_blink"
+      ],
+      "single_blink_action": "none",
+      "ambiguous_train_action": "reject",
+      "double_blink": {
+        "action": "request_modulation",
+        "execution_boundary": "next_approved_bar_or_phrase",
+        "preserve": [
+          "master_gain",
+          "articulation_state",
+          "expression_preset"
+        ],
+        "direction": "configured_scene_motion_policy",
+        "eligible_signed_tonic_shifts_semitones": [
+          -2,
+          2
+        ],
+        "seeded_randomness": true
+      },
+      "triple_blink_action": "none",
+      "raw_amplitude_to_volume": false
+    },
+    {
+      "id": "multi_count_expression_experiment",
+      "default": false,
+      "enabled_gestures": [
+        "double_blink",
+        "triple_blink"
+      ],
+      "requires": "independent confusion/latency testing after double-only baseline",
+      "prefix_policy": "wait for sequence closure before commitment; third blink prevents double action",
+      "double_blink": {
+        "action": "request_modulation",
+        "preserve": [
+          "master_gain",
+          "articulation_state",
+          "expression_preset"
+        ]
+      },
+      "triple_blink": {
+        "action": "toggle_approved_expression_preset",
+        "boundary": "next_approved_bar",
+        "max_gain_change_db": 3
+      },
+      "raw_amplitude_to_volume": false
+    }
+  ],
+  "calibration_parameters": [
+    "candidate_threshold",
+    "blink_duration_range",
+    "minimum_peak_separation",
+    "inter_blink_gap_range",
+    "sequence_close_interval",
+    "cooldown",
+    "quality_gate"
+  ],
+  "parameter_warning": "Determine values using genuine causal development data. No universal Muse threshold is supplied."
+}

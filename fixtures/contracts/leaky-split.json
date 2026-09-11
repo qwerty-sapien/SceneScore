@@ -1,0 +1,45 @@
+{
+  "kind": "RunManifest",
+  "schema_version": "0.1",
+  "id": "runmanifest-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "code_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "data_hashes": [],
+  "schema_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "model_hash": null,
+  "split": {
+    "train_sessions": [
+      "train"
+    ],
+    "development_sessions": [
+      "dev"
+    ],
+    "final_sessions": [
+      "train"
+    ]
+  },
+  "commands": [
+    "fixture only; not executed"
+  ],
+  "runtime": {
+    "python": null,
+    "node": null,
+    "host_profile_id": "synthetic"
+  },
+  "results": [
+    {
+      "test_id": "fixture-not-a-test-result",
+      "status": "not_run",
+      "evidence_paths": [],
+      "reason": "synthetic metadata"
+    }
+  ]
+}

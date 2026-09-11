@@ -1,0 +1,121 @@
+uv --no-managed-python --no-python-downloads lock --locked --python /usr/local/bin/python3
+Resolved 30 packages in 5ms
+uv pip check --python .venv/bin/python
+Checked 28 packages in 0.89ms
+All installed packages are compatible
+npm ls --all
+scenescore-harness@0.1.0 /Users/agent/Desktop/SceneScore
+├─┬ @types/node@24.13.4
+│ └── undici-types@7.18.2
+├─┬ @types/react-dom@19.3.0
+│ └── @types/react@19.3.0 deduped
+├─┬ @types/react@19.3.0
+│ └── csstype@3.2.3
+├─┬ ajv@8.20.0
+│ ├── fast-deep-equal@3.1.3
+│ ├── fast-uri@3.1.7
+│ ├── json-schema-traverse@1.0.0
+│ └── require-from-string@2.0.2
+├─┬ json-schema-to-typescript@15.0.4
+│ ├─┬ @apidevtools/json-schema-ref-parser@11.9.3
+│ │ ├── @jsdevtools/ono@7.1.3
+│ │ ├── @types/json-schema@7.0.15 deduped
+│ │ └── js-yaml@4.3.2 deduped
+│ ├── @types/json-schema@7.0.15
+│ ├── @types/lodash@4.17.25
+│ ├─┬ is-glob@4.0.3
+│ │ └── is-extglob@2.1.1
+│ ├─┬ js-yaml@4.3.2
+│ │ └── argparse@2.0.1
+│ ├── lodash@4.18.1
+│ ├── minimist@1.2.8
+│ ├── prettier@3.9.6
+│ └─┬ tinyglobby@0.2.17
+│   ├── fdir@6.5.0 deduped
+│   └── picomatch@4.0.7 deduped
+├─┬ react-dom@19.3.0
+│ ├── react@19.3.0 deduped
+│ └── scheduler@0.28.0
+├── react@19.3.0
+├─┬ tsx@4.23.13
+│ ├─┬ esbuild@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/aix-ppc64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/android-arm@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/android-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/android-x64@0.28.2
+│ │ ├── @esbuild/darwin-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/darwin-x64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/freebsd-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/freebsd-x64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-arm@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-ia32@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-loong64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-mips64el@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-ppc64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-riscv64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-s390x@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-x64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/netbsd-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/netbsd-x64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/openbsd-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/openbsd-x64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/openharmony-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/sunos-x64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/win32-arm64@0.28.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/win32-ia32@0.28.2
+│ │ └── UNMET OPTIONAL DEPENDENCY @esbuild/win32-x64@0.28.2
+│ └── fsevents@2.3.3
+├── typescript@5.9.3
+└─┬ vite@7.3.6
+  ├── @types/node@24.13.4 deduped
+  ├── esbuild@0.28.2 deduped
+  ├─┬ fdir@6.5.0
+  │ └── picomatch@4.0.7 deduped
+  ├── fsevents@2.3.3 deduped
+  ├── UNMET OPTIONAL DEPENDENCY jiti@>=1.21.0
+  ├── UNMET OPTIONAL DEPENDENCY less@^4.0.0
+  ├── UNMET OPTIONAL DEPENDENCY lightningcss@^1.21.0
+  ├── picomatch@4.0.7
+  ├─┬ postcss@8.5.28
+  │ ├── nanoid@3.3.19
+  │ ├── picocolors@1.1.1
+  │ └── source-map-js@1.2.1
+  ├─┬ rollup@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @napi-rs/lzma-linux-x64-gnu@1.5.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-android-arm-eabi@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-android-arm64@4.63.1
+  │ ├── @rollup/rollup-darwin-arm64@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-darwin-x64@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-freebsd-arm64@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-freebsd-x64@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm-gnueabihf@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm-musleabihf@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm64-gnu@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm64-musl@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-loong64-gnu@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-loong64-musl@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-ppc64-gnu@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-ppc64-musl@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-riscv64-gnu@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-riscv64-musl@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-s390x-gnu@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-x64-gnu@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-x64-musl@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-openbsd-x64@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-openharmony-arm64@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-arm64-msvc@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-ia32-msvc@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-x64-gnu@4.63.1
+  │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-x64-msvc@4.63.1
+  │ ├── @types/estree@1.0.9
+  │ └── fsevents@2.3.3 deduped
+  ├── UNMET OPTIONAL DEPENDENCY sass-embedded@^1.70.0
+  ├── UNMET OPTIONAL DEPENDENCY sass@^1.70.0
+  ├── UNMET OPTIONAL DEPENDENCY stylus@>=0.54.8
+  ├── UNMET OPTIONAL DEPENDENCY sugarss@^5.0.0
+  ├── UNMET OPTIONAL DEPENDENCY terser@^5.16.0
+  ├── tinyglobby@0.2.17 deduped
+  ├── tsx@4.23.13 deduped
+  └── UNMET OPTIONAL DEPENDENCY yaml@^2.4.2
+

@@ -1,0 +1,247 @@
+{
+  "schema_version": "design-seed-1",
+  "lookup": "Exact lookup by id and version. This catalogue describes unpitched rhythms, not the composition tune or key.",
+  "timing": "Unswung quarter-note PPQ ticks; only swingable events are shifted once. Materialize resolved ticks/times for replay.",
+  "grooves": [
+    {
+      "id": "brush_swing_light_v1",
+      "label": "Light brush swing",
+      "suggested_swing_ratio": 0.6666666666666666,
+      "events": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 1920,
+          "technique": "sweep",
+          "velocity": 40,
+          "hand": "left",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 1920,
+          "duration_ticks": 1920,
+          "technique": "sweep",
+          "velocity": 43,
+          "hand": "left",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 0,
+          "duration_ticks": 120,
+          "technique": "tap",
+          "velocity": 43,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 960,
+          "duration_ticks": 120,
+          "technique": "accented_swish",
+          "velocity": 62,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 1440,
+          "duration_ticks": 120,
+          "technique": "tap",
+          "velocity": 39,
+          "hand": "right",
+          "swingable": true,
+          "sample_id": null
+        },
+        {
+          "start_tick": 1920,
+          "duration_ticks": 120,
+          "technique": "tap",
+          "velocity": 45,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 2880,
+          "duration_ticks": 120,
+          "technique": "accented_swish",
+          "velocity": 64,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 3360,
+          "duration_ticks": 120,
+          "technique": "tap",
+          "velocity": 38,
+          "hand": "right",
+          "swingable": true,
+          "sample_id": null
+        }
+      ],
+      "version": 1,
+      "meter": [
+        4,
+        4
+      ],
+      "ppq": 960,
+      "length_ticks": 3840,
+      "pitched": false,
+      "seed": 13007,
+      "draft_status": "RECIPE_NOT_RENDERED_OR_AUDITIONED",
+      "humanization": {
+        "seeded": true,
+        "max_onset_ms": 6,
+        "max_velocity_delta": 3,
+        "exclude_continuous_sweep_boundaries": true
+      },
+      "render_recipe": {
+        "fallback": "seeded_filtered_noise_with_envelopes",
+        "sample_rate_hz_reference": 48000,
+        "sweep_envelope": "continuous with smooth boundaries; avoid an attack at every artificial loop",
+        "warning": "Procedural brush approximation, not a verified real brush-kit model."
+      }
+    },
+    {
+      "id": "brush_straight_rag_v1",
+      "label": "Straight rag support",
+      "suggested_swing_ratio": 0.5,
+      "events": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 1920,
+          "technique": "sweep",
+          "velocity": 32,
+          "hand": "left",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 1920,
+          "duration_ticks": 1920,
+          "technique": "sweep",
+          "velocity": 34,
+          "hand": "left",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 0,
+          "duration_ticks": 120,
+          "technique": "tap",
+          "velocity": 48,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 960,
+          "duration_ticks": 120,
+          "technique": "chick",
+          "velocity": 46,
+          "hand": "foot",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 1920,
+          "duration_ticks": 120,
+          "technique": "tap",
+          "velocity": 51,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 2880,
+          "duration_ticks": 120,
+          "technique": "chick",
+          "velocity": 48,
+          "hand": "foot",
+          "swingable": false,
+          "sample_id": null
+        }
+      ],
+      "version": 1,
+      "meter": [
+        4,
+        4
+      ],
+      "ppq": 960,
+      "length_ticks": 3840,
+      "pitched": false,
+      "seed": 13007,
+      "draft_status": "RECIPE_NOT_RENDERED_OR_AUDITIONED",
+      "humanization": {
+        "seeded": true,
+        "max_onset_ms": 6,
+        "max_velocity_delta": 3,
+        "exclude_continuous_sweep_boundaries": true
+      },
+      "render_recipe": {
+        "fallback": "seeded_filtered_noise_with_envelopes",
+        "sample_rate_hz_reference": 48000,
+        "sweep_envelope": "continuous with smooth boundaries; avoid an attack at every artificial loop",
+        "warning": "Procedural brush approximation, not a verified real brush-kit model."
+      }
+    },
+    {
+      "id": "brush_ballad_sparse_v1",
+      "label": "Sparse sweep ballad",
+      "suggested_swing_ratio": 0.5,
+      "events": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 3840,
+          "technique": "sweep",
+          "velocity": 35,
+          "hand": "left",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 960,
+          "duration_ticks": 240,
+          "technique": "tap",
+          "velocity": 38,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        },
+        {
+          "start_tick": 2880,
+          "duration_ticks": 240,
+          "technique": "accented_swish",
+          "velocity": 42,
+          "hand": "right",
+          "swingable": false,
+          "sample_id": null
+        }
+      ],
+      "version": 1,
+      "meter": [
+        4,
+        4
+      ],
+      "ppq": 960,
+      "length_ticks": 3840,
+      "pitched": false,
+      "seed": 13007,
+      "draft_status": "RECIPE_NOT_RENDERED_OR_AUDITIONED",
+      "humanization": {
+        "seeded": true,
+        "max_onset_ms": 6,
+        "max_velocity_delta": 3,
+        "exclude_continuous_sweep_boundaries": true
+      },
+      "render_recipe": {
+        "fallback": "seeded_filtered_noise_with_envelopes",
+        "sample_rate_hz_reference": 48000,
+        "sweep_envelope": "continuous with smooth boundaries; avoid an attack at every artificial loop",
+        "warning": "Procedural brush approximation, not a verified real brush-kit model."
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "ObjectState",
+  "schema_version": "0.1",
+  "id": "objectstate-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "scene_id": "scenemanifest-fixture",
+  "object_id": "a",
+  "scene_time_s": 0,
+  "frame": 1,
+  "transform": {
+    "position_m": [
+      0,
+      0,
+      0
+    ],
+    "quaternion_xyzw": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "matrix_row_major": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "velocity_m_s": [
+    0,
+    0,
+    1
+  ],
+  "acceleration_m_s2": null,
+  "derivative_method": "synthetic-known-trajectory",
+  "bounds_min_m": [
+    -1,
+    -1,
+    -1
+  ],
+  "bounds_max_m": [
+    1,
+    1,
+    1
+  ],
+  "surface_area_m2": 12.566370614359172,
+  "volume_m3": null,
+  "unavailable_reason": "fixture omits volume and acceleration"
+}

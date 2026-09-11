@@ -1,0 +1,38 @@
+{
+  "kind": "EvaluationReport",
+  "schema_version": "0.1",
+  "id": "evaluationreport-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "run_id": "runmanifest-fixture",
+  "data_mode": "synthetic",
+  "release_status": "PIPELINE_TESTED_ONLY",
+  "metrics": {
+    "tp": null,
+    "fn": null,
+    "fp": null,
+    "elapsed_hours": 0,
+    "armed_hours": 0,
+    "abstention_seconds": 0,
+    "refractory_seconds": 0
+  },
+  "targets_status": "targets_not_measurements",
+  "interval_method": null,
+  "assumptions": [
+    "software fixture only"
+  ],
+  "results": [
+    {
+      "test_id": "empirical-blink-performance",
+      "status": "not_run",
+      "evidence_paths": [],
+      "reason": "no genuine sessions"
+    }
+  ]
+}

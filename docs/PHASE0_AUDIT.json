@@ -1,0 +1,85 @@
+{
+  "phase": "0",
+  "documentation_gate": "passed",
+  "application_release": "NOT_READY",
+  "date": "2026-09-11",
+  "checks": {
+    "brief_zip_byte_equality": {
+      "status": "passed",
+      "files": 20
+    },
+    "supplied_pack_checksums": {
+      "status": "passed",
+      "files": 19
+    },
+    "local_document_links": "passed",
+    "requirement_traceability": {
+      "status": "passed",
+      "requirements": 29,
+      "must": 26
+    },
+    "nine_task_cards": 9,
+    "four_skill_structure_checks": "passed",
+    "bundled_skill_quick_validate": {
+      "status": "blocked",
+      "reason": "ModuleNotFoundError: yaml (PyYAML not installed); attempted for each of four skills; no dependencies installed"
+    },
+    "capability_registry_design": "passed; implementations explicitly unavailable",
+    "source_only_scope_inventory": "passed",
+    "semantic_consistency_review": "docs/PHASE0_REVIEW.md"
+  },
+  "ragtm": {
+    "path": "/Users/agent/Desktop/RageAgainstTheMachine-main",
+    "archive_sha256": "32a62f161b7866a5c42c17225e216e904267e8a77f78d9e96d60e945693d43c1",
+    "source_files_unchanged": 802,
+    "archive_reported_commit": "8258b4edddd35c301959bf0ab24e2305938579af",
+    "git_head_verified": false,
+    "runtime_tested": false
+  },
+  "brief_archive_sha256": "e3606592e3f4f839b610293aef4f9bfeb6f4bf5e62a57b3945bafce2e3712a74",
+  "not_run": [
+    "application tests",
+    "hardware capture",
+    "model training/evaluation",
+    "Blender rendering",
+    "audio generation/audition",
+    "API preflight",
+    "browser tests"
+  ],
+  "jobs": {
+    "persistent_jobs_started": 0,
+    "live_task_owned_jobs": 0
+  },
+  "commands": [
+    "python3 work/audit_phase0.py",
+    "python3 <skill-creator>/scripts/quick_validate.py .agents/skills/<each-of-four> (blocked: missing yaml)"
+  ],
+  "document_hashes": {
+    "AGENTS.md": "3bfcc66108cee1821426e4ca1552bcee51c8c7e720a5cd4d2fcde65de1eb1f82",
+    "docs/ARCHITECTURE.md": "d227d4d3f41b2f79b2bf8dfbab6c4497b20a3bdc50bd74adef02d5ee659caa60",
+    "docs/CONTRACTS.md": "e0d16662ca4d74cd752dec740775a152f0a80b96d4ef905cde25deeeca761c10",
+    "docs/EVALUATION.md": "c1d8361074e012cf451ed903f019cdb6885347b3de3631165cf2311a9088873f",
+    "docs/LINEAGE.md": "ffa6880a1c8b605af9e44f5a04851c5d9583387a49a0094cd7bf261bfc5c105f",
+    "docs/PHASE0_REVIEW.md": "7fb83aba4ce73c8a981a2881cf7db5a9908c728c982c815edf704a552c11d063",
+    "docs/RUNBOOK.md": "59df4153c8354f550f07f7c5658029ac9572fe9fd3576f8b19d79c02d43ce70e",
+    "docs/STATUS.md": "55d9d5f3f3b04c8f1bea7aafb1c1571e774101489829332842f6bb157068c8d8",
+    "docs/VISION.md": "77d5f9b7603073c955828bc5d9b6879e32f6d9c683b8af4749f9f17db8064fb3",
+    "docs/decisions/0001-scope-and-stack.md": "45288f9cd1302eec4f8d23f61f4325a26d8878ac05e038025c07eea343cc5f14",
+    "docs/tasks/01.md": "141f0f7e0a193eedbe77862b2e91e9ed03cd7bf943a30fdc2484474cd9fd2408",
+    "docs/tasks/02A.md": "93db948fafdb9592b6933513a8912b547017c73ed1fbef8b1d622d1f3b2c39da",
+    "docs/tasks/02B.md": "ddc84e39d1e1f51e777a9504b02fc8923e2fecd2a1e96c78056dfa59b0a05f2c",
+    "docs/tasks/02C.md": "b80fd5d40ceb4ecde6d78ff56d5ec05d40cdc9cc5c018919fd620fb485f4fe10",
+    "docs/tasks/02D.md": "618f686b620a3d827dbf8175578188b1ab1379b8161dfc1973df26b408fd5792",
+    "docs/tasks/02E.md": "b7035471b834500ad0ead7658f50bad0c3e57b0c7ff1ab58a8e4edddd044d914",
+    "docs/tasks/03A.md": "e56fd130d83f99c20969a35f72f6d4358470270cbae9750fcf668f8b3516558f",
+    "docs/tasks/03B.md": "ac1715fd6328bb6708e3ffb22e977f5d5bc8102e789175303a703c1826488727",
+    "docs/tasks/04.md": "6fe68ce807ebc7f9932885706835df78bdadd88b612acf1999cf248a6ad3bc09",
+    "docs/tasks/OWNERSHIP.md": "1e21df1f67ce81d487db143266b51a28c4f3eac63e197db551b02d1194852d97",
+    ".agents/skills/audiovisual-integration/SKILL.md": "de04e45a6f813a505942aa19d52a8de76653deb83845795ad3ac33a1d3654fb6",
+    ".agents/skills/blender-scene-export/SKILL.md": "73a8ccde2ff29d48fa3401ee912112ab52dce8291f728c914b9076db05173748",
+    ".agents/skills/blink-evaluation/SKILL.md": "90a0451a988514ab85c5e8aeab925134afb8174ff4896361d2d31312e0466ee3",
+    ".agents/skills/symbolic-jazz-arrangement/SKILL.md": "9980c0ead9fd08e617874c23525b623599f0112246f6194b4fed7afe0a2e253e",
+    "requirements.yaml": "01a397f6627ec48a253903c36aee66cb72f6ae0fdf198cc8cffe031ba3f36ffb",
+    "tools/capabilities.yaml": "376bc7a31803cca46884413a4a37a19468c2f97fb193b695d4f20fd140a41bd8"
+  }
+}

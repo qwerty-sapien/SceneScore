@@ -1,0 +1,261 @@
+{
+  "type": "object",
+  "properties": {
+    "kind": {
+      "enum": [
+        "ArrangementPlan"
+      ]
+    },
+    "schema_version": {
+      "enum": [
+        "0.1"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "source_mode": {
+          "enum": [
+            "real_device",
+            "replay",
+            "synthetic",
+            "keyboard",
+            "manual_plan",
+            "cached_gpt",
+            "live_gpt"
+          ]
+        },
+        "creator": {
+          "type": "string"
+        },
+        "tool_version": {
+          "type": "string"
+        },
+        "config_hash": {
+          "type": "string"
+        },
+        "input_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "seed": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source_mode",
+        "creator",
+        "tool_version",
+        "config_hash",
+        "input_hashes",
+        "seed"
+      ],
+      "additionalProperties": false
+    },
+    "scene_hash": {
+      "type": "string"
+    },
+    "composition_hash": {
+      "type": "string"
+    },
+    "palette_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "groove_id": {
+      "type": "string"
+    },
+    "groove_version": {
+      "type": "integer"
+    },
+    "motif_owners": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "object_id": {
+            "type": "string"
+          },
+          "motif_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "object_id",
+          "motif_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "feature": {
+            "enum": [
+              "approach",
+              "separation",
+              "surface_gap",
+              "collision",
+              "vertical_motion"
+            ]
+          },
+          "lane": {
+            "enum": [
+              "key",
+              "chord",
+              "register",
+              "dynamics",
+              "articulation",
+              "phrasing",
+              "ornament",
+              "timbre"
+            ]
+          },
+          "input_min": {
+            "type": "number"
+          },
+          "input_max": {
+            "type": "number"
+          },
+          "output_min": {
+            "type": "number"
+          },
+          "output_max": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "feature",
+          "lane",
+          "input_min",
+          "input_max",
+          "output_min",
+          "output_max"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from_pc": {
+            "type": "integer"
+          },
+          "to_pc": {
+            "type": "integer"
+          },
+          "signed_semitones": {
+            "enum": [
+              -2,
+              2
+            ]
+          },
+          "mode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "from_pc",
+          "to_pc",
+          "signed_semitones",
+          "mode"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "register_min": {
+      "type": "integer"
+    },
+    "register_max": {
+      "type": "integer"
+    },
+    "motion_policy": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "focus_object_id": {
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "Z"
+          ]
+        },
+        "lookback_s": {
+          "type": "number"
+        },
+        "deadband_m_s": {
+          "type": "number"
+        },
+        "stationary_action": {
+          "enum": [
+            "none"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "focus_object_id",
+        "axis",
+        "lookback_s",
+        "deadband_m_s",
+        "stationary_action"
+      ],
+      "additionalProperties": false
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_status": {
+      "enum": [
+        "draft",
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "id",
+    "provenance",
+    "scene_hash",
+    "composition_hash",
+    "palette_ids",
+    "groove_id",
+    "groove_version",
+    "motif_owners",
+    "mappings",
+    "transitions",
+    "register_min",
+    "register_max",
+    "motion_policy",
+    "uncertainties",
+    "review_status"
+  ],
+  "additionalProperties": false
+}

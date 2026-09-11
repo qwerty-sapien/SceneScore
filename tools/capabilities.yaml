@@ -1,0 +1,422 @@
+{
+  "registry_version": "0.1",
+  "implemented": true,
+  "status_values": [
+    "available",
+    "unavailable",
+    "unverified"
+  ],
+  "status_semantics": "available is observed local presence only, not end-to-end compatibility. unavailable means absent in this project at inspection, not permanent host incapability. unverified means not checked.",
+  "observed_at": "2026-09-11 Phase 1",
+  "resources": [
+    {
+      "id": "python",
+      "status": "available",
+      "evidence": "Bound /usr/local/bin/python3 3.13.7; venv imports, locks and tests verified. Homebrew interpreter separate."
+    },
+    {
+      "id": "node",
+      "status": "available",
+      "evidence": "node --version: v24.14.0"
+    },
+    {
+      "id": "npm",
+      "status": "available",
+      "evidence": "npm --version: 11.9.0"
+    },
+    {
+      "id": "git",
+      "status": "available",
+      "evidence": "Greenfield parent initialized; contract baseline committed at Phase 1 gate. RAGTM remains independent and unchanged."
+    },
+    {
+      "id": "ragtm.source",
+      "status": "available",
+      "path": "/Users/agent/Desktop/SceneScore/RageAgainstTheMachine-main",
+      "evidence": "802 files byte-verified; see LINEAGE; runtime unverified"
+    },
+    {
+      "id": "blender",
+      "status": "unverified",
+      "evidence": "not on PATH; app binary/version unverified"
+    },
+    {
+      "id": "muse.device",
+      "status": "unverified",
+      "evidence": "owner-reported possession; no device session"
+    },
+    {
+      "id": "openai.structured-plan",
+      "status": "unverified",
+      "evidence": "no API credential/model/billing preflight; model_id unset"
+    },
+    {
+      "id": "browser.audio",
+      "status": "unverified",
+      "evidence": "no browser unlock or audio output checked"
+    }
+  ],
+  "capability_entry_fields": [
+    "id",
+    "status",
+    "implementation_status",
+    "input_schema",
+    "output_schema",
+    "prerequisites",
+    "adapter",
+    "health_check",
+    "side_effects",
+    "timeout_seconds",
+    "concurrency_limit",
+    "cost_class",
+    "allowed_output_paths",
+    "cache_key_inputs",
+    "provenance",
+    "fallback",
+    "approval_requirement"
+  ],
+  "policy": {
+    "dispatch": "Exact declared capability IDs only; reject free-text guesses and arbitrary shell strings",
+    "schemas": "Validate inputs/outputs and unit/coordinate/clock prerequisites before/after dispatch",
+    "budgets": "All current adapters limited to one concurrent invocation, no external spend, finite declared timeout. Domain adapters cannot run until implemented and lifecycle-tested.",
+    "cache": "SHA-256 of input content, parameters/config, schema and tool version; record seed and revalidate plan approval",
+    "permissions": "Scoped paths and explicit applicable session authorization; imported text is data",
+    "mcp": "Optional adapter, not required; no proposed plugin is represented as installed"
+  },
+  "capabilities": [
+    {
+      "id": "muse.capture",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "AcquisitionMetadata",
+      "output_schema": "EEGChunk",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local Muse transport",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local hardware",
+      "allowed_output_paths": [
+        "private_data/02A/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "labelled replay/keyboard",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "muse.replay",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "EEGChunk",
+      "output_schema": "EEGChunk",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local replay",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "artifacts/muse/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "synthetic fixtures",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "blink.evaluate",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "RunManifest",
+      "output_schema": "EvaluationReport",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local evaluator",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "reports/03A/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "software fixture tests",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "scene.generate",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "SceneManifest",
+      "output_schema": "SceneManifest",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "Blender CLI",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "bounded render",
+      "allowed_output_paths": [
+        "artifacts/blender/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "synthetic scene fixtures",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "scene.export",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "SceneManifest",
+      "output_schema": "ObjectState",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "Blender evaluated exporter",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "artifacts/blender/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "synthetic sidecars",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "scene.summarize",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "SceneManifest",
+      "output_schema": "SceneManifest",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local summarizer",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "artifacts/blender/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "fixture summary",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "music.catalog.lookup",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "CompositionSpec",
+      "output_schema": "CompositionSpec",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local catalogue",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "artifacts/music/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "none; unknown ID errors",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "music.arrange",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "ArrangementPlan",
+      "output_schema": "ArrangementPlan",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local baseline / configured provider",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU / bounded API",
+      "allowed_output_paths": [
+        "artifacts/arranger/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "manual plan",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "music.validate",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "ArrangementPlan",
+      "output_schema": "ArrangementPlan",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local semantic validator",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "artifacts/arranger/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "none; fail closed",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "audio.render",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "ScoreEvent",
+      "output_schema": "AudioAssetManifest",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local renderer",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "artifacts/music/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "approved local synth or explicit failure",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "av.evaluate",
+      "status": "unavailable",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "input_schema": "RunManifest",
+      "output_schema": "EvaluationReport",
+      "prerequisites": "Canonical 0.1 record; domain adapter NOT_IMPLEMENTED; future adapter signature may require an integrator schema amendment",
+      "adapter": "local measured-output evaluator",
+      "health_check": "GET /capabilities; implementation_status=NOT_IMPLEMENTED",
+      "side_effects": "Local outputs; capture accesses device; provider may send approved compact summary only",
+      "timeout_seconds": 10,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU",
+      "allowed_output_paths": [
+        "reports/integration/"
+      ],
+      "cache_key_inputs": [
+        "input hashes",
+        "config",
+        "schema version",
+        "tool version",
+        "seed"
+      ],
+      "provenance": "RunManifest and visible source mode",
+      "fallback": "fake-clock tests labelled software only",
+      "approval_requirement": "Explicit future phase authorization; verify hardware/plan/participant permissions applicable to that phase",
+      "adapter_version": "0.1-unimplemented"
+    },
+    {
+      "id": "contracts.validate",
+      "status": "available",
+      "implementation_status": "IMPLEMENTED",
+      "input_schema": "SceneScoreRecord",
+      "output_schema": "SceneScoreRecord",
+      "prerequisites": "Canonical JSON Schema 0.1 and local semantic validation",
+      "adapter": "scenescore.registry.Registry",
+      "adapter_version": "0.1",
+      "health_check": "make test-contracts",
+      "side_effects": "Writes validated record and cache under artifacts/harness only",
+      "timeout_seconds": 5,
+      "concurrency_limit": 1,
+      "cost_class": "local CPU; zero external cost",
+      "allowed_output_paths": [
+        "artifacts/harness/"
+      ],
+      "cache_key_inputs": [
+        "canonical input bytes",
+        "schema hash",
+        "adapter version; input includes config/seed"
+      ],
+      "provenance": "hashes and source mode in result",
+      "fallback": "none; reject invalid data",
+      "approval_requirement": "Phase 1 harness authorized"
+    }
+  ]
+}

@@ -1,0 +1,1033 @@
+{
+  "schema_version": "design-seed-1",
+  "provenance": "New compositional sketches created for this project brief. No existing recording or sampled melody was used. Generic harmonic forms are not claimed as novel. Human composition review and audition remain required.",
+  "note_convention": "C4 = MIDI 60. Note onsets/durations are unswung quarter-note PPQ ticks. Apply the selected groove policy once during arrangement.",
+  "chord_intervals_convention": "Semitone intervals above the root; values above 12 specify extensions before voicing.",
+  "compositions": [
+    {
+      "id": "tilted_blue_v1",
+      "title": "Tilted Blue",
+      "style": "small-combo swing blues",
+      "bpm": 96,
+      "key": {
+        "tonic_pc": 0,
+        "mode": "blues_centre"
+      },
+      "swing_ratio": 0.6666666666666666,
+      "bars": 12,
+      "groove_id": "brush_swing_light_v1",
+      "scene_use": "approach, impact, sparse aftermath",
+      "harmony_bars": [
+        [
+          {
+            "symbol": "C7",
+            "root_pc": 0,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "F7",
+            "root_pc": 5,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "C7",
+            "root_pc": 0,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "C7",
+            "root_pc": 0,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "F7",
+            "root_pc": 5,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "F7",
+            "root_pc": 5,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "C7",
+            "root_pc": 0,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "A7",
+            "root_pc": 9,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Dm7",
+            "root_pc": 2,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "G9",
+            "root_pc": 7,
+            "quality": "9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "C7",
+            "root_pc": 0,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          },
+          {
+            "symbol": "A7",
+            "root_pc": 9,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          }
+        ],
+        [
+          {
+            "symbol": "Dm7",
+            "root_pc": 2,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          },
+          {
+            "symbol": "G9",
+            "root_pc": 7,
+            "quality": "9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 1920
+          }
+        ]
+      ],
+      "motif": [
+        {
+          "start_tick": 480,
+          "duration_ticks": 480,
+          "midi_pitch": 63,
+          "velocity": 72,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 960,
+          "duration_ticks": 480,
+          "midi_pitch": 64,
+          "velocity": 77,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 1440,
+          "duration_ticks": 480,
+          "midi_pitch": 67,
+          "velocity": 80,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 1920,
+          "duration_ticks": 960,
+          "midi_pitch": 69,
+          "velocity": 75,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 3360,
+          "duration_ticks": 480,
+          "midi_pitch": 67,
+          "velocity": 69,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 3840,
+          "duration_ticks": 480,
+          "midi_pitch": 70,
+          "velocity": 78,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 4320,
+          "duration_ticks": 480,
+          "midi_pitch": 67,
+          "velocity": 72,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 4800,
+          "duration_ticks": 480,
+          "midi_pitch": 64,
+          "velocity": 68,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 5280,
+          "duration_ticks": 480,
+          "midi_pitch": 63,
+          "velocity": 66,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 5760,
+          "duration_ticks": 1920,
+          "midi_pitch": 60,
+          "velocity": 64,
+          "articulation": "light_detached",
+          "swingable": true
+        }
+      ],
+      "form_instruction": "Use the two-bar motif as a call, write a contrasting answer, and preserve silence before the main impact. The last bar is a loop turnaround; optionally replace with a tonic ending.",
+      "meter": [
+        4,
+        4
+      ],
+      "ppq": 960,
+      "motif_length_ticks": 7680,
+      "seed": 104729,
+      "draft_status": "NEW_SKETCH_NOT_RENDERED_OR_AUDITIONED",
+      "suggested_parts": [
+        "piano_or_lead",
+        "bass",
+        "brushes",
+        "object_motif"
+      ],
+      "duration_seconds_nominal": 30.0
+    },
+    {
+      "id": "almost_then_away_v1",
+      "title": "Almost, Then Away",
+      "style": "light brushed jazz",
+      "bpm": 96,
+      "key": {
+        "tonic_pc": 5,
+        "mode": "major"
+      },
+      "swing_ratio": 0.625,
+      "bars": 8,
+      "groove_id": "brush_swing_light_v1",
+      "scene_use": "approach, near miss, delayed resolution",
+      "harmony_bars": [
+        [
+          {
+            "symbol": "F6/9",
+            "root_pc": 5,
+            "quality": "6/9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              9,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "D7",
+            "root_pc": 2,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Gm7",
+            "root_pc": 7,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "C9",
+            "root_pc": 0,
+            "quality": "9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Am7",
+            "root_pc": 9,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          },
+          {
+            "symbol": "D7",
+            "root_pc": 2,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          }
+        ],
+        [
+          {
+            "symbol": "Gm7",
+            "root_pc": 7,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          },
+          {
+            "symbol": "C9",
+            "root_pc": 0,
+            "quality": "9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 1920
+          }
+        ],
+        [
+          {
+            "symbol": "F6/9",
+            "root_pc": 5,
+            "quality": "6/9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              9,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "C9",
+            "root_pc": 0,
+            "quality": "9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ]
+      ],
+      "motif": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 960,
+          "midi_pitch": 69,
+          "velocity": 64,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 1440,
+          "duration_ticks": 480,
+          "midi_pitch": 72,
+          "velocity": 70,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 1920,
+          "duration_ticks": 960,
+          "midi_pitch": 74,
+          "velocity": 72,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 2880,
+          "duration_ticks": 480,
+          "midi_pitch": 72,
+          "velocity": 62,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 3360,
+          "duration_ticks": 480,
+          "midi_pitch": 67,
+          "velocity": 60,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 3840,
+          "duration_ticks": 480,
+          "midi_pitch": 66,
+          "velocity": 65,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 4320,
+          "duration_ticks": 480,
+          "midi_pitch": 69,
+          "velocity": 70,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 4800,
+          "duration_ticks": 960,
+          "midi_pitch": 72,
+          "velocity": 68,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 6240,
+          "duration_ticks": 480,
+          "midi_pitch": 69,
+          "velocity": 60,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 6720,
+          "duration_ticks": 960,
+          "midi_pitch": 66,
+          "velocity": 56,
+          "articulation": "light_detached",
+          "swingable": true
+        }
+      ],
+      "form_instruction": "Let the call rise toward an expected arrival; withhold one resolving note for the near miss. Return to F on the next loop or an explicit ending.",
+      "meter": [
+        4,
+        4
+      ],
+      "ppq": 960,
+      "motif_length_ticks": 7680,
+      "seed": 104729,
+      "draft_status": "NEW_SKETCH_NOT_RENDERED_OR_AUDITIONED",
+      "suggested_parts": [
+        "piano_or_lead",
+        "bass",
+        "brushes",
+        "object_motif"
+      ],
+      "duration_seconds_nominal": 20.0
+    },
+    {
+      "id": "corner_pocket_rag_v1",
+      "title": "Corner Pocket Rag",
+      "style": "straight syncopated rag-influenced jazz",
+      "bpm": 120,
+      "key": {
+        "tonic_pc": 0,
+        "mode": "major"
+      },
+      "swing_ratio": 0.5,
+      "bars": 8,
+      "groove_id": "brush_straight_rag_v1",
+      "scene_use": "staircase, domino cascade, precise accents",
+      "harmony_bars": [
+        [
+          {
+            "symbol": "C6",
+            "root_pc": 0,
+            "quality": "6",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "C#dim7",
+            "root_pc": 1,
+            "quality": "dim7",
+            "intervals_semitones": [
+              0,
+              3,
+              6,
+              9
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Dm7",
+            "root_pc": 2,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "G7",
+            "root_pc": 7,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Am7",
+            "root_pc": 9,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "D7",
+            "root_pc": 2,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Dm7",
+            "root_pc": 2,
+            "quality": "m7",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          },
+          {
+            "symbol": "G7",
+            "root_pc": 7,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          }
+        ],
+        [
+          {
+            "symbol": "C6",
+            "root_pc": 0,
+            "quality": "6",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              9
+            ],
+            "duration_ticks": 1920
+          },
+          {
+            "symbol": "G7",
+            "root_pc": 7,
+            "quality": "7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10
+            ],
+            "duration_ticks": 1920
+          }
+        ]
+      ],
+      "motif": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 480,
+          "midi_pitch": 76,
+          "velocity": 78,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 480,
+          "duration_ticks": 960,
+          "midi_pitch": 79,
+          "velocity": 82,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 1440,
+          "duration_ticks": 480,
+          "midi_pitch": 76,
+          "velocity": 75,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 2400,
+          "duration_ticks": 480,
+          "midi_pitch": 74,
+          "velocity": 74,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 2880,
+          "duration_ticks": 960,
+          "midi_pitch": 72,
+          "velocity": 76,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 3840,
+          "duration_ticks": 480,
+          "midi_pitch": 73,
+          "velocity": 70,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 4320,
+          "duration_ticks": 960,
+          "midi_pitch": 76,
+          "velocity": 78,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 5280,
+          "duration_ticks": 480,
+          "midi_pitch": 79,
+          "velocity": 82,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 6240,
+          "duration_ticks": 480,
+          "midi_pitch": 82,
+          "velocity": 78,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 6720,
+          "duration_ticks": 960,
+          "midi_pitch": 79,
+          "velocity": 70,
+          "articulation": "light_detached",
+          "swingable": true
+        }
+      ],
+      "form_instruction": "Compose a syncopated upper line over alternating bass/chord support. Keep straight eighths. Do not force swing because another sketch uses it.",
+      "meter": [
+        4,
+        4
+      ],
+      "ppq": 960,
+      "motif_length_ticks": 7680,
+      "seed": 104729,
+      "draft_status": "NEW_SKETCH_NOT_RENDERED_OR_AUDITIONED",
+      "suggested_parts": [
+        "piano_or_lead",
+        "bass",
+        "brushes",
+        "object_motif"
+      ],
+      "duration_seconds_nominal": 16.0
+    },
+    {
+      "id": "velvet_orbit_v1",
+      "title": "Velvet Orbit",
+      "style": "sparse minor brushed jazz",
+      "bpm": 80,
+      "key": {
+        "tonic_pc": 2,
+        "mode": "minor"
+      },
+      "swing_ratio": 0.5,
+      "bars": 8,
+      "groove_id": "brush_ballad_sparse_v1",
+      "scene_use": "orbits, continuous proximity, release",
+      "harmony_bars": [
+        [
+          {
+            "symbol": "Dm9",
+            "root_pc": 2,
+            "quality": "m9",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Gm9",
+            "root_pc": 7,
+            "quality": "m9",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Dm9",
+            "root_pc": 2,
+            "quality": "m9",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "A7b9",
+            "root_pc": 9,
+            "quality": "7b9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10,
+              13
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Bbmaj7",
+            "root_pc": 10,
+            "quality": "maj7",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              11
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Gm9",
+            "root_pc": 7,
+            "quality": "m9",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              10,
+              14
+            ],
+            "duration_ticks": 3840
+          }
+        ],
+        [
+          {
+            "symbol": "Em7b5",
+            "root_pc": 4,
+            "quality": "m7b5",
+            "intervals_semitones": [
+              0,
+              3,
+              6,
+              10
+            ],
+            "duration_ticks": 1920
+          },
+          {
+            "symbol": "A7b9",
+            "root_pc": 9,
+            "quality": "7b9",
+            "intervals_semitones": [
+              0,
+              4,
+              7,
+              10,
+              13
+            ],
+            "duration_ticks": 1920
+          }
+        ],
+        [
+          {
+            "symbol": "Dm6",
+            "root_pc": 2,
+            "quality": "m6",
+            "intervals_semitones": [
+              0,
+              3,
+              7,
+              9
+            ],
+            "duration_ticks": 3840
+          }
+        ]
+      ],
+      "motif": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 1440,
+          "midi_pitch": 69,
+          "velocity": 58,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 1920,
+          "duration_ticks": 480,
+          "midi_pitch": 65,
+          "velocity": 55,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 2400,
+          "duration_ticks": 960,
+          "midi_pitch": 64,
+          "velocity": 53,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 3840,
+          "duration_ticks": 1440,
+          "midi_pitch": 62,
+          "velocity": 56,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 5760,
+          "duration_ticks": 480,
+          "midi_pitch": 65,
+          "velocity": 58,
+          "articulation": "light_detached",
+          "swingable": true
+        },
+        {
+          "start_tick": 6240,
+          "duration_ticks": 1440,
+          "midi_pitch": 69,
+          "velocity": 60,
+          "articulation": "light_detached",
+          "swingable": true
+        }
+      ],
+      "form_instruction": "Use sustained space and restrained brush sweeps; orbit changes affect phrase density and resonance more than repeated impacts.",
+      "meter": [
+        4,
+        4
+      ],
+      "ppq": 960,
+      "motif_length_ticks": 7680,
+      "seed": 104729,
+      "draft_status": "NEW_SKETCH_NOT_RENDERED_OR_AUDITIONED",
+      "suggested_parts": [
+        "piano_or_lead",
+        "bass",
+        "brushes",
+        "object_motif"
+      ],
+      "duration_seconds_nominal": 24.0
+    }
+  ]
+}

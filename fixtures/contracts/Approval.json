@@ -1,0 +1,22 @@
+{
+  "kind": "Approval",
+  "schema_version": "0.1",
+  "id": "approval-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "plan_id": "arrangementplan-fixture",
+  "approved_payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "input_hashes": [
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ],
+  "reviewer": "synthetic-reviewer-not-real-approval",
+  "reviewed_at_utc": "2026-09-11T00:00:00Z",
+  "decision": "approved",
+  "audition_status": "AUDITION_PENDING"
+}

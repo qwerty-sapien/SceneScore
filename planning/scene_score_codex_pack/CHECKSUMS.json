@@ -1,0 +1,21 @@
+{
+  "ALL_PROMPTS.md": "79c69295f654f7f3aa3bcb96bd090df82de8e90db5df8e8f95b4b98f263bf6dc",
+  "PACK_VALIDATION.json": "30745193e321c8524ae7f933c3cec3b5bedf9281e4357f4b5667500d354935e9",
+  "README.md": "a81cffd164c945d5c90ada5adcd083f93eb251e875a104776e2c758b9d4123d4",
+  "SOURCES.md": "448a93dd7d225288535da31f3d5d3e55b5de6ddfea1c2db00d3b0b7937bd992c",
+  "prompts/00_foundations.md": "82a2787c2146763d8f847746c9893addca7d63d320a104763e1febb054d067c9",
+  "prompts/01_contract_harness.md": "0bce8085e48258f8d8a7d96874957d377ff4d160b0514a6064877238f21af488",
+  "prompts/02A_muse_acquisition.md": "087cd6d452732a7270ca681739537c7c5d9d2ce004f2fac0a5ea709094657efb",
+  "prompts/02B_blender_assets.md": "07674c22abce12f7c24ff7fa758a065ce8dc47bad7328ae2bac870b3e326a73a",
+  "prompts/02C_music_assets.md": "7397739ef1727456decadc5aa0ff37617c26731c55e5b587c7cec5f755590718",
+  "prompts/02D_arranger.md": "ca62787dce78c595bd102cad04f81fcd86e0bbf6b8522d6c25d1096c5d0491f8",
+  "prompts/02E_performance_ui.md": "44db938c44b1c2e5529112acd6fa55f58a5518de1bf6f70a2949beeadc39b689",
+  "prompts/03A_muse_training.md": "d309333f3bbdad55adf83ef317257bc7832ea4c34b96609bd569dcf5ab55161f",
+  "prompts/03B_integration.md": "51a37237c1bae2794acc0d5c3e0a2e037f930c991d2d28bb6d61a763f2ccf33f",
+  "prompts/04_release_rehearsal.md": "fa4fe73ff17b90bb2fba029f77fac07193da2452a1a04dbb5d07374530201037",
+  "seeds/acceptance_targets.json": "148f0fe5b23443af497a17b148443603b5df0791f452c22bc2c1149bdf703de3",
+  "seeds/animation_recipes.json": "93eb4d7315fdbb58fafc0827116b64d3e3d0c56de3c39fa7fa4606fabeef0847",
+  "seeds/brush_catalog.json": "5ed90499e3caa9422e59efd49b767fc2c1baf756f03b6558591083c672e50ba1",
+  "seeds/compositions.json": "9f8279834e1e2f952b3fb30bac82ec4f42beef313f59f0d28c559e7f4fc0163c",
+  "seeds/gesture_profiles.json": "6715187a4212007f79f0858f8bc8d42d05d36626072d2d287ad9d25f44c55ae1"
+}

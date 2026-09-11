@@ -1,0 +1,53 @@
+{
+  "kind": "EEGChunk",
+  "schema_version": "0.1",
+  "id": "eegchunk-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "session_id": "synthetic-session",
+  "sequence": 0,
+  "sample_start_index": 0,
+  "sample_rate_hz": 256,
+  "channels": [
+    {
+      "name": "AF7",
+      "unit": "uV",
+      "enabled": true
+    },
+    {
+      "name": "AF8",
+      "unit": "uV",
+      "enabled": true
+    }
+  ],
+  "device_times_s": [
+    0,
+    0.00390625
+  ],
+  "host_receipt": {
+    "seconds": 1,
+    "clock": "host_monotonic",
+    "epoch": "receipt-1"
+  },
+  "samples": [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ],
+  "dropped_samples_before": 0,
+  "quality": {
+    "state": "good",
+    "reason": null
+  },
+  "imu": null,
+  "device_epoch": "fixture-1"
+}

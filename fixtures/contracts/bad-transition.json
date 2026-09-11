@@ -1,0 +1,58 @@
+{
+  "kind": "ArrangementPlan",
+  "schema_version": "0.1",
+  "id": "arrangementplan-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "scene_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "composition_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "palette_ids": [
+    "fixture-piano"
+  ],
+  "groove_id": "brushgroove-fixture",
+  "groove_version": 1,
+  "motif_owners": [
+    {
+      "object_id": "a",
+      "motif_id": "call"
+    }
+  ],
+  "mappings": [
+    {
+      "feature": "approach",
+      "lane": "phrasing",
+      "input_min": 0,
+      "input_max": 1,
+      "output_min": 0,
+      "output_max": 1
+    }
+  ],
+  "transitions": [
+    {
+      "from_pc": 0,
+      "to_pc": 5,
+      "signed_semitones": 2,
+      "mode": "blues_centre"
+    }
+  ],
+  "register_min": 48,
+  "register_max": 84,
+  "motion_policy": {
+    "id": "z-policy",
+    "focus_object_id": "a",
+    "axis": "Z",
+    "lookback_s": 0.25,
+    "deadband_m_s": 0.01,
+    "stationary_action": "none"
+  },
+  "uncertainties": [
+    "fixture values are not calibration"
+  ],
+  "review_status": "draft"
+}

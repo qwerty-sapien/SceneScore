@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "kinds": [
+    "AcquisitionMetadata",
+    "EEGChunk",
+    "BlinkCandidate",
+    "GestureEvent",
+    "ControlAction",
+    "SceneManifest",
+    "ObjectState",
+    "InteractionEvent",
+    "CompositionSpec",
+    "BrushGroove",
+    "ScoreEvent",
+    "AudioAssetManifest",
+    "ArrangementPlan",
+    "Approval",
+    "ClockMapping",
+    "RunManifest",
+    "EvaluationReport",
+    "CapabilityRequest"
+  ]
+}

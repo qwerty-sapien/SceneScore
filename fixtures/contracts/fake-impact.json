@@ -1,0 +1,31 @@
+{
+  "kind": "InteractionEvent",
+  "schema_version": "0.1",
+  "id": "interactionevent-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "scene_id": "scenemanifest-fixture",
+  "pair": [
+    "a",
+    "b"
+  ],
+  "pair_id": "a|b",
+  "loop_instance": 0,
+  "event_type": "collision",
+  "onset_s": 1.13,
+  "duration_s": 0,
+  "centre_distance_m": 2,
+  "surface_gap_m": 0,
+  "relative_normal_speed_m_s": -1,
+  "relative_tangential_speed_m_s": 0,
+  "method": "heuristic",
+  "physical_impact": true,
+  "impulse_ns": null,
+  "uncertainty_m": 0
+}

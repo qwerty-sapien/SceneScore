@@ -1,0 +1,32 @@
+{
+  "kind": "ScoreEvent",
+  "schema_version": "0.1",
+  "id": "scoreevent-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "plan_id": "arrangementplan-fixture",
+  "object_id": "a",
+  "lane_id": "voice-a",
+  "event_type": "brush",
+  "instrument_id": "fixture-piano",
+  "start_tick": 0,
+  "duration_ticks": 480,
+  "resolved_time_s": 0,
+  "duration_s": 0.3125,
+  "scene_time_s": null,
+  "midi_pitch": 60,
+  "velocity": 70,
+  "dynamics_db": -6,
+  "articulation": "legato",
+  "phrasing": "call",
+  "ornament": null,
+  "timbre_id": "piano",
+  "swing_applied": true,
+  "swing_application_count": 1
+}

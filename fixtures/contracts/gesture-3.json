@@ -1,0 +1,48 @@
+{
+  "kind": "GestureEvent",
+  "schema_version": "0.1",
+  "id": "gestureevent-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "session_id": "synthetic-session",
+  "candidate_ids": [
+    "c-0",
+    "c-1",
+    "c-2"
+  ],
+  "gesture_count": 3,
+  "start": {
+    "seconds": 1,
+    "clock": "device",
+    "epoch": "fixture-1"
+  },
+  "end": {
+    "seconds": 1.4,
+    "clock": "device",
+    "epoch": "fixture-1"
+  },
+  "final_blink": {
+    "seconds": 1.4,
+    "clock": "device",
+    "epoch": "fixture-1"
+  },
+  "decision": {
+    "seconds": 1.9,
+    "clock": "device",
+    "epoch": "fixture-1"
+  },
+  "closure_delay_s": 0.5,
+  "grammar_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "status": "rejected",
+  "reason": "single_or_ambiguous_train",
+  "quality": {
+    "state": "good",
+    "reason": null
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "schema_version": "design-seed-1",
+  "status": "RECIPES_ONLY_NO_SCRIPTS_OR_RENDERS_YET",
+  "defaults": {
+    "fps": 30,
+    "fps_base": 1,
+    "preview_resolution": [
+      640,
+      360
+    ],
+    "final_resolution": [
+      1280,
+      720
+    ],
+    "duration_seconds": 20,
+    "seed": 42,
+    "max_objects_for_mvp": 12,
+    "units": "metres",
+    "up_axis": "Z"
+  },
+  "hero_recipe_id": "10_projectile_tower",
+  "hero_duration_seconds": 30,
+  "recipes": [
+    {
+      "id": "01_head_on",
+      "title": "Head-on contact",
+      "description": "Two spheres approach, contact, separate.",
+      "events": [
+        "approach",
+        "collision",
+        "separation"
+      ],
+      "verification": "analytic sphere contact",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "02_near_miss_twins",
+      "title": "Near-miss twins",
+      "description": "Matched sphere paths pass closely without touching; include a collision variant.",
+      "events": [
+        "approach",
+        "near_miss",
+        "separation"
+      ],
+      "verification": "analytic minimum surface gap",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "03_passing_ascent",
+      "title": "Passing ascent/descent",
+      "description": "Two objects cross at different heights while melodic contour moves up/down.",
+      "events": [
+        "approach",
+        "vertical_motion",
+        "separation"
+      ],
+      "verification": "known trajectory derivatives",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "04_orbital_approach",
+      "title": "Orbital approach",
+      "description": "Two orbital paths gradually approach and move apart without forced impacts.",
+      "events": [
+        "proximity",
+        "approach",
+        "separation"
+      ],
+      "verification": "parametric paths and sampled minima",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "05_bouncing_staircase",
+      "title": "Bouncing staircase",
+      "description": "One sphere encounters a short sequence of descending platforms.",
+      "events": [
+        "collision",
+        "vertical_motion"
+      ],
+      "verification": "scripted or swept sphere-plane contacts",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "06_sliding_contact",
+      "title": "Sliding contact",
+      "description": "A shape sustains contact while moving along a plane, then lifts off.",
+      "events": [
+        "contact_onset",
+        "contact_sustain",
+        "contact_release"
+      ],
+      "verification": "scripted plane gap and tangential speed",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "07_shape_contrast",
+      "title": "Size/shape contrast",
+      "description": "Small and large primitives perform matched motions to compare sonic identity.",
+      "events": [
+        "approach",
+        "collision",
+        "size_contrast"
+      ],
+      "verification": "declared analytic/primitive collision shapes",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "08_domino_cascade",
+      "title": "Domino cascade",
+      "description": "A short geometric cascade produces dense impacts and a sparse final event.",
+      "events": [
+        "collision",
+        "cascade",
+        "silence"
+      ],
+      "verification": "scripted validated contacts; optional baked physics",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "09_breathing_crowd",
+      "title": "Expanding/contracting crowd",
+      "description": "Several objects form and dissolve a group, driving orchestral density.",
+      "events": [
+        "proximity",
+        "grouping",
+        "separation"
+      ],
+      "verification": "explicit pair gaps; no invented contact",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    },
+    {
+      "id": "10_projectile_tower",
+      "title": "Geometric projectile and tower",
+      "description": "A geometric projectile approaches a small tower, causes a collapse and leaves a final wobble; produce a near-miss variant.",
+      "events": [
+        "approach",
+        "near_miss_or_collision",
+        "cascade",
+        "aftermath"
+      ],
+      "verification": "validated scripted contacts or reproducibly baked physics",
+      "deliverables": [
+        "scene.blend",
+        "preview_video",
+        "manifest.json",
+        "object_states.jsonl",
+        "interactions.jsonl",
+        "qa.json"
+      ],
+      "parameters": [
+        "seed",
+        "duration_seconds",
+        "fps",
+        "resolution",
+        "variant"
+      ]
+    }
+  ]
+}

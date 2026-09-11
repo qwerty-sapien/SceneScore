@@ -1,0 +1,50 @@
+{
+  "schema_version": "design-seed-1",
+  "status": "PROPOSED_GATES_NOT_MEASURED",
+  "primary_blink_goals": {
+    "event_recall_target": 0.99,
+    "false_activations_per_hour_target": 0.5,
+    "false_activations_per_hour_stretch": 0.1,
+    "interpretation": "aspirational; evidence and interval assumptions must be reported"
+  },
+  "supervised_demo_pilot_gate": {
+    "minimum_verified_heldout_gestures": 100,
+    "minimum_heldout_refit_sessions": 2,
+    "minimum_natural_activity_minutes": 60,
+    "observed_recall_floor": 0.95,
+    "observed_false_activations_allowed": 0,
+    "minimum_armed_availability_fraction": 0.95,
+    "interpretation": "candidate for supervised demonstration only; these counts do not establish the primary statistical targets; report confidence bounds"
+  },
+  "timing_goals": {
+    "gesture_last_blink_to_decision_p95_ms": 750,
+    "visual_confirmation_after_decision_p95_ms": 100,
+    "collision_render_offset_p95_ms": 50,
+    "live_av_drift_goal_ms": 50,
+    "interpretation": "engineering targets to measure; report scheduling versus measured output separately; multi-count grammar can increase latency"
+  },
+  "invariants": [
+    "no action for one ordinary blink",
+    "no double and triple action for the same sequence",
+    "no stale replayed controls after reconnect",
+    "no change to gain/articulation from the default double blink",
+    "unpitched brushes never transposed",
+    "collision time never blindly quantized",
+    "no raw EEG sent to cloud",
+    "no final-test tuning",
+    "no silent fallback provenance changes"
+  ],
+  "confidence_examples": {
+    "confidence_level_one_sided": 0.95,
+    "all_successes_lower_bound_formula": "0.05**(1/n)",
+    "zero_false_events_upper_rate_formula": "-log(0.05)/exposure_hours",
+    "assumptions": "independent Bernoulli opportunities / stationary Poisson false events; session dependence and drift need separate assessment"
+  },
+  "release_states": [
+    "PIPELINE_TESTED_ONLY",
+    "REAL_DATA_EXPLORATORY",
+    "SUPERVISED_DEMO_READY",
+    "TARGET_STATISTICALLY_SUPPORTED",
+    "NOT_READY"
+  ]
+}

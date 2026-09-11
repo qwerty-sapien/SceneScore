@@ -1,0 +1,76 @@
+{
+  "kind": "CompositionSpec",
+  "schema_version": "0.1",
+  "id": "compositionspec-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "catalog_version": 1,
+  "title": "Synthetic two-note contract motif",
+  "ppq": 960,
+  "meter": [
+    4,
+    4
+  ],
+  "length_ticks": 3840,
+  "tempo_map": [
+    {
+      "tick": 0,
+      "bpm": 96
+    }
+  ],
+  "key_map": [
+    {
+      "tick": 0,
+      "tonic_pc": 0,
+      "mode": "blues_centre"
+    }
+  ],
+  "harmony": [
+    {
+      "start_tick": 0,
+      "duration_ticks": 3840,
+      "root_pc": 0,
+      "intervals_semitones": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "quality": "7"
+    }
+  ],
+  "notes": [
+    {
+      "start_tick": 0,
+      "duration_ticks": 99999,
+      "midi_pitch": 60,
+      "velocity": 70,
+      "articulation": "detached",
+      "swingable": true
+    },
+    {
+      "start_tick": 480,
+      "duration_ticks": 480,
+      "midi_pitch": 63,
+      "velocity": 65,
+      "articulation": "detached",
+      "swingable": true
+    }
+  ],
+  "pitch_convention": "C4=MIDI60",
+  "timing": "unswung_quarter_note_ticks",
+  "swing_ratio": 0.6666666666666666,
+  "groove_id": "brushgroove-fixture",
+  "groove_version": 1,
+  "creative_traits": [
+    "blues call-and-response",
+    "swing"
+  ],
+  "audition_status": "AUDITION_PENDING"
+}

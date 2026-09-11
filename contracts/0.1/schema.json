@@ -1,0 +1,2550 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scenescore.local/contracts/0.1/schema.json",
+  "title": "SceneScoreRecord",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/AcquisitionMetadata"
+    },
+    {
+      "$ref": "#/$defs/EEGChunk"
+    },
+    {
+      "$ref": "#/$defs/BlinkCandidate"
+    },
+    {
+      "$ref": "#/$defs/GestureEvent"
+    },
+    {
+      "$ref": "#/$defs/ControlAction"
+    },
+    {
+      "$ref": "#/$defs/SceneManifest"
+    },
+    {
+      "$ref": "#/$defs/ObjectState"
+    },
+    {
+      "$ref": "#/$defs/InteractionEvent"
+    },
+    {
+      "$ref": "#/$defs/CompositionSpec"
+    },
+    {
+      "$ref": "#/$defs/BrushGroove"
+    },
+    {
+      "$ref": "#/$defs/ScoreEvent"
+    },
+    {
+      "$ref": "#/$defs/AudioAssetManifest"
+    },
+    {
+      "$ref": "#/$defs/ArrangementPlan"
+    },
+    {
+      "$ref": "#/$defs/Approval"
+    },
+    {
+      "$ref": "#/$defs/ClockMapping"
+    },
+    {
+      "$ref": "#/$defs/RunManifest"
+    },
+    {
+      "$ref": "#/$defs/EvaluationReport"
+    },
+    {
+      "$ref": "#/$defs/CapabilityRequest"
+    }
+  ],
+  "$defs": {
+    "Provenance": {
+      "type": "object",
+      "properties": {
+        "source_mode": {
+          "enum": [
+            "real_device",
+            "replay",
+            "synthetic",
+            "keyboard",
+            "manual_plan",
+            "cached_gpt",
+            "live_gpt"
+          ]
+        },
+        "creator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "config_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "input_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 0
+        },
+        "seed": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source_mode",
+        "creator",
+        "tool_version",
+        "config_hash",
+        "input_hashes",
+        "seed"
+      ],
+      "additionalProperties": false
+    },
+    "Time": {
+      "type": "object",
+      "properties": {
+        "seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "clock": {
+          "enum": [
+            "device",
+            "host_monotonic",
+            "scene",
+            "transport",
+            "audio"
+          ]
+        },
+        "epoch": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "seconds",
+        "clock",
+        "epoch"
+      ],
+      "additionalProperties": false
+    },
+    "Quality": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": [
+            "good",
+            "bad",
+            "dropout",
+            "unverified"
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "state",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "Channel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "enum": [
+            "uV",
+            "V"
+          ]
+        },
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "unit",
+        "enabled"
+      ],
+      "additionalProperties": false
+    },
+    "Transform": {
+      "type": "object",
+      "properties": {
+        "position_m": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "quaternion_xyzw": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "matrix_row_major": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 16,
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "position_m",
+        "quaternion_xyzw",
+        "matrix_row_major"
+      ],
+      "additionalProperties": false
+    },
+    "Note": {
+      "type": "object",
+      "properties": {
+        "start_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duration_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "midi_pitch": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 127
+        },
+        "velocity": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 127
+        },
+        "articulation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "swingable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "start_tick",
+        "duration_ticks",
+        "midi_pitch",
+        "velocity",
+        "articulation",
+        "swingable"
+      ],
+      "additionalProperties": false
+    },
+    "Tempo": {
+      "type": "object",
+      "properties": {
+        "tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bpm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "tick",
+        "bpm"
+      ],
+      "additionalProperties": false
+    },
+    "Key": {
+      "type": "object",
+      "properties": {
+        "tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tonic_pc": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
+        },
+        "mode": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "tick",
+        "tonic_pc",
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "Chord": {
+      "type": "object",
+      "properties": {
+        "start_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duration_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "root_pc": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
+        },
+        "intervals_semitones": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1
+        },
+        "quality": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "start_tick",
+        "duration_ticks",
+        "root_pc",
+        "intervals_semitones",
+        "quality"
+      ],
+      "additionalProperties": false
+    },
+    "Transition": {
+      "type": "object",
+      "properties": {
+        "from_pc": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
+        },
+        "to_pc": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
+        },
+        "signed_semitones": {
+          "enum": [
+            -2,
+            2
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "from_pc",
+        "to_pc",
+        "signed_semitones",
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "LaneState": {
+      "type": "object",
+      "properties": {
+        "master_gain_db": {
+          "type": "number",
+          "minimum": -80,
+          "maximum": 6
+        },
+        "articulation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expression_preset": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "master_gain_db",
+        "articulation",
+        "expression_preset"
+      ],
+      "additionalProperties": false
+    },
+    "CheckResult": {
+      "type": "object",
+      "properties": {
+        "test_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "not_run"
+          ]
+        },
+        "evidence_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "test_id",
+        "status",
+        "evidence_paths",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "Split": {
+      "type": "object",
+      "properties": {
+        "train_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "development_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "final_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "train_sessions",
+        "development_sessions",
+        "final_sessions"
+      ],
+      "additionalProperties": false
+    },
+    "AcquisitionMetadata": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "AcquisitionMetadata"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "device_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "transport": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sample_rate_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Channel"
+          },
+          "minItems": 1
+        },
+        "clock_epoch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hardware_verified": {
+          "type": "boolean"
+        },
+        "raw_storage": {
+          "const": "local_only"
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "session_id",
+        "device_model",
+        "transport",
+        "sample_rate_hz",
+        "channels",
+        "clock_epoch",
+        "hardware_verified",
+        "raw_storage"
+      ],
+      "additionalProperties": false
+    },
+    "EEGChunk": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "EEGChunk"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sample_start_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sample_rate_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "channels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Channel"
+          },
+          "minItems": 1
+        },
+        "device_times_s": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minItems": 0
+        },
+        "host_receipt": {
+          "$ref": "#/$defs/Time"
+        },
+        "samples": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 1
+          },
+          "minItems": 0
+        },
+        "dropped_samples_before": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality"
+        },
+        "imu": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "unit": {
+                  "enum": [
+                    "m/s2",
+                    "rad/s"
+                  ]
+                },
+                "samples": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "unit",
+                "samples"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "device_epoch": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "session_id",
+        "sequence",
+        "sample_start_index",
+        "sample_rate_hz",
+        "channels",
+        "device_times_s",
+        "host_receipt",
+        "samples",
+        "dropped_samples_before",
+        "quality",
+        "imu",
+        "device_epoch"
+      ],
+      "additionalProperties": false
+    },
+    "BlinkCandidate": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "BlinkCandidate"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "$ref": "#/$defs/Time"
+        },
+        "end": {
+          "$ref": "#/$defs/Time"
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "score": {
+          "type": "number"
+        },
+        "score_type": {
+          "enum": [
+            "uncalibrated",
+            "calibrated_probability"
+          ]
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality"
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "session_id",
+        "start",
+        "end",
+        "model_version",
+        "score",
+        "score_type",
+        "quality"
+      ],
+      "additionalProperties": false
+    },
+    "GestureEvent": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "GestureEvent"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "gesture_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "start": {
+          "$ref": "#/$defs/Time"
+        },
+        "end": {
+          "$ref": "#/$defs/Time"
+        },
+        "final_blink": {
+          "$ref": "#/$defs/Time"
+        },
+        "decision": {
+          "$ref": "#/$defs/Time"
+        },
+        "closure_delay_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "grammar_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "status": {
+          "enum": [
+            "accepted",
+            "rejected"
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality"
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "session_id",
+        "candidate_ids",
+        "gesture_count",
+        "start",
+        "end",
+        "final_blink",
+        "decision",
+        "closure_delay_s",
+        "grammar_hash",
+        "status",
+        "reason",
+        "quality"
+      ],
+      "additionalProperties": false
+    },
+    "ControlAction": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ControlAction"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "gesture_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gesture_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "profile": {
+          "enum": [
+            "double_modulate_mvp",
+            "multi_count_expression_experiment"
+          ]
+        },
+        "action": {
+          "enum": [
+            "request_modulation",
+            "toggle_approved_expression_preset",
+            "none"
+          ]
+        },
+        "request": {
+          "$ref": "#/$defs/Time"
+        },
+        "expires": {
+          "$ref": "#/$defs/Time"
+        },
+        "boundary": {
+          "enum": [
+            "next_approved_bar_or_phrase",
+            "next_approved_bar",
+            "none"
+          ]
+        },
+        "signed_semitones": {
+          "enum": [
+            -2,
+            0,
+            2
+          ]
+        },
+        "scene_policy_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "approved_plan_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "queued",
+            "executed",
+            "suppressed"
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality"
+        },
+        "before": {
+          "$ref": "#/$defs/LaneState"
+        },
+        "after": {
+          "$ref": "#/$defs/LaneState"
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "gesture_id",
+        "sequence_id",
+        "gesture_count",
+        "profile",
+        "action",
+        "request",
+        "expires",
+        "boundary",
+        "signed_semitones",
+        "scene_policy_id",
+        "approved_plan_hash",
+        "status",
+        "reason",
+        "quality",
+        "before",
+        "after"
+      ],
+      "additionalProperties": false
+    },
+    "SceneManifest": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "SceneManifest"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "source_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "render_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "generator_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fps_base": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "start_frame": {
+          "type": "integer"
+        },
+        "duration_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "units": {
+          "const": "metres"
+        },
+        "up_axis": {
+          "const": "Z"
+        },
+        "handedness": {
+          "const": "right"
+        },
+        "quaternion_order": {
+          "const": "xyzw"
+        },
+        "matrix_layout": {
+          "const": "row_major_column_vectors"
+        },
+        "camera": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "transform": {
+              "$ref": "#/$defs/Transform"
+            }
+          },
+          "required": [
+            "id",
+            "transform"
+          ],
+          "additionalProperties": false
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "object_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sonic_identity_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "object_id",
+              "sonic_identity_id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "source_hash",
+        "render_hash",
+        "generator_version",
+        "fps",
+        "fps_base",
+        "start_frame",
+        "duration_s",
+        "units",
+        "up_axis",
+        "handedness",
+        "quaternion_order",
+        "matrix_layout",
+        "camera",
+        "objects"
+      ],
+      "additionalProperties": false
+    },
+    "ObjectState": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ObjectState"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "scene_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "object_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scene_time_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "frame": {
+          "type": "number"
+        },
+        "transform": {
+          "$ref": "#/$defs/Transform"
+        },
+        "velocity_m_s": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acceleration_m_s2": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "derivative_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bounds_min_m": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "bounds_max_m": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "surface_area_m2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "volume_m3": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unavailable_reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "scene_id",
+        "object_id",
+        "scene_time_s",
+        "frame",
+        "transform",
+        "velocity_m_s",
+        "acceleration_m_s2",
+        "derivative_method",
+        "bounds_min_m",
+        "bounds_max_m",
+        "surface_area_m2",
+        "volume_m3",
+        "unavailable_reason"
+      ],
+      "additionalProperties": false
+    },
+    "InteractionEvent": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "InteractionEvent"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "scene_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pair": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "pair_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "loop_instance": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "event_type": {
+          "enum": [
+            "approach",
+            "separation",
+            "near_miss",
+            "collision",
+            "contact_onset",
+            "contact_sustain",
+            "contact_release"
+          ]
+        },
+        "onset_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "centre_distance_m": {
+          "type": "number",
+          "minimum": 0
+        },
+        "surface_gap_m": {
+          "type": "number"
+        },
+        "relative_normal_speed_m_s": {
+          "type": "number"
+        },
+        "relative_tangential_speed_m_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "method": {
+          "enum": [
+            "analytic",
+            "scripted",
+            "baked",
+            "heuristic"
+          ]
+        },
+        "physical_impact": {
+          "type": "boolean"
+        },
+        "impulse_ns": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uncertainty_m": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "scene_id",
+        "pair",
+        "pair_id",
+        "loop_instance",
+        "event_type",
+        "onset_s",
+        "duration_s",
+        "centre_distance_m",
+        "surface_gap_m",
+        "relative_normal_speed_m_s",
+        "relative_tangential_speed_m_s",
+        "method",
+        "physical_impact",
+        "impulse_ns",
+        "uncertainty_m"
+      ],
+      "additionalProperties": false
+    },
+    "CompositionSpec": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "CompositionSpec"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "catalog_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ppq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "meter": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "length_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "tempo_map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Tempo"
+          },
+          "minItems": 1
+        },
+        "key_map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Key"
+          },
+          "minItems": 1
+        },
+        "harmony": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Chord"
+          },
+          "minItems": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Note"
+          },
+          "minItems": 1
+        },
+        "pitch_convention": {
+          "const": "C4=MIDI60"
+        },
+        "timing": {
+          "const": "unswung_quarter_note_ticks"
+        },
+        "swing_ratio": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 0.75
+        },
+        "groove_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "groove_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "creative_traits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "audition_status": {
+          "enum": [
+            "AUDITION_PENDING",
+            "approved",
+            "changes_requested"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "catalog_version",
+        "title",
+        "ppq",
+        "meter",
+        "length_ticks",
+        "tempo_map",
+        "key_map",
+        "harmony",
+        "notes",
+        "pitch_convention",
+        "timing",
+        "swing_ratio",
+        "groove_id",
+        "groove_version",
+        "creative_traits",
+        "audition_status"
+      ],
+      "additionalProperties": false
+    },
+    "BrushGroove": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "BrushGroove"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "catalog_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ppq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "length_ticks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "meter": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "pitched": {
+          "const": false
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start_tick": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "duration_ticks": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "technique": {
+                "enum": [
+                  "sweep",
+                  "tap",
+                  "accented_swish",
+                  "chick"
+                ]
+              },
+              "velocity": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 127
+              },
+              "hand": {
+                "enum": [
+                  "left",
+                  "right",
+                  "foot"
+                ]
+              },
+              "swingable": {
+                "type": "boolean"
+              },
+              "sample_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "start_tick",
+              "duration_ticks",
+              "technique",
+              "velocity",
+              "hand",
+              "swingable",
+              "sample_id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "max_humanize_ms": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 6
+        },
+        "max_velocity_delta": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "catalog_version",
+        "ppq",
+        "length_ticks",
+        "meter",
+        "pitched",
+        "events",
+        "max_humanize_ms",
+        "max_velocity_delta"
+      ],
+      "additionalProperties": false
+    },
+    "ScoreEvent": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ScoreEvent"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "plan_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "object_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lane_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "event_type": {
+          "enum": [
+            "note",
+            "brush",
+            "foley"
+          ]
+        },
+        "instrument_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_tick": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duration_ticks": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "resolved_time_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "scene_time_s": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "midi_pitch": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 127
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "velocity": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 127
+        },
+        "dynamics_db": {
+          "type": "number"
+        },
+        "articulation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phrasing": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ornament": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "timbre_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "swing_applied": {
+          "type": "boolean"
+        },
+        "swing_application_count": {
+          "enum": [
+            0,
+            1
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "plan_id",
+        "object_id",
+        "lane_id",
+        "event_type",
+        "instrument_id",
+        "start_tick",
+        "duration_ticks",
+        "resolved_time_s",
+        "duration_s",
+        "scene_time_s",
+        "midi_pitch",
+        "velocity",
+        "dynamics_db",
+        "articulation",
+        "phrasing",
+        "ornament",
+        "timbre_id",
+        "swing_applied",
+        "swing_application_count"
+      ],
+      "additionalProperties": false
+    },
+    "AudioAssetManifest": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "AudioAssetManifest"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "asset_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "stem_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sample_rate_hz": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "channels": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        },
+        "duration_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "timeline_origin_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "renderer_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pitched": {
+          "type": "boolean"
+        },
+        "sample_peak": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "measurement_status": {
+          "enum": [
+            "measured",
+            "not_run"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "asset_hash",
+        "stem_id",
+        "sample_rate_hz",
+        "channels",
+        "duration_s",
+        "timeline_origin_s",
+        "source",
+        "license",
+        "renderer_version",
+        "pitched",
+        "sample_peak",
+        "measurement_status"
+      ],
+      "additionalProperties": false
+    },
+    "ArrangementPlan": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ArrangementPlan"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "scene_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "composition_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "palette_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "groove_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "groove_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "motif_owners": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "object_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "motif_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "object_id",
+              "motif_id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "feature": {
+                "enum": [
+                  "approach",
+                  "separation",
+                  "surface_gap",
+                  "collision",
+                  "vertical_motion"
+                ]
+              },
+              "lane": {
+                "enum": [
+                  "key",
+                  "chord",
+                  "register",
+                  "dynamics",
+                  "articulation",
+                  "phrasing",
+                  "ornament",
+                  "timbre"
+                ]
+              },
+              "input_min": {
+                "type": "number"
+              },
+              "input_max": {
+                "type": "number"
+              },
+              "output_min": {
+                "type": "number"
+              },
+              "output_max": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "feature",
+              "lane",
+              "input_min",
+              "input_max",
+              "output_min",
+              "output_max"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "transitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Transition"
+          },
+          "minItems": 1
+        },
+        "register_min": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 127
+        },
+        "register_max": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 127
+        },
+        "motion_policy": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "focus_object_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "axis": {
+              "const": "Z"
+            },
+            "lookback_s": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "deadband_m_s": {
+              "type": "number",
+              "minimum": 0
+            },
+            "stationary_action": {
+              "const": "none"
+            }
+          },
+          "required": [
+            "id",
+            "focus_object_id",
+            "axis",
+            "lookback_s",
+            "deadband_m_s",
+            "stationary_action"
+          ],
+          "additionalProperties": false
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "review_status": {
+          "enum": [
+            "draft",
+            "pending",
+            "approved",
+            "rejected"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "scene_hash",
+        "composition_hash",
+        "palette_ids",
+        "groove_id",
+        "groove_version",
+        "motif_owners",
+        "mappings",
+        "transitions",
+        "register_min",
+        "register_max",
+        "motion_policy",
+        "uncertainties",
+        "review_status"
+      ],
+      "additionalProperties": false
+    },
+    "Approval": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "Approval"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "plan_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_payload_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "input_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_at_utc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "enum": [
+            "approved",
+            "rejected"
+          ]
+        },
+        "audition_status": {
+          "enum": [
+            "AUDITION_PENDING",
+            "approved",
+            "changes_requested"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "plan_id",
+        "approved_payload_sha256",
+        "input_hashes",
+        "reviewer",
+        "reviewed_at_utc",
+        "decision",
+        "audition_status"
+      ],
+      "additionalProperties": false
+    },
+    "ClockMapping": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ClockMapping"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "source_clock": {
+          "enum": [
+            "device",
+            "host_monotonic",
+            "scene",
+            "transport",
+            "audio"
+          ]
+        },
+        "destination_clock": {
+          "enum": [
+            "device",
+            "host_monotonic",
+            "scene",
+            "transport",
+            "audio"
+          ]
+        },
+        "source_epoch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "destination_epoch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_anchor_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "destination_anchor_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "uncertainty_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "valid_from_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "valid_until_s": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "source_clock",
+        "destination_clock",
+        "source_epoch",
+        "destination_epoch",
+        "source_anchor_s",
+        "destination_anchor_s",
+        "rate",
+        "uncertainty_s",
+        "valid_from_s",
+        "valid_until_s"
+      ],
+      "additionalProperties": false
+    },
+    "RunManifest": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "RunManifest"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "code_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "config_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "data_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 0
+        },
+        "schema_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "model_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "split": {
+          "$ref": "#/$defs/Split"
+        },
+        "commands": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "runtime": {
+          "type": "object",
+          "properties": {
+            "python": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "node": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "host_profile_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "python",
+            "node",
+            "host_profile_id"
+          ],
+          "additionalProperties": false
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CheckResult"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "code_hash",
+        "config_hash",
+        "data_hashes",
+        "schema_hash",
+        "model_hash",
+        "split",
+        "commands",
+        "runtime",
+        "results"
+      ],
+      "additionalProperties": false
+    },
+    "EvaluationReport": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "EvaluationReport"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_mode": {
+          "enum": [
+            "synthetic",
+            "real_device",
+            "replay"
+          ]
+        },
+        "release_status": {
+          "enum": [
+            "PIPELINE_TESTED_ONLY",
+            "REAL_DATA_EXPLORATORY",
+            "SUPERVISED_DEMO_READY",
+            "TARGET_STATISTICALLY_SUPPORTED",
+            "NOT_READY"
+          ]
+        },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "tp": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "fn": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "fp": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "elapsed_hours": {
+              "type": "number",
+              "minimum": 0
+            },
+            "armed_hours": {
+              "type": "number",
+              "minimum": 0
+            },
+            "abstention_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "refractory_seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "tp",
+            "fn",
+            "fp",
+            "elapsed_hours",
+            "armed_hours",
+            "abstention_seconds",
+            "refractory_seconds"
+          ],
+          "additionalProperties": false
+        },
+        "targets_status": {
+          "const": "targets_not_measurements"
+        },
+        "interval_method": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CheckResult"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "run_id",
+        "data_mode",
+        "release_status",
+        "metrics",
+        "targets_status",
+        "interval_method",
+        "assumptions",
+        "results"
+      ],
+      "additionalProperties": false
+    },
+    "CapabilityRequest": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "CapabilityRequest"
+        },
+        "schema_version": {
+          "const": "0.1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "capability_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input": {
+          "type": "object"
+        },
+        "output_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timeout_s": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 30
+        },
+        "max_cost_usd": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0
+        },
+        "max_concurrency": {
+          "const": 1
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "provenance",
+        "capability_id",
+        "input",
+        "output_path",
+        "timeout_s",
+        "max_cost_usd",
+        "max_concurrency"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

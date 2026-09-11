@@ -1,0 +1,37 @@
+{
+  "scope": "Validation of prompt-pack documents and design seeds only. No runtime, model, hardware, rendering or listening tests performed.",
+  "json_files": [
+    {
+      "file": "seeds/acceptance_targets.json",
+      "json_parse": "PASS"
+    },
+    {
+      "file": "seeds/animation_recipes.json",
+      "json_parse": "PASS"
+    },
+    {
+      "file": "seeds/brush_catalog.json",
+      "json_parse": "PASS"
+    },
+    {
+      "file": "seeds/compositions.json",
+      "json_parse": "PASS"
+    },
+    {
+      "file": "seeds/gesture_profiles.json",
+      "json_parse": "PASS"
+    }
+  ],
+  "composition_bar_lengths": "PASS",
+  "motif_pitch_velocity_time_bounds": "PASS",
+  "groove_cross_references": "PASS",
+  "brush_event_time_bounds": "PASS",
+  "scene_recipe_count": 10,
+  "prompt_count": 10,
+  "independent_binomial_example_n100_lower95": 0.9704869503929601,
+  "stationary_poisson_zero_fp_half_hour_upper95": 5.991464547107982,
+  "hardware_status": "NOT_RUN",
+  "model_training_status": "NOT_RUN",
+  "blender_render_status": "NOT_RUN",
+  "music_render_and_audition_status": "NOT_RUN"
+}

@@ -1,0 +1,416 @@
+{
+  "document_version": "0.1-phase1",
+  "status": "CONTRACT_HARNESS_TESTED_PRODUCT_NOT_IMPLEMENTED",
+  "source_root": ".brief/",
+  "requirements": [
+    {
+      "id": "SS-001",
+      "priority": "MUST",
+      "owner": "integrator",
+      "intent": "Documentation only in Phase 0; immutable brief; explicit phase authorization",
+      "source_intent": "00 foundations / user request",
+      "acceptance_evidence": "Byte comparison and inventory contain only Phase 0 deliverables",
+      "planned_tests": [
+        "P0-integrity"
+      ],
+      "implementation_status": "documentation_complete",
+      "evidence_status": "see docs/PHASE0_AUDIT.json"
+    },
+    {
+      "id": "SS-002",
+      "priority": "MUST",
+      "owner": "02E",
+      "intent": "Editable animation-to-score authoring and synchronized export",
+      "source_intent": "00 product 1\u20132",
+      "acceptance_evidence": "Exercise review/play/seek/export; reopen symbolic score and separate stems",
+      "planned_tests": [
+        "UI-author-export"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-003",
+      "priority": "MUST",
+      "owner": "02D",
+      "intent": "Persistent object sonic identity across loops and key changes",
+      "source_intent": "00 product 1",
+      "acceptance_evidence": "Compare object/voice IDs across loop and modulation logs",
+      "planned_tests": [
+        "MAP-identity"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-004",
+      "priority": "MUST",
+      "owner": "02A",
+      "intent": "Verify Muse generation transport channels units rate and quality before real capture",
+      "source_intent": "00 product 7",
+      "acceptance_evidence": "Device/session manifest plus genuine capture review; no inferred board ID",
+      "planned_tests": [
+        "EEG-device"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-005",
+      "priority": "MUST",
+      "owner": "02A",
+      "intent": "Local untouched raw EEG with consent and independent labels",
+      "source_intent": "00 detection / seed privacy",
+      "acceptance_evidence": "Audit capture output, consent reference and blocked upload path",
+      "planned_tests": [
+        "EEG-local-labels"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-006",
+      "priority": "MUST",
+      "owner": "03A",
+      "intent": "Session/refit splits; causal development; no final-test tuning or fabricated truth",
+      "source_intent": "00 detection",
+      "acceptance_evidence": "Frozen split/config hashes and leakage audit",
+      "planned_tests": [
+        "EVAL-splits"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-007",
+      "priority": "MUST",
+      "owner": "03A",
+      "intent": "Report all misses and false controls with exposure availability and uncertainty",
+      "source_intent": "00 detection / acceptance seeds",
+      "acceptance_evidence": "Event-matching report including abstention and refractory misses, armed/elapsed rates",
+      "planned_tests": [
+        "EVAL-events"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-008",
+      "priority": "MUST",
+      "owner": "02A",
+      "intent": "Singles no action; ambiguous trains rejected; no double/triple duplicate action",
+      "source_intent": "00 gestures / gesture seeds",
+      "acceptance_evidence": "Labelled software sequences and independently labelled real confusion report",
+      "planned_tests": [
+        "GEST-grammar"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-009",
+      "priority": "MUST",
+      "owner": "02E",
+      "intent": "Default double requests only boundary key change preserving gain articulation expression",
+      "source_intent": "00 product 3 / gesture seeds",
+      "acceptance_evidence": "Fake-clock logs and later audio/visual review verify unrelated lanes unchanged",
+      "planned_tests": [
+        "CTRL-preserve"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending",
+      "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
+    },
+    {
+      "id": "SS-010",
+      "priority": "MUST",
+      "owner": "02D",
+      "intent": "Signed motion and approved \u00b12 transition graph; seeded bounded selection",
+      "source_intent": "00 product 3 / 02D",
+      "acceptance_evidence": "Ascending descending stationary fixtures show signed edge or logged no-op",
+      "planned_tests": [
+        "MAP-signed"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-011",
+      "priority": "MUST",
+      "owner": "02A",
+      "intent": "Quality failure suppresses new controls without music interruption",
+      "source_intent": "00 gestures",
+      "acceptance_evidence": "Dropout/railed/reconnect fixture with suppression reasons and continuous playback",
+      "planned_tests": [
+        "CTRL-quality"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-012",
+      "priority": "MUST",
+      "owner": "02B",
+      "intent": "Evaluated world geometry and surface area; object-pair interactions",
+      "source_intent": "00 geometry",
+      "acceptance_evidence": "Independent analytic contact/gap tests, area s\u00b2 and transform invariance",
+      "planned_tests": [
+        "GEO-evaluated"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-013",
+      "priority": "MUST",
+      "owner": "02B",
+      "intent": "Distinguish centre distance gap and heuristic versus physical impact",
+      "source_intent": "00 geometry",
+      "acceptance_evidence": "Known near miss never labelled physical collision; provenance/uncertainty checked",
+      "planned_tests": [
+        "GEO-evidence"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-014",
+      "priority": "MUST",
+      "owner": "02C",
+      "intent": "Original symbolic music with separate musical lanes and exact groove lookup",
+      "source_intent": "00 music / composition brush seeds",
+      "acceptance_evidence": "Form/tick/range tests plus asset provenance and human audition",
+      "planned_tests": [
+        "MUSIC-symbolic"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-015",
+      "priority": "MUST",
+      "owner": "02E",
+      "intent": "No whole-track pitch shift; brushes untransposed; Foley retains scene time",
+      "source_intent": "00 music",
+      "acceptance_evidence": "Render/event comparison under key change and off-grid impact fixture",
+      "planned_tests": [
+        "AUDIO-independent"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending",
+      "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
+    },
+    {
+      "id": "SS-016",
+      "priority": "MUST",
+      "owner": "02D",
+      "intent": "GPT only proposes data outside critical path; semantic checks and exact-hash approval",
+      "source_intent": "00 product 5 / tools",
+      "acceptance_evidence": "Reject stale/malformed/musically invalid plans; offline approved playback; edit invalidates approval",
+      "planned_tests": [
+        "PLAN-approval"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-017",
+      "priority": "MUST",
+      "owner": "integrator",
+      "intent": "One canonical versioned contract with cross-language conformance",
+      "source_intent": "00 architecture",
+      "acceptance_evidence": "Python and TypeScript agree on positive/negative shared fixtures",
+      "planned_tests": [
+        "CONTRACT-conformance"
+      ],
+      "implementation_status": "phase1_complete",
+      "evidence_status": "handoffs/01.md and reports/phase1/"
+    },
+    {
+      "id": "SS-018",
+      "priority": "MUST",
+      "owner": "02E",
+      "intent": "Explicit acquisition/video/audio clock maps; no wall-clock joining",
+      "source_intent": "00 runtime paths",
+      "acceptance_evidence": "Fake-clock drift/seek/suspend tests plus measured output report",
+      "planned_tests": [
+        "CLOCK-mapping"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending",
+      "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
+    },
+    {
+      "id": "SS-019",
+      "priority": "MUST",
+      "owner": "02E",
+      "intent": "Reject stale duplicate late controls with visible status",
+      "source_intent": "acceptance seeds / 01",
+      "acceptance_evidence": "Reconnect/seek/duplicate fixtures log single execution or reasoned suppression",
+      "planned_tests": [
+        "CTRL-idempotence"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending",
+      "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
+    },
+    {
+      "id": "SS-020",
+      "priority": "MUST",
+      "owner": "integrator",
+      "intent": "Capabilities enforce schema preconditions permissions budgets cache and provenance",
+      "source_intent": "00 tools",
+      "acceptance_evidence": "Registry negative fixtures reject unknown capability, path, schema and budget",
+      "planned_tests": [
+        "TOOL-contract"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending",
+      "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
+    },
+    {
+      "id": "SS-021",
+      "priority": "MUST",
+      "owner": "02E",
+      "intent": "Visible real/replay/synthetic/cached/manual/keyboard provenance and graceful fallback",
+      "source_intent": "00 evidence",
+      "acceptance_evidence": "Browser failure scenarios show correct acquisition and plan source labels",
+      "planned_tests": [
+        "UI-provenance"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-022",
+      "priority": "MUST",
+      "owner": "release",
+      "intent": "Human audition separate from schema tests; no false performance claims",
+      "source_intent": "00 evidence",
+      "acceptance_evidence": "Audition record references exact assets; release audit distinguishes not-run and measured",
+      "planned_tests": [
+        "RELEASE-evidence"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-023",
+      "priority": "MUST",
+      "owner": "release",
+      "intent": "Organizer preparation rules and pre-event/event-day lineage disclosed",
+      "source_intent": "00 product 8",
+      "acceptance_evidence": "Rules decision and dated inventory reviewed before judged demo",
+      "planned_tests": [
+        "EVENT-provenance"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-024",
+      "priority": "MUST",
+      "owner": "02A",
+      "intent": "Read-only RAGTM audit and attributed adapter; no game-code import",
+      "source_intent": "00 baseline / user archive",
+      "acceptance_evidence": "Source hashes and adapter equivalence/reuse record; original unchanged",
+      "planned_tests": [
+        "BASELINE-lineage"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-025",
+      "priority": "MUST",
+      "owner": "integrator",
+      "intent": "Owned paths/worktrees, scoped shared changes, task-owned job teardown",
+      "source_intent": "00 change protocol / user instructions",
+      "acceptance_evidence": "Handoff diff/commands and zero live task-owned jobs at gate",
+      "planned_tests": [
+        "OPS-ownership"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending",
+      "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
+    },
+    {
+      "id": "SS-026",
+      "priority": "MUST",
+      "owner": "integrator",
+      "intent": "No game mental-state claims DAW scope or worn-headset multimeter",
+      "source_intent": "00 exclusions",
+      "acceptance_evidence": "Product/README/UX review and capture checklist honor exclusions",
+      "planned_tests": [
+        "SCOPE-review"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-027",
+      "priority": "SHOULD",
+      "owner": "02B",
+      "intent": "Ten scene recipes as permitted preparation test library",
+      "source_intent": "animation seeds",
+      "acceptance_evidence": "Hero bundle plus independently validated export paths for ten recipes",
+      "planned_tests": [
+        "ASSET-scenes"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-028",
+      "priority": "SHOULD",
+      "owner": "02C",
+      "intent": "Four complete forms and three brush recipes",
+      "source_intent": "composition/brush seeds",
+      "acceptance_evidence": "Symbolic forms and exact three groove IDs plus audition statuses",
+      "planned_tests": [
+        "ASSET-music"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-029",
+      "priority": "EXPERIMENTAL",
+      "owner": "03A",
+      "intent": "Triple expression and amplitude controls disabled by default",
+      "source_intent": "gesture seeds",
+      "acceptance_evidence": "Independent confusion/latency evidence and explicit activation before use",
+      "planned_tests": [
+        "GEST-experiment"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-030",
+      "priority": "MUST",
+      "owner": "02E",
+      "intent": "Core authoring/performance/export works with keyboard and labelled replay; Muse optional; no directional thought-control UI",
+      "source_intent": "User six requirements, item 3",
+      "acceptance_evidence": "Offline keyboard/replay end-to-end demo and export with no Muse access",
+      "planned_tests": [
+        "CORE-keyboard-replay"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    },
+    {
+      "id": "SS-031",
+      "priority": "MUST",
+      "owner": "02C",
+      "intent": "Original blues/ragtime-derived swing; explicit named creative traits, restrained bossa accompaniment and selective variation",
+      "source_intent": "User six requirements, item 2",
+      "acceptance_evidence": "Original symbolic forms with documented traits plus independent human audition against VISION",
+      "planned_tests": [
+        "MUSIC-creative-identity"
+      ],
+      "implementation_status": "not_started",
+      "evidence_status": "pending"
+    }
+  ]
+}

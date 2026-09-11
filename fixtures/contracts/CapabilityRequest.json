@@ -1,0 +1,87 @@
+{
+  "kind": "CapabilityRequest",
+  "schema_version": "0.1",
+  "id": "capabilityrequest-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "capability_id": "scene.export",
+  "input": {
+    "kind": "SceneManifest",
+    "schema_version": "0.1",
+    "id": "scenemanifest-fixture",
+    "provenance": {
+      "source_mode": "synthetic",
+      "creator": "phase1-fixture",
+      "tool_version": "0.1",
+      "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input_hashes": [],
+      "seed": 42
+    },
+    "source_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "render_hash": null,
+    "generator_version": "fixture-only",
+    "fps": 30,
+    "fps_base": 1,
+    "start_frame": 1,
+    "duration_s": 2,
+    "units": "metres",
+    "up_axis": "Z",
+    "handedness": "right",
+    "quaternion_order": "xyzw",
+    "matrix_layout": "row_major_column_vectors",
+    "camera": {
+      "id": "camera",
+      "transform": {
+        "position_m": [
+          0,
+          0,
+          0
+        ],
+        "quaternion_xyzw": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "matrix_row_major": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "objects": [
+      {
+        "object_id": "a",
+        "sonic_identity_id": "voice-a"
+      },
+      {
+        "object_id": "b",
+        "sonic_identity_id": "voice-b"
+      }
+    ]
+  },
+  "output_path": "artifacts/blender/fixture.json",
+  "timeout_s": 10,
+  "max_cost_usd": 0,
+  "max_concurrency": 1
+}

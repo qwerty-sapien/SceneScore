@@ -1,0 +1,4 @@
+
+> scenescore-harness@0.1.0 generate
+> node tools/generate-types.mjs
+

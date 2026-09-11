@@ -1,0 +1,54 @@
+{
+  "01": {
+    "owner": "integrator",
+    "dependencies": [
+      "00 documentation gate"
+    ],
+    "owned": [
+      "contracts/",
+      "fixtures/",
+      "src/",
+      "services/local/",
+      "root setup",
+      "tests/",
+      "tools/",
+      "runtime skeletons"
+    ],
+    "handoff": "handoffs/01.md"
+  },
+  "02A": {
+    "owner": "02A",
+    "dependencies": [
+      "01 frozen 0.1"
+    ],
+    "handoff": "handoffs/02A.md"
+  },
+  "02B": {
+    "owner": "02B",
+    "dependencies": [
+      "01 frozen 0.1"
+    ],
+    "handoff": "handoffs/02B.md"
+  },
+  "02C": {
+    "owner": "02C",
+    "dependencies": [
+      "01 frozen 0.1"
+    ],
+    "handoff": "handoffs/02C.md"
+  },
+  "02D": {
+    "owner": "02D",
+    "dependencies": [
+      "01 frozen 0.1"
+    ],
+    "handoff": "handoffs/02D.md"
+  },
+  "02E": {
+    "owner": "02E",
+    "dependencies": [
+      "01 frozen 0.1"
+    ],
+    "handoff": "handoffs/02E.md"
+  }
+}

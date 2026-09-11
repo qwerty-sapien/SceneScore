@@ -1,0 +1,48 @@
+{
+  "kind": "ControlAction",
+  "schema_version": "0.1",
+  "id": "controlaction-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "gesture_id": "gestureevent-fixture",
+  "sequence_id": "sequence-1",
+  "gesture_count": 2,
+  "profile": "double_modulate_mvp",
+  "action": "request_modulation",
+  "request": {
+    "seconds": 2,
+    "clock": "device",
+    "epoch": "fixture-1"
+  },
+  "expires": {
+    "seconds": 10,
+    "clock": "device",
+    "epoch": "fixture-1"
+  },
+  "boundary": "next_approved_bar_or_phrase",
+  "signed_semitones": 2,
+  "scene_policy_id": "z-policy",
+  "approved_plan_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "status": "queued",
+  "reason": null,
+  "quality": {
+    "state": "good",
+    "reason": null
+  },
+  "before": {
+    "master_gain_db": -6,
+    "articulation": "legato",
+    "expression_preset": "neutral"
+  },
+  "after": {
+    "master_gain_db": -3,
+    "articulation": "legato",
+    "expression_preset": "neutral"
+  }
+}

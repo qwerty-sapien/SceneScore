@@ -1,0 +1,95 @@
+PYTHONPATH=src .venv/bin/python -m scenescore.cli doctor
+{
+  "status": "passed",
+  "scope": "Phase 1 software prerequisites only",
+  "checks": [
+    {
+      "name": "python",
+      "status": "available",
+      "evidence": "3.13.7"
+    },
+    {
+      "name": "python_build_platform",
+      "status": "observed_runtime_metadata",
+      "evidence": "macosx-10.13-universal2"
+    },
+    {
+      "name": "jsonschema",
+      "status": "available",
+      "evidence": "4.26.0"
+    },
+    {
+      "name": "fastapi",
+      "status": "available",
+      "evidence": "0.141.1"
+    },
+    {
+      "name": "uvicorn",
+      "status": "available",
+      "evidence": "0.52.4"
+    },
+    {
+      "name": "pydantic",
+      "status": "available",
+      "evidence": "2.13.5"
+    },
+    {
+      "name": "node",
+      "status": "available",
+      "evidence": "v24.14.0"
+    },
+    {
+      "name": "npm",
+      "status": "available",
+      "evidence": "11.9.0"
+    },
+    {
+      "name": "uv",
+      "status": "available",
+      "evidence": "uv 0.11.28 (Homebrew 2026-07-07 aarch64-apple-darwin)"
+    },
+    {
+      "name": "host_identity",
+      "status": "captured_input",
+      "evidence": {
+        "profile_id": "local-macos-arm64-control",
+        "architecture": "arm64"
+      }
+    },
+    {
+      "name": "ragtm_source",
+      "status": "available",
+      "evidence": "source presence only; never executed"
+    },
+    {
+      "name": "blender",
+      "status": "unverified",
+      "evidence": "BLENDER_BIN and standard app path unavailable; rendering not required for Phase 1"
+    },
+    {
+      "name": "blender_python",
+      "status": "unverified",
+      "evidence": "No Blender Python was launched"
+    },
+    {
+      "name": "muse",
+      "status": "unverified",
+      "evidence": "Generation, channels, units, rate and transport require an actual session"
+    },
+    {
+      "name": "bluetooth_permission",
+      "status": "unverified",
+      "evidence": "No permission prompt or capture performed"
+    },
+    {
+      "name": "browser_audio",
+      "status": "unverified",
+      "evidence": "Browser must unlock AudioContext by user gesture; output has not been tested"
+    },
+    {
+      "name": "model_api",
+      "status": "unverified",
+      "evidence": "key/model pair not configured; no model ID invented"
+    }
+  ]
+}

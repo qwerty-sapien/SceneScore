@@ -1,0 +1,242 @@
+[
+  {
+    "path": "fixtures/contracts/AcquisitionMetadata.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/EEGChunk.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/BlinkCandidate.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/GestureEvent.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/ControlAction.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/SceneManifest.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/ObjectState.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/InteractionEvent.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/CompositionSpec.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/BrushGroove.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/ScoreEvent.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/AudioAssetManifest.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/ArrangementPlan.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/Approval.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/ClockMapping.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/RunManifest.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/EvaluationReport.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/CapabilityRequest.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/near-miss.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/separating-pair.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/packet-loss.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/no-event.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/bad-quality.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/gesture-1.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/gesture-3.json",
+    "valid": true
+  },
+  {
+    "path": "fixtures/contracts/bad-version.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/bad-units.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/extra-field.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/self-pair.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/fake-impact.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/contact-near-miss.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/bad-pair-id.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/stale-times.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/mismatched-channels.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/wrong-receipt-clock.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/time-reversal.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/mixed-epoch.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/count-mismatch.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/double-gain-change.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/single-action.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/triple-default-action.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/bad-quality-action.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/missing-approval.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/duplicate-object.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/inverted-bounds.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/invalid-quaternion.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/bad-hash.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/pitched-brush.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/overflow-note.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/tempo-reversal.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/unpitched-note.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/quantized-foley.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/double-swing.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/register-inversion.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/bad-transition.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/leaky-split.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/fake-statistical-support.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/excess-armed-exposure.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/invalid-clock-range.json",
+    "valid": false
+  },
+  {
+    "path": "fixtures/contracts/non-positive-timeout.json",
+    "valid": false
+  }
+]

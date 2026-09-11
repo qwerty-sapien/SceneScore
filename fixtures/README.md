@@ -1,0 +1,1 @@
+All files here are synthetic software conformance examples. No recording, render, participant result, human approval or listening judgment is represented. Metadata-only audio and approval fixtures deliberately contain no actual asset or real approval.

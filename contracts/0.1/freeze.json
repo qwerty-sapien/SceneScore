@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "policy": "Integrator-reviewed amendments require version decision, fixture/type regeneration and updated freeze hashes",
+  "sha256": {
+    "contracts/0.1/schema.json": "55049ac4a18770c58cc8ecef0f188e77ef9456d9dece7dab1b13ed49f3e93784",
+    "contracts/0.1/catalog.json": "c98f276a22b6ea0d96c63920b033c0a1558bdfe7be248e437ee07982e0f6ed62",
+    "contracts/provider/arrangement-plan.schema.json": "d8866cd81e796663da4dcaf70ebe3c66a8e52a7d975757c82403f91f59b18c8d",
+    "packages/contracts/generated.d.ts": "0a210314abc1ccd9020e0c83d1ea86e3341962a49cf47e3e21e0650e0f8b3225",
+    "fixtures/manifest.json": "6be5afd060f6fc6b91aae52a73845c364504c1a0a0e4ddf371a36bcb9e2dc346"
+  }
+}

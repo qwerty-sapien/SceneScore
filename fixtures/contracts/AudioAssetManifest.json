@@ -1,0 +1,25 @@
+{
+  "kind": "AudioAssetManifest",
+  "schema_version": "0.1",
+  "id": "audioassetmanifest-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "asset_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "stem_id": "fixture-stem-no-audio",
+  "sample_rate_hz": 48000,
+  "channels": 2,
+  "duration_s": 2,
+  "timeline_origin_s": 0,
+  "source": "synthetic metadata only; no media exists",
+  "license": "fixture-original",
+  "renderer_version": "not-rendered",
+  "pitched": true,
+  "sample_peak": null,
+  "measurement_status": "not_run"
+}

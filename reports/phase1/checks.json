@@ -1,0 +1,64 @@
+[
+  {
+    "command": [
+      "npm",
+      "run",
+      "generate"
+    ],
+    "exit_code": 0,
+    "evidence": "reports/phase1/check-1.log",
+    "pid": 71502,
+    "exited": true
+  },
+  {
+    "command": [
+      "make",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "evidence": "reports/phase1/check-2.log",
+    "pid": 71519,
+    "exited": true
+  },
+  {
+    "command": [
+      "make",
+      "test"
+    ],
+    "exit_code": 0,
+    "evidence": "reports/phase1/check-3.log",
+    "pid": 71524,
+    "exited": true
+  },
+  {
+    "command": [
+      "make",
+      "check-locks"
+    ],
+    "exit_code": 0,
+    "evidence": "reports/phase1/check-4.log",
+    "pid": 71581,
+    "exited": true
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "tools/verify_sources.py"
+    ],
+    "exit_code": 0,
+    "evidence": "reports/phase1/check-5.log",
+    "pid": 71614,
+    "exited": true
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-c",
+      "import pydantic_core, jsonschema, fastapi; print(\"Required runtime imports passed\")"
+    ],
+    "exit_code": 0,
+    "evidence": "reports/phase1/check-6.log",
+    "pid": 71618,
+    "exited": true
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "ragtm_source_files_unchanged": 802,
+  "ragtm_executed": false,
+  "planning_check": "make test plus tools/verify_sources.py; 19 supplied hashes",
+  "task_owned_persistent_jobs_started": 0
+}

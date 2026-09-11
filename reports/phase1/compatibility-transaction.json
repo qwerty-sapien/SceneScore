@@ -1,0 +1,24 @@
+{
+  "authorization": "User: can we proceed with the next phase; Phase 1 explicitly includes minimal dependencies/locks and executable harness",
+  "target_interpreter": "/usr/local/bin/python3 3.13.7",
+  "node": "24.14.0",
+  "npm": "11.9.0",
+  "uv": "0.11.28",
+  "root_cause": "Greenfield project had no environment, manifests or locks",
+  "transaction": "Add only contract/service/test and TypeScript/React shell dependencies declared in pyproject.toml/package.json; no runtime installation or model/media stack",
+  "provider_policy": "Registry downloads for minimal dependencies permitted by Phase 1; uv --no-managed-python --no-python-downloads; npm lifecycle scripts disabled",
+  "before": "No application environment or lock existed in this root; Phase 0 source preserved",
+  "rollback": "Remove only task-created .venv/node_modules/artifacts and revert the Phase 1 commit; do not alter planning pack or RAGTM",
+  "success_gates": [
+    "locked resolver",
+    "uv pip check",
+    "npm ls",
+    "Python imports including pydantic compiled core",
+    "ruff",
+    "Python/TypeScript conformance",
+    "TypeScript generation/typecheck",
+    "Vite shell build",
+    "clean-checkout reinstall/test"
+  ],
+  "notes": "Host identity consumed from immutable captured profile; exact-runtime discovery was scoped to application interpreter selection, not Window production discovery"
+}

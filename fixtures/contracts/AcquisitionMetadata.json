@@ -1,0 +1,32 @@
+{
+  "kind": "AcquisitionMetadata",
+  "schema_version": "0.1",
+  "id": "acquisitionmetadata-fixture",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "phase1-fixture",
+    "tool_version": "0.1",
+    "config_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "input_hashes": [],
+    "seed": 42
+  },
+  "session_id": "synthetic-session",
+  "device_model": "synthetic-no-headset",
+  "transport": "fixture",
+  "sample_rate_hz": 256,
+  "channels": [
+    {
+      "name": "AF7",
+      "unit": "uV",
+      "enabled": true
+    },
+    {
+      "name": "AF8",
+      "unit": "uV",
+      "enabled": true
+    }
+  ],
+  "clock_epoch": "fixture-1",
+  "hardware_verified": false,
+  "raw_storage": "local_only"
+}
