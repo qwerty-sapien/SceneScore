@@ -1,0 +1,99 @@
+{
+  "catalog_version": 1,
+  "events": [
+    {
+      "duration_ticks": 1920,
+      "hand": "left",
+      "sample_id": null,
+      "start_tick": 0,
+      "swingable": false,
+      "technique": "sweep",
+      "velocity": 40
+    },
+    {
+      "duration_ticks": 1920,
+      "hand": "left",
+      "sample_id": null,
+      "start_tick": 1920,
+      "swingable": false,
+      "technique": "sweep",
+      "velocity": 43
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 0,
+      "swingable": false,
+      "technique": "tap",
+      "velocity": 43
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 960,
+      "swingable": false,
+      "technique": "accented_swish",
+      "velocity": 62
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 1440,
+      "swingable": true,
+      "technique": "tap",
+      "velocity": 39
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 1920,
+      "swingable": false,
+      "technique": "tap",
+      "velocity": 45
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 2880,
+      "swingable": false,
+      "technique": "accented_swish",
+      "velocity": 64
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 3360,
+      "swingable": true,
+      "technique": "tap",
+      "velocity": 38
+    }
+  ],
+  "id": "brush_swing_light_v1",
+  "kind": "BrushGroove",
+  "length_ticks": 3840,
+  "max_humanize_ms": 6,
+  "max_velocity_delta": 3,
+  "meter": [
+    4,
+    4
+  ],
+  "pitched": false,
+  "ppq": 960,
+  "provenance": {
+    "config_hash": "149bb8c2649f55d33dc832e9a3bc84c3f96e140eb7d3a56ab983194e7298b0a5",
+    "creator": "SceneScore original draft authoring",
+    "input_hashes": [
+      "5ed90499e3caa9422e59efd49b767fc2c1baf756f03b6558591083c672e50ba1"
+    ],
+    "seed": 13007,
+    "source_mode": "manual_plan",
+    "tool_version": "music-0.2.0"
+  },
+  "schema_version": "0.1"
+}

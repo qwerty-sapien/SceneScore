@@ -1,0 +1,464 @@
+{
+  "audition_status": "AUDITION_PENDING",
+  "catalog_version": 1,
+  "creative_traits": [
+    "Original blues/ragtime-derived phrasing; no borrowed tune or recording",
+    "Brubeck: selective displaced accents while retaining the written meter",
+    "Evans: spacious three-note voicings with economical inner-voice movement",
+    "Mingus: blues call/response and contrasting ensemble density",
+    "Carmichael: clear singable original melodic arcs",
+    "Monk: purposeful rests, angular answers and selective chromatic approaches",
+    "Gilberto: restrained steady bossa-inflected accompaniment color",
+    "Lyra: lyrical answers over gently syncopated accompaniment"
+  ],
+  "groove_id": "brush_straight_rag_v1",
+  "groove_version": 1,
+  "harmony": [
+    {
+      "duration_ticks": 3840,
+      "intervals_semitones": [
+        0,
+        4,
+        7,
+        9
+      ],
+      "quality": "6",
+      "root_pc": 0,
+      "start_tick": 0
+    },
+    {
+      "duration_ticks": 3840,
+      "intervals_semitones": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "quality": "dim7",
+      "root_pc": 1,
+      "start_tick": 3840
+    },
+    {
+      "duration_ticks": 3840,
+      "intervals_semitones": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "quality": "m7",
+      "root_pc": 2,
+      "start_tick": 7680
+    },
+    {
+      "duration_ticks": 3840,
+      "intervals_semitones": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "quality": "7",
+      "root_pc": 7,
+      "start_tick": 11520
+    },
+    {
+      "duration_ticks": 3840,
+      "intervals_semitones": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "quality": "m7",
+      "root_pc": 9,
+      "start_tick": 15360
+    },
+    {
+      "duration_ticks": 3840,
+      "intervals_semitones": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "quality": "7",
+      "root_pc": 2,
+      "start_tick": 19200
+    },
+    {
+      "duration_ticks": 1920,
+      "intervals_semitones": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "quality": "m7",
+      "root_pc": 2,
+      "start_tick": 23040
+    },
+    {
+      "duration_ticks": 1920,
+      "intervals_semitones": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "quality": "7",
+      "root_pc": 7,
+      "start_tick": 24960
+    },
+    {
+      "duration_ticks": 1920,
+      "intervals_semitones": [
+        0,
+        4,
+        7,
+        9
+      ],
+      "quality": "6",
+      "root_pc": 0,
+      "start_tick": 26880
+    },
+    {
+      "duration_ticks": 1920,
+      "intervals_semitones": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "quality": "7",
+      "root_pc": 7,
+      "start_tick": 28800
+    }
+  ],
+  "id": "corner_pocket_rag_v1",
+  "key_map": [
+    {
+      "mode": "major",
+      "tick": 0,
+      "tonic_pc": 0
+    }
+  ],
+  "kind": "CompositionSpec",
+  "length_ticks": 30720,
+  "meter": [
+    4,
+    4
+  ],
+  "notes": [
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 76,
+      "start_tick": 0,
+      "swingable": true,
+      "velocity": 78
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 79,
+      "start_tick": 480,
+      "swingable": true,
+      "velocity": 82
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 76,
+      "start_tick": 1440,
+      "swingable": true,
+      "velocity": 75
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 74,
+      "start_tick": 2400,
+      "swingable": true,
+      "velocity": 74
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 72,
+      "start_tick": 2880,
+      "swingable": true,
+      "velocity": 76
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 73,
+      "start_tick": 3840,
+      "swingable": true,
+      "velocity": 70
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 76,
+      "start_tick": 4320,
+      "swingable": true,
+      "velocity": 78
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 79,
+      "start_tick": 5280,
+      "swingable": true,
+      "velocity": 82
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 82,
+      "start_tick": 6240,
+      "swingable": true,
+      "velocity": 78
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 79,
+      "start_tick": 6720,
+      "swingable": true,
+      "velocity": 70
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 77,
+      "start_tick": 7680,
+      "swingable": true,
+      "velocity": 73
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 74,
+      "start_tick": 8640,
+      "swingable": true,
+      "velocity": 70
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 72,
+      "start_tick": 9120,
+      "swingable": true,
+      "velocity": 74
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 69,
+      "start_tick": 10560,
+      "swingable": true,
+      "velocity": 67
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 71,
+      "start_tick": 12000,
+      "swingable": true,
+      "velocity": 74
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 74,
+      "start_tick": 12480,
+      "swingable": true,
+      "velocity": 78
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 68,
+      "start_tick": 13440,
+      "swingable": true,
+      "velocity": 72
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 67,
+      "start_tick": 14400,
+      "swingable": true,
+      "velocity": 65
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 76,
+      "start_tick": 15360,
+      "swingable": true,
+      "velocity": 73
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 79,
+      "start_tick": 15840,
+      "swingable": true,
+      "velocity": 77
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 76,
+      "start_tick": 16800,
+      "swingable": true,
+      "velocity": 70
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 74,
+      "start_tick": 17760,
+      "swingable": true,
+      "velocity": 69
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 72,
+      "start_tick": 18240,
+      "swingable": true,
+      "velocity": 71
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 73,
+      "start_tick": 19200,
+      "swingable": true,
+      "velocity": 65
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 76,
+      "start_tick": 19680,
+      "swingable": true,
+      "velocity": 73
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 79,
+      "start_tick": 20640,
+      "swingable": true,
+      "velocity": 77
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 82,
+      "start_tick": 21600,
+      "swingable": true,
+      "velocity": 73
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 79,
+      "start_tick": 22080,
+      "swingable": true,
+      "velocity": 65
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 77,
+      "start_tick": 23040,
+      "swingable": true,
+      "velocity": 69
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 74,
+      "start_tick": 24000,
+      "swingable": true,
+      "velocity": 66
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 72,
+      "start_tick": 24480,
+      "swingable": true,
+      "velocity": 70
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 69,
+      "start_tick": 25920,
+      "swingable": true,
+      "velocity": 63
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 71,
+      "start_tick": 27360,
+      "swingable": true,
+      "velocity": 70
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 74,
+      "start_tick": 27840,
+      "swingable": true,
+      "velocity": 74
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 480,
+      "midi_pitch": 68,
+      "start_tick": 28800,
+      "swingable": true,
+      "velocity": 68
+    },
+    {
+      "articulation": "light_detached",
+      "duration_ticks": 960,
+      "midi_pitch": 67,
+      "start_tick": 29760,
+      "swingable": true,
+      "velocity": 61
+    }
+  ],
+  "pitch_convention": "C4=MIDI60",
+  "ppq": 960,
+  "provenance": {
+    "config_hash": "7463dae29e63fe280b59f4bc7fe06557cec90e59e6a3608f6e906563fe0b3b00",
+    "creator": "SceneScore original draft authoring",
+    "input_hashes": [
+      "9f8279834e1e2f952b3fb30bac82ec4f42beef313f59f0d28c559e7f4fc0163c"
+    ],
+    "seed": 104729,
+    "source_mode": "manual_plan",
+    "tool_version": "music-0.2.0"
+  },
+  "schema_version": "0.1",
+  "swing_ratio": 0.5,
+  "tempo_map": [
+    {
+      "bpm": 120,
+      "tick": 0
+    }
+  ],
+  "timing": "unswung_quarter_note_ticks",
+  "title": "Corner Pocket Rag"
+}

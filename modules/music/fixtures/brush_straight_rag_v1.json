@@ -1,0 +1,81 @@
+{
+  "catalog_version": 1,
+  "events": [
+    {
+      "duration_ticks": 1920,
+      "hand": "left",
+      "sample_id": null,
+      "start_tick": 0,
+      "swingable": false,
+      "technique": "sweep",
+      "velocity": 32
+    },
+    {
+      "duration_ticks": 1920,
+      "hand": "left",
+      "sample_id": null,
+      "start_tick": 1920,
+      "swingable": false,
+      "technique": "sweep",
+      "velocity": 34
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 0,
+      "swingable": false,
+      "technique": "tap",
+      "velocity": 48
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "foot",
+      "sample_id": null,
+      "start_tick": 960,
+      "swingable": false,
+      "technique": "chick",
+      "velocity": 46
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 1920,
+      "swingable": false,
+      "technique": "tap",
+      "velocity": 51
+    },
+    {
+      "duration_ticks": 120,
+      "hand": "foot",
+      "sample_id": null,
+      "start_tick": 2880,
+      "swingable": false,
+      "technique": "chick",
+      "velocity": 48
+    }
+  ],
+  "id": "brush_straight_rag_v1",
+  "kind": "BrushGroove",
+  "length_ticks": 3840,
+  "max_humanize_ms": 6,
+  "max_velocity_delta": 3,
+  "meter": [
+    4,
+    4
+  ],
+  "pitched": false,
+  "ppq": 960,
+  "provenance": {
+    "config_hash": "57c6e18f2208a97f28d973ccefba5f4f01436f3b979d8ce5a05685da8e039263",
+    "creator": "SceneScore original draft authoring",
+    "input_hashes": [
+      "5ed90499e3caa9422e59efd49b767fc2c1baf756f03b6558591083c672e50ba1"
+    ],
+    "seed": 13007,
+    "source_mode": "manual_plan",
+    "tool_version": "music-0.2.0"
+  },
+  "schema_version": "0.1"
+}

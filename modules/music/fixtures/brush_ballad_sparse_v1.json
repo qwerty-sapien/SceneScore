@@ -1,0 +1,54 @@
+{
+  "catalog_version": 1,
+  "events": [
+    {
+      "duration_ticks": 3840,
+      "hand": "left",
+      "sample_id": null,
+      "start_tick": 0,
+      "swingable": false,
+      "technique": "sweep",
+      "velocity": 35
+    },
+    {
+      "duration_ticks": 240,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 960,
+      "swingable": false,
+      "technique": "tap",
+      "velocity": 38
+    },
+    {
+      "duration_ticks": 240,
+      "hand": "right",
+      "sample_id": null,
+      "start_tick": 2880,
+      "swingable": false,
+      "technique": "accented_swish",
+      "velocity": 42
+    }
+  ],
+  "id": "brush_ballad_sparse_v1",
+  "kind": "BrushGroove",
+  "length_ticks": 3840,
+  "max_humanize_ms": 6,
+  "max_velocity_delta": 3,
+  "meter": [
+    4,
+    4
+  ],
+  "pitched": false,
+  "ppq": 960,
+  "provenance": {
+    "config_hash": "19e2239aa9de0a6cc3fc81a16a30a15e2a6815995d7af16956e0d7e24b54ac6a",
+    "creator": "SceneScore original draft authoring",
+    "input_hashes": [
+      "5ed90499e3caa9422e59efd49b767fc2c1baf756f03b6558591083c672e50ba1"
+    ],
+    "seed": 13007,
+    "source_mode": "manual_plan",
+    "tool_version": "music-0.2.0"
+  },
+  "schema_version": "0.1"
+}

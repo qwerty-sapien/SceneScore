@@ -1,0 +1,12 @@
+{
+  "channels": 1,
+  "clipped_samples": 0,
+  "duration_s": 0.85,
+  "first_sample": 0,
+  "frames": 6800,
+  "last_sample": 0,
+  "rms": 0.009236332977678187,
+  "sample_peak": 0.029693603515625,
+  "sample_rate_hz": 8000,
+  "sha256": "f8be6e00ab9de18b7527d2da3f55e9a8b76acdf92c51638b0cb5944acf9a4b8b"
+}
