@@ -1,0 +1,58 @@
+{
+  "kind": "EvaluationReport",
+  "schema_version": "0.1",
+  "id": "phase1-software-only",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "Codex Phase 1 harness verification",
+    "tool_version": "0.1",
+    "config_hash": "06a3825aea30a22df965655a987651e0e8c3363fca7bbb5a907e0200f20faa84",
+    "input_hashes": [
+      "b36a97992bfe920b7716ea958797d8bf18ee4444a4afb2bbc51f4855130c4eb9",
+      "1cfe5a1ebf41d36928267a8b2f28e290ec2905fd790add8831d5fd59eb4f83b1"
+    ],
+    "seed": null
+  },
+  "run_id": "phase1-clean-checkout",
+  "data_mode": "synthetic",
+  "release_status": "PIPELINE_TESTED_ONLY",
+  "metrics": {
+    "tp": null,
+    "fn": null,
+    "fp": null,
+    "elapsed_hours": 0,
+    "armed_hours": 0,
+    "abstention_seconds": 0,
+    "refractory_seconds": 0
+  },
+  "targets_status": "targets_not_measurements",
+  "interval_method": null,
+  "assumptions": [
+    "No real gesture opportunities or exposure were evaluated; 0 exposure is not zero false-activation evidence.",
+    "Product release remains NOT_READY; software-only conformance passed."
+  ],
+  "results": [
+    {
+      "test_id": "python-harness-82",
+      "status": "passed",
+      "evidence_paths": [
+        "reports/phase1/clean-test.log"
+      ],
+      "reason": null
+    },
+    {
+      "test_id": "typescript-harness-65",
+      "status": "passed",
+      "evidence_paths": [
+        "reports/phase1/clean-test.log"
+      ],
+      "reason": null
+    },
+    {
+      "test_id": "genuine-device-render-audition-api",
+      "status": "not_run",
+      "evidence_paths": [],
+      "reason": "Out of Phase 1 scope or access unverified"
+    }
+  ]
+}

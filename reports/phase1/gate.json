@@ -1,0 +1,21 @@
+{
+  "phase": "1",
+  "gate": "passed",
+  "software_release": "PIPELINE_TESTED_ONLY",
+  "product_release": "NOT_READY",
+  "tested_commit": "c6cbfddb12a0088576627156cfc4e28e11b084d6",
+  "freeze_tag": "contracts-v0.1",
+  "python_tests": 82,
+  "typescript_tests": 65,
+  "shared_fixture_cases": 60,
+  "contract_kinds": 18,
+  "skill_validators_passed": 4,
+  "clean_install": true,
+  "doctor": "software prerequisites passed; external tracks explicitly unverified",
+  "source_integrity": "19 pack checksums; 802 RAGTM source files unchanged",
+  "remote_ci": "not_run",
+  "persistent_jobs_started": 0,
+  "live_task_owned_jobs": 0,
+  "temporary_checkout_removed": true,
+  "phase2_started": false
+}

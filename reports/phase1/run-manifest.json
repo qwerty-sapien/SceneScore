@@ -1,0 +1,123 @@
+{
+  "kind": "RunManifest",
+  "schema_version": "0.1",
+  "id": "phase1-clean-checkout",
+  "provenance": {
+    "source_mode": "synthetic",
+    "creator": "Codex Phase 1 harness verification",
+    "tool_version": "0.1",
+    "config_hash": "06a3825aea30a22df965655a987651e0e8c3363fca7bbb5a907e0200f20faa84",
+    "input_hashes": [
+      "b36a97992bfe920b7716ea958797d8bf18ee4444a4afb2bbc51f4855130c4eb9",
+      "1cfe5a1ebf41d36928267a8b2f28e290ec2905fd790add8831d5fd59eb4f83b1"
+    ],
+    "seed": null
+  },
+  "code_hash": "409ab78ba3f090773c4b9e1fcb69d1ba37cb739191ca3edb486c93d5f619fe5f",
+  "config_hash": "06a3825aea30a22df965655a987651e0e8c3363fca7bbb5a907e0200f20faa84",
+  "data_hashes": [
+    "903e4eba3181d82e24621ec46275732c3f290016a45cb65fb4e5d7b600bd8e28",
+    "f7265f8bc5d851cf0a8b33ca4e7df26f88b85ac27e4752a1f7e382c7bd82dabd",
+    "70b507e9cceeddade971bfc2fa5886cb1b2b534301f5de7d75a9053976660426",
+    "279378b238eb3b391dcf41325d29cb855a3b3d9fa5fb328edff8e8e0d2ef29b8",
+    "9a590c0ddc495a64139afbef932e98e6c9b1f10d35fc9ec5829c4b2f6e6a041c",
+    "76a893cbe29d9b7907f779fb06fac6a6242c3d3a1d404cd0d32f997b13ea55e1",
+    "d01be975b637cbf4a47a410aaa0e3e2444a1c87df252c02910a27720fb5e4e5c",
+    "f2318c1d0db9e2b06119f9321e3c668d14d160b3f25d98e8eb34b5a4826dd241",
+    "a329b44cd1f99e2f6e871471bae0dfb2a9d974232a1ce5c711a2252afff16eca",
+    "e4ebdab993ff6fabb0f911e462b7deb67cac4e7dfc442a99a8ed8ce42fa3738d",
+    "752bf430193986df8b52501ce4624efa3045d3565069ba7400bbd7e4444cc139",
+    "473acb422528170d3ecbc111c81a7ffe903545a36ef483b61efa60c924f7bc46",
+    "ceae44a20c2e398e68cadbfdce4b309b8f43d929bb1e0c2c37bb4d747734060f",
+    "61df9aade04f14dc79c0220e96c5e0a905854c1ecb924c4eee3c86fe3a24c395",
+    "8bd05fda6329ccba690f073bf7417edcaab2a9b5235a164c87492ef70bf1ceb9",
+    "5d629b44e333e87696b6c4a3eec119ec952b8b53024e991bfe00ad77f7d794bf",
+    "65dccc7a2fe6f870b8d6f254aedf9331393155b36e16f894226b5620c8332ac2",
+    "bf97e31c0f2a7ac64aa859352f20f12153bf97b6db1961c30dbf4135c44e64ea",
+    "025a93a757b919c9ec054aae543232d25e4ebc4583aa92a78912a621147876d4",
+    "8698716d91e2fef36b14f233836d3d09084c74e6fc84c41fb9f4d750cfb0da2f",
+    "94e7bf79507eb38caa586fce659cc2e51c182c132bb6831df24a8ea1391f1d5a",
+    "98d620e8812596a6f14bdec7174d6421f3be4c8d0c5db43ad944a27b7a28b43d",
+    "4b197a6f57cc9f1b4928e20608ed44f756c8432ff4c596a77903f7489df3f6db",
+    "bcdfb3ab38d12033dca2870cb4124f1333413fdc347753ab1d605204067b27db",
+    "e7cc41ffe0e278c9dde2910f27596962c69a8d39606d5e29338fc579a021529a",
+    "8414f7b8f8e4e41764ab505f00fe9f375277a9bd4bf892007ce9f36307a74f7e",
+    "25e64f4577bb19d660e9bdbfae6e1110ac08c9266429f5dfa74b1725cf2a0691",
+    "d1569786ca39cf55684634ff9051fac204a5517405ae0e23630f07b53aaf09c8",
+    "f7f34aae19716bd8fa63218ea08a7195503caf1502b423efffe7fe722bf0b9a2",
+    "f01001d258696fd33062b5d0ce2e46a47d9fca70d1281f29abd42c8cceac8730",
+    "38333196fa8e674618ef1fa515631123299eee71414aa003efc03530464941de",
+    "96e2b71a6f06ebe74b58e2cb56960db8a685364aa98ee10ad4d25efacc92c60d",
+    "d9bbed7367e974f3420b29430ef4a0406f275211aeb7ccf7f08a658206ac4e04",
+    "6cdb63a545282de35636d43646e8bf5b1d5f0db23aa5fd92131bc598678f7382",
+    "d049a4a89605beeb41e07f10426403e0057e72bc108ffcb700e637f9ed1b03d3",
+    "21e9680a5a6d72d330654cb8202e09984a1f5583d9df13407abf4e9322cb1c06",
+    "9139db7f42c75c69952cda0dd639977f68646f6eca0573fca3ee1fccfd2381ad",
+    "c72ebb50b69c32b277abe031da12973181ae9568e9d76f1556ee9ba4f1e06a3f",
+    "2c1f5ef34b79a0d53d37ec17c4303e93fe9213fa1c77840f16ebd6b441468eea",
+    "0526ed45a04813b898012778575e347d59509ffd55ab06d7c7d932353abbe444",
+    "bcb4a9cbc39b5b1591654371a84f5d78cbac7ed7eedea0eb1154fb9ce476e6c6",
+    "c0d82252dd390647cb5f7eb74462c87a196bbc5791c56a7f2069b161bde65fe3",
+    "bd053c0405eedd0e47893a91617f70928c1ba4b07a68365ae88068cb6d32e910",
+    "b9511dd2ae206741fc18b367da4da1415fac180ce586e6cf456edcb9ee1e1adf",
+    "d8aa66c11b0d2affd165aed0499d14f693fc3d81b26e3dc5052ff6277a738056",
+    "97ec50745defec134b03c31160a8b14d4359c8a1d97b587c56fe6ce553b670ce",
+    "fad14336375e4ef2b1a3eca811bd09dbfe82338b40e29aa94807884289463d67",
+    "f1b896f73995d4e794af0b5651227ebdab05d3f73630d7fd083039bdec64ffe3",
+    "8b923149a07c6c2e6a76329b4fefd40a164e882fe06f88a5d90eb65a2e85ce11",
+    "9736d0c5f027bba5a777ff392b3173e7d2e4f4effc41567981b15584542baa54",
+    "471850d8b01859a2706c66971dc702223d3cd6ccbfa515ae148ab3445e39aa22",
+    "556dac840732c826273afcf0d748ab2783e9788d1b73fc84c693cf1df4cd4cc9",
+    "51b368de9704c1e3feef2ab64efd5722d1bd9480672226d12bce3bf80df91987",
+    "7fa4774b6d6e79935441eefd96cbc5623618fc6dd038de4aee60ead6441abd97",
+    "1c25506d91672c41fdbbf21806f4951b5899d1af8a96cec72d01abeb228e3a9d",
+    "bcdf1e36f536e8e8d70a211e313e6ea8dab3404c5ce822aa26f478d3e570032a",
+    "0170240aeb8360953f36086b8a335beb11043b51ee48fe4acbc619c990b43b8a",
+    "208042e82f43edb1339651e253a5584369f102f967409874a97dc8857483c8d5",
+    "4dc0f9cd1fb4c083c3c3b4b826ff4b83347ff855fa3c45bddf26e10c31b22cc9",
+    "e9e20ccec573c2466868614943689d493133acf4ea7fea8bea0cd02d5df8626d"
+  ],
+  "schema_hash": "55049ac4a18770c58cc8ecef0f188e77ef9456d9dece7dab1b13ed49f3e93784",
+  "model_hash": null,
+  "split": {
+    "train_sessions": [],
+    "development_sessions": [],
+    "final_sessions": []
+  },
+  "commands": [
+    "make install PYTHON=/usr/local/bin/python3",
+    "make doctor",
+    "make test",
+    ".venv/bin/python tools/verify_sources.py",
+    "git diff --exit-code"
+  ],
+  "runtime": {
+    "python": "3.13.7",
+    "node": "24.14.0",
+    "host_profile_id": "local-macos-arm64-control"
+  },
+  "results": [
+    {
+      "test_id": "python-harness-82",
+      "status": "passed",
+      "evidence_paths": [
+        "reports/phase1/clean-test.log"
+      ],
+      "reason": null
+    },
+    {
+      "test_id": "typescript-harness-65",
+      "status": "passed",
+      "evidence_paths": [
+        "reports/phase1/clean-test.log"
+      ],
+      "reason": null
+    },
+    {
+      "test_id": "genuine-device-render-audition-api",
+      "status": "not_run",
+      "evidence_paths": [],
+      "reason": "Out of Phase 1 scope or access unverified"
+    }
+  ]
+}
