@@ -1,0 +1,16 @@
+{
+  "format": "scenescore.ragtm-lineage/1",
+  "archive_reported_commit": "8258b4edddd35c301959bf0ab24e2305938579af",
+  "source_files": {
+    "frontend/src/hooks/useBCIStream.ts": "97d18b7c1d6afff262c39bf2c5666fe188896b29588bcd3048b72945def79d3c",
+    "backend/eeg/services/muse_stream_service.py": "32c0869862ddb882085e8cac6b5e7a93788dde2e9fd905e758d08a0cbd781668",
+    "backend/eeg/services/streaming/device_registry.py": "4756ce1331bf3bd12871c8d09c0055746b1313b7493c78bd20cb9f1499c345b4",
+    "backend/pyproject.toml": "51365d3ddeeb6647478ca9dac6c7c666a26b64d3ac3f8dd7276e96ee3c8680b0",
+    "LICENSE": "7271555e24a98b118177d0467eb7731d922552e3003a814700ae812b36fdf32e"
+  },
+  "oracle_channel_excerpt_sha256": "153a026ef9fee8fa39998dc0072bcef065bdb25b5e2c6d1169cecfce1c5e0f09",
+  "oracle_decision_excerpt_sha256": "949bf24e88c2bbb41bcac3a94ca78497da42737d2befea65c8d33acae892bb2d",
+  "port_version": "ragtm-frontend-candidate-port/1",
+  "full_pipeline_equivalence": "NOT_RUN",
+  "hardware": "HARDWARE_UNVERIFIED"
+}

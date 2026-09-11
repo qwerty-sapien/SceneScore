@@ -1,0 +1,37 @@
+{
+  "phase": "2A",
+  "schema_version": "0.1",
+  "status": "PIPELINE_TESTED_ONLY",
+  "hardware": "HARDWARE_UNVERIFIED",
+  "tests_passed": 50,
+  "source_sha256": {
+    "modules/muse/acquisition/__main__.py": "376aca4bafb2f096efd7442990ba23645d25ef56c270f73f49ce7e731fef292a",
+    "modules/muse/acquisition/api.py": "36cfdb3779c0790ad35a21552dc77c7669f772888d8eacf858422b496d2b2809",
+    "modules/muse/acquisition/live.py": "1691af4fc8487b0048260970544d84ca61d58ec75d5515ce9959285656b54ab5",
+    "modules/muse/acquisition/store.py": "8d637a584cfa84cfe6227bd9a44a14890b4a177a6ec0464ff28e6814a0979863",
+    "modules/muse/acquisition/tests/helpers.py": "10121b677856af0e56d83169b0c8782eb462e481037c91703c0fe892428c56f7",
+    "modules/muse/acquisition/tests/test_live.py": "e90e7cb0f177ab0ae06010e7408008124c4fd175753f80bbbd686c6586f3e7c8",
+    "modules/muse/acquisition/tests/test_store.py": "29d9f06b8fb71f669fd2346c37dff9ad9d126c8bbf198d86ce5a9978a0491be2",
+    "modules/muse/baseline/causal.py": "dd2222fb283a40b8a353dad61bc92138e667bcdc78b2a562375390acf4545eb8",
+    "modules/muse/baseline/ragtm.py": "d10090b06b9afcf8637c09c16f710cf89b9342bd764175af6bc58d5e997d0c76",
+    "modules/muse/baseline/tests/ragtm_oracle.mjs": "4e4ffba975bf904c36ad2e70f187b74433208a95298d7ed21f81457ca3fedbe3",
+    "modules/muse/baseline/tests/test_baseline.py": "a878e007a01b5976f640e6c346098457fb3131dab347f5cee3f2e9ff68dccc04",
+    "modules/muse/annotation/tests/test_workflow.py": "8fde902260c05f16805b8b102e0e2c5042853885657e26b77abfd4f1c1b507cc",
+    "modules/muse/annotation/workflow.py": "fc3c3496d0958c2a6cc76e6ee74016156a71ee0482f43d821edd64e70d2d3070"
+  },
+  "ragtm_inspected_source_hashes_unchanged": true,
+  "real_participant_sessions": 0,
+  "training": "NOT_RUN",
+  "full_ragtm_pipeline_equivalence": "NOT_RUN",
+  "candidate_port_synthetic_oracle_samples": 1500,
+  "optional_pylsl_installed": false,
+  "task_persistent_jobs_started": [],
+  "completed_exec_sessions": [
+    89227,
+    48741,
+    61207,
+    61111,
+    68128,
+    6412
+  ]
+}

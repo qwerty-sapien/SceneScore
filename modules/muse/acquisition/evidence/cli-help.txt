@@ -1,0 +1,19 @@
+usage: __main__.py [-h]
+                   {health,record-file,capture-lsl,replay,recover,inspect,export,delete,cues,confirm,label} ...
+
+Local Muse tools; replay/synthetic are visibly labelled, no training
+
+positional arguments:
+  {health,record-file,capture-lsl,replay,recover,inspect,export,delete,cues,confirm,label}
+    record-file         Commit canonical input chunks unchanged; not live
+                        capture
+    capture-lsl         Optional existing verified LSL stream; explicit
+                        visible start
+    replay              Exact canonical records to stdout, no realtime
+                        scheduling
+    cues                Generate local intent schedule; not actual blink truth
+    label               Independent post-session review/relabel, never
+                        detector truth
+
+options:
+  -h, --help            show this help message and exit

@@ -1,0 +1,1 @@
+{"code": "HARDWARE_UNVERIFIED", "implemented_modes": ["synthetic", "replay", "operator_started_lsl"], "optional_pylsl_installed": false, "reason": "No consented live session or headset/rate/unit verification performed", "recording": false, "status": "unverified"}

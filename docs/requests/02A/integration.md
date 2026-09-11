@@ -1,0 +1,9 @@
+# 2A integrator requests
+
+Mount `modules.muse.acquisition.api:router` under `/muse` and use `health()` as the availability probe. The API is deliberately read-only (health + canonical EEGChunk diagnostics); capture is the explicitly started foreground CLI. Add owned module tests to root test discovery, including the bounded Node RAGTM oracle subprocess. No root dependency changes requested: pylsl live use remains an optional unavailable/unverified route until the integrator separately verifies compatible installation and actual hardware. No global or import-time jobs exist.
+
+Do not register a bounded capability that claims a functioning live device or real gesture accuracy. This phase's baseline/replay boundary emits canonical candidates/gestures, not ControlAction. Controls, audio continuity and user-visible integration remain the integrator/2E track.
+
+Frozen 0.1 GestureEvent max count=3 cannot faithfully serialize an arbitrary rejected blink train. Current code suppresses overlong trains and exposes a module-owned diagnostic (`overlong_train`, final/decision times), never a truncated accepted double or a fabricated count. Future migration may allow larger rejected counts while preserving accepted profile restrictions; it needs shared schema/fixtures/TypeScript validation changes and integrator approval. No shared schema edit is needed to safely keep those trains suppressed in 2A.
+
+LSL timestamp-hole loss counts are estimates, and the frozen raw contract cannot mark a packet-counter measurement type inside EEGChunk. The module manifest/README explicitly describes that limit. A future acquisition metadata extension should add timestamp origin, measured-vs-estimated sample rate/loss, packet-counter availability, timing verification evidence and optional contact-quality source. Do not claim hardware timing alignment from nominal LSL rate. No contract 0.1 field has been silently expanded here.
