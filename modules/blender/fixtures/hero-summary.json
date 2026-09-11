@@ -1,0 +1,2604 @@
+{
+  "event_details": [
+    {
+      "end_s": 1.28125,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e0",
+      "minimum_gap_time_s": 1.28125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 1.28125,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e1",
+      "minimum_gap_time_s": 1.28125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 1.5,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e2",
+      "minimum_gap_time_s": 1.28125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.25,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e3",
+      "minimum_gap_time_s": 1.5,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 1.53125,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e4",
+      "minimum_gap_time_s": 1.53125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 1.28125,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-1:e0",
+      "minimum_gap_time_s": 1.28125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.3125,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1",
+      "minimum_gap_time_s": 1.28125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.3125,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-1:e2",
+      "minimum_gap_time_s": 1.59375,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 1.78125,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-2:e0",
+      "minimum_gap_time_s": 1.78125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.375,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1",
+      "minimum_gap_time_s": 1.78125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.375,
+      "geometry_method": "analytic_sphere_aabb_proxy",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-2:e2",
+      "minimum_gap_time_s": 1.78125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.03125,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e0",
+      "minimum_gap_time_s": 2.03125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 1.6875,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e1",
+      "minimum_gap_time_s": 1.6875,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.28125,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e2",
+      "minimum_gap_time_s": 1.6875,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.3125,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e3",
+      "minimum_gap_time_s": 2.03125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.3125,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e4",
+      "minimum_gap_time_s": 2.3125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.125,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e0",
+      "minimum_gap_time_s": 2.125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.125,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e1",
+      "minimum_gap_time_s": 2.125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.375,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e2",
+      "minimum_gap_time_s": 2.125,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.15625,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e3",
+      "minimum_gap_time_s": 2.15625,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.1875,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e0",
+      "minimum_gap_time_s": 2.1875,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 1.90625,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e1",
+      "minimum_gap_time_s": 1.90625,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.34375,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e2",
+      "minimum_gap_time_s": 1.90625,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.375,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e3",
+      "minimum_gap_time_s": 2.1875,
+      "physical_dynamics": "not simulated"
+    },
+    {
+      "end_s": 2.375,
+      "geometry_method": "axis_aligned_box_exact",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e4",
+      "minimum_gap_time_s": 2.375,
+      "physical_dynamics": "not simulated"
+    }
+  ],
+  "events": [
+    {
+      "centre_distance_m": 1.0,
+      "duration_s": 0.9375,
+      "event_type": "approach",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e0",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 0.34375,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-0"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-0",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.7777862548828125,
+      "relative_tangential_speed_m_s": 0.0,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.0,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.0,
+      "duration_s": 0.0,
+      "event_type": "contact_onset",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e1",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.28125,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-0"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-0",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.7777862548828125,
+      "relative_tangential_speed_m_s": 0.0,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.0,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.0,
+      "duration_s": 0.21875,
+      "event_type": "contact_sustain",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e2",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.28125,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-0"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-0",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.7777862548828125,
+      "relative_tangential_speed_m_s": 0.0,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.0,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.0,
+      "duration_s": 0.75,
+      "event_type": "separation",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e3",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.5,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-0"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-0",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.0,
+      "relative_tangential_speed_m_s": 0.0,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.0,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.0653252231724437,
+      "duration_s": 0.0,
+      "event_type": "contact_release",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-0:e4",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.53125,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-0"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-0",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 2.0970472618343745,
+      "relative_tangential_speed_m_s": 0.6518616486936041,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.0651041641831398,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.449999965470413,
+      "duration_s": 0.9375,
+      "event_type": "approach",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-1:e0",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 0.34375,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.226059515322856,
+      "relative_tangential_speed_m_s": 1.2873624326259252,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.24330340208283374,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.449999965470413,
+      "duration_s": 1.96875,
+      "event_type": "near_miss",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 0.34375,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.226059515322856,
+      "relative_tangential_speed_m_s": 1.2873624326259252,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.24330340208283374,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.449999965470413,
+      "duration_s": 0.71875,
+      "event_type": "separation",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-1:e2",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.59375,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.0,
+      "relative_tangential_speed_m_s": 0.0,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.24330340208283374,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 2.2887179031092844,
+      "duration_s": 0.09375,
+      "event_type": "approach",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-2:e0",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.6875,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.17799167372744892,
+      "relative_tangential_speed_m_s": 6.726009663532075,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 1.0906838510733017,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 2.2887179031092844,
+      "duration_s": 0.6875,
+      "event_type": "near_miss",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.6875,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.17799167372744892,
+      "relative_tangential_speed_m_s": 6.726009663532075,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 1.0906838510733017,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 2.2887179031092844,
+      "duration_s": 0.59375,
+      "event_type": "separation",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile|10_projectile_tower:tower-2:e2",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.78125,
+      "pair": [
+        "10_projectile_tower:projectile",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.17799167372744892,
+      "relative_tangential_speed_m_s": 6.726009663532075,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 1.0906838510733017,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.6575621963500258,
+      "duration_s": 0.4375,
+      "event_type": "approach",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e0",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.59375,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.05977120605205869,
+      "relative_tangential_speed_m_s": 2.237072646151976,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.5314992666244507,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.9985694976996219,
+      "duration_s": 0.0,
+      "event_type": "contact_onset",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e1",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.6875,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.6846290932478272,
+      "relative_tangential_speed_m_s": 1.4731219787111955,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.0051177144050598145,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.9985694976996219,
+      "duration_s": 0.59375,
+      "event_type": "contact_sustain",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e2",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.6875,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.6846290932478272,
+      "relative_tangential_speed_m_s": 1.4731219787111955,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.0051177144050598145,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.6575621963500258,
+      "duration_s": 0.28125,
+      "event_type": "separation",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e3",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 2.03125,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.05977120605205869,
+      "relative_tangential_speed_m_s": 2.237072646151976,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.5314992666244507,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.0501979381273479,
+      "duration_s": 0.0,
+      "event_type": "contact_release",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e4",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 2.3125,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-1"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-1",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 1.6470746363736533,
+      "relative_tangential_speed_m_s": 1.0647069710000265,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.04999995231628418,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.3164754679413482,
+      "duration_s": 0.4375,
+      "event_type": "approach",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e0",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.6875,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.24597286267526375,
+      "relative_tangential_speed_m_s": 4.672720342883029,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.038446664810180664,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.3164754679413482,
+      "duration_s": 0.0,
+      "event_type": "contact_onset",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e1",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 2.125,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.24597286267526375,
+      "relative_tangential_speed_m_s": 4.672720342883029,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.038446664810180664,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.3164754679413482,
+      "duration_s": 0.25,
+      "event_type": "separation",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e2",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 2.125,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.24597286267526375,
+      "relative_tangential_speed_m_s": 4.672720342883029,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.038446664810180664,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.3321888493394722,
+      "duration_s": 0.0,
+      "event_type": "contact_release",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e3",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 2.15625,
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-0|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 0.7566621569684227,
+      "relative_tangential_speed_m_s": 4.617597131757433,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.06690359115600586,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.6573515093249969,
+      "duration_s": 0.46875,
+      "event_type": "approach",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e0",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.71875,
+      "pair": [
+        "10_projectile_tower:tower-1",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-1|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -0.020712046882497184,
+      "relative_tangential_speed_m_s": 2.4412351003774404,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.5225465297698975,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.9545774205635189,
+      "duration_s": 0.0,
+      "event_type": "contact_onset",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e1",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.90625,
+      "pair": [
+        "10_projectile_tower:tower-1",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-1|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.7702829684754262,
+      "relative_tangential_speed_m_s": 1.6810996792017872,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.04638528823852539,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.9545774205635189,
+      "duration_s": 0.4375,
+      "event_type": "contact_sustain",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e2",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 1.90625,
+      "pair": [
+        "10_projectile_tower:tower-1",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-1|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -1.7702829684754262,
+      "relative_tangential_speed_m_s": 1.6810996792017872,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.04638528823852539,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 0.6573515093249969,
+      "duration_s": 0.1875,
+      "event_type": "separation",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e3",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 2.1875,
+      "pair": [
+        "10_projectile_tower:tower-1",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-1|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": -0.020712046882497184,
+      "relative_tangential_speed_m_s": 2.4412351003774404,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": -0.5225465297698975,
+      "uncertainty_m": 1e-05
+    },
+    {
+      "centre_distance_m": 1.0502426200792732,
+      "duration_s": 0.0,
+      "event_type": "contact_release",
+      "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e4",
+      "impulse_ns": null,
+      "kind": "InteractionEvent",
+      "loop_instance": 0,
+      "method": "scripted",
+      "onset_s": 2.375,
+      "pair": [
+        "10_projectile_tower:tower-1",
+        "10_projectile_tower:tower-2"
+      ],
+      "pair_id": "10_projectile_tower:tower-1|10_projectile_tower:tower-2",
+      "physical_impact": false,
+      "provenance": {
+        "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+        "creator": "blender-export-1.1",
+        "input_hashes": [],
+        "seed": 42,
+        "source_mode": "synthetic",
+        "tool_version": "5.2.1 LTS"
+      },
+      "relative_normal_speed_m_s": 4.657234393779681,
+      "relative_tangential_speed_m_s": 3.4594657877527584,
+      "scene_id": "10_projectile_tower:default:1887255c4eca",
+      "schema_version": "0.1",
+      "surface_gap_m": 0.04999995231628418,
+      "uncertainty_m": 1e-05
+    }
+  ],
+  "objects": [
+    {
+      "contact_proxy": "sphere",
+      "geometry_method": "evaluated dependency graph, transformed mesh loop triangles",
+      "keyframes": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -5.5,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -6.499999523162842,
+            -0.49999967217445374,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 1.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile:s0",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:projectile",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 3.1164219270395273,
+          "transform": {
+            "matrix_row_major": [
+              1.0,
+              0.0,
+              0.0,
+              -6.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              -6.0,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.000732421875,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            -3.3333334922790527,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -4.3333330154418945,
+            -0.49999967217445374,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 7.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile:s24",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:projectile",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.75,
+          "schema_version": "0.1",
+          "surface_area_m2": 3.1164219270395273,
+          "transform": {
+            "matrix_row_major": [
+              1.0,
+              0.0,
+              0.0,
+              -3.8333332538604736,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              -3.8333332538604736,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            5.555564880371094,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            -0.5000001192092896,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -1.4999995231628418,
+            -0.49999967217445374,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 13.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile:s48",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:projectile",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 1.5,
+          "schema_version": "0.1",
+          "surface_area_m2": 3.1164219270395273,
+          "transform": {
+            "matrix_row_major": [
+              1.0,
+              0.0,
+              0.0,
+              -1.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              -1.0,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            -0.5000001192092896,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -1.4999995231628418,
+            -0.49999967217445374,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 19.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile:s72",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:projectile",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 2.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 3.1164219270395273,
+          "transform": {
+            "matrix_row_major": [
+              1.0,
+              0.0,
+              0.0,
+              -1.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              -1.0,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            -0.5000001192092896,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -1.4999995231628418,
+            -0.49999967217445374,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 25.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:projectile:s96",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:projectile",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 3.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 3.1164219270395273,
+          "transform": {
+            "matrix_row_major": [
+              1.0,
+              0.0,
+              0.0,
+              -1.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              -1.0,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        }
+      ],
+      "material_rgba": [
+        0.5656274189976245,
+        0.1662569908947335,
+        0.32876905693992753,
+        1
+      ],
+      "motion_envelope": {
+        "max_m": [
+          -1.0,
+          0.0,
+          1.0
+        ],
+        "max_speed_m_s": 5.555572509765625,
+        "min_m": [
+          -6.0,
+          0.0,
+          1.0
+        ]
+      },
+      "object_id": "10_projectile_tower:projectile",
+      "proxy_note": "analytic smooth sphere bounds differ from triangulated display mesh",
+      "role": "projectile",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "shape": "sphere",
+      "sonic_identity_id": "voice:projectile",
+      "surface_area_m2": 3.1164219270395273,
+      "volume_m3": null,
+      "volume_reason": "watertightness/orientation not certified"
+    },
+    {
+      "contact_proxy": "axis_aligned_box",
+      "geometry_method": "evaluated dependency graph, transformed mesh loop triangles",
+      "keyframes": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 1.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0:s0",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-0",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 7.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0:s24",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-0",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.75,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            1.5
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            0.5
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 13.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0:s48",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-0",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 1.5,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            -63.9998779296875,
+            0.0,
+            29.86663818359375
+          ],
+          "bounds_max_m": [
+            2.0,
+            0.5,
+            1.0083333253860474
+          ],
+          "bounds_min_m": [
+            1.0,
+            -0.5,
+            0.008333325386047363
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 19.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0:s72",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-0",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 2.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5083333253860474,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              1.5,
+              0.0,
+              0.5083333253860474
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.08333587646484375,
+            0.0,
+            0.23888778686523438
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            2.0,
+            0.5,
+            1.0
+          ],
+          "bounds_min_m": [
+            1.0,
+            -0.5,
+            0.0
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 25.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-0:s96",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-0",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 3.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              1.5,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              1.5,
+              0.0,
+              0.5
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        }
+      ],
+      "material_rgba": [
+        0.2950869797967348,
+        0.6287062892066081,
+        0.5898546668248924,
+        1
+      ],
+      "motion_envelope": {
+        "max_m": [
+          1.5,
+          0.0,
+          1.0
+        ],
+        "max_speed_m_s": 2.196028632538579,
+        "min_m": [
+          0.0,
+          0.0,
+          0.5
+        ]
+      },
+      "object_id": "10_projectile_tower:tower-0",
+      "proxy_note": null,
+      "role": "tower",
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "shape": "box",
+      "sonic_identity_id": "voice:tower-0",
+      "surface_area_m2": 6.0,
+      "volume_m3": null,
+      "volume_reason": "watertightness/orientation not certified"
+    },
+    {
+      "contact_proxy": "axis_aligned_box",
+      "geometry_method": "evaluated dependency graph, transformed mesh loop triangles",
+      "keyframes": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            2.549999952316284
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            1.5499999523162842
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 1.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1:s0",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-1",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              2.049999952316284,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              2.049999952316284
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            2.549999952316284
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            1.5499999523162842
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 7.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1:s24",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-1",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.75,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              2.049999952316284,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              2.049999952316284
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            2.549999952316284
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            1.5499999523162842
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 13.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1:s48",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-1",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 1.5,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              2.049999952316284,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              2.049999952316284
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.000244140625,
+            0.0,
+            -0.000244140625
+          ],
+          "bounds_max_m": [
+            2.883695363998413,
+            0.5,
+            1.1010870933532715
+          ],
+          "bounds_min_m": [
+            1.883695363998413,
+            -0.5,
+            0.10108709335327148
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 19.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1:s72",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-1",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 2.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              2.383695363998413,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.6010870933532715,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              2.383695363998413,
+              0.0,
+              0.6010870933532715
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            3.6956558227539062,
+            0.0,
+            -2.246379852294922
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            3.049999952316284,
+            0.5,
+            1.0
+          ],
+          "bounds_min_m": [
+            2.049999952316284,
+            -0.5,
+            0.0
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 25.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-1:s96",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-1",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 3.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              2.549999952316284,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              2.549999952316284,
+              0.0,
+              0.5
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        }
+      ],
+      "material_rgba": [
+        0.7299167190081496,
+        0.20651024120912048,
+        0.4242491827954258,
+        1
+      ],
+      "motion_envelope": {
+        "max_m": [
+          2.549999952316284,
+          0.0,
+          2.049999952316284
+        ],
+        "max_speed_m_s": 4.324824326857528,
+        "min_m": [
+          0.0,
+          0.0,
+          0.5
+        ]
+      },
+      "object_id": "10_projectile_tower:tower-1",
+      "proxy_note": null,
+      "role": "tower",
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "shape": "box",
+      "sonic_identity_id": "voice:tower-1",
+      "surface_area_m2": 6.0,
+      "volume_m3": null,
+      "volume_reason": "watertightness/orientation not certified"
+    },
+    {
+      "contact_proxy": "axis_aligned_box",
+      "geometry_method": "evaluated dependency graph, transformed mesh loop triangles",
+      "keyframes": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            3.5999999046325684
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            2.5999999046325684
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 1.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-2:s0",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-2",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              3.0999999046325684,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              3.0999999046325684
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            3.5999999046325684
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            2.5999999046325684
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 7.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-2:s24",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-2",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 0.75,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              3.0999999046325684,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              3.0999999046325684
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            0.5,
+            0.5,
+            3.5999999046325684
+          ],
+          "bounds_min_m": [
+            -0.5,
+            -0.5,
+            2.5999999046325684
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 13.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-2:s48",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-2",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 1.5,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              3.0999999046325684,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              0.0,
+              0.0,
+              3.0999999046325684
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            3.4454548358917236,
+            0.5,
+            1.4727270603179932
+          ],
+          "bounds_min_m": [
+            2.4454548358917236,
+            -0.5,
+            0.47272706031799316
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 19.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-2:s72",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-2",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 2.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              2.9454548358917236,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.9727270603179932,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              2.9454548358917236,
+              0.0,
+              0.9727270603179932
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            5.4545440673828125,
+            0.0,
+            -3.93939208984375
+          ],
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max_m": [
+            4.099999904632568,
+            0.5,
+            1.0
+          ],
+          "bounds_min_m": [
+            3.0999999046325684,
+            -0.5,
+            0.0
+          ],
+          "derivative_method": "backward finite difference dt=0.03125s; corners nondifferentiable",
+          "frame": 25.0,
+          "id": "10_projectile_tower:default:1887255c4eca:10_projectile_tower:tower-2:s96",
+          "kind": "ObjectState",
+          "object_id": "10_projectile_tower:tower-2",
+          "provenance": {
+            "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+            "creator": "blender-export-1.1",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "5.2.1 LTS"
+          },
+          "scene_id": "10_projectile_tower:default:1887255c4eca",
+          "scene_time_s": 3.0,
+          "schema_version": "0.1",
+          "surface_area_m2": 6.0,
+          "transform": {
+            "matrix_row_major": [
+              0.5,
+              0.0,
+              0.0,
+              3.5999999046325684,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "position_m": [
+              3.5999999046325684,
+              0.0,
+              0.5
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "unavailable_reason": "volume not certified; initial derivatives unavailable",
+          "velocity_m_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "volume_m3": null
+        }
+      ],
+      "material_rgba": [
+        0.16936819263474573,
+        0.29211468362234216,
+        0.47848093726718555,
+        1
+      ],
+      "motion_envelope": {
+        "max_m": [
+          3.5999999046325684,
+          0.0,
+          3.0999999046325684
+        ],
+        "max_speed_m_s": 6.728374802301971,
+        "min_m": [
+          0.0,
+          0.0,
+          0.5
+        ]
+      },
+      "object_id": "10_projectile_tower:tower-2",
+      "proxy_note": null,
+      "role": "tower",
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "shape": "box",
+      "sonic_identity_id": "voice:tower-2",
+      "surface_area_m2": 6.0,
+      "volume_m3": null,
+      "volume_reason": "watertightness/orientation not certified"
+    }
+  ],
+  "provenance": {
+    "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+    "creator": "blender-export-1.1",
+    "input_hashes": [],
+    "seed": 42,
+    "source_mode": "synthetic",
+    "tool_version": "5.2.1 LTS"
+  },
+  "scene": {
+    "camera": {
+      "id": "camera",
+      "transform": {
+        "matrix_row_major": [
+          0.8654263019561768,
+          -0.21950854361057281,
+          0.45039236545562744,
+          11.0,
+          0.5010362267494202,
+          0.3791510760784149,
+          -0.777950644493103,
+          -19.0,
+          5.659445889705239e-08,
+          0.8989218473434448,
+          0.43810907006263733,
+          12.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "position_m": [
+          11.0,
+          -19.0,
+          12.0
+        ],
+        "quaternion_xyzw": [
+          0.5118999481201172,
+          0.13749155402183533,
+          0.21996116638183594,
+          0.8189454674720764
+        ]
+      }
+    },
+    "duration_s": 3.0,
+    "fps": 8,
+    "fps_base": 1,
+    "generator_version": "blender-export-1.1",
+    "handedness": "right",
+    "id": "10_projectile_tower:default:1887255c4eca",
+    "kind": "SceneManifest",
+    "matrix_layout": "row_major_column_vectors",
+    "objects": [
+      {
+        "object_id": "10_projectile_tower:projectile",
+        "sonic_identity_id": "voice:projectile"
+      },
+      {
+        "object_id": "10_projectile_tower:tower-0",
+        "sonic_identity_id": "voice:tower-0"
+      },
+      {
+        "object_id": "10_projectile_tower:tower-1",
+        "sonic_identity_id": "voice:tower-1"
+      },
+      {
+        "object_id": "10_projectile_tower:tower-2",
+        "sonic_identity_id": "voice:tower-2"
+      }
+    ],
+    "provenance": {
+      "config_hash": "1887255c4eca9d9368aac8a784a225305e19f9360fe35d878bbb81e65d6dcc13",
+      "creator": "blender-export-1.1",
+      "input_hashes": [],
+      "seed": 42,
+      "source_mode": "synthetic",
+      "tool_version": "5.2.1 LTS"
+    },
+    "quaternion_order": "xyzw",
+    "render_hash": null,
+    "schema_version": "0.1",
+    "source_hash": "2458279d39e9680fa0a1a0c928ad4df2396b30341609de0b5951f1e7b3c77a18",
+    "start_frame": 1,
+    "units": "metres",
+    "up_axis": "Z"
+  },
+  "summary_version": "blender-summary-1"
+}

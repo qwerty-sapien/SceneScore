@@ -1,0 +1,3 @@
+# Summary fixture
+
+`hero-summary.json` is a captured **synthetic generated scene** summary from an actual Blender 5.2.1 export, seed 42, three-second/8fps smoke configuration. It contains canonical 0.1 records and `blender-summary-1` views. The corresponding source/sidecars live in the ignored `artifacts/blender/final-all-ten/10_projectile_tower-default/` bundle. This fixture is neither a full-duration hero render nor evidence of physical dynamics, model use, musical quality or human review. Arrangement planning must bind the exact selected full-duration bundle, not substitute this smoke fixture.
