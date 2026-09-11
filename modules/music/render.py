@@ -18,6 +18,7 @@ from .catalog import ROOT, PRESETS, build_score, digest, get_groove, payload_byt
 from .events import resolve_events, ticks_to_seconds
 
 RENDERER_VERSION = 'stdlib-procedural-1'
+CANDIDATE_RENDERER_VERSION = 'stdlib-procedural-1-event-ends-1'
 TAIL_S = .35
 STEMS = ('piano_or_lead', 'bass', 'brushes', 'object_motif')
 _RENDER_LOCK = threading.Lock()
@@ -43,11 +44,12 @@ def _check(deadline, cancellation):
         raise TimeoutError('render_runtime_budget_exceeded')
 
 
-def _tone(pitch, seconds, preset_id, rate, deadline, cancellation):
+def _tone(pitch, seconds, preset_id, rate, deadline, cancellation, *, exact_event_end=False, sustain=False):
     preset = PRESETS[preset_id]
-    # Envelope release is retained beyond the gated note; all stems share a 350 ms tail.
+    # Catalogue defaults retain the audited gated/release envelope. Candidate mode puts
+    # both fades inside the declared event interval and sustains explicit legato notes.
     gate_s = seconds * (.7 if preset_id == 'bass_pluck_v1' else .82)
-    duration_s = gate_s + preset['release_s']
+    duration_s = seconds if exact_event_end else gate_s + preset['release_s']
     frames = int(math.ceil(duration_s * rate))
     frequency = 440 * 2 ** ((pitch - 69) / 12)
     partials = [(h, a) for h, a in zip(preset['partials'], preset['relative_amplitudes'])
@@ -59,10 +61,20 @@ def _tone(pitch, seconds, preset_id, rate, deadline, cancellation):
         if i % 4096 == 0:
             _check(deadline, cancellation)
         t = i / rate
-        attack = min(1, t / preset['attack_s'])
-        release = max(0, min(1, (duration_s - t) / preset['release_s']))
+        if exact_event_end:
+            attack_s = min(preset['attack_s'], duration_s / 4)
+            release_s = min(preset['release_s'], duration_s / 4)
+            attack = min(1, t / attack_s)
+            # Last allocated sample is exactly zero, including noninteger sample lengths.
+            release = max(0, min(1, (frames - 1 - i) / (release_s * rate)))
+        else:
+            attack = min(1, t / preset['attack_s'])
+            release = max(0, min(1, (duration_s - t) / preset['release_s']))
         value = sum(a * math.sin(2 * math.pi * frequency * h * t) for h, a in partials) / norm
-        samples[i] = value * attack * release * math.exp(-decay * t)
+        decay_gain = math.exp(-decay * t)
+        if exact_event_end and sustain:
+            decay_gain = .35 + .65 * decay_gain
+        samples[i] = value * attack * release * decay_gain
     return samples
 
 
@@ -93,7 +105,7 @@ def _brush_hit(event, rate, seed):
     return result
 
 
-def synthesize(events, duration_s, sample_rate=48000, *, deadline=None, cancellation=None):
+def synthesize(events, duration_s, sample_rate=48000, *, deadline=None, cancellation=None, exact_event_ends=False):
     deadline = deadline if deadline is not None else time.monotonic() + 120
     frame_count = round((duration_s + TAIL_S) * sample_rate)
     stems = {part: array('f', [0]) * frame_count for part in STEMS}
@@ -109,11 +121,23 @@ def synthesize(events, duration_s, sample_rate=48000, *, deadline=None, cancella
         if event['event_type'] == 'note':
             if event['timbre_id'] not in PRESETS or event['timbre_id'] == 'brush_noise_v1':
                 raise ValueError('unknown_pitched_preset')
-            key = (event['midi_pitch'], event['duration_s'], event['timbre_id'])
+            sustain = exact_event_ends and event['articulation'] == 'legato'
+            key = (event['midi_pitch'], event['duration_s'], event['timbre_id'], sustain)
             if key not in cache:
-                cache[key] = _tone(*key[:2], key[2], sample_rate, deadline, cancellation)
+                cache[key] = _tone(*key[:2], key[2], sample_rate, deadline, cancellation,
+                                   exact_event_end=exact_event_ends, sustain=sustain)
+            samples = cache[key]
+            if exact_event_ends:
+                # Independently rounded onset and duration can otherwise leak one sample
+                # beyond the absolute event end. Clip only this instance, never the cache.
+                end = math.ceil((event['resolved_time_s'] + event['duration_s']) * sample_rate)
+                count = max(0, end - start)
+                if len(samples) > count:
+                    samples = samples[:count]
+                    if samples:
+                        samples[-1] = 0
             part_gain = .26 if event['lane_id'] == 'piano_or_lead' else .33
-            _add(stems[event['lane_id']], start, cache[key], gain * part_gain, deadline, cancellation)
+            _add(stems[event['lane_id']], start, samples, gain * part_gain, deadline, cancellation)
         elif event['event_type'] == 'brush':
             if event['articulation'] == 'sweep':
                 sweeps.append(event)
@@ -400,13 +424,19 @@ def render_arrangement(composition_id, output_dir, variation='base', sample_rate
 
 
 def render_events(events, output_wav, *, duration_s, sample_rate=48000, output_root=None,
-                  budget=None, cancellation=None):
+                  budget=None, cancellation=None, exact_event_ends=True):
     """Render short canonical candidates to one local mix; caller owns plan approval/run evidence.
 
     Arbitrary lane IDs are retained in input and mapped in a copy by exact timbre ID.
     Foley is rejected because this music renderer cannot establish scene-effect semantics.
+    Default exact_event_ends=True confines pitched fades to each declared event duration;
+    legato holds a sustained level until its final in-interval fade. Brushes are unchanged.
     """
     budget = budget or RenderBudget()
+    if type(exact_event_ends) is not bool:
+        raise ValueError('invalid_event_end_mode')
+    envelope_mode = 'exact_event_ends_v1' if exact_event_ends else 'catalogue_gate_release_v1'
+    renderer_version = CANDIDATE_RENDERER_VERSION if exact_event_ends else RENDERER_VERSION
     if (not math.isfinite(duration_s) or not 0 < duration_s + TAIL_S <= min(61, budget.max_duration_s) or
             type(sample_rate) is not int or not 8000 <= sample_rate <= min(48000, budget.max_sample_rate) or
             not math.isfinite(budget.max_runtime_s) or not 0 < budget.max_runtime_s <= 600 or
@@ -447,7 +477,8 @@ def render_events(events, output_wav, *, duration_s, sample_rate=48000, output_r
     created = False
     try:
         _check(deadline, cancellation)
-        mix = synthesize(prepared, duration_s, sample_rate, deadline=deadline, cancellation=cancellation)['mix']
+        mix = synthesize(prepared, duration_s, sample_rate, deadline=deadline, cancellation=cancellation,
+                         exact_event_ends=exact_event_ends)['mix']
         _check(deadline, cancellation)
         output.parent.mkdir(parents=True, exist_ok=True)
         # Exclusive reservation prevents concurrent invocations overwriting an existing artifact.
@@ -460,17 +491,20 @@ def render_events(events, output_wav, *, duration_s, sample_rate=48000, output_r
         if stats['rms'] <= 1e-5 or stats['sample_peak'] >= .9 or stats['clipped_samples']:
             raise ValueError('candidate_pcm_objective_gate')
         asset = {'kind': 'AudioAssetManifest', 'schema_version': '0.1',
-                 'id': f'candidate-mix-{digest(events)[:16]}',
-                 'provenance': provenance({'renderer': RENDERER_VERSION, 'sample_rate': sample_rate,
-                                           'duration_s': duration_s}, inputs=[digest(events)]),
+                 'id': 'candidate-mix-' + digest({'events': events, 'envelope_mode': envelope_mode,
+                                                   'sample_rate': sample_rate, 'duration_s': duration_s})[:16],
+                 'provenance': provenance({'renderer': renderer_version, 'sample_rate': sample_rate,
+                                           'duration_s': duration_s, 'pitched_envelope_mode': envelope_mode},
+                                          inputs=[digest(events)]),
                  'asset_hash': stats['sha256'], 'stem_id': 'candidate_mix', 'sample_rate_hz': sample_rate,
                  'channels': 1, 'duration_s': stats['duration_s'], 'timeline_origin_s': 0,
                  'source': 'Procedural canonical-event audition candidate; original lane IDs retained in event provenance',
                  'license': 'Project-authored procedural synthesis; caller must establish supplied event rights',
-                 'renderer_version': RENDERER_VERSION, 'pitched': any(e['event_type'] == 'note' for e in events),
+                 'renderer_version': renderer_version, 'pitched': any(e['event_type'] == 'note' for e in events),
                  'sample_peak': stats['sample_peak'], 'measurement_status': 'measured'}
         return {'asset': validate(asset), 'measurements': stats, 'audition_status': 'AUDITION_PENDING',
-                'tail_s': TAIL_S, 'input_events_sha256': digest(events)}
+                'tail_s': TAIL_S, 'input_events_sha256': digest(events),
+                'pitched_envelope_mode': envelope_mode}
     except BaseException:
         if created:
             output.unlink(missing_ok=True)

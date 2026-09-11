@@ -393,3 +393,54 @@ def test_candidate_event_adapter_preserves_inputs_and_records_pcm(tmp_path):
         render_events(candidate, tmp_path / 'cancel.wav', duration_s=.5, sample_rate=8000,
                       output_root=tmp_path, cancellation=cancel)
     assert sorted(p.name for p in tmp_path.iterdir()) == ['candidate.wav']
+
+
+
+@pytest.mark.parametrize('preset', ['keyboard_damped_v1', 'bass_pluck_v1', 'object_bell_v1'])
+@pytest.mark.parametrize('duration', [.625, 6.875])
+def test_candidate_exact_end_pcm_and_long_legato_sustain(tmp_path, preset, duration):
+    import math
+    from modules.music.render import render_events
+    _, events = _hero_events(False)
+    event = next(e for e in events if e['event_type'] == 'note')
+    # Deliberately noninteger-sample onset exercises independent onset/end rounding.
+    start = .125043
+    candidate = [{**event, 'instrument_id': preset, 'timbre_id': preset,
+                  'resolved_time_s': start, 'duration_s': duration, 'articulation': 'legato'}]
+    path = tmp_path / 'exact-end.wav'
+    result = render_events(candidate, path, duration_s=start + duration + .25,
+                           sample_rate=8000, output_root=tmp_path)
+    with wave.open(str(path)) as audio:
+        pcm = array('h', audio.readframes(audio.getnframes()))
+    if sys.byteorder != 'little':
+        pcm.byteswap()
+    end = math.ceil((start + duration) * 8000)
+    assert all(value == 0 for value in pcm[end:]), 'old pitched envelope must not ring beyond declared end'
+    # The held legato tone must still sound near the end, including the long tonic sustain
+    # that the catalogue gate previously cut more than one second early.
+    late = pcm[round((start + duration - .1) * 8000):round((start + duration - .02) * 8000)]
+    assert max(abs(value) for value in late) > 10
+    assert sum(value * value for value in late) / len(late) > 4
+    assert abs(pcm[end - 1]) <= 1, 'final in-interval fade should reach silence at the boundary'
+    assert result['pitched_envelope_mode'] == 'exact_event_ends_v1'
+    assert result['asset']['renderer_version'] == 'stdlib-procedural-1-event-ends-1'
+
+
+def test_candidate_mode_explicit_and_catalogue_default_preserved(tmp_path):
+    from modules.music.render import render_events
+    _, events = _hero_events(False)
+    event = next(e for e in events if e['event_type'] == 'note')
+    event = {**event, 'resolved_time_s': 0, 'duration_s': .625, 'articulation': 'legato'}
+    catalogue_default = synthesize([event], 1, 8000)['mix']
+    catalogue_explicit = synthesize([event], 1, 8000, exact_event_ends=False)['mix']
+    assert catalogue_default == catalogue_explicit
+    old = render_events([event], tmp_path / 'catalogue.wav', duration_s=1, sample_rate=8000,
+                        output_root=tmp_path, exact_event_ends=False)
+    new = render_events([event], tmp_path / 'exact.wav', duration_s=1, sample_rate=8000, output_root=tmp_path)
+    assert old['pitched_envelope_mode'] == 'catalogue_gate_release_v1'
+    assert old['asset']['asset_hash'] != new['asset']['asset_hash']
+    assert old['asset']['id'] != new['asset']['id']
+    assert old['asset']['provenance']['config_hash'] != new['asset']['provenance']['config_hash']
+    with pytest.raises(ValueError, match='invalid_event_end_mode'):
+        render_events([event], tmp_path / 'bad.wav', duration_s=1, sample_rate=8000,
+                      output_root=tmp_path, exact_event_ends='true')
