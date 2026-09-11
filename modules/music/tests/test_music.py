@@ -360,3 +360,36 @@ def test_mid_render_cancellation_removes_only_partial_output(tmp_path, monkeypat
     assert sentinel.read_text() == 'preserve'
 
 
+
+def test_candidate_event_adapter_preserves_inputs_and_records_pcm(tmp_path):
+    from copy import deepcopy
+    from modules.music.render import render_events
+    _, events = _hero_events(False)
+    event = next(e for e in events if e['event_type'] == 'note')
+    candidate = [{**event, 'lane_id': 'arbitrary-owner:source-object-42', 'resolved_time_s': 0, 'duration_s': .25}]
+    original = deepcopy(candidate)
+    output = tmp_path / 'candidate.wav'
+    rendered = render_events(candidate, output, duration_s=.5, sample_rate=8000, output_root=tmp_path)
+    validate(rendered['asset'])
+    assert rendered['measurements']['rms'] > 1e-5
+    assert rendered['measurements']['frames'] == 6800
+    assert rendered['audition_status'] == 'AUDITION_PENDING'
+    assert candidate == original
+    with pytest.raises(FileExistsError):
+        render_events(candidate, output, duration_s=.5, sample_rate=8000, output_root=tmp_path)
+    foley = {**event, 'event_type': 'foley', 'midi_pitch': None, 'start_tick': None,
+             'duration_ticks': None, 'scene_time_s': 0, 'resolved_time_s': 0, 'duration_s': .1,
+             'swing_applied': False, 'swing_application_count': 0}
+    with pytest.raises(ValueError, match='foley_unsupported'):
+        render_events([foley], tmp_path / 'foley.wav', duration_s=.5, sample_rate=8000, output_root=tmp_path)
+    with pytest.raises(ValueError, match='outside_candidate'):
+        render_events(candidate, tmp_path / 'short.wav', duration_s=.1, sample_rate=8000, output_root=tmp_path)
+    with pytest.raises(ValueError, match='sample_work_budget'):
+        render_events(candidate, tmp_path / 'overbudget.wav', duration_s=.5, sample_rate=8000,
+                      output_root=tmp_path, budget=RenderBudget(max_bytes=1))
+    cancel = threading.Event()
+    cancel.set()
+    with pytest.raises(RenderCancelled):
+        render_events(candidate, tmp_path / 'cancel.wav', duration_s=.5, sample_rate=8000,
+                      output_root=tmp_path, cancellation=cancel)
+    assert sorted(p.name for p in tmp_path.iterdir()) == ['candidate.wav']

@@ -399,6 +399,86 @@ def render_arrangement(composition_id, output_dir, variation='base', sample_rate
         _RENDER_LOCK.release()
 
 
+def render_events(events, output_wav, *, duration_s, sample_rate=48000, output_root=None,
+                  budget=None, cancellation=None):
+    """Render short canonical candidates to one local mix; caller owns plan approval/run evidence.
+
+    Arbitrary lane IDs are retained in input and mapped in a copy by exact timbre ID.
+    Foley is rejected because this music renderer cannot establish scene-effect semantics.
+    """
+    budget = budget or RenderBudget()
+    if (not math.isfinite(duration_s) or not 0 < duration_s + TAIL_S <= min(61, budget.max_duration_s) or
+            type(sample_rate) is not int or not 8000 <= sample_rate <= min(48000, budget.max_sample_rate) or
+            not math.isfinite(budget.max_runtime_s) or not 0 < budget.max_runtime_s <= 600 or
+            not 0 < len(events) <= min(5000, budget.max_events)):
+        raise ValueError('candidate_render_budget')
+    scope = Path(output_root or ROOT / 'artifacts/music').resolve()
+    requested = Path(output_wav)
+    if any(p.is_symlink() for p in [requested, *requested.parents]):
+        raise ValueError('symlink_output_disallowed')
+    output = requested.resolve()
+    if not output.is_relative_to(scope) or output == scope or output.suffix.lower() != '.wav':
+        raise ValueError('output_outside_scope_or_not_wav')
+    if output.exists():
+        raise FileExistsError('output_already_exists')
+    mapping = {'keyboard_damped_v1': 'piano_or_lead', 'bass_pluck_v1': 'bass',
+               'object_bell_v1': 'object_motif', 'brush_noise_v1': 'brushes'}
+    prepared = []
+    for event in events:
+        validate(event)
+        if event['event_type'] == 'foley':
+            raise ValueError('scene_time_foley_unsupported_by_music_renderer')
+        if event['timbre_id'] not in mapping:
+            raise ValueError('unknown_timbre_preset')
+        if (event['event_type'] == 'brush') != (event['timbre_id'] == 'brush_noise_v1'):
+            raise ValueError('pitched_unpitched_preset_mismatch')
+        if event['resolved_time_s'] + event['duration_s'] > duration_s + 1e-9:
+            raise ValueError('event_outside_candidate_duration')
+        if event['event_type'] == 'note' and not 28 <= event['midi_pitch'] <= 96:
+            raise ValueError('candidate_register_limit')
+        prepared.append({**event, 'lane_id': mapping[event['timbre_id']]})
+    # Bound both output bytes and a conservative uncached sample-work estimate.
+    memory_estimate = ((duration_s + TAIL_S) * 6 + sum(e['duration_s'] + .35 for e in events)) * sample_rate * 4
+    if not 0 < budget.max_bytes <= 256 * 1024 * 1024 or memory_estimate > budget.max_bytes:
+        raise ValueError('candidate_sample_work_budget')
+    if not _RENDER_LOCK.acquire(blocking=False):
+        raise RuntimeError('render_busy')
+    deadline = time.monotonic() + budget.max_runtime_s
+    created = False
+    try:
+        _check(deadline, cancellation)
+        mix = synthesize(prepared, duration_s, sample_rate, deadline=deadline, cancellation=cancellation)['mix']
+        _check(deadline, cancellation)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        # Exclusive reservation prevents concurrent invocations overwriting an existing artifact.
+        with output.open('xb'):
+            pass
+        created = True
+        write_wav(output, mix, sample_rate)
+        _check(deadline, cancellation)
+        stats = inspect_wav(output)
+        if stats['rms'] <= 1e-5 or stats['sample_peak'] >= .9 or stats['clipped_samples']:
+            raise ValueError('candidate_pcm_objective_gate')
+        asset = {'kind': 'AudioAssetManifest', 'schema_version': '0.1',
+                 'id': f'candidate-mix-{digest(events)[:16]}',
+                 'provenance': provenance({'renderer': RENDERER_VERSION, 'sample_rate': sample_rate,
+                                           'duration_s': duration_s}, inputs=[digest(events)]),
+                 'asset_hash': stats['sha256'], 'stem_id': 'candidate_mix', 'sample_rate_hz': sample_rate,
+                 'channels': 1, 'duration_s': stats['duration_s'], 'timeline_origin_s': 0,
+                 'source': 'Procedural canonical-event audition candidate; original lane IDs retained in event provenance',
+                 'license': 'Project-authored procedural synthesis; caller must establish supplied event rights',
+                 'renderer_version': RENDERER_VERSION, 'pitched': any(e['event_type'] == 'note' for e in events),
+                 'sample_peak': stats['sample_peak'], 'measurement_status': 'measured'}
+        return {'asset': validate(asset), 'measurements': stats, 'audition_status': 'AUDITION_PENDING',
+                'tail_s': TAIL_S, 'input_events_sha256': digest(events)}
+    except BaseException:
+        if created:
+            output.unlink(missing_ok=True)
+        raise
+    finally:
+        _RENDER_LOCK.release()
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)

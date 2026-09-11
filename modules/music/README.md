@@ -14,6 +14,8 @@ Phase 2C provides four original draft forms, an exact three-groove catalogue, co
 
 `events.transpose_events(events, semitones, min_pitch=28, max_pitch=96)` returns copied events, changing only note pitches. It does not change dynamics, articulation, expression, brush events or scene-time Foley. Integrator/arranger owns eligible ±2 edges, signed scene evidence and exact approval. No mixed waveform is pitch-shifted.
 
+`render.render_events(events, output_wav, *, duration_s, sample_rate=48000, output_root=None, budget=None, cancellation=None)` renders a short canonical event candidate to a single PCM WAV and returns `{'asset': AudioAssetManifest, 'measurements': ..., 'audition_status': 'AUDITION_PENDING', 'tail_s': 0.35, 'input_events_sha256': ...}`. It maps arbitrary input lane names to synth parts by the exact `timbre_id`, leaves input records unchanged, checks register/duration/sample-work budgets and uses the same scoped no-overwrite/cancellation lock. Foley is explicitly unsupported: filter it only for a clearly labelled **music-only** audition, never claim the result is a synchronized full candidate. Caller owns exact plan approval and RunManifest/evidence context. For an arranger-owned output path pass its scoped `output_root` explicitly. File duration includes the 350 ms tail; supplied `duration_s` is the candidate musical timeline.
+
 `api.router` is a read-only FastAPI catalogue/score router; `health()` reports available symbolic/procedural tools and unverified audition. Integrator owns mounting. No job starts on import. There is intentionally no unbounded HTTP render endpoint or activation path.
 
 ## Authoring and creative choices
@@ -30,7 +32,7 @@ PPQ is 960; C4=MIDI60. Symbolic ticks are unswung quarter-note ticks. Tempo conv
 
 Preset IDs: `keyboard_damped_v1`, `bass_pluck_v1`, `object_bell_v1`, `brush_noise_v1`. Damped partials and plucked bass are band-limited by dropping partials near Nyquist; brushes use seeded smoothed filtered noise. Continuous sweep noise never resets at each bar. The exact-length `brushes-loop.wav` has 15 ms boundary fades, with zero endpoint samples, while the main mix/stems share a declared 350 ms release tail. This is a fade-based technical loop preparation, not an auditioned perfect loop. No normalization hides intended dynamics. Initial dynamics are -12 dB plus conservative per-part synthesis gains. File peak limits do not establish physical listening safety.
 
-Reference exports are mono PCM16 at actual 48 kHz; 8–48 kHz is supported and recorded. The procedural synth does not require a sound device. MIDI format 1 includes tempo, meter, named parts and resolved swing/humanization. Continuous brushes are explicitly approximated as drum hits; brush JSON envelopes remain authoritative. Renderer runtime and sample rate delimit deterministic hash scope; cross-platform floating-point bit identity is not promised.
+Reference exports are mono PCM16 at actual 48 kHz; 8–48 kHz is supported and recorded. The procedural synth does not require a sound device. MIDI format 1 includes tempo, meter, named parts and resolved swing/humanization. Lead and comping use separate channels to avoid shared-pitch note-off collisions; bass uses its declared 0.70 gate and other pitched parts use 0.82. Continuous brushes are explicitly approximated as drum hits; brush JSON envelopes remain authoritative. Renderer runtime and sample rate delimit deterministic hash scope; cross-platform floating-point bit identity is not promised.
 
 ## Commands
 
