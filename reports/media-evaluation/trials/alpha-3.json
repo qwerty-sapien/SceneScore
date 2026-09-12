@@ -1,0 +1,146 @@
+{
+  "trial_id": "alpha-3",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning": "xhigh",
+  "packet_path": "reports/media-evaluation/packet_alpha.json",
+  "packet_sha256": "f30034eb34f95a65e2e924476b66318133e3b80a84f6444428c01d7bfa50b58d",
+  "tools_actually_used": [
+    "exec_command: shasum -a 256",
+    "exec_command: sed",
+    "view_image",
+    "apply_patch",
+    "exec_command: jq"
+  ],
+  "judgments": [
+    {
+      "task_id": "music_pair",
+      "choice": "A",
+      "underlying_evidence_preference": "A",
+      "evidence": [
+        "Both candidates have PASS PCM decoding, nonzero samples, zero clipped samples, peaks below full scale, explicit eight-bar forms, harmony schedules, independent control lanes, and lead rests.",
+        "Candidate A supplies 12 object-motif events versus Candidate B's 6 within the same one-lane, one-unit scope, giving A stronger bounded evidence that the object voice recurs through the assessed unit.",
+        "Candidate A also supplies slightly more explicit rest evidence (14 versus 12 lead rests), while both candidates provide written meter, harmony, rhythmic-event, brush-technique, and bounded humanization evidence appropriate for symbolic-only style assessment.",
+        "Neither candidate establishes object-voice persistence across key changes or multiple loops."
+      ],
+      "criterion_outcomes": [
+        {
+          "criterion": "decodable non-silent PCM with headroom",
+          "outcome": "C",
+          "evidence": "Both decode PASS, contain nonzero samples, have zero clipped samples, begin and end at zero, and retain headroom."
+        },
+        {
+          "criterion": "editable coherent form and harmony",
+          "outcome": "C",
+          "evidence": "Both provide PPQ, meter, tempo, key, eight-bar length, a complete tick-addressed harmony schedule, and an explicit loop boundary."
+        },
+        {
+          "criterion": "explicit independent control lanes and rests",
+          "outcome": "A",
+          "evidence": "Both list the same five separate control lanes and explicit rests; A has 14 lead rests versus B's 12 and more resolved lane events, a small evidence advantage."
+        },
+        {
+          "criterion": "style evidence appropriate to written form",
+          "outcome": "C",
+          "evidence": "Both provide assessable written meter, extended harmony, phrase roles, rests, articulation/brush recipes, density, and bounded humanization; the packet supplies no perceptual evidence to distinguish realized style quality."
+        },
+        {
+          "criterion": "bounded persistent object-voice evidence",
+          "outcome": "A",
+          "evidence": "A has 12 object-motif events versus B's 6, with one object lane in each; this is stronger recurrence evidence inside the assessed unit, though neither proves persistence beyond it."
+        }
+      ],
+      "modality_limits": [
+        "PCM statistics establish decoding, signal presence, clipping status, and numerical headroom; they do not establish hearing or auditory quality.",
+        "Aesthetic preference and realized performance quality are not assessable from the supplied modalities.",
+        "Style assessment is limited to written meter, harmony, rhythm, density, rests, articulation, and groove-recipe evidence.",
+        "Originality and rights clearance were not independently verified.",
+        "No browser, loudspeaker, room, or physical synchronization evidence was supplied."
+      ]
+    },
+    {
+      "task_id": "visual_pair",
+      "choice": "C",
+      "underlying_evidence_preference": "C",
+      "evidence": [
+        "Candidates A and B contain identical video metadata: H.264 at 320x180, 8 fps, 30 seconds, and 240 frames, matching each scene's expected and rendered frame counts.",
+        "Their geometry sidecars are identical: three approach, three near-miss, and three separation events across three pairs; minimum reported gap is 0.5 m against maximum uncertainty of 0.00001 m; every gap exceeds uncertainty; physical impact is false; and contact-event count is zero.",
+        "The four shared neutral stills show a consistently labelled pink projectile and a consistently colored vertical object at selected start, approach, closest-event, and ending observations. The still evidence is the same for A and B.",
+        "Both provenance claims identify synthetic, seeded, scripted analytic sphere/AABB proxy interaction and state that physical dynamics were not simulated."
+      ],
+      "criterion_outcomes": [
+        {
+          "criterion": "video decode, duration, and frame count",
+          "outcome": "C",
+          "evidence": "The supplied codec, resolution, rate, duration, and frame-count fields are identical and internally aligned for A and B."
+        },
+        {
+          "criterion": "positive-gap approach, near-miss, and separation semantics",
+          "outcome": "C",
+          "evidence": "Both report the same signed approach and separation speeds, positive minimum gap above uncertainty, nine event counts, false physical-impact flags, and zero contacts."
+        },
+        {
+          "criterion": "stable identities",
+          "outcome": "C",
+          "evidence": "Both report four objects and four stable sonic identities, and the shared stills preserve the visible projectile label and object appearances across the sampled observations."
+        },
+        {
+          "criterion": "honest provenance",
+          "outcome": "C",
+          "evidence": "Both provide the same synthetic source mode, tool version, seed presence, scripted analytic method, and explicit non-simulated-physics limitation."
+        },
+        {
+          "criterion": "four neutral stills",
+          "outcome": "C",
+          "evidence": "Both candidates reference the same four stills, so the bounded visible evidence is materially equal."
+        }
+      ],
+      "modality_limits": [
+        "Four selected stills cannot establish full-motion smoothness, continuity between frames, or complete visual quality.",
+        "Decode metadata cannot establish full-motion smoothness.",
+        "No audio stream is present, so sound and an integrated near-miss soundtrack are not assessable.",
+        "Physical audiovisual synchronization is not assessable without physical capture and audio.",
+        "The stills support only bounded observations at the four selected times."
+      ]
+    },
+    {
+      "task_id": "arranger_pair",
+      "choice": "C",
+      "underlying_evidence_preference": "C",
+      "evidence": [
+        "Candidates A and B supply identical PCM statistics: PASS decoding, nonzero samples, zero clipped samples, equal duration, peak, RMS, and zero-valued first and last samples.",
+        "Their symbolic schedules are identical: 308 resolved events, 12 separate event lanes, three object voices, identical event-type counts and pitch range, and the same swing-application counts.",
+        "Their scene mappings are identical: the same mapping features, four persistent motif owners, Z-axis motion, lookback and deadband, signed transition options of -2 and +2, and a separate 12-event Foley schedule.",
+        "Both provenance claims equally and explicitly identify a seeded manual plan in draft state with no inferred approval."
+      ],
+      "criterion_outcomes": [
+        {
+          "criterion": "decodable non-silent PCM with headroom",
+          "outcome": "C",
+          "evidence": "All supplied PCM fields are identical; both decode PASS, are non-silent, have zero clipped samples, and retain headroom."
+        },
+        {
+          "criterion": "explicit lanes and object voices",
+          "outcome": "C",
+          "evidence": "Both supply 12 separate event lanes, three object voices, four persistent motif owners, and identical resolved schedules."
+        },
+        {
+          "criterion": "signed mapping",
+          "outcome": "C",
+          "evidence": "Both provide the same Z-axis motion basis, lookback, deadband, mapping features, and signed transition options of -2 and +2."
+        },
+        {
+          "criterion": "honest draft provenance",
+          "outcome": "C",
+          "evidence": "Both state manual_plan, seed present, draft review state, and no supplied or inferred approval object."
+        }
+      ],
+      "modality_limits": [
+        "PCM statistics are not hearing and cannot establish auditory or aesthetic quality.",
+        "The sampled WAV excludes Foley, so contact-Foley sound is not assessable; the separate schedule is supporting symbolic data only.",
+        "Near-miss assessment is not applicable to the stated contact-scene context.",
+        "Physical synchronization is not assessable without paired video or physical capture.",
+        "Human approval is absent and remains pending."
+      ]
+    }
+  ]
+}

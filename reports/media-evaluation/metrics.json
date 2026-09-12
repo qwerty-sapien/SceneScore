@@ -1,0 +1,861 @@
+{
+  "version": "media-evaluation-metrics-1",
+  "status": "COMPLETED_WITH_MODALITY_LIMITS",
+  "sampling": {
+    "seed": 7811544884403853071,
+    "universe_count": 17,
+    "sample_count": 4,
+    "fraction": 0.23529411764705882,
+    "stratified": true,
+    "self_weighting": false,
+    "catalogue_success_rate_inferred": false
+  },
+  "source_integrity": {
+    "selected_hashes": true,
+    "protocol_hash": true,
+    "indexed_supporting_hashes": true,
+    "indexed_supporting_files_checked": 283,
+    "decoded_media": true
+  },
+  "judge_trials": {
+    "requested_model": "gpt-5.6-sol",
+    "requested_reasoning": "xhigh",
+    "fresh_context_count": 6,
+    "original_order_contexts": 3,
+    "swapped_order_contexts": 3,
+    "tasks_per_context": 3,
+    "trial_file_count": 6,
+    "actual_runtime_model_limit": "the orchestration API accepted the requested model/effort; no separate runtime model fingerprint was exposed",
+    "packet_hashes": {
+      "alpha": "f30034eb34f95a65e2e924476b66318133e3b80a84f6444428c01d7bfa50b58d",
+      "beta": "6fee6a8b42ba88b91b112d0df7edfc5ff55885b88964e92b6031bec48520afa4"
+    },
+    "query_repetition_results": [
+      {
+        "task_id": "music_pair",
+        "order": "alpha",
+        "choices": [
+          "A",
+          "A",
+          "A"
+        ],
+        "counts": {
+          "A": 3
+        },
+        "valid_judgments": 3,
+        "missing_or_not_assessable": 0,
+        "modal_choice_fraction": 1.0
+      },
+      {
+        "task_id": "music_pair",
+        "order": "beta",
+        "choices": [
+          "B",
+          "B",
+          "B"
+        ],
+        "counts": {
+          "B": 3
+        },
+        "valid_judgments": 3,
+        "missing_or_not_assessable": 0,
+        "modal_choice_fraction": 1.0
+      },
+      {
+        "task_id": "visual_pair",
+        "order": "alpha",
+        "choices": [
+          "C",
+          "C",
+          "C"
+        ],
+        "counts": {
+          "C": 3
+        },
+        "valid_judgments": 3,
+        "missing_or_not_assessable": 0,
+        "modal_choice_fraction": 1.0
+      },
+      {
+        "task_id": "visual_pair",
+        "order": "beta",
+        "choices": [
+          "C",
+          "C",
+          "C"
+        ],
+        "counts": {
+          "C": 3
+        },
+        "valid_judgments": 3,
+        "missing_or_not_assessable": 0,
+        "modal_choice_fraction": 1.0
+      },
+      {
+        "task_id": "arranger_pair",
+        "order": "alpha",
+        "choices": [
+          "C",
+          "C",
+          "C"
+        ],
+        "counts": {
+          "C": 3
+        },
+        "valid_judgments": 3,
+        "missing_or_not_assessable": 0,
+        "modal_choice_fraction": 1.0
+      },
+      {
+        "task_id": "arranger_pair",
+        "order": "beta",
+        "choices": [
+          "C",
+          "C",
+          "C"
+        ],
+        "counts": {
+          "C": 3
+        },
+        "valid_judgments": 3,
+        "missing_or_not_assessable": 0,
+        "modal_choice_fraction": 1.0
+      }
+    ],
+    "missing_or_not_assessable_judgments": 0
+  },
+  "bias_metrics": {
+    "method": "Shi et al. pairwise adaptation; original/swapped trials paired by repetition index",
+    "RS_all_queries": 1.0,
+    "all_three_tasks_including_controls": {
+      "raw_pairs": [
+        {
+          "task_id": "music_pair",
+          "repetition": 1,
+          "original_choice": "A",
+          "swapped_choice": "B",
+          "choice_pair": "AB",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "music_pair",
+          "repetition": 2,
+          "original_choice": "A",
+          "swapped_choice": "B",
+          "choice_pair": "AB",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "music_pair",
+          "repetition": 3,
+          "original_choice": "A",
+          "swapped_choice": "B",
+          "choice_pair": "AB",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "visual_pair",
+          "repetition": 1,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "visual_pair",
+          "repetition": 2,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "visual_pair",
+          "repetition": 3,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "arranger_pair",
+          "repetition": 1,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "arranger_pair",
+          "repetition": 2,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "arranger_pair",
+          "repetition": 3,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        }
+      ],
+      "valid_pair_count_N": 9,
+      "missing_pair_count": 0,
+      "choice_pair_counts": {
+        "AB": 3,
+        "CC": 6
+      },
+      "position_consistent_count": 9,
+      "position_inconsistent_count": 0,
+      "primacy_counts": {
+        "total_pcn": 0,
+        "AA": 0,
+        "AC": 0,
+        "CA": 0
+      },
+      "recency_counts": {
+        "total_rcn": 0,
+        "BB": 0,
+        "BC": 0,
+        "CB": 0
+      },
+      "consistent_choice_counts": {
+        "AB": 3,
+        "BA": 0,
+        "CC": 6
+      },
+      "ties": {
+        "consistent_tie_pairs_CC": 6,
+        "choice_pairs_containing_one_tie": 0
+      },
+      "ipr": null,
+      "irr": null,
+      "PF_raw": 0.0,
+      "PF": 0.0,
+      "PC": 1.0,
+      "formula_notes": {
+        "PC": "position-consistent valid original/swapped pairs divided by N",
+        "PF_raw": "rcn*irr - pcn*ipr; defined as 0 when there are no inconsistent pairs",
+        "PF": "PF_raw/N using preregistered attainable bounds -N and +N"
+      }
+    },
+    "substantive_music_pair": {
+      "RS": 1.0,
+      "raw_pairs": [
+        {
+          "task_id": "music_pair",
+          "repetition": 1,
+          "original_choice": "A",
+          "swapped_choice": "B",
+          "choice_pair": "AB",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "music_pair",
+          "repetition": 2,
+          "original_choice": "A",
+          "swapped_choice": "B",
+          "choice_pair": "AB",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "music_pair",
+          "repetition": 3,
+          "original_choice": "A",
+          "swapped_choice": "B",
+          "choice_pair": "AB",
+          "classification": "position_consistent"
+        }
+      ],
+      "valid_pair_count_N": 3,
+      "missing_pair_count": 0,
+      "choice_pair_counts": {
+        "AB": 3
+      },
+      "position_consistent_count": 3,
+      "position_inconsistent_count": 0,
+      "primacy_counts": {
+        "total_pcn": 0,
+        "AA": 0,
+        "AC": 0,
+        "CA": 0
+      },
+      "recency_counts": {
+        "total_rcn": 0,
+        "BB": 0,
+        "BC": 0,
+        "CB": 0
+      },
+      "consistent_choice_counts": {
+        "AB": 3,
+        "BA": 0,
+        "CC": 0
+      },
+      "ties": {
+        "consistent_tie_pairs_CC": 0,
+        "choice_pairs_containing_one_tie": 0
+      },
+      "ipr": null,
+      "irr": null,
+      "PF_raw": 0.0,
+      "PF": 0.0,
+      "PC": 1.0,
+      "formula_notes": {
+        "PC": "position-consistent valid original/swapped pairs divided by N",
+        "PF_raw": "rcn*irr - pcn*ipr; defined as 0 when there are no inconsistent pairs",
+        "PF": "PF_raw/N using preregistered attainable bounds -N and +N"
+      },
+      "interpretation_limit": "technical/symbolic evidence comparison only; no auditory or artistic winner"
+    },
+    "exact_duplicate_controls": {
+      "RS": 1.0,
+      "raw_pairs": [
+        {
+          "task_id": "visual_pair",
+          "repetition": 1,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "visual_pair",
+          "repetition": 2,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "visual_pair",
+          "repetition": 3,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "arranger_pair",
+          "repetition": 1,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "arranger_pair",
+          "repetition": 2,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        },
+        {
+          "task_id": "arranger_pair",
+          "repetition": 3,
+          "original_choice": "C",
+          "swapped_choice": "C",
+          "choice_pair": "CC",
+          "classification": "position_consistent"
+        }
+      ],
+      "valid_pair_count_N": 6,
+      "missing_pair_count": 0,
+      "choice_pair_counts": {
+        "CC": 6
+      },
+      "position_consistent_count": 6,
+      "position_inconsistent_count": 0,
+      "primacy_counts": {
+        "total_pcn": 0,
+        "AA": 0,
+        "AC": 0,
+        "CA": 0
+      },
+      "recency_counts": {
+        "total_rcn": 0,
+        "BB": 0,
+        "BC": 0,
+        "CB": 0
+      },
+      "consistent_choice_counts": {
+        "AB": 0,
+        "BA": 0,
+        "CC": 6
+      },
+      "ties": {
+        "consistent_tie_pairs_CC": 6,
+        "choice_pairs_containing_one_tie": 0
+      },
+      "ipr": null,
+      "irr": null,
+      "PF_raw": 0.0,
+      "PF": 0.0,
+      "PC": 1.0,
+      "formula_notes": {
+        "PC": "position-consistent valid original/swapped pairs divided by N",
+        "PF_raw": "rcn*irr - pcn*ipr; defined as 0 when there are no inconsistent pairs",
+        "PF": "PF_raw/N using preregistered attainable bounds -N and +N"
+      },
+      "interpretation_limit": "consistency controls only; excluded from substantive media-quality claims"
+    },
+    "per_task": {
+      "music_pair": {
+        "raw_pairs": [
+          {
+            "task_id": "music_pair",
+            "repetition": 1,
+            "original_choice": "A",
+            "swapped_choice": "B",
+            "choice_pair": "AB",
+            "classification": "position_consistent"
+          },
+          {
+            "task_id": "music_pair",
+            "repetition": 2,
+            "original_choice": "A",
+            "swapped_choice": "B",
+            "choice_pair": "AB",
+            "classification": "position_consistent"
+          },
+          {
+            "task_id": "music_pair",
+            "repetition": 3,
+            "original_choice": "A",
+            "swapped_choice": "B",
+            "choice_pair": "AB",
+            "classification": "position_consistent"
+          }
+        ],
+        "valid_pair_count_N": 3,
+        "missing_pair_count": 0,
+        "choice_pair_counts": {
+          "AB": 3
+        },
+        "position_consistent_count": 3,
+        "position_inconsistent_count": 0,
+        "primacy_counts": {
+          "total_pcn": 0,
+          "AA": 0,
+          "AC": 0,
+          "CA": 0
+        },
+        "recency_counts": {
+          "total_rcn": 0,
+          "BB": 0,
+          "BC": 0,
+          "CB": 0
+        },
+        "consistent_choice_counts": {
+          "AB": 3,
+          "BA": 0,
+          "CC": 0
+        },
+        "ties": {
+          "consistent_tie_pairs_CC": 0,
+          "choice_pairs_containing_one_tie": 0
+        },
+        "ipr": null,
+        "irr": null,
+        "PF_raw": 0.0,
+        "PF": 0.0,
+        "PC": 1.0,
+        "formula_notes": {
+          "PC": "position-consistent valid original/swapped pairs divided by N",
+          "PF_raw": "rcn*irr - pcn*ipr; defined as 0 when there are no inconsistent pairs",
+          "PF": "PF_raw/N using preregistered attainable bounds -N and +N"
+        }
+      },
+      "visual_pair": {
+        "raw_pairs": [
+          {
+            "task_id": "visual_pair",
+            "repetition": 1,
+            "original_choice": "C",
+            "swapped_choice": "C",
+            "choice_pair": "CC",
+            "classification": "position_consistent"
+          },
+          {
+            "task_id": "visual_pair",
+            "repetition": 2,
+            "original_choice": "C",
+            "swapped_choice": "C",
+            "choice_pair": "CC",
+            "classification": "position_consistent"
+          },
+          {
+            "task_id": "visual_pair",
+            "repetition": 3,
+            "original_choice": "C",
+            "swapped_choice": "C",
+            "choice_pair": "CC",
+            "classification": "position_consistent"
+          }
+        ],
+        "valid_pair_count_N": 3,
+        "missing_pair_count": 0,
+        "choice_pair_counts": {
+          "CC": 3
+        },
+        "position_consistent_count": 3,
+        "position_inconsistent_count": 0,
+        "primacy_counts": {
+          "total_pcn": 0,
+          "AA": 0,
+          "AC": 0,
+          "CA": 0
+        },
+        "recency_counts": {
+          "total_rcn": 0,
+          "BB": 0,
+          "BC": 0,
+          "CB": 0
+        },
+        "consistent_choice_counts": {
+          "AB": 0,
+          "BA": 0,
+          "CC": 3
+        },
+        "ties": {
+          "consistent_tie_pairs_CC": 3,
+          "choice_pairs_containing_one_tie": 0
+        },
+        "ipr": null,
+        "irr": null,
+        "PF_raw": 0.0,
+        "PF": 0.0,
+        "PC": 1.0,
+        "formula_notes": {
+          "PC": "position-consistent valid original/swapped pairs divided by N",
+          "PF_raw": "rcn*irr - pcn*ipr; defined as 0 when there are no inconsistent pairs",
+          "PF": "PF_raw/N using preregistered attainable bounds -N and +N"
+        }
+      },
+      "arranger_pair": {
+        "raw_pairs": [
+          {
+            "task_id": "arranger_pair",
+            "repetition": 1,
+            "original_choice": "C",
+            "swapped_choice": "C",
+            "choice_pair": "CC",
+            "classification": "position_consistent"
+          },
+          {
+            "task_id": "arranger_pair",
+            "repetition": 2,
+            "original_choice": "C",
+            "swapped_choice": "C",
+            "choice_pair": "CC",
+            "classification": "position_consistent"
+          },
+          {
+            "task_id": "arranger_pair",
+            "repetition": 3,
+            "original_choice": "C",
+            "swapped_choice": "C",
+            "choice_pair": "CC",
+            "classification": "position_consistent"
+          }
+        ],
+        "valid_pair_count_N": 3,
+        "missing_pair_count": 0,
+        "choice_pair_counts": {
+          "CC": 3
+        },
+        "position_consistent_count": 3,
+        "position_inconsistent_count": 0,
+        "primacy_counts": {
+          "total_pcn": 0,
+          "AA": 0,
+          "AC": 0,
+          "CA": 0
+        },
+        "recency_counts": {
+          "total_rcn": 0,
+          "BB": 0,
+          "BC": 0,
+          "CB": 0
+        },
+        "consistent_choice_counts": {
+          "AB": 0,
+          "BA": 0,
+          "CC": 3
+        },
+        "ties": {
+          "consistent_tie_pairs_CC": 3,
+          "choice_pairs_containing_one_tie": 0
+        },
+        "ipr": null,
+        "irr": null,
+        "PF_raw": 0.0,
+        "PF": 0.0,
+        "PC": 1.0,
+        "formula_notes": {
+          "PC": "position-consistent valid original/swapped pairs divided by N",
+          "PF_raw": "rcn*irr - pcn*ipr; defined as 0 when there are no inconsistent pairs",
+          "PF": "PF_raw/N using preregistered attainable bounds -N and +N"
+        }
+      }
+    },
+    "tiny_sample_warning": "descriptive only; no unbiasedness, judge validity, music quality, or catalogue-wide certification"
+  },
+  "unit_findings": [
+    {
+      "path": "artifacts/music/review-v2/corner_pocket_rag_v1/base/mix.wav",
+      "sha256": "ec0d836ff6358014231b9c3ba8623e965fb6213e2f2c07cec69166688ffc679c",
+      "stratum": "music",
+      "media_mode": "generated local procedural PCM; manual symbolic plan",
+      "objective": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "codec": "PCM signed 16-bit little-endian",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "frames": 784800,
+          "duration_s": 16.35,
+          "sample_peak": 0.126190185546875,
+          "rms": 0.02120393887839827,
+          "clipped_samples": 0,
+          "nonzero_samples": 771780,
+          "first_sample": 0,
+          "last_sample": 0,
+          "decode_status": "PASS"
+        }
+      },
+      "symbolic_music": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "form": "8 bars, 4/4, 120 BPM, C major centre, straight ratio 0.5, explicit harmony and loop boundary",
+          "events": "160 resolved events: 112 notes and 48 unpitched brush events; MIDI pitch 36-82",
+          "phrasing": "36 lead notes, 14 explicit lead rests, call/answer/turnaround roles",
+          "lanes": [
+            "articulation",
+            "dynamics",
+            "ornamentation",
+            "phrasing",
+            "timbre"
+          ],
+          "object_voice": "12 events in one object-motif lane, MIDI pitch 72-79",
+          "groove": "unpitched straight-rag recipe with sweep, tap and chick; no swing application"
+        },
+        "limit": "Symbolic structure supports the designated straight-rag exception; it does not establish heard coherence or feel."
+      },
+      "scene_response": {
+        "outcome": "not applicable",
+        "reason": "catalogue music unit is not bound to a sampled scene performance"
+      },
+      "auditory_performance": {
+        "outcome": "not assessable",
+        "reason": "no usable audio-perception, browser-output, loudspeaker, room, or physical timing modality"
+      },
+      "provenance": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "source_mode": "manual_plan",
+          "renderer": "stdlib-procedural-1",
+          "seed_present": true,
+          "normalization": "none",
+          "asset_statement": "project-authored procedural output; no third-party samples; distribution terms unspecified",
+          "claim_limit": "metadata was inspected; independent tune-similarity or rights verification was not performed"
+        },
+        "limit": "independent tune-similarity, rights clearance, and cross-platform determinism were not tested"
+      },
+      "status": "AUDITION_PENDING"
+    },
+    {
+      "path": "artifacts/music/review-v2/velvet_orbit_v1/sparse/mix.wav",
+      "sha256": "cb5d08d3ce68cba51f777b0c82eee900da8ca790689e598a4896abbc1bb96147",
+      "stratum": "music",
+      "media_mode": "generated local procedural PCM; manual symbolic plan",
+      "objective": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "codec": "PCM signed 16-bit little-endian",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "frames": 1168800,
+          "duration_s": 24.35,
+          "sample_peak": 0.09576416015625,
+          "rms": 0.01079182339237299,
+          "clipped_samples": 0,
+          "nonzero_samples": 1150182,
+          "first_sample": 0,
+          "last_sample": 0,
+          "decode_status": "PASS"
+        }
+      },
+      "symbolic_music": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "form": "8 bars, 4/4, 80 BPM, D minor centre, straight ratio 0.5, explicit extended harmony and loop boundary",
+          "events": "80 resolved events: 56 notes and 24 unpitched brush events; MIDI pitch 38-81",
+          "phrasing": "14 lead notes, 12 explicit lead rests, call/answer/turnaround roles",
+          "lanes": [
+            "articulation",
+            "dynamics",
+            "ornamentation",
+            "phrasing",
+            "timbre"
+          ],
+          "object_voice": "6 events in one object-motif lane, MIDI pitch 74-81",
+          "groove": "unpitched sparse-ballad recipe with sweep, tap and accented swish; no swing application"
+        },
+        "limit": "Sparse lyrical/ballad evidence is symbolic; heard coherence, bossa colour, swing identity and feel remain unassessed."
+      },
+      "supporting_document_accuracy": {
+        "outcome": "evidenced defect",
+        "evidence": "lead-sheet.md line 6 says 'The straight rag remains straight' although this selected unit uses the sparse-ballad groove and is not the straight-rag composition",
+        "impact": "misleading human-readable style description; authoritative JSON remains internally explicit"
+      },
+      "scene_response": {
+        "outcome": "not applicable",
+        "reason": "catalogue music unit is not bound to a sampled scene performance"
+      },
+      "auditory_performance": {
+        "outcome": "not assessable",
+        "reason": "no usable audio-perception, browser-output, loudspeaker, room, or physical timing modality"
+      },
+      "provenance": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "source_mode": "manual_plan",
+          "renderer": "stdlib-procedural-1",
+          "seed_present": true,
+          "normalization": "none",
+          "asset_statement": "project-authored procedural output; no third-party samples; distribution terms unspecified",
+          "claim_limit": "metadata was inspected; independent tune-similarity or rights verification was not performed"
+        },
+        "limit": "independent tune-similarity, rights clearance, and cross-platform determinism were not tested"
+      },
+      "status": "AUDITION_PENDING"
+    },
+    {
+      "path": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss/preview.mp4",
+      "sha256": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+      "stratum": "scene",
+      "media_mode": "synthetic Blender video and evaluated geometry sidecars",
+      "objective": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "video": "H.264, 320x180, 8 fps, 30.0 s, 240/240 frames; ffmpeg decode passed",
+          "geometry": {
+            "count": 9,
+            "event_type_counts": {
+              "approach": 3,
+              "near_miss": 3,
+              "separation": 3
+            },
+            "pair_count": 3,
+            "minimum_reported_gap_m": 0.5,
+            "maximum_uncertainty_m": 1e-05,
+            "all_gaps_exceed_uncertainty": true,
+            "all_physical_impact_false": true,
+            "contact_event_count": 0,
+            "approach_speeds_m_s": [
+              -0.3371066983091727,
+              -0.2808736882446428,
+              -0.2028412060872804
+            ],
+            "separation_speeds_m_s": [
+              0.33023403528823964,
+              0.27495687137343505,
+              0.19841902690029475
+            ],
+            "method": [
+              "scripted"
+            ],
+            "geometry_method": [
+              "analytic_sphere_aabb_proxy"
+            ],
+            "physical_dynamics": [
+              "not simulated"
+            ]
+          },
+          "validation": "parent validation status PASSED for frame count/duration/hash, evaluated trajectory and continuous near-miss certificate"
+        }
+      },
+      "visible_frame_observations": {
+        "outcome": "evidence-supported pass",
+        "facts": "four labelled stills and a 12-frame contact sheet show the projectile traversing left-to-right past a stationary segmented tower and separating afterward",
+        "limit": "one perspective projection overlaps the tower visually; the positive 0.5 m gap is established by sidecars, not pixels"
+      },
+      "near_miss_semantics": {
+        "outcome": "evidence-supported pass",
+        "facts": "three approach, three near-miss and three separation events; minimum reported gap 0.5 m versus 0.00001 m uncertainty; zero contact events and all physical-impact flags false",
+        "limit": "scripted analytic sphere/AABB proxy; physical dynamics not simulated"
+      },
+      "audio_foley": {
+        "outcome": "not applicable",
+        "reason": "the sampled scene video has no audio stream; geometry supports no contact, but no integrated near-miss soundtrack was evaluated"
+      },
+      "full_motion_and_physical_sync": {
+        "outcome": "not assessable",
+        "reason": "decode plus selected frames do not establish full-motion smoothness; there is no audio or physical capture"
+      },
+      "status": "VISUAL_REVIEW_BOUNDED; FULL_MOTION_NOT_ASSESSED"
+    },
+    {
+      "path": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+      "sha256": "09128b430f10fe6ebef622f0f9067dc0adf6a85ce3ab3f04d9e5c3b50f889293",
+      "stratum": "preview",
+      "media_mode": "draft manual-plan arranger PCM; contact-scene symbolic support",
+      "objective": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "codec": "PCM signed 16-bit little-endian",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "frames": 1456800,
+          "duration_s": 30.35,
+          "sample_peak": 0.164642333984375,
+          "rms": 0.026515958371848867,
+          "clipped_samples": 0,
+          "nonzero_samples": 1439063,
+          "first_sample": 0,
+          "last_sample": 0,
+          "decode_status": "PASS"
+        }
+      },
+      "symbolic_mapping": {
+        "outcome": "evidence-supported pass",
+        "facts": {
+          "events": "308 resolved events: 200 notes, 96 brushes, 12 Foley schedule records; MIDI pitch 36-73",
+          "lanes": "12 event lanes; 168 events swing-applied once and 140 unswung",
+          "identity": "four persistent motif owners declared; three object voices active in this rendered event set",
+          "motion": "causal world-Z, 0.3 s lookback, 0.02 m/s deadband, prepared signed transitions -2/+2 semitones"
+        },
+        "limit": "mapping is a draft artistic policy; the fourth declared motif owner is silent under the bounded voice budget"
+      },
+      "contact_foley": {
+        "outcome": "not assessable",
+        "reason": "the sampled WAV explicitly excludes Foley; the 12 exact-scene-time schedule records are data, not heard Foley evidence"
+      },
+      "near_miss": {
+        "outcome": "not applicable",
+        "reason": "supporting context is the contact-scene candidate, not the sampled near-miss scene"
+      },
+      "auditory_performance_and_sync": {
+        "outcome": "not assessable",
+        "reason": "no usable audio-perception, paired video, browser-output, loudspeaker, room, or physical capture modality"
+      },
+      "approval": {
+        "outcome": "not assessable",
+        "state": "draft; no human approval object; pending status preserved"
+      },
+      "status": "AUDITION_PENDING"
+    }
+  ],
+  "open_gates": [
+    "human audition and exact-plan approval",
+    "full-motion visual review",
+    "physical/target browser AV timing and acoustic/display capture",
+    "audible contact Foley and integrated near-miss soundtrack review",
+    "real Muse data and independently labelled detector evaluation"
+  ],
+  "release_effect": "None. AUDITION_PENDING and the project formal gate remain open."
+}

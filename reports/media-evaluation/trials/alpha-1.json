@@ -1,0 +1,160 @@
+{
+  "trial_id": "alpha-1",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning": "xhigh",
+  "packet_path": "reports/media-evaluation/packet_alpha.json",
+  "packet_sha256": "f30034eb34f95a65e2e924476b66318133e3b80a84f6444428c01d7bfa50b58d",
+  "tools_actually_used": [
+    {
+      "tool": "exec_command",
+      "uses": [
+        "read packet_alpha.json with sed",
+        "compute the packet SHA-256 with shasum",
+        "validate the completed JSON with jq"
+      ]
+    },
+    {
+      "tool": "view_image",
+      "uses": [
+        "inspect still_1.png",
+        "inspect still_2.png",
+        "inspect still_3.png",
+        "inspect still_4.png"
+      ]
+    },
+    {
+      "tool": "apply_patch",
+      "uses": [
+        "write alpha-1.json"
+      ]
+    }
+  ],
+  "judgments": [
+    {
+      "task_id": "music_pair",
+      "choice": "A",
+      "underlying_evidence_preference": "A",
+      "evidence": [
+        "Both candidates have PASS PCM decoding, nonzero samples, zero clipped samples, and ample peak headroom.",
+        "Both candidates expose an eight-bar editable form, explicit harmony, lead rests, five separate control lanes, and written style evidence within the allowed symbolic scope.",
+        "Candidate A supplies the stronger bounded persistent-object-voice record: 12 object events versus 6 for B, over the same one-unit scope and with the same one-lane limitation.",
+        "Candidate A also supplies more resolved symbolic observations overall (160 events versus 80), but this supports evidence coverage only and is not treated as proof of auditory or aesthetic quality."
+      ],
+      "criterion_outcomes": [
+        {
+          "criterion": "decodable non-silent PCM with headroom",
+          "outcome": "C",
+          "evidence": "Both decode PASS, contain nonzero samples, have zero clipped samples, and peak well below full scale."
+        },
+        {
+          "criterion": "editable coherent form and harmony",
+          "outcome": "C",
+          "evidence": "Both provide PPQ, meter, tempo, key, eight-bar length, explicit chord spans, and loop-boundary data; neither packet record establishes a material advantage."
+        },
+        {
+          "criterion": "explicit independent control lanes and rests",
+          "outcome": "C",
+          "evidence": "Both expose the same five control-lane categories and explicit lead rests; the small rest-count difference is not a material requirements advantage."
+        },
+        {
+          "criterion": "style evidence appropriate to written form",
+          "outcome": "C",
+          "evidence": "Each has internally described meter, jazz-oriented harmony, rhythmic density, rests, brush techniques, and bounded humanization data; sound and aesthetics are unavailable."
+        },
+        {
+          "criterion": "bounded persistent object-voice evidence",
+          "outcome": "A",
+          "evidence": "A has 12 object-motif events and B has 6 under otherwise equal one-unit, one-object-lane limitations."
+        }
+      ],
+      "modality_limits": [
+        "PCM statistics establish decoding, signal presence, peak level, and clipping only; they do not establish hearing, sound quality, or style by ear.",
+        "Auditory quality, aesthetic preference, originality, tune similarity, and rights clearance are not assessable from this packet.",
+        "Persistent voice behavior across key changes or multiple loops is not established for either candidate.",
+        "Browser, loudspeaker, room, performance, and physical synchronization evidence is absent."
+      ]
+    },
+    {
+      "task_id": "visual_pair",
+      "choice": "C",
+      "underlying_evidence_preference": "C",
+      "evidence": [
+        "The candidate records are identical for codec, duration, frame count, geometry events, stable identity counts, coordinate conventions, and provenance.",
+        "Both candidates refer to the same four neutral labelled stills. Those stills show a labelled projectile and a consistently colored segmented object at selected positions, with no candidate-specific visible difference.",
+        "The sidecar evidence identically reports three approach, three positive-gap near-miss, and three separation events, with no contacts or physical impacts."
+      ],
+      "criterion_outcomes": [
+        {
+          "criterion": "video decode, duration, and frame count",
+          "outcome": "C",
+          "evidence": "Both records describe the same H.264 stream: 320x180, 8 fps, 30 seconds, and 240 frames."
+        },
+        {
+          "criterion": "positive-gap approach, near-miss, and separation semantics",
+          "outcome": "C",
+          "evidence": "Both report the same nine events, 0.5 m minimum positive gap, uncertainty no greater than 0.00001 m, signed approach/separation speeds, and zero contacts."
+        },
+        {
+          "criterion": "stable identities",
+          "outcome": "C",
+          "evidence": "Both report four objects and four stable sonic identities; the shared stills provide no candidate-specific identity advantage."
+        },
+        {
+          "criterion": "honest provenance",
+          "outcome": "C",
+          "evidence": "Both disclose identical synthetic, seeded, scripted provenance using an analytic sphere/AABB proxy and state that physical dynamics were not simulated."
+        },
+        {
+          "criterion": "four neutral stills",
+          "outcome": "C",
+          "evidence": "A and B reference the same four still files, so all bounded visible observations are shared."
+        }
+      ],
+      "modality_limits": [
+        "Four stills cannot establish full-motion smoothness or continuity.",
+        "Container and frame-count metadata cannot establish visual motion quality.",
+        "The sampled scene has no audio stream, so integrated near-miss sound and physical audiovisual synchronization are not assessable.",
+        "The geometry is scripted and proxy-based; the packet explicitly provides no simulated physical dynamics."
+      ]
+    },
+    {
+      "task_id": "arranger_pair",
+      "choice": "C",
+      "underlying_evidence_preference": "C",
+      "evidence": [
+        "The candidate records are identical for decoded PCM statistics, resolved symbolic content, event lanes, object voices, signed mapping options, Foley schedule, and draft provenance.",
+        "Both have PASS PCM decoding, nonzero samples, zero clipped samples, and the same 0.164642333984375 peak.",
+        "Both explicitly remain draft and supply no approval object."
+      ],
+      "criterion_outcomes": [
+        {
+          "criterion": "decodable non-silent PCM with headroom",
+          "outcome": "C",
+          "evidence": "Both provide the same PASS mono PCM statistics, nonzero sample count, peak, RMS, duration, and zero clipping."
+        },
+        {
+          "criterion": "explicit lanes and object voices",
+          "outcome": "C",
+          "evidence": "Both report 12 separate event lanes, three object voices, four persistent motif owners, and the same 308 resolved events."
+        },
+        {
+          "criterion": "signed mapping",
+          "outcome": "C",
+          "evidence": "Both provide the same Z-axis motion parameters, deadband, lookback, mapping features, and signed transition options of -2 and +2."
+        },
+        {
+          "criterion": "honest draft provenance",
+          "outcome": "C",
+          "evidence": "Both identify manual-plan, seeded provenance and explicitly retain draft status without inferred approval."
+        }
+      ],
+      "modality_limits": [
+        "PCM statistics are not hearing and cannot establish auditory quality.",
+        "The WAV excludes Foley, so contact-Foley sound is not assessable; the schedule is symbolic supporting data only.",
+        "No paired video or physical capture is supplied, so physical synchronization is not assessable.",
+        "Human approval is absent for both candidates and remains pending.",
+        "Near-miss evaluation does not apply to the stated contact-scene context."
+      ]
+    }
+  ]
+}

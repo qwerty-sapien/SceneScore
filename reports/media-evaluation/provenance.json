@@ -1,0 +1,81 @@
+{
+  "version": "media-evaluation-provenance-1",
+  "sample_seed": 7811544884403853071,
+  "sample_fraction": 0.23529411764705882,
+  "hash_verification": {
+    "all_match": true,
+    "selected": [
+      {
+        "path": "artifacts/music/review-v2/corner_pocket_rag_v1/base/mix.wav",
+        "expected": "ec0d836ff6358014231b9c3ba8623e965fb6213e2f2c07cec69166688ffc679c",
+        "actual": "ec0d836ff6358014231b9c3ba8623e965fb6213e2f2c07cec69166688ffc679c",
+        "match": true
+      },
+      {
+        "path": "artifacts/music/review-v2/velvet_orbit_v1/sparse/mix.wav",
+        "expected": "cb5d08d3ce68cba51f777b0c82eee900da8ca790689e598a4896abbc1bb96147",
+        "actual": "cb5d08d3ce68cba51f777b0c82eee900da8ca790689e598a4896abbc1bb96147",
+        "match": true
+      },
+      {
+        "path": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss/preview.mp4",
+        "expected": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+        "actual": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+        "match": true
+      },
+      {
+        "path": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+        "expected": "09128b430f10fe6ebef622f0f9067dc0adf6a85ce3ab3f04d9e5c3b50f889293",
+        "actual": "09128b430f10fe6ebef622f0f9067dc0adf6a85ce3ab3f04d9e5c3b50f889293",
+        "match": true
+      }
+    ],
+    "protocol_sha256": "5d1733f3e3bcca84553edfeb360ac0e58eb3181e3d16c1a04317b9236e918cee"
+  },
+  "neutral_packets": {
+    "alpha_sha256": "f30034eb34f95a65e2e924476b66318133e3b80a84f6444428c01d7bfa50b58d",
+    "beta_sha256": "6fee6a8b42ba88b91b112d0df7edfc5ff55885b88964e92b6031bec48520afa4",
+    "mapping": {
+      "version": "neutral-media-judge-mapping-1",
+      "private_to_coordinator": true,
+      "packet_alpha": {
+        "music_pair": {
+          "A": "artifacts/music/review-v2/corner_pocket_rag_v1/base",
+          "B": "artifacts/music/review-v2/velvet_orbit_v1/sparse"
+        },
+        "visual_pair": {
+          "A": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss",
+          "B": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss",
+          "control": "exact_duplicate"
+        },
+        "arranger_pair": {
+          "A": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+          "B": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+          "control": "exact_duplicate"
+        }
+      },
+      "packet_beta": {
+        "music_pair": {
+          "A": "artifacts/music/review-v2/velvet_orbit_v1/sparse",
+          "B": "artifacts/music/review-v2/corner_pocket_rag_v1/base"
+        },
+        "visual_pair": {
+          "A": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss",
+          "B": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss",
+          "control": "exact_duplicate"
+        },
+        "arranger_pair": {
+          "A": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+          "B": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+          "control": "exact_duplicate"
+        }
+      }
+    },
+    "metadata_limits": [
+      "Source paths, content hashes, titles, variation labels, prior reports, and audition labels were removed from judge packets.",
+      "Durations, tempo, harmony, density, event counts, scene structure, and renderer facts may still permit identity inference.",
+      "Duplicate controls are intentionally identical and can be recognized as such from their evidence.",
+      "Packet statistics are coordinator-extracted evidence, not independent recomputation by each judge."
+    ]
+  }
+}

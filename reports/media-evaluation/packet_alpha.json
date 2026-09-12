@@ -1,0 +1,902 @@
+{
+  "packet_version": "neutral-media-judge-1",
+  "instructions": {
+    "role": "independent pairwise evidence judge",
+    "choice": "Return A, B, C (tie), or NOT_ASSESSABLE for each task.",
+    "basis": "Compare only criteria supported by the supplied evidence. Prefer C when evidence is materially equal. Use NOT_ASSESSABLE when the requested comparison depends on a missing modality.",
+    "prohibitions": [
+      "Do not infer hearing from PCM statistics or note names.",
+      "Do not infer full-motion smoothness or physical AV synchronization from still frames or decode metadata.",
+      "Do not infer human approval, rights clearance, originality, or aesthetic quality beyond the explicit evidence.",
+      "Do not inspect repository files outside this packet and its neutral still paths."
+    ],
+    "response_fields": [
+      "task_id",
+      "choice",
+      "underlying_evidence_preference (A/B/C/NOT_ASSESSABLE)",
+      "evidence",
+      "criterion_outcomes",
+      "modality_limits"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "music_pair",
+      "rubric": "Which candidate has stronger evidence on shared technical and symbolic requirements: decodable non-silent PCM with headroom; editable coherent form/harmony; explicit independent control lanes and rests; style evidence appropriate to its written form; and bounded persistent object-voice evidence? Exclude auditory quality, aesthetic preference, and unverified originality.",
+      "candidate_A": {
+        "modalities": [
+          "parsed symbolic JSON",
+          "decoded PCM statistics"
+        ],
+        "media": {
+          "codec": "PCM signed 16-bit little-endian",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "frames": 784800,
+          "duration_s": 16.35,
+          "sample_peak": 0.126190185546875,
+          "rms": 0.02120393887839827,
+          "clipped_samples": 0,
+          "nonzero_samples": 771780,
+          "first_sample": 0,
+          "last_sample": 0,
+          "decode_status": "PASS"
+        },
+        "form": {
+          "ppq": 960,
+          "meter": [
+            4,
+            4
+          ],
+          "tempo_map": [
+            {
+              "bpm": 120,
+              "tick": 0
+            }
+          ],
+          "key_map": [
+            {
+              "mode": "major",
+              "tick": 0,
+              "tonic_pc": 0
+            }
+          ],
+          "length_ticks": 30720,
+          "form_duration_s": 16.0,
+          "release_tail_s": 0.35,
+          "bar_count": 8.0,
+          "harmony": [
+            {
+              "start_tick": 0,
+              "duration_ticks": 3840,
+              "root_pitch_class": 0,
+              "quality": "6",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                9
+              ]
+            },
+            {
+              "start_tick": 3840,
+              "duration_ticks": 3840,
+              "root_pitch_class": 1,
+              "quality": "dim7",
+              "intervals_semitones": [
+                0,
+                3,
+                6,
+                9
+              ]
+            },
+            {
+              "start_tick": 7680,
+              "duration_ticks": 3840,
+              "root_pitch_class": 2,
+              "quality": "m7",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                10
+              ]
+            },
+            {
+              "start_tick": 11520,
+              "duration_ticks": 3840,
+              "root_pitch_class": 7,
+              "quality": "7",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                10
+              ]
+            },
+            {
+              "start_tick": 15360,
+              "duration_ticks": 3840,
+              "root_pitch_class": 9,
+              "quality": "m7",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                10
+              ]
+            },
+            {
+              "start_tick": 19200,
+              "duration_ticks": 3840,
+              "root_pitch_class": 2,
+              "quality": "7",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                10
+              ]
+            },
+            {
+              "start_tick": 23040,
+              "duration_ticks": 1920,
+              "root_pitch_class": 2,
+              "quality": "m7",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                10
+              ]
+            },
+            {
+              "start_tick": 24960,
+              "duration_ticks": 1920,
+              "root_pitch_class": 7,
+              "quality": "7",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                10
+              ]
+            },
+            {
+              "start_tick": 26880,
+              "duration_ticks": 1920,
+              "root_pitch_class": 0,
+              "quality": "6",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                9
+              ]
+            },
+            {
+              "start_tick": 28800,
+              "duration_ticks": 1920,
+              "root_pitch_class": 7,
+              "quality": "7",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                10
+              ]
+            }
+          ],
+          "loop_boundary_ticks": {
+            "audio_tail_policy": "350 ms release tail; loop uses score boundary, not end of WAV",
+            "end_tick": 30720,
+            "ending": "seed harmonic turnaround; next loop supplies tonic",
+            "start_tick": 0
+          }
+        },
+        "symbolic_content": {
+          "lead_note_count": 36,
+          "lead_pitch_range": [
+            67,
+            82
+          ],
+          "lead_unique_pitch_count": 11,
+          "lead_rest_count": 14,
+          "phrase_roles": {
+            "answer": 1,
+            "call": 2,
+            "turnaround": 1
+          },
+          "resolved_event_count": 160,
+          "resolved_note_count": 112,
+          "resolved_brush_count": 48,
+          "resolved_pitch_range": [
+            36,
+            82
+          ],
+          "lane_event_counts": {
+            "bass": 16,
+            "brushes": 48,
+            "object_motif": 12,
+            "piano_or_lead": 84
+          },
+          "articulation_counts": {
+            "bass_pluck": 16,
+            "chick": 16,
+            "light_detached": 36,
+            "soft_comp": 48,
+            "soft_marker": 12,
+            "sweep": 16,
+            "tap": 16
+          },
+          "swing_application_counts": {
+            "0": 160
+          },
+          "separate_control_lanes": [
+            "articulation",
+            "dynamics",
+            "ornamentation",
+            "phrasing",
+            "timbre"
+          ]
+        },
+        "groove": {
+          "meter": [
+            4,
+            4
+          ],
+          "ppq": 960,
+          "length_ticks": 3840,
+          "pitched": false,
+          "technique_counts": {
+            "chick": 2,
+            "sweep": 2,
+            "tap": 2
+          },
+          "swingable_recipe_events": 0,
+          "max_humanize_ms": 6,
+          "max_velocity_delta": 3
+        },
+        "persistent_voice_evidence": {
+          "object_event_count": 12,
+          "object_lane_count": 1,
+          "object_pitch_range": [
+            72,
+            79
+          ],
+          "scope_limit": "one unit; persistence across key changes or multiple loops is not established"
+        },
+        "provenance_claim": {
+          "source_mode": "manual_plan",
+          "renderer": "stdlib-procedural-1",
+          "seed_present": true,
+          "normalization": "none",
+          "asset_statement": "project-authored procedural output; no third-party samples; distribution terms unspecified",
+          "claim_limit": "metadata was inspected; independent tune-similarity or rights verification was not performed"
+        },
+        "criterion_limits": {
+          "auditory": "NOT_ASSESSABLE: no audio-perception tool was used",
+          "aesthetic": "NOT_ASSESSABLE from symbolic and PCM statistics",
+          "style": "Only written meter, harmony, rhythm, density, rests and groove recipe are assessable",
+          "performance": "No browser, loudspeaker, room, or physical synchronization evidence"
+        }
+      },
+      "candidate_B": {
+        "modalities": [
+          "parsed symbolic JSON",
+          "decoded PCM statistics"
+        ],
+        "media": {
+          "codec": "PCM signed 16-bit little-endian",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "frames": 1168800,
+          "duration_s": 24.35,
+          "sample_peak": 0.09576416015625,
+          "rms": 0.01079182339237299,
+          "clipped_samples": 0,
+          "nonzero_samples": 1150182,
+          "first_sample": 0,
+          "last_sample": 0,
+          "decode_status": "PASS"
+        },
+        "form": {
+          "ppq": 960,
+          "meter": [
+            4,
+            4
+          ],
+          "tempo_map": [
+            {
+              "bpm": 80,
+              "tick": 0
+            }
+          ],
+          "key_map": [
+            {
+              "mode": "minor",
+              "tick": 0,
+              "tonic_pc": 2
+            }
+          ],
+          "length_ticks": 30720,
+          "form_duration_s": 24.0,
+          "release_tail_s": 0.35,
+          "bar_count": 8.0,
+          "harmony": [
+            {
+              "start_tick": 0,
+              "duration_ticks": 3840,
+              "root_pitch_class": 2,
+              "quality": "m9",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                10,
+                14
+              ]
+            },
+            {
+              "start_tick": 3840,
+              "duration_ticks": 3840,
+              "root_pitch_class": 7,
+              "quality": "m9",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                10,
+                14
+              ]
+            },
+            {
+              "start_tick": 7680,
+              "duration_ticks": 3840,
+              "root_pitch_class": 2,
+              "quality": "m9",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                10,
+                14
+              ]
+            },
+            {
+              "start_tick": 11520,
+              "duration_ticks": 3840,
+              "root_pitch_class": 9,
+              "quality": "7b9",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                10,
+                13
+              ]
+            },
+            {
+              "start_tick": 15360,
+              "duration_ticks": 3840,
+              "root_pitch_class": 10,
+              "quality": "maj7",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                11
+              ]
+            },
+            {
+              "start_tick": 19200,
+              "duration_ticks": 3840,
+              "root_pitch_class": 7,
+              "quality": "m9",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                10,
+                14
+              ]
+            },
+            {
+              "start_tick": 23040,
+              "duration_ticks": 1920,
+              "root_pitch_class": 4,
+              "quality": "m7b5",
+              "intervals_semitones": [
+                0,
+                3,
+                6,
+                10
+              ]
+            },
+            {
+              "start_tick": 24960,
+              "duration_ticks": 1920,
+              "root_pitch_class": 9,
+              "quality": "7b9",
+              "intervals_semitones": [
+                0,
+                4,
+                7,
+                10,
+                13
+              ]
+            },
+            {
+              "start_tick": 26880,
+              "duration_ticks": 3840,
+              "root_pitch_class": 2,
+              "quality": "m6",
+              "intervals_semitones": [
+                0,
+                3,
+                7,
+                9
+              ]
+            }
+          ],
+          "loop_boundary_ticks": {
+            "audio_tail_policy": "350 ms release tail; loop uses score boundary, not end of WAV",
+            "end_tick": 30720,
+            "ending": "seed harmonic turnaround; next loop supplies tonic",
+            "start_tick": 0
+          }
+        },
+        "symbolic_content": {
+          "lead_note_count": 14,
+          "lead_pitch_range": [
+            61,
+            69
+          ],
+          "lead_unique_pitch_count": 7,
+          "lead_rest_count": 12,
+          "phrase_roles": {
+            "answer": 1,
+            "call": 2,
+            "turnaround": 1
+          },
+          "resolved_event_count": 80,
+          "resolved_note_count": 56,
+          "resolved_brush_count": 24,
+          "resolved_pitch_range": [
+            38,
+            81
+          ],
+          "lane_event_counts": {
+            "bass": 9,
+            "brushes": 24,
+            "object_motif": 6,
+            "piano_or_lead": 41
+          },
+          "articulation_counts": {
+            "accented_swish": 8,
+            "bass_pluck": 9,
+            "light_detached": 14,
+            "soft_comp": 27,
+            "soft_marker": 6,
+            "sweep": 8,
+            "tap": 8
+          },
+          "swing_application_counts": {
+            "0": 80
+          },
+          "separate_control_lanes": [
+            "articulation",
+            "dynamics",
+            "ornamentation",
+            "phrasing",
+            "timbre"
+          ]
+        },
+        "groove": {
+          "meter": [
+            4,
+            4
+          ],
+          "ppq": 960,
+          "length_ticks": 3840,
+          "pitched": false,
+          "technique_counts": {
+            "accented_swish": 1,
+            "sweep": 1,
+            "tap": 1
+          },
+          "swingable_recipe_events": 0,
+          "max_humanize_ms": 6,
+          "max_velocity_delta": 3
+        },
+        "persistent_voice_evidence": {
+          "object_event_count": 6,
+          "object_lane_count": 1,
+          "object_pitch_range": [
+            74,
+            81
+          ],
+          "scope_limit": "one unit; persistence across key changes or multiple loops is not established"
+        },
+        "provenance_claim": {
+          "source_mode": "manual_plan",
+          "renderer": "stdlib-procedural-1",
+          "seed_present": true,
+          "normalization": "none",
+          "asset_statement": "project-authored procedural output; no third-party samples; distribution terms unspecified",
+          "claim_limit": "metadata was inspected; independent tune-similarity or rights verification was not performed"
+        },
+        "criterion_limits": {
+          "auditory": "NOT_ASSESSABLE: no audio-perception tool was used",
+          "aesthetic": "NOT_ASSESSABLE from symbolic and PCM statistics",
+          "style": "Only written meter, harmony, rhythm, density, rests and groove recipe are assessable",
+          "performance": "No browser, loudspeaker, room, or physical synchronization evidence"
+        }
+      }
+    },
+    {
+      "task_id": "visual_pair",
+      "rubric": "Which candidate has stronger evidence on identical technical/geometry/visible-still criteria: video decode/duration/frame count, positive-gap approach-near-miss-separation semantics, stable identities, honest provenance, and the four neutral stills? ",
+      "candidate_A": {
+        "modalities": [
+          "decoded video container",
+          "four labelled still frames",
+          "parsed geometry/event sidecars"
+        ],
+        "video": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 320,
+              "height": 180,
+              "r_frame_rate": "8/1",
+              "avg_frame_rate": "8/1",
+              "duration": "30.000000",
+              "nb_frames": "240"
+            }
+          ],
+          "format": {
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "duration": "30.000000",
+            "size": "25807",
+            "bit_rate": "6881"
+          }
+        },
+        "scene": {
+          "duration_s": 30.0,
+          "fps": "8/1",
+          "expected_frames": 240,
+          "rendered_frames": 240,
+          "object_count": 4,
+          "stable_sonic_identity_count": 4,
+          "units": "metres",
+          "up_axis": "Z",
+          "handedness": "right",
+          "matrix_layout": "row_major_column_vectors",
+          "quaternion_order": "xyzw"
+        },
+        "geometry_events": {
+          "count": 9,
+          "event_type_counts": {
+            "approach": 3,
+            "near_miss": 3,
+            "separation": 3
+          },
+          "pair_count": 3,
+          "minimum_reported_gap_m": 0.5,
+          "maximum_uncertainty_m": 1e-05,
+          "all_gaps_exceed_uncertainty": true,
+          "all_physical_impact_false": true,
+          "contact_event_count": 0,
+          "approach_speeds_m_s": [
+            -0.3371066983091727,
+            -0.2808736882446428,
+            -0.2028412060872804
+          ],
+          "separation_speeds_m_s": [
+            0.33023403528823964,
+            0.27495687137343505,
+            0.19841902690029475
+          ],
+          "method": [
+            "scripted"
+          ],
+          "geometry_method": [
+            "analytic_sphere_aabb_proxy"
+          ],
+          "physical_dynamics": [
+            "not simulated"
+          ]
+        },
+        "still_observation_scope": {
+          "frames": [
+            "still_1.png",
+            "still_2.png",
+            "still_3.png",
+            "still_4.png"
+          ],
+          "meaning": "selected start, approach, closest-event, and ending observations; labels visible"
+        },
+        "provenance_claim": {
+          "source_mode": "synthetic",
+          "tool_version": "5.2.1 LTS",
+          "seed_present": true,
+          "interaction_method": "scripted with analytic sphere/AABB proxy",
+          "physical_dynamics": "not simulated"
+        },
+        "criterion_limits": {
+          "full_motion": "NOT_ASSESSABLE from four stills; decode success does not establish smoothness",
+          "sound": "NOT_APPLICABLE: sampled scene unit has no audio stream",
+          "foley_absence": "No audio stream means no contact Foley is present; this does not evaluate an integrated near-miss soundtrack",
+          "physical_sync": "NOT_ASSESSABLE: no physical capture or audio stream",
+          "visual_qa": "four frames permit bounded visible observations only"
+        }
+      },
+      "candidate_B": {
+        "modalities": [
+          "decoded video container",
+          "four labelled still frames",
+          "parsed geometry/event sidecars"
+        ],
+        "video": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 320,
+              "height": 180,
+              "r_frame_rate": "8/1",
+              "avg_frame_rate": "8/1",
+              "duration": "30.000000",
+              "nb_frames": "240"
+            }
+          ],
+          "format": {
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "duration": "30.000000",
+            "size": "25807",
+            "bit_rate": "6881"
+          }
+        },
+        "scene": {
+          "duration_s": 30.0,
+          "fps": "8/1",
+          "expected_frames": 240,
+          "rendered_frames": 240,
+          "object_count": 4,
+          "stable_sonic_identity_count": 4,
+          "units": "metres",
+          "up_axis": "Z",
+          "handedness": "right",
+          "matrix_layout": "row_major_column_vectors",
+          "quaternion_order": "xyzw"
+        },
+        "geometry_events": {
+          "count": 9,
+          "event_type_counts": {
+            "approach": 3,
+            "near_miss": 3,
+            "separation": 3
+          },
+          "pair_count": 3,
+          "minimum_reported_gap_m": 0.5,
+          "maximum_uncertainty_m": 1e-05,
+          "all_gaps_exceed_uncertainty": true,
+          "all_physical_impact_false": true,
+          "contact_event_count": 0,
+          "approach_speeds_m_s": [
+            -0.3371066983091727,
+            -0.2808736882446428,
+            -0.2028412060872804
+          ],
+          "separation_speeds_m_s": [
+            0.33023403528823964,
+            0.27495687137343505,
+            0.19841902690029475
+          ],
+          "method": [
+            "scripted"
+          ],
+          "geometry_method": [
+            "analytic_sphere_aabb_proxy"
+          ],
+          "physical_dynamics": [
+            "not simulated"
+          ]
+        },
+        "still_observation_scope": {
+          "frames": [
+            "still_1.png",
+            "still_2.png",
+            "still_3.png",
+            "still_4.png"
+          ],
+          "meaning": "selected start, approach, closest-event, and ending observations; labels visible"
+        },
+        "provenance_claim": {
+          "source_mode": "synthetic",
+          "tool_version": "5.2.1 LTS",
+          "seed_present": true,
+          "interaction_method": "scripted with analytic sphere/AABB proxy",
+          "physical_dynamics": "not simulated"
+        },
+        "criterion_limits": {
+          "full_motion": "NOT_ASSESSABLE from four stills; decode success does not establish smoothness",
+          "sound": "NOT_APPLICABLE: sampled scene unit has no audio stream",
+          "foley_absence": "No audio stream means no contact Foley is present; this does not evaluate an integrated near-miss soundtrack",
+          "physical_sync": "NOT_ASSESSABLE: no physical capture or audio stream",
+          "visual_qa": "four frames permit bounded visible observations only"
+        }
+      }
+    },
+    {
+      "task_id": "arranger_pair",
+      "rubric": "Which candidate has stronger evidence on identical PCM and symbolic schedule criteria: decodable non-silent PCM with headroom, explicit lanes/object voices/signed mapping, and honest draft provenance? Auditory quality, Foley sound, physical sync, and approval are absent. ",
+      "candidate_A": {
+        "modalities": [
+          "decoded PCM statistics",
+          "parsed draft plan and symbolic event schedules"
+        ],
+        "media": {
+          "codec": "PCM signed 16-bit little-endian",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "frames": 1456800,
+          "duration_s": 30.35,
+          "sample_peak": 0.164642333984375,
+          "rms": 0.026515958371848867,
+          "clipped_samples": 0,
+          "nonzero_samples": 1439063,
+          "first_sample": 0,
+          "last_sample": 0,
+          "decode_status": "PASS"
+        },
+        "symbolic_content": {
+          "resolved_event_count": 308,
+          "event_type_counts": {
+            "brush": 96,
+            "foley": 12,
+            "note": 200
+          },
+          "resolved_pitch_range": [
+            36,
+            73
+          ],
+          "object_voice_count": 3,
+          "swing_application_counts": {
+            "0": 140,
+            "1": 168
+          },
+          "separate_event_lanes": 12
+        },
+        "scene_mapping": {
+          "draft_review_status": "draft",
+          "mapping_features": [
+            "approach",
+            "collision",
+            "separation",
+            "surface_gap",
+            "vertical_motion"
+          ],
+          "persistent_motif_owner_count": 4,
+          "motion_axis": "Z",
+          "motion_lookback_s": 0.3,
+          "motion_deadband_m_s": 0.02,
+          "signed_transition_options": [
+            -2,
+            2
+          ],
+          "foley_schedule_count": 12,
+          "foley_scene_times_s": [
+            12.625,
+            15.03125,
+            16.84375,
+            18.8125,
+            20.96875,
+            21.375,
+            22.84375,
+            23.625
+          ],
+          "critical_limit": "the sampled WAV excludes Foley; its separate schedule is supporting data only"
+        },
+        "provenance_claim": {
+          "source_mode": "manual_plan",
+          "seed_present": true,
+          "review_state": "draft; no approval object was supplied or inferred"
+        },
+        "criterion_limits": {
+          "auditory": "NOT_ASSESSABLE: no audio-perception tool was used",
+          "contact_foley": "NOT_ASSESSABLE in this WAV because Foley was explicitly excluded",
+          "near_miss": "NOT_APPLICABLE to this candidate's contact-scene context",
+          "physical_sync": "NOT_ASSESSABLE: no physical capture or paired video",
+          "human_approval": "ABSENT; must remain pending"
+        }
+      },
+      "candidate_B": {
+        "modalities": [
+          "decoded PCM statistics",
+          "parsed draft plan and symbolic event schedules"
+        ],
+        "media": {
+          "codec": "PCM signed 16-bit little-endian",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "frames": 1456800,
+          "duration_s": 30.35,
+          "sample_peak": 0.164642333984375,
+          "rms": 0.026515958371848867,
+          "clipped_samples": 0,
+          "nonzero_samples": 1439063,
+          "first_sample": 0,
+          "last_sample": 0,
+          "decode_status": "PASS"
+        },
+        "symbolic_content": {
+          "resolved_event_count": 308,
+          "event_type_counts": {
+            "brush": 96,
+            "foley": 12,
+            "note": 200
+          },
+          "resolved_pitch_range": [
+            36,
+            73
+          ],
+          "object_voice_count": 3,
+          "swing_application_counts": {
+            "0": 140,
+            "1": 168
+          },
+          "separate_event_lanes": 12
+        },
+        "scene_mapping": {
+          "draft_review_status": "draft",
+          "mapping_features": [
+            "approach",
+            "collision",
+            "separation",
+            "surface_gap",
+            "vertical_motion"
+          ],
+          "persistent_motif_owner_count": 4,
+          "motion_axis": "Z",
+          "motion_lookback_s": 0.3,
+          "motion_deadband_m_s": 0.02,
+          "signed_transition_options": [
+            -2,
+            2
+          ],
+          "foley_schedule_count": 12,
+          "foley_scene_times_s": [
+            12.625,
+            15.03125,
+            16.84375,
+            18.8125,
+            20.96875,
+            21.375,
+            22.84375,
+            23.625
+          ],
+          "critical_limit": "the sampled WAV excludes Foley; its separate schedule is supporting data only"
+        },
+        "provenance_claim": {
+          "source_mode": "manual_plan",
+          "seed_present": true,
+          "review_state": "draft; no approval object was supplied or inferred"
+        },
+        "criterion_limits": {
+          "auditory": "NOT_ASSESSABLE: no audio-perception tool was used",
+          "contact_foley": "NOT_ASSESSABLE in this WAV because Foley was explicitly excluded",
+          "near_miss": "NOT_APPLICABLE to this candidate's contact-scene context",
+          "physical_sync": "NOT_ASSESSABLE: no physical capture or paired video",
+          "human_approval": "ABSENT; must remain pending"
+        }
+      }
+    }
+  ]
+}
