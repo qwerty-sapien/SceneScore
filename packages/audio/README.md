@@ -1,1 +1,7 @@
-clock.ts is a fake-clock conformance reference only. Phase 2E owns production transport, mixing, audio rendering and browser tests.
+# Deterministic browser audio
+
+model.ts validates canonical records/approval and implements the bounded world-Z/±2 transition family; transport.ts handles epochs, duplicate IDs, quality/expiry, one pending boundary and rollback on pause. engine.ts schedules native Web Audio nodes and exports actual stereo PCM via OfflineAudioContext. Tests include Python-golden conformance. clock.ts remains the historical Phase1 fixture helper, not the running clock.
+
+AudioContext is unlocked by a UI gesture. Scheduling maps project position to an explicit AudioContext anchor; JS timers fill lookahead but don't define note onset. Pause/seek clears nodes and increments generation. Seek starts a fresh base-score pass. Buffered pitched sustains are cut/faded at a future key boundary; nonpitched events retain scene time and identity. Input source changes invalidate approval and clear pending actions; live Muse/real replay are unavailable until their adapter is genuinely configured.
+
+Current limits:120-second project,5000 events,128MiB prepared sample budget, fixed single-key forms/approved±2 graph, conservative gain and optional hard mute. Real acoustic/display latency is unmeasured. Eight-fps video callback offsets did not meet50ms; see browser evidence. Gain/lane edits are current-mix settings, not yet time-varying automation export; integration must record changes or reject unsupported replay exports rather than pretend they match historical mixing. Generic external-clock actions require an explicit validated clock mapping before audio-epoch submission.
