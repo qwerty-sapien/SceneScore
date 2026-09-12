@@ -11,7 +11,7 @@
   "scripts": {
     "generate": "node tools/generate-types.mjs",
     "typecheck": "tsc --noEmit",
-    "test:contracts": "tsx --test tests/ts/*.test.ts",
+    "test:contracts": "node --import tsx --test tests/ts/*.test.ts",
     "build": "vite build apps/web --outDir ../../artifacts/web-dist",
     "dev": "vite apps/web --host 127.0.0.1"
   },

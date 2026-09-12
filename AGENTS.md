@@ -21,3 +21,7 @@ The authorized Phase 1 established contract 0.1 and the minimal synthetic harnes
 ## Completed Phase 2 wave baseline
 
 The user authorized 2A/B/C/D in parallel; all four modules now exist. Read reports/phase2/GATE.md and the four 02 handoffs before future work. Root `make test` includes module tests; mounted routes provide local queries/preview only. Generic single-record domain registry dispatch remains unregistered. Frozen 0.1 schema/locks are unchanged. No actual audio executor/performance UI or transport integration is implied. Distinguish TransitionPreview (unapproved audition-only) from ApprovedSession (exact human approval required); neither starts audio. Music candidates remain AUDITION_PENDING and Foley is a separate event stream. No Phase 2E/3A/3B/4 work runs without the next user instruction.
+
+## Authorized Phase 2E / Phase 3 continuation
+
+The later user instruction authorized 2E, then 3, followed by GPT-5.6-Sol xhigh sampled media evaluation. Read reports/phase3/GATE.md, handoffs/03A.md and handoffs/03B.md. Browser audio, local demo and draft stereo/stem/mux exports now exist. Formal approval/performance, human audition and measured timing gates remain unresolved; do not label Phase 3B passed. Phase 3A has no eligible real data and no learned deployment artifact. Never turn an automated fixture identity or a model review into human approval. Current unapproved exports carry approval:null. No Phase 4 work is authorized. The media review sample/protocol are frozen; do not redraw or silently replace its media after findings.

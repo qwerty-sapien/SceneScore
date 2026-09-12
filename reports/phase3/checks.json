@@ -1,0 +1,21 @@
+{
+  "status": "SOFTWARE_CHECKS_PASSED_FORMAL_GATE_NOT_PASSED",
+  "schema": "0.1 unchanged",
+  "python_tests": {"passed": 257, "warnings": 2, "command": "make test", "log": "reports/phase3/checks.log"},
+  "shared_typescript_tests": {"passed": 65, "command": "make test"},
+  "audio_typescript_tests": {"passed": 16, "command": "node --import tsx --test packages/audio/tests/*.test.ts", "note": "Two additional rollback/export tests passed after the 14-test full-suite log"},
+  "lint": "PASS: ruff check src tests modules tools/*.py",
+  "typecheck": "PASS: npm run typecheck",
+  "build": "PASS: npm run build",
+  "immutable_sources": "PASS: 19 supplied hashes and planning copies",
+  "ragtm_original_files": {"checked": 802, "changed": 0},
+  "browser": {"mode": "KEYBOARD draft", "offline_seconds": 30, "scheduled_events": 308, "approval": null, "physical_output_measured": false},
+  "media": {"wav_files": 5, "rate": 48000, "frames_each": 1440000, "clipped_samples": 0, "stem_sum_error_lsb": 2, "mux": "DRAFT_NOT_APPROVED"},
+  "timing": {"p95_abs_software_offset_ms": 137.33333333333242, "max_abs_ms": 139.66666666666683, "last_frame_samples": 200, "proposed_target_ms": 50, "gate": "FAIL"},
+  "real_muse": "NOT_RUN: INSUFFICIENT_REAL_DATA and hardware unverified",
+  "human_approval": "BLOCKED: automatic approval review rejected automated approver; user response not received",
+  "human_audition": "NOT_RUN",
+  "live_api": "NOT_RUN",
+  "safari": "NOT_RUN",
+  "phase4": "NOT_STARTED_NOT_AUTHORIZED"
+}

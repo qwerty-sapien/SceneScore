@@ -13,6 +13,19 @@
 
 SS-030 (core keyboard/replay product) and SS-031 (original musical creative identity) remain product acceptance obligations. No fixture or metadata-only asset is a listening, rendering, device or finished-product test. Remaining MUST requirements retain observable planned tests in requirements.yaml.
 
+## Phase 2E / Phase 3 evidence
+
+| Requirements | Actual checks | Remaining acceptance |
+|---|---|---|
+| SS-002, SS-021, SS-030 | Chrome offline draft run; hash-failure recovery; 30s stereo/four stems/mux; tests/test_phase3.py | Human-approved modulation/export and broader authoring/replay UI |
+| SS-009, SS-015, SS-019 | packages/audio/tests: Python transition golden, pitched-only changes, duplicate/late/stale/quality rejection, pause rollback and late preparation rollback | Approved browser control trace and human listening |
+| SS-018 | Audio-clock mapping/epoch tests; actual 200-frame software drift sample | 50ms target failed; physical onset and real Muse bridge not measured |
+| SS-006, SS-007 | 12 tests under modules/muse/training and evaluation | Independent real sessions, held-out metrics and deployment gate |
+| SS-022, SS-031 | Frozen 4/17 requested model review; original symbolic metadata | Human auditory judgment remains separate and pending |
+| SS-001, SS-024, SS-025 | 19 immutable planning hashes; 802 unchanged RAGTM source files; worktree/job teardown record | Future runs must preserve ownership and scope |
+
+Current report: reports/phase3/GATE.md. No failure threshold was relaxed. Drafts with `approval:null` are not approved performance evidence.
+
 ## Phase 2 wave evidence
 
 | Requirement | Executed module checks | Remaining empirical/product gate |

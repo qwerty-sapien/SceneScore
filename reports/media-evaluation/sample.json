@@ -1,0 +1,118 @@
+{
+  "version": "media-review-sample-1",
+  "seed": 7811544884403853071,
+  "algorithm": "Python random.Random.sample, sorted paths per stratum",
+  "universe_count": 17,
+  "sample_count": 4,
+  "fraction": 0.23529411764705882,
+  "universe": [
+    {
+      "path": "artifacts/music/review-v2/almost_then_away_v1/animated/mix.wav",
+      "sha256": "830c4e3d1a7958f07a73a0d8eb9306403f4d0c07d7cc1c9f3287f6f3260bc433",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/almost_then_away_v1/base/mix.wav",
+      "sha256": "685309bbbe50fd78bd63fbfc708a7413fa758f92d5bcae4cc141a485b99c2271",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/almost_then_away_v1/sparse/mix.wav",
+      "sha256": "f0bd562c7609f9e3d6b97dcee3ca1640aec00c55f4c16d52025f92c8aeae079c",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/corner_pocket_rag_v1/animated/mix.wav",
+      "sha256": "5636fe9a1e04eb9798f64ac315a8c92eddf3c5a1b7da4611193dc3a47fd8a124",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/corner_pocket_rag_v1/base/mix.wav",
+      "sha256": "ec0d836ff6358014231b9c3ba8623e965fb6213e2f2c07cec69166688ffc679c",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/corner_pocket_rag_v1/sparse/mix.wav",
+      "sha256": "ec38e9ecf9f88720549854f64d392386440d81ad735c3101d649c37b2c620d45",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/tilted_blue_v1/animated/mix.wav",
+      "sha256": "20b096c9d3fb18c83c94ad394b9792a7c41c7d798c3826f2687cbe17969bb2c2",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/tilted_blue_v1/base/mix.wav",
+      "sha256": "4f576a7d8ffcf1f9d2ed5724f426d7711e40404350d2d447002b642a707cc3a8",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/tilted_blue_v1/sparse/mix.wav",
+      "sha256": "e8c91bc6696b51494b83432c37fa5756157e01801e7a5d139605448a1a663aa9",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/velvet_orbit_v1/animated/mix.wav",
+      "sha256": "0cc91d927e1f3e4846bfef9d95211c56a59fbcc4939c1eac95af76fc9ec134a7",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/velvet_orbit_v1/base/mix.wav",
+      "sha256": "e55dfd6ea25bc6f2e37860524c2e3a3cb90b3768d956490ba42ce9b73397b6e8",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/velvet_orbit_v1/sparse/mix.wav",
+      "sha256": "cb5d08d3ce68cba51f777b0c82eee900da8ca790689e598a4896abbc1bb96147",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss/preview.mp4",
+      "sha256": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+      "stratum": "scene"
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/preview.mp4",
+      "sha256": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+      "stratum": "scene"
+    },
+    {
+      "path": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+      "sha256": "09128b430f10fe6ebef622f0f9067dc0adf6a85ce3ab3f04d9e5c3b50f889293",
+      "stratum": "preview"
+    },
+    {
+      "path": "artifacts/arranger/evaluated-hero-audition/transition.wav",
+      "sha256": "02795bfd663727d0bea0c95d34761b8285972db42994dcca1b652008d836b3ed",
+      "stratum": "preview"
+    },
+    {
+      "path": "artifacts/phase3/performance/scenescore-DRAFT.mp4",
+      "sha256": "8b69ad6b639e670ed701e44f92aa49a359dee02c6e5d8a6755a1595941df2265",
+      "stratum": "preview"
+    }
+  ],
+  "selected": [
+    {
+      "path": "artifacts/music/review-v2/corner_pocket_rag_v1/base/mix.wav",
+      "sha256": "ec0d836ff6358014231b9c3ba8623e965fb6213e2f2c07cec69166688ffc679c",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/music/review-v2/velvet_orbit_v1/sparse/mix.wav",
+      "sha256": "cb5d08d3ce68cba51f777b0c82eee900da8ca790689e598a4896abbc1bb96147",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss/preview.mp4",
+      "sha256": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+      "stratum": "scene"
+    },
+    {
+      "path": "artifacts/arranger/evaluated-hero-audition/baseline.wav",
+      "sha256": "09128b430f10fe6ebef622f0f9067dc0adf6a85ce3ab3f04d9e5c3b50f889293",
+      "stratum": "preview"
+    }
+  ],
+  "protocol_sha256": "5d1733f3e3bcca84553edfeb360ac0e58eb3181e3d16c1a04317b9236e918cee"
+}

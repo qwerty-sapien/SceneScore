@@ -1,6 +1,6 @@
 {
-  "document_version": "0.1-phase2-wave",
-  "status": "MODULES_TESTED_PRODUCT_NOT_READY",
+  "document_version": "0.1-phase3",
+  "status": "SOFTWARE_DELIVERED_FORMAL_GATE_NOT_PASSED",
   "source_root": ".brief/",
   "requirements": [
     {
@@ -26,8 +26,8 @@
       "planned_tests": [
         "UI-author-export"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "vertical_slice_implemented",
+      "evidence_status": "reports/phase3/GATE.md; real draft browser audio/stems/mux exercised, 16 audio tests; human-approved modulation/export NOT_RUN; 50ms AV target failed; wider authoring/looping incomplete"
     },
     {
       "id": "SS-003",
@@ -78,8 +78,8 @@
       "planned_tests": [
         "EVAL-splits"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "no_data_pipeline_implemented",
+      "evidence_status": "12 tests in modules/muse/training and evaluation; reports/03A/MODEL_CARD.md; INSUFFICIENT_REAL_DATA; real metrics NOT_RUN"
     },
     {
       "id": "SS-007",
@@ -91,8 +91,8 @@
       "planned_tests": [
         "EVAL-events"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "no_data_pipeline_implemented",
+      "evidence_status": "12 tests in modules/muse/training and evaluation; reports/03A/MODEL_CARD.md; INSUFFICIENT_REAL_DATA; real metrics NOT_RUN"
     },
     {
       "id": "SS-008",
@@ -117,8 +117,8 @@
       "planned_tests": [
         "CTRL-preserve"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending",
+      "implementation_status": "vertical_slice_implemented",
+      "evidence_status": "reports/phase3/GATE.md; real draft browser audio/stems/mux exercised, 16 audio tests; human-approved modulation/export NOT_RUN; 50ms AV target failed; wider authoring/looping incomplete",
       "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
     },
     {
@@ -196,8 +196,8 @@
       "planned_tests": [
         "AUDIO-independent"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending",
+      "implementation_status": "vertical_slice_implemented",
+      "evidence_status": "reports/phase3/GATE.md; real draft browser audio/stems/mux exercised, 16 audio tests; human-approved modulation/export NOT_RUN; 50ms AV target failed; wider authoring/looping incomplete",
       "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
     },
     {
@@ -236,8 +236,8 @@
       "planned_tests": [
         "CLOCK-mapping"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending",
+      "implementation_status": "vertical_slice_implemented",
+      "evidence_status": "reports/phase3/GATE.md; real draft browser audio/stems/mux exercised, 16 audio tests; human-approved modulation/export NOT_RUN; 50ms AV target failed; wider authoring/looping incomplete",
       "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
     },
     {
@@ -250,8 +250,8 @@
       "planned_tests": [
         "CTRL-idempotence"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending",
+      "implementation_status": "vertical_slice_implemented",
+      "evidence_status": "reports/phase3/GATE.md; real draft browser audio/stems/mux exercised, 16 audio tests; human-approved modulation/export NOT_RUN; 50ms AV target failed; wider authoring/looping incomplete",
       "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
     },
     {
@@ -278,8 +278,8 @@
       "planned_tests": [
         "UI-provenance"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "vertical_slice_implemented",
+      "evidence_status": "reports/phase3/GATE.md; real draft browser audio/stems/mux exercised, 16 audio tests; human-approved modulation/export NOT_RUN; 50ms AV target failed; wider authoring/looping incomplete"
     },
     {
       "id": "SS-022",
@@ -330,8 +330,8 @@
       "planned_tests": [
         "OPS-ownership"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending",
+      "implementation_status": "worktrees_and_handoffs_implemented",
+      "evidence_status": "handoffs/02E.md, 03A.md, 03B.md; final teardown evidence required",
       "phase1_evidence": "Synthetic harness invariants tested; full product acceptance remains pending. See tests/README.md."
     },
     {
@@ -383,8 +383,8 @@
       "planned_tests": [
         "GEST-experiment"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "disabled_by_default",
+      "evidence_status": "Default grammar/UI exclude experiments; no empirical triple/amplitude validation performed"
     },
     {
       "id": "SS-030",
@@ -396,8 +396,8 @@
       "planned_tests": [
         "CORE-keyboard-replay"
       ],
-      "implementation_status": "not_started",
-      "evidence_status": "pending"
+      "implementation_status": "vertical_slice_implemented",
+      "evidence_status": "reports/phase3/GATE.md; real draft browser audio/stems/mux exercised, 16 audio tests; human-approved modulation/export NOT_RUN; 50ms AV target failed; wider authoring/looping incomplete"
     },
     {
       "id": "SS-031",

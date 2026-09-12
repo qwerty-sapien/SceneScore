@@ -1,7 +1,7 @@
 import type {ArrangementPlan,ControlAction,ScoreEvent} from '../contracts/generated';
 import {validate} from '../contracts/validate';
 import {Bundle,copy,seconds,transition} from './model';
-export type Decision={id:string;status:string;reason?:string;requested_scene_s:number;boundary_s?:number;boundary_tick?:number;signed_semitones?:number;generation:number;source:string};
+export type Decision={action:ControlAction;audio_received_s:number;id:string;status:string;reason?:string;requested_scene_s:number;boundary_s?:number;boundary_tick?:number;signed_semitones?:number;generation:number;source:string};
 export class Timeline {
  events:ScoreEvent[];original:ScoreEvent[];generation=0;position=0;playing=false;tonic:number;
  beforePending:ScoreEvent[]|null=null;previousTonic=0;
@@ -10,7 +10,7 @@ export class Timeline {
  get epoch(){return `transport-${this.generation}`;}
  reset(position:number,restore=false){if(!Number.isFinite(position)||position<0||position>this.bundle.scene.duration_s)throw Error('Invalid seek');if(this.pending.length&&this.beforePending){this.events=this.beforePending;this.tonic=this.previousTonic;}this.beforePending=null;for(const d of this.pending)d.status='cancelled_on_transport_reset';this.pending=[];this.generation++;this.position=position;this.playing=false;this.lastRequest=-Infinity;if(restore){this.events=copy(this.original);this.tonic=this.bundle.composition.key_map[0].tonic_pc;}}
  submit(action:ControlAction,audioNow:number,sceneNow:number,horizon=.15):Decision{
-  validate(action);const d:Decision={id:action.id,status:'suppressed',requested_scene_s:sceneNow,generation:this.generation,source:action.provenance.source_mode};
+  validate(action);const d:Decision={action:copy(action),audio_received_s:audioNow,id:action.id,status:'suppressed',requested_scene_s:sceneNow,generation:this.generation,source:action.provenance.source_mode};
   const reject=(reason:string)=>{d.reason=reason;this.history.push(d);return d;};
   if(action.status==='suppressed')return reject(action.reason??'upstream_suppression');
   if(!this.playing)return reject('transport_not_playing');

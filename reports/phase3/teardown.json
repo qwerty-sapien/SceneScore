@@ -1,0 +1,38 @@
+{
+  "processes": [
+    {
+      "pid": 45697,
+      "running": false,
+      "ps_exit": 1,
+      "output": ""
+    },
+    {
+      "pid": 21474,
+      "running": false,
+      "ps_exit": 1,
+      "output": ""
+    },
+    {
+      "pid": 33970,
+      "running": false,
+      "ps_exit": 1,
+      "output": ""
+    }
+  ],
+  "ports": [
+    {
+      "port": 5176,
+      "listener": "",
+      "exit": 1
+    },
+    {
+      "port": 8765,
+      "listener": "",
+      "exit": 1
+    }
+  ],
+  "browser_page": "closed by Playwright tool",
+  "containers_started": 0,
+  "training_jobs_started": 0,
+  "blender_jobs_started_this_continuation": 0
+}

@@ -17,6 +17,7 @@ test-contracts:
 test: test-contracts
 	$(RUN) -m pytest -q
 	.venv/bin/ruff check src tests modules tools/*.py
+	node --import tsx --test packages/audio/tests/*.test.ts
 	npm run typecheck
 	npm run build
 
@@ -28,8 +29,11 @@ check-locks:
 	uv pip check --python .venv/bin/python
 	npm ls --all
 
-dev-replay assets demo:
+assets:
 	$(RUN) -m scenescore.cli $@
+
+demo dev-replay:
+	$(RUN) tools/demo.py
 
 service:
 	PYTHONPATH=.:src .venv/bin/uvicorn scenescore.service:app --host 127.0.0.1 --port 8765

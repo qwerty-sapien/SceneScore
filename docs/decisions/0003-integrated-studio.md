@@ -1,0 +1,13 @@
+# 0003 — local studio and export integration
+
+User authorization: continue 2E, then Phase 3, then an explicitly requested GPT-5.6-Sol xhigh media evaluation. Phase 4 is not authorized. Integrator accepts ownership of `apps/web/`, `packages/audio/` cross-module fixes after the 2E handoff, root service/scripts/tests and evaluation reports. No contract 0.1 or dependency-lock change is needed. Phase 3A remained isolated in a worktree; no parallel implementation workers ran.
+
+The browser owns an audio-clock transport with native scheduled sources, procedural local fallback, bounded 24-voice/128-MiB preparation and one pending modulation. The typed local `MixPoint` journal is execution metadata; it does not alter a shared schema. Offline rendering uses the same resolved score event sequence and mixer automation. It is not a microphone recording or a claim of bit-identical acoustic output. Stems share rate/start/end; tails clamp at scene end. A local ffmpeg adapter verifies audio/video hashes and durations, retains lossless WAVs, and labels its AAC mux accurately.
+
+Exact human plan approval and human audition remain distinct. Automatic approval review rejected an automated fixture identity acting as a human approver. No approval or approved playback was manufactured. A separate draft export has `approval:null`, an explicit DRAFT status and disabled live conducting. Approved-performance export additionally requires a complete run without seeking. This preserves useful unapproved preview work while leaving the formal approved-performance gate unresolved.
+
+`make demo` prepares the supplied existing verified hero/near-miss assets, builds the browser and serves a fixed generated directory and bounded local API on 127.0.0.1:8765. It does not render Blender, capture EEG or call a model. HTTP/WebSocket Origin headers must match the same loopback origin; private data are never statically mounted. CLI clients may omit Origin. A missing source asset fails preparation with its path; no substitute asset is generated silently.
+
+Root TypeScript tests use Node's existing tsx import hook instead of the tsx CLI, avoiding that CLI's unnecessary sandbox-blocked IPC listener. No package/dependency version changed.
+
+Reversible scope: one complete Tilted Blue score with three grooves and matched contact/near-miss trajectories. Numeric mapping editor, broader score selection, imported candidate diff UI, automatic looping, real Muse clock bridge and Safari audition remain unimplemented or unverified. These are disclosed limitations, not passing checks. Software video-frame offset exceeded the proposed 50-ms target; physical synchronization requires better temporal evidence and remains unmeasured.

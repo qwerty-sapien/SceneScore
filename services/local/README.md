@@ -11,3 +11,7 @@ Capability functions take one validated record plus a scoped output Path and dec
 Root now mounts all four documented routers. They provide diagnostics/queries/local bounded plan preview, with no import-time or HTTP-triggered capture, render or provider job. Health distinguishes optional external prerequisites. This is module conformance, not a Phase 3B real-time transport implementation. Future ControlAction execution must verify quality/expiry/hash and map clock epochs explicitly. Existing one-message synthetic WebSocket remains labelled synthetic.
 
 The one-canonical-record dispatcher stays registered for contracts.validate only. `tools/capabilities.yaml.module_implementations` records module availability separately; a generic multi-record job/summary/plan envelope needs its own integrator contract/lifecycle review.
+
+## Phase 3 studio
+
+`make demo` prepares/builds existing verified assets and starts this same loopback service. A final fixed StaticFiles mount serves only `artifacts/web-dist`; module/API routes retain precedence. HTTP/WebSocket requests that supply an Origin must use the same localhost/127.0.0.1 origin and port. CLI clients without Origin remain supported. No private EEG directory is mounted. The browser owns deterministic audio; the server never turns an HTTP request into a human approval, capture or model call. Health now reports phase 3B software; reports/phase3/GATE.md separately records its unpassed formal gate.

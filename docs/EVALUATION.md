@@ -1,5 +1,7 @@
 # Evaluation protocol — proposed gates, no measured results
 
+Current evidence update: Phase 2E/3 actual results are in reports/phase3/GATE.md; the opening historical Phase 0 statements below no longer describe software coverage. Proposed thresholds remain unchanged. Actual draft audio and browser video timestamps were measured; human approval/listening, real Muse accuracy and physical output timing remain unverified. The 50-ms software AV target was not met. The requested model media review has its own frozen protocol in reports/media-evaluation/PROTOCOL.md; it cannot approve a human plan or infer auditory quality from schemas.
+
 All seed thresholds remain proposed. Current release state is `NOT_READY`; not even pipeline tests have run. Each future report records code/config/schema/data/model hashes, commands, session splits, device assumptions, runtime, modes, raw counts, evidence paths and not-run checks. No 100% accuracy promise; no manufactured benchmarks or media evidence.
 
 ## Event-level blink protocol

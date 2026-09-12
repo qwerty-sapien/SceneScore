@@ -1,4 +1,18 @@
-# Runbook — Phase 2 modules on the frozen 0.1 contracts
+# Runbook — integrated local studio on frozen 0.1 contracts
+
+## Current launch and gate
+
+`make demo` (or `make dev-replay`) now prepares the existing verified local hero/near-miss bundles, builds the browser and serves the studio/API on **http://127.0.0.1:8765**. It requires preserved `artifacts/blender/` inputs; no Blender render or cloud call runs. Ctrl-C stops the server. `make assets` remains a historical placeholder; explicit module commands are in their handoffs.
+
+`make test` now includes all module Python tests and `packages/audio/tests`. `tools/mux_performance.py` verifies a mix/four stems and matching video before an explicit new output file. See handoffs/03B.md for its exact command. Draft audition does not need human approval; conducting and approved-performance export do. Approved export additionally requires a full uninterrupted playback from the start. Never use a model or test identity as a human approver.
+
+Current evidence: reports/phase3/GATE.md and reports/media-evaluation/. Phase 3B has **not** passed its formal gate. Human approval/listening, a real approved modulation/export run and the AV timing target remain open. Muse training took the authorized no-data branch (INSUFFICIENT_REAL_DATA). No Phase 4 work is authorized.
+
+Exact next continuation instruction:
+
+> Read AGENTS.md, docs/VISION.md, docs/CONTRACTS.md, docs/EVALUATION.md, handoffs/02E.md, handoffs/03A.md, handoffs/03B.md, reports/phase3/GATE.md and reports/media-evaluation/REVIEW.md. Resume only the unresolved Phase 3 integration gate. Preserve the frozen sample and immutable planning/.brief inputs. Obtain genuine exact-plan approval through the studio, exercise and export one complete approved keyboard modulation performance, address or explicitly retain the measured AV timing failure, and record human audition separately. Do not claim real Muse reliability without verified independently labelled sessions. Stop at the Phase 3 gate; do not begin Phase 4.
+
+The sections below retain historical phase/module commands; this current-launch section supersedes their earlier unimplemented-demo and unstarted-2E statements.
 
 ## Local install and checks
 

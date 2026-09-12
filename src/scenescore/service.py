@@ -1,6 +1,9 @@
 """Loopback authoring module routes; no import-time capture, render or model jobs."""
 import json
+from urllib.parse import urlsplit
 from fastapi import FastAPI, HTTPException, WebSocket
+from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from .contracts import ROOT, validate
 from .registry import Registry, CapabilityError
 
@@ -17,9 +20,23 @@ app.include_router(arranger_router, prefix="/arranger")
 registry = Registry()
 
 
+def local_origin(origin: str | None, host: str) -> bool:
+    if origin is None:
+        return True  # CLI/local clients do not send an Origin header.
+    parsed = urlsplit(origin)
+    return parsed.scheme == "http" and parsed.hostname in {"localhost", "127.0.0.1"} and parsed.netloc == host
+
+
+@app.middleware("http")
+async def restrict_origin(request, call_next):
+    if not local_origin(request.headers.get("origin"), request.headers.get("host", "")):
+        return JSONResponse({"detail": "Local same-origin requests required"}, status_code=403)
+    return await call_next(request)
+
+
 @app.get("/health")
 def health():
-    return {"status": "ok", "phase": "2-wave", "mode": "local_authoring_modules", "contract_version": "0.1"}
+    return {"status": "ok", "phase": "3B", "mode": "local_authoring_modules", "contract_version": "0.1"}
 
 
 @app.get("/capabilities")
@@ -49,8 +66,15 @@ def run_capability(record: dict):
 
 @app.websocket("/ws/fixtures")
 async def fixture_stream(websocket: WebSocket):
+    if not local_origin(websocket.headers.get("origin"), websocket.headers.get("host", "")):
+        await websocket.close(code=1008)
+        return
     await websocket.accept()
     record = json.loads((ROOT / "fixtures/contracts/EEGChunk.json").read_text())
     validate(record)
     await websocket.send_json(record)
     await websocket.close(code=1000)
+
+
+# Fixed generated directory only; API routes above retain precedence. No private data.
+app.mount("/", StaticFiles(directory=ROOT / "artifacts/web-dist", html=True, check_dir=False), name="studio")
