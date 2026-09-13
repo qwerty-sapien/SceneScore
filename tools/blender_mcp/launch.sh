@@ -8,4 +8,4 @@ if [ ! -x "$scenescore_mcp_python" ]; then
     exit 1
 fi
 export BLENDER_HOST=127.0.0.1 BLENDER_PORT=9876 BLENDER_MCP_SAFE_MODE=1 DISABLE_TELEMETRY=true
-exec "$scenescore_mcp_python" -m blender_mcp.server "$@"
+exec "$scenescore_mcp_python" -c 'from blender_mcp.server import main; main()' "$@"

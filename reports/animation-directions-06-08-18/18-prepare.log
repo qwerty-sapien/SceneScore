@@ -1,0 +1,51 @@
+{
+  "out": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v2",
+  "validation": {
+    "max_penetration_m": 0.00017449343529368777,
+    "max_substep_motion_m": 0.000417998361040199,
+    "no_tunnelling_bound_m": 0.009,
+    "no_tunnelling_bound_pass": true,
+    "max_stop_compression_m": 0.010296789675592027,
+    "max_contact_energy_gain_j": 0.0,
+    "max_abs_energy_balance_residual_j": 5.7121120160097405e-05,
+    "min_gaps_m": {
+      "bank-rail": -0.00017449343529368777,
+      "far-fin": 0.049429764396681675,
+      "near-fin": 0.04187769305156064,
+      "release-peg": -2.4923552317174247e-05,
+      "groove-upper": -4.745105039172248e-06,
+      "groove-lower": 0.8674797919455863,
+      "dock-stop": -0.010296789675592027,
+      "left-boundary": 0.4800000806504835,
+      "bottom-boundary": 1.0800000597220156,
+      "hinged-fin": -2.154241259172407e-05,
+      "greenhouse-door": 0.39413602979725726
+    },
+    "fin_max_angular_speed_rad_s": 0.17796060647870204,
+    "puck_max_spin_rad_s": 0.2742610853402671,
+    "hinge_static_clearances_m": {
+      "hinged-fin": 0.24619734912394975,
+      "greenhouse-door": 0.04277559708125922
+    },
+    "hinge_sweep_between_sample_bound_m": 0.0028096335864799256,
+    "near_miss_clearance_m": 0.04187769305156064,
+    "launch_release_s": 1.7411458333333334,
+    "latch_release_s": 17.6296875,
+    "settled_s": 25.122916666666665,
+    "contact_time_uncertainty_s": 0.0005208333333333333,
+    "final_puck_speed_m_s": 3.8170395235095e-05,
+    "final_puck_position_m": [
+      4.881683041391707,
+      -0.9282022171538807,
+      1.166094675966883
+    ],
+    "final_door_angle_rad": 0.0,
+    "launch_enabled": true,
+    "unsupported": [
+      "no general 3D motion or arbitrary bodies",
+      "massless spring follower",
+      "ideal cable/drum and ideal fixed hinge bearings",
+      "near-horizontal support constraint"
+    ]
+  }
+}

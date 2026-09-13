@@ -1,5 +1,9 @@
 # Evaluated scene generator — Phase 2B
 
+Current authoring/tooling supplements: [typed scene intent](../../docs/SCENE_INTENT.md)
+and [portable Blender/MCP/FFmpeg discovery](../../tools/blender_mcp/README.md).
+The scene-intent validator is planning-only and does not add a recipe or renderer input.
+
 Ten trusted, separately runnable Blender scripts build original abstract choreography and export canonical 0.1 scene records. **Synthetic generated animation**, not measured rigid-body physics. The module does not contain audio, model calls, participant capture or application UI.
 
 Use Blender **5.2.1 LTS**, the actually tested version. It runs in Blender's Python, with no new packages. A user-supplied macOS image was temporarily mounted read-only for this phase; it is not a persistent installation. Set `BLENDER_BIN` to an available, verified binary for later runs. Missing Blender blocks generation, not reading existing bundles or keyboard/replay music workflows.

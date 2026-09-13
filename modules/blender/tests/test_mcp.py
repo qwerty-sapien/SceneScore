@@ -99,7 +99,7 @@ def test_repository_config_survives_relocation_and_pins_safety(tmp_path, nested)
     cwd = launcher.parent if nested else repo
     result = subprocess.run([config['command'], *config['args']], cwd=cwd, env=env, capture_output=True, text=True, timeout=10)
     assert result.returncode == 0, result.stderr
-    assert result.stdout.strip() == '127.0.0.1|9876|1|true|-m blender_mcp.server'
+    assert result.stdout.strip() == '127.0.0.1|9876|1|true|-c from blender_mcp.server import main; main()'
 
 
 def test_launcher_missing_override_fails_without_download(tmp_path):

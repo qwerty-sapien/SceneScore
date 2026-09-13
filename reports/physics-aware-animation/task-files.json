@@ -1,0 +1,162 @@
+[
+  {
+    "path": ".agents/skills/physics-aware-animation/SKILL.md",
+    "action": "added",
+    "sha256": "d8b683436e45f76cdbc3d331dd3ee840642abc7793eeac1ad8c1938ea02f979d"
+  },
+  {
+    "path": ".agents/skills/physics-aware-animation/assets/scene-intent.example.json",
+    "action": "added",
+    "sha256": "44ed4403d02df2dd86770c7aa772be2fbf96042ed00eb3033d87c8cf4279a65e"
+  },
+  {
+    "path": ".agents/skills/physics-aware-animation/references/EXEMPLARS.md",
+    "action": "added",
+    "sha256": "9b9b7687c0bfbb4dd674789c761d386bec567aacc24656c13c30cae0d09ee86f"
+  },
+  {
+    "path": ".agents/skills/physics-aware-animation/references/MCP_LOOP.md",
+    "action": "added",
+    "sha256": "7a210f0125162e93a2b881aefe122c4ef5235dfdc83b8bbd6f26fad40a48fc1b"
+  },
+  {
+    "path": ".agents/skills/physics-aware-animation/references/REPO_AUDIT.md",
+    "action": "added",
+    "sha256": "06cd92e4f98167f32d0ccd46e95789ce0b6b3edc806008a6549746faa69863c1"
+  },
+  {
+    "path": ".agents/skills/physics-aware-animation/scripts/check_story_plan.py",
+    "action": "added",
+    "sha256": "adde641a755e89afaceda2e7eb4881bbf54eebe9d3c55f48af2db29a49399c97"
+  },
+  {
+    "path": ".agents/skills/physics-aware-animation/tests/test_check_story_plan.py",
+    "action": "added",
+    "sha256": "5d9e47f474668ecc23ffddf7dd8d77f4250b511d415ade4112b92d720e7eabf8"
+  },
+  {
+    "path": ".codex/config.toml",
+    "action": "changed",
+    "sha256": "39d4270dc4880972deed9f63fd9f2f4eaf2898017b568d8e54b8e65576193ba6"
+  },
+  {
+    "path": "docs/SCENE_INTENT.md",
+    "action": "added",
+    "sha256": "b25937205d4ba05c2f2ac7cdc56b30be55f10fd58bca351bf3fd8781f01309d7"
+  },
+  {
+    "path": "docs/requests/blender-skill-repair.md",
+    "action": "added",
+    "sha256": "5516ad78b2c1e59281bf1287ce28a3b4ce1f9fabee321153ab2070b5a53b5b42"
+  },
+  {
+    "path": "modules/blender/README.md",
+    "action": "changed",
+    "sha256": "9e05f308c2931bb1b44316f7bdbdab35724280fda78846ac609708c968ecec9b"
+  },
+  {
+    "path": "modules/blender/batch.py",
+    "action": "changed",
+    "sha256": "47dde25c8f2e1370eeb9ad6b2f05efd96fc40c68aaabbe8c46578ab1e39284f7"
+  },
+  {
+    "path": "modules/blender/executables.py",
+    "action": "added",
+    "sha256": "977ac9f6fe46076fb32185d7f56c7ad336455518a48e3df18d18ca0105a626fb"
+  },
+  {
+    "path": "modules/blender/exporter.py",
+    "action": "changed",
+    "sha256": "296e60eeea2bea9ebffb37186505668759123a58c9aea1b65a154a57ef31f19b"
+  },
+  {
+    "path": "modules/blender/fixtures/scene-intent-2.example.json",
+    "action": "added",
+    "sha256": "a3a91a94e86ba11242a1dbea82b53ee4303db29d48873539df91529a0e15c429"
+  },
+  {
+    "path": "modules/blender/fixtures/scene-intent-2.schema.json",
+    "action": "added",
+    "sha256": "c5dd8c8f5ca56d7278e055f8e4b229e0e876d4946c4ed6ee97adca7eac2f3a19"
+  },
+  {
+    "path": "modules/blender/production/__main__.py",
+    "action": "changed",
+    "sha256": "d5cb5bbbb797b4016c693ea735294dee118425bb25e48609fc95acbc2f9cfce3"
+  },
+  {
+    "path": "modules/blender/production/common.py",
+    "action": "changed",
+    "sha256": "1318e3c55f690b565d43979786005c155bc0a23685a1ff022ab268aba90dd8df"
+  },
+  {
+    "path": "modules/blender/production/driver.py",
+    "action": "changed",
+    "sha256": "64818a79d85659a1543f17202e899fcf85611c49f9395cd07a205535c091cdc4"
+  },
+  {
+    "path": "modules/blender/production/media.py",
+    "action": "changed",
+    "sha256": "64f46e393c4824ae9856bdac1e6160bc37a2b1418def3666ecd820db0e0cd655"
+  },
+  {
+    "path": "modules/blender/scene_intent.py",
+    "action": "added",
+    "sha256": "e89614804c8561c753c792ae5fdf9ba5f239ddf1959c72cd71c26d735b78ece1"
+  },
+  {
+    "path": "modules/blender/tests/production/test_frozen_baseline.py",
+    "action": "changed",
+    "sha256": "0d5ca9200d24d8f791254b5fcf96a756f0707d25344e1a6dc817ed25803e6014"
+  },
+  {
+    "path": "modules/blender/tests/test_executables.py",
+    "action": "added",
+    "sha256": "52665c37c09598b02a2bafe7909a233632b8f5763b9590c07f9062b1e7440d45"
+  },
+  {
+    "path": "modules/blender/tests/test_mcp.py",
+    "action": "added",
+    "sha256": "79b2e60203f49dd1b13d0ce24839753dddf723a9e8c69ad8e63423f1bb2a95bd"
+  },
+  {
+    "path": "modules/blender/tests/test_scene_intent.py",
+    "action": "added",
+    "sha256": "5f36684c522f6f095241a75a93b048e8fb31503c757b5766877051e25e42d176"
+  },
+  {
+    "path": "tests/test_production_media.py",
+    "action": "changed",
+    "sha256": "c6dc52c1416d68070e85b368600662cde8f800da7e11f99d8fdc22b9b9cbddc9"
+  },
+  {
+    "path": "tools/blender_mcp/README.md",
+    "action": "added",
+    "sha256": "d50d2efde22e7e9a6b31d272ec2ab4d8e4e0db82f3c1b763fd9b6f5422acd7d8"
+  },
+  {
+    "path": "tools/blender_mcp/client.py",
+    "action": "changed",
+    "sha256": "ffe5018df235c30022cd7a5a7a08fd40171e2cf47a182a46efae8c08177c0c91"
+  },
+  {
+    "path": "tools/blender_mcp/launch.sh",
+    "action": "added",
+    "sha256": "c0a253d8bed3b6aa25eb88852ca9105ec5ecf6a5a9db3f55b1598c01414a7c5a"
+  },
+  {
+    "path": "tools/blender_mcp/response_guard.py",
+    "action": "added",
+    "sha256": "4b3cabfa392a70b596744fa196fc6b2260023871c5dce3c6a8654d7bc5bddf16"
+  },
+  {
+    "path": "tools/blender_mcp/test_response_guard.py",
+    "action": "added",
+    "sha256": "1d474415458e592663f02e2d465df759eab258828ecd5b38cdf81fda99f84c54"
+  },
+  {
+    "path": "tools/blender_scene_mutations.py",
+    "action": "changed",
+    "sha256": "e50abccda56fb5f6b41961b7da2e30d611ac927c81a5df49226369778dd81b58"
+  }
+]

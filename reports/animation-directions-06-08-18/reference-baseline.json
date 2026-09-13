@@ -1,0 +1,10 @@
+{
+  "hashes": {
+    "config.json": "e7675cc0bd563d47517dd5a03591923a85d64d69d07d85bf3e6e8dc96c92213e",
+    "production.json": "70597b578d26d4b7ec08fa5b78ec077cf26c8f7168af31c9e9ff7dc12a8019c9",
+    "renders/diagnostic/beauty/video.mp4": "55fbdd75622266e95beaa210e10363a1058fcc0242931211c539115857569c85",
+    "scene.blend": "54372af0b09bf2a8cc62f987e3134e051346cc451b2a628adc60bc9fbfa18e8e",
+    "simulation.blend": "4adf9a5d8b3dada1e5f2acf72b1289b2300db5179068d4224cf9920372f9abcc"
+  },
+  "reference": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32"
+}

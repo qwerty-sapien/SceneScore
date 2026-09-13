@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".venv/bin/ruff",
+    "check",
+    "modules/blender",
+    "tools/blender_mcp",
+    "tools/blender_scene_mutations.py",
+    "tests/test_production_media.py",
+    "--exclude",
+    "modules/blender/production/directions"
+  ],
+  "pid": 57060,
+  "process_group": 57060,
+  "started_at": "2026-09-13T04:18:00.372543+00:00",
+  "exit_code": 0,
+  "duration_s": 0.131,
+  "process_group_absent": true
+}

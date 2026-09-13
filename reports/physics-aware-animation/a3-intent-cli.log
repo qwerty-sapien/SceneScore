@@ -1,0 +1,6 @@
+COMMAND [".venv/bin/python", "-m", "modules.blender.scene_intent", "modules/blender/fixtures/scene-intent-2.example.json"]
+{
+  "status": "PLAN_VALID_NOT_PHYSICS_VALIDATED",
+  "warnings": [],
+  "physics_validated": false
+}

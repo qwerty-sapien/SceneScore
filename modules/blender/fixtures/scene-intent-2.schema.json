@@ -1,0 +1,682 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "scene-intent-2",
+  "description": "Unmeasured intent only. Run SceneIntent.from_dict for semantic validation.",
+  "$ref": "#/$defs/SceneIntent",
+  "$defs": {
+    "MechanicsScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "backend",
+        "model_version",
+        "scope",
+        "gravity_m_s2",
+        "contact_model",
+        "material_model",
+        "actuation_model",
+        "limitations"
+      ],
+      "properties": {
+        "backend": {
+          "enum": [
+            "fixed-obb-sphere-mechanics-1",
+            "native_bullet",
+            "prescribed_mechanism",
+            "other_explicit"
+          ],
+          "type": "string"
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gravity_m_s2": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "contact_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "material_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actuation_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "ActorIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "shape",
+        "motion",
+        "collision_enabled",
+        "scored",
+        "sonic_identity_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "actor",
+            "silent_support",
+            "interaction_surface",
+            "visible_actuator"
+          ],
+          "type": "string"
+        },
+        "shape": {
+          "enum": [
+            "sphere",
+            "obb",
+            "convex_mesh",
+            "mesh",
+            "deformable"
+          ],
+          "type": "string"
+        },
+        "motion": {
+          "enum": [
+            "dynamic",
+            "fixed",
+            "prescribed"
+          ],
+          "type": "string"
+        },
+        "collision_enabled": {
+          "type": "boolean"
+        },
+        "scored": {
+          "type": "boolean"
+        },
+        "sonic_identity_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "TimeWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start_s",
+        "end_s"
+      ],
+      "properties": {
+        "start_s": {
+          "type": "number"
+        },
+        "end_s": {
+          "type": "number"
+        }
+      }
+    },
+    "RouteStage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "actor_ids",
+        "window",
+        "entry_intent",
+        "exit_intent",
+        "mechanism"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "window": {
+          "$ref": "#/$defs/TimeWindow"
+        },
+        "entry_intent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exit_intent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mechanism": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "SupportContactIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "actor_id",
+        "support_id",
+        "stage_id",
+        "window",
+        "evidence_required"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "continuous_support"
+          ],
+          "type": "string"
+        },
+        "actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "window": {
+          "$ref": "#/$defs/TimeWindow"
+        },
+        "evidence_required": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ClearanceIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum_m",
+        "maximum_m",
+        "target_m"
+      ],
+      "properties": {
+        "minimum_m": {
+          "type": "number"
+        },
+        "maximum_m": {
+          "type": "number"
+        },
+        "target_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "EventIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "actor_ids",
+        "stage_id",
+        "target_window",
+        "physical_cause",
+        "measurement_required",
+        "clearance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "collision",
+            "bounce",
+            "near_miss",
+            "graze",
+            "acceleration",
+            "deceleration",
+            "release",
+            "settle",
+            "merge"
+          ],
+          "type": "string"
+        },
+        "actor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "stage_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_window": {
+          "$ref": "#/$defs/TimeWindow"
+        },
+        "physical_cause": {
+          "type": "string",
+          "minLength": 1
+        },
+        "measurement_required": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clearance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ClearanceIntent"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "SaliencePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum_gap_s",
+        "maximum_duty_cycle",
+        "maximum_events",
+        "minimum_distinct_kinds",
+        "maximum_simultaneous_events",
+        "support_contact_policy"
+      ],
+      "properties": {
+        "minimum_gap_s": {
+          "type": "number"
+        },
+        "maximum_duty_cycle": {
+          "type": "number"
+        },
+        "maximum_events": {
+          "type": "integer"
+        },
+        "minimum_distinct_kinds": {
+          "type": "integer"
+        },
+        "maximum_simultaneous_events": {
+          "enum": [
+            1
+          ],
+          "type": "integer"
+        },
+        "support_contact_policy": {
+          "enum": [
+            "retain_raw_do_not_count_as_salient"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "CameraIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "focus_actor_ids",
+        "readable_event_ids",
+        "framing_intent"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "fixed",
+            "tracking",
+            "staged"
+          ],
+          "type": "string"
+        },
+        "focus_actor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "readable_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "framing_intent": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "EndingIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "actor_ids",
+        "support_ids",
+        "window",
+        "keep_visible",
+        "reset_policy",
+        "description"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "supported_rest",
+            "supported_exit",
+            "continued_supported_motion"
+          ],
+          "type": "string"
+        },
+        "actor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "support_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "window": {
+          "$ref": "#/$defs/TimeWindow"
+        },
+        "keep_visible": {
+          "type": "boolean"
+        },
+        "reset_policy": {
+          "enum": [
+            "no_teleport"
+          ],
+          "type": "string"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ReferenceLesson": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source",
+        "status",
+        "lesson",
+        "evidence_note",
+        "source_sha256",
+        "consumed_interval"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "visual_reference",
+            "reconstructed_example",
+            "implementation_exemplar"
+          ],
+          "type": "string"
+        },
+        "lesson": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "consumed_interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TimeWindow"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "MusicHint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actor_id",
+        "event_id",
+        "kind",
+        "timing",
+        "intent",
+        "status"
+      ],
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "event_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kind": {
+          "enum": [
+            "phrase_contour",
+            "ornament",
+            "space",
+            "harmonic_tension",
+            "impact_foley"
+          ],
+          "type": "string"
+        },
+        "timing": {
+          "enum": [
+            "scene_time",
+            "approved_musical_boundary"
+          ],
+          "type": "string"
+        },
+        "intent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "PROPOSAL_REQUIRES_APPROVAL"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "SceneIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "status",
+        "id",
+        "duration_s",
+        "clock",
+        "mechanics",
+        "actors",
+        "route_stages",
+        "support_contacts",
+        "events",
+        "event_order",
+        "salience_policy",
+        "camera",
+        "ending",
+        "reference_lessons",
+        "music_hints"
+      ],
+      "properties": {
+        "schema_version": {
+          "enum": [
+            "scene-intent-2"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "DESIGN_INTENT_NOT_MEASURED"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration_s": {
+          "type": "number"
+        },
+        "clock": {
+          "enum": [
+            "scene_seconds_zero_at_start"
+          ],
+          "type": "string"
+        },
+        "mechanics": {
+          "$ref": "#/$defs/MechanicsScope"
+        },
+        "actors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ActorIntent"
+          }
+        },
+        "route_stages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RouteStage"
+          }
+        },
+        "support_contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SupportContactIntent"
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EventIntent"
+          }
+        },
+        "event_order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "salience_policy": {
+          "$ref": "#/$defs/SaliencePolicy"
+        },
+        "camera": {
+          "$ref": "#/$defs/CameraIntent"
+        },
+        "ending": {
+          "$ref": "#/$defs/EndingIntent"
+        },
+        "reference_lessons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReferenceLesson"
+          }
+        },
+        "music_hints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MusicHint"
+          }
+        }
+      }
+    }
+  }
+}

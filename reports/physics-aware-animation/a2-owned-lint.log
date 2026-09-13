@@ -1,0 +1,2 @@
+COMMAND [".venv/bin/ruff", "check", "modules/blender", "tools/blender_mcp", "tools/blender_scene_mutations.py", "tests/test_production_media.py", "--exclude", "modules/blender/production/directions"]
+All checks passed!

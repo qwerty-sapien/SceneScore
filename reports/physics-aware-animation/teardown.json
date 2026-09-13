@@ -1,0 +1,141 @@
+{
+  "owned_jobs": [
+    {
+      "receipt": "reports/physics-aware-animation/a0-blender-app-geometry.json",
+      "pid": 35240,
+      "process_group": 35240,
+      "absent_now": true,
+      "exit_code": -11
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a0-blender-geometry.json",
+      "pid": 34308,
+      "process_group": 34308,
+      "absent_now": true,
+      "exit_code": -11
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a0-blender-host-geometry.json",
+      "pid": 35302,
+      "process_group": 35302,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a0-tests.json",
+      "pid": 34113,
+      "process_group": 34113,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a1-plan-linter.json",
+      "pid": 37378,
+      "process_group": 37378,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a1-tests.json",
+      "pid": 37359,
+      "process_group": 37359,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a2-first-tests.json",
+      "pid": 48069,
+      "process_group": 48069,
+      "absent_now": true,
+      "exit_code": 1
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a2-host-client.json",
+      "pid": 59301,
+      "process_group": 59301,
+      "absent_now": true,
+      "exit_code": 1
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a2-launcher-tests.json",
+      "pid": 58380,
+      "process_group": 58380,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a2-lint.json",
+      "pid": 54169,
+      "process_group": 54169,
+      "absent_now": true,
+      "exit_code": 1
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a2-live-client.json",
+      "pid": 53624,
+      "process_group": 53624,
+      "absent_now": true,
+      "exit_code": 1
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a2-owned-lint.json",
+      "pid": 57060,
+      "process_group": 57060,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a2-tests.json",
+      "pid": 53158,
+      "process_group": 53158,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a3-contracts.json",
+      "pid": 66002,
+      "process_group": 66002,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a3-final-tests.json",
+      "pid": 68685,
+      "process_group": 68685,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a3-intent-cli.json",
+      "pid": 65939,
+      "process_group": 65939,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a3-intent-tests-fixed.json",
+      "pid": 65984,
+      "process_group": 65984,
+      "absent_now": true,
+      "exit_code": 0
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a3-intent-tests.json",
+      "pid": 65934,
+      "process_group": 65934,
+      "absent_now": true,
+      "exit_code": 2
+    },
+    {
+      "receipt": "reports/physics-aware-animation/a3-lint.json",
+      "pid": 66036,
+      "process_group": 66036,
+      "absent_now": true,
+      "exit_code": 0
+    }
+  ],
+  "all_absent": true,
+  "persistent_servers_started": 0,
+  "containers_started": 0,
+  "note": "Only bounded test/inspection jobs. MCP STDIO adapters exited their managed contexts; test-owned descendants have cleanup assertions."
+}

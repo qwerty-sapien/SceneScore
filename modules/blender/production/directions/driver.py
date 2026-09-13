@@ -7,8 +7,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
-from modules.blender.production.common import digest, dump, read, rows
-from modules.blender.production.driver import linear_keys, state
+from modules.blender.production.common import digest, dump, read, rows  # noqa: E402
+from modules.blender.production.driver import linear_keys, state  # noqa: E402
 
 
 PALETTE = {
@@ -20,6 +20,8 @@ PALETTE = {
     'coral': (.83, .20, .10, 1), 'gold': (.73, .46, .09, 1),
     'white': (.84, .86, .84, 1), 'dark': (.055, .08, .11, 1),
     'floor': (.14, .18, .21, 1), 'glow': (.15, .65, .80, 1),
+    'ivory': (.80, .81, .76, 1), 'charcoal': (.075, .10, .13, 1),
+    'teal': (.04, .40, .38, 1), 'copper': (.55, .24, .10, 1),
 }
 
 
@@ -51,12 +53,15 @@ def material(name, *, stripe=False):
         coord = nodes.new('ShaderNodeTexCoord')
         separate = nodes.new('ShaderNodeSeparateXYZ')
         links.new(coord.outputs['Generated'], separate.inputs[0])
-        subtract = nodes.new('ShaderNodeMath'); subtract.operation = 'SUBTRACT'
+        subtract = nodes.new('ShaderNodeMath')
+        subtract.operation = 'SUBTRACT'
         subtract.inputs[1].default_value = .5
         links.new(separate.outputs['X'], subtract.inputs[0])
-        absolute = nodes.new('ShaderNodeMath'); absolute.operation = 'ABSOLUTE'
+        absolute = nodes.new('ShaderNodeMath')
+        absolute.operation = 'ABSOLUTE'
         links.new(subtract.outputs[0], absolute.inputs[0])
-        band = nodes.new('ShaderNodeMath'); band.operation = 'LESS_THAN'
+        band = nodes.new('ShaderNodeMath')
+        band.operation = 'LESS_THAN'
         band.inputs[1].default_value = .075
         links.new(absolute.outputs[0], band.inputs[0])
         mix = nodes.new('ShaderNodeMixRGB')
@@ -109,10 +114,10 @@ def make_object(spec, *, moving=False):
         curve.dimensions = '3D'
         if shape == 'coil':
             length = 2 * half[0]
-            points = [[-length / 2 + length * i / 320,
-                       half[1] * math.cos(i / 320 * 20 * math.pi),
-                       half[2] * math.sin(i / 320 * 20 * math.pi)] for i in range(321)]
-            thickness = .009
+            thickness = min(.009, min(half) / 4)
+            points = [[-length / 2 + thickness + (length - 2 * thickness) * i / 320,
+                       (half[1] - thickness) * math.cos(i / 320 * 20 * math.pi),
+                       (half[2] - thickness) * math.sin(i / 320 * 20 * math.pi)] for i in range(321)]
         else:
             points = spec['points']
             thickness = spec.get('radius_m', .015)
@@ -151,15 +156,78 @@ def add_keys(obj, samples, oid, fps, hz):
     linear_keys(obj)
 
 
+def cable_specs(packet):
+    return [dict(id=actor['id'] + '-tether', shape='cylinder',
+                 radius_m=actor['cable']['radius_m'], length_m=1., material='steel',
+                 deformable=True, role='visualization_of_inextensible_cable')
+            for actor in packet['actors'] if 'cable' in actor]
+
+
+def cable_poses(packet, sample):
+    """Draw the free cable segment from physical endpoints; adds no dynamics."""
+    from mathutils import Quaternion, Vector
+    poses = dict(sample['objects'])
+    for actor in packet['actors']:
+        if 'cable' not in actor:
+            continue
+        cable = actor['cable']
+        pose = poses[actor['id']]
+        q = pose['quaternion_xyzw']
+        rotation = Quaternion([q[3], *q[:3]])
+        start = Vector(cable['fixed_endpoint_m'])
+        end = Vector(pose['position_m']) + rotation @ Vector(cable['actor_attachment_local_m'])
+        direction = end - start
+        q = Vector([0, 0, 1]).rotation_difference(direction)
+        poses[actor['id'] + '-tether'] = dict(position_m=list((start + end) / 2),
+            quaternion_xyzw=[q.x, q.y, q.z, q.w], scale=[1, 1, direction.length])
+    return dict(sample, objects=poses)
+
+
+def support_specs(packet):
+    """Static foundations below the declared support plane; never moving geometry."""
+    table = next((s for s in packet['geometry'] if s['id'] == 'supporting-table'), None)
+    if table is None:
+        return []
+    top = [[x, y, z - .001] for x, y, z in table['vertices']]
+    bottom = [[x, y, z - .12] for x, y, z in table['vertices']]
+    specs = [dict(id='table-foundation', shape='mesh', vertices=top + bottom,
+                  faces=[[0, 1, 2, 3], [4, 7, 6, 5], [0, 4, 5, 1], [1, 5, 6, 2],
+                         [2, 6, 7, 3], [3, 7, 4, 0]], material='wood', role='silent_support')]
+    dx = [bottom[1][i] - bottom[0][i] for i in range(3)]
+    dy = [bottom[3][i] - bottom[0][i] for i in range(3)]
+    normal = [dx[1]*dy[2] - dx[2]*dy[1], dx[2]*dy[0] - dx[0]*dy[2], dx[0]*dy[1] - dx[1]*dy[0]]
+    for index, (x, y, z) in enumerate(bottom):
+        x *= .90
+        y = -1 + (y + 1) * .86
+        z = bottom[0][2] - (normal[0]*(x-bottom[0][0]) + normal[1]*(y-bottom[0][1])) / normal[2]
+        specs.append(dict(id=f'table-leg-{index}', shape='box', half_extents_m=[.13, .13, z / 2],
+                          position_m=[x, y, z / 2], material='wood', role='silent_support'))
+    specs.append(dict(id='studio-floor', shape='box', half_extents_m=[8, 5, .05],
+                      position_m=[0, -1, -.05], material='floor', role='silent_support'))
+    return specs
+
+
+def presentation_geometry(packet):
+    specs = []
+    for original in packet['geometry']:
+        spec = dict(original)
+        if spec['id'] == 'door-overhead-frame':
+            # Narrow fixed metal beam exposes the counterweight. It lies inside
+            # the independently checked original support envelope.
+            spec['half_extents_m'] = [.015, .50, .025]
+            spec['material'] = 'brass'
+        specs.append(spec)
+    return specs
+
+
 def configure_scene(packet):
     import bpy
     from mathutils import Vector
     scene = bpy.context.scene
-    scene.render.engine = 'CYCLES'
     # Eevee keeps draft rendering bounded on the local control host.
-    scene.render.engine = 'CYCLES' if False else 'BLENDER_EEVEE_NEXT'
+    scene.render.engine = 'BLENDER_EEVEE'
     if hasattr(scene, 'eevee') and hasattr(scene.eevee, 'taa_render_samples'):
-        scene.eevee.taa_render_samples = 16
+        scene.eevee.taa_render_samples = 32
     scene.render.resolution_x, scene.render.resolution_y = 960, 540
     scene.render.resolution_percentage = 100
     scene.render.image_settings.file_format = 'PNG'
@@ -170,6 +238,8 @@ def configure_scene(packet):
     scene.world.node_tree.nodes['Background'].inputs[1].default_value = .45
     scene.view_settings.view_transform = 'AgX'
     camera = packet.get('camera', {})
+    if packet.get('direction_id') == '18':
+        camera = dict(position=[0, -7, 26], look_at=[0, -1, 1.1], ortho_scale=13.5)
     position = camera.get('position', [12, -18, 16])
     target = Vector(camera.get('look_at', [0, 0, 1]))
     data = bpy.data.cameras.new('camera_beauty')
@@ -197,11 +267,11 @@ def build(out):
     import bpy
     from modules.blender.geometry import area
     packet = read(out / 'packet.json')
-    samples = list(rows(out / 'mechanics_states.jsonl'))
+    samples = [cable_poses(packet, sample) for sample in rows(out / 'mechanics_states.jsonl')]
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete(use_global=False)
-    specs = packet['geometry'] + packet['actors']
-    moving = {s['id'] for s in packet['actors']}
+    specs = presentation_geometry(packet) + packet['actors'] + cable_specs(packet) + support_specs(packet)
+    moving = {s['id'] for s in packet['actors'] + cable_specs(packet)}
     objects = {s['id']: make_object(s, moving=s['id'] in moving) for s in specs}
     scene = bpy.context.scene
     scene.unit_settings.system = 'METRIC'
@@ -234,6 +304,7 @@ def build(out):
         blender_version=bpy.app.version_string, blender_build_hash=bpy.app.build_hash.decode(),
         simulation_sha256=digest(out / 'simulation.blend'), samples=len(samples),
         geometry_sha256=digest(out / 'evaluated_geometry.json'),
+        static_presentation='table foundation below plane; narrower fixed metal overhead beam inside checked envelope',
         method='computed mechanics sampled at 240 Hz; no native rigid-body cache claimed'))
 
 
@@ -244,7 +315,8 @@ def check_scene(out, *, fps, target):
     maximum = dict(position_m=0., rotation_rad=0., scale=0.)
     count = 0
     with (out / (target + '_states.jsonl')).open('w') as stream:
-        for sample in rows(out / 'mechanics_states.jsonl'):
+        for original in rows(out / 'mechanics_states.jsonl'):
+            sample = cable_poses(packet, original)
             frame = 1 + sample['tick'] * fps / packet['hz']
             scene.frame_set(math.floor(frame), subframe=frame - math.floor(frame))
             deps = bpy.context.evaluated_depsgraph_get()
@@ -274,7 +346,7 @@ def replay(out):
     bpy.ops.wm.open_mainfile(filepath=str(out / 'simulation.blend'), load_ui=False, use_scripts=False)
     check_scene(out, fps=packet['hz'], target='simulation_reopen')
     scene = bpy.context.scene
-    for spec in packet['actors']:
+    for spec in packet['actors'] + cable_specs(packet):
         obj = bpy.data.objects[spec['id']]
         action = obj.animation_data.action
         for layer in action.layers:

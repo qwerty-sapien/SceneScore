@@ -1,0 +1,4 @@
+COMMAND [".venv/bin/python", "-m", "pytest", "-q", "modules/blender/tests/test_scene_intent.py"]
+........................................................................ [ 96%]
+...                                                                      [100%]
+75 passed in 0.53s

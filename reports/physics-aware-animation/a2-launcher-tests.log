@@ -1,0 +1,3 @@
+COMMAND [".venv/bin/python", "-m", "pytest", "-q", "modules/blender/tests/test_mcp.py", "modules/blender/tests/test_executables.py", "tools/blender_mcp/test_response_guard.py"]
+................................................                         [100%]
+48 passed in 1.17s

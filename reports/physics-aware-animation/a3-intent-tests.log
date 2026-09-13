@@ -1,0 +1,28 @@
+COMMAND [".venv/bin/python", "-m", "pytest", "-q", "modules/blender/tests/test_scene_intent.py"]
+
+==================================== ERRORS ====================================
+_________ ERROR collecting modules/blender/tests/test_scene_intent.py __________
+.venv/lib/python3.13/site-packages/_pytest/python.py:508: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.13/site-packages/_pytest/pathlib.py:572: in import_path
+    mod = _import_module_using_spec(module_name, path, insert_modules=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/_pytest/pathlib.py:716: in _import_module_using_spec
+    spec.loader.exec_module(mod)  # type: ignore[union-attr]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:179: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:348: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/Users/agent/Desktop/SceneScore/modules/blender/tests/test_scene_intent.py", line 102
+E       ]):
+E         ^
+E   SyntaxError: invalid syntax
+=========================== short test summary info ============================
+ERROR modules/blender/tests/test_scene_intent.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.16s

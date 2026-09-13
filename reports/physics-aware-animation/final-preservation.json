@@ -1,0 +1,158 @@
+{
+  "baseline_head": "a397f3f4975e82374bacbf70302eda6c92621f28",
+  "current_head": "555f112181352ccb7556275ed4fbe50120a90990",
+  "current_status": "## main...origin/main\n M modules/blender/README.md\n M modules/blender/production/directions/driver.py\n M modules/blender/tests/test_mcp.py\n M tools/blender_mcp/launch.sh\n?? docs/SCENE_INTENT.md\n?? modules/blender/fixtures/scene-intent-2.example.json\n?? modules/blender/fixtures/scene-intent-2.schema.json\n?? modules/blender/production/directions/puck.py\n?? modules/blender/scene_intent.py\n?? modules/blender/tests/directions/\n?? modules/blender/tests/test_scene_intent.py\n?? reports/animation-directions-06-08-18/\n?? reports/physics-aware-animation/a2-host-client.json\n?? reports/physics-aware-animation/a2-host-client.log\n?? reports/physics-aware-animation/a2-launcher-tests.json\n?? reports/physics-aware-animation/a2-launcher-tests.log\n?? reports/physics-aware-animation/a2-mcp-host-inspection/\n?? reports/physics-aware-animation/a2-owned-lint.json\n?? reports/physics-aware-animation/a2-owned-lint.log\n?? reports/physics-aware-animation/a3-contracts.json\n?? reports/physics-aware-animation/a3-contracts.log\n?? reports/physics-aware-animation/a3-final-tests.json\n?? reports/physics-aware-animation/a3-final-tests.log\n?? reports/physics-aware-animation/a3-intent-cli.json\n?? reports/physics-aware-animation/a3-intent-cli.log\n?? reports/physics-aware-animation/a3-intent-tests-fixed.json\n?? reports/physics-aware-animation/a3-intent-tests-fixed.log\n?? reports/physics-aware-animation/a3-intent-tests.json\n?? reports/physics-aware-animation/a3-intent-tests.log\n?? reports/physics-aware-animation/a3-lint.json\n?? reports/physics-aware-animation/a3-lint.log\n?? tools/blender_mcp/README.md\n?? tools/direction_animations.py\n",
+  "protected_comparison": [
+    {
+      "path": "apps/training/src/ConnectionDiagnostics.tsx",
+      "initial_sha256": "3e6ebdb5c0219a87ea12c705479413f16ccc0d1472c2f83952312a7bffbaf9e2",
+      "current_sha256": "3e6ebdb5c0219a87ea12c705479413f16ccc0d1472c2f83952312a7bffbaf9e2",
+      "unchanged": true
+    },
+    {
+      "path": "apps/training/src/api.ts",
+      "initial_sha256": "4c63d13b41c1064d2bb1f701dc4af2f44b19c6ab0515f6307fa4893a166e9ebe",
+      "current_sha256": "4c63d13b41c1064d2bb1f701dc4af2f44b19c6ab0515f6307fa4893a166e9ebe",
+      "unchanged": true
+    },
+    {
+      "path": "apps/training/src/interaction.ts",
+      "initial_sha256": "1d2e7732e7d2166dd0aa2126a7af706e2696741b4742caa9b5b954b2f4d5f59f",
+      "current_sha256": "1d2e7732e7d2166dd0aa2126a7af706e2696741b4742caa9b5b954b2f4d5f59f",
+      "unchanged": true
+    },
+    {
+      "path": "apps/training/src/main.tsx",
+      "initial_sha256": "b35ceac4c98507beffa0c6262c552cedbca0768d5a1d722b37a0882fd8f83c5d",
+      "current_sha256": "b35ceac4c98507beffa0c6262c552cedbca0768d5a1d722b37a0882fd8f83c5d",
+      "unchanged": true
+    },
+    {
+      "path": "apps/training/src/style.css",
+      "initial_sha256": "6ed692e4f952f867ff1c9682a54c5b72eb483a169fcd1180879fb781820f2147",
+      "current_sha256": "6ed692e4f952f867ff1c9682a54c5b72eb483a169fcd1180879fb781820f2147",
+      "unchanged": true
+    },
+    {
+      "path": "apps/training/src/types.ts",
+      "initial_sha256": "fd6ee3647a00daf26e7f1ce848998a30bf7568318336b94577c69e4ad1731083",
+      "current_sha256": "fd6ee3647a00daf26e7f1ce848998a30bf7568318336b94577c69e4ad1731083",
+      "unchanged": true
+    },
+    {
+      "path": "apps/training/tests/diagnostics.test.ts",
+      "initial_sha256": "b3c1f1bb3338ca9f334bf52b4c1c004740d2b5f925b401622449b677e0bbef81",
+      "current_sha256": "b3c1f1bb3338ca9f334bf52b4c1c004740d2b5f925b401622449b677e0bbef81",
+      "unchanged": true
+    },
+    {
+      "path": "docs/MUSE_TRAINING.md",
+      "initial_sha256": "d157b485c7c401eb780656ef977ba299dde9372b3fef51378cea19ef8b11cc9f",
+      "current_sha256": "d157b485c7c401eb780656ef977ba299dde9372b3fef51378cea19ef8b11cc9f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/decisions/0012-animation-directions-06-08-18.md",
+      "initial_sha256": "9c36885c3669b3c81aa86bf8756bff8757af72a47a2e071c378c5e2f8ba76eab",
+      "current_sha256": "245fe281baca29b263f38173fdcc18bb715650a2538b6c4aa68548ba71a3bd13",
+      "unchanged": false
+    },
+    {
+      "path": "docs/decisions/0013-muse-connection-diagnostics.md",
+      "initial_sha256": "0e1ad127892626bfb4eee8daf60607a28a2f1d0d5bccbc9e6464f70878e9ae7d",
+      "current_sha256": "0e1ad127892626bfb4eee8daf60607a28a2f1d0d5bccbc9e6464f70878e9ae7d",
+      "unchanged": true
+    },
+    {
+      "path": "modules/blender/production/directions/__init__.py",
+      "initial_sha256": "8d0198785ba658f6f9e6d47cd159732ed333522c044260a52a4d14a3aecc0dc4",
+      "current_sha256": "8d0198785ba658f6f9e6d47cd159732ed333522c044260a52a4d14a3aecc0dc4",
+      "unchanged": true
+    },
+    {
+      "path": "reports/muse-training/diagnostics-deployment-manifest.json",
+      "initial_sha256": "fc066c7df85c872fb766b188801f36a9c730d1d2ca673ebd775ed81d06650357",
+      "current_sha256": "fc066c7df85c872fb766b188801f36a9c730d1d2ca673ebd775ed81d06650357",
+      "unchanged": true
+    },
+    {
+      "path": "reports/muse-training/diagnostics-desktop.png",
+      "initial_sha256": "ff14dcd44ba4b76f222ea6f9c937b2e91af2c8c308bdae9706673a97d6d5f90f",
+      "current_sha256": "ff14dcd44ba4b76f222ea6f9c937b2e91af2c8c308bdae9706673a97d6d5f90f",
+      "unchanged": true
+    },
+    {
+      "path": "reports/muse-training/diagnostics-verification.json",
+      "initial_sha256": "3890dfe74d91f7bd67ca8c296a492353dcc30873f5d818edd2dab40dc5c62e21",
+      "current_sha256": "9255bf0f876ef1464513404df0a2923b2055b856c6511a9f304181a124e629a7",
+      "unchanged": false
+    },
+    {
+      "path": "scenescore_physics_skill_pack.zip",
+      "initial_sha256": "f26b45b154c5a5c1223ab7a4b7b8d51599a9507db837cbea3bc7cc3c86733884",
+      "current_sha256": "f26b45b154c5a5c1223ab7a4b7b8d51599a9507db837cbea3bc7cc3c86733884",
+      "unchanged": true
+    },
+    {
+      "path": "services/training/README.md",
+      "initial_sha256": "55ff65313bce2d8cc5bc0e2e058b3ef978f19706945664cff24f59af489cf694",
+      "current_sha256": "55ff65313bce2d8cc5bc0e2e058b3ef978f19706945664cff24f59af489cf694",
+      "unchanged": true
+    },
+    {
+      "path": "services/training/diagnostics.py",
+      "initial_sha256": "5ee464bac3fda4a42bd4291f3f9837d83c365063f94a6e9d6548b76a861140e9",
+      "current_sha256": "5ee464bac3fda4a42bd4291f3f9837d83c365063f94a6e9d6548b76a861140e9",
+      "unchanged": true
+    },
+    {
+      "path": "services/training/server.py",
+      "initial_sha256": "24b6cf1008a7947813477e659ede4b94cf2abb28b7c1485dd8bee9a6f86ae5a4",
+      "current_sha256": "24b6cf1008a7947813477e659ede4b94cf2abb28b7c1485dd8bee9a6f86ae5a4",
+      "unchanged": true
+    },
+    {
+      "path": "services/training/sources.py",
+      "initial_sha256": "ea83bf6aca056a0f35f4c5312310c538a02ddfc199fa9e6b24ca89cc923d97ca",
+      "current_sha256": "ea83bf6aca056a0f35f4c5312310c538a02ddfc199fa9e6b24ca89cc923d97ca",
+      "unchanged": true
+    },
+    {
+      "path": "services/training/state.py",
+      "initial_sha256": "4ac402a74a6e1c90e9f13b9e772655cbe4b5afaabe37986bfef912a61f24ea1f",
+      "current_sha256": "4ac402a74a6e1c90e9f13b9e772655cbe4b5afaabe37986bfef912a61f24ea1f",
+      "unchanged": true
+    },
+    {
+      "path": "services/training/tests/test_diagnostics.py",
+      "initial_sha256": "fd75c74274bc06883f11131d33fab64316b8c65c7a255e99d710653898dfc2df",
+      "current_sha256": "fd75c74274bc06883f11131d33fab64316b8c65c7a255e99d710653898dfc2df",
+      "unchanged": true
+    },
+    {
+      "path": "tools/muse_bluetooth.swift",
+      "initial_sha256": "ee4904de916f7c3eea66a9d112d31e8247d89ccbd82a247de3f38baa3730e02f",
+      "current_sha256": "ee4904de916f7c3eea66a9d112d31e8247d89ccbd82a247de3f38baa3730e02f",
+      "unchanged": true
+    },
+    {
+      "path": "tools/muse_bluetooth_info.plist",
+      "initial_sha256": "7814f2447302f6c3abbf4c40e492fbbc478d0309209761fb9c6ee8644597d360",
+      "current_sha256": "7814f2447302f6c3abbf4c40e492fbbc478d0309209761fb9c6ee8644597d360",
+      "unchanged": true
+    },
+    {
+      "path": "tools/muse_training.py",
+      "initial_sha256": "22ee874dba5bb5c38e8ed1279dc33a57c558e6d738c8ca6ce2872fb581c20415",
+      "current_sha256": "22ee874dba5bb5c38e8ed1279dc33a57c558e6d738c8ca6ce2872fb581c20415",
+      "unchanged": true
+    },
+    {
+      "path": ".agents/skills/blender-scene-export/SKILL.md",
+      "initial_sha256": "fad50a836b671d4e976b28343f57cd9388761de4bb5ab763b002643c5cfcf282",
+      "current_sha256": "fad50a836b671d4e976b28343f57cd9388761de4bb5ab763b002643c5cfcf282",
+      "unchanged": true
+    }
+  ],
+  "note": "No git commit/reset/stash/checkout/staging was performed by this task. HEAD advanced concurrently; differing protected hashes are recorded without reverting the other writer."
+}

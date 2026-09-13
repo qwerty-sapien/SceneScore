@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "modules/blender/tests/test_mcp.py",
+    "modules/blender/tests/test_executables.py",
+    "tools/blender_mcp/test_response_guard.py"
+  ],
+  "pid": 58380,
+  "process_group": 58380,
+  "started_at": "2026-09-13T04:18:24.708713+00:00",
+  "exit_code": 0,
+  "duration_s": 1.516,
+  "process_group_absent": true
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "modules/blender/tests",
+    "tests/test_blender_scene_mutations.py",
+    "tests/test_production_mutations.py",
+    "tests/test_production_media.py",
+    ".agents/skills/physics-aware-animation/tests",
+    "tools/blender_mcp/test_response_guard.py"
+  ],
+  "pid": 68685,
+  "process_group": 68685,
+  "started_at": "2026-09-13T04:27:07.689869+00:00",
+  "exit_code": 0,
+  "duration_s": 32.852,
+  "process_group_absent": true
+}

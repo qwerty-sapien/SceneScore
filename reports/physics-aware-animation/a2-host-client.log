@@ -1,0 +1,14 @@
+COMMAND ["artifacts/tools/blender-mcp-env/bin/python", "tools/blender_mcp/client.py", "--inspect-only", "--out", "reports/physics-aware-animation/a2-mcp-host-inspection", "--prompt", "If a live Blender MCP server is available, perform one harmless inspection command and record the result."]
+2026-09-13 12:18:31,213 - BlenderMCPServer - INFO - BlenderMCP server starting up
+2026-09-13 12:18:31,214 - BlenderMCPServer - WARNING - MCP for Blender addon not found in any Blender addons folder. Run `uvx blender-mcp install-addon` to install it.
+2026-09-13 12:18:31,215 - BlenderMCPServer - ERROR - Failed to connect to Blender: [Errno 61] Connection refused
+2026-09-13 12:18:31,215 - BlenderMCPServer - ERROR - Failed to connect to Blender
+2026-09-13 12:18:31,215 - BlenderMCPServer - WARNING - Could not connect to Blender on startup: Could not connect to Blender. Make sure the Blender addon is running.
+2026-09-13 12:18:31,215 - BlenderMCPServer - WARNING - Make sure the Blender addon is running before using Blender resources or tools
+2026-09-13 12:18:31,220 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-09-13 12:18:31,224 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-09-13 12:18:31,224 - BlenderMCPServer - ERROR - Failed to connect to Blender: [Errno 61] Connection refused
+2026-09-13 12:18:31,224 - BlenderMCPServer - ERROR - Failed to connect to Blender
+2026-09-13 12:18:31,224 - BlenderMCPServer - ERROR - Error getting scene info from Blender: Could not connect to Blender. Make sure the Blender addon is running.
+{"tool": "get_scene_info", "isError": false, "verdict": {"status": "FAILED", "reasons": ["content: Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running.", "structuredContent.result: Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running."], "empty_content_policy": "required_nonempty", "scope": "MCP call result only; not production, physics or perception acceptance"}}
+2026-09-13 12:18:31,230 - BlenderMCPServer - INFO - BlenderMCP server shut down
