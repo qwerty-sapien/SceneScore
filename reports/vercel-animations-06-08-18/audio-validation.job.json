@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/agent/.nvm/versions/node/v24.14.0/bin/node",
+    "--import",
+    "tsx",
+    "tools/validate_direction_music.ts"
+  ],
+  "timeout_s": 240,
+  "status": "running",
+  "process_group_absent": false,
+  "pid": 10515,
+  "pgid": 10515
+}

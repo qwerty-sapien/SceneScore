@@ -4,8 +4,11 @@
     "apps/web/tools/prepare_requested_videos.py"
   ],
   "timeout_s": 240,
-  "status": "running",
-  "process_group_absent": false,
+  "status": "passed",
+  "process_group_absent": true,
   "pid": 9185,
-  "pgid": 9185
+  "pgid": 9185,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 81.36691283399705
 }
