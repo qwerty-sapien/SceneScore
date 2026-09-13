@@ -1,0 +1,15 @@
+# Use these in a web search engine. Replace bracketed placeholders.
+"[exact video title]" "blend"
+"[exact video title]" "source file"
+"[exact video title]" "project file"
+"[exact video title]" "breakdown"
+"[creator name]" "rigid body" "download"
+site:blendswap.com/blend "rigid body"
+site:blendswap.com/blend "marble"
+site:blenderartists.org "kinetic sculpture" "physics"
+site:blenderartists.org "catapult" "rigid body"
+site:gumroad.com "blender" "marble" "project"
+site:superhivemarket.com "rigid body" "marble"
+site:youtube.com "blender" "physics" "blend file"
+# Metaballs are a SEPARATE stylized morphology lane, not evidence of physical coalescence.
+blender metaball merging animation

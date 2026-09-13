@@ -28,6 +28,7 @@ export async function verifyBundle(b:Bundle,video?:ArrayBuffer){
  await verifyBytes(b.events_bytes,b.events_sha256,b.events,'Score');
  await verifyBlenderInputs(b,p,sha,stable);
  await verifyRiffs(b,p,sha,stable);
+ if(b.sound_design){if(!b.events_bytes||!b.source_events_bytes||!b.composition_input_bytes||!b.scene_input_bytes)throw Error('Unbound riff sources');await verifyBytes(b.source_events_bytes,b.events_sha256,b.events,'Original riff score');}
  const sceneInputs={scene:b.scene,states:[...b.states].sort((a,c)=>a.id<c.id?-1:a.id>c.id?1:0),interactions:[...b.interactions].sort((a,c)=>a.id<c.id?-1:a.id>c.id?1:0),
   ...(b.role_supplement==null?{}:{role_supplement:b.role_supplement}),...(b.playback_policy==null?{}:{playback_policy:b.playback_policy}),
   ...(b.music_handoff_binding==null?{}:{music_handoff_binding:b.music_handoff_binding})};

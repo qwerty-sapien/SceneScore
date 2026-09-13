@@ -1,0 +1,815 @@
+{
+  "version": "collision-riff-delivery-1",
+  "approval": null,
+  "outputs": [
+    {
+      "lead": "guitar",
+      "bundle_id": "contact-brush_swing_light_v1-guitar",
+      "bundle_sha256": "9dada4b4404d640dc8edf82b19c1ba5fbc6723c3f7d0fe9a7e6fd45f8ba014c2",
+      "plan_sha256": "6db9575892292cb86a42042f07ee7734417acb49927216e009c0a5d9d8f6f88e",
+      "duration_s": 30,
+      "approval": null,
+      "files": [
+        {
+          "stem": "mix",
+          "filename": "DRAFT-mix.wav",
+          "sha256": "fa3b30df4d374967f3c4648b9c0bd408b0e698272cca08e8d3a5d2e91f043aea",
+          "measurements": {
+            "peak": 0.40360385179519653,
+            "rms": 0.03805815731906582,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/guitar-final/DRAFT-mix.wav"
+        },
+        {
+          "stem": "guitar",
+          "filename": "DRAFT-guitar.wav",
+          "sha256": "a1493aeb74de5a2d5d3a5c899383223190d3eeb36a9a7aac37789af1b45defde",
+          "measurements": {
+            "peak": 0.326606422662735,
+            "rms": 0.03412775274512857,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/guitar-final/DRAFT-guitar.wav"
+        },
+        {
+          "stem": "bass",
+          "filename": "DRAFT-bass.wav",
+          "sha256": "5bceeca1f6a1898e4692d91ceff6f84a219f3de2328b12adcfd1351fd3802ed5",
+          "measurements": {
+            "peak": 0.08207450807094574,
+            "rms": 0.015813068332411976,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/guitar-final/DRAFT-bass.wav"
+        },
+        {
+          "stem": "brush",
+          "filename": "DRAFT-brush.wav",
+          "sha256": "4ece5cf6eb50c0fb87d920e28e8698fba3b5a9de143e54e7b80b297b05bbed0a",
+          "measurements": {
+            "peak": 0.004347527399659157,
+            "rms": 0.0006194120931283516,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/guitar-final/DRAFT-brush.wav"
+        },
+        {
+          "stem": "foley",
+          "filename": "DRAFT-foley.wav",
+          "sha256": "01c0afae42fa8a609d92fed342bd152b2c537d050ce5676a9e03e0aeaf592d54",
+          "measurements": {
+            "peak": 0.2235889881849289,
+            "rms": 0.006073759526158401,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/guitar-final/DRAFT-foley.wav"
+        }
+      ],
+      "video": "artifacts/collision-riffs/guitar-final/Pocket-Workshop-DRAFT.mp4",
+      "video_sha256": "d4e14684f03552778762e9d7bfeb7fe088517e90f2593525afdd354e162a6d99",
+      "matches_independently_audited_v1_wav_bytes": true
+    },
+    {
+      "lead": "vibraphone",
+      "bundle_id": "contact-brush_swing_light_v1-vibraphone",
+      "bundle_sha256": "fa924eed33227da44902edaa44d0897e82bce7676f12be76790982511d8e763f",
+      "plan_sha256": "d09b56ba84ed8e5f27f64787ece7e23b8d9d731236c02a9ec6dcfff660378308",
+      "duration_s": 30,
+      "approval": null,
+      "files": [
+        {
+          "stem": "mix",
+          "filename": "DRAFT-mix.wav",
+          "sha256": "b12ce50cdb13f166594a4926a573440e1c1676b30948feade0171558c85b1170",
+          "measurements": {
+            "peak": 0.2806374430656433,
+            "rms": 0.03834330156631591,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/vibraphone-final/DRAFT-mix.wav"
+        },
+        {
+          "stem": "vibraphone",
+          "filename": "DRAFT-vibraphone.wav",
+          "sha256": "b8c23cee17220cead1f4ebffaf0f97e1f6b62a9bd1fc901bbde9eaddabf3df86",
+          "measurements": {
+            "peak": 0.16171418130397797,
+            "rms": 0.034439922566551866,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/vibraphone-final/DRAFT-vibraphone.wav"
+        },
+        {
+          "stem": "bass",
+          "filename": "DRAFT-bass.wav",
+          "sha256": "5bceeca1f6a1898e4692d91ceff6f84a219f3de2328b12adcfd1351fd3802ed5",
+          "measurements": {
+            "peak": 0.08207450807094574,
+            "rms": 0.015813068332411976,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/vibraphone-final/DRAFT-bass.wav"
+        },
+        {
+          "stem": "brush",
+          "filename": "DRAFT-brush.wav",
+          "sha256": "4ece5cf6eb50c0fb87d920e28e8698fba3b5a9de143e54e7b80b297b05bbed0a",
+          "measurements": {
+            "peak": 0.004347527399659157,
+            "rms": 0.0006194120931283516,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/vibraphone-final/DRAFT-brush.wav"
+        },
+        {
+          "stem": "foley",
+          "filename": "DRAFT-foley.wav",
+          "sha256": "01c0afae42fa8a609d92fed342bd152b2c537d050ce5676a9e03e0aeaf592d54",
+          "measurements": {
+            "peak": 0.2235889881849289,
+            "rms": 0.006073759526158401,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 30,
+            "channels": 2
+          },
+          "path": "artifacts/collision-riffs/vibraphone-final/DRAFT-foley.wav"
+        }
+      ],
+      "video": "artifacts/collision-riffs/vibraphone-final/Pocket-Workshop-DRAFT.mp4",
+      "video_sha256": "a4d2682c76d00433a177589abc573f4323f31a77dd862043e2bbd3e3f84586dd",
+      "matches_independently_audited_v1_wav_bytes": true
+    }
+  ],
+  "sources": {
+    "modules/arranger/collision_riffs.py": "ae2cfc725a841e3fd563fbca416cd583c7f7e02584fbee8de2912dbf3bf1c5da",
+    "packages/audio/riff-voices.ts": "4b0a57611ee18f7381ada66730216f0731338495e1ea06a2a9ba9bbdc7765ebf",
+    "packages/audio/riff-binding.ts": "15f21d27f631fea7a577ffe4e114a80f3dc32e4f32bcdec43cc788c02464564b",
+    "packages/audio/engine.ts": "8f71875a24f874ca6513726c5d03b4bf6147ffbbc39b8d0aa166903bc90eb369",
+    "packages/audio/model.ts": "4ca0feff851051e40784a0548d694619c79b27fdf036a304dbdefbaf8b1664fb",
+    "packages/audio/mix.ts": "ea628a0ee7f2c19cba0fae0119a00db416462781d25d923a470b80a6e3630e25",
+    "apps/web/src/main.tsx": "c1a463ee21197c49bd3c38474f494926d7d4fbd63d707482839833acdb2060af",
+    "tools/prepare_collision_riffs.py": "ce67fc9343405e4cf1959109db4e3bf055717c4c7b0b152695f016823692cda4",
+    "tools/render_collision_riffs.ts": "998a3223fa00ecd23de988677f6499539ca30f9905d928998a921386c69d2ea7",
+    "tools/mux_performance.py": "e9912635691c09aa98751e044606c2f560b820f6f8bee75fa8545630733b08d5",
+    "tools/demo.py": "df7606bba1fc86864ce6d7fcba36ba6286bd797e49ff9fc3fae505846c598cb9"
+  },
+  "artifact_index": {
+    "modules/arranger/collision_riffs.py": {
+      "sha256": "ae2cfc725a841e3fd563fbca416cd583c7f7e02584fbee8de2912dbf3bf1c5da",
+      "bytes": 12038
+    },
+    "packages/audio/riff-voices.ts": {
+      "sha256": "4b0a57611ee18f7381ada66730216f0731338495e1ea06a2a9ba9bbdc7765ebf",
+      "bytes": 1368
+    },
+    "packages/audio/riff-binding.ts": {
+      "sha256": "15f21d27f631fea7a577ffe4e114a80f3dc32e4f32bcdec43cc788c02464564b",
+      "bytes": 2949
+    },
+    "packages/audio/engine.ts": {
+      "sha256": "8f71875a24f874ca6513726c5d03b4bf6147ffbbc39b8d0aa166903bc90eb369",
+      "bytes": 25522
+    },
+    "packages/audio/model.ts": {
+      "sha256": "4ca0feff851051e40784a0548d694619c79b27fdf036a304dbdefbaf8b1664fb",
+      "bytes": 26845
+    },
+    "packages/audio/mix.ts": {
+      "sha256": "ea628a0ee7f2c19cba0fae0119a00db416462781d25d923a470b80a6e3630e25",
+      "bytes": 1709
+    },
+    "apps/web/src/main.tsx": {
+      "sha256": "c1a463ee21197c49bd3c38474f494926d7d4fbd63d707482839833acdb2060af",
+      "bytes": 28262
+    },
+    "tools/prepare_collision_riffs.py": {
+      "sha256": "ce67fc9343405e4cf1959109db4e3bf055717c4c7b0b152695f016823692cda4",
+      "bytes": 5074
+    },
+    "tools/render_collision_riffs.ts": {
+      "sha256": "998a3223fa00ecd23de988677f6499539ca30f9905d928998a921386c69d2ea7",
+      "bytes": 5559
+    },
+    "tools/mux_performance.py": {
+      "sha256": "e9912635691c09aa98751e044606c2f560b820f6f8bee75fa8545630733b08d5",
+      "bytes": 9834
+    },
+    "tools/demo.py": {
+      "sha256": "df7606bba1fc86864ce6d7fcba36ba6286bd797e49ff9fc3fae505846c598cb9",
+      "bytes": 1970
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-vibraphone/plan.json": {
+      "sha256": "d09b56ba84ed8e5f27f64787ece7e23b8d9d731236c02a9ec6dcfff660378308",
+      "bytes": 3700
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-vibraphone/events.json": {
+      "sha256": "d62cacef766cef67d5bbdfd66fa55080539b05d0a15344c166ee4921bfb9fc6a",
+      "bytes": 208685
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-vibraphone/score.mid": {
+      "sha256": "cac9e340275711f9b50ad02ba48d2b9910b2148450b7aaca99852d5c78e91c1a",
+      "bytes": 2228
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-vibraphone/sound-design.json": {
+      "sha256": "b045b06412d0beccc50f0f880b351454a786ff45fd58ee785b55c2572c5ba431",
+      "bytes": 3928
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-vibraphone/composition.json": {
+      "sha256": "6a5c5c65d79ea6d20d0ec43ac05884bd913f21f98dc1d5ea8a957de85ebea0e3",
+      "bytes": 8316
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-guitar/plan.json": {
+      "sha256": "6db9575892292cb86a42042f07ee7734417acb49927216e009c0a5d9d8f6f88e",
+      "bytes": 3703
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-guitar/events.json": {
+      "sha256": "5c63b283971d6a8fd2ed8de6355d9b30ab6b076e81f35c26732b579a9430ca46",
+      "bytes": 209339
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-guitar/score.mid": {
+      "sha256": "2c015880f7b8369b1cd29edf4f7be3c805e91134f49e77255a141d679c216a34",
+      "bytes": 2224
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-guitar/sound-design.json": {
+      "sha256": "035d20d9f0e6e69a3261c057eec07f564d3c4ba1214ca1e704177aa619b1ab0b",
+      "bytes": 3919
+    },
+    "artifacts/collision-riffs/scores-v2/contact-brush_swing_light_v1-guitar/composition.json": {
+      "sha256": "6a5c5c65d79ea6d20d0ec43ac05884bd913f21f98dc1d5ea8a957de85ebea0e3",
+      "bytes": 8316
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-guitar/plan.json": {
+      "sha256": "ddb4ce316501b5e97c7a5eb8a2da1514458aa99cb0294d5c9019b7d46ac2f6ed",
+      "bytes": 3703
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-guitar/events.json": {
+      "sha256": "6f077f9071f12c8dbf11ae7e7f7e1d831d704777ee2529b197b65d83e49a4c0e",
+      "bytes": 193819
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-guitar/score.mid": {
+      "sha256": "776fe1d10a8a893bf1da21965664d251206836122b1cfa4c5c78fdeb2aa968d6",
+      "bytes": 2101
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-guitar/sound-design.json": {
+      "sha256": "42b30ccc6f4b39e7f9fc25368995fdfad47c63ab0ba9d561fae7f9a5cef3336a",
+      "bytes": 756
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-guitar/composition.json": {
+      "sha256": "6a5c5c65d79ea6d20d0ec43ac05884bd913f21f98dc1d5ea8a957de85ebea0e3",
+      "bytes": 8316
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-vibraphone/plan.json": {
+      "sha256": "9c2e29feb5cab11e681c8589746551694ebd5ebba57608a53bce5b6ff1930023",
+      "bytes": 3700
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-vibraphone/events.json": {
+      "sha256": "c64ba46ebdf07c89571ffb63e5044207ab803c096f3a768a21f8ba4d2947ef20",
+      "bytes": 193225
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-vibraphone/score.mid": {
+      "sha256": "40f577acf93f1095d6a5b39cb8afcafc982ed62bd1f3e319c9dea874023aa485",
+      "bytes": 2105
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-vibraphone/sound-design.json": {
+      "sha256": "7efb553039cbaecb03c503e9d334743e735710d4b0da57253525a6505a9c8f05",
+      "bytes": 765
+    },
+    "artifacts/collision-riffs/scores-v2/near-miss-brush_swing_light_v1-vibraphone/composition.json": {
+      "sha256": "6a5c5c65d79ea6d20d0ec43ac05884bd913f21f98dc1d5ea8a957de85ebea0e3",
+      "bytes": 8316
+    },
+    "apps/web/public/studio/catalog.json": {
+      "sha256": "3bcbff00dc8e4b100717817940c454a5f7dc98fe3962a2642ee42af356373efb",
+      "bytes": 5182
+    },
+    "apps/web/public/riff-studio/catalog.json": {
+      "sha256": "7e97f46e0bb8be425f40592a141ae325d71b18c639b5d286c878c595b7f85af6",
+      "bytes": 5002
+    }
+  },
+  "jobs": [
+    {
+      "path": "reports/collision-riffs/catalog-audit.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/audit_collision_riffs.ts"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 27118,
+      "pgid": 27118,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 4.698579624993727
+    },
+    {
+      "path": "reports/collision-riffs/render-delivery-guitar.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-guitar.json",
+        "artifacts/collision-riffs/guitar-final"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 79506,
+      "pgid": 79506,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.9428040420170873
+    },
+    {
+      "path": "reports/collision-riffs/decode-guitar.job.json",
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-nostdin",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/collision-riffs/guitar-v1/Pocket-Workshop-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 29828,
+      "pgid": 29828,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.13413804105948657
+    },
+    {
+      "path": "reports/collision-riffs/mux-vibraphone.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/collision-riffs/vibraphone-v1/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/collision-riffs/vibraphone-v1/Pocket-Workshop-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 26143,
+      "pgid": 26143,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.88494245801121
+    },
+    {
+      "path": "reports/collision-riffs/render-delivery-vibraphone.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-vibraphone.json",
+        "artifacts/collision-riffs/vibraphone-final"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 79532,
+      "pgid": 79532,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.3928494589636102
+    },
+    {
+      "path": "reports/collision-riffs/prepare-final.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/prepare_collision_riffs.py",
+        "--scores",
+        "artifacts/collision-riffs/scores-v2"
+      ],
+      "timeout_s": 300,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 54033,
+      "pgid": 54033,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 64.50067374994978
+    },
+    {
+      "path": "reports/collision-riffs/build-final.job.json",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 75914,
+      "pgid": 75914,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 2.4151287080021575
+    },
+    {
+      "path": "reports/collision-riffs/browser-server.job.json",
+      "command": [
+        "npm",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "8782"
+      ],
+      "timeout_s": 600,
+      "status": "timeout",
+      "process_group_absent": true,
+      "pid": 27173,
+      "pgid": 27173,
+      "cleanup_signals": [
+        "SIGTERM"
+      ],
+      "returncode": -15,
+      "duration_s": 600.062870459049
+    },
+    {
+      "path": "reports/collision-riffs/decode-vibraphone.job.json",
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-nostdin",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/collision-riffs/vibraphone-v1/Pocket-Workshop-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 29851,
+      "pgid": 29851,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.08613212499767542
+    },
+    {
+      "path": "reports/collision-riffs/mux-guitar.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/collision-riffs/guitar-v1/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/collision-riffs/guitar-v1/Pocket-Workshop-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 26139,
+      "pgid": 26139,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.008699500001967
+    },
+    {
+      "path": "reports/collision-riffs/make-test-complete.job.json",
+      "command": [
+        "make",
+        "test"
+      ],
+      "timeout_s": 900,
+      "status": "failed",
+      "process_group_absent": true,
+      "pid": 32565,
+      "pgid": 32565,
+      "returncode": 2,
+      "cleanup_signals": [],
+      "duration_s": 410.285752124968
+    },
+    {
+      "path": "reports/collision-riffs/catalog-final-audit.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/audit_collision_riffs.ts"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 75892,
+      "pgid": 75892,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 4.8711159999947995
+    },
+    {
+      "path": "reports/collision-riffs/render-final-guitar.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-guitar.json",
+        "artifacts/collision-riffs/guitar-v2"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68681,
+      "pgid": 68681,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 2.0111390000674874
+    },
+    {
+      "path": "reports/collision-riffs/render-vibraphone.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-vibraphone.json",
+        "artifacts/collision-riffs/vibraphone-v1"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 25152,
+      "pgid": 25152,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.437922167009674
+    },
+    {
+      "path": "reports/collision-riffs/prepare-integrated.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/prepare_collision_riffs.py",
+        "--scores",
+        "artifacts/collision-riffs/scores-v2"
+      ],
+      "timeout_s": 300,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 67674,
+      "pgid": 67674,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 69.0658688750118
+    },
+    {
+      "path": "reports/collision-riffs/decode-delivery-guitar.job.json",
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-nostdin",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/collision-riffs/guitar-final/Pocket-Workshop-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 79528,
+      "pgid": 79528,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.07257595798000693
+    },
+    {
+      "path": "reports/collision-riffs/mux-final-guitar.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/collision-riffs/guitar-v2/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/collision-riffs/guitar-v2/Pocket-Workshop-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68697,
+      "pgid": 68697,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.1543175840051845
+    },
+    {
+      "path": "reports/collision-riffs/make-test.job.json",
+      "command": [
+        "make",
+        "test"
+      ],
+      "timeout_s": 180,
+      "status": "timeout",
+      "process_group_absent": true,
+      "pid": 26156,
+      "pgid": 26156,
+      "cleanup_signals": [
+        "SIGTERM"
+      ],
+      "returncode": -15,
+      "duration_s": 180.04415075003635
+    },
+    {
+      "path": "reports/collision-riffs/decode-delivery-vibraphone.job.json",
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-nostdin",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/collision-riffs/vibraphone-final/Pocket-Workshop-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 79570,
+      "pgid": 79570,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.07333554106298834
+    },
+    {
+      "path": "reports/collision-riffs/render-guitar.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-guitar.json",
+        "artifacts/collision-riffs/guitar-v1"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 25146,
+      "pgid": 25146,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.9000372500158846
+    },
+    {
+      "path": "reports/collision-riffs/browser-final-server.job.json",
+      "command": [
+        "npm",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "8782"
+      ],
+      "timeout_s": 300,
+      "status": "cancelled",
+      "process_group_absent": true,
+      "pid": 75788,
+      "pgid": 75788,
+      "cleanup_signals": [
+        "SIGTERM"
+      ],
+      "returncode": -15,
+      "duration_s": 268.0175268750172
+    },
+    {
+      "path": "reports/collision-riffs/mux-delivery-vibraphone.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/collision-riffs/vibraphone-final/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/collision-riffs/vibraphone-final/Pocket-Workshop-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 79556,
+      "pgid": 79556,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.874167500063777
+    },
+    {
+      "path": "reports/collision-riffs/render-final-vibraphone.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-vibraphone.json",
+        "artifacts/collision-riffs/vibraphone-v2"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68708,
+      "pgid": 68708,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.3106105000479147
+    },
+    {
+      "path": "reports/collision-riffs/mux-final-vibraphone.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/collision-riffs/vibraphone-v2/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/collision-riffs/vibraphone-v2/Pocket-Workshop-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68726,
+      "pgid": 68726,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.8260564999654889
+    },
+    {
+      "path": "reports/collision-riffs/mux-delivery-guitar.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/collision-riffs/guitar-final/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/collision-riffs/guitar-final/Pocket-Workshop-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 79512,
+      "pgid": 79512,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.0344699579291046
+    }
+  ],
+  "browser": {
+    "guitar_complete_playback": true,
+    "vibraphone_pause_seek_resume": true,
+    "near_miss_selection": true,
+    "original_piano_selection": true,
+    "download_integrity": "UNVERIFIED",
+    "human_listening": "PENDING",
+    "model_audio_perception": "UNAVAILABLE",
+    "all_task_tabs_closed": true
+  },
+  "deployment_performed_by_this_task": false,
+  "remaining_typecheck_error": "apps/training/src/main.tsx:9 ImportMeta.env; explicit vite/client types pass"
+}

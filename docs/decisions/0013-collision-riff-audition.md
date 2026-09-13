@@ -1,0 +1,9 @@
+# Original collision-response music audition
+
+The user's 2026-09-13 feedback on Jam e938fe62-df2c-4b9d-93b1-738dce23fc78 explicitly requests more meaningful collision sound, an interesting new melody and alternatives to piano, including guitar. This authorizes this bounded original arrangement despite the preceding Blender DAG's deferral of new music. It does not approve a performance, certify the legacy animation, authorize a public deployment or replace frozen music/Blender review evidence.
+
+Pocket Workshop is a new 12-bar, 96 BPM, 30-second composition for the legacy projectile/tower Jam demo. A guitar-led blues hook uses rests, changed phrase endings, sparse shell voicings and a two-beat bass. Object identities own three-note replies at authored contact cues. Each contact receives a short, inharmonic wood knock; contact sustain/release no longer generates noise. A contrasting vibraphone edition uses a separate mallet voice. Existing Tilted Blue bundles remain byte-identical and selectable. The normal studio catalogue points to the new drafts; staged Blender and frozen music routes preserve their own catalogues.
+
+This edition does not adapt the score to arbitrary animation durations. Its generator rejects non-30-second and production playback-window inputs. Future production selections continue through their existing score preparation. All new candidate plans are hash-bound, editable and AUDITION_PENDING with approval:null. Existing keyboard/Muse control and human exact-plan approval gates remain in place. Unpitched Foley never transposes.
+
+Synthesis is original local code, with versioned guitar, vibraphone and wood-contact IDs. It is a timbral approximation, not a sampled guitar, measured material model or acoustically validated reproduction. JSON preserves resolved scene/score timing; MIDI is a General MIDI approximation.

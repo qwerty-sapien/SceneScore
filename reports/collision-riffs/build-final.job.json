@@ -1,0 +1,15 @@
+{
+  "command": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 75914,
+  "pgid": 75914,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 2.4151287080021575
+}

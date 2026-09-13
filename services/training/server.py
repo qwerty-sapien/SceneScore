@@ -1,4 +1,5 @@
 """Bounded authenticated loopback HTTP service and confined local static assets."""
+
 import argparse
 from collections import deque
 import hmac
@@ -31,7 +32,10 @@ class TrainingServer(ThreadingHTTPServer):
         self.workspace, self.token = workspace, token
         self.web_root = Path(web_root).resolve()
         self.origins = set(origins)
-        if not self.origins or any(urlsplit(o).scheme not in {"http", "https"} or not urlsplit(o).netloc or urlsplit(o).path or "*" in o for o in origins):
+        if not self.origins or any(
+            urlsplit(o).scheme not in {"http", "https"} or not urlsplit(o).netloc or urlsplit(o).path or "*" in o
+            for o in origins
+        ):
             raise ValueError("exact_origins_required")
         self.auth_lock = threading.Lock()
         self.request_times = deque(maxlen=120)
@@ -40,7 +44,7 @@ class TrainingServer(ThreadingHTTPServer):
         self.session_expiry = 0
         self.capacity = threading.BoundedSemaphore(4)
         super().__init__(address, Handler)
-        self.timeout = .2
+        self.timeout = 0.2
 
     def process_request(self, request, client_address):
         if not self.capacity.acquire(blocking=False):
@@ -91,7 +95,9 @@ class Handler(BaseHTTPRequestHandler):
         if self.headers.get("Host") not in {f"127.0.0.1:{port}", f"localhost:{port}"}:
             raise PermissionError("host_not_allowed")
         origin = self.headers.get("Origin")
-        if (mutation and origin not in self.server.origins) or (origin is not None and origin not in self.server.origins):
+        if (mutation and origin not in self.server.origins) or (
+            origin is not None and origin not in self.server.origins
+        ):
             raise PermissionError("origin_not_allowed")
         if origin is None and self.headers.get("Sec-Fetch-Site") not in {None, "same-origin", "none"}:
             raise PermissionError("cross_site_request_denied")
@@ -107,12 +113,17 @@ class Handler(BaseHTTPRequestHandler):
             expiry = self.server.startup_expiry if startup else self.server.session_expiry
             if expected is None or now >= expiry or not hmac.compare_digest(authorization, "Bearer " + expected):
                 raise PermissionError("invalid_or_expired_token")
+            if not startup:
+                self.server.session_expiry = now + 600
 
     def do_OPTIONS(self):
         try:
             port = self.server.server_address[1]
             origin = self.headers.get("Origin")
-            if self.headers.get("Host") not in {f"127.0.0.1:{port}", f"localhost:{port}"} or origin not in self.server.origins:
+            if (
+                self.headers.get("Host") not in {f"127.0.0.1:{port}", f"localhost:{port}"}
+                or origin not in self.server.origins
+            ):
                 raise PermissionError("origin_or_host_not_allowed")
             self.send_response(204)
             self.send_header("Access-Control-Allow-Origin", origin)
@@ -155,6 +166,8 @@ class Handler(BaseHTTPRequestHandler):
             else:
                 body = {k: v[0] for k, v in parse_qs(parsed.query).items() if len(v) == 1}
             state = self.server.workspace
+            if state.closed:
+                raise ValueError("workspace_shutting_down")
             if mutation and route == "/session":
                 with self.server.auth_lock:
                     if self.server.session is None or time.monotonic() >= self.server.session_expiry:
@@ -166,14 +179,26 @@ class Handler(BaseHTTPRequestHandler):
             if not mutation and route in {"/status", "/trace"}:
                 state.touch()
             if mutation:
-                handlers = {"/connect": state.connect, "/disconnect": lambda _: state.disconnect(),
-                            "/record/start": state.record_start, "/record/stop": lambda _: state.record_stop(),
-                            "/marker": state.marker, "/review": state.review, "/train": lambda _: state.train(), "/delete": state.delete}
+                handlers = {
+                    "/connect": state.connect,
+                    "/disconnect": lambda _: state.disconnect(),
+                    "/record/start": state.record_start,
+                    "/record/stop": lambda _: state.record_stop(),
+                    "/marker": state.marker,
+                    "/review": state.review,
+                    "/train": lambda _: state.train(),
+                    "/delete": state.delete,
+                }
             else:
-                handlers = {"/status": lambda _: state.status(), "/sources": lambda _: state.sources.discover(),
-                            "/trace": lambda _: state.trace(), "/review": lambda b: state.review_get(b["session_id"]),
-                            "/segment": lambda b: state.segment(b["session_id"], float(b["start_s"]), float(b["end_s"])),
-                            "/export": lambda b: state.raw(b["session_id"]), "/model": lambda _: self.model()}
+                handlers = {
+                    "/status": lambda _: state.status(),
+                    "/sources": lambda _: state.sources.discover(),
+                    "/trace": lambda _: state.trace(),
+                    "/review": lambda b: state.review_get(b["session_id"]),
+                    "/segment": lambda b: state.segment(b["session_id"], float(b["start_s"]), float(b["end_s"])),
+                    "/export": lambda b: state.raw(b["session_id"]),
+                    "/model": lambda _: self.model(),
+                }
             if route not in handlers:
                 return self.send_json({"error": "unknown_endpoint"}, 404)
             self.send_json(handlers[route](body))
@@ -181,10 +206,10 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json({"error": str(exc)}, 403)
         except (ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
             self.send_json({"error": str(exc)}, 400)
-        except (ImportError, RuntimeError, OSError) as exc:
-            self.send_json({"error": str(exc)}, 503)
         except (BrokenPipeError, ConnectionResetError, socket.timeout):
             pass
+        except (ImportError, RuntimeError, OSError) as exc:
+            self.send_json({"error": str(exc)}, 503)
 
     def model(self):
         with self.server.workspace.lock:
@@ -201,8 +226,14 @@ class Handler(BaseHTTPRequestHandler):
         if any(part.startswith(".") for part in parts) or "\\" in path or "\x00" in path:
             raise PermissionError("static_path_not_allowed")
         target = (self.server.web_root / (path.lstrip("/") or "index.html")).resolve()
-        if not target.is_relative_to(self.server.web_root) or not target.is_file() or target.stat().st_size > MAX_EXPORT:
+        if (
+            not target.is_relative_to(self.server.web_root)
+            or not target.is_file()
+            or target.stat().st_size > MAX_EXPORT
+        ):
             return self.send_json({"error": "static_file_unavailable"}, 404)
+        if any(part.startswith(".") for part in target.relative_to(self.server.web_root).parts):
+            raise PermissionError("static_path_not_allowed")
         data = target.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", mimetypes.guess_type(target.name)[0] or "application/octet-stream")
@@ -210,7 +241,10 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Referrer-Policy", "no-referrer")
-        self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+        )
         self.end_headers()
         self.wfile.write(data)
 
@@ -230,8 +264,19 @@ def main(argv=None):
     origin = f"http://127.0.0.1:{args.port}"
     workspace = Workspace(args.data_root)
     server = TrainingServer(("127.0.0.1", args.port), workspace, token, args.web_root, args.origin or [origin])
-    print(json.dumps({"url": origin + "/#token=" + token, "pid": os.getpid(), "runtime_seconds": args.seconds,
-                      "recording": False, "source_started": False, "token_lifetime_seconds": 600}), flush=True)
+    print(
+        json.dumps(
+            {
+                "url": origin + "/#token=" + token,
+                "pid": os.getpid(),
+                "runtime_seconds": args.seconds,
+                "recording": False,
+                "source_started": False,
+                "token_lifetime_seconds": 600,
+            }
+        ),
+        flush=True,
+    )
     end = time.monotonic() + args.seconds
     try:
         while time.monotonic() < end:

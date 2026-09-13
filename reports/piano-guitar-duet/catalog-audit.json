@@ -1,0 +1,113 @@
+{
+  "entries": [
+    {
+      "id": "contact-brush_swing_light_v1-guitar-piano-v2",
+      "events": 250,
+      "contacts": 4,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_swing_light_v1-vibraphone",
+      "events": 233,
+      "contacts": 4,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_ballad_sparse_v1-guitar-piano-v2",
+      "events": 190,
+      "contacts": 4,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_ballad_sparse_v1-vibraphone",
+      "events": 173,
+      "contacts": 4,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_straight_rag_v1-guitar-piano-v2",
+      "events": 226,
+      "contacts": 4,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_straight_rag_v1-vibraphone",
+      "events": 209,
+      "contacts": 4,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_swing_light_v1-guitar-piano-v2",
+      "events": 245,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_swing_light_v1-vibraphone",
+      "events": 219,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_ballad_sparse_v1-guitar-piano-v2",
+      "events": 185,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_ballad_sparse_v1-vibraphone",
+      "events": 159,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_straight_rag_v1-guitar-piano-v2",
+      "events": 221,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_straight_rag_v1-vibraphone",
+      "events": 195,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_swing_light_v1",
+      "events": 308,
+      "contacts": 12,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_ballad_sparse_v1",
+      "events": 248,
+      "contacts": 12,
+      "verified": true
+    },
+    {
+      "id": "contact-brush_straight_rag_v1",
+      "events": 284,
+      "contacts": 12,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_swing_light_v1",
+      "events": 296,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_ballad_sparse_v1",
+      "events": 236,
+      "contacts": 0,
+      "verified": true
+    },
+    {
+      "id": "near-miss-brush_straight_rag_v1",
+      "events": 272,
+      "contacts": 0,
+      "verified": true
+    }
+  ],
+  "approval": null
+}

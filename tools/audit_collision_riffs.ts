@@ -19,5 +19,5 @@ for(const row of entries){
  }
  results.push({id:b.id,events:b.events.length,contacts:b.events.filter(e=>e.event_type==='foley').length,verified:true});
 }
-fs.writeFileSync('reports/collision-riffs/catalog-audit.json',JSON.stringify({entries:results,approval:null},null,2)+'\n');
+fs.writeFileSync(process.argv[3]??'reports/collision-riffs/catalog-audit.json',JSON.stringify({entries:results,approval:null},null,2)+'\n');
 process.stdout.write(JSON.stringify({verified:results.length})+'\n');

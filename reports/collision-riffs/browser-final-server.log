@@ -1,0 +1,9 @@
+
+> scenescore-harness@0.1.0 dev
+> vite apps/web --host 127.0.0.1 --port 8782
+
+
+  VITE v7.3.6  ready in 179 ms
+
+  ➜  Local:   http://127.0.0.1:8782/
+  ➜  press h + enter to show help

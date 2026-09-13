@@ -25,6 +25,35 @@ PHRASES = [
     [(0, 62, 0.5), (0.5, 59, 0.5), (1, 60, 1.6)],
 ]
 ROOTS = [0, 5, 0, 0, 5, 5, 0, 9, 2, 7, 0, 0]
+# Written responses in the hook's gaps; all attacks use the same once-swung tick clock.
+PIANO_BEATS = [
+    (2.5,),
+    (0, 2.5, 3.5),
+    (1.5, 3.5),
+    (0, 2.5),
+    (2.5, 3.5),
+    (0, 1.5),
+    (2, 3.5),
+    (1, 2.5),
+    (0, 2, 3.5),
+    (1.5, 3.5),
+    (2.5, 3.5),
+    (3,),
+]
+PIANO_VOICINGS = [
+    (52, 58, 62),
+    (51, 57, 60),
+    (52, 58, 62),
+    (52, 58, 62),
+    (51, 57, 60),
+    (51, 57, 60),
+    (52, 58, 62),
+    (49, 55, 59),
+    (53, 57, 60),
+    (53, 57, 59),
+    (52, 58, 62),
+    (52, 57, 60),
+]
 
 
 def arrange(source, lead="guitar"):
@@ -33,6 +62,7 @@ def arrange(source, lead="guitar"):
     # This edition targets the 30 s Jam demo. Other clocks require a separately reviewed form.
     if source["scene"]["duration_s"] != 30 or source.get("playback_window") or source.get("music_vertical"):
         raise ValueError("riff_edition_requires_30_second_legacy_demo")
+    duet = lead == "guitar"
     b = deepcopy(source)
     c = b["composition"]
     c.update(
@@ -40,6 +70,8 @@ def arrange(source, lead="guitar"):
         title="Pocket Workshop",
         catalog_version=1,
         length_ticks=46080,
+        ppq=960,
+        tempo_map=[{"tick": 0, "bpm": 96}],
         swing_ratio=2 / 3,
         creative_traits=[
             "Original 12-bar guitar hook with displaced answers and intentional rests.",
@@ -72,6 +104,16 @@ def arrange(source, lead="guitar"):
         )
         for i, root in enumerate(ROOTS)
     ]
+    if duet:
+        c["id"] = "pocket_workshop_piano_guitar_v2"
+        c["catalog_version"] = 2
+        c["creative_traits"].append(
+            "Piano guide tones answer guitar rests, with shared swing and quiet contact windows."
+        )
+        for h in c["harmony"]:
+            if h["quality"] == "7" and h["root_pc"] in (0, 9, 7):
+                h["intervals_semitones"].append(14)
+                h["quality"] = "9"
     ctx = Context(b["scene"], b["states"], b["interactions"], c, b["groove"])
     plan = baseline(ctx)
     policy = Policy(gain_db=-3)
@@ -127,7 +169,7 @@ def arrange(source, lead="guitar"):
                 False,
                 True,
             )["dynamics_db"] = 3
-        for beat in [1.5] if bar == 11 else [1.5, 3]:
+        for beat in [] if duet else ([1.5] if bar == 11 else [1.5, 3]):
             for i, interval in enumerate([h["intervals_semitones"][1], h["intervals_semitones"][3]]):
                 e = note(
                     f"comp:{bar}:{beat}:{i}",
@@ -227,6 +269,63 @@ def arrange(source, lead="guitar"):
                 interpretation="Authored scene cue; wood color is artistic, not measured acoustics.",
             )
         )
+    piano_groups = []
+    if duet:
+        for bar, beats in enumerate(PIANO_BEATS):
+            for beat in beats:
+                tick = round((bar * 4 + beat) * 960)
+                group = []
+                for voice_index, pitch in enumerate(PIANO_VOICINGS[bar]):
+                    e = note_event(
+                        plan,
+                        f"piano-duet:{bar}:{beat}:{voice_index}",
+                        None,
+                        f"piano-comp-{voice_index}",
+                        "piano",
+                        tick,
+                        min(960, 46080 - tick),
+                        pitch,
+                        61 if bar == 11 else 55,
+                        "soft_comp",
+                        c,
+                        policy,
+                        True,
+                    )
+                    e.update(
+                        instrument_id="piano_felt_comp_v1",
+                        timbre_id="piano_felt_comp_v1",
+                        dynamics_db=-5 if bar == 11 else -6,
+                        phrasing="piano-answer-in-guitar-rest",
+                    )
+                    start = e["resolved_time_s"]
+                    end = min(e["resolved_time_s"] + e["duration_s"], (bar + 1) * 2.5)
+                    # A written rest, including the entire piano tail, exposes each contact reply.
+                    for contact in contacts:
+                        left, right = contact["onset_s"] - 0.06, contact["onset_s"] + 0.5
+                        if left <= start < right:
+                            end = start
+                            break
+                        if start < left < end:
+                            end = left
+                    if end - start < 0.18:
+                        continue
+                    e["duration_s"] = end - start
+                    whole, phase = divmod(end * 1536, 960)
+                    end_tick = whole * 960 + (phase * 0.75 if phase <= 640 else 480 + (phase - 640) * 1.5)
+                    e["duration_ticks"] = max(1, round(end_tick - tick))
+                    group.append(e)
+                if group:
+                    events.extend(group)
+                    piano_groups.append(
+                        dict(
+                            bar=bar,
+                            beat=beat,
+                            start_tick=tick,
+                            onset_s=group[0]["resolved_time_s"],
+                            event_ids=[e["id"] for e in group],
+                        )
+                    )
+
     # Carve space around each reply. Preserve the full original lead in CompositionSpec.
     projected = []
     for e in events:
@@ -250,8 +349,8 @@ def arrange(source, lead="guitar"):
     content_bytes = encoded(content).decode()
     source_paths = ["modules/arranger/collision_riffs.py", "packages/audio/riff-voices.ts"]
     design = dict(
-        version=VERSION,
-        voice_version="collision-riff-voices-1",
+        version="collision-riffs-2" if duet else VERSION,
+        voice_version="collision-riff-voices-2",
         lead=lead,
         title="Pocket Workshop",
         events_content_sha256=hashlib.sha256(content_bytes.encode()).hexdigest(),
@@ -259,16 +358,28 @@ def arrange(source, lead="guitar"):
         contact_replies=refs,
         final_fade_s=0.01,
         default_gain_db=-9,
-        label="Draft · original guitar call and response · audition pending"
+        label="Draft · piano and guitar duet · audition pending"
         if lead == "guitar"
         else "Draft · original melody / vibraphone variation · audition pending",
         original_bundle_sha256=digest(source),
         original_events_sha256=source["events_sha256"],
     )
+    if duet:
+        design["piano_accompaniment"] = dict(
+            version="piano-guitar-comp-1",
+            instrument_id="piano_felt_comp_v1",
+            clock="shared-score-ticks",
+            swing_application_count=1,
+            groups=piano_groups,
+            contact_rest_before_s=0.06,
+            contact_rest_after_s=0.5,
+        )
     design_bytes = encoded(design).decode()
     design_hash = digest(design)
     plan["id"] = "plan-riffs-" + design_hash[:20]
     plan["palette_ids"] = [instrument, "bass_pluck_v1", "brush_noise_v1", "wood_contact_v1"]
+    if duet:
+        plan["palette_ids"].append("piano_felt_comp_v1")
     plan["provenance"].update(config_hash=design_hash, input_hashes=[ctx.scene_hash, ctx.composition_hash, design_hash])
     plan["uncertainties"] = [
         "AUDITION_PENDING. Original synthesized instrument approximations.",
@@ -280,7 +391,7 @@ def arrange(source, lead="guitar"):
     validate(c)
     validate_event_budget(events, plan, policy)
     b.update(
-        id=source["id"] + "-" + lead,
+        id=source["id"] + ("-guitar-piano-v2" if duet else "-" + lead),
         composition_hash=ctx.composition_hash,
         events=events,
         events_sha256=digest(events),

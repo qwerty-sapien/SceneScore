@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "tools/prepare_collision_riffs.py",
+    "--scores",
+    "artifacts/piano-guitar-duet/scores"
+  ],
+  "timeout_s": 300,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 89052,
+  "pgid": 89052,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 67.59252758300863
+}

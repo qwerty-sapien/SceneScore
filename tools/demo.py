@@ -1,6 +1,7 @@
 """Build the existing verified local bundle and serve it on one loopback origin."""
 import argparse
 import os
+import json
 from pathlib import Path
 import subprocess
 import sys
@@ -26,6 +27,9 @@ def main():
         command+=['--review-selection',str(args.review_selection.resolve())]
     subprocess.run(command,cwd=root,check=True)
     if not args.review_selection:
+        catalog=json.loads((root/'apps/web/public/studio/catalog.json').read_text())
+        first=json.loads((root/'apps/web/public/studio'/catalog['entries'][0]['url']).read_text())
+    if not args.review_selection and first['scene']['duration_s']==30 and first['selection']['legacy_choreography']:
         subprocess.run([sys.executable,'tools/prepare_collision_riffs.py'],cwd=root,check=True)
     subprocess.run(['npm', 'run', 'build'], cwd=root, check=True)
     print(f'SceneScore PID={os.getpid()} http://127.0.0.1:{args.port} — keyboard / labelled synthetic replay; Ctrl-C stops.', flush=True)

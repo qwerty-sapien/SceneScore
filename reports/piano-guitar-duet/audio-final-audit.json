@@ -1,0 +1,100 @@
+{
+  "version": "piano-guitar-final-audit-1",
+  "duration_s": 30,
+  "rate": 48000,
+  "stems": [
+    "mix",
+    "guitar",
+    "piano",
+    "bass",
+    "brush",
+    "foley"
+  ],
+  "piano_relative_rms_db": -4.149549545737282,
+  "stem_sum_max_error_lsb": 2,
+  "piano_silent_through_contact_replies": true,
+  "all_outputs_unclipped": true,
+  "piano_chord_attacks": 20,
+  "minimum_piano_duration_s": 0.20833333333333215,
+  "approval": null,
+  "files": [
+    {
+      "stem": "mix",
+      "filename": "DRAFT-mix.wav",
+      "sha256": "c5b3cfefb92b7bd768eb3482ce572e6987bf25b065728ef9deb8d4f7634cf859",
+      "measurements": {
+        "peak": 0.40360385179519653,
+        "rms": 0.0426458173813046,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      }
+    },
+    {
+      "stem": "guitar",
+      "filename": "DRAFT-guitar.wav",
+      "sha256": "ef05ece1682784b464caa42b375b563a8fa6496441e54235e54a3b644d558772",
+      "measurements": {
+        "peak": 0.326606422662735,
+        "rms": 0.033319265689559036,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      }
+    },
+    {
+      "stem": "piano",
+      "filename": "DRAFT-piano.wav",
+      "sha256": "5f36e2e29c7566e759f4f80c185ee20305ec8b7106a3f6aaea23aa0b54d4d2c1",
+      "measurements": {
+        "peak": 0.16218174993991852,
+        "rms": 0.02066416896610739,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      }
+    },
+    {
+      "stem": "bass",
+      "filename": "DRAFT-bass.wav",
+      "sha256": "5bceeca1f6a1898e4692d91ceff6f84a219f3de2328b12adcfd1351fd3802ed5",
+      "measurements": {
+        "peak": 0.08207450807094574,
+        "rms": 0.015813068332411976,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      }
+    },
+    {
+      "stem": "brush",
+      "filename": "DRAFT-brush.wav",
+      "sha256": "4ece5cf6eb50c0fb87d920e28e8698fba3b5a9de143e54e7b80b297b05bbed0a",
+      "measurements": {
+        "peak": 0.004347527399659157,
+        "rms": 0.0006194120931283516,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      }
+    },
+    {
+      "stem": "foley",
+      "filename": "DRAFT-foley.wav",
+      "sha256": "01c0afae42fa8a609d92fed342bd152b2c537d050ce5676a9e03e0aeaf592d54",
+      "measurements": {
+        "peak": 0.2235889881849289,
+        "rms": 0.006073759526158401,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      }
+    }
+  ]
+}

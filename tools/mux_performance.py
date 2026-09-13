@@ -53,6 +53,7 @@ def verify_export(report_path, video_path):
     if hashlib.sha256(report['event_bytes'].encode()).hexdigest() != report['event_hash'] or json.loads(report['event_bytes']) != report['events']:
         raise ValueError('event_log_hash_mismatch')
     lead='piano'
+    extra=[]
     if report['version']=='performance-export-3':
         design=report['sound_design']
         raw=report['sound_design_bytes'].encode()
@@ -63,15 +64,20 @@ def verify_export(report_path, video_path):
         if (json.loads(raw)!=design or design_hash!=report['sound_design_sha256']
                 or plan['provenance']['config_hash']!=design_hash
                 or design_hash not in plan['provenance']['input_hashes']
-                or design['version']!='collision-riffs-1' or design['voice_version']!='collision-riff-voices-1'
+                or design['version'] not in ('collision-riffs-1','collision-riffs-2') or design['voice_version'] not in ('collision-riff-voices-1','collision-riff-voices-2')
                 or design['lead'] not in ('guitar','vibraphone') or report.get('final_fade_s')!=.01
                 or hashlib.sha256(content).hexdigest()!=design['events_content_sha256']
                 or json.loads(content)!=[{k:v for k,v in e.items() if k!='plan_id'} for e in source]):
             raise ValueError('unbound_riff_export')
         lead=design['lead']
-        if report['stem_layout']!=[lead,'bass','brush','foley']:
+        if design['version']=='collision-riffs-2':
+            piano=design.get('piano_accompaniment',{})
+            if piano.get('instrument_id')!='piano_felt_comp_v1' or not any(e['instrument_id']=='piano_felt_comp_v1' for e in source):
+                raise ValueError('missing_piano_stem_source')
+            extra=['piano']
+        if report['stem_layout']!=[lead,*extra,'bass','brush','foley']:
             raise ValueError('riff_stem_layout_mismatch')
-    if len(report['files']) != 5 or {f['stem'] for f in report['files']} != {'mix', lead, 'bass', 'brush', 'foley'}:
+    if len(report['files']) != 5+len(extra) or {f['stem'] for f in report['files']} != {'mix', lead, *extra, 'bass', 'brush', 'foley'}:
         raise ValueError('five_aligned_outputs_required')
     dimensions = set()
     mix = None

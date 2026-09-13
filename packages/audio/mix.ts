@@ -16,5 +16,6 @@ export function polyphony(events:ScoreEvent[],limit=24){
 export const stemFor=(e:ScoreEvent)=>e.event_type==='foley'?'foley':e.event_type==='brush'?'brush':e.instrument_id.includes('bass')?'bass':e.instrument_id==='guitar_fingerstyle_v1'?'guitar':e.instrument_id==='vibraphone_soft_v1'?'vibraphone':'piano';
 export function stemsFor(events:ScoreEvent[]):ReturnType<typeof stemFor>[]{
  const pitched=events.some(e=>e.instrument_id==='guitar_fingerstyle_v1')?'guitar':events.some(e=>e.instrument_id==='vibraphone_soft_v1')?'vibraphone':'piano';
- return [pitched,'bass','brush','foley'];
+ const piano=pitched!=='piano'&&events.some(e=>e.event_type==='note'&&stemFor(e)==='piano');
+ return [pitched,...(piano?['piano' as const]:[]),'bass','brush','foley'];
 }

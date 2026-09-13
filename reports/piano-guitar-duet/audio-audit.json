@@ -1,0 +1,19 @@
+{
+  "version": "piano-guitar-audit-1",
+  "duration_s": 30,
+  "rate": 48000,
+  "stems": [
+    "mix",
+    "guitar",
+    "piano",
+    "bass",
+    "brush",
+    "foley"
+  ],
+  "piano_relative_rms_db": -4.100544835714702,
+  "stem_sum_max_error_lsb": 2,
+  "piano_silent_through_contact_replies": true,
+  "all_outputs_unclipped": true,
+  "piano_chord_attacks": 21,
+  "approval": null
+}

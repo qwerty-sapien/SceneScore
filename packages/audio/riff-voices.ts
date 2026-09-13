@@ -1,9 +1,18 @@
 import type {ScoreEvent} from '../contracts/generated';
 
 // Original synthesis presets. Immutable IDs distinguish these from frozen legacy voices.
-export const RIFF_VOICE_VERSION='collision-riff-voices-1';
+export const RIFF_VOICE_VERSION='collision-riff-voices-2';
 export function riffVoice(e:ScoreEvent,rate:number):((t:number)=>number)|null{
  const f=e.midi_pitch===null?0:440*2**((e.midi_pitch-69)/12);
+ if(e.instrument_id==='piano_felt_comp_v1'){
+  const partials=[1,.36,.19,.085,.06,.025,.012].map((a,i)=>({a,n:i+1}))
+   .filter(p=>f*p.n<rate*.45);
+  return t=>.58*partials.reduce((sum,p)=>{
+   const hz=f*p.n*Math.sqrt(1+.000025*p.n*p.n),phase=2*Math.PI*hz*t;
+   const strings=.7*Math.sin(phase)+.3*Math.sin(phase*1.0005);
+   return sum+p.a*strings*Math.exp(-t*(1.8+.38*p.n));
+  },0);
+ }
  if(e.instrument_id==='guitar_fingerstyle_v1'){
   const muted=e.articulation==='palm_mute';
   const partials=Array.from({length:14},(_,i)=>i+1).filter(n=>f*n<rate*.45)

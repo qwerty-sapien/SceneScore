@@ -1,0 +1,370 @@
+{
+  "version": "piano-guitar-delivery-1",
+  "candidate": "contact-brush_swing_light_v1-guitar-piano-v2",
+  "bundle_sha256": "6f43e27d22059fede5fddd4150b8527a9d52c8365c17ad85c67d5542f87f5a89",
+  "approval": null,
+  "files": {
+    "artifacts/piano-guitar-duet/final/DRAFT-piano.wav": {
+      "sha256": "5f36e2e29c7566e759f4f80c185ee20305ec8b7106a3f6aaea23aa0b54d4d2c1",
+      "bytes": 5760044
+    },
+    "artifacts/piano-guitar-duet/final/DRAFT-mix.wav": {
+      "sha256": "c5b3cfefb92b7bd768eb3482ce572e6987bf25b065728ef9deb8d4f7634cf859",
+      "bytes": 5760044
+    },
+    "artifacts/piano-guitar-duet/final/DRAFT-bass.wav": {
+      "sha256": "5bceeca1f6a1898e4692d91ceff6f84a219f3de2328b12adcfd1351fd3802ed5",
+      "bytes": 5760044
+    },
+    "artifacts/piano-guitar-duet/final/DRAFT-brush.wav": {
+      "sha256": "4ece5cf6eb50c0fb87d920e28e8698fba3b5a9de143e54e7b80b297b05bbed0a",
+      "bytes": 5760044
+    },
+    "artifacts/piano-guitar-duet/final/DRAFT-foley.wav": {
+      "sha256": "01c0afae42fa8a609d92fed342bd152b2c537d050ce5676a9e03e0aeaf592d54",
+      "bytes": 5760044
+    },
+    "artifacts/piano-guitar-duet/final/DRAFT-guitar.wav": {
+      "sha256": "ef05ece1682784b464caa42b375b563a8fa6496441e54235e54a3b644d558772",
+      "bytes": 5760044
+    },
+    "artifacts/piano-guitar-duet/final/Pocket-Workshop-Piano-Guitar-DRAFT.mp4": {
+      "sha256": "2cefe8e709577e8f9933765f267ac1c96e725f724d4fbc7a44336f88e7c32b14",
+      "bytes": 762183
+    },
+    "artifacts/piano-guitar-duet/final/DRAFT.json": {
+      "sha256": "2d3c259f63b0151669cd26e0437fa6ce24da7aed6a824974a44c7fff36d46e21",
+      "bytes": 1041671
+    },
+    "artifacts/piano-guitar-duet/final/source-bundle.json": {
+      "sha256": "6f43e27d22059fede5fddd4150b8527a9d52c8365c17ad85c67d5542f87f5a89",
+      "bytes": 9315226
+    }
+  },
+  "source_hashes": {
+    "modules/arranger/collision_riffs.py": "f0319576277c34bf28ca5ec1735aa4615a69c5e1f4c84032b258b1d478226146",
+    "packages/audio/riff-voices.ts": "8ab1eb31fb0ccb6211cc6f259c0cf743b169f1668b561fec22d5af489c2a5cac",
+    "packages/audio/riff-binding.ts": "7cbe90b1bfcf8bbbc101d0e1919c0ab0bfc85efb147aeccdc57ecd9961e05430",
+    "packages/audio/mix.ts": "ab696b0617d5132e796f1933ca0ebf3b2abf0ae8280537df31357f3374430a9f",
+    "packages/audio/model.ts": "4ca0feff851051e40784a0548d694619c79b27fdf036a304dbdefbaf8b1664fb",
+    "packages/audio/engine.ts": "8f71875a24f874ca6513726c5d03b4bf6147ffbbc39b8d0aa166903bc90eb369",
+    "tools/prepare_collision_riffs.py": "998f73bf363434de033a398b4f7faa99e87e003061881575ba08fea9f3b5128a",
+    "tools/render_collision_riffs.ts": "998a3223fa00ecd23de988677f6499539ca30f9905d928998a921386c69d2ea7",
+    "tools/mux_performance.py": "e8861a6a31884902286393d13e9b0d1508f572136a9fd965123ab1402b61b5df",
+    "apps/web/src/main.tsx": "58e0139bb61bb8ca5ade9105019b5779921e485e4e5faca8523debdbfed35cdd"
+  },
+  "jobs": [
+    {
+      "evidence": "reports/piano-guitar-duet/catalog.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/audit_collision_riffs.ts",
+        "apps/web/public/riff-studio",
+        "reports/piano-guitar-duet/catalog-audit.json"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 91096,
+      "pgid": 91096,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 5.997097459039651
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/decode-final.job.json",
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/piano-guitar-duet/final/Pocket-Workshop-Piano-Guitar-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 96736,
+      "pgid": 96736,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.06952779099810869
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/render-final.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-guitar-piano-v2.json",
+        "artifacts/piano-guitar-duet/final"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 96710,
+      "pgid": 96710,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 2.1631686670007184
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/prepare.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/prepare_collision_riffs.py",
+        "--scores",
+        "artifacts/piano-guitar-duet/scores"
+      ],
+      "timeout_s": 300,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 89052,
+      "pgid": 89052,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 67.59252758300863
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/prepare-final.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/prepare_collision_riffs.py",
+        "--scores",
+        "artifacts/piano-guitar-duet/scores-final"
+      ],
+      "timeout_s": 300,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 96454,
+      "pgid": 96454,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 70.04931004089303
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/build-final.job.json",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 96737,
+      "pgid": 96737,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 2.1556672089500353
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/render.job.json",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "tools/render_collision_riffs.ts",
+        "apps/web/public/riff-studio/contact-brush_swing_light_v1-guitar-piano-v2.json",
+        "artifacts/piano-guitar-duet/candidate-01"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 90107,
+      "pgid": 90107,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 2.2459243750199676
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/build.job.json",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 91127,
+      "pgid": 91127,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 3.468456874950789
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/mux-final.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/piano-guitar-duet/final/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/piano-guitar-duet/final/Pocket-Workshop-Piano-Guitar-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 96727,
+      "pgid": 96727,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.9813152500428259
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/mux.job.json",
+      "command": [
+        ".venv/bin/python",
+        "tools/mux_performance.py",
+        "artifacts/piano-guitar-duet/candidate-01/DRAFT.json",
+        "apps/web/public/riff-studio/contact.mp4",
+        "--out",
+        "artifacts/piano-guitar-duet/candidate-01/Pocket-Workshop-Piano-Guitar-DRAFT.mp4"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 91082,
+      "pgid": 91082,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 1.0950810000067577
+    },
+    {
+      "evidence": "reports/piano-guitar-duet/decode.job.json",
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/piano-guitar-duet/candidate-01/Pocket-Workshop-Piano-Guitar-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 91094,
+      "pgid": 91094,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.0723356669768691
+    }
+  ],
+  "audio_audit": {
+    "version": "piano-guitar-final-audit-1",
+    "duration_s": 30,
+    "rate": 48000,
+    "stems": [
+      "mix",
+      "guitar",
+      "piano",
+      "bass",
+      "brush",
+      "foley"
+    ],
+    "piano_relative_rms_db": -4.149549545737282,
+    "stem_sum_max_error_lsb": 2,
+    "piano_silent_through_contact_replies": true,
+    "all_outputs_unclipped": true,
+    "piano_chord_attacks": 20,
+    "minimum_piano_duration_s": 0.20833333333333215,
+    "approval": null,
+    "files": [
+      {
+        "stem": "mix",
+        "filename": "DRAFT-mix.wav",
+        "sha256": "c5b3cfefb92b7bd768eb3482ce572e6987bf25b065728ef9deb8d4f7634cf859",
+        "measurements": {
+          "peak": 0.40360385179519653,
+          "rms": 0.0426458173813046,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      },
+      {
+        "stem": "guitar",
+        "filename": "DRAFT-guitar.wav",
+        "sha256": "ef05ece1682784b464caa42b375b563a8fa6496441e54235e54a3b644d558772",
+        "measurements": {
+          "peak": 0.326606422662735,
+          "rms": 0.033319265689559036,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      },
+      {
+        "stem": "piano",
+        "filename": "DRAFT-piano.wav",
+        "sha256": "5f36e2e29c7566e759f4f80c185ee20305ec8b7106a3f6aaea23aa0b54d4d2c1",
+        "measurements": {
+          "peak": 0.16218174993991852,
+          "rms": 0.02066416896610739,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      },
+      {
+        "stem": "bass",
+        "filename": "DRAFT-bass.wav",
+        "sha256": "5bceeca1f6a1898e4692d91ceff6f84a219f3de2328b12adcfd1351fd3802ed5",
+        "measurements": {
+          "peak": 0.08207450807094574,
+          "rms": 0.015813068332411976,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      },
+      {
+        "stem": "brush",
+        "filename": "DRAFT-brush.wav",
+        "sha256": "4ece5cf6eb50c0fb87d920e28e8698fba3b5a9de143e54e7b80b297b05bbed0a",
+        "measurements": {
+          "peak": 0.004347527399659157,
+          "rms": 0.0006194120931283516,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      },
+      {
+        "stem": "foley",
+        "filename": "DRAFT-foley.wav",
+        "sha256": "01c0afae42fa8a609d92fed342bd152b2c537d050ce5676a9e03e0aeaf592d54",
+        "measurements": {
+          "peak": 0.2235889881849289,
+          "rms": 0.006073759526158401,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      }
+    ]
+  },
+  "human_audition": "PENDING",
+  "live_browser_audition": "NOT_RUN_THIS_REVISION",
+  "deployment_performed": false
+}

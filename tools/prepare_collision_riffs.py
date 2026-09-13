@@ -18,6 +18,7 @@ def write_midi(path, b):
     instrument = b["sound_design"]["lead"]
     for lane, channel, program in [
         ("lead", 0, 24 if instrument == "guitar" else 11),
+        ("piano", 3, 0),
         ("bass", 1, 32),
         ("brush", 9, 0),
         ("foley", 2, 115),
@@ -32,6 +33,8 @@ def write_midi(path, b):
                 if e["event_type"] == "brush"
                 else "bass"
                 if "bass" in e["instrument_id"]
+                else "piano"
+                if e["instrument_id"] == "piano_felt_comp_v1"
                 else "lead"
             )
             if part != lane:
@@ -61,6 +64,8 @@ def main():
     entries = []
     legacy = []
     for row in source["entries"]:
+        if row.get("arrangement") in ("guitar", "vibraphone"):
+            continue
         raw = (args.source / row["url"]).read_bytes()
         if hashlib.sha256(raw).hexdigest() != row["sha256"]:
             raise ValueError("source_bundle_hash_mismatch")
@@ -97,6 +102,12 @@ def main():
                     (score / name).write_bytes(encoded(content))
                 write_midi(score / "score.mid", candidate)
     (args.out / "catalog.json").write_bytes(encoded({"version": "studio-catalog-1", "entries": entries + legacy}))
+    # The normal studio selects the new draft; legacy bundle bytes remain unchanged.
+    import os
+
+    relative = Path(os.path.relpath(args.out.resolve(), args.source.resolve())).as_posix()
+    public_entries = [{**row, "url": relative + "/" + row["url"]} for row in entries] + legacy
+    (args.source / "catalog.json").write_bytes(encoded({"version": "studio-catalog-1", "entries": public_entries}))
     print(
         json.dumps(
             {"entries": len(entries) + len(legacy), "new_drafts": len(entries), "out": str(args.out), "approval": None}

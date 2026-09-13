@@ -1,0 +1,38 @@
+{
+  "jobs": [
+    {
+      "pid": 34478,
+      "session": 56487,
+      "purpose": "initial static UI",
+      "exit": 0
+    },
+    {
+      "pid": 43282,
+      "session": 44846,
+      "purpose": "initial synthetic service",
+      "exit": 0
+    },
+    {
+      "pid": 69690,
+      "session": 59654,
+      "purpose": "integrated browser service",
+      "exit": 0
+    },
+    {
+      "pid": 83251,
+      "session": 64254,
+      "purpose": "20second launcher lifecycle",
+      "exit": 0
+    },
+    {
+      "pid": 83332,
+      "session": 10012,
+      "purpose": "60second launcher browser auth",
+      "exit": 0
+    }
+  ],
+  "ports_8767_8768_listeners_after_teardown": false,
+  "browser_pages_closed": true,
+  "test_owned_servers_and_threads_joined": true,
+  "published_static_site_intentionally_retained": true
+}

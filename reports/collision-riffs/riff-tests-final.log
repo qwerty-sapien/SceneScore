@@ -1,0 +1,12 @@
+✔ bound original score verifies and changed audio or recipe fails closed (117.445666ms)
+✔ guitar and mallet presets have distinct decays and a correctly pitched fundamental (42.960792ms)
+✔ collision voice decays instead of looping static and material colors differ (1.989333ms)
+✔ transposition keeps exact unpitched contact times and meaningful stem names (19.241875ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 586.959833

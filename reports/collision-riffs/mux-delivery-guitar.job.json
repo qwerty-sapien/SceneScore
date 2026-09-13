@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "tools/mux_performance.py",
+    "artifacts/collision-riffs/guitar-final/DRAFT.json",
+    "apps/web/public/riff-studio/contact.mp4",
+    "--out",
+    "artifacts/collision-riffs/guitar-final/Pocket-Workshop-DRAFT.mp4"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 79512,
+  "pgid": 79512,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 1.0344699579291046
+}

@@ -1,4 +1,5 @@
 """Bounded LSL descriptors and explicit synthetic rehearsal. No import-time discovery."""
+
 import math
 import time
 
@@ -33,13 +34,20 @@ def descriptor(info):
         raise ValueError("two_identified_frontal_microvolt_channels_required")
     if not info.source_id():
         raise ValueError("unique_lsl_source_id_required")
-    return {"id": info.source_id(), "name": info.name(), "channels": channels,
-            "sample_rate_hz": rate, "frontal_indices": frontal, "original_channels": original}
+    return {
+        "id": info.source_id(),
+        "name": info.name(),
+        "channels": channels,
+        "sample_rate_hz": rate,
+        "frontal_indices": frontal,
+        "original_channels": original,
+    }
 
 
 class LSLSource:
     def __init__(self, source_id, expected):
         import pylsl
+
         streams = pylsl.resolve_byprop("source_id", source_id, minimum=1, timeout=2)
         if len(streams) != 1:
             raise ValueError("exactly_one_selected_source_required")
@@ -55,7 +63,7 @@ class LSLSource:
     def pull(self):
         if hasattr(self.inlet, "was_clock_reset") and self.inlet.was_clock_reset():
             raise ValueError("lsl_clock_reset_reconnect_required")
-        return self.inlet.pull_chunk(timeout=.1, max_samples=128)
+        return self.inlet.pull_chunk(timeout=0.1, max_samples=128)
 
     def close(self):
         self.inlet.close_stream()
@@ -63,10 +71,16 @@ class LSLSource:
 
 class SyntheticSource:
     """Independent 12s repeat: double3/3.3; single7; triple9/9.3/9.6; B has no input."""
-    description = {"id": "synthetic", "name": "Explicit synthetic rehearsal", "sample_rate_hz": 256,
-                   "channels": [{"name": "AF7", "unit": "uV"}, {"name": "AF8", "unit": "uV"}],
-                   "frontal_indices": [0, 1], "original_channels": [],
-                   "schedule": "12s repeat: double3/3.3, single7, triple9/9.3/9.6; quiet elsewhere"}
+
+    description = {
+        "id": "synthetic",
+        "name": "Explicit synthetic rehearsal",
+        "sample_rate_hz": 256,
+        "channels": [{"name": "AF7", "unit": "uV"}, {"name": "AF8", "unit": "uV"}],
+        "frontal_indices": [0, 1],
+        "original_channels": [],
+        "schedule": "12s repeat: double3/3.3, single7, triple9/9.3/9.6; quiet elsewhere",
+    }
 
     def __init__(self):
         self.start, self.index, self.closed = time.monotonic(), 0, False
@@ -74,7 +88,7 @@ class SyntheticSource:
     def pull(self):
         if self.closed:
             return [], []
-        time.sleep(.04)
+        time.sleep(0.04)
         if self.closed:
             return [], []
         count = min(128, max(0, int((time.monotonic() - self.start) * 256) - self.index))
@@ -82,8 +96,8 @@ class SyntheticSource:
         rows = []
         for t in times:
             phase = t % 12
-            pulse = sum(180 * max(0, 1 - abs(phase - c) / .08) for c in (3, 3.3, 7, 9, 9.3, 9.6))
-            rows.append([pulse + 2 * math.sin(t * 13), .92 * pulse + 2 * math.cos(t * 17)])
+            pulse = sum(180 * max(0, 1 - abs(phase - c) / 0.08) for c in (3, 3.3, 7, 9, 9.3, 9.6))
+            rows.append([pulse + 2 * math.sin(t * 13), 0.92 * pulse + 2 * math.cos(t * 17)])
         self.index += count
         return rows, times
 
@@ -99,6 +113,7 @@ class Sources:
         sources, blockers, seen, duplicates = [], [], set(), set()
         try:
             import pylsl
+
             advertised = pylsl.resolve_streams(wait_time=1)
             if len(advertised) > 8:
                 raise ValueError("discovery_capacity_exceeded")

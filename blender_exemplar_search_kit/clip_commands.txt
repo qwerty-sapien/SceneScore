@@ -1,0 +1,28 @@
+# Run ONLY on a locally available, authorized source master or your own render.
+# These are shell templates, not downloads from YouTube.
+# Replace filenames and the illustrative times before running.
+
+# Inspect source duration, dimensions, and frame rates.
+ffprobe -v error -select_streams v:0 -show_entries stream=width,height,r_frame_rate,avg_frame_rate,time_base:format=duration -of json source.mp4
+
+# Extract a 12-second clip starting at source second 10, re-encoding for precise
+# cuts. Do not add -r or a speed-changing filter. Audio is omitted for the local
+# analysis derivative; retain the authorized original master unmodified.
+ffmpeg -i source.mp4 -ss 10 -t 12 -map 0:v:0 -an -c:v libx264 -crf 18 -pix_fmt yuv420p -fps_mode passthrough clip.mp4
+
+# Coarse screening frames ONLY. Two frames/second are NOT enough to verify
+# fast contact events. Retain full-rate media and inspect dense event windows.
+mkdir -p overview
+ffmpeg -i clip.mp4 -vf "fps=2,scale=960:-2" overview/frame_%04d.png
+
+# Extract ALL native frames near an illustrative event at clip second 3.2.
+# No fps filter: this preserves available samples instead of inventing frames.
+mkdir -p event_E1
+ffmpeg -i clip.mp4 -ss 2.95 -t 0.50 -fps_mode passthrough event_E1/frame_%04d.png
+
+# Record actual decoded timestamps separately, especially for variable-FPS
+# input. Do not assume output frame number / nominal FPS is exact source time.
+ffprobe -v error -select_streams v:0 -show_frames -show_entries frame=best_effort_timestamp_time -of json clip.mp4 > frame_timestamps.json
+
+# Keep clip start/end mappings in annotation.json. Any slowdown used for human
+# inspection must be labeled as an inspection copy, not the canonical example.

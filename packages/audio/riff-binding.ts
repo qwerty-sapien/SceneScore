@@ -1,17 +1,18 @@
 import type {ArrangementPlan,ScoreEvent,InteractionEvent} from '../contracts/generated';
 import {RIFF_VOICE_VERSION} from './riff-voices';
-export type RiffDesign={version:'collision-riffs-1';voice_version:string;lead:'guitar'|'vibraphone';title:string;
+export type RiffDesign={version:'collision-riffs-1'|'collision-riffs-2';voice_version:string;lead:'guitar'|'vibraphone';title:string;
  events_content_sha256:string;final_fade_s:.01;default_gain_db:number;label:string;
+ piano_accompaniment?:{version:'piano-guitar-comp-1';instrument_id:'piano_felt_comp_v1';clock:'shared-score-ticks';swing_application_count:1;contact_rest_before_s:number;contact_rest_after_s:number;groups:{bar:number;beat:number;start_tick:number;onset_s:number;event_ids:string[]}[]};
  contact_replies:{interaction_id:string;onset_s:number;foley_id:string;reply_ids:string[]}[]};
 export type RiffBinding={sound_design?:RiffDesign;sound_design_bytes?:string;sound_design_sha256?:string;sound_design_event_bytes?:string};
 export async function verifyRiffs(b:RiffBinding&{events:ScoreEvent[];interactions:InteractionEvent[];scene:{duration_s:number}},p:ArrangementPlan,
  sha:(v:BufferSource)=>Promise<string>,stable:(v:unknown)=>string){
  if(!b.sound_design&&!b.sound_design_bytes&&!b.sound_design_sha256&&!b.sound_design_event_bytes){
-  if(b.events.some(e=>/^(guitar_fingerstyle|vibraphone_soft|wood_contact)_v1$/.test(e.instrument_id)))throw Error('Missing riff binding');
+  if(b.events.some(e=>/^(guitar_fingerstyle|vibraphone_soft|wood_contact|piano_felt_comp)_v1$/.test(e.instrument_id)))throw Error('Missing riff binding');
   return;
  }
  const d=b.sound_design;
- if(!d||d.version!=='collision-riffs-1'||d.voice_version!==RIFF_VOICE_VERSION||!['guitar','vibraphone'].includes(d.lead)||
+ if(!d||!['collision-riffs-1','collision-riffs-2'].includes(d.version)||!['collision-riff-voices-1',RIFF_VOICE_VERSION].includes(d.voice_version)||!['guitar','vibraphone'].includes(d.lead)||
     d.final_fade_s!==.01||d.default_gain_db!==-9||b.scene.duration_s!==30||!b.sound_design_bytes||!b.sound_design_event_bytes)throw Error('Unsupported riff binding');
  const hash=await sha(new TextEncoder().encode(b.sound_design_bytes));
  if(hash!==b.sound_design_sha256||hash!==p.provenance.config_hash||!p.provenance.input_hashes.includes(hash)||
@@ -21,6 +22,25 @@ export async function verifyRiffs(b:RiffBinding&{events:ScoreEvent[];interaction
     stable(JSON.parse(b.sound_design_event_bytes))!==stable(content))throw Error('Riff score binding mismatch');
  const contacts=b.interactions.filter(e=>e.event_type==='contact_onset');
  if(d.contact_replies.length!==contacts.length||new Set(d.contact_replies.map(r=>r.interaction_id)).size!==contacts.length)throw Error('Missing contact replies');
+ const piano=b.events.filter(e=>e.instrument_id==='piano_felt_comp_v1');
+ if(d.version==='collision-riffs-2'){
+  const comp=d.piano_accompaniment;
+  if(d.lead!=='guitar'||d.voice_version!==RIFF_VOICE_VERSION||!comp||comp.version!=='piano-guitar-comp-1'||
+     comp.instrument_id!=='piano_felt_comp_v1'||comp.clock!=='shared-score-ticks'||comp.swing_application_count!==1||
+     comp.contact_rest_before_s!==.06||comp.contact_rest_after_s!==.5||!comp.groups.length||piano.length<30)throw Error('Missing synchronized piano part');
+  const ids=comp.groups.flatMap(g=>g.event_ids);
+  if(new Set(ids).size!==piano.length||ids.length!==piano.length||piano.some(e=>!ids.includes(e.id)))throw Error('Unbound piano notes');
+  for(const group of comp.groups){
+   const tick=(group.bar*4+group.beat)*960,whole=Math.floor(tick/960),phase=tick%960;
+   const expected=(whole*960+(phase<=480?phase*4/3:640+(phase-480)*2/3))/1536;
+   if(group.start_tick!==tick||Math.abs(group.onset_s-expected)>1e-9||group.event_ids.length!==3)throw Error('Piano clock mismatch');
+   for(const id of group.event_ids){const e=piano.find(n=>n.id===id);
+    if(!e||e.start_tick!==tick||e.resolved_time_s!==group.onset_s||e.event_type!=='note'||e.object_id!==null||
+       e.swing_application_count!==1||!e.swing_applied||e.midi_pitch===null||e.midi_pitch<48||e.midi_pitch>64)throw Error('Piano timing or register mismatch');
+    if(contacts.some(c=>e.resolved_time_s<c.onset_s+.5&&e.resolved_time_s+e.duration_s>c.onset_s-.06+1e-9))throw Error('Piano masks contact reply');
+   }
+  }
+ }else if(piano.length||d.piano_accompaniment)throw Error('Piano requires a versioned duet');
  const foley=b.events.filter(e=>e.event_type==='foley');
  if(foley.length!==contacts.length)throw Error('Unexpected collision audio');
  for(const r of d.contact_replies){

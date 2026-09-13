@@ -3,7 +3,9 @@
 Open **Launch Blink Trainer.command** in the repository, or run `make muse-train`.
 It builds the page and opens the local workspace at http://127.0.0.1:8767.
 The terminal owns a bounded, visible service. Ctrl-C stops it and its acquisition
-thread; it expires after an hour. No headset connection or recording starts merely
+thread; it expires after an hour. The hosted page is https://scenescore-muse-vertical.vercel.app/train/. Hosted-to-local
+access needs the browser’s Local network access permission. The local launcher
+avoids that extra step. No headset connection or recording starts merely
 because the page is open.
 
 ## Connect and collect

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "--import",
+    "tsx",
+    "tools/audit_collision_riffs.ts",
+    "apps/web/public/riff-studio",
+    "reports/piano-guitar-duet/catalog-audit.json"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 91096,
+  "pgid": 91096,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 5.997097459039651
+}

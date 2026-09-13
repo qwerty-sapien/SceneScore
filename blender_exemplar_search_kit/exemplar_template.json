@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "record_status": "template_not_an_observed_example",
+  "id": "REPLACE_ME",
+  "source": {
+    "video_url": null,
+    "creator": null,
+    "source_project_url": null,
+    "checked_at": null
+  },
+  "rights": {
+    "media_license": null,
+    "project_license": null,
+    "permission_evidence": null,
+    "acquisition_method": null,
+    "few_shot_prompting_permission": "unknown",
+    "redistribution_permission": "unknown"
+  },
+  "media": {
+    "original_path": null,
+    "original_sha256": null,
+    "clip_path": null,
+    "clip_start_source_s": null,
+    "clip_end_source_s": null,
+    "source_fps": null,
+    "time_base": null,
+    "speed_modified": false
+  },
+  "review": {
+    "status": "unreviewed",
+    "human_reviewer": null,
+    "physics_evidence": "unknown",
+    "blender_provenance": null,
+    "scores": {}
+  },
+  "scenario": {
+    "family": null,
+    "scene_family_id": null,
+    "material_model": null,
+    "motion_control": null,
+    "gravity_regime": null,
+    "spatial_principles": []
+  },
+  "events": [],
+  "event_graph": [],
+  "reconstruction": {
+    "user_intent": null,
+    "observed_facts": [],
+    "assumptions": [],
+    "scene_spec_path": null,
+    "build_script_path": null,
+    "blend_path": null,
+    "blender_version": null,
+    "seed": null,
+    "units": null,
+    "fps": null,
+    "solver_settings": {},
+    "object_parameters": {},
+    "actuation_and_release": []
+  },
+  "validation": {
+    "preview_path": null,
+    "checks": [],
+    "parameter_perturbations": [],
+    "results_path": null,
+    "tested": false
+  },
+  "split": null
+}

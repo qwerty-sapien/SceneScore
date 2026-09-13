@@ -12,8 +12,11 @@
     "generate": "node tools/generate-types.mjs",
     "typecheck": "tsc --noEmit",
     "test:contracts": "node --import tsx --test tests/ts/*.test.ts",
-    "build": "vite build apps/web --outDir ../../artifacts/web-dist",
+    "build": "vite build apps/web --outDir ../../artifacts/web-dist --emptyOutDir",
     "dev": "vite apps/web --host 127.0.0.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   },
   "dependencies": {
     "ajv": "^8.17.1",

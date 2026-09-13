@@ -1,0 +1,17 @@
+{
+  "deployment_id": "dpl_7d6fwa5Wdfn25bBvi7NFrieD3JJ8",
+  "ready_state": "READY",
+  "target": "production",
+  "url": "https://scenescore-muse-vertical.vercel.app/train/",
+  "immutable_url": "https://scenescore-muse-vertical-4nwnc97nb-chups-projects-4fe0e3a7.vercel.app/train/",
+  "files": 17,
+  "bytes": 26112016,
+  "public_training_assets_verified_sha256": {
+    "train/index.html": "1e3ae5136f31e6f95e15522a7f352f10312bc61a056f7f7117ddfc6e4b2f2c8e",
+    "train/assets/index-iX1XGGbF.css": "f7ff3211ded12293ed12208d545b0c7911b7df83e30ad5f9437f72c34b1e02d0",
+    "train/assets/index-DUz8JI9R.js": "dd517244b6a46eff78e561e86c0ef2f87fca963413c0ba590f3b5e0c053a6805"
+  },
+  "https_to_loopback": "PASS with scoped browser local-network-access permission; synthetic trace then disconnect, no recording",
+  "mobile_390px_no_overflow": true,
+  "raw_eeg_uploaded": false
+}
