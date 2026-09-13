@@ -1,0 +1,4 @@
+Event/ornament/key edit changed rendered audio; existing API response preserved.
+Restoring events/settings restored byte-identical audio. Both final scores rebuilt.
+Malformed upload and full 41-second B rejected before API analysis.
+Cancellation released the job slot; saved drafts and HTML route available.

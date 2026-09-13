@@ -1,5 +1,6 @@
 import {compileDuet, LOOP, SCENE_EVENTS} from '../../../../packages/audio/keyboard-scenes';
 import type {Settings} from '../../../../packages/audio/keyboard-score';
+import {BEAT} from '../../../../packages/audio/keyboard-score';
 
 export const KINDS=['approach','near_miss','separation','contact','sustained_contact','contact_release','rebound'] as const;
 export type Marker={id:number;kind:number;at:number;enabled:boolean;objects:string[];evidence:string;start_s:number;end_s:number;confidence:'observed'|'uncertain'|'manual'};
@@ -22,12 +23,17 @@ export function validateSettings(s:MusicSettings){
 }
 export function parseAnalysis(raw:any,duration:number){
  if(!raw||typeof raw.summary!=='string'||raw.summary.length>4000||!Array.isArray(raw.objects)||raw.objects.length>30||!Array.isArray(raw.events)||raw.events.length>64||!Array.isArray(raw.limitations)||raw.limitations.some((s:unknown)=>typeof s!=='string'||s.length>2000))throw Error('The model returned an invalid analysis. No events were applied.');
+ // JSON-mode responses may choose integer IDs. Normalize both ends of every
+ // reference, then check collisions. Preserve the original response on disk.
+ const idString=(id:unknown)=>typeof id==='number'&&Number.isSafeInteger(id)?`object-${id}`:id;
+ raw={...raw,objects:raw.objects.map((o:any)=>o?{...o,id:idString(o.id)}:o),events:raw.events.map((e:any)=>e?{...e,object_ids:Array.isArray(e.object_ids)?e.object_ids.map(idString):e.object_ids}:e)};
  const ids=new Set<string>();
  for(const o of raw.objects){if(!o||typeof o.id!=='string'||o.id.length>100||ids.has(o.id)||typeof o.description!=='string'||o.description.length>1000)throw Error('Invalid object identity.');ids.add(o.id);}
  const markers=raw.events.map((e:any,i:number)=>{
-  if(!e||!['observed','uncertain'].includes(e.confidence)||!Array.isArray(e.object_ids)||e.object_ids.some((id:string)=>!ids.has(id))||new Set(e.object_ids).size!==e.object_ids.length)throw Error('Invalid event object reference.');
+  if(!e||typeof e.explanation!=='string'||!['observed','uncertain'].includes(e.confidence)||!Array.isArray(e.object_ids)||e.object_ids.some((id:string)=>!ids.has(id))||new Set(e.object_ids).size!==e.object_ids.length)throw Error('Invalid event object reference.');
   const kind=KINDS.indexOf(e.kind),at=kind===0?e.end_s:e.start_s;
-  return {id:i+1,kind,at,enabled:e.confidence==='observed',objects:e.object_ids,evidence:e.explanation,start_s:e.start_s,end_s:e.end_s,confidence:e.confidence};
+  const incompletePair=e.object_ids.length!==2;
+  return {id:i+1,kind,at,enabled:e.confidence==='observed'&&!incompletePair,objects:e.object_ids,evidence:incompletePair?`${e.explanation} [Local review: the model did not identify a distinct object pair; disabled pending your review.]`:e.explanation,start_s:e.start_s,end_s:e.end_s,confidence:incompletePair?'uncertain':e.confidence};
  });
  return {summary:raw.summary,objects:raw.objects as {id:string;description:string}[],limitations:raw.limitations as string[],markers:validateMarkers(markers,duration)};
 }
@@ -38,6 +44,7 @@ export function compose(duration:number,markers:Marker[],settings:MusicSettings,
  const phrases=Math.max(1,Math.round(duration/LOOP));
  const scale=duration<5?1:duration/(phrases*LOOP),end=duration/scale;
  const selected=settings.effects?markers.filter(m=>m.enabled).map(m=>({id:m.id,kind:m.kind,at:m.at/scale})):[];
- const events=compileDuet(0,end,selected,[{at:0,settings}],hash,false).map(e=>({...e,resolved_time_s:e.resolved_time_s*scale,duration_s:e.duration_s*scale,scene_time_s:e.scene_time_s===null?null:e.scene_time_s*scale}));
- return {title:'Little Signals · scene arrangement',bpm:96/scale,phrases,events,effects:SCENE_EVENTS.map((e,i)=>({kind:KINDS[i],...e})),mapping:'Stable piano/guitar voices; event types replace passages. No inferred object-specific instruments. Near-miss silence wins overlaps, then higher marker ID. Approach anticipates by two beats; near miss silences the preceding half beat; other effects last up to two beats, clipped at video boundaries.'};
+ const unswungTick=(t:number)=>{const beat=Math.floor(t/BEAT),fraction=t/BEAT-beat;return Math.round((beat+(fraction<=2/3?fraction*.75:.5+(fraction-2/3)*1.5))*960);};
+ const events=compileDuet(0,end,selected,[{at:0,settings}],hash,false).map(e=>({...e,plan_id:'scenescore-demo-1',start_tick:unswungTick(e.resolved_time_s),duration_ticks:Math.max(1,unswungTick(e.resolved_time_s+e.duration_s)-unswungTick(e.resolved_time_s)),swing_applied:true,swing_application_count:1 as const,resolved_time_s:e.resolved_time_s*scale,duration_s:e.duration_s*scale,scene_time_s:e.scene_time_s===null?null:e.scene_time_s*scale}));
+ return {title:'Little Signals · scene arrangement',bpm:96/scale,ppq:960,swing_ratio:2/3,tick_note:'Unswung ticks are recovered from resolved timing and rounded to PPQ=960; resolved seconds are authoritative for audio. Swing has already been applied once.',phrases,events,effects:SCENE_EVENTS.map((e,i)=>({kind:KINDS[i],...e})),mapping:'Stable piano/guitar voices; event types replace passages. No inferred object-specific instruments. Near-miss silence wins overlaps, then higher marker ID. Approach anticipates by two beats; near miss silences the preceding half beat; other effects last up to two beats, clipped at video boundaries.'};
 }

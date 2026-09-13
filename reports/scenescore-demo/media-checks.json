@@ -1,0 +1,140 @@
+{
+  "utc": "2026-09-13T07:31:26.571Z",
+  "checks": [
+    {
+      "id": "074e5ab4-4250-47cf-acea-c872219e55d0",
+      "name": "A.mov",
+      "revision": "a90b0855-6a27-46ec-bbb6-c3e2db9f2e33",
+      "duration_s": 22.983333,
+      "frames": 115,
+      "events": 12,
+      "score_events": 136,
+      "analysis_mode": "cached_gpt",
+      "peak": 0.26654866176335945,
+      "rms": 0.05299194093723153,
+      "stem_sum_max_lsb": 1,
+      "video_stream_matches_preview": true,
+      "decode": "passed",
+      "http_range": "passed",
+      "origin_and_header_rejection": "passed",
+      "commands": [
+        {
+          "args": [
+            "-i",
+            "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\artifacts\\scenescore\\074e5ab4-4250-47cf-acea-c872219e55d0\\preview.mp4",
+            "-map",
+            "0:v:0",
+            "-c:v",
+            "copy",
+            "-f",
+            "hash",
+            "-hash",
+            "sha256",
+            "-"
+          ],
+          "pid": 21672,
+          "exit_code": 0
+        },
+        {
+          "args": [
+            "-i",
+            "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\artifacts\\scenescore\\074e5ab4-4250-47cf-acea-c872219e55d0\\a90b0855-6a27-46ec-bbb6-c3e2db9f2e33\\final.mp4",
+            "-map",
+            "0:v:0",
+            "-c:v",
+            "copy",
+            "-f",
+            "hash",
+            "-hash",
+            "sha256",
+            "-"
+          ],
+          "pid": 29412,
+          "exit_code": 0
+        },
+        {
+          "args": [
+            "-threads",
+            "2",
+            "-i",
+            "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\artifacts\\scenescore\\074e5ab4-4250-47cf-acea-c872219e55d0\\a90b0855-6a27-46ec-bbb6-c3e2db9f2e33\\final.mp4",
+            "-f",
+            "null",
+            "-"
+          ],
+          "pid": 13256,
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "id": "6320ca20-bb84-4ec6-99ac-b7e9b9682d95",
+      "name": "B.mov · first 29 seconds",
+      "revision": "a81b117f-dc53-4e2d-98cd-894ad1aa8835",
+      "duration_s": 28.966667,
+      "frames": 145,
+      "events": 16,
+      "score_events": 194,
+      "analysis_mode": "cached_gpt",
+      "peak": 0.3935972167119358,
+      "rms": 0.04956442056067659,
+      "stem_sum_max_lsb": 1,
+      "video_stream_matches_preview": true,
+      "decode": "passed",
+      "http_range": "passed",
+      "origin_and_header_rejection": "passed",
+      "commands": [
+        {
+          "args": [
+            "-i",
+            "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\artifacts\\scenescore\\6320ca20-bb84-4ec6-99ac-b7e9b9682d95\\preview.mp4",
+            "-map",
+            "0:v:0",
+            "-c:v",
+            "copy",
+            "-f",
+            "hash",
+            "-hash",
+            "sha256",
+            "-"
+          ],
+          "pid": 19776,
+          "exit_code": 0
+        },
+        {
+          "args": [
+            "-i",
+            "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\artifacts\\scenescore\\6320ca20-bb84-4ec6-99ac-b7e9b9682d95\\a81b117f-dc53-4e2d-98cd-894ad1aa8835\\final.mp4",
+            "-map",
+            "0:v:0",
+            "-c:v",
+            "copy",
+            "-f",
+            "hash",
+            "-hash",
+            "sha256",
+            "-"
+          ],
+          "pid": 26980,
+          "exit_code": 0
+        },
+        {
+          "args": [
+            "-threads",
+            "2",
+            "-i",
+            "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\artifacts\\scenescore\\6320ca20-bb84-4ec6-99ac-b7e9b9682d95\\a81b117f-dc53-4e2d-98cd-894ad1aa8835\\final.mp4",
+            "-f",
+            "null",
+            "-"
+          ],
+          "pid": 4020,
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "browser_interaction": "NOT_RUN",
+  "human_audition": "NOT_RUN",
+  "physical_timing": "NOT_RUN"
+}

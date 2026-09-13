@@ -1,0 +1,16 @@
+[
+  {
+    "enabled_events": 12,
+    "scene_status": "Ready",
+    "revision": "a90b0855-6a27-46ec-bbb6-c3e2db9f2e33",
+    "id": "074e5ab4-4250-47cf-acea-c872219e55d0",
+    "code_hashes_match_current_files": true
+  },
+  {
+    "enabled_events": 12,
+    "scene_status": "Ready",
+    "revision": "a81b117f-dc53-4e2d-98cd-894ad1aa8835",
+    "id": "6320ca20-bb84-4ec6-99ac-b7e9b9682d95",
+    "code_hashes_match_current_files": true
+  }
+]

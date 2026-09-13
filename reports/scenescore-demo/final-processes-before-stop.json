@@ -1,0 +1,12 @@
+[
+  {
+    "ProcessId": 24164,
+    "ParentProcessId": 23572,
+    "Name": "node.exe"
+  },
+  {
+    "ProcessId": 13676,
+    "ParentProcessId": 24164,
+    "Name": "esbuild.exe"
+  }
+]

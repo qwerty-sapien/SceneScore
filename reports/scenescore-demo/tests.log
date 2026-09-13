@@ -1,0 +1,602 @@
+TAP version 13
+# {"contact_sample_rate":44100,"optimized_ms":37.442999999999984,"maxError":3.725290298461914e-9}
+# {"contact_sample_rate":48000,"optimized_ms":17.480299999999943,"maxError":1.862645149230957e-9}
+# {"duet_variants":7,"mode":"procedural_pcm_array","maximumPeak":0.5887373089790344,"minimumRms":0.07468837797640832,"physical_output":"NOT_RUN"}
+# Subtest: contact chord at browser sample rates preserves the existing guitar waveform
+ok 1 - contact chord at browser sample rates preserves the existing guitar waveform
+  ---
+  duration_ms: 529.1893
+  type: 'test'
+  ...
+# Subtest: baseline contains only piano accompaniment and guitar melody
+ok 2 - baseline contains only piano accompaniment and guitar melody
+  ---
+  duration_ms: 2.2016
+  type: 'test'
+  ...
+# Subtest: approach rises chromatically before marker, separation descends after it
+ok 3 - approach rises chromatically before marker, separation descends after it
+  ---
+  duration_ms: 3.1562
+  type: 'test'
+  ...
+# Subtest: near miss cuts sounding notes as well as onsets, including across the loop seam
+ok 4 - near miss cuts sounding notes as well as onsets, including across the loop seam
+  ---
+  duration_ms: 2.7567
+  type: 'test'
+  ...
+# Subtest: contact is a guitar chord; hold is one sustained note per part; riffs replace guitar
+ok 5 - contact is a guitar chord; hold is one sustained note per part; riffs replace guitar
+  ---
+  duration_ms: 3.9954
+  type: 'test'
+  ...
+# Subtest: silence wins overlaps, key changes retune every replacement and split holds
+ok 6 - silence wins overlaps, key changes retune every replacement and split holds
+  ---
+  duration_ms: 14.1327
+  type: 'test'
+  ...
+# Subtest: live edits cut queued/active audio and replace the passage without extra cues
+ok 7 - live edits cut queued/active audio and replace the passage without extra cues
+  ---
+  duration_ms: 29.9755
+  type: 'test'
+  ...
+# Subtest: approach resolves chromatically into a queued arrival key
+ok 8 - approach resolves chromatically into a queued arrival key
+  ---
+  duration_ms: 1.3771
+  type: 'test'
+  ...
+# Subtest: key controls stay at bar boundary and preserve guitar touch
+ok 9 - key controls stay at bar boundary and preserve guitar touch
+  ---
+  duration_ms: 63.382
+  type: 'test'
+  ...
+# Subtest: loop playback continues beyond 120 seconds, while stall guard and export bound remain
+ok 10 - loop playback continues beyond 120 seconds, while stall guard and export bound remain
+  ---
+  duration_ms: 1554.2147
+  type: 'test'
+  ...
+# Subtest: scheduler exceptions stop cleanly and reach the visible error callback
+ok 11 - scheduler exceptions stop cleanly and reach the visible error callback
+  ---
+  duration_ms: 1.74
+  type: 'test'
+  ...
+# Subtest: seven replaced duet mixes render finite, non-silent and unclipped at maximum gain
+ok 12 - seven replaced duet mixes render finite, non-silent and unclipped at maximum gain
+  ---
+  duration_ms: 1242.1944
+  type: 'test'
+  ...
+# Subtest: video-length score preserves scene timestamps, pitches and the loop boundary
+ok 13 - video-length score preserves scene timestamps, pitches and the loop boundary
+  ---
+  duration_ms: 36.1569
+  type: 'test'
+  ...
+# Subtest: scene loading clears the prior take and sets video-length key boundaries
+ok 14 - scene loading clears the prior take and sets video-length key boundaries
+  ---
+  duration_ms: 1.7685
+  type: 'test'
+  ...
+# Subtest: video waits for the audio anchor, follows audio across wraps, and stops with audio
+ok 15 - video waits for the audio anchor, follows audio across wraps, and stops with audio
+  ---
+  duration_ms: 0.8477
+  type: 'test'
+  ...
+# Subtest: stopped pending video play is paused when its promise resolves
+ok 16 - stopped pending video play is paused when its promise resolves
+  ---
+  duration_ms: 0.4879
+  type: 'test'
+  ...
+# Subtest: video failure is surfaced and no repeated play request runs while one is pending
+ok 17 - video failure is surfaced and no repeated play request runs while one is pending
+  ---
+  duration_ms: 0.8607
+  type: 'test'
+  ...
+# Subtest: strict duration and event bounds
+ok 18 - strict duration and event bounds
+  ---
+  duration_ms: 3.1268
+  type: 'test'
+  ...
+# Subtest: uncertain proposals remain disabled and unknown identities fail
+ok 19 - uncertain proposals remain disabled and unknown identities fail
+  ---
+  duration_ms: 1.1924
+  type: 'test'
+  ...
+# Subtest: numeric model IDs normalize consistently; normalization collisions fail
+ok 20 - numeric model IDs normalize consistently; normalization collisions fail
+  ---
+  duration_ms: 2.6319
+  type: 'test'
+  ...
+# Subtest: incomplete interaction pairs are retained but disabled for review
+ok 21 - incomplete interaction pairs are retained but disabled for review
+  ---
+  duration_ms: 0.5646
+  type: 'test'
+  ...
+# Subtest: nonlooping events apply once across phrases and do not leak into earlier cycles
+ok 22 - nonlooping events apply once across phrases and do not leak into earlier cycles
+  ---
+  duration_ms: 38.5212
+  type: 'test'
+  ...
+# Subtest: effect bypass and disabled events preserve original score; short clips work
+ok 23 - effect bypass and disabled events preserve original score; short clips work
+  ---
+  duration_ms: 13.0155
+  type: 'test'
+  ...
+# Subtest: key changes preserve gain, articulation, timing and velocity
+ok 24 - key changes preserve gain, articulation, timing and velocity
+  ---
+  duration_ms: 10.2909
+  type: 'test'
+  ...
+# Subtest: key change preserves timing, gain and touch, transposing every pitched lane
+ok 25 - key change preserves timing, gain and touch, transposing every pitched lane
+  ---
+  duration_ms: 5.6547
+  type: 'test'
+  ...
+# Subtest: ornaments preserve rests and accompaniment, and remain inside their swung note slot
+ok 26 - ornaments preserve rests and accompaniment, and remain inside their swung note slot
+  ---
+  duration_ms: 5.1582
+  type: 'test'
+  ...
+# Subtest: trim excludes future events and shortens sounding notes at stop
+ok 27 - trim excludes future events and shortens sounding notes at stop
+  ---
+  duration_ms: 0.5661
+  type: 'test'
+  ...
+# {"mode":"procedural_pcm_array","sample_rate":8000,"variants":12,"duration_s":10,"maxPeak":0.3516608476638794,"minRms":0.054863712618212664,"physical_output":"NOT_RUN"}
+# Subtest: actual procedural PCM is non-silent and unclipped for all ornaments and touches
+ok 28 - actual procedural PCM is non-silent and unclipped for all ornaments and touches
+  ---
+  duration_ms: 2098.335
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/AcquisitionMetadata.json
+ok 29 - fixtures/contracts/AcquisitionMetadata.json
+  ---
+  duration_ms: 75.8018
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/EEGChunk.json
+ok 30 - fixtures/contracts/EEGChunk.json
+  ---
+  duration_ms: 2.7253
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/BlinkCandidate.json
+ok 31 - fixtures/contracts/BlinkCandidate.json
+  ---
+  duration_ms: 2.2489
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/GestureEvent.json
+ok 32 - fixtures/contracts/GestureEvent.json
+  ---
+  duration_ms: 2.4366
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/ControlAction.json
+ok 33 - fixtures/contracts/ControlAction.json
+  ---
+  duration_ms: 3.3211
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/SceneManifest.json
+ok 34 - fixtures/contracts/SceneManifest.json
+  ---
+  duration_ms: 10.3085
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/ObjectState.json
+ok 35 - fixtures/contracts/ObjectState.json
+  ---
+  duration_ms: 12.7152
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/InteractionEvent.json
+ok 36 - fixtures/contracts/InteractionEvent.json
+  ---
+  duration_ms: 2.3903
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/CompositionSpec.json
+ok 37 - fixtures/contracts/CompositionSpec.json
+  ---
+  duration_ms: 2.8891
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/BrushGroove.json
+ok 38 - fixtures/contracts/BrushGroove.json
+  ---
+  duration_ms: 2.4507
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/ScoreEvent.json
+ok 39 - fixtures/contracts/ScoreEvent.json
+  ---
+  duration_ms: 1.7279
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/AudioAssetManifest.json
+ok 40 - fixtures/contracts/AudioAssetManifest.json
+  ---
+  duration_ms: 1.2749
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/ArrangementPlan.json
+ok 41 - fixtures/contracts/ArrangementPlan.json
+  ---
+  duration_ms: 1.2649
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/Approval.json
+ok 42 - fixtures/contracts/Approval.json
+  ---
+  duration_ms: 1.1053
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/ClockMapping.json
+ok 43 - fixtures/contracts/ClockMapping.json
+  ---
+  duration_ms: 1.3228
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/RunManifest.json
+ok 44 - fixtures/contracts/RunManifest.json
+  ---
+  duration_ms: 1.3584
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/EvaluationReport.json
+ok 45 - fixtures/contracts/EvaluationReport.json
+  ---
+  duration_ms: 1.2223
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/CapabilityRequest.json
+ok 46 - fixtures/contracts/CapabilityRequest.json
+  ---
+  duration_ms: 1.0345
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/near-miss.json
+ok 47 - fixtures/contracts/near-miss.json
+  ---
+  duration_ms: 1.0272
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/separating-pair.json
+ok 48 - fixtures/contracts/separating-pair.json
+  ---
+  duration_ms: 0.9527
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/packet-loss.json
+ok 49 - fixtures/contracts/packet-loss.json
+  ---
+  duration_ms: 1.1386
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/no-event.json
+ok 50 - fixtures/contracts/no-event.json
+  ---
+  duration_ms: 0.9853
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/bad-quality.json
+ok 51 - fixtures/contracts/bad-quality.json
+  ---
+  duration_ms: 1.0648
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/gesture-1.json
+ok 52 - fixtures/contracts/gesture-1.json
+  ---
+  duration_ms: 1.4643
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/gesture-3.json
+ok 53 - fixtures/contracts/gesture-3.json
+  ---
+  duration_ms: 1.1093
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/bad-version.json
+ok 54 - fixtures/contracts/bad-version.json
+  ---
+  duration_ms: 1.8751
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/bad-units.json
+ok 55 - fixtures/contracts/bad-units.json
+  ---
+  duration_ms: 1.0252
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/extra-field.json
+ok 56 - fixtures/contracts/extra-field.json
+  ---
+  duration_ms: 1.1982
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/self-pair.json
+ok 57 - fixtures/contracts/self-pair.json
+  ---
+  duration_ms: 1.0761
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/fake-impact.json
+ok 58 - fixtures/contracts/fake-impact.json
+  ---
+  duration_ms: 0.9895
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/contact-near-miss.json
+ok 59 - fixtures/contracts/contact-near-miss.json
+  ---
+  duration_ms: 0.9939
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/bad-pair-id.json
+ok 60 - fixtures/contracts/bad-pair-id.json
+  ---
+  duration_ms: 0.9514
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/stale-times.json
+ok 61 - fixtures/contracts/stale-times.json
+  ---
+  duration_ms: 1.3259
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/mismatched-channels.json
+ok 62 - fixtures/contracts/mismatched-channels.json
+  ---
+  duration_ms: 1.6158
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/wrong-receipt-clock.json
+ok 63 - fixtures/contracts/wrong-receipt-clock.json
+  ---
+  duration_ms: 1.1585
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/time-reversal.json
+ok 64 - fixtures/contracts/time-reversal.json
+  ---
+  duration_ms: 1.0818
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/mixed-epoch.json
+ok 65 - fixtures/contracts/mixed-epoch.json
+  ---
+  duration_ms: 0.9654
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/count-mismatch.json
+ok 66 - fixtures/contracts/count-mismatch.json
+  ---
+  duration_ms: 0.94
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/double-gain-change.json
+ok 67 - fixtures/contracts/double-gain-change.json
+  ---
+  duration_ms: 1.1543
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/single-action.json
+ok 68 - fixtures/contracts/single-action.json
+  ---
+  duration_ms: 0.9403
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/triple-default-action.json
+ok 69 - fixtures/contracts/triple-default-action.json
+  ---
+  duration_ms: 0.9322
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/bad-quality-action.json
+ok 70 - fixtures/contracts/bad-quality-action.json
+  ---
+  duration_ms: 0.9901
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/missing-approval.json
+ok 71 - fixtures/contracts/missing-approval.json
+  ---
+  duration_ms: 1.4458
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/duplicate-object.json
+ok 72 - fixtures/contracts/duplicate-object.json
+  ---
+  duration_ms: 1.5414
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/inverted-bounds.json
+ok 73 - fixtures/contracts/inverted-bounds.json
+  ---
+  duration_ms: 1.148
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/invalid-quaternion.json
+ok 74 - fixtures/contracts/invalid-quaternion.json
+  ---
+  duration_ms: 1.1412
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/bad-hash.json
+ok 75 - fixtures/contracts/bad-hash.json
+  ---
+  duration_ms: 0.9894
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/pitched-brush.json
+ok 76 - fixtures/contracts/pitched-brush.json
+  ---
+  duration_ms: 1.1273
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/overflow-note.json
+ok 77 - fixtures/contracts/overflow-note.json
+  ---
+  duration_ms: 1.33
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/tempo-reversal.json
+ok 78 - fixtures/contracts/tempo-reversal.json
+  ---
+  duration_ms: 1.1669
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/unpitched-note.json
+ok 79 - fixtures/contracts/unpitched-note.json
+  ---
+  duration_ms: 1.3701
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/quantized-foley.json
+ok 80 - fixtures/contracts/quantized-foley.json
+  ---
+  duration_ms: 1.2927
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/double-swing.json
+ok 81 - fixtures/contracts/double-swing.json
+  ---
+  duration_ms: 1.036
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/register-inversion.json
+ok 82 - fixtures/contracts/register-inversion.json
+  ---
+  duration_ms: 1.0603
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/bad-transition.json
+ok 83 - fixtures/contracts/bad-transition.json
+  ---
+  duration_ms: 0.992
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/leaky-split.json
+ok 84 - fixtures/contracts/leaky-split.json
+  ---
+  duration_ms: 1.0441
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/fake-statistical-support.json
+ok 85 - fixtures/contracts/fake-statistical-support.json
+  ---
+  duration_ms: 1.0685
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/excess-armed-exposure.json
+ok 86 - fixtures/contracts/excess-armed-exposure.json
+  ---
+  duration_ms: 1.2584
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/invalid-clock-range.json
+ok 87 - fixtures/contracts/invalid-clock-range.json
+  ---
+  duration_ms: 1.0081
+  type: 'test'
+  ...
+# Subtest: fixtures/contracts/non-positive-timeout.json
+ok 88 - fixtures/contracts/non-positive-timeout.json
+  ---
+  duration_ms: 1.1733
+  type: 'test'
+  ...
+# Subtest: nonfinite scores fail
+ok 89 - nonfinite scores fail
+  ---
+  duration_ms: 1.6136
+  type: 'test'
+  ...
+# Subtest: clock and gesture boundary discipline
+ok 90 - clock and gesture boundary discipline
+  ---
+  duration_ms: 2.9134
+  type: 'test'
+  ...
+# Subtest: scheduler deduplicates sequence, preserves lanes and drops old epochs
+ok 91 - scheduler deduplicates sequence, preserves lanes and drops old epochs
+  ---
+  duration_ms: 8.1388
+  type: 'test'
+  ...
+# Subtest: content hashing is exact bytes
+ok 92 - content hashing is exact bytes
+  ---
+  duration_ms: 1.4528
+  type: 'test'
+  ...
+# Subtest: bundle rejects unknown references and catalogue versions
+ok 93 - bundle rejects unknown references and catalogue versions
+  ---
+  duration_ms: 10.3628
+  type: 'test'
+  ...
+# Subtest: Python envelope action passes frozen TypeScript contract without extra canonical fields
+ok 94 - Python envelope action passes frozen TypeScript contract without extra canonical fields
+  ---
+  duration_ms: 52.6377
+  type: 'test'
+  ...
+# Subtest: keyboard: canonical adapter action uses Timeline.submit gates and one-pending limit
+ok 95 - keyboard: canonical adapter action uses Timeline.submit gates and one-pending limit
+  ---
+  duration_ms: 90.3746
+  type: 'test'
+  ...
+# Subtest: synthetic: canonical adapter action uses Timeline.submit gates and one-pending limit
+ok 96 - synthetic: canonical adapter action uses Timeline.submit gates and one-pending limit
+  ---
+  duration_ms: 35.9131
+  type: 'test'
+  ...
+# Subtest: replay: canonical adapter action uses Timeline.submit gates and one-pending limit
+ok 97 - replay: canonical adapter action uses Timeline.submit gates and one-pending limit
+  ---
+  duration_ms: 32.3659
+  type: 'test'
+  ...
+# Subtest: real_device: canonical adapter action uses Timeline.submit gates and one-pending limit
+ok 98 - real_device: canonical adapter action uses Timeline.submit gates and one-pending limit
+  ---
+  duration_ms: 30.0655
+  type: 'test'
+  ...
+1..98
+# tests 98
+# suites 0
+# pass 98
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5169.0399

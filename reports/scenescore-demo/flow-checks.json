@@ -1,0 +1,17 @@
+{
+  "utc": "2026-09-13T07:20:37.228Z",
+  "status": "passed",
+  "model_calls": 0,
+  "edits_change_audio": true,
+  "restore_audio_byte_identical": true,
+  "api_response_reused": true,
+  "concurrent_request_rejected": true,
+  "invalid_events_rejected": true,
+  "invalid_gain_rejected": true,
+  "malformed_upload_rejected": "9f5a9a21-197c-47e7-a584-b283c5bf0e69",
+  "overlength_upload_rejected": "c0f54279-137e-4f3f-9879-db5a4ba6a535",
+  "cancelled_job": "3357a41d-7d61-406f-a379-74cef7baf522",
+  "active_job_after_tests": null,
+  "saved_sessions_reopenable": true,
+  "browser_interaction": "NOT_RUN"
+}

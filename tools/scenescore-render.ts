@@ -4,12 +4,14 @@ import {createHash} from 'node:crypto';
 import {compose} from '../apps/web/src/scenescore/model';
 import {keyboardVoice} from '../packages/audio/keyboard-voice';
 import {pcmWav,measurements} from '../packages/audio/engine';
+import {validate} from '../packages/contracts/validate';
 
 const [directory]=process.argv.slice(2);
 if(!directory)throw Error('Render directory required');
 const raw=await fs.readFile(path.join(directory,'request.json'));
 const request=JSON.parse(raw.toString()),configHash=createHash('sha256').update(raw).digest('hex');
 const score=compose(request.duration,request.markers,request.settings,configHash);
+for(const event of score.events){event.provenance={...event.provenance,creator:'scenescore-demo',tool_version:'scenescore-demo-1',input_hashes:[request.source_sha256]};validate(event);}
 const rate=48000,length=Math.ceil(request.duration*rate);
 const context={sampleRate:rate,createBuffer:(_c:number,n:number)=>{const data=new Float32Array(n);return {getChannelData:()=>data};}} as unknown as BaseAudioContext;
 const stems={piano:[new Float32Array(length),new Float32Array(length)],guitar:[new Float32Array(length),new Float32Array(length)]};
