@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+from dataclasses import asdict
 import json
 import math
 import os
@@ -12,6 +13,7 @@ import tempfile
 import time
 
 from .web_model import CONFIG, FEATURES, FORMAT, _digest, _normalized, _sigmoid
+from modules.muse.baseline.causal import Config
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[3] / "private_data/02A/training-web/automatic"
 CHECKPOINT_FORMAT = "scenescore.personal-blink-checkpoint/1"
@@ -50,7 +52,7 @@ def validate_model(model):
             or model.get("control_authority") is not False or model.get("feature_names") != list(FEATURES)
             or model.get("config") != CONFIG or model.get("config_sha256") != _digest(CONFIG)
             or model.get("source_mode") not in {"synthetic", "real_device"}
-            or model.get("threshold") != CONFIG["threshold"]):
+            or model.get("threshold") != CONFIG["threshold"] or model.get("window_s") != 2.0):
         raise ValueError("incompatible_checkpoint_model")
     for key in ("mean", "scale", "weights"):
         values = model.get(key)
@@ -112,6 +114,7 @@ def fit_checkpoint(examples, contract, parent=None):
              "window_s": 2.0, "source_mode": contract["source_mode"], "sample_rate_hz": contract["sample_rate_hz"],
              "channel_contract": contract["channels"], "positive_examples": positives, "negative_examples": negatives}
     result = {"format": CHECKPOINT_FORMAT, "created_ns": time.time_ns(), "model": model,
+              "detector_config": asdict(Config()), "detector_config_sha256": Config().digest,
               "parent_id": parent["id"] if parent else None,
               "training_steps": (parent["training_steps"] if parent else 0) + CONFIG["steps"],
               "training_data_sha256": _digest(examples), "examples": [e["id"] for e in examples],
@@ -133,6 +136,18 @@ def validate_checkpoint(value):
     core = {k: v for k, v in value.items() if k != "id"}
     if value.get("id") != "checkpoint-" + _digest(core):
         raise ValueError("checkpoint_integrity_mismatch")
+    if value.get("detector_config") != asdict(Config()) or value.get("detector_config_sha256") != Config().digest:
+        raise ValueError("incompatible_checkpoint_detector_config")
+    for key in ("created_ns", "training_steps"):
+        if type(value.get(key)) is not int or value[key] <= 0:
+            raise ValueError("invalid_checkpoint_progress")
+    if (not isinstance(value.get("examples"), list) or not 40 <= len(value["examples"]) <= 128
+            or any(not isinstance(e, str) for e in value["examples"])
+            or len(set(value["examples"])) != len(value["examples"])
+            or not isinstance(value.get("training_data_sha256"), str)
+            or not re.fullmatch(r"[0-9a-f]{64}", value["training_data_sha256"])
+            or value.get("parent_id") is not None and not re.fullmatch(r"checkpoint-[0-9a-f]{64}", str(value["parent_id"]))):
+        raise ValueError("invalid_checkpoint_provenance")
     validate_model(value["model"])
 
 

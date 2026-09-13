@@ -1,0 +1,8 @@
+{
+  "mechanics_unchanged": true,
+  "packet_unchanged": true,
+  "replay_unchanged": true,
+  "geometry_bytes_unchanged": false,
+  "geometry_gate": "gate-evaluated/RESULTS-06-v4.json",
+  "method": "Byte comparison for inputs and replay; final evaluated geometry has its own direct audit."
+}

@@ -1,0 +1,4 @@
+{"stage": "scanning", "recording": true, "pid": 89175}
+{"result": "BLOCKED", "error": "muse_not_found"}
+{"recording": {"recording_created": false}}
+{"stage": "disconnected", "cleanup": "PASS", "ble_thread_alive": false, "recording_thread_alive": false}

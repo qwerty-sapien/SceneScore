@@ -1,0 +1,15 @@
+{
+  "status": "PASSED",
+  "current_constraints_verified": true,
+  "blender_source_and_artifact_hashes_match": true,
+  "owned_file_count": 25,
+  "owned_tracked_diff_check_exit": 0,
+  "process_group_receipts": 23,
+  "all_task_process_groups_absent": true,
+  "preserved_sources": 108,
+  "baseline_sources": 109,
+  "concurrent_changes": [
+    "modules/blender/production/directions/driver.py"
+  ],
+  "missing_sources": []
+}

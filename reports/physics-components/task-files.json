@@ -1,0 +1,127 @@
+[
+  {
+    "path": "docs/MECHANISM_COMPONENTS.md",
+    "sha256": "308d3537797c29ac7b0362cf44e427abe633e0370f9ca7d75023255a426e1ac1",
+    "bytes": 6856
+  },
+  {
+    "path": "docs/PLAN_VALIDATION.md",
+    "sha256": "af403fd830aa7dd60051a9cc4b527fecc4c6fab869b110f74291caca6f827493",
+    "bytes": 5753
+  },
+  {
+    "path": "modules/blender/components/__init__.py",
+    "sha256": "bf7c4586d1da41e0d223b6155fc146e820cdea34aadf6a435ed1221e215b1d89",
+    "bytes": 1469
+  },
+  {
+    "path": "modules/blender/components/__main__.py",
+    "sha256": "c6bffe441b5f60cd998f7c7dcce75d1a7fcfed078069752f0f6f535d86909201",
+    "bytes": 1478
+  },
+  {
+    "path": "modules/blender/components/blender.py",
+    "sha256": "9eea3e5791e5815c097b3fb540d2594e68fb8ce56d445a0dee62c497353d61a9",
+    "bytes": 4277
+  },
+  {
+    "path": "modules/blender/components/connections.py",
+    "sha256": "677960acbed968beeaca7eca67ab85cff28f335b22407384d8f374f9c5c4c757",
+    "bytes": 11910
+  },
+  {
+    "path": "modules/blender/components/core.py",
+    "sha256": "aa90004a6b2760c47896ba9e28cb834166c2c8059647f93f1df95ed84ea3b589",
+    "bytes": 12662
+  },
+  {
+    "path": "modules/blender/components/examples.py",
+    "sha256": "66504f12198a8fbe1ae0b37d97e863a47e01097ee2726c3f9dc8417b972c52af",
+    "bytes": 1914
+  },
+  {
+    "path": "modules/blender/components/guides.py",
+    "sha256": "eea8295e688f6aea72caa718aeda38ad5c2c4a296dc561de240ba8be5fcaceb9",
+    "bytes": 2756
+  },
+  {
+    "path": "modules/blender/components/math3d.py",
+    "sha256": "eebc3b3269bd02b81c13775dbac4fbe841f204d5ee5532ede13c581ba56c602e",
+    "bytes": 2786
+  },
+  {
+    "path": "modules/blender/components/obstacles.py",
+    "sha256": "f5c1b419b381a9fd4c9a361d92a7dcb6737f32a198cf940a77fe2039e5afd196",
+    "bytes": 3946
+  },
+  {
+    "path": "modules/blender/components/structures.py",
+    "sha256": "619928e584bb8286b3b76da2444488e94e66eace2b5c9e257ae8c983a9ea0fb7",
+    "bytes": 1868
+  },
+  {
+    "path": "modules/blender/components/transitions.py",
+    "sha256": "af0036a8c57134c4d95f6cb40df8ffb611adb96f7d84c5578e17239c86302dd5",
+    "bytes": 3484
+  },
+  {
+    "path": "modules/blender/fixtures/component-route.example.json",
+    "sha256": "05ab6411c06198b1d0eb94f576f229187ee9c2e64afd2f5b5f0f7eef31c41f88",
+    "bytes": 4826
+  },
+  {
+    "path": "modules/blender/fixtures/scene-feasibility-plan.example.json",
+    "sha256": "6551bb164de75bf77352c4d05823084fcc05a6220babe538cffa3d4a32b6eb5f",
+    "bytes": 11576
+  },
+  {
+    "path": "modules/blender/fixtures/scene-feasibility-plan.schema.json",
+    "sha256": "1242418ad5ce15a61d58fb4509703326d3c98d22f503f33c3ac352553565b02c",
+    "bytes": 8728
+  },
+  {
+    "path": "modules/blender/planning/__init__.py",
+    "sha256": "1f7bf007c05b74fb71ed5596e1faf24ab0d970cc276b340e9043d69828fcafa0",
+    "bytes": 172
+  },
+  {
+    "path": "modules/blender/planning/__main__.py",
+    "sha256": "50bc5d7df85c59fa10a4987ecd5116f7f6a3bea4172ca240349a33a74935d2ec",
+    "bytes": 1358
+  },
+  {
+    "path": "modules/blender/planning/contracts.py",
+    "sha256": "c54de6908023249c322ea998a2bb521e9339e6968ca5577e3a60e89784d9c52a",
+    "bytes": 6400
+  },
+  {
+    "path": "modules/blender/planning/io.py",
+    "sha256": "53a56381bf66ac2a2ae27787fd0ab9a259d3aa8d12f5b1088682ba3f55aea579",
+    "bytes": 1782
+  },
+  {
+    "path": "modules/blender/planning/validator.py",
+    "sha256": "e8664404ef4ab45ee097639d9e7096d2c93b3e3b9524348ef0e3c678be16616f",
+    "bytes": 19060
+  },
+  {
+    "path": "modules/blender/tests/blender_components_smoke.py",
+    "sha256": "e76f3980f9ad0241e22443e53d70198b5c4a537149e54be37604e6b0aa59d92c",
+    "bytes": 3269
+  },
+  {
+    "path": "modules/blender/tests/test_components.py",
+    "sha256": "ed542d8df35620ec9bba9a8decb42ed4388595477e75f10a817e19bb251f4101",
+    "bytes": 14652
+  },
+  {
+    "path": "modules/blender/tests/test_plan_validation.py",
+    "sha256": "f64f83d8bfa7fddf949a1b86960ebfced75fbbcb3b71074089dd5c835fed5918",
+    "bytes": 11692
+  },
+  {
+    "path": "tools/component_library_smoke.py",
+    "sha256": "c93b7bcb7dc7e21b9570eb13a4aa27108156f5a21bbae29c2579a8047c58f8c7",
+    "bytes": 1930
+  }
+]

@@ -15,7 +15,7 @@ def main(argv=None):
     try:
         layout = load_plan(args.layout)
         result = assemble_resolved(load_plan(args.resolved), layout) if args.resolved else assemble_route(layout).to_dict()
-    except (ValueError, TypeError, OSError) as error:
+    except (ValueError, TypeError, OSError, RecursionError) as error:
         result = {'status': 'FAILED', 'error': str(error), 'physics_validated': False}
         if isinstance(error, RouteValidationError):
             result['connection_reports'] = error.reports

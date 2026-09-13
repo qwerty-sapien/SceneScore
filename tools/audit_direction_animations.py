@@ -60,6 +60,23 @@ def teardown(artifact_root):
     return dict(status='PASSED', jobs=jobs, live_groups=live, method='read-only killpg(pgid,0); no signal sent')
 
 
+def geometry_evidence(candidates):
+    directory = ROOT / 'reports/animation-directions-06-08-18/gate-evaluated'
+    path = directory / 'FINAL-SCOPED-GATE.json'
+    gate = read(path)
+    assert gate['status'] == 'PASSED_SCOPED_EVALUATED_STATIC_GEOMETRY'
+    selected = {p.name for p in candidates}
+    assert set(gate['candidates']).issubset(selected)
+    for name, expected in gate['evidence_sha256'].items():
+        assert digest(directory / name) == expected, name
+    for name in ('RESULTS-06-v4.json', 'RESULTS-08-final-evaluated-v3.json'):
+        for input_name, expected in read(directory / name)['input_sha256'].items():
+            assert digest(ROOT / input_name) == expected, input_name
+    return dict(report=str(path), report_sha256=digest(path),
+                status=gate['status'], candidates=gate['candidates'],
+                scope_limits=gate['scope_limits'])
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('candidates', nargs='+', type=Path)
@@ -70,6 +87,7 @@ def main():
         assert digest(Path(baseline['reference']) / name) == expected, 'Reference changed: ' + name
     report = dict(status='PASSED', reference_preserved=True,
         candidates=[audit(p.resolve()) for p in args.candidates],
+        independent_geometry_evidence=geometry_evidence(args.candidates),
         teardown=teardown(ROOT / 'artifacts/blender/revamp/directions'))
     args.output.write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(dict(status=report['status'], candidates=len(report['candidates']),

@@ -1,0 +1,10 @@
+{
+  "pid": 94490,
+  "pgid": 94490,
+  "session": 19700,
+  "exit_code": 0,
+  "runtime_s": 257.0094027519226,
+  "runtime_cap_s": 300,
+  "checked_unix_s": 1789279191.20993,
+  "state": "ABSENT"
+}

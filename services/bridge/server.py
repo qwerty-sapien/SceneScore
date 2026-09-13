@@ -184,14 +184,15 @@ class Companion:
             selected_id = checkpoint['id'] if checkpoint else None
             actual = getattr(self.detector, 'checkpoint', None)
             active_id = actual['id'] if actual else None
+            detector = PersonalDetector(self.metadata, checkpoint) if selected_id != active_id else self.detector
+            self.active_checkpoint = checkpoint
+            try:
+                self.active_evaluation = self.checkpoints.evaluation(selected_id) if selected_id else None
+            except (ValueError, OSError, KeyError):
+                self.active_evaluation = None
             if selected_id != active_id:
-                detector = PersonalDetector(self.metadata, checkpoint)
+                detector.previous = self.detector.previous
                 self.detector = detector
-                self.active_checkpoint = checkpoint
-                try:
-                    self.active_evaluation = self.checkpoints.evaluation(selected_id) if selected_id else None
-                except (ValueError, OSError, KeyError):
-                    self.active_evaluation = None
                 self.pending_arm = True
                 self.last_subscriber_s = time.monotonic()
                 self.reason = 'checkpoint_loaded_warming_up'

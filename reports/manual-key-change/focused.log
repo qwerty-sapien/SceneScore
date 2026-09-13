@@ -1,0 +1,24 @@
+✔ manual seeded choice executes prepared harmony, preserves lanes (standard) (40.874083ms)
+✔ manual seeded choice executes prepared harmony, preserves lanes (vertical) (59.057208ms)
+✔ manual availability handles pause, ending, preparation, unsupported edges and reset (3.59075ms)
+✔ headset presence uses hardware detection even disarmed or bad quality, never simulated mode (0.1075ms)
+✔ local transition matches independent Python compiler golden (25.47325ms)
+✔ default double preserves independent expression and all unpitched events (2.341709ms)
+✔ causal geometry direction never reads future or unknown coverage (2.261125ms)
+✔ approval binds exact bytes and changing assets invalidates it (26.45825ms)
+✔ duplicate action and repeated train deliver once; pending queue capped (3.806959ms)
+✔ late request selects next feasible boundary and never schedules past (2.931084ms)
+✔ seek clears queue, advances epoch and preserves external dedup history (5.098125ms)
+✔ bad quality, unrelated expression, wrong plan and unmapped clocks fail closed (3.268917ms)
+✔ stationary and experimental controls cannot silently act (2.352916ms)
+✔ video corrections are bounded and hard seeks rate-limited (0.179958ms)
+✔ stable hash independent of property insertion order (1.637458ms)
+✔ pause before queued boundary rolls back the unexecuted key change (3.595125ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 507.524375

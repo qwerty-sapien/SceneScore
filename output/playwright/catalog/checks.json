@@ -1,0 +1,94 @@
+{
+  "checks": [
+    {
+      "name": "catalog groups soundtrack variants",
+      "status": "passed",
+      "evidence": 3
+    },
+    {
+      "name": "search and empty state",
+      "status": "passed",
+      "evidence": true
+    },
+    {
+      "name": "unapproved watch and live audio scheduling",
+      "status": "passed",
+      "evidence": {
+        "time": 1.002312925170068,
+        "playing": true,
+        "scheduled": 9,
+        "approval": null,
+        "bundle": "contact-brush_swing_light_v1-guitar-piano-v2"
+      }
+    },
+    {
+      "name": "download original video and exact prepared sidecar",
+      "status": "passed",
+      "evidence": [
+        "scenescore-sidecar.json",
+        "contact.mp4"
+      ]
+    },
+    {
+      "name": "actual offline stereo audio",
+      "status": "passed",
+      "evidence": {
+        "peak": 0.40360385179519653,
+        "rms": 0.04264581839311675,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      }
+    },
+    {
+      "name": "change soundtrack resets playback and approval",
+      "status": "passed",
+      "evidence": "studio:contact-brush_swing_light_v1-vibraphone"
+    },
+    {
+      "name": "wrong uploaded video rejected",
+      "status": "passed",
+      "evidence": true
+    },
+    {
+      "name": "import survives browser reload",
+      "status": "passed",
+      "evidence": true
+    },
+    {
+      "name": "imported bundle plays offline",
+      "status": "passed",
+      "evidence": true
+    },
+    {
+      "name": "remove imported browser copy",
+      "status": "passed",
+      "evidence": true
+    },
+    {
+      "name": "mobile library has no horizontal overflow",
+      "status": "passed",
+      "evidence": true
+    },
+    {
+      "name": "second scene completes at its own duration",
+      "status": "passed",
+      "evidence": 8
+    },
+    {
+      "name": "player teardown on catalog navigation",
+      "status": "passed",
+      "evidence": true
+    },
+    {
+      "name": "browser page errors",
+      "status": "passed",
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "physical_output_measured": false,
+  "human_audition": "NOT_RUN",
+  "browser_closed": true
+}

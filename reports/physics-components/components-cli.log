@@ -1,0 +1,2 @@
+COMMAND [".venv/bin/python", "-m", "modules.blender.components", "modules/blender/fixtures/component-route.example.json", "--out", "reports/physics-components/assembled-route.json"]
+{"status": "READY_FOR_PARAMETER_SOLUTION", "out": "reports/physics-components/assembled-route.json"}

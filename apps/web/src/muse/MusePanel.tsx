@@ -7,7 +7,7 @@ import {delayedFeedback,feedbackKinds,safeReadNotes,saveNotes} from './state';
 import type {Cue,Feedback} from './state';
 import type {BridgeEvent,BridgeStatus,MuseControlEnvelope,MuseDevice,MuseMode,MuseOperation,MusePanelProps} from './types';
 import {MuseHeadset} from './MuseHeadset';
-import {conductingPresentation,detectorEligible,headsetBusy,museError,sameStream} from './headset';
+import {conductingPresentation,detectorEligible,headsetBusy,museError,museDetected,sameStream} from './headset';
 import './muse.css';
 export type {MuseControlEnvelope,MusicControlContext,MuseDecision,MusePanelProps} from './types';
 const labels:Record<MuseMode,string>={KEYBOARD:'Keyboard · permanent fallback',SYNTHETIC_TEST:'Simulated · software fixture',REAL_REPLAY:'Real replay · local recording',LIVE_MUSE:'Live Muse · verified stream required'};
@@ -18,6 +18,8 @@ export function MusePanel(props:MusePanelProps){
  const statusRef=useRef<BridgeStatus|null>(null),operationRef=useRef<MuseOperation|null>(null),controlRevision=useRef(0),companionRevision=useRef(0),retiredStreams=useRef(new Set<string>()),actionRevision=useRef(0),disarming=useRef(false);
  const client=useRef<LocalMuseBridge|null>(null),mapping=useRef<ClockMapping|null>(null),propsRef=useRef(props),requestedRef=useRef(requested),pollCursor=useRef(0),clockBusy=useRef(false),clockAnchors=useRef<ClockProbeAnchor[]>([]);
  propsRef.current=props;requestedRef.current=requested;
+ const detected=museDetected(status)||devices.length>0;
+ useEffect(()=>{propsRef.current.onHeadsetDetected?.(detected);},[detected]);
  const presentation=conductingPresentation(requested,status,operation),actual=presentation.active;
  const streamKey=(value:BridgeStatus)=>[value.mode,value.device_epoch,value.host_epoch,value.config_hash].join('|');
  function clearClocks(){controlRevision.current++;mapping.current=null;clockAnchors.current=[];}

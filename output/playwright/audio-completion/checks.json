@@ -1,0 +1,516 @@
+{
+  "pid": 5462,
+  "clips": [
+    {
+      "title": "Projectile & tower",
+      "id": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+      "mode": "scene-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "A near miss",
+      "id": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+      "mode": "scene-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "05 bouncing staircase",
+      "id": "4dda38d936d12b2948faf77712cd8767a8cbaae5ed11514f7776dbbf56c8cdc7",
+      "mode": "scene-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "6 — Three Ways Down",
+      "id": "15b9edf275984bc17134e45871c7db54ea5b0638bc70208089cd02d6164b2b57",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "8 — Spiral Observatory",
+      "id": "2f99e5bd9e8200a742146c4e34a4703768d3fed813c6e97ca99a27454a44cd45",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "18 — The Billiard Greenhouse",
+      "id": "b13965df4f27a190d367b18cd0b4e0bdeecd2a8bb33809eafb16258006a0ed93",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "C — Turning Glass",
+      "id": "d3a980678cb8488f8e20658c4e135f7a73171950556b505bebbc34d33911e617",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "01 head on",
+      "id": "5ea58f41e1a49960091d4829a59a501714f699380ff0a73003e9612496ea3f54",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "contact",
+      "id": "96bfc2fb54c8f5929c6854be42f0747f7a70a8d100de2bdf0e61385a8943146e",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "contact",
+      "id": "5e71b587cac8533e7a34836fd34f341d065d295a35e5eea2b888a84b4aeebffa",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "near miss",
+      "id": "705a24cef2fa991d73084e63167e1e714e26f2ccdb12ee7657fa0d4f0f3e7c6a",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "no launch",
+      "id": "b40500a2a33ece61d0bb625c7a461bfddb9fd3a59d14401776cc5652dc8065be",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "09 breathing crowd",
+      "id": "c5eb38409eb54bc432d93cfb46e4cc8756c925bc1f46f0ac0753e33192045f30",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "04 orbital approach",
+      "id": "887dbbfcd272e9142c01c3bc0b677ebce49080680a419ca056e2b497f8e70adf",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "07 shape contrast",
+      "id": "08193d4dec28e1f50127f776904e2c2f1034058c999aaf9ed3bdf90938099aaf",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "08 domino cascade",
+      "id": "a2dd945ae807dc569ee4181e39f3d473edf81a3029e77c24e33fed53664b713a",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "03 passing ascent",
+      "id": "7e54453775919bf0791664fc6ce115d97ef1898114dc161342eb5bf7d0ace7e0",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "09 breathing crowd",
+      "id": "b7fa665930108049e3e500c75f1913927b4776d0b1078b1f258852b794b31e84",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "02 near miss twins",
+      "id": "752b4876b470a84dc1e076fb9597352cbbdf2a903299486625525723a7848e99",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "06 sliding contact",
+      "id": "5d826c89d5976922197a20fc03e3c194d3f668c6eb86e81a3147eecf00b2e69a",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "04 orbital approach",
+      "id": "b92a2eba4454d37ac76644dcf4af6e10e63734d27d8904c11b316b64eb3fc166",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "01 head on",
+      "id": "999c522a270c01f2e1c9153b9d0b9061543cd06dd17de79b9cf4d7854e87d281",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "05 bouncing staircase-32",
+      "id": "589defb7e902127c21ff288dbc165167c5681d1f6479afd89091af6a7f272ccf",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "05 bouncing staircase-32",
+      "id": "55fbdd75622266e95beaa210e10363a1058fcc0242931211c539115857569c85",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "07 shape contrast",
+      "id": "a860b7830f6af7252abda1f0155a0531a8492dc004cd1a549d246fa15ec738b7",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "03 passing ascent",
+      "id": "ade16e91477224210841fe4fb6d92e92724044468b9a378ca1193769e95550d3",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "06 sliding contact",
+      "id": "48e464238d769dd6cc60de6229f41682e411b8f07d419fc9739b26f1bc1941d4",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "02 near miss twins",
+      "id": "dc7122d16dc242cb519dd3eda3d70afe07fafadebe5b880bbd050c3aa9aff555",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "03 passing ascent",
+      "id": "5c6fdd4bbafc38f5cdac63b419ee41b9afa27583597c2f357ce927c6d3e3bd0d",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "03 passing ascent",
+      "id": "d150946021fe85c1fb6468d57be91bad87b4e4e9184ef22701bef3323e59178b",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "10 projectile tower-default",
+      "id": "c40c3257fef487b7e718dea50d9dd2f535882f1f65f28c1d9ebbec6fc4aac147",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "10 projectile tower-near miss",
+      "id": "b8046345b269fb77f90a05f3735800d0bfd35aa369bb295653b10b7c11f2fc7c",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "10 projectile tower-near miss",
+      "id": "dc30ffa126dd4558459994d6571449c803140cf00b29517bbf3b0ea15bad0766",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "rag",
+      "id": "d147b90c9efbf63e7aec5fb16de28a2f621737723b92ed406ae211cbbcbc3a54",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "swing",
+      "id": "07b7a63dff7b3cde02c85648b88c97ca3070dda148a4106c7e805815fe9f60aa",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "mapped-draft",
+      "id": "3646bea555ad8f8e3a0255cb349cc6b71a0436903e8de1ee8ebfab1811bf7e10",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "ballad",
+      "id": "a446a0d4ca76c729c7de008cf242e1b9cd7092d293d44562771d4f79826dbf14",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "staircase",
+      "id": "3013c1f8408602d5e2686012c9a1e25483aa2a044bb71d6a8feaca3b107a8efb",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "scenescore",
+      "id": "8b69ad6b639e670ed701e44f92aa49a359dee02c6e5d8a6755a1595941df2265",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "unmodified-draft",
+      "id": "d1d024256487765d7463ebc88a707f9952ac41bd1b6c75fed042b230b209a2bb",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "staircase-rag",
+      "id": "1068d5d4636601114122be6dce2c8a22697fe93d5ba0cd0e80dc22d148708a9f",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "Pocket-Workshop",
+      "id": "d4e14684f03552778762e9d7bfeb7fe088517e90f2593525afdd354e162a6d99",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "Pocket-Workshop",
+      "id": "a4d2682c76d00433a177589abc573f4323f31a77dd862043e2bbd3e3f84586dd",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "Pocket-Workshop-Piano-Guitar",
+      "id": "2cefe8e709577e8f9933765f267ac1c96e725f724d4fbc7a44336f88e7c32b14",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "Pocket-Workshop-Piano-Guitar",
+      "id": "c966960d9eda1e722edbc29744dbf2ef9198e3e4ff669b1bbd6562e67347f22b",
+      "mode": "embedded",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "01 marble helix",
+      "id": "b999f594a730c211734549b0ff86fd7bebf9f0d907f6febcf28bb3c87cd51523",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "02 cube rebound",
+      "id": "ff5cda81a63475b90a27d07f14162be4c49c3211744ff9505cc9cb7d20a8618d",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "03 triangle catapult",
+      "id": "af113f36bf3d1017691191986e0b87992d25a40550b3228809ee4ba9b77c9e69",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "04 crossing orbits",
+      "id": "bb8c36a7357ddb9980464963a82a314afb10b8864360f7e301c4d0dcdaa52379",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "05 tumbling tetrahedron",
+      "id": "ca8dd8b53f2347a0591a99aa614801757dcc5136b74730f322b4b8848ac1c09e",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "06 rolling torus gate",
+      "id": "8bad59f76b15206fb14820896a2ece3b09b85777de7a5c8436d4f981aae62558",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "07 capsule pendulum",
+      "id": "4fd279fb77c57e0e97968523dc390e4ace8ba50cc299fe6493056f1210b96c49",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "08 cube cascade",
+      "id": "89ebc7a53374bf1a05f3089e7dd922fef5510b48a64977e63737e180508e2cb3",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "09 geometric relay",
+      "id": "c40a96ad149d62064ddde5a468aa7febb18423ea77ef1e23ec8d1b81fce49c70",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "03 triangle catapult",
+      "id": "a61e3013a289c36a1d0fa0940a0eb448583c90909a262fe7eabf5bb826f1d9ee",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "04 crossing orbits",
+      "id": "99b5ad7e9c8f7e835ed07268aa5b3bdfda81297025efe01a4753085f478fac16",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "06 rolling torus gate",
+      "id": "57ed76def983cbe7d873faf025a3d46907afc4547a35b0b70b168b71778f2bfa",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "07 capsule pendulum",
+      "id": "cdca756938027268bc7c21c4374e4461593b29d6e9c2eb174414add042e1fd8b",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "09 geometric relay",
+      "id": "48d6087206b9d2351b009ae0385475daf8895b3cf81b084b50edd21428244929",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "03 triangle catapult",
+      "id": "4fb532db1832560ee3883a20028769269df2edd49a49ab5ac4285e8521275a05",
+      "mode": "video-live",
+      "audio_pcm": "nonzero"
+    }
+  ],
+  "mixes": [
+    {
+      "id": "studio:contact-brush_swing_light_v1-guitar-piano-v2",
+      "mix": {
+        "peak": 0.7807124853134155,
+        "rms": 0.06058075238292517,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      },
+      "sum_error": 6.51925802230835e-8,
+      "ratios": [
+        1.2000000233956287,
+        1.1999999960513201,
+        1.1999999807563024,
+        1.1999999781115662
+      ],
+      "effect_gains": [
+        2.0957261749643545,
+        1.8658631786158375,
+        1.9689265508175147,
+        2.3107287887069314
+      ]
+    },
+    {
+      "id": "studio:near-miss-brush_swing_light_v1-guitar-piano-v2",
+      "mix": {
+        "peak": 0.4019096791744232,
+        "rms": 0.05665639298988317,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      },
+      "sum_error": 5.960464477539063e-8,
+      "ratios": [],
+      "effect_gains": []
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_swing_light_v1-clean-piano-v1",
+      "mix": {
+        "peak": 0.28460994362831116,
+        "rms": 0.043198251602567406,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2
+      },
+      "sum_error": 2.9802322387695312e-8,
+      "ratios": [
+        1.1999091919950273,
+        1.1999673727316273,
+        1.199902162376818,
+        1.199971824046747,
+        1.199966306040121,
+        1.199903173310003,
+        1.1999777105241443,
+        1.1999912722298696
+      ],
+      "effect_gains": [
+        3.0043617769255566,
+        1.1444830892948625,
+        1.2625988455787858,
+        2.609621427303993,
+        2.865189649499587,
+        2.1858608085066322,
+        2.4843677715969092,
+        0.6844107555900402
+      ]
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_ballad_sparse_v1-clean-piano-v1",
+      "mix": {
+        "peak": 0.2845698595046997,
+        "rms": 0.04319796054757162,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2
+      },
+      "sum_error": 2.9802322387695312e-8,
+      "ratios": [
+        1.1999091652162652,
+        1.1999673721780095,
+        1.1999021025413898,
+        1.1999718234728922,
+        1.199966349225137,
+        1.1999031523386987,
+        1.1999777094389088,
+        1.1999913286674369
+      ],
+      "effect_gains": [
+        3.004266473106089,
+        1.1444830892948625,
+        1.2627439786317487,
+        2.609621427303993,
+        2.8650667482520538,
+        2.1859495434126033,
+        2.4843677715969092,
+        0.684163901315652
+      ]
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_straight_rag_v1-clean-piano-v1",
+      "mix": {
+        "peak": 0.28468984365463257,
+        "rms": 0.04319815114258426,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2
+      },
+      "sum_error": 4.470348358154297e-8,
+      "ratios": [
+        1.199909191993268,
+        1.1999673738253664,
+        1.199902107853155,
+        1.1999718234192258,
+        1.1999663038070458,
+        1.1999031516288865,
+        1.199977710429469,
+        1.1999912489909135
+      ],
+      "effect_gains": [
+        3.0042728411122117,
+        1.1444830892948625,
+        1.2627439786317487,
+        2.609621427303993,
+        2.865145307330493,
+        2.1859495434126033,
+        2.4843677715969092,
+        0.6841371825998045
+      ]
+    }
+  ],
+  "errors": [],
+  "human_audition": "NOT_RUN",
+  "physical_output_measured": false,
+  "browser_pid": 5474,
+  "coverage": {
+    "requested": 78,
+    "available": 78,
+    "unique_videos": 60,
+    "live_scores": 48,
+    "original_audio": 12,
+    "silent": 0
+  },
+  "status": "passed",
+  "browser_exit_code": 0,
+  "server_closed": true
+}

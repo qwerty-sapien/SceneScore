@@ -1,0 +1,47 @@
+{
+  "pids": {
+    "61989": "absent",
+    "61993": "absent",
+    "69156": "absent",
+    "69204": "absent",
+    "69205": "absent"
+  },
+  "fixture_session": {
+    "id": 98082,
+    "exit": 0,
+    "threads_alive": false
+  },
+  "hardware_sessions": [
+    {
+      "id": 11205,
+      "exit": 2,
+      "result": "initial_scan_no_device"
+    },
+    {
+      "id": 54333,
+      "exit": 0,
+      "result": "plain_30s_PASS"
+    },
+    {
+      "id": 88679,
+      "exit": 0,
+      "result": "one_eeg_30s_PASS"
+    },
+    {
+      "id": 3306,
+      "exit": 0,
+      "result": "all_eeg_30s_PASS"
+    }
+  ],
+  "synthetic_launcher_session": {
+    "id": 99631,
+    "exit": 0
+  },
+  "browser": "only task-created tab closed",
+  "worktrees_removed": [
+    "scenescore-ble-protocol",
+    "scenescore-ble-manager",
+    "scenescore-ble-web"
+  ],
+  "docker": "none started"
+}

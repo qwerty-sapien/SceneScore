@@ -103,6 +103,7 @@ class AutomaticTrainer:
         self.check_started_source = 0.0
         self.failure = False
         self.path = None
+        self.prepared_source = None
 
     def touch(self):
         with self.lock:
@@ -122,7 +123,7 @@ class AutomaticTrainer:
                     "training_steps": cp["training_steps"] if cp else 0,
                     "evaluation": self.evaluation, "target": .93, "target_advisory": True}
 
-    def start(self, body):
+    def start(self, body, *, prepared_source=None, signal_check=None):
         if body != {"consent": True}:
             raise ValueError("explicit_Train_local_recording_consent_required")
         with self.lock:
@@ -139,11 +140,14 @@ class AutomaticTrainer:
             self.last_negative_end = -math.inf
             self.fit_result = self.fit_error = None
             self.failure, self.checkpoint, self.evaluation, self.detector = False, None, None, None
+            self.prepared_source = prepared_source
             self.run = {"format": FORMAT, "id": "run-" + str(time.time_ns()) + "-" + secrets.token_hex(4),
                         "created_ns": time.time_ns(), "consent": CONSENT, "consent_action": "Train",
                         "raw_storage": "local_only", "hardware_verified": False,
                         "participant": "local-owner", "refit_status": "unknown_not_independent",
                         "source_mode": "synthetic" if self.synthetic else "real_device", "status": "connecting"}
+            if signal_check is not None:
+                self.run["pre_training_signal_check"] = copy.deepcopy(signal_check)
             self.path = self.root / "runs" / self.run["id"]
             atomic_json(self.path / "run.json", self.run)
             self.thread = threading.Thread(target=self._worker, name="automatic-blink-source", daemon=False)
@@ -183,8 +187,11 @@ class AutomaticTrainer:
         return examples
 
     def _open(self):
-        if self.synthetic:
+        if self.prepared_source is not None:
+            source, self.prepared_source = self.prepared_source, None
+        elif self.synthetic:
             source_id = "synthetic"
+            source = self.sources.open(source_id)
         else:
             discovery = self.sources.discover()
             found = [s for s in discovery["sources"] if s["id"] != "synthetic"]
@@ -192,7 +199,7 @@ class AutomaticTrainer:
                 raise ValueError("Start one Muse LSL stream, then press Train." if not found
                                  else "More than one EEG source found. Leave only your Muse stream running, then press Train.")
             source_id = found[0]["id"]
-        source = self.sources.open(source_id)
+            source = self.sources.open(source_id)
         with self.lock:
             self.source = source
             description = copy.deepcopy(source.description)
@@ -207,7 +214,7 @@ class AutomaticTrainer:
             self.run.update(source_descriptor=description, source_epoch=epoch, status="learning")
             self.metadata = {"kind": "AcquisitionMetadata", "schema_version": "0.1", "id": "metadata-" + self.run["id"],
                              "session_id": self.run["id"], "device_model": description["name"],
-                             "transport": "fixture" if self.synthetic else "lsl", "sample_rate_hz": self.rate,
+                             "transport": "fixture" if self.synthetic else description.get("transport", "lsl"), "sample_rate_hz": self.rate,
                              "channels": [{**c, "enabled": True} for c in description["channels"]],
                              "clock_epoch": epoch, "hardware_verified": False, "raw_storage": "local_only",
                              "provenance": {"source_mode": self.run["source_mode"], "creator": FORMAT,
@@ -376,16 +383,18 @@ class AutomaticTrainer:
             # Canonical sample validation is retained, while the acquisition
             # descriptor remains explicitly unverified in the exploratory store.
             from services.bridge.server import chunk
+            dropped = max(1, round((times[0] - previous) * self.rate) - 1) if gap else 0
+            self.sample_index += dropped
             canonical = chunk(self.metadata, rows, times, self.sequence, self.sample_index, host_s, "auto-host",
                               quality="good" if usable else "bad",
-                              gap=max(1, round((times[0] - previous) * self.rate) - 1) if gap else 0)
+                              gap=dropped)
             self.sequence += 1
             self.sample_index += len(rows)
             try:
                 _, gestures = self.detector.consume(canonical)
             except ValueError:
                 self.detector.reset("signal_gap")
-                self.detector.previous = None
+                self.detector.previous = canonical
                 gestures = []
             if usable and not self.detector.armed and self.detector.count >= self.rate * self.detector.config.warmup_s:
                 self.detector.arm()
@@ -445,7 +454,9 @@ class AutomaticTrainer:
             self.stage_label_start = len(self.labels)
             self.check_started_host, self.check_started_source = self.clock(), self.last_source_s
             self.stage_new, self.check_decisions, self.usable_intervals = [0, 0], [], []
+            previous = self.detector.previous
             self.detector = PersonalDetector(self.metadata, self.checkpoint, exploratory_metadata=True)
+            self.detector.previous = previous
             self.phase, self.message = "checking", "Model saved · checking against fresh B labels."
             self._append("stages.jsonl", {"stage": self.stage, "partition": "checking", "source_s": self.stage_start,
                                          "checkpoint_id": self.checkpoint["id"]})
@@ -465,13 +476,13 @@ class AutomaticTrainer:
         return report
 
     def _maybe_check(self):
-        # Reports shown in the UI do not end a round early. Leave the newest
-        # detections time to receive their after-blink B label before matching.
+        # Allow closure after the latest B label. False detections must not
+        # indefinitely postpone a failed check and prevent the next update.
         elapsed = self.clock() - self.check_started_host
         labels = self.labels[self.stage_label_start:]
         if len(labels) < 30 or elapsed < 120:
             return
-        last = max([b["source_s"] for b in labels] + [d["final_blink_s"] for d in self.check_decisions], default=0)
+        last = max((b["source_s"] for b in labels), default=0)
         if self.last_source_s - last < 1.25:
             return
         report = self._save_check(complete=True)

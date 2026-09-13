@@ -193,13 +193,15 @@ def main():
     parser.add_argument('--tag', default='v1')
     parser.add_argument('--six', default='06_three_ways_down-v1')
     parser.add_argument('--eight', default='08_spiral_observatory-v1')
+    parser.add_argument('--timeout-s', type=int, default=150)
     args = parser.parse_args()
     output_path = HERE/('RESULTS-'+args.tag+'.json')
     if output_path.exists():
         raise ValueError('refusing to overwrite an earlier result: '+str(output_path))
-    signal.signal(signal.SIGALRM, lambda *_: (_ for _ in ()).throw(TimeoutError('150-second audit bound')))
-    signal.alarm(150)
-    report = {'pid': os.getpid(), 'pgid': os.getpgid(0), 'started_unix_s': START, 'input_sha256': {}, 'shapes': {}, 'static_geometry': {}, 'clearance': {}}
+    assert 1 <= args.timeout_s <= 300
+    signal.signal(signal.SIGALRM, lambda *_: (_ for _ in ()).throw(TimeoutError(str(args.timeout_s)+'-second audit bound')))
+    signal.alarm(args.timeout_s)
+    report = {'pid': os.getpid(), 'pgid': os.getpgid(0), 'started_unix_s': START, 'audit_script_sha256': digest(Path(__file__).read_bytes()), 'input_sha256': {}, 'shapes': {}, 'static_geometry': {}, 'clearance': {}}
     print(json.dumps({'pid': report['pid'], 'pgid': report['pgid'], 'status': 'started'}), flush=True)
     packets = {}
     for folder in (args.six, args.eight):
@@ -229,11 +231,16 @@ def main():
     for oid, obj in geometry.items():
         if oid in moving:
             continue
-        group = 'guide' if any(token in oid for token in ('-floor', '-guide-', '-capture-')) else 'other_static'
+        group = 'guide' if any(token in oid for token in ('-floor', '-guide-', '-capture-', '-contact-rail')) else 'other_static'
         vertices = [transform(v, obj['transform']) for v in obj['vertices_local']]
         for index, ids in enumerate(obj['triangles']):
             triangles[group].append((oid, index, tuple(vertices[i] for i in ids)))
-    radius = packet['actors'][0]['radius_m']
+    declared_radius = next(a['radius_m'] for a in packet['actors'] if a['id'] == 'bead')
+    evaluated_radius = max(math.sqrt(dot(v, v)) for v in geometry['bead']['vertices_local'])
+    maximum_scale = max(abs(value) for row in rows for value in row['objects']['bead']['scale'])
+    radius = max(declared_radius, evaluated_radius*maximum_scale)+1e-6
+    report['bead_conservative_radius_m'] = radius
+    report['additional_replay_numerical_reserve_m'] = 1e-6
     centers = [s['objects']['bead']['position_m'] for s in rows]
     for group, tris in triangles.items():
         tree = BVH(tris)
@@ -269,7 +276,7 @@ def main():
                 minimum = distance-radius, i/240
         report['clearance'][actor+'_sampled'] = {'samples': len(rows), 'minimum_gap_m': minimum,
             'method': 'evaluated local bounds transformed by every replay pose; OBB encloses coil mesh'}
-    report['method'] = 'Independent exact point/segment-to-triangle Euclidean distances with AABB BVH; radius0.24m is conservative versus the inscribed evaluated bead. Segment sweeps use Blender linear translation between adjacent240Hz keys. Moving plunger sampled separately. No native Bullet or perceptual acceptance claim.'
+    report['method'] = 'Independent exact point/segment-to-triangle Euclidean distances with AABB BVH; radius encloses every evaluated bead vertex under maximum replay scale plus1um additional replay numerical reserve. Segment sweeps use Blender linear translation between adjacent240Hz keys. Moving receiver and coil sampled separately. No native Bullet or perceptual acceptance claim.'
     report['limitations'] = ['Surface-clearance sign denotes sphere/surface overlap, not a general signed-distance field for arbitrary closed meshes. Analytic point-inside exclusions and exact rendered-sphere mesh contact are not separately certified.', 'Moving receiver and coil use sampled OBB bounds, not inter-sample sweeps.', '06 full body-to-mesh sweeps are not performed; shape and static mesh agreement only.']
     report['elapsed_s'] = time.time()-START
     report['status'] = 'MEASURED_NOT_GLOBAL_ACCEPTANCE'

@@ -7,7 +7,7 @@ network listener, discovers no streams and starts no recording.
 SCENESCORE_TRAINING_TOKEN=YOUR_RANDOM_STARTUP_TOKEN PYTHONPATH=.:src .venv/bin/python -m services.training --port 8767 --seconds 600 --data-root private_data/02A/training-web --web-root artifacts/training-dist --origin http://127.0.0.1:8767
 ```
 
-The parent launcher supplies a random token and isolated optional pylsl runtime;
+The parent launcher supplies a random token and isolated optional Muse/LSL runtime;
 this package installs nothing. Omit the token to generate one and print the local
 fragment URL. Startup authorization lasts 600 seconds. Authenticated activity
 renews the session token for 600 seconds; process lifetime is bounded to 3600 seconds.
@@ -18,6 +18,17 @@ Origin and cross-site Fetch Metadata. Requests are bounded to 16 KiB,120/10 seco
 4 concurrent handlers and 3 second socket I/O. Responses/export are bounded to 32 MiB.
 Static access stays within the selected web root; dot paths, hidden targets and
 outside symlinks are rejected. No cookies, uploads or public raw endpoints exist.
+
+The normal page's `/automatic/connect` first reuses a single compatible LSL source;
+otherwise it uses the shared classic Muse Bleak adapter with a 15-second scan.
+The owned `services.training.brainflow_source --bleak` child sends
+descriptor/EEG/timestamp batches and progress over local pipes, and is reaped
+on Stop, error or shutdown. Setup has a 45-second outer limit; reads are bounded
+to 128 samples and two seconds. The existing in-memory three-second signal check
+must pass before Train. Source metadata is retained without hardware attestation.
+The BrainFlow developer adapter is retained, but is not automatically selected:
+a real stack sample confirmed the installed 5.22.2 wrapper deadlocking during
+scan callback cleanup. Discovery success alone did not validate that adapter.
 
 `GET /v1/diagnostics` provides timestamped connection evidence and raw-signal
 summaries, with no raw sample arrays. `POST /v1/diagnostics/monitor {enabled:true}`
@@ -107,3 +118,39 @@ PYTHONPATH=.:src .venv/bin/python -m pytest -q services/training/tests
 
 Loopback tests require permission to bind temporary local sockets. No actual
 headset connection or real training was performed by these tests.
+
+## Automatic B-only interface (2026-09-13)
+
+The normal page now uses these authenticated routes:
+
+| Method | Route | Body / result |
+| --- | --- | --- |
+| POST | `/v1/automatic/connect` | `{"consent":true}` connects and checks EEG in memory before recording |
+| POST | `/v1/automatic/start` | `{"consent":true}` starts local recording and training |
+| POST | `/v1/automatic/stop` | `{}` requests finalization, retaining progress |
+| POST | `/v1/automatic/label` | `{id,client_ms,run_id}`; idempotent B tap, returns stored acknowledgement |
+| GET | `/v1/automatic/status` | phase, counts, checkpoint, advisory evaluation; renews subscriber lease |
+| GET | `/v1/automatic/checkpoints` | valid immutable checkpoints and invalid artifact IDs |
+
+The companion separately exposes authenticated `GET /v1/models` and
+`POST /v1/models/select {"selection":"latest"|"baseline"|checkpoint_id}`.
+Selection requires disarming and takes effect on the next Arm. It never replaces
+live weights. Companion status includes active checkpoint, evaluation and
+pending warmup arm. A checkpoint's source mode, frontal channels, rate and
+feature configuration must match the current acquisition.
+
+B-only runs are exploratory and separate from the legacy reviewed APIs above.
+They do not claim the operator attestation required by canonical real-device
+Recorder. See `docs/MUSE_TRAINING.md` and decision 0015 for current UX, checkpoint
+persistence, evaluation boundaries and advisory production semantics.
+
+The local page now separates connection, signal check and Train. The start route
+requires a fresh successful check and transfers the same open source to the
+recorder without reconnecting. Preparation uses an existing compatible LSL
+stream or a trainer-owned adapter around `BleMuseManager`; no raw EEG is sent
+through the semantic companion. Three seconds of continuous, rate-consistent
+data with at least 1 µV peak-to-peak variation on both frontal channels enables
+Train. This is measurable signal evidence, not independent contact or device
+identity verification. Stop/focus loss/subscriber expiry closes preview sources.
+Only Train begins disk recording. The launcher permits its local origin only;
+hosted deployment is no longer part of this workflow.

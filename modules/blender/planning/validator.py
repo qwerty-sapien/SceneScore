@@ -154,12 +154,19 @@ def validate_plan(document):
             continue
         if event['type'] == 'near_miss' and base.clearance is not None:
             gap = event['success_condition']['surface_clearance_m']
-            if gap['min'] < base.clearance.minimum_m or gap['max'] > base.clearance.maximum_m:
+            if (gap['min'] < base.clearance.minimum_m or gap['max'] > base.clearance.maximum_m
+                    or (base.clearance.target_m is not None and not gap['min'] <= base.clearance.target_m <= gap['max'])):
                 issue('CLEARANCE_CONTRADICTION', 'Resolved clearance must refine the abstract physical range.', name)
+        if event['type'] == 'salient_collision':
+            for support in intent.support_contacts:
+                if (support.actor_id == event['actor'] and support.support_id == target
+                        and support.window.start_s < window[0] and support.window.end_s >= window[1]):
+                    issue('CONTINUOUS_SUPPORT_IS_NOT_SALIENT', 'Existing continuous support cannot become a new collision onset.', name)
         if event['type'] == 'supported_catch' and event['success_condition']['supported_duration_min_s'] > window[1]-window[0]:
             issue('CATCH_WINDOW_TOO_SHORT', 'Required support duration exceeds the event window.', name)
         resolved_events.append({'id': name, 'type': event['type'], 'actor': event['actor'], 'target': target,
             'after': after, 'time_window_s': window, 'position_hint_m': stage_positions.get(base.stage_id),
+            'surface_clearance_target_m': base.clearance.target_m if base.clearance else None,
             'success_all': predicates, 'failure_any': compile_failures(event, predicates),
             'music_salience': event['music_salience'], 'emit_once_per_episode': True,
             'foley_eligible': event['type'] == 'salient_collision', 'measurement_status': 'NOT_MEASURED'})
@@ -205,7 +212,7 @@ def validate_plan(document):
         'coherent_sequence': {'EVENT_ORDER_CONTRADICTION', 'EVENT_WINDOW_CONTRADICTION', 'EVENT_ID_MISMATCH'},
         'supported_mechanics': {'UNSUPPORTED_MECHANICS', 'UNSUPPORTED_GRAVITY', 'UNVALIDATED_ACTUATION', 'TRAJECTORY_OVERRIDE',
                                 'HIDDEN_TELEPORT_OR_CONTROL', 'UNSUPPORTED_EVENT', 'INVALID_MATERIAL'},
-        'sparse_events': {'SALIENCE_SPACING', 'SALIENCE_DUTY'},
+        'sparse_events': {'SALIENCE_SPACING', 'SALIENCE_DUTY', 'CONTINUOUS_SUPPORT_IS_NOT_SALIENT'},
         'measurable_criteria': {'UNMEASURABLE_EVENT', 'FAILURE_CRITERIA_MISSING', 'CLEARANCE_CONTRADICTION', 'CATCH_WINDOW_TOO_SHORT',
                                 'EVENT_ACTOR_MISMATCH', 'EVENT_TARGET_MISMATCH', 'UNKNOWN_OR_MOVING_TARGET'},
         'defined_route': {'UNDEFINED_START', 'UNDEFINED_TERMINAL', 'TERMINAL_CONTRADICTION', 'ROUTE_ACTOR_MISMATCH',
@@ -227,6 +234,7 @@ def validate_plan(document):
         'actors': raw['intent']['actors'], 'events': [ordered[name] for name in intent.event_order],
         'continuous_support': raw['intent']['support_contacts'], 'camera_intent': raw['intent']['camera'],
         'ending_intent': raw['intent']['ending'], 'music_hints': raw['intent']['music_hints'],
+        'reference_lessons': raw['intent']['reference_lessons'],
         'support_contact_music_policy': 'retain_raw_do_not_emit_per_sample',
         'required_later_gates': ['parameter_solution', 'independent_physical_validation', 'contact_certificates',
                                  'fresh_process_replay', 'full_motion_camera_review', 'exact_human_approval']}

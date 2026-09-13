@@ -1,9 +1,8 @@
 # Directions 06 / 08 — mechanics handoff
 
-Machine checks: **GO**. Independent source review by `/root/gate` found no remaining
-mechanical blocker after the unilateral receiver, support and refinement fixes.
-Human visual review and evaluated Blender replay remain **NOT_RUN** by this worker.
-The integrator owns the actual 240 Hz Blender evaluation and fresh 30 fps replay.
+The mechanics trace remains unchanged. The original evaluated 08 skin failed an
+independent triangle audit; the adaptive geometry repair and its separate gates
+are recorded below. The integrator owns fresh Blender evaluation and replay.
 
 ## Exact integration boundary
 
@@ -15,14 +14,96 @@ Copy only these owned files; no commit or merge was made:
 - `handoffs/directions-rolling.md`
 
 Final source SHA256:
-`917ba072dd29f420d8e27de7666667364c1293853fc9005bf0a9db3c8c121427`
+`5d8741f0116ded2c628461a08efffd4ae81a9267795e62fc4b3a5ea337f054fa`
 
 Final test SHA256:
-`b5d0e6dd945c28635f72fb743d51048e349cdc382f1b4d4b80bb5fd6414546c2`
+`17ca8f153a4fb3c741354e274d11da7cdb01cedec43fd78c596edc989bc9e333`
 
-One coordination message mistakenly called this source hash pre-unilateral.
-That message was corrected: the hash above is the reviewed final unilateral
-source, verified by both worker and reviewer.
+The initial mechanics source was `917ba072...c121427`. It is retained only as
+historical provenance; integrate the complete current source identified above.
+
+## Adaptive geometry repair: current candidate
+
+Raw packet: `/private/tmp/rolling-skin-v5-08.json`, SHA256
+`80fa90ba477c25610176377ad315b0e8737de5633b60ad4f988ca6cb11ea4b53`.
+Independent raw facet gate: **PASSED**. Fresh evaluated Blender gate and media
+review: **NOT_RUN for this repaired 08 candidate**. The separately frozen 06
+movie is rendering from its previously evaluated root snapshot; this handoff
+does not replace that artifact or its provenance.
+
+The V1 evaluated left-wall triangle intruded 31.015 mm at approximately 20.470 s.
+Checking smooth centerline support and mesh vertices did not detect the long
+diagonal through a twisted wall quad. The first adaptive raw repair removed that
+large defect, but the unchanged linear interpolation between two 240 Hz samples
+still produced 0.227643 mm capture-rail overlap. That failed the 0.2 mm gate.
+Both rejected witnesses are preserved as negative controls; no threshold changed.
+
+The current repair:
+
+- Uses 4,759 stations chosen from world arc bounds, frame turn, analytic
+  centerline chord bounds, observed surface chord error, and triangle-plane
+  error, including cross-profile twist. Parameter sampling is adaptive.
+- Emits explicit triangles for every contact skin. It divides the floor across
+  its contact centerline, replaces tall wall quads with 36 mm high contact bands,
+  and gives those bands 24 mm outward thickness. Uprights and feet stay outside
+  the contact surface. The 70 mm wide roof strip has 25 mm outward thickness and
+  receives its braces from outside, so flat braces do not touch the bead.
+- Names the side skins `<course>-left-contact-rail` / `-right-contact-rail`,
+  bypassing the root renderer's older `-guide-left` / `-guide-right` replacement.
+  Render these source triangles unchanged; do not apply that old conversion.
+- Records an explicit **60 micrometre outward contact-skin allowance**, approved
+  as a finite mesh/replay proxy tolerance. It does not enter any dynamics or
+  change the 0.2 mm independent intrusion limit. The allowance is not spent on
+  coarser contact facets.
+- Retains a <=19.995 micrometre analytic centerline-to-chord bound, <=24.935
+  micrometre observed surface chord error, and <=29.993 micrometre observed
+  contact triangle-plane error. The second-derivative bound uses the exact
+  cubic Bernstein hull for quintic pieces and analytic spiral/ramp bounds.
+  These local tessellation checks complement the independent full-facet audit;
+  they are not a substitute for it.
+
+All body, plunger, coil, velocity, orientation, energy and contact rows, plus all
+events, remain byte-identical under canonical JSON serialization. Baseline hashes:
+
+| Direction | States SHA256 | Events SHA256 |
+|---|---|---|
+| 06 | `6d4463bb50a08448d3a737847a659f5cc84d14d6cef617d654e43560b486b233` | `a24d23d30f40c4f03a800aee6df3c2e7513c16f19fe085d005bb4a4487d0d145` |
+| 08 | `338562a90757e83476e82b26fd2d1919e7a6906976a0ec8d5582df58442a9f81` | `5ee8f5ee58f08d07ccda5c8a8f0e027c7c3e91411282b5f5d9f7880dee99d819` |
+
+The isolated worker launches no Blender process. Geometry tests additionally
+round candidate vertices to float32 and check both the 31 mm evaluated witness
+and the narrower 0.228 mm replay-chord witness against the fixed 0.2 mm limit.
+
+Independent `/root/gate` result for this exact raw packet:
+
+- All 7,201 sampled centers: guide gaps at least **+0.039296 mm**.
+- All 7,200 swept replay intervals: worst intrusion **0.168644 mm**, including
+  an additional **1 micrometre radius reserve**, below the unchanged 0.2 mm limit.
+- Worst case: capture-rail face 54542 at 22.623056516 s.
+- All remaining static shapes: swept clearance at least **23.856793 mm**;
+  no shapes omitted, including outward uprights, feet and braces.
+- Exact state/event equality to the V1 packet independently verified.
+- Report: `/Users/agent/Desktop/SceneScore/reports/animation-directions-06-08-18/gate-evaluated/RAW-08-repaired-v5.json`.
+- The first complete-audit attempt exceeded its 150 s runtime cap under concurrent
+  rendering; the same calculation completed in 257.009 s under a 300 s cap.
+  No geometric threshold or sample count changed. This raw audit does not replace
+  the integrator's subsequent actual evaluated-mesh audit.
+
+Final repair checks actually run:
+
+- Full `pytest modules/blender/tests/directions/test_rolling.py -q` on the strict
+  60 micrometre source: **19 passed in 639.83 s** under concurrent rendering.
+- Then the second preserved witness was added; focused
+  `pytest modules/blender/tests/directions/test_rolling.py -q -k evaluated_skin_failure`:
+  **2 passed, 18 deselected in 106.94 s**. The current file has 20 cases; the
+  unchanged cases were covered by the full run and both witness cases by this run.
+- Final Ruff and `git diff --check`: passed.
+- State/event byte regressions passed for both 06 and 08.
+
+All worker-owned repair jobs exited: final raw generation session 59441,
+full tests 28210, witness tests 26988, and final lint 91003. Earlier raw generations
+and the superseded strictness experiment also exited. No Blender, server or
+persistent process was started by this worker.
 
 ## API and rendering
 
@@ -118,7 +199,7 @@ margin. Minimum bead-to-central-orb center distance is 1.39987 m versus .72 m
 combined radii. Sloped support caps join posts to the deck; every 240 Hz body row
 is checked against posts with a whole output-step travel margin.
 
-## Checks actually run
+## Initial mechanics checks actually run
 
 - `PYTHONPATH=.:src /Users/agent/Desktop/SceneScore/.venv/bin/python -m pytest modules/blender/tests/directions/test_rolling.py -q`
   — **15 passed in 37.57 s**, final source.

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--check",
+    "--",
+    "modules/blender/planning",
+    "modules/blender/components",
+    "modules/blender/tests/test_plan_validation.py",
+    "modules/blender/tests/test_components.py",
+    "modules/blender/tests/blender_components_smoke.py",
+    "tools/component_library_smoke.py",
+    "modules/blender/fixtures/scene-feasibility-plan.example.json",
+    "modules/blender/fixtures/scene-feasibility-plan.schema.json",
+    "modules/blender/fixtures/component-route.example.json",
+    "docs/PLAN_VALIDATION.md",
+    "docs/MECHANISM_COMPONENTS.md"
+  ],
+  "pid": 68109,
+  "process_group": 68109,
+  "started_at": "2026-09-13T05:24:11.055099+00:00",
+  "exit_code": 0,
+  "duration_s": 0.022,
+  "process_group_absent": true
+}

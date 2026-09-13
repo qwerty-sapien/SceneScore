@@ -26,11 +26,14 @@ def test_valid_plan_has_six_answers_and_consumable_constraints(plan):
     assert len(report['answers']) == 6 and all(v == 'YES_AT_PLANNING_LEVEL' for v in report['answers'].values())
     constraints = verify_resolved(json.loads(json.dumps(resolved)))
     assert constraints['dynamic_actor'] == 'marble'
-    assert constraints['events'][1]['success_all'][1]['metric'] == 'heading_change_deg'
+    assert any(p['metric'] == 'heading_change_deg' for p in constraints['events'][1]['success_all'])
+    assert any(p['metric'] == 'target_contact_onset_in_window' for p in constraints['events'][1]['success_all'])
     assert constraints['events'][2]['success_all'][0]['unit'] == 'm'
+    assert constraints['events'][2]['surface_clearance_target_m'] == plan['intent']['events'][2]['clearance']['target_m']
     assert not constraints['events'][2]['foley_eligible']
     assert all(e['emit_once_per_episode'] for e in constraints['events'])
     assert constraints['support_contact_music_policy'] == 'retain_raw_do_not_emit_per_sample'
+    assert constraints['reference_lessons'] == plan['intent']['reference_lessons']
     assert validate_plan(plan) == (report, resolved)
     assert json.loads((FIXTURES/'scene-feasibility-plan.schema.json').read_text()) == SCHEMA
 
@@ -197,3 +200,21 @@ def test_valid_supported_catch_compiles_all_measurable_conditions(plan):
     assert len(resolved['constraints']['events'][-1]['success_all']) == 3
     plan['events'][-1]['success_condition']['supported_duration_min_s'] = 1
     assert 'CATCH_WINDOW_TOO_SHORT' in {e['code'] for e in validate_plan(plan)[0]['errors']}
+
+
+def test_existing_rolling_contact_cannot_be_renamed_a_salient_collision(plan):
+    abstract = plan['intent']['events'][0]
+    abstract.update(kind='collision', actor_ids=['marble', 'ramp'])
+    event = plan['events'][0]
+    event.update(type='salient_collision', target='ramp', success_condition={'target_contact': True})
+    report, _ = validate_plan(plan)
+    assert report['status'] == 'FAILED'
+    assert 'CONTINUOUS_SUPPORT_IS_NOT_SALIENT' in {e['code'] for e in report['errors']}
+
+
+def test_refining_clearance_cannot_discard_the_declared_target(plan):
+    target = plan['intent']['events'][2]['clearance']['target_m']
+    plan['events'][2]['success_condition']['surface_clearance_m'] = {'min': target+.001, 'max': .055}
+    report, _ = validate_plan(plan)
+    assert report['status'] == 'FAILED'
+    assert 'CLEARANCE_CONTRADICTION' in {e['code'] for e in report['errors']}

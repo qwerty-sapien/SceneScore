@@ -1,0 +1,374 @@
+{
+  "candidate": {
+    "actor_radius_m": 0.15,
+    "components": [
+      {
+        "collision": {
+          "friction": 0.35,
+          "mode": "fixed",
+          "restitution": 0.55,
+          "shape": "obb_union"
+        },
+        "component_id": "ramp",
+        "entry_anchor": null,
+        "exit_anchor": null,
+        "material_role": "structure",
+        "parameters": {},
+        "transform": {
+          "position_m": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "type": "Ramp",
+        "visual": {
+          "bevel_m": 0.0
+        }
+      },
+      {
+        "collision": {
+          "friction": 0.35,
+          "mode": "fixed",
+          "restitution": 0.55,
+          "shape": "obb_union"
+        },
+        "component_id": "approach",
+        "entry_anchor": null,
+        "exit_anchor": null,
+        "material_role": "structure",
+        "parameters": {
+          "length_m": 1.0
+        },
+        "transform": {
+          "position_m": [
+            1.9999999999999998,
+            0.0,
+            2.5
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.12218326369570447,
+            0.0,
+            0.992507556682903
+          ]
+        },
+        "type": "StraightChannel",
+        "visual": {
+          "bevel_m": 0.0
+        }
+      },
+      {
+        "collision": {
+          "friction": 0.35,
+          "mode": "fixed",
+          "restitution": 0.55,
+          "shape": "obb_union"
+        },
+        "component_id": "deflector",
+        "entry_anchor": null,
+        "exit_anchor": null,
+        "material_role": "structure",
+        "parameters": {},
+        "transform": {
+          "position_m": [
+            2.9717673740242674,
+            -0.044328030999200935,
+            2.26396387047941
+          ],
+          "quaternion_xyzw": [
+            -0.14831847573662796,
+            0.12081127735014541,
+            0.01825883874621539,
+            0.9813627666810215
+          ]
+        },
+        "type": "CurvedChannel",
+        "visual": {
+          "bevel_m": 0.0
+        }
+      },
+      {
+        "collision": {
+          "friction": 0.35,
+          "mode": "fixed",
+          "restitution": 0.55,
+          "shape": "obb_union"
+        },
+        "component_id": "post",
+        "entry_anchor": null,
+        "exit_anchor": null,
+        "material_role": "structure",
+        "parameters": {
+          "length_m": 1.0
+        },
+        "transform": {
+          "position_m": [
+            4.229623024980868,
+            1.2931430537766473,
+            1.5230385984410877
+          ],
+          "quaternion_xyzw": [
+            -0.019450526510525493,
+            0.1903034734267186,
+            0.7068392158181825,
+            0.6810173184301014
+          ]
+        },
+        "type": "StraightChannel",
+        "visual": {
+          "bevel_m": 0.0
+        }
+      },
+      {
+        "collision": {
+          "friction": 0.35,
+          "mode": "fixed",
+          "restitution": 0.55,
+          "shape": "obb_union"
+        },
+        "component_id": "catcher",
+        "entry_anchor": null,
+        "exit_anchor": null,
+        "material_role": "structure",
+        "parameters": {},
+        "transform": {
+          "position_m": [
+            4.157948846947393,
+            2.248479542902253,
+            1.2363418863071902
+          ],
+          "quaternion_xyzw": [
+            -0.019450526510525493,
+            0.1903034734267186,
+            0.7068392158181825,
+            0.6810173184301014
+          ]
+        },
+        "type": "Catcher",
+        "visual": {
+          "bevel_m": 0.0
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "ramp",
+        "policy": {
+          "available_entry_speed_m_s": 0.0,
+          "distance_tolerance_m": 0.001,
+          "joint_region_radius_m": 0.6,
+          "maximum_direction_mismatch_deg": 10.0,
+          "maximum_joint_overlap_m": 0.06,
+          "radius_clearance_margin_m": 0.005
+        },
+        "to": "approach"
+      },
+      {
+        "from": "approach",
+        "policy": {
+          "available_entry_speed_m_s": 0.0,
+          "distance_tolerance_m": 0.001,
+          "joint_region_radius_m": 0.6,
+          "maximum_direction_mismatch_deg": 10.0,
+          "maximum_joint_overlap_m": 0.06,
+          "radius_clearance_margin_m": 0.005
+        },
+        "to": "deflector"
+      },
+      {
+        "from": "deflector",
+        "policy": {
+          "available_entry_speed_m_s": 0.0,
+          "distance_tolerance_m": 0.001,
+          "joint_region_radius_m": 0.6,
+          "maximum_direction_mismatch_deg": 10.0,
+          "maximum_joint_overlap_m": 0.06,
+          "radius_clearance_margin_m": 0.005
+        },
+        "to": "post"
+      },
+      {
+        "from": "post",
+        "policy": {
+          "available_entry_speed_m_s": 0.0,
+          "distance_tolerance_m": 0.001,
+          "joint_region_radius_m": 0.6,
+          "maximum_direction_mismatch_deg": 10.0,
+          "maximum_joint_overlap_m": 0.06,
+          "radius_clearance_margin_m": 0.005
+        },
+        "to": "catcher"
+      }
+    ],
+    "schema_version": "component-route-1",
+    "start_component": "ramp",
+    "terminal_component": "catcher"
+  },
+  "connections": [
+    {
+      "errors": [],
+      "from": "ramp",
+      "metrics": {
+        "anchor_distance_m": 0.0,
+        "available_clearance_radius_m": 0.35,
+        "direction_mismatch_deg": 0.0,
+        "height_change_m": 0.0,
+        "minimum_entry_speed_m_s": 0.0,
+        "minimum_seam_surface_gap_m": 0.0,
+        "required_clearance_radius_m": 0.155,
+        "solid_overlaps": []
+      },
+      "physics_validated": false,
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "status": "PASSED",
+      "to": "approach"
+    },
+    {
+      "errors": [],
+      "from": "approach",
+      "metrics": {
+        "anchor_distance_m": 0.0,
+        "available_clearance_radius_m": 0.3415732716763446,
+        "direction_mismatch_deg": 0.0,
+        "height_change_m": 0.0,
+        "minimum_entry_speed_m_s": 0.0,
+        "minimum_seam_surface_gap_m": -1.3877787807814457e-16,
+        "required_clearance_radius_m": 0.155,
+        "solid_overlaps": [
+          {
+            "allowed_static_weld": true,
+            "joint_intersection_radius_bound_m": 0.4734496313750258,
+            "parts": [
+              "ramp-floor",
+              "arc-00-floor"
+            ],
+            "penetration_depth_m": 0.027412956943909134
+          },
+          {
+            "allowed_static_weld": true,
+            "joint_intersection_radius_bound_m": 0.46909983130445393,
+            "parts": [
+              "ramp-floor",
+              "arc-00-wall-1"
+            ],
+            "penetration_depth_m": 0.03920685613182426
+          },
+          {
+            "allowed_static_weld": true,
+            "joint_intersection_radius_bound_m": 0.43754186888112184,
+            "parts": [
+              "ramp-wall-1",
+              "arc-00-wall-1"
+            ],
+            "penetration_depth_m": 0.0392068561318242
+          }
+        ]
+      },
+      "physics_validated": false,
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "status": "PASSED",
+      "to": "deflector"
+    },
+    {
+      "errors": [],
+      "from": "deflector",
+      "metrics": {
+        "anchor_distance_m": 0.0,
+        "available_clearance_radius_m": 0.3415732716763446,
+        "direction_mismatch_deg": 8.537736462515939e-07,
+        "height_change_m": 0.0,
+        "minimum_entry_speed_m_s": 0.0,
+        "minimum_seam_surface_gap_m": -5.551115123125783e-17,
+        "required_clearance_radius_m": 0.155,
+        "solid_overlaps": [
+          {
+            "allowed_static_weld": true,
+            "joint_intersection_radius_bound_m": 0.5432661518271092,
+            "parts": [
+              "arc-07-floor",
+              "ramp-floor"
+            ],
+            "penetration_depth_m": 0.03920685613182423
+          },
+          {
+            "allowed_static_weld": true,
+            "joint_intersection_radius_bound_m": 0.5527997897987091,
+            "parts": [
+              "arc-07-wall-1",
+              "ramp-wall-1"
+            ],
+            "penetration_depth_m": 0.03920685613182445
+          }
+        ]
+      },
+      "physics_validated": false,
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "status": "PASSED",
+      "to": "post"
+    },
+    {
+      "errors": [],
+      "from": "post",
+      "metrics": {
+        "anchor_distance_m": 0.0,
+        "available_clearance_radius_m": 0.35,
+        "direction_mismatch_deg": 1.2074182697257333e-06,
+        "height_change_m": 0.0,
+        "minimum_entry_speed_m_s": 0.0,
+        "minimum_seam_surface_gap_m": -2.498001805406602e-16,
+        "required_clearance_radius_m": 0.155,
+        "solid_overlaps": []
+      },
+      "physics_validated": false,
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "status": "PASSED",
+      "to": "catcher"
+    }
+  ],
+  "integrated": false,
+  "metrics": {
+    "axis_extents_m": [
+      4.227998151101932,
+      3.2242606507989198,
+      2.0496869035391025
+    ],
+    "plane_thickness_m": 3.730230897230616e-16,
+    "span_m": 5.594289812074663
+  },
+  "status": "CONNECTIONS_PASSED_NEARLY_PLANAR"
+}

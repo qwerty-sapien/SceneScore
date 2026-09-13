@@ -1,0 +1,19 @@
+{
+  "checked_unix_s": 1789277769.142237,
+  "jobs": [
+    {
+      "pid": 79972,
+      "pgid": 79972,
+      "session": 33717,
+      "exit_code": 0,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 80277,
+      "pgid": 80277,
+      "session": 41021,
+      "exit_code": 0,
+      "state": "ABSENT"
+    }
+  ]
+}

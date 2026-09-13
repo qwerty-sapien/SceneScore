@@ -1,0 +1,93 @@
+{
+  "pid": 62564,
+  "variants": [
+    {
+      "id": "blender-review:05_bouncing_staircase-brush_swing_light_v1",
+      "title": "Tilted Blue · Piano · Light swing",
+      "default_gain_db": -6,
+      "before_gain_db": -18,
+      "after_gain_db": -6,
+      "before": {
+        "peak": 0.01843414455652237,
+        "rms": 0.0035138819596350285,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2,
+        "rms_dbfs": -49.08425663336649,
+        "peak_dbfs": -34.687540223811936
+      },
+      "after": {
+        "peak": 0.07338764518499374,
+        "rms": 0.013989015962917696,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2,
+        "rms_dbfs": -37.084256685010565,
+        "peak_dbfs": -22.68754094871094
+      }
+    },
+    {
+      "id": "blender-review:05_bouncing_staircase-brush_ballad_sparse_v1",
+      "title": "Tilted Blue · Piano · Sparse brush",
+      "default_gain_db": -6,
+      "before_gain_db": -18,
+      "after_gain_db": -6,
+      "before": {
+        "peak": 0.018169354647397995,
+        "rms": 0.003506837538806898,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2,
+        "rms_dbfs": -49.101687064086434,
+        "peak_dbfs": -34.813209960224945
+      },
+      "after": {
+        "peak": 0.07233350723981857,
+        "rms": 0.01396097160563175,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2,
+        "rms_dbfs": -37.10168712382595,
+        "peak_dbfs": -22.813209534509447
+      }
+    },
+    {
+      "id": "blender-review:05_bouncing_staircase-brush_straight_rag_v1",
+      "title": "Tilted Blue · Piano · Straight rag",
+      "default_gain_db": -6,
+      "before_gain_db": -18,
+      "after_gain_db": -6,
+      "before": {
+        "peak": 0.01839481107890606,
+        "rms": 0.0035079196213944103,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2,
+        "rms_dbfs": -49.09900732769805,
+        "peak_dbfs": -34.70609336330013
+      },
+      "after": {
+        "peak": 0.07323106378316879,
+        "rms": 0.013965279464733594,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2,
+        "rms_dbfs": -37.09900738074568,
+        "peak_dbfs": -22.706093141705264
+      }
+    }
+  ],
+  "errors": [],
+  "human_audition": "NOT_RUN",
+  "physical_spl_measured": false,
+  "browser_closed": true,
+  "manual_volume_preserved_on_track_change": true,
+  "fresh_player_default_verified": true,
+  "status": "passed"
+}

@@ -1,0 +1,2 @@
+COMMAND [".venv/bin/python", "-m", "modules.blender.planning", "reports/physics-components/invalid-plan-input.json", "--out", "reports/physics-components/invalid-plan"]
+{"status": "FAILED", "errors": 1, "warnings": 2, "out": "reports/physics-components/invalid-plan"}

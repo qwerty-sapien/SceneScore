@@ -5,7 +5,8 @@ import type {BridgeStatus,CheckpointCatalog,ModelEvaluation} from './types';
 export function evaluationText(evaluation:ModelEvaluation|null|undefined){
  if(!evaluation)return 'Not yet evaluated · 93% is an advisory target';
  const percent=(value:number|null)=>value===null?'—':(value*100).toFixed(1)+'%';
- return `Against B labels: precision ${percent(evaluation.precision)}, recall ${percent(evaluation.recall)}${evaluation.complete?'':' · incomplete check'} · 93% is advisory`;
+ const counts=evaluation.tp===undefined?'':` · ${evaluation.tp} matched / ${evaluation.fp} extra / ${evaluation.fn} missed`;
+ return `Against B labels: precision ${percent(evaluation.precision)}, recall ${percent(evaluation.recall)}${evaluation.complete?'':' · incomplete check'}${counts} · 93% is advisory`;
 }
 export function CheckpointControls({bridge,status}:{bridge:LocalMuseBridge|null;status:BridgeStatus|null}){
  const [catalog,setCatalog]=useState<CheckpointCatalog|null>(null),[error,setError]=useState('');

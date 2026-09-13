@@ -1,0 +1,19 @@
+[
+  {
+    "id": "run-1789279961820550000-daf9acf5",
+    "status": "stopped",
+    "source_mode": "synthetic",
+    "hardware_verified": false,
+    "labels": 1,
+    "sample_count": 766,
+    "pre_training_signal_check": {
+      "measurable": true,
+      "peak_to_peak_uv": [
+        181.5713518452897,
+        163.98306945309943
+      ],
+      "rate_hz": 256.0,
+      "seconds": 3.0
+    }
+  }
+]

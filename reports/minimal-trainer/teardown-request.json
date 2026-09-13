@@ -1,0 +1,11 @@
+[
+  {
+    "pid": 73428,
+    "state": "already_exited"
+  },
+  {
+    "pid": 84681,
+    "state": "SIGINT_sent",
+    "command": "/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /private/tmp/scenescore-minimal-browser-server.py"
+  }
+]

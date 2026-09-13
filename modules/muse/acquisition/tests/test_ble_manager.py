@@ -302,8 +302,17 @@ def test_scan_is_bounded_and_exclusive(manager_factory):
         with pytest.raises(BleMuseError, match='operation_in_progress'):
             manager.scan('session')
     finally:
-        thread.join(2)
+        thread.join(3)
     assert not thread.is_alive() and errors == ['scan_timeout']
+
+
+def test_scan_budget_includes_native_startup_and_shutdown(manager_factory):
+    class SlowStartScanner(FakeScanner):
+        async def discover(self, *, timeout, return_adv):
+            await asyncio.sleep(timeout + .6)
+            return await super().discover(timeout=timeout, return_adv=return_adv)
+    manager, _, _ = manager_factory(scanner=SlowStartScanner())
+    assert manager.scan('session')['devices'][0]['name'] == 'Muse-AD3C'
 
 
 def test_device_handles_are_owned_expire_and_cannot_be_reused(manager_factory):

@@ -107,6 +107,9 @@ def make_object(spec, *, moving=False):
         mesh = bpy.data.meshes.new(spec['id'])
         mesh.from_pydata(spec['vertices'], [], spec['faces'])
         mesh.update()
+        if spec['id'] == 'central-observatory-orb':
+            for polygon in mesh.polygons:
+                polygon.use_smooth = True
         obj = bpy.data.objects.new(spec['id'], mesh)
         bpy.context.collection.objects.link(obj)
     elif shape in ('curve', 'coil'):
@@ -136,8 +139,10 @@ def make_object(spec, *, moving=False):
     obj.rotation_mode = 'QUATERNION'
     q = spec.get('quaternion_xyzw', [0, 0, 0, 1])
     obj.rotation_quaternion = [q[3], *q[:3]]
-    obj.data.materials.append(material(spec.get('material', 'stone'),
-        stripe=moving and shape in ('sphere', 'cylinder') and not spec.get('zero_spin', False)))
+    # Separate the upper receiver spring from the adjacent gold guide rails.
+    material_name = 'coral' if spec['id'] == 'hoop-coil' else spec.get('material', 'stone')
+    obj.data.materials.append(material(material_name,
+        stripe=moving and shape in ('sphere', 'cylinder', 'hoop') and not spec.get('zero_spin', False)))
     if spec.get('checkpoint_time_s') is not None:
         signal = obj.data.materials[0].copy()
         signal.name = spec['id'] + '-signal'

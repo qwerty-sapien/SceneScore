@@ -1,4 +1,4 @@
-"""Bounded, no-recording Muse BLE hardware diagnostic. Never prints EEG or tokens.
+"""Bounded Muse BLE hardware diagnostic. Never prints EEG or tokens.
 
 Default is the original plain connection regression: name scan, GATT listing,
 30-second hold, explicit disconnect. Other stages isolate notification setup.
@@ -9,6 +9,7 @@ import argparse
 import asyncio
 import json
 import math
+import os
 from pathlib import Path
 import signal
 import sys
@@ -20,16 +21,6 @@ sys.path[:0] = [str(ROOT), str(ROOT / 'src')]
 
 def report(**fields):
     print(json.dumps(fields, allow_nan=False), flush=True)
-
-
-def consent_ok(path):
-    if path is None or not path.is_file() or path.stat().st_size > 65536:
-        return False
-    value = json.loads(path.read_text())
-    return (isinstance(value, dict) and value.get('live_processing') is True
-            and value.get('raw_recording') is False
-            and isinstance(value.get('participant_statement'), str)
-            and bool(value['participant_statement'].strip()))
 
 
 async def plain(args):
@@ -108,14 +99,25 @@ def streaming(args):
     from modules.muse.acquisition.ble import BleMuseManager
     from services.bridge.ble_source import BleCompanionSource, ble_metadata
     from services.bridge.server import Companion
-    companion = Companion(ble_metadata(), mode='LIVE_MUSE')
+    from tools.muse_ble_recording import LocalRecording
+    recording = None
+
+    class RecordingCompanion(Companion):
+        def consume(self, raw):
+            if recording is not None:
+                recording.submit(self.metadata, raw)
+            return super().consume(raw)
+
+    companion = RecordingCompanion(ble_metadata(), mode='LIVE_MUSE')
     source = BleCompanionSource(companion, None)
     manager = BleMuseManager(on_begin=source.begin, on_frame=source.consume_frame,
                              on_fault=source.fault, on_discontinuity=source.discontinuity)
     source.attach(manager)
     companion.transport_status_probe = manager.snapshot
+    result = 'FAIL'
     try:
-        report(stage='scanning', recording=False)
+        recording = LocalRecording(args.record) if args.record else None
+        report(stage='scanning', recording=bool(recording), pid=os.getpid())
         devices = manager.scan('local-hardware-diagnostic')['devices']
         device = next((item for item in devices if item['name'] == args.name), None)
         if device is None:
@@ -123,20 +125,39 @@ def streaming(args):
             return 2
         manager.connect(device['id'], 'local-hardware-diagnostic')
         start, initial_count = time.monotonic(), companion.sample_count
+        report(stage='streaming', **{**companion.status(), 'recording': bool(recording)})
+        next_report = start + 10
         while time.monotonic() - start < args.seconds:
-            state = companion.status()
+            if recording is not None:
+                recording.check()
+            state = {**companion.status(), 'recording': bool(recording)}
             if not state['connected'] or not state['hardware_verified']:
                 report(result='FAIL', **state)
                 return 1
+            if time.monotonic() >= next_report:
+                report(stage='streaming', elapsed_s=time.monotonic() - start,
+                       sample_count=state['sample_count'], transport=manager.snapshot())
+                next_report += 10
             time.sleep(.2)
         if companion.sample_count <= initial_count:
             raise ValueError('stream_start_timeout')
-        report(result='PASS', measured_streaming_hold_s=time.monotonic() - start,
-               **companion.status(), clock=companion.clock())
+        final_state, clock = companion.status(), companion.clock()
+        result = 'PASS'
+        report(result=result, measured_streaming_hold_s=time.monotonic() - start,
+               **{**final_state, 'recording': bool(recording)}, clock=clock)
         return 0
+    except Exception:
+        report(result='FAIL', transport=manager.snapshot())
+        raise
     finally:
-        manager.close()
-        report(stage='disconnected', cleanup='PASS', ble_thread_alive=False)
+        try:
+            manager.close()
+        finally:
+            if recording is not None:
+                recording.close('diagnostic_complete' if result == 'PASS' else 'diagnostic_failed')
+                report(recording=recording.summary())
+        report(stage='disconnected', cleanup='PASS', ble_thread_alive=manager.thread_alive,
+               recording_thread_alive=recording.thread.is_alive() if recording else False)
 
 
 def main():
@@ -144,14 +165,17 @@ def main():
     parser.add_argument('--name', default='Muse-AD3C', help='Exact human-facing advertised Muse name')
     parser.add_argument('--seconds', type=float, default=30)
     parser.add_argument('--stage', choices=['plain', 'control', 'one-eeg', 'all-eeg', 'stream'], default='plain')
-    parser.add_argument('--live-consent', type=Path, help='Required for EEG streaming; existing local no-recording consent')
+    parser.add_argument('--live-consent', type=Path, help=argparse.SUPPRESS)  # Legacy command compatibility.
+    parser.add_argument('--record', type=Path, help='Explicitly record frontal EEG to a new folder under private_data/')
     args = parser.parse_args()
     if not math.isfinite(args.seconds) or not 1 <= args.seconds <= 120:
         parser.error('seconds must be finite and between 1 and 120')
     if not args.name.startswith('Muse') or not 1 <= len(args.name) <= 64 or not args.name.isprintable():
         parser.error('a bounded, printable Muse name is required')
-    if args.stage == 'stream' and not consent_ok(args.live_consent):
-        parser.error('--stage stream requires explicit --live-consent with raw_recording:false')
+    if args.record:
+        args.record = args.record.resolve()
+        if args.stage != 'stream' or not args.record.is_relative_to(ROOT / 'private_data'):
+            parser.error('--record requires --stage stream and a new path under private_data/')
 
     def interrupt(*_):
         raise KeyboardInterrupt

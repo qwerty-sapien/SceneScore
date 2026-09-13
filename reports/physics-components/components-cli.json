@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "modules.blender.components",
+    "modules/blender/fixtures/component-route.example.json",
+    "--out",
+    "reports/physics-components/assembled-route.json"
+  ],
+  "pid": 67981,
+  "process_group": 67981,
+  "started_at": "2026-09-13T05:23:20.269770+00:00",
+  "exit_code": 0,
+  "duration_s": 0.35,
+  "process_group_absent": true
+}

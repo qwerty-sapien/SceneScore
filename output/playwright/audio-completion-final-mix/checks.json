@@ -1,0 +1,175 @@
+{
+  "pid": 7150,
+  "mode": "prepared playback and final mix",
+  "clips": [
+    {
+      "title": "Projectile & tower",
+      "id": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+      "mode": "scene-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "A near miss",
+      "id": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+      "mode": "scene-live",
+      "audio_pcm": "nonzero"
+    },
+    {
+      "title": "05 bouncing staircase",
+      "id": "4dda38d936d12b2948faf77712cd8767a8cbaae5ed11514f7776dbbf56c8cdc7",
+      "mode": "scene-live",
+      "audio_pcm": "nonzero"
+    }
+  ],
+  "mixes": [
+    {
+      "id": "studio:contact-brush_swing_light_v1-guitar-piano-v2",
+      "mix": {
+        "peak": 0.7807124853134155,
+        "rms": 0.06058075238492367,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      },
+      "sum_error": 5.960464477539063e-8,
+      "ratios": [
+        1.2000000230484276,
+        1.1999999958987142,
+        1.1999999795661294,
+        1.199999978435834
+      ],
+      "effect_gains": [
+        2.0957261749643545,
+        1.8658631786158375,
+        1.9689265508175147,
+        2.3107287887069314
+      ]
+    },
+    {
+      "id": "studio:near-miss-brush_swing_light_v1-guitar-piano-v2",
+      "mix": {
+        "peak": 0.4019097089767456,
+        "rms": 0.056656392988177644,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 30,
+        "channels": 2
+      },
+      "sum_error": 8.940696716308594e-8,
+      "ratios": [],
+      "effect_gains": []
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_swing_light_v1-clean-piano-v1",
+      "mix": {
+        "peak": 0.28460994362831116,
+        "rms": 0.04319825161429144,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2
+      },
+      "sum_error": 4.470348358154297e-8,
+      "ratios": [
+        1.1999091915215367,
+        1.1999673725300704,
+        1.199902155673065,
+        1.1999718251183682,
+        1.1999663037954234,
+        1.199903174813133,
+        1.1999777095890547,
+        1.199991268729959
+      ],
+      "effect_gains": [
+        3.0043617769255566,
+        1.1444830892948625,
+        1.2625988455787858,
+        2.609621427303993,
+        2.865189649499587,
+        2.1858608085066322,
+        2.4843677715969092,
+        0.6844107555900402
+      ]
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_ballad_sparse_v1-clean-piano-v1",
+      "mix": {
+        "peak": 0.2845698595046997,
+        "rms": 0.04319796053493279,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2
+      },
+      "sum_error": 4.470348358154297e-8,
+      "ratios": [
+        1.1999091633865548,
+        1.1999673728264169,
+        1.1999021137643633,
+        1.19997182606409,
+        1.1999663505351597,
+        1.199903151106061,
+        1.1999777114387684,
+        1.199991327656511
+      ],
+      "effect_gains": [
+        3.004266473106089,
+        1.1444830892948625,
+        1.2627439786317487,
+        2.609621427303993,
+        2.8650667482520538,
+        2.1859495434126033,
+        2.4843677715969092,
+        0.684163901315652
+      ]
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_straight_rag_v1-clean-piano-v1",
+      "mix": {
+        "peak": 0.28468984365463257,
+        "rms": 0.04319815112536877,
+        "clipped": 0,
+        "sample_rate": 48000,
+        "duration_s": 8,
+        "channels": 2
+      },
+      "sum_error": 4.470348358154297e-8,
+      "ratios": [
+        1.1999091901682928,
+        1.1999673751300046,
+        1.1999021008362036,
+        1.1999718226033986,
+        1.1999663019980706,
+        1.1999031493264687,
+        1.199977711000673,
+        1.1999912490002724
+      ],
+      "effect_gains": [
+        3.0042728411122117,
+        1.1444830892948625,
+        1.2627439786317487,
+        2.609621427303993,
+        2.865145307330493,
+        2.1859495434126033,
+        2.4843677715969092,
+        0.6841371825998045
+      ]
+    }
+  ],
+  "errors": [],
+  "human_audition": "NOT_RUN",
+  "physical_output_measured": false,
+  "browser_pid": 7161,
+  "coverage": {
+    "requested": 78,
+    "available": 78,
+    "unique_videos": 60,
+    "live_scores": 48,
+    "original_audio": 12,
+    "silent": 0
+  },
+  "status": "passed",
+  "browser_exit_code": 0,
+  "server_closed": true
+}

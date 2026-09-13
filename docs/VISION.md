@@ -31,3 +31,29 @@ The core studio MUST work with keyboard and clearly labelled replay; Muse is an 
 Predominant musical identity is original blues/ragtime-derived swing. The named inspirations are expressed as chosen creative traits, not copied tunes or artist emulation: Brubeck → selective metric displacement and occasional asymmetric accents; Evans → spacious chord voicings and economical inner-voice motion; Mingus → blues-rooted call/response and contrasting ensemble density; Carmichael → clear, singable original melodic arcs; Monk → purposeful rests, angular original motifs and selective dissonant accents; Gilberto → restrained, steady bossa-inflected accompaniment; Lyra → lyrical original phrases over gently syncopated accompaniment. Bossa remains an accompaniment color rather than replacing the swing identity. Use rhythmic variation selectively, retain space and melodic coherence, and audition originals independently. No new music was composed or auditioned in Phase 1.
 
 Authority: the user's six explicit requirements in the later documentation-stage request. The unavailable Kinetic Jazz ZIP has not been reconstructed or represented as read. The available SceneScore pack governs this authorized Phase 1; these direct product requirements remain binding.
+
+## Personal trainer clarification (2026-09-13)
+
+The user authorized the [minimal B-only trainer](decisions/0015-minimal-personal-trainer.md):
+93% is an advisory stopping target, and compatible saved weights remain usable
+below it or without evaluation. The next Arm loads the latest compatible
+checkpoint; live weights stay fixed while armed. This explicit exception does
+not change musical-plan approval, signal-quality requirements or independent
+accuracy claims. Training records and model artifacts remain local.
+
+## Manual key-change audition (2026-09-13)
+
+The user authorized a **Change key** button during ordinary playback, hidden
+when the local companion detects Muse. For this manual request, a logged seeded
+choice among feasible prepared ±2 transitions replaces geometry direction and
+uses the existing chord-transition scheduler. Draft audition needs no detector
+arming and creates no approval. Live double-blink semantics remain as specified
+above. See [decision 0017](decisions/0017-manual-key-change.md).
+
+## Full-library audio and effect balance (2026-09-13)
+
+The user authorized original, visibly labelled video-only piano accompaniment
+for videos without prepared scene scores or embedded audio. Live scores and new
+exports place effects 20% above the ducked music RMS; music fades to 80% of its
+normal amplitude around effects. See [decision 0018](decisions/0018-full-library-audio.md).
+Historical embedded mixes and frozen review samples retain their original audio.

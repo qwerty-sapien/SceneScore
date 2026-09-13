@@ -1,0 +1,21 @@
+{
+  "processes": [
+    {
+      "pid": 73428,
+      "exited": true,
+      "remaining": ""
+    },
+    {
+      "pid": 84681,
+      "exited": true,
+      "remaining": ""
+    },
+    {
+      "pid": 77193,
+      "exited": true,
+      "remaining": ""
+    }
+  ],
+  "test_ports_free": true,
+  "listeners": ""
+}

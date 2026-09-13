@@ -200,6 +200,7 @@ def assemble_resolved(resolved, layout):
             raise ValueError('resolved start/terminal positions do not match component sphere-center anchors')
     result = route.to_dict()
     result.update(resolved_constraints_sha256=resolved['sha256'], event_constraints=constraints['events'],
+                  planning_constraints=constraints,
                   gravity_m_s2=constraints['gravity_m_s2'], sphere_material=constraints['sphere_material'],
                   initial_state=start, terminal_state=end, duration_s=constraints['duration_s'])
     result['collider_actor_map'] = {o['object_id']: key for key, c in route.components.items() for o in c.analytic_obstacles()}

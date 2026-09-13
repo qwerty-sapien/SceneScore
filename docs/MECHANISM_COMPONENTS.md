@@ -84,9 +84,12 @@ fields accepted by `simulate_sphere`, preserving component/part identity.
 ```
 
 The fixture is a high ramp, inclined approach, curved redirection, depth channel
-and lower catcher spanning all three world axes. Its explicit join policy permits
-up to 0.06 m of static overlap inside a 0.6 m joint region; measured overlaps are
-about 0.0392 m and sphere seam gaps are zero within arithmetic precision. This is
+and lower catcher spanning all three world axes. The descending channel bends
+out of the first guide plane by 8.59 degrees. Sphere-center extents are approximately
+4.33 × 4.34 × 1.51 m. The arc entry permits 0.06 m of static weld overlap and the
+descending transition permits 0.08 m, each inside a 0.6 m joint region; measured
+maxima are approximately 0.0392 and 0.0730 m. Sphere seam gaps remain zero within
+arithmetic precision. This is
 an assembly fixture, not a solved or rendered animation.
 
 For A4 integration, use `assemble_resolved(resolved_constraints, layout)` or add

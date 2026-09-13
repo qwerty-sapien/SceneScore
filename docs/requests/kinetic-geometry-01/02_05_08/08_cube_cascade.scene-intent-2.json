@@ -1,0 +1,310 @@
+{
+  "schema_version": "scene-intent-2",
+  "status": "DESIGN_INTENT_NOT_MEASURED",
+  "id": "08_cube_cascade",
+  "duration_s": 11.2,
+  "clock": "scene_seconds_zero_at_start",
+  "mechanics": {
+    "backend": "native_bullet",
+    "model_version": "blender-native-bullet-candidate-1",
+    "scope": "Three dynamic convex cubes, fixed separated routes/catchers and two explicitly prescribed visible latches with causal trigger evidence.",
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "contact_model": "Proposed convex rigid-body contact; actual contact, gap and replay evidence remain required.",
+    "material_model": "Per-actor coefficients are declared in the companion Markdown card; no coefficient is calibrated or measured here.",
+    "actuation_model": "Gravity and contact determine free body motion; only declared visible latches may be prescribed.",
+    "limitations": [
+      "DESIGN_INTENT_NOT_MEASURED.",
+      "Historical Native Bullet transfer/convergence calibration failed; this plan neither repairs nor relaxes it.",
+      "Current analytic backend cannot validate this dynamic-body scope."
+    ]
+  },
+  "actors": [
+    {
+      "id": "cube-a",
+      "role": "actor",
+      "shape": "convex_mesh",
+      "motion": "dynamic",
+      "collision_enabled": true,
+      "scored": true,
+      "sonic_identity_id": "voice:cube-a"
+    },
+    {
+      "id": "cube-b",
+      "role": "actor",
+      "shape": "convex_mesh",
+      "motion": "dynamic",
+      "collision_enabled": true,
+      "scored": true,
+      "sonic_identity_id": "voice:cube-b"
+    },
+    {
+      "id": "cube-c",
+      "role": "actor",
+      "shape": "convex_mesh",
+      "motion": "dynamic",
+      "collision_enabled": true,
+      "scored": true,
+      "sonic_identity_id": "voice:cube-c"
+    },
+    {
+      "id": "latch-1",
+      "role": "visible_actuator",
+      "shape": "obb",
+      "motion": "prescribed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "latch-2",
+      "role": "visible_actuator",
+      "shape": "obb",
+      "motion": "prescribed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "track-a",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "track-b",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "track-c",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "catch-a",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "catch-b",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "catch-c",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    }
+  ],
+  "route_stages": [
+    {
+      "id": "a-initiation",
+      "actor_ids": [
+        "cube-a",
+        "cube-b",
+        "latch-1",
+        "track-a"
+      ],
+      "window": {
+        "start_s": 0,
+        "end_s": 2.4
+      },
+      "entry_intent": "Cube-a is released while B remains visibly retained.",
+      "exit_intent": "A reaches own catch and latch-1 release sequence completes.",
+      "mechanism": "Gravity/contact plus prescribed latch only after A contact."
+    },
+    {
+      "id": "b-route",
+      "actor_ids": [
+        "cube-a",
+        "cube-b",
+        "latch-1",
+        "track-b",
+        "catch-a"
+      ],
+      "window": {
+        "start_s": 2.4,
+        "end_s": 5.5
+      },
+      "entry_intent": "Released B traverses its separate middle route while A is supported.",
+      "exit_intent": "B approaches its trigger after wall rebound and near pass.",
+      "mechanism": "Gravity/contact on separated routes."
+    },
+    {
+      "id": "c-route",
+      "actor_ids": [
+        "cube-b",
+        "cube-c",
+        "latch-2",
+        "track-c",
+        "catch-b"
+      ],
+      "window": {
+        "start_s": 5.5,
+        "end_s": 8.5
+      },
+      "entry_intent": "B trigger precedes latch-2 motion; C stays retained until release.",
+      "exit_intent": "One delayed B/C transfer leads both toward catches.",
+      "mechanism": "Gravity/contact plus prescribed latch after B trigger."
+    },
+    {
+      "id": "separate-settles",
+      "actor_ids": [
+        "cube-a",
+        "cube-b",
+        "cube-c",
+        "catch-a",
+        "catch-b",
+        "catch-c"
+      ],
+      "window": {
+        "start_s": 8.5,
+        "end_s": 11.2
+      },
+      "entry_intent": "Each cube reaches a distinct receiving support.",
+      "exit_intent": "All three remain visible and supported separately.",
+      "mechanism": "Independent catch dissipation; no pile-up."
+    }
+  ],
+  "support_contacts": [],
+  "events": [
+    {
+      "id": "a-bounce-and-latch",
+      "kind": "collision",
+      "actor_ids": [
+        "cube-a",
+        "latch-1"
+      ],
+      "stage_id": "a-initiation",
+      "target_window": {
+        "start_s": 1.5,
+        "end_s": 1.85
+      },
+      "physical_cause": "Cube-a's earned bounce reaches latch-1 lever and mechanically releases cube-b after a planned pause.",
+      "measurement_required": "Measure both A bounce and latch contact as distinct raw episodes, then release continuity; reject early latch travel.",
+      "clearance": null
+    },
+    {
+      "id": "b-near-pass",
+      "kind": "near_miss",
+      "actor_ids": [
+        "cube-a",
+        "cube-b"
+      ],
+      "stage_id": "b-route",
+      "target_window": {
+        "start_s": 4.65,
+        "end_s": 4.95
+      },
+      "physical_cause": "After wall rebound, cube-b passes cube-a on separated lanes.",
+      "measurement_required": "Certify approach, positive 0.10–0.18 m surface gap, separation and no contact for the pair.",
+      "clearance": {
+        "minimum_m": 0.1,
+        "maximum_m": 0.18,
+        "target_m": 0.14
+      }
+    },
+    {
+      "id": "c-transfer",
+      "kind": "collision",
+      "actor_ids": [
+        "cube-b",
+        "cube-c"
+      ],
+      "stage_id": "c-route",
+      "target_window": {
+        "start_s": 7.55,
+        "end_s": 7.95
+      },
+      "physical_cause": "Cube-b's trigger opens latch-2; released cube-c makes one delayed momentum-transfer contact with cube-b.",
+      "measurement_required": "Measure fresh contact onset and pre/post velocities; reject latch motion before its B trigger or a third-body pile-up.",
+      "clearance": null
+    }
+  ],
+  "event_order": [
+    "a-bounce-and-latch",
+    "b-near-pass",
+    "c-transfer"
+  ],
+  "salience_policy": {
+    "minimum_gap_s": 1,
+    "maximum_duty_cycle": 0.3,
+    "maximum_events": 3,
+    "minimum_distinct_kinds": 2,
+    "maximum_simultaneous_events": 1,
+    "support_contact_policy": "retain_raw_do_not_count_as_salient"
+  },
+  "camera": {
+    "mode": "staged",
+    "focus_actor_ids": [
+      "cube-a",
+      "cube-b",
+      "cube-c"
+    ],
+    "readable_event_ids": [
+      "a-bounce-and-latch",
+      "b-near-pass",
+      "c-transfer"
+    ],
+    "framing_intent": "Static wide shot keeps causal latches, the near pass and all separate catches visible."
+  },
+  "ending": {
+    "kind": "supported_rest",
+    "actor_ids": [
+      "cube-a",
+      "cube-b",
+      "cube-c"
+    ],
+    "support_ids": [
+      "catch-a",
+      "catch-b",
+      "catch-c"
+    ],
+    "window": {
+      "start_s": 8.5,
+      "end_s": 11.2
+    },
+    "keep_visible": true,
+    "reset_policy": "no_teleport",
+    "description": "All three cubes have separate supported, non-overlapping final states."
+  },
+  "reference_lessons": [
+    {
+      "id": "component-planning-note",
+      "source": "docs/MECHANISM_COMPONENTS.md",
+      "status": "visual_reference",
+      "lesson": "Use spatially separated supports and explicit collision geometry; no reference-media claim is made.",
+      "evidence_note": "This card consulted repository component/planning documentation, not a viewed reference clip; source bytes are intentionally unbound while concurrent work continues.",
+      "source_sha256": null,
+      "consumed_interval": null
+    }
+  ],
+  "music_hints": []
+}

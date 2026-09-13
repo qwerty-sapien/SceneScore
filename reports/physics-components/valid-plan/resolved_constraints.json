@@ -1,0 +1,866 @@
+{
+  "constraints": {
+    "actor_radius_m": 0.15,
+    "actors": [
+      {
+        "collision_enabled": true,
+        "id": "marble",
+        "motion": "dynamic",
+        "role": "actor",
+        "scored": true,
+        "shape": "sphere",
+        "sonic_identity_id": "voice:marble"
+      },
+      {
+        "collision_enabled": true,
+        "id": "ramp",
+        "motion": "fixed",
+        "role": "silent_support",
+        "scored": false,
+        "shape": "obb",
+        "sonic_identity_id": null
+      },
+      {
+        "collision_enabled": true,
+        "id": "deflector",
+        "motion": "fixed",
+        "role": "interaction_surface",
+        "scored": true,
+        "shape": "obb",
+        "sonic_identity_id": "voice:deflector"
+      },
+      {
+        "collision_enabled": true,
+        "id": "post",
+        "motion": "fixed",
+        "role": "silent_support",
+        "scored": false,
+        "shape": "obb",
+        "sonic_identity_id": null
+      },
+      {
+        "collision_enabled": true,
+        "id": "catcher",
+        "motion": "fixed",
+        "role": "silent_support",
+        "scored": false,
+        "shape": "obb",
+        "sonic_identity_id": null
+      }
+    ],
+    "allow_post_release_overrides": false,
+    "allow_teleportation": false,
+    "backend": "fixed-obb-sphere-mechanics-1",
+    "camera_intent": {
+      "focus_actor_ids": [
+        "marble"
+      ],
+      "framing_intent": "Show the complete layered route, positive clearance and supported ending; keep decisive interactions in a readable shot.",
+      "mode": "fixed",
+      "readable_event_ids": [
+        "sustained-speedup",
+        "redirect",
+        "clearance"
+      ]
+    },
+    "collision_geometry": "fixed_obb_union",
+    "continuous_support": [
+      {
+        "actor_id": "marble",
+        "evidence_required": "Retain raw support-contact intervals and evaluate physical support; do not emit repeated impact events.",
+        "id": "ramp-support",
+        "kind": "continuous_support",
+        "stage_id": "descent",
+        "support_id": "ramp",
+        "window": {
+          "end_s": 3.5,
+          "start_s": 0.0
+        }
+      },
+      {
+        "actor_id": "marble",
+        "evidence_required": "Measure supported settling without freezing a free body.",
+        "id": "catch-support",
+        "kind": "continuous_support",
+        "stage_id": "catch",
+        "support_id": "catcher",
+        "window": {
+          "end_s": 16.0,
+          "start_s": 14.0
+        }
+      }
+    ],
+    "duration_s": 16.0,
+    "dynamic_actor": "marble",
+    "ending_intent": {
+      "actor_ids": [
+        "marble"
+      ],
+      "description": "Keep the actor visible as it reaches a supported catch area; no offscreen parking or teleport reset.",
+      "keep_visible": true,
+      "kind": "supported_rest",
+      "reset_policy": "no_teleport",
+      "support_ids": [
+        "catcher"
+      ],
+      "window": {
+        "end_s": 16.0,
+        "start_s": 14.0
+      }
+    },
+    "events": [
+      {
+        "actor": "marble",
+        "after": [],
+        "emit_once_per_episode": true,
+        "failure_any": [
+          {
+            "any": [
+              {
+                "metric": "speed_gain_m_s",
+                "operator": "lt",
+                "unit": "m/s",
+                "value": 0.4
+              }
+            ]
+          },
+          {
+            "metric": "event_time_s",
+            "operator": "outside_half_open",
+            "unit": "s",
+            "value": [
+              2.0,
+              2.7
+            ]
+          },
+          {
+            "metric": "independent_physical_validation",
+            "operator": "ne",
+            "unit": "status",
+            "value": "PASSED"
+          }
+        ],
+        "foley_eligible": false,
+        "id": "sustained-speedup",
+        "measurement_status": "NOT_MEASURED",
+        "music_salience": "primary",
+        "position_hint_m": [
+          1,
+          0,
+          3
+        ],
+        "success_all": [
+          {
+            "metric": "speed_gain_m_s",
+            "operator": "gte",
+            "unit": "m/s",
+            "value": 0.4
+          }
+        ],
+        "target": null,
+        "time_window_s": [
+          2.0,
+          2.7
+        ],
+        "type": "acceleration_phase"
+      },
+      {
+        "actor": "marble",
+        "after": [
+          "sustained-speedup"
+        ],
+        "emit_once_per_episode": true,
+        "failure_any": [
+          {
+            "any": [
+              {
+                "metric": "target_contact",
+                "operator": "ne",
+                "unit": "boolean",
+                "value": true
+              },
+              {
+                "metric": "heading_change_deg",
+                "operator": "lt",
+                "unit": "degrees",
+                "value": 20
+              }
+            ]
+          },
+          {
+            "metric": "event_time_s",
+            "operator": "outside_half_open",
+            "unit": "s",
+            "value": [
+              6.0,
+              6.5
+            ]
+          },
+          {
+            "metric": "independent_physical_validation",
+            "operator": "ne",
+            "unit": "status",
+            "value": "PASSED"
+          }
+        ],
+        "foley_eligible": true,
+        "id": "redirect",
+        "measurement_status": "NOT_MEASURED",
+        "music_salience": "primary",
+        "position_hint_m": [
+          2,
+          1,
+          2
+        ],
+        "success_all": [
+          {
+            "metric": "target_contact",
+            "operator": "eq",
+            "unit": "boolean",
+            "value": true
+          },
+          {
+            "metric": "heading_change_deg",
+            "operator": "gte",
+            "unit": "degrees",
+            "value": 20
+          }
+        ],
+        "target": "deflector",
+        "time_window_s": [
+          6.0,
+          6.5
+        ],
+        "type": "salient_collision"
+      },
+      {
+        "actor": "marble",
+        "after": [
+          "redirect"
+        ],
+        "emit_once_per_episode": true,
+        "failure_any": [
+          {
+            "any": [
+              {
+                "metric": "minimum_surface_clearance_m",
+                "operator": "lt",
+                "unit": "m",
+                "value": 0.02
+              },
+              {
+                "metric": "minimum_surface_clearance_m",
+                "operator": "gt",
+                "unit": "m",
+                "value": 0.05
+              },
+              {
+                "metric": "contact_in_window",
+                "operator": "ne",
+                "unit": "boolean",
+                "value": false
+              },
+              {
+                "metric": "bracketed_approach_and_separation",
+                "operator": "ne",
+                "unit": "boolean",
+                "value": true
+              }
+            ]
+          },
+          {
+            "metric": "event_time_s",
+            "operator": "outside_half_open",
+            "unit": "s",
+            "value": [
+              10.0,
+              10.6
+            ]
+          },
+          {
+            "metric": "independent_physical_validation",
+            "operator": "ne",
+            "unit": "status",
+            "value": "PASSED"
+          }
+        ],
+        "foley_eligible": false,
+        "id": "clearance",
+        "measurement_status": "NOT_MEASURED",
+        "music_salience": "primary",
+        "position_hint_m": [
+          3,
+          3,
+          1
+        ],
+        "success_all": [
+          {
+            "metric": "minimum_surface_clearance_m",
+            "operator": "gte",
+            "unit": "m",
+            "value": 0.02
+          },
+          {
+            "metric": "minimum_surface_clearance_m",
+            "operator": "lte",
+            "unit": "m",
+            "value": 0.05
+          },
+          {
+            "metric": "contact_in_window",
+            "operator": "eq",
+            "unit": "boolean",
+            "value": false
+          },
+          {
+            "metric": "bracketed_approach_and_separation",
+            "operator": "eq",
+            "unit": "boolean",
+            "value": true
+          }
+        ],
+        "target": "post",
+        "time_window_s": [
+          10.0,
+          10.6
+        ],
+        "type": "near_miss"
+      }
+    ],
+    "gravity_m_s2": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "maximum_colliders": 128,
+    "motion_source": "analytic_solver",
+    "music_hints": [
+      {
+        "actor_id": "marble",
+        "event_id": "clearance",
+        "intent": "Propose tension and space around the measured near miss; no impact Foley. Preserve the existing voice and original editable score.",
+        "kind": "harmonic_tension",
+        "status": "PROPOSAL_REQUIRES_APPROVAL",
+        "timing": "approved_musical_boundary"
+      },
+      {
+        "actor_id": "marble",
+        "event_id": null,
+        "intent": "Propose a bounded contour from signed evaluated motion after physical validation and exact plan approval.",
+        "kind": "phrase_contour",
+        "status": "PROPOSAL_REQUIRES_APPROVAL",
+        "timing": "approved_musical_boundary"
+      }
+    ],
+    "reference_lessons": [
+      {
+        "consumed_interval": null,
+        "evidence_note": "Consumed supplied text notes only. Their author inspected sparse frames; this run did not view or certify the referenced media.",
+        "id": "layered-route-notes",
+        "lesson": "Transfer layered, legible routing and visible support; preserve sparse events.",
+        "source": ".agents/skills/physics-aware-animation/references/EXEMPLARS.md",
+        "source_sha256": "9b9b7687c0bfbb4dd674789c761d386bec567aacc24656c13c30cae0d09ee86f",
+        "status": "visual_reference"
+      }
+    ],
+    "replay_requires_solver_trace": true,
+    "required_later_gates": [
+      "parameter_solution",
+      "independent_physical_validation",
+      "contact_certificates",
+      "fresh_process_replay",
+      "full_motion_camera_review",
+      "exact_human_approval"
+    ],
+    "route": {
+      "stages": [
+        {
+          "position_m": [
+            1,
+            0,
+            3
+          ],
+          "stage_id": "descent"
+        },
+        {
+          "position_m": [
+            2,
+            1,
+            2
+          ],
+          "stage_id": "deflection"
+        },
+        {
+          "position_m": [
+            3,
+            3,
+            1
+          ],
+          "stage_id": "clearance-route"
+        },
+        {
+          "position_m": [
+            5,
+            3,
+            0.5
+          ],
+          "stage_id": "catch"
+        }
+      ],
+      "start": {
+        "actor": "marble",
+        "position_m": [
+          0,
+          0,
+          4
+        ],
+        "support": "ramp",
+        "velocity_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "terminal": {
+        "actor": "marble",
+        "position_m": [
+          5.5,
+          3,
+          0.5
+        ],
+        "speed_max_m_s": 0.02,
+        "target": "catcher"
+      }
+    },
+    "sphere_material": {
+      "friction": 0.35,
+      "restitution": 0.55,
+      "rolling_resistance": 0.02
+    },
+    "support_contact_music_policy": "retain_raw_do_not_emit_per_sample"
+  },
+  "input_sha256": "940f849739998bd6ca9f6aa110c989eb76b0f2733249321c2e4c91fac598a184",
+  "schema_version": "scene-resolved-constraints-1",
+  "sha256": "7afc0b78d8edfb5beab01fb46159f02b4c13216d33b9b823dc017a0fd38c0032",
+  "source_plan": {
+    "events": [
+      {
+        "actor": "marble",
+        "after": null,
+        "failure_conditions": [
+          "success_condition_not_met",
+          "missed_time_window",
+          "unphysical_motion"
+        ],
+        "id": "sustained-speedup",
+        "music_salience": "primary",
+        "success_condition": {
+          "speed_gain_min": 0.4
+        },
+        "target": null,
+        "time_window": [
+          2.0,
+          2.7
+        ],
+        "type": "acceleration_phase"
+      },
+      {
+        "actor": "marble",
+        "after": "sustained-speedup",
+        "failure_conditions": [
+          "success_condition_not_met",
+          "missed_time_window",
+          "unphysical_motion"
+        ],
+        "id": "redirect",
+        "music_salience": "primary",
+        "success_condition": {
+          "heading_change_min_deg": 20,
+          "target_contact": true
+        },
+        "target": "deflector",
+        "time_window": [
+          6.0,
+          6.5
+        ],
+        "type": "salient_collision"
+      },
+      {
+        "actor": "marble",
+        "after": "redirect",
+        "failure_conditions": [
+          "success_condition_not_met",
+          "missed_time_window",
+          "unphysical_motion"
+        ],
+        "id": "clearance",
+        "music_salience": "primary",
+        "success_condition": {
+          "surface_clearance_m": {
+            "max": 0.05,
+            "min": 0.02
+          }
+        },
+        "target": "post",
+        "time_window": [
+          10.0,
+          10.6
+        ],
+        "type": "near_miss"
+      }
+    ],
+    "intent": {
+      "actors": [
+        {
+          "collision_enabled": true,
+          "id": "marble",
+          "motion": "dynamic",
+          "role": "actor",
+          "scored": true,
+          "shape": "sphere",
+          "sonic_identity_id": "voice:marble"
+        },
+        {
+          "collision_enabled": true,
+          "id": "ramp",
+          "motion": "fixed",
+          "role": "silent_support",
+          "scored": false,
+          "shape": "obb",
+          "sonic_identity_id": null
+        },
+        {
+          "collision_enabled": true,
+          "id": "deflector",
+          "motion": "fixed",
+          "role": "interaction_surface",
+          "scored": true,
+          "shape": "obb",
+          "sonic_identity_id": "voice:deflector"
+        },
+        {
+          "collision_enabled": true,
+          "id": "post",
+          "motion": "fixed",
+          "role": "silent_support",
+          "scored": false,
+          "shape": "obb",
+          "sonic_identity_id": null
+        },
+        {
+          "collision_enabled": true,
+          "id": "catcher",
+          "motion": "fixed",
+          "role": "silent_support",
+          "scored": false,
+          "shape": "obb",
+          "sonic_identity_id": null
+        }
+      ],
+      "camera": {
+        "focus_actor_ids": [
+          "marble"
+        ],
+        "framing_intent": "Show the complete layered route, positive clearance and supported ending; keep decisive interactions in a readable shot.",
+        "mode": "fixed",
+        "readable_event_ids": [
+          "sustained-speedup",
+          "redirect",
+          "clearance"
+        ]
+      },
+      "clock": "scene_seconds_zero_at_start",
+      "duration_s": 16.0,
+      "ending": {
+        "actor_ids": [
+          "marble"
+        ],
+        "description": "Keep the actor visible as it reaches a supported catch area; no offscreen parking or teleport reset.",
+        "keep_visible": true,
+        "kind": "supported_rest",
+        "reset_policy": "no_teleport",
+        "support_ids": [
+          "catcher"
+        ],
+        "window": {
+          "end_s": 16.0,
+          "start_s": 14.0
+        }
+      },
+      "event_order": [
+        "sustained-speedup",
+        "redirect",
+        "clearance"
+      ],
+      "events": [
+        {
+          "actor_ids": [
+            "marble"
+          ],
+          "clearance": null,
+          "id": "sustained-speedup",
+          "kind": "acceleration",
+          "measurement_required": "Measure tangential speed and energy against the declared contact model. A camera movement is not object acceleration.",
+          "physical_cause": "Gravity-driven descent on a supported ramp; target timing is a design request, not a measurement.",
+          "stage_id": "descent",
+          "target_window": {
+            "end_s": 2.7,
+            "start_s": 2.0
+          }
+        },
+        {
+          "actor_ids": [
+            "marble",
+            "deflector"
+          ],
+          "clearance": null,
+          "id": "redirect",
+          "kind": "bounce",
+          "measurement_required": "Contact-time interval, surface normal and pre/post velocities from evaluated states; no position/velocity injection.",
+          "physical_cause": "An oblique fixed surface redirects the incoming physical trajectory.",
+          "stage_id": "deflection",
+          "target_window": {
+            "end_s": 6.5,
+            "start_s": 6.0
+          }
+        },
+        {
+          "actor_ids": [
+            "marble",
+            "post"
+          ],
+          "clearance": {
+            "maximum_m": 0.05,
+            "minimum_m": 0.02,
+            "target_m": 0.035
+          },
+          "id": "clearance",
+          "kind": "near_miss",
+          "measurement_required": "Bracket the closest approach and certify a positive surface gap across the entire approach/separation interval, with numerical uncertainty; inspect camera readability.",
+          "physical_cause": "The outgoing trajectory passes a static post with positive separation before entering a supported ending.",
+          "stage_id": "clearance-route",
+          "target_window": {
+            "end_s": 10.6,
+            "start_s": 10.0
+          }
+        }
+      ],
+      "id": "offset-chute-intent-study",
+      "mechanics": {
+        "actuation_model": "Unpowered gravity-driven actor; no velocity/position injection to meet target times.",
+        "backend": "fixed-obb-sphere-mechanics-1",
+        "contact_model": "Existing sphere/fixed-OBB contact model; candidate contact certificates required.",
+        "gravity_m_s2": [
+          0.0,
+          0.0,
+          -9.81
+        ],
+        "limitations": [
+          "This is an unmeasured authoring target, not solved geometry.",
+          "No coupled dynamic-body collisions or adhesion."
+        ],
+        "material_model": "Declared restitution, friction and rolling-resistance parameters must be chosen and calibrated before solving.",
+        "model_version": "fixed-obb-sphere-mechanics-1",
+        "scope": "One dynamic sphere against fixed OBB colliders; no moving-contact obstacles or coupled bodies."
+      },
+      "music_hints": [
+        {
+          "actor_id": "marble",
+          "event_id": "clearance",
+          "intent": "Propose tension and space around the measured near miss; no impact Foley. Preserve the existing voice and original editable score.",
+          "kind": "harmonic_tension",
+          "status": "PROPOSAL_REQUIRES_APPROVAL",
+          "timing": "approved_musical_boundary"
+        },
+        {
+          "actor_id": "marble",
+          "event_id": null,
+          "intent": "Propose a bounded contour from signed evaluated motion after physical validation and exact plan approval.",
+          "kind": "phrase_contour",
+          "status": "PROPOSAL_REQUIRES_APPROVAL",
+          "timing": "approved_musical_boundary"
+        }
+      ],
+      "reference_lessons": [
+        {
+          "consumed_interval": null,
+          "evidence_note": "Consumed supplied text notes only. Their author inspected sparse frames; this run did not view or certify the referenced media.",
+          "id": "layered-route-notes",
+          "lesson": "Transfer layered, legible routing and visible support; preserve sparse events.",
+          "source": ".agents/skills/physics-aware-animation/references/EXEMPLARS.md",
+          "source_sha256": "9b9b7687c0bfbb4dd674789c761d386bec567aacc24656c13c30cae0d09ee86f",
+          "status": "visual_reference"
+        }
+      ],
+      "route_stages": [
+        {
+          "actor_ids": [
+            "marble",
+            "ramp"
+          ],
+          "entry_intent": "Supported release at the upper ramp.",
+          "exit_intent": "Travel toward the deflector.",
+          "id": "descent",
+          "mechanism": "Gravity-driven descent on a fixed ramp.",
+          "window": {
+            "end_s": 4.0,
+            "start_s": 0.0
+          }
+        },
+        {
+          "actor_ids": [
+            "marble",
+            "deflector"
+          ],
+          "entry_intent": "Incoming trajectory reaches the oblique surface.",
+          "exit_intent": "Redirect toward the clearance stage.",
+          "id": "deflection",
+          "mechanism": "One sphere contacts a fixed OBB.",
+          "window": {
+            "end_s": 8.0,
+            "start_s": 4.0
+          }
+        },
+        {
+          "actor_ids": [
+            "marble",
+            "post"
+          ],
+          "entry_intent": "Approach the fixed post.",
+          "exit_intent": "Separate from the post toward the catch area.",
+          "id": "clearance-route",
+          "mechanism": "Unpowered travel past a fixed clearance obstacle.",
+          "window": {
+            "end_s": 12.0,
+            "start_s": 8.0
+          }
+        },
+        {
+          "actor_ids": [
+            "marble",
+            "catcher"
+          ],
+          "entry_intent": "Enter the supported catch area.",
+          "exit_intent": "Remain supported and visible at the endpoint.",
+          "id": "catch",
+          "mechanism": "Dissipation/contact under the declared material model.",
+          "window": {
+            "end_s": 16.0,
+            "start_s": 12.0
+          }
+        }
+      ],
+      "salience_policy": {
+        "maximum_duty_cycle": 0.3,
+        "maximum_events": 4,
+        "maximum_simultaneous_events": 1,
+        "minimum_distinct_kinds": 2,
+        "minimum_gap_s": 1.0,
+        "support_contact_policy": "retain_raw_do_not_count_as_salient"
+      },
+      "schema_version": "scene-intent-2",
+      "status": "DESIGN_INTENT_NOT_MEASURED",
+      "support_contacts": [
+        {
+          "actor_id": "marble",
+          "evidence_required": "Retain raw support-contact intervals and evaluate physical support; do not emit repeated impact events.",
+          "id": "ramp-support",
+          "kind": "continuous_support",
+          "stage_id": "descent",
+          "support_id": "ramp",
+          "window": {
+            "end_s": 3.5,
+            "start_s": 0.0
+          }
+        },
+        {
+          "actor_id": "marble",
+          "evidence_required": "Measure supported settling without freezing a free body.",
+          "id": "catch-support",
+          "kind": "continuous_support",
+          "stage_id": "catch",
+          "support_id": "catcher",
+          "window": {
+            "end_s": 16.0,
+            "start_s": 14.0
+          }
+        }
+      ]
+    },
+    "motion_contract": {
+      "actor_radius_m": 0.15,
+      "overrides_after_release": [],
+      "post_release_animation": "solver_replay",
+      "sphere_material": {
+        "friction": 0.35,
+        "restitution": 0.55,
+        "rolling_resistance": 0.02
+      },
+      "teleportation": false,
+      "trajectory_source": "analytic_solver"
+    },
+    "route": {
+      "stages": [
+        {
+          "position_m": [
+            1,
+            0,
+            3
+          ],
+          "stage_id": "descent"
+        },
+        {
+          "position_m": [
+            2,
+            1,
+            2
+          ],
+          "stage_id": "deflection"
+        },
+        {
+          "position_m": [
+            3,
+            3,
+            1
+          ],
+          "stage_id": "clearance-route"
+        },
+        {
+          "position_m": [
+            5,
+            3,
+            0.5
+          ],
+          "stage_id": "catch"
+        }
+      ],
+      "start": {
+        "actor": "marble",
+        "position_m": [
+          0,
+          0,
+          4
+        ],
+        "support": "ramp",
+        "velocity_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "terminal": {
+        "actor": "marble",
+        "position_m": [
+          5.5,
+          3,
+          0.5
+        ],
+        "speed_max_m_s": 0.02,
+        "target": "catcher"
+      }
+    },
+    "schema_version": "scene-feasibility-plan-1"
+  },
+  "status": "READY_FOR_CONSTRUCTION",
+  "validator_version": "scene-plan-validator-1"
+}

@@ -80,6 +80,8 @@ class Workspace:
         self.diagnostics = Diagnostics(self)
         from .automatic import AutomaticTrainer
         self.automatic = AutomaticTrainer(self.root / "automatic", self.sources)
+        from .preparation import Preparation
+        self.preparation = Preparation(self.sources)
         for path in sorted(self.root.glob("session-*")):
             if len(self.records) >= 64:
                 raise ValueError("session_capacity_exceeded")
@@ -149,7 +151,7 @@ class Workspace:
         return {key: self.model.get(key) for key in keys}
 
     def connect(self, body):
-        if self.automatic.status()["active"]:
+        if self.automatic.status()["active"] or self.preparation.thread and self.preparation.thread.is_alive():
             raise ValueError("stop_automatic_training_before_manual_connection")
         if body.get("consent") is not True:
             raise ValueError("explicit_live_processing_consent_required")
@@ -378,12 +380,38 @@ class Workspace:
         return self.status()
 
     def automatic_start(self, body):
+        if body != {"consent": True}:
+            raise ValueError("explicit_Train_local_recording_consent_required")
         with self.lock:
             if self.recorder is not None or self.training:
                 raise ValueError("stop_manual_recording_or_training_first")
+            if self.automatic.status()["active"]:
+                raise ValueError("automatic_run_already_active_or_closed")
+        source, evidence = self.preparation.take()
+        try:
+            return self.automatic.start(body, prepared_source=source, signal_check=evidence)
+        except BaseException:
+            source.close()
+            raise
+
+    def automatic_connect(self, body):
+        if body != {"consent": True}:
+            raise ValueError("explicit_connect_required")
+        with self.lock:
+            if self.recorder is not None or self.training or self.automatic.status()["active"]:
+                raise ValueError("Stop training before reconnecting your headset.")
         if self.connected:
             self.disconnect()
-        return self.automatic.start(body)
+        self.preparation.connect(synthetic=self.automatic.synthetic)
+        return self.automatic_status()
+
+    def automatic_status(self):
+        return {**self.automatic.status(), "preparation": self.preparation.snapshot(touch=True)}
+
+    def automatic_stop(self):
+        self.preparation.stop()
+        self.automatic.stop()
+        return self.automatic_status()
 
     def record_start(self, body):
         participant, refit = identifier(body.get("participant_id")), identifier(body.get("refit_id"))
@@ -831,4 +859,7 @@ class Workspace:
             try:
                 self.automatic.close()
             finally:
-                self.disconnect()
+                try:
+                    self.preparation.close()
+                finally:
+                    self.disconnect()

@@ -1,0 +1,443 @@
+{
+  "pid": 93100,
+  "videos": [
+    {
+      "id": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+      "title": "Projectile & tower",
+      "audio": "live",
+      "status": "passed"
+    },
+    {
+      "id": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+      "title": "A near miss",
+      "audio": "live",
+      "status": "passed"
+    },
+    {
+      "id": "4dda38d936d12b2948faf77712cd8767a8cbaae5ed11514f7776dbbf56c8cdc7",
+      "title": "05 bouncing staircase",
+      "audio": "live",
+      "status": "passed"
+    },
+    {
+      "id": "15b9edf275984bc17134e45871c7db54ea5b0638bc70208089cd02d6164b2b57",
+      "title": "06 three ways down-v4",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "5ea58f41e1a49960091d4829a59a501714f699380ff0a73003e9612496ea3f54",
+      "title": "01 head on",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "b13965df4f27a190d367b18cd0b4e0bdeecd2a8bb33809eafb16258006a0ed93",
+      "title": "18 billiard greenhouse-v3",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "96bfc2fb54c8f5929c6854be42f0747f7a70a8d100de2bdf0e61385a8943146e",
+      "title": "contact",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "5e71b587cac8533e7a34836fd34f341d065d295a35e5eea2b888a84b4aeebffa",
+      "title": "contact",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "705a24cef2fa991d73084e63167e1e714e26f2ccdb12ee7657fa0d4f0f3e7c6a",
+      "title": "near miss",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "b40500a2a33ece61d0bb625c7a461bfddb9fd3a59d14401776cc5652dc8065be",
+      "title": "no launch",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "c5eb38409eb54bc432d93cfb46e4cc8756c925bc1f46f0ac0753e33192045f30",
+      "title": "09 breathing crowd",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "887dbbfcd272e9142c01c3bc0b677ebce49080680a419ca056e2b497f8e70adf",
+      "title": "04 orbital approach",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "08193d4dec28e1f50127f776904e2c2f1034058c999aaf9ed3bdf90938099aaf",
+      "title": "07 shape contrast",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "a2dd945ae807dc569ee4181e39f3d473edf81a3029e77c24e33fed53664b713a",
+      "title": "08 domino cascade",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "7e54453775919bf0791664fc6ce115d97ef1898114dc161342eb5bf7d0ace7e0",
+      "title": "03 passing ascent",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "b7fa665930108049e3e500c75f1913927b4776d0b1078b1f258852b794b31e84",
+      "title": "09 breathing crowd",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "752b4876b470a84dc1e076fb9597352cbbdf2a903299486625525723a7848e99",
+      "title": "02 near miss twins",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "5d826c89d5976922197a20fc03e3c194d3f668c6eb86e81a3147eecf00b2e69a",
+      "title": "06 sliding contact",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "b92a2eba4454d37ac76644dcf4af6e10e63734d27d8904c11b316b64eb3fc166",
+      "title": "04 orbital approach",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "999c522a270c01f2e1c9153b9d0b9061543cd06dd17de79b9cf4d7854e87d281",
+      "title": "01 head on",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "589defb7e902127c21ff288dbc165167c5681d1f6479afd89091af6a7f272ccf",
+      "title": "05 bouncing staircase-32",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "55fbdd75622266e95beaa210e10363a1058fcc0242931211c539115857569c85",
+      "title": "05 bouncing staircase-32",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "a860b7830f6af7252abda1f0155a0531a8492dc004cd1a549d246fa15ec738b7",
+      "title": "07 shape contrast",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "ade16e91477224210841fe4fb6d92e92724044468b9a378ca1193769e95550d3",
+      "title": "03 passing ascent",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "48e464238d769dd6cc60de6229f41682e411b8f07d419fc9739b26f1bc1941d4",
+      "title": "06 sliding contact",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "dc7122d16dc242cb519dd3eda3d70afe07fafadebe5b880bbd050c3aa9aff555",
+      "title": "02 near miss twins",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "5c6fdd4bbafc38f5cdac63b419ee41b9afa27583597c2f357ce927c6d3e3bd0d",
+      "title": "03 passing ascent",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "d150946021fe85c1fb6468d57be91bad87b4e4e9184ef22701bef3323e59178b",
+      "title": "03 passing ascent",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "c40c3257fef487b7e718dea50d9dd2f535882f1f65f28c1d9ebbec6fc4aac147",
+      "title": "10 projectile tower-default",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "b8046345b269fb77f90a05f3735800d0bfd35aa369bb295653b10b7c11f2fc7c",
+      "title": "10 projectile tower-near miss",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "dc30ffa126dd4558459994d6571449c803140cf00b29517bbf3b0ea15bad0766",
+      "title": "10 projectile tower-near miss",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "d147b90c9efbf63e7aec5fb16de28a2f621737723b92ed406ae211cbbcbc3a54",
+      "title": "rag",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "07b7a63dff7b3cde02c85648b88c97ca3070dda148a4106c7e805815fe9f60aa",
+      "title": "swing",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "3646bea555ad8f8e3a0255cb349cc6b71a0436903e8de1ee8ebfab1811bf7e10",
+      "title": "mapped-draft",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "a446a0d4ca76c729c7de008cf242e1b9cd7092d293d44562771d4f79826dbf14",
+      "title": "ballad",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "3013c1f8408602d5e2686012c9a1e25483aa2a044bb71d6a8feaca3b107a8efb",
+      "title": "staircase",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "8b69ad6b639e670ed701e44f92aa49a359dee02c6e5d8a6755a1595941df2265",
+      "title": "scenescore",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "d1d024256487765d7463ebc88a707f9952ac41bd1b6c75fed042b230b209a2bb",
+      "title": "unmodified-draft",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "1068d5d4636601114122be6dce2c8a22697fe93d5ba0cd0e80dc22d148708a9f",
+      "title": "staircase-rag",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "d4e14684f03552778762e9d7bfeb7fe088517e90f2593525afdd354e162a6d99",
+      "title": "Pocket-Workshop",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "a4d2682c76d00433a177589abc573f4323f31a77dd862043e2bbd3e3f84586dd",
+      "title": "Pocket-Workshop",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "2cefe8e709577e8f9933765f267ac1c96e725f724d4fbc7a44336f88e7c32b14",
+      "title": "Pocket-Workshop-Piano-Guitar",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "c966960d9eda1e722edbc29744dbf2ef9198e3e4ff669b1bbd6562e67347f22b",
+      "title": "Pocket-Workshop-Piano-Guitar",
+      "audio": "embedded",
+      "status": "passed"
+    },
+    {
+      "id": "b999f594a730c211734549b0ff86fd7bebf9f0d907f6febcf28bb3c87cd51523",
+      "title": "01 marble helix",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "ff5cda81a63475b90a27d07f14162be4c49c3211744ff9505cc9cb7d20a8618d",
+      "title": "02 cube rebound",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "af113f36bf3d1017691191986e0b87992d25a40550b3228809ee4ba9b77c9e69",
+      "title": "03 triangle catapult",
+      "audio": "silent",
+      "status": "passed"
+    },
+    {
+      "id": "2f99e5bd9e8200a742146c4e34a4703768d3fed813c6e97ca99a27454a44cd45",
+      "title": "08 spiral observatory-v3",
+      "audio": "silent",
+      "status": "passed"
+    }
+  ],
+  "piano": [
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_swing_light_v1-clean-piano-v1",
+      "stems": {
+        "mix": {
+          "peak": 0.21508492529392242,
+          "rms": 0.04363286513759009,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "piano": {
+          "peak": 0.2110588252544403,
+          "rms": 0.043092324622835326,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "bass": {
+          "peak": 0.012903805822134018,
+          "rms": 0.0020074902758389457,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "brush": {
+          "peak": 0.0006557410233654082,
+          "rms": 0.00004103077002513181,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "foley": {
+          "peak": 0.07036416977643967,
+          "rms": 0.006457658879513698,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        }
+      },
+      "piano_over_brush_db": 60.42580510711023,
+      "saved_files": 6
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_ballad_sparse_v1-clean-piano-v1",
+      "stems": {
+        "mix": {
+          "peak": 0.21504023671150208,
+          "rms": 0.04363254648690836,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "piano": {
+          "peak": 0.2110588401556015,
+          "rms": 0.04309232462427401,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "bass": {
+          "peak": 0.012903805822134018,
+          "rms": 0.0020074902758389457,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "brush": {
+          "peak": 0.00042797220521606505,
+          "rms": 0.000019893774400871103,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "foley": {
+          "peak": 0.07036416977643967,
+          "rms": 0.006457658879513698,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        }
+      },
+      "piano_over_brush_db": 66.71365468344409,
+      "saved_files": 6
+    },
+    {
+      "id": "piano-studio:05_bouncing_staircase-brush_straight_rag_v1-clean-piano-v1",
+      "stems": {
+        "mix": {
+          "peak": 0.21509011089801788,
+          "rms": 0.043632737818703055,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "piano": {
+          "peak": 0.2110588252544403,
+          "rms": 0.04309232463498546,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "bass": {
+          "peak": 0.012903805822134018,
+          "rms": 0.0020074902758389457,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "brush": {
+          "peak": 0.000498349079862237,
+          "rms": 0.000033759239857500926,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        },
+        "foley": {
+          "peak": 0.07036416977643967,
+          "rms": 0.006457658879513698,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 8,
+          "channels": 2
+        }
+      },
+      "piano_over_brush_db": 62.1201452738823,
+      "saved_files": 6
+    }
+  ],
+  "errors": [],
+  "human_audition": "NOT_RUN",
+  "physical_output_measured": false,
+  "browser_closed": true,
+  "coverage": {
+    "requested": 78,
+    "available": 78,
+    "unique_videos": 47,
+    "live_scores": 3,
+    "original_audio": 12,
+    "silent": 32
+  },
+  "status": "passed"
+}

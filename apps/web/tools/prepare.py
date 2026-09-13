@@ -78,7 +78,8 @@ def main():
                   'source':'SYNTHETIC_TEST','audition_status':'AUDITION_PENDING'}
             data.update(selection=selection,role_supplement=roles,playback_policy=ctx.playback_policy,
                         music_handoff_binding=handoff_binding,
-                        source_events_bytes=encoded(events).decode(),approval=None,
+                        source_events_bytes=encoded(events).decode(),events_bytes=encoded(events).decode(),approval=None,
+                        composition_input_bytes=encoded({'composition':composition,'groove':groove}).decode(),
                         scene_input_bytes=encoded(ctx.scene_inputs).decode(),
                         animation_label=selection['label'])
             if not selection['legacy_choreography']:

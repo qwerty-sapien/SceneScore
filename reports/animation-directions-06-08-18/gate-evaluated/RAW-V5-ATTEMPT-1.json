@@ -1,0 +1,12 @@
+{
+  "pid": 89075,
+  "pgid": 89075,
+  "session": 1352,
+  "exit_code": 1,
+  "result": "INCOMPLETE_RUNTIME_CAP",
+  "runtime_cap_s": 150,
+  "last_completed_progress_tick": 5400,
+  "checked_unix_s": 1789278385.11813,
+  "state": "ABSENT",
+  "packet_sha256": "80fa90ba477c25610176377ad315b0e8737de5633b60ad4f988ca6cb11ea4b53"
+}

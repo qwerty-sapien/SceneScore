@@ -1,0 +1,32 @@
+TASK LAUNCHER PID=69156
+
+> scenescore-harness@0.1.0 prebuild
+> node apps/web/tools/catalog.mjs
+
+Video library: 3 animations, 22 soundtracks
+
+> scenescore-harness@0.1.0 build
+> vite build apps/web --outDir ../../artifacts/web-dist --emptyOutDir
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 225 modules transformed.
+rendering chunks...
+computing gzip size...
+../../artifacts/web-dist/index.html                   0.40 kB │ gzip:   0.29 kB
+../../artifacts/web-dist/assets/index-CdnhGWEh.css   15.00 kB │ gzip:   3.85 kB
+../../artifacts/web-dist/assets/index-Cd1rwtVm.js   585.28 kB │ gzip: 160.06 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.20s
+TASK JOB PID=69204 PGID=69204: uvicorn
+TASK JOB PID=69205 PGID=69205: services.bridge
+Open http://127.0.0.1:8788; Start blink demo. The companion is SYNTHETIC_TEST. Paste its token, select Simulated, wait for warmup and arm. Ctrl-C stops both jobs; raw EEG is never recorded.
+{"listen": "127.0.0.1:8766", "mode": "SYNTHETIC_TEST", "origins": ["http://127.0.0.1:8788"], "lifetime_s": 60.0, "recording": false}
+
+Aborted!
+STOPPED PID=69204 exit=1
+STOPPED PID=69205 exit=0

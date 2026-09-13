@@ -1,0 +1,23 @@
+✔ scan UI needs an authenticated direct-BLE companion and supports empty scans (10.615917ms)
+✔ discovered device selection enables connect, not a raw identifier field (30.714083ms)
+✔ connection stages distinguish GATT connectivity from valid EEG and arm state (5.05825ms)
+✔ safe failures explain Bluetooth off, permission, expired discovery, and disconnect stages (2.776292ms)
+✔ missing profile, warmup, quality failure and every gate suppress arming (4.265083ms)
+✔ BLE clock caution identifies the uncalibrated allowance without claiming measured latency (1.111375ms)
+✔ LIVE_MUSE selection remains visible with keyboard fallback and never claims a false live stream (0.263791ms)
+✔ client uses narrow authenticated requests and individual deadlines; poll stays available during scan (17.762833ms)
+✔ closed or superseded companion sessions reject late operations even when a fetcher ignores abort (0.789625ms)
+✔ arm/disarm serialize so a delayed arm cannot override a newer disarm (0.716125ms)
+✔ client refuses invalid discovery and uses safe error codes without native error traces (0.583ms)
+✔ all four modes retain provenance and every live gate is required (0.669125ms)
+✔ feedback delayed beyond gesture and quiet window remains unreviewed, not truth (0.576375ms)
+✔ clock requires two anchors, estimates rate, propagates uncertainty and rejects stale/skewed sources (0.711709ms)
+✔ default fetch retains browser global receiver through authenticated handshake (17.119292ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 242.1145

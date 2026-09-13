@@ -1,0 +1,480 @@
+{
+  "status": "PASSED",
+  "reference_preserved": true,
+  "candidates": [
+    {
+      "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4",
+      "status": "PASSED",
+      "video": {
+        "approval": null,
+        "duration_s": 30,
+        "fps": 30,
+        "frames": 900,
+        "full_decode": true,
+        "height": 720,
+        "max_pts_error_s": 3.3333333604446125e-07,
+        "perceptual_acceptance": "pending human review",
+        "scene_sha256": "a8c0d5def4e15ed55c66981bcd581b9e0db36530fec9bcdaecf5fd11127c2de8",
+        "status": "PASSED",
+        "video_sha256": "15b9edf275984bc17134e45871c7db54ea5b0638bc70208089cd02d6164b2b57",
+        "width": 1280
+      },
+      "computed_states_sha256": "2058c5035bcb4250e04ef196483c404d678dd4ae355c2513ed0858e3aaa4b158",
+      "source_files": 8,
+      "jobs": 8,
+      "job_seconds": 829.2624157520477,
+      "mechanics_scope": "analytic-constrained-guide-v1",
+      "scope": "byte lineage, computed clock, fresh replay, complete movie cadence/decode and job receipts; not human acceptance"
+    },
+    {
+      "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3",
+      "status": "PASSED",
+      "video": {
+        "approval": null,
+        "duration_s": 30,
+        "fps": 30,
+        "frames": 900,
+        "full_decode": true,
+        "height": 720,
+        "max_pts_error_s": 3.3333333604446125e-07,
+        "perceptual_acceptance": "pending human review",
+        "scene_sha256": "28c40d1af3ffae93389771929f653d89326837daa6e5274447a40d168067db82",
+        "status": "PASSED",
+        "video_sha256": "2f99e5bd9e8200a742146c4e34a4703768d3fed813c6e97ca99a27454a44cd45",
+        "width": 1280
+      },
+      "computed_states_sha256": "07f850132afdcaefe94088e122617edcea4c669d2fc09d7585284d29dde4b208",
+      "source_files": 8,
+      "jobs": 8,
+      "job_seconds": 681.1766942502,
+      "mechanics_scope": "analytic-constrained-guide-v1",
+      "scope": "byte lineage, computed clock, fresh replay, complete movie cadence/decode and job receipts; not human acceptance"
+    },
+    {
+      "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3",
+      "status": "PASSED",
+      "video": {
+        "approval": null,
+        "duration_s": 30,
+        "fps": 30,
+        "frames": 900,
+        "full_decode": true,
+        "height": 720,
+        "max_pts_error_s": 3.3333333604446125e-07,
+        "perceptual_acceptance": "pending human review",
+        "scene_sha256": "1cf64fb9929d2632c079c0b24c716830822f95784e7e83f6c3b39692862e4329",
+        "status": "PASSED",
+        "video_sha256": "b13965df4f27a190d367b18cd0b4e0bdeecd2a8bb33809eafb16258006a0ed93",
+        "width": 1280
+      },
+      "computed_states_sha256": "0f1c7f8f293eccae65f715fbbd8d329f2e6117e8f6fb0afb4ab2713b6ffe7195",
+      "source_files": 8,
+      "jobs": 8,
+      "job_seconds": 854.4034077931428,
+      "mechanics_scope": "planar-puck-hinge-mechanics-1",
+      "scope": "byte lineage, computed clock, fresh replay, complete movie cadence/decode and job receipts; not human acceptance"
+    }
+  ],
+  "independent_geometry_evidence": {
+    "report": "/Users/agent/Desktop/SceneScore/reports/animation-directions-06-08-18/gate-evaluated/FINAL-SCOPED-GATE.json",
+    "report_sha256": "26dee32a97ce833ef51efffc8c67e84dcc5aaec0503bdd5cdbac81295367ba5c",
+    "status": "PASSED_SCOPED_EVALUATED_STATIC_GEOMETRY",
+    "candidates": {
+      "06_three_ways_down-v4": {
+        "status": "PASSED_SCOPED_STATIC_GEOMETRY",
+        "maximum_conservative_swept_floor_intrusion_m": 1.3734037986157244e-05,
+        "minimum_other_static_interval_clearance_m": 0.003837097915444284,
+        "own_rail_exclusion": "Independent actual evaluated Y halfspace proof against every body pose"
+      },
+      "08_spiral_observatory-v3": {
+        "status": "PASSED_SCOPED_STATIC_GEOMETRY",
+        "maximum_conservative_swept_guide_intrusion_m": 0.000168882879240162,
+        "minimum_other_static_swept_clearance_m": 0.023856539091366646,
+        "static_objects_excluded": []
+      }
+    },
+    "scope_limits": [
+      "06 moving receiver verification remains the integrator explicit-pose/source-gap check.",
+      "08 moving plunger and coil independently checked at every replay sample, not with an inter-sample moving-OBB sweep.",
+      "No full-motion perceptual acceptance, music audition, device validation, or human approval is asserted."
+    ]
+  },
+  "teardown": {
+    "status": "PASSED",
+    "jobs": [
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v1/jobs/build.job.json",
+        "pgid": 46746,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v1/jobs/replay.job.json",
+        "pgid": 52020,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v1/jobs/stills.job.json",
+        "pgid": 52078,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v1/jobs/verify.job.json",
+        "pgid": 52057,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v2/jobs/build.job.json",
+        "pgid": 65460,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v2/jobs/replay.job.json",
+        "pgid": 65593,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v2/jobs/stills.job.json",
+        "pgid": 65662,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v2/jobs/verify.job.json",
+        "pgid": 65660,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v3/jobs/build.job.json",
+        "pgid": 68136,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v3/jobs/replay.job.json",
+        "pgid": 69117,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v3/jobs/stills.job.json",
+        "pgid": 69140,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v3/jobs/verify.job.json",
+        "pgid": 69138,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/build.job.json",
+        "pgid": 81532,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/encode.job.json",
+        "pgid": 32799,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/media-decode.job.json",
+        "pgid": 33857,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/media-probe.job.json",
+        "pgid": 33854,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/render-0001-0900.job.json",
+        "pgid": 83467,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/replay.job.json",
+        "pgid": 81830,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/stills.job.json",
+        "pgid": 81927,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v4/jobs/verify.job.json",
+        "pgid": 81919,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v1/jobs/build.job.json",
+        "pgid": 52443,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v1/jobs/replay.job.json",
+        "pgid": 53056,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v1/jobs/stills.job.json",
+        "pgid": 53089,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v1/jobs/verify.job.json",
+        "pgid": 53088,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/build.job.json",
+        "pgid": 62500,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/encode.job.json",
+        "pgid": 82655,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/media-decode.job.json",
+        "pgid": 82731,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/media-probe.job.json",
+        "pgid": 82726,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/render-0001-0900.job.json",
+        "pgid": 77459,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/replay.job.json",
+        "pgid": 62607,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/stills.job.json",
+        "pgid": 63590,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v3/jobs/verify.job.json",
+        "pgid": 63322,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v1/jobs/build.job.json",
+        "pgid": 68882,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v1/jobs/replay.job.json",
+        "pgid": 69843,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v1/jobs/stills.job.json",
+        "pgid": 70616,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v1/jobs/verify.job.json",
+        "pgid": 69869,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v2/jobs/build.job.json",
+        "pgid": 73318,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v2/jobs/replay.job.json",
+        "pgid": 73631,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v2/jobs/stills.job.json",
+        "pgid": 73643,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v2/jobs/verify.job.json",
+        "pgid": 73641,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/build.job.json",
+        "pgid": 76772,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/encode.job.json",
+        "pgid": 15854,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/media-decode.job.json",
+        "pgid": 16727,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/media-probe.job.json",
+        "pgid": 16725,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/render-0001-0900.job.json",
+        "pgid": 81102,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/replay.job.json",
+        "pgid": 79328,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/stills.job.json",
+        "pgid": 79421,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/jobs/verify.job.json",
+        "pgid": 79398,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/_renderer-fixture-01/jobs/build-host.job.json",
+        "pgid": 62229,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/_renderer-fixture-01/jobs/build.job.json",
+        "pgid": 61299,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "failed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/_renderer-fixture-01/jobs/replay.job.json",
+        "pgid": 62349,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/_renderer-fixture-01/jobs/stills.job.json",
+        "pgid": 62502,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      },
+      {
+        "receipt": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/_renderer-fixture-01/jobs/verify.job.json",
+        "pgid": 62494,
+        "recorded_absent": true,
+        "currently_absent": true,
+        "status": "passed"
+      }
+    ],
+    "live_groups": [],
+    "method": "read-only killpg(pgid,0); no signal sent"
+  }
+}

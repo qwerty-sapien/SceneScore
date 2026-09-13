@@ -1,0 +1,62 @@
+{
+  "id": "dpl_72Liceq9qWrHPfrp2koJEhdb2jP5",
+  "name": "scenescore-muse-vertical",
+  "url": "scenescore-muse-vertical-c4vxryvb7-chups-projects-4fe0e3a7.vercel.app",
+  "target": "production",
+  "readyState": "READY",
+  "createdAt": 1789277750922,
+  "aliases": [
+    "scenescore-muse-vertical.vercel.app",
+    "scenescore-muse-vertical-chups-projects-4fe0e3a7.vercel.app"
+  ],
+  "builds": [
+    {
+      "id": "bld_5xxlm76sq",
+      "deploymentId": "dpl_72Liceq9qWrHPfrp2koJEhdb2jP5",
+      "entrypoint": ".",
+      "readyState": "READY",
+      "readyStateAt": 1789277750832,
+      "createdAt": 1789277750832,
+      "createdIn": "sfo1",
+      "use": "@vercel/vc-build",
+      "config": {
+        "nodeVersion": "24.x",
+        "projectCreatedAt": 1789239715091,
+        "vercelConfig": {
+          "version": 2,
+          "framework": null,
+          "buildCommand": null,
+          "headers": [
+            {
+              "source": "/(.*)",
+              "headers": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                }
+              ]
+            },
+            {
+              "source": "/train(.*)",
+              "headers": [
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src http://127.0.0.1:8767; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+                }
+              ]
+            }
+          ],
+          "name": "scenescore-muse-vertical"
+        }
+      },
+      "middleware": [],
+      "output": [],
+      "fingerprint": null
+    }
+  ],
+  "contextName": "chups-projects-4fe0e3a7"
+}

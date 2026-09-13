@@ -3,16 +3,16 @@ import {Timeline} from '../../../../packages/audio/transport';
 import {polyphony} from '../../../../packages/audio/mix';
 
 export type Entry={id:string;title:string;variant:string;groove:string;url:string;sha256:string;arrangement?:string;composition?:string;video?:string};
-export type VideoItem={id:string;title:string;duration:number;video:string;label:string;source:'prepared'|'imported';entries:Entry[]};
+export type VideoItem={id:string;title:string;duration:number;video:string;label:string;source:'prepared'|'imported'|'rendered';entries:Entry[];audio?:'live'|'embedded'|'silent';video_sha256?:string;sourcePaths?:string[];accompaniment?:{version:'video-accompaniment-1'|'video-accompaniment-2';seed:number}};
 export type ImportedVideo={id:string;raw:string;media:Blob;item:VideoItem;added:number};
-export const MAX_JSON_BYTES=32*1024*1024,MAX_VIDEO_BYTES=256*1024*1024;
+export const MAX_JSON_BYTES=64*1024*1024,MAX_VIDEO_BYTES=256*1024*1024;
 export const MAX_LIBRARY_BYTES=512*1024*1024,MAX_IMPORTS=12;
-export const soundtrackName=(entry:Entry)=>`${entry.composition??entry.title} · ${entry.arrangement==='guitar'?'Guitar + piano':entry.arrangement==='vibraphone'?'Vibraphone':entry.arrangement==='prepared transitions'?'Prepared transitions':'Piano'} · ${entry.groove==='brush_swing_light_v1'?'Light swing':entry.groove==='brush_ballad_sparse_v1'?'Sparse brush':entry.groove==='brush_straight_rag_v1'?'Straight rag':entry.groove}`;
+export const soundtrackName=(entry:Entry)=>`${entry.composition??entry.title} · ${entry.arrangement==='clean-piano'?'Clean piano':entry.arrangement==='guitar'?'Guitar + piano':entry.arrangement==='vibraphone'?'Vibraphone':entry.arrangement==='prepared transitions'?'Prepared transitions':'Legacy keyboard'} · ${entry.groove==='brush_swing_light_v1'?'Light swing':entry.groove==='brush_ballad_sparse_v1'?'Sparse brush':entry.groove==='brush_straight_rag_v1'?'Straight rag':entry.groove}`;
 export const durationLabel=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 
 /** Accept prepared sidecars only. External paths in imported JSON are never fetched. */
 export async function inspectImport(sidecar:Blob,media:Blob){
- if(!sidecar.size||sidecar.size>MAX_JSON_BYTES)throw Error('Choose a prepared sidecar JSON under 32 MB.');
+ if(!sidecar.size||sidecar.size>MAX_JSON_BYTES)throw Error('Choose a prepared sidecar JSON under 64 MB.');
  if(!media.size||media.size>MAX_VIDEO_BYTES)throw Error('Choose a matching MP4 under 256 MB.');
  let b:Bundle;const raw=await sidecar.text();
  try{b=JSON.parse(raw);}catch{throw Error('The sidecar is not valid JSON.');}
@@ -33,10 +33,12 @@ export async function inspectImport(sidecar:Blob,media:Blob){
  // Legacy Python bundles bind the composition with their sorted JSON serializer.
  else if(await sha(new TextEncoder().encode(stable({composition:b.composition,groove:b.groove})+'\n'))!==b.composition_hash)
   throw Error('Composition is missing its matching source bytes. Re-prepare this sidecar.');
+ if(new Set(b.events.map(e=>e.id)).size!==b.events.length)throw Error('The score contains duplicate event IDs.');
+ if(b.events.some(e=>e.object_id!==null&&!b.scene.objects.some(o=>o.object_id===e.object_id)))throw Error('The score refers to an unknown scene object.');
  polyphony(b.events);new Timeline(b,p,b.plan_sha256);
  const digest=await sha(new TextEncoder().encode(raw)),id='import-'+digest;
  const entry:Entry={id,title:b.title,variant:b.variant,groove:b.groove.id,url:'',sha256:digest,
-  arrangement:b.sound_design?.lead??(b.music_vertical?'prepared transitions':'piano'),composition:b.composition.title};
+  arrangement:b.piano_mix?'clean-piano':b.sound_design?.lead??(b.music_vertical?'prepared transitions':'piano'),composition:b.composition.title};
  const item:VideoItem={id,title:b.title,duration:b.scene.duration_s,video:'',label:b.animation_label??b.source,source:'imported',entries:[entry]};
  return {id,raw,media,item,added:Date.now()} satisfies ImportedVideo;
 }

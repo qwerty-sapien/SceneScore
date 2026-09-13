@@ -1,5 +1,7 @@
 export type SourceMode='real_device'|'synthetic';
-export interface CheckEstimate {precision:number|null;recall:number|null;complete:boolean;target_reached:boolean;labels:number;monitored_s:number;background_s:number;availability:number}
+export interface PreparationStatus {state:'idle'|'connecting'|'checking'|'ready'|'error';message:string;ready:boolean;recording:false;signal:{measurable:boolean;seconds:number;peak_to_peak_uv:number[];rate_hz:number|null}}
+export interface AutomaticStatus {preparation?:PreparationStatus}
+export interface CheckEstimate {precision:number|null;recall:number|null;complete:boolean;target_reached:boolean;labels:number;monitored_s:number;background_s:number;availability:number;tp?:number;fp?:number;fn?:number}
 export interface AutomaticStatus {phase:'idle'|'connecting'|'learning'|'fitting'|'checking'|'stopping'|'stopped'|'complete'|'error';active:boolean;message:string;run_id:string|null;source_mode:SourceMode;elapsed_s:number;limit_s:number;labels:number;usable_positive_windows:number;background_windows:number;checkpoint_id:string|null;training_steps:number;evaluation:CheckEstimate|null;target:number;target_advisory:true}
 export type Role='train'|'development'|'final_test';
 export type TrialClass='double'|'single'|'triple'|'natural'|'artifact'|'keypress_only';

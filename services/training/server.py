@@ -182,8 +182,9 @@ class Handler(BaseHTTPRequestHandler):
                 state.automatic.touch()
             if mutation:
                 handlers = {
+                    "/automatic/connect": state.automatic_connect,
                     "/automatic/start": state.automatic_start,
-                    "/automatic/stop": lambda _: state.automatic.stop(),
+                    "/automatic/stop": lambda _: state.automatic_stop(),
                     "/automatic/label": state.automatic.label,
                     "/connect": state.connect,
                     "/disconnect": lambda _: state.disconnect(),
@@ -198,7 +199,7 @@ class Handler(BaseHTTPRequestHandler):
                 }
             else:
                 handlers = {
-                    "/automatic/status": lambda _: state.automatic.status(),
+                    "/automatic/status": lambda _: state.automatic_status(),
                     "/automatic/checkpoints": lambda _: state.automatic.store.summaries(),
                     "/status": lambda _: state.status(),
                     "/diagnostics": lambda _: state.diagnostics.snapshot(),

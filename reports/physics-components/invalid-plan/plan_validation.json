@@ -1,0 +1,59 @@
+{
+  "answers": {
+    "coherent_sequence": "YES_AT_PLANNING_LEVEL",
+    "defined_route": "YES_AT_PLANNING_LEVEL",
+    "measurable_criteria": "NO",
+    "sparse_events": "YES_AT_PLANNING_LEVEL",
+    "sparse_music_mapping": "NO",
+    "supported_mechanics": "YES_AT_PLANNING_LEVEL"
+  },
+  "approval": null,
+  "errors": [
+    {
+      "code": "UNMEASURABLE_EVENT",
+      "message": "near_miss requires ['surface_clearance_m']; accepts only ['surface_clearance_m']",
+      "path": "clearance"
+    }
+  ],
+  "input_sha256": "db4e2e472911e367ae211eb5ae86c15cdc45b3a35c3e68ee10611aded1e39cbb",
+  "metrics": {
+    "axis_extents_m": [
+      5.5,
+      3,
+      3.5
+    ],
+    "event_gaps_s": [
+      3.3,
+      3.5
+    ],
+    "event_span_m": 1.7320508075688772,
+    "lossless_speed_upper_bound_m_s": 8.28673639015988,
+    "plane_thickness_m": 0.6172133998483676,
+    "salient_duty_cycle": 0.11249999999999999,
+    "simulation_performed": false,
+    "span_m": 7.176350047203662
+  },
+  "physics_validated": false,
+  "schema_version": "scene-plan-validation-1",
+  "scope": "Authoring feasibility screening; simulation, contact certification and visual review still required.",
+  "status": "FAILED",
+  "validator_version": "scene-plan-validator-1",
+  "warning_policy": {
+    "event_cluster_relative_span": 0.25,
+    "planar_relative_thickness": 0.05,
+    "uniform_gap_coefficient_of_variation": 0.1,
+    "weak_ending_speed_m_s": 0.2
+  },
+  "warnings": [
+    {
+      "code": "EVENTS_SPATIALLY_CLUSTERED",
+      "message": "Important events occupy one small region relative to the route.",
+      "path": ""
+    },
+    {
+      "code": "UNIFORM_EVENT_SPACING",
+      "message": "Event spacing is nearly uniform; review phrasing variety.",
+      "path": ""
+    }
+  ]
+}

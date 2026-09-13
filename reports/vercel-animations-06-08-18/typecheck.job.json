@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/agent/.nvm/versions/node/v24.14.0/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 9465,
+  "pgid": 9465,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 11.033452500007115
+}

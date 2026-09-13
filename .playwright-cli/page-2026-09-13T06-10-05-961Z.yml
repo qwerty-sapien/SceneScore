@@ -1,0 +1,7 @@
+- main "Blink training" [ref=e3]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: 1 / 3 · Connect headset
+    - button "Connect headset" [ref=e6] [cursor=pointer]
+    - paragraph [ref=e7]: Switch on your Muse and keep it nearby. Close other apps using the headset, then connect.
+    - paragraph [ref=e8]: EEG checks, recordings and model weights stay on this machine.
+    - status [ref=e9]: Synthetic rehearsal · Switch on your Muse, then connect it.

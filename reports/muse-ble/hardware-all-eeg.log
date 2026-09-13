@@ -1,0 +1,6 @@
+{"stage": "scanning", "name": "Muse-AD3C", "recording": false}
+{"stage": "connecting", "name": "Muse-AD3C"}
+{"stage": "gatt_verifying", "services": ["0000fe8d-0000-1000-8000-00805f9b34fb"], "characteristics": ["273e0001-4c4d-454d-96be-f03bac821358", "273e0008-4c4d-454d-96be-f03bac821358", "273e0009-4c4d-454d-96be-f03bac821358", "273e000a-4c4d-454d-96be-f03bac821358", "273e000b-4c4d-454d-96be-f03bac821358", "273e0002-4c4d-454d-96be-f03bac821358", "273e0003-4c4d-454d-96be-f03bac821358", "273e0004-4c4d-454d-96be-f03bac821358", "273e0005-4c4d-454d-96be-f03bac821358", "273e0006-4c4d-454d-96be-f03bac821358", "273e0007-4c4d-454d-96be-f03bac821358"]}
+{"stage": "holding_all-eeg", "hold_seconds": 30.0}
+{"result": "PASS", "stage": "holding_all-eeg", "measured_hold_s": 30.001157374936156, "measured_connected_s": 30.300872416934, "notifications": 0}
+{"stage": "disconnected", "cleanup": "PASS"}

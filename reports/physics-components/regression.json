@@ -13,5 +13,8 @@
   ],
   "pid": 62338,
   "process_group": 62338,
-  "started_at": "2026-09-13T05:16:53.011415+00:00"
+  "started_at": "2026-09-13T05:16:53.011415+00:00",
+  "exit_code": 0,
+  "duration_s": 113.426,
+  "process_group_absent": true
 }

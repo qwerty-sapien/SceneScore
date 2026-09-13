@@ -1,0 +1,24 @@
+
+> scenescore-harness@0.1.0 prebuild
+> node apps/web/tools/catalog.mjs
+
+Piano editions: 3 drafts; original bundles unchanged
+Video library: 62 videos, 25 soundtracks; 78/78 requested paths accounted for
+
+> scenescore-harness@0.1.0 build
+> vite build apps/web --outDir ../../artifacts/web-dist --emptyOutDir
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 233 modules transformed.
+rendering chunks...
+computing gzip size...
+../../artifacts/web-dist/index.html                   0.40 kB │ gzip:   0.29 kB
+../../artifacts/web-dist/assets/index-qF17tC6C.css   16.14 kB │ gzip:   4.10 kB
+../../artifacts/web-dist/assets/index-vPxoxfuC.js   605.54 kB │ gzip: 166.73 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.75s

@@ -403,4 +403,41 @@ PYTHONPATH=.:src .venv/bin/python -m pytest -q
 ..............ss........................................................ [ 77%]
 ........................................................................ [ 83%]
 ........................................................................ [ 90%]
-.................................
+........................................................................ [ 96%]
+....................................                                     [100%]
+=================================== FAILURES ===================================
+________ test_valid_supported_catch_compiles_all_measurable_conditions _________
+
+plan = {'schema_version': 'scene-feasibility-plan-1', 'intent': {'actors': [{'collision_enabled': True, 'id': 'marble', 'moti...0.5]}], 'terminal': {'actor': 'marble', 'target': 'catcher', 'position_m': [5.5, 3, 0.5], 'speed_max_m_s': 0.02}}, ...}
+
+    def test_valid_supported_catch_compiles_all_measurable_conditions(plan):
+        # A catch may be the final sparse event as well as the terminal state.
+        last = plan['intent']['events'][-1]
+        last.update(kind='settle', actor_ids=['marble'], stage_id='catch', clearance=None)
+        last['target_window'] = {'start_s': 12.5, 'end_s': 13.1}
+        plan['events'][-1]['time_window'] = [12.5, 13.1]
+        plan['events'][-1].update(type='supported_catch', target='catcher', success_condition={
+            'target_contact': True, 'speed_max_m_s': .02, 'supported_duration_min_s': .25})
+        report, resolved = validate_plan(plan)
+>       assert report['status'] == 'PASSED', report
+E       AssertionError: {'schema_version': 'scene-plan-validation-1', 'validator_version': 'scene-plan-validator-1', 'status': 'FAILED', 'errors': [{'code': 'ABSTRACT_INTENT_INVALID', 'path': 'intent', 'message': 'clearance: wrong event participant count'}], ...}
+E       assert 'FAILED' == 'PASSED'
+E
+E         - PASSED
+E         + FAILED
+
+modules/blender/tests/test_plan_validation.py:196: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/agent/Desktop/SceneScore/.venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /Users/agent/Desktop/SceneScore/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED modules/blender/tests/test_plan_validation.py::test_valid_supported_catch_compiles_all_measurable_conditions
+1 failed, 1113 passed, 2 skipped, 2 warnings in 333.08s (0:05:33)
+make: *** [test] Error 1

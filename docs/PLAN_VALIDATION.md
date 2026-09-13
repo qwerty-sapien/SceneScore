@@ -49,9 +49,12 @@ sparse gap and duty policy. Unordered or overlapping abstract plans fail first.
 | `supported_catch` | Contact, nonnegative `speed_max_m_s`, positive `supported_duration_min_s` that fits the window |
 
 A3's unary `settle` becomes a `supported_catch` whose target resolves from the
-terminal support. Collision, bounce and graze remain one collision episode.
+terminal support. Collision, bounce and graze remain one collision episode, and require a fresh
+contact onset inside the event window. A window entirely within an already
+established continuous support interval cannot become a new salient collision.
 A near miss compiles into minimum surface-clearance bounds, no contact throughout
-the window, and bracketed approach/separation. Pixels cannot satisfy it.
+the window, and bracketed approach/separation. Refined ranges must retain the declared
+physical clearance target, which is also passed downstream. Pixels cannot satisfy it.
 
 Each failure list must include `success_condition_not_met`, `missed_time_window`
 and `unphysical_motion`. Optional `wrong_target` and `unexpected_contact` add

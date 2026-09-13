@@ -13,9 +13,10 @@ uv sync --locked
 make muse-live
 ```
 
-The interactive launcher asks for a live-processing consent statement in your
-own words, kept in a private temporary file for this run. It never grants raw
-recording consent. For an existing local consent file:
+`make muse-live` explicitly starts the local BLE workflow without an additional
+question or paperwork. The launcher supplies the existing bridge CLI's local
+startup record automatically. It does not record EEG. An existing local startup
+file is still accepted for command compatibility:
 
 ```sh
 make muse-live LIVE_CONSENT=/ABSOLUTE/LOCAL/consent.json
@@ -23,9 +24,9 @@ make muse-live LIVE_CONSENT=/ABSOLUTE/LOCAL/consent.json
 make muse-live LIVE_CONSENT=/ABSOLUTE/LOCAL/consent.json QUALITY_PROFILE=/ABSOLUTE/LOCAL/quality-profile.json
 ```
 
-The consent JSON must contain `live_processing:true`, `raw_recording:false` and
-a nonempty `participant_statement`. Do not put it in Git. `make muse-demo`
-preserves the explicitly synthetic demo. Prepared studio scene assets are still
+The legacy startup JSON contains `live_processing:true`, `raw_recording:false`
+and a nonempty `participant_statement`; the launcher creates it privately and
+removes it on exit. `make muse-demo` preserves the explicitly synthetic demo. Prepared studio scene assets are still
 required by the existing launcher; `make demo` prepares those separately.
 
 The launcher builds the website, starts its loopback web service on port 8771
@@ -137,9 +138,18 @@ Lower-layer hardware regression (no stream-start commands, no recording):
 # Isolate subscription layers, then test the production manager:
 .venv/bin/python tools/muse_ble_diagnose.py --name Muse-AD3C --stage one-eeg --seconds 30
 .venv/bin/python tools/muse_ble_diagnose.py --name Muse-AD3C --stage all-eeg --seconds 30
+.venv/bin/python tools/muse_ble_diagnose.py --name Muse-AD3C --stage stream --seconds 60
+# Separate explicit recording workflow, using a new local session folder:
 .venv/bin/python tools/muse_ble_diagnose.py --name Muse-AD3C --stage stream --seconds 60 \
-  --live-consent /ABSOLUTE/LOCAL/consent.json
+  --record private_data/my-muse-session
 ```
+
+`--record` saves canonical AF7/AF8 samples in uV with original device/receipt
+times and explicit gaps. A bounded writer queue keeps filesystem sync off the
+Bluetooth loop; overflow or a write failure stops the diagnostic visibly.
+Replay validation reports counts without printing EEG. Files use private
+permissions under the Git-ignored `private_data/` folder. The HTTP companion
+and MusePanel still have no raw recording endpoint.
 
 For manual acceptance, power on the headset, unplug its charger, disconnect
 other Muse apps, enable host Bluetooth and permit the Python host process to

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "jobs": [
+    {
+      "node_vite_pid": 5462,
+      "chromium_pid": 5474,
+      "chromium_exit_code": 0,
+      "vite_closed": true,
+      "tool_session_exit_code": 0
+    },
+    {
+      "node_vite_pid": 7150,
+      "chromium_pid": 7161,
+      "chromium_exit_code": 0,
+      "vite_closed": true,
+      "tool_session_exit_code": 0
+    }
+  ],
+  "persistent_jobs_remaining": []
+}

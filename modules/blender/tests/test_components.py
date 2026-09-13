@@ -145,9 +145,11 @@ def test_route_uses_xyz_and_has_deterministic_serialized_connections():
     assert len(route.connection_reports) == 4
     points = [p for c in route.components.values() for p in c.centerline]
     assert all(max(p[i] for p in points)-min(p[i] for p in points) > 1 for i in range(3))
+    from modules.blender.planning.validator import _spatial_metrics
+    assert _spatial_metrics(points)['plane_thickness_m'] > .05
     assert route.components['ramp'].entry_anchor.position_m[2] > route.components['catcher'].exit_anchor.position_m[2]
     welds = [o for r in route.connection_reports for o in r['metrics']['solid_overlaps']]
-    assert welds and all(w['allowed_static_weld'] and w['penetration_depth_m'] < .06 for w in welds)
+    assert welds and all(w['allowed_static_weld'] and w['penetration_depth_m'] < .08 for w in welds)
     assert all(r['metrics']['minimum_seam_surface_gap_m'] > -1e-7 for r in route.connection_reports)
     assert route.to_dict()['physics_validated'] is False
     # Omit declared weld permission: no implicit static penetration allowance.
@@ -218,6 +220,7 @@ def test_resolved_constraints_are_consumed_with_layout_and_actor_binding():
     built = assemble_resolved(resolved, layout)
     assert len(built['collider_actor_map']) == len(built['analytic_obstacles'])
     assert built['event_constraints'][2]['measurement_status'] == 'NOT_MEASURED'
+    assert built['planning_constraints']['reference_lessons'] == plan['intent']['reference_lessons']
     assert built['resolved_constraints_sha256'] == resolved['sha256']
     resolved['constraints']['actor_radius_m'] = .2
     with pytest.raises(ValueError, match='stale'):

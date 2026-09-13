@@ -209,7 +209,9 @@ class BleMuseManager:
                 scanner = BleakScanner
             found = await asyncio.wait_for(
                 scanner.discover(timeout=self.scan_timeout_s, return_adv=True),
-                self.scan_timeout_s + .5)
+                # Bleak's timeout covers its discovery sleep only. Native
+                # scanner startup/shutdown need their own bounded allowance.
+                self.scan_timeout_s + 2)
             candidates = []
             for device, advertisement in list(found.values())[:512]:
                 name = muse_name(getattr(advertisement, 'local_name', None)) or muse_name(getattr(device, 'name', None))

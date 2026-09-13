@@ -1,0 +1,10 @@
+Audio verification PID=5462
+Owned Chromium PID=5474
+10/60 clips have nonzero playback PCM
+20/60 clips have nonzero playback PCM
+30/60 clips have nonzero playback PCM
+40/60 clips have nonzero playback PCM
+50/60 clips have nonzero playback PCM
+60/60 clips have nonzero playback PCM
+{"coverage":{"requested":78,"available":78,"unique_videos":60,"live_scores":48,"original_audio":12,"silent":0},"clips":60,"mixes":5,"status":"passed"}
+Owned browser and Vite server closed

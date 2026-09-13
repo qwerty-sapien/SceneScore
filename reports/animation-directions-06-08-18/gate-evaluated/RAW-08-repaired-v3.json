@@ -1,0 +1,64 @@
+{
+  "pid": 79972,
+  "pgid": 79972,
+  "started_unix_s": 1789277614.9212842,
+  "packet_path": "/private/tmp/rolling-skin-v3-08.json",
+  "packet_sha256": "ee8b706a1292b246cc0579286cd1705b6f00416e1c3bf71de55b9c6be9549505",
+  "states_path": "embedded packet states, canonical JSON",
+  "states_sha256": "338562a90757e83476e82b26fd2d1919e7a6906976a0ec8d5582df58442a9f81",
+  "events_canonical_sha256": "5ee8f5ee58f08d07ccda5c8a8f0e027c7c3e91411282b5f5d9f7880dee99d819",
+  "quad_both_diagonals_tested": 512,
+  "omitted_static_shapes": [],
+  "results": {
+    "guide": {
+      "triangles": 266980,
+      "sampled_minimum_gap_m": [
+        -1.9703882809973816e-05,
+        {
+          "tick": 4117,
+          "time_s": 17.154166666666665,
+          "object": "observatory-right-contact-rail",
+          "face": 16548
+        }
+      ],
+      "linear_swept_minimum_gap_m": [
+        -0.00022764329260641092,
+        {
+          "time_s": 22.623056547208453,
+          "interval_ticks": [
+            5429,
+            5430
+          ],
+          "object": "observatory-capture-rail",
+          "face": 54542
+        }
+      ]
+    },
+    "other_static": {
+      "triangles": 4340,
+      "sampled_minimum_gap_m": [
+        0.023924402097196096,
+        {
+          "tick": 5829,
+          "time_s": 24.2875,
+          "object": "observatory-right-upright-4511",
+          "face": 10
+        }
+      ],
+      "linear_swept_minimum_gap_m": [
+        0.02379779574076568,
+        {
+          "time_s": 22.60574364922038,
+          "interval_ticks": [
+            5425,
+            5426
+          ],
+          "object": "observatory-right-upright-4511",
+          "face": 4
+        }
+      ]
+    }
+  },
+  "elapsed_s": 74.71524095535278,
+  "scope": "Pre-Blender raw static surfaces versus conservative R=.24 sphere, full240Hz linear replay segments. No moving receiver, no render claim; compare actual evaluated mesh separately."
+}

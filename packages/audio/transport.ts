@@ -51,6 +51,13 @@ export class Timeline {
   const c=this.bundle.composition,tick=scene/seconds(c,c.length_ticks)*c.length_ticks;
   const chord=c.harmony.find(h=>h.start_tick<=tick&&tick<h.start_tick+h.duration_ticks);if(!chord)return null;
   let delta=0;if(this.vertical)for(const r of this.verticalHistory)if(r.program.arrival_s<=scene&&(r.cancelled_at_s===undefined||r.cancelled_at_s>=r.program.arrival_s))delta+=r.program.entry.signed_semitones;
+  if(!this.vertical){
+   // The prepared harmonic bar remains current during rests between its note attacks.
+   const bar=c.ppq*4*c.meter[0]/c.meter[1],barTick=Math.floor(tick/bar)*bar,start=seconds(c,barTick),end=seconds(c,barTick+bar),arrival=seconds(c,barTick+c.ppq);
+   const root=this.events.find(e=>(e.lane_id==='bass'||e.lane_id==='harmony-0'||e.lane_id==='piano-comp-0')&&e.midi_pitch!==null&&e.resolved_time_s>=start&&e.resolved_time_s<end&&(e.phrasing==='new-dominant'||e.phrasing==='new-tonic-arrival'));
+   if(root){const to=(root.midi_pitch!+(root.phrasing==='new-dominant'?5:0))%12;return {root_pc:scene<arrival?(to+7)%12:to,quality:scene<arrival?'major':c.key_map[0].mode==='minor'?'minor':'major'};}
+   delta=this.currentTonic()-c.key_map[0].tonic_pc;
+  }
   return {root_pc:(chord.root_pc+delta+1200)%12,quality:chord.quality};
  }
  verticalPending(){return this.verticalHistory.find(r=>this.pending.includes(r.decision));}

@@ -1,0 +1,6 @@
+
+> scenescore-harness@0.1.0 typecheck
+> tsc --noEmit
+
+apps/training/tests/automatic.test.ts(13,144): error TS2345: Argument of type '() => string' is not assignable to parameter of type '() => `${string}-${string}-${string}-${string}-${string}`'.
+  Type 'string' is not assignable to type '`${string}-${string}-${string}-${string}-${string}`'.

@@ -1,0 +1,27 @@
+- generic "Direct Muse Bluetooth connection" [ref=e361]:
+  - generic [ref=e362]:
+    - heading "Connect your Muse" [level=3] [ref=e363]
+    - generic [ref=e364]: Local Bluetooth · EEG stays on this computer
+  - generic [ref=e366]:
+    - button "Scan for Muse" [disabled] [ref=e426]
+    - button "Connect headset" [disabled] [ref=e368]
+    - button "Disconnect headset" [ref=e369] [cursor=pointer]
+  - status [ref=e370]: Streaming · 3,156 samples
+  - generic [ref=e371]:
+    - term [ref=e372]: Companion
+    - definition [ref=e373]: Companion connected
+    - term [ref=e374]: Headset
+    - definition [ref=e375]: Muse-SOFTWARE-FIXTURE
+    - term [ref=e376]: Bluetooth
+    - definition [ref=e377]: BLE connected
+    - term [ref=e378]: EEG stream
+    - definition [ref=e379]: EEG streaming · 3,156 samples
+    - term [ref=e380]: Signal quality
+    - definition [ref=e381]: unverified
+    - term [ref=e382]: Warmup
+    - definition [ref=e383]: Warming up on source samples
+    - term [ref=e384]: Detector
+    - definition [ref=e385]: Disarmed
+  - paragraph [ref=e386]: Quality profile missing · detector remains disarmed. Supply a calibrated profile to the local companion.
+  - paragraph [ref=e413]: "Clock timing: the BLE estimator includes an uncalibrated one-way delay allowance of at least 25 ms. This is not a latency measurement. The conducting limit remains 20 ms, so clock uncertainty can block blink controls even when signal quality and warmup pass."
+  - paragraph [ref=e387]: Power on the headset and disconnect other Muse apps before scanning. Music, keyboard controls and simulation remain available.

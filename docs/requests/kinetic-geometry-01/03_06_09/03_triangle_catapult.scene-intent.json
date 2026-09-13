@@ -1,0 +1,89 @@
+{
+  "schema_version": "scene-intent-1",
+  "status": "DESIGN_INTENT_NOT_MEASURED",
+  "id": "03_triangle_catapult",
+  "duration_s": 10.4,
+  "seed": 305103,
+  "physics_backend": "native_bullet",
+  "visual_direction": "A warm ivory architectural catapult crosses an open dark-teal void. The copper triangular prism is the sole hero; walnut arm, brass hinges, and charcoal supports explain its launch without clutter.",
+  "render_scope": {
+    "aspect_ratio": "9:16",
+    "proxy_px": [540, 960],
+    "final_px": [1080, 1920],
+    "simulation_hz": 240,
+    "replay_fps": 30,
+    "camera_grammar": "lateral launch tracking; one continuous three-quarter shot"
+  },
+  "salience_policy": {
+    "minimum_gap_s": 0.75,
+    "maximum_duty_cycle": 0.3,
+    "maximum_beats": 3,
+    "maximum_simultaneous_salient_beats": 1,
+    "support_contact_policy": "retain_raw_do_not_count_as_salient"
+  },
+  "objects": [
+    {"id": "triangle_hero", "role": "actor", "shape": "bevelled_equilateral_triangular_prism", "motion": "dynamic", "scored": true, "mass_kg": 0.62, "dimensions_m": {"side": 0.74, "depth": 0.22, "bevel": 0.025}, "material": "satin_copper_ceramic"},
+    {"id": "catapult_arm", "role": "actuator", "shape": "box_arm_with_cup", "motion": "dynamic", "scored": false, "mass_kg": 1.2, "material": "walnut"},
+    {"id": "launch_spring", "role": "actuator", "shape": "torsion_spring", "motion": "prescribed", "scored": false, "material": "brass"},
+    {"id": "pivot_frame", "role": "silent_support", "shape": "fixed_obb", "motion": "fixed", "scored": false, "material": "charcoal_steel"},
+    {"id": "suspended_arch", "role": "interaction_surface", "shape": "fixed_obb_arch", "motion": "fixed", "scored": false, "material": "ivory_stone"},
+    {"id": "receiving_chute", "role": "interaction_surface", "shape": "fixed_concave_v_chute", "motion": "fixed", "scored": false, "material": "matte_teal"},
+    {"id": "chute_stop", "role": "silent_support", "shape": "compliant_backstop", "motion": "fixed", "scored": false, "material": "cork"}
+  ],
+  "route_and_camera": {
+    "launch_pivot_m": [-4.0, -0.55, 1.08],
+    "cup_release_m": [-3.05, -0.55, 1.85],
+    "ballistic_receiver_entry_m": [3.10, 0.42, 1.40],
+    "open_gap_x_m": [-2.45, 2.35],
+    "arch_center_m": [0.0, 0.0, 2.20],
+    "arch_top_m": 2.82,
+    "chute_axis": "entry [3.10,0.42,1.40] to catch [4.25,0.78,0.78], 18 degree down-slope, 0.94 m open V width",
+    "camera": {
+      "start_m": [-7.6, -10.8, 4.8],
+      "end_m": [-4.8, -11.6, 4.25],
+      "look_at_m": [0.15, 0.05, 2.05],
+      "lens_mm": 48,
+      "rule": "The arm, entire arch silhouette, prism and chute mouth remain inside the safe portrait frame; any camera drift is completed before the airborne clearance window."
+    }
+  },
+  "physical_parameters": {
+    "gravity_m_s2": 9.81,
+    "hero_friction": 0.34,
+    "hero_restitution": 0.18,
+    "collision_margin_m": 0.003,
+    "solver": {"substeps": 16, "iterations": 80},
+    "arm": {"length_m": 2.20, "release_sweep_deg": [-46, 64], "hinge_axis": "+Y", "torsion_preload_Nm": 33.0, "hard_stop_deg": 67},
+    "release_target": {"linear_velocity_m_s": [5.10, 0.80, 5.50], "spin_axis_local": "+Y", "angular_velocity_rad_s": 10.2, "line_of_action_offset_m": 0.19, "expected_free_flight_rotations": [1.5, 2.5]},
+    "clearance_target": {"arch_surface_gap_m": 0.13, "minimum_acceptable_gap_m": 0.08},
+    "chute_and_catch": {"chute_friction": 0.46, "chute_restitution": 0.10, "cork_k_N_m": 85, "cork_c_Ns_m": 9.0}
+  },
+  "beats": [
+    {
+      "id": "spring_arm_launch",
+      "primary_kind": "acceleration",
+      "object_ids": ["catapult_arm", "triangle_hero", "launch_spring"],
+      "target_window_s": [1.05, 1.35],
+      "physical_cause": "The visibly preloaded torsion spring accelerates the hinged arm; cup contact ends at separation, after which the prism has only gravity and contact forces. The offset cup force, not a post-release animation curve, produces spin.",
+      "measurement_required": "Falsify if the prism remains constrained after cup separation, receives a later velocity/orientation key, or its measured release velocity/spin falls outside the declared candidate bands. Record arm work, release gap, and the contact impulse."
+    },
+    {
+      "id": "arch_clearance",
+      "primary_kind": "near_miss",
+      "object_ids": ["triangle_hero", "suspended_arch"],
+      "target_window_s": [2.30, 2.55],
+      "requires_positive_surface_gap": true,
+      "physical_cause": "The ballistic trajectory produced at launch passes above the finite suspended arch; the arch supplies no hidden guide force.",
+      "measurement_required": "Falsify if evaluated triangle-to-arch surface distance is nonpositive or below 0.08 m after uncertainty, if the closest point is off camera, or if unmodelled contact changes the free-flight angular velocity."
+    },
+    {
+      "id": "chute_capture",
+      "primary_kind": "collision",
+      "object_ids": ["triangle_hero", "receiving_chute", "chute_stop"],
+      "target_window_s": [3.85, 4.35],
+      "physical_cause": "The descending prism first meets the sloped V chute, whose normal redirects it into a cork-faced stop; friction and compliant dissipation remove energy while keeping the final support visible.",
+      "measurement_required": "Falsify if the first chute contact precedes geometric contact, the prism tunnels through either chute wall, or the supported terminal window has linear speed >=0.02 m/s or angular speed >=0.06 rad/s for 0.75 s."
+    }
+  ],
+  "ending": "By 9.60-10.40 s the copper prism is visibly seated in the lower-right V chute against the cork stop. The catapult arm is supported on its mechanical stop; no object is frozen, reset, or parked off frame.",
+  "notes": "No near-miss is claimed beyond the explicitly certified arch clearance. The arched obstacle is a finite collider, not a visual-only prop. Native-Bullet controls must cover the triangular prism's off-centre arm contact, free flight, angled chute contact, and settling before candidate acceptance."
+}

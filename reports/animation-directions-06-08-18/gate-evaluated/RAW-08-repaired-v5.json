@@ -1,0 +1,68 @@
+{
+  "pid": 94490,
+  "pgid": 94490,
+  "started_unix_s": 1789278385.685923,
+  "audit_script_sha256": "54f3d9c6727292fedf402454b536456d9a8ea1e362e5d62dd7548ae8b6602d5f",
+  "distance_script_sha256": "e9638a0ae91acfe393ae6f2b2d04d7c82ded49aa2f522cdcaf19e725809ea704",
+  "packet_path": "/private/tmp/rolling-skin-v5-08.json",
+  "packet_sha256": "80fa90ba477c25610176377ad315b0e8737de5633b60ad4f988ca6cb11ea4b53",
+  "states_path": "embedded packet states, canonical JSON",
+  "states_sha256": "338562a90757e83476e82b26fd2d1919e7a6906976a0ec8d5582df58442a9f81",
+  "events_canonical_sha256": "5ee8f5ee58f08d07ccda5c8a8f0e027c7c3e91411282b5f5d9f7880dee99d819",
+  "quad_both_diagonals_tested": 512,
+  "omitted_static_shapes": [],
+  "results": {
+    "guide": {
+      "triangles": 266980,
+      "sampled_minimum_gap_m": [
+        3.929567269575496e-05,
+        {
+          "tick": 4117,
+          "time_s": 17.154166666666665,
+          "object": "observatory-right-contact-rail",
+          "face": 16548
+        }
+      ],
+      "linear_swept_minimum_gap_m": [
+        -0.0001686439526826511,
+        {
+          "time_s": 22.62305651590416,
+          "interval_ticks": [
+            5429,
+            5430
+          ],
+          "object": "observatory-capture-rail",
+          "face": 54542
+        }
+      ]
+    },
+    "other_static": {
+      "triangles": 4340,
+      "sampled_minimum_gap_m": [
+        0.023983395840875027,
+        {
+          "tick": 5829,
+          "time_s": 24.2875,
+          "object": "observatory-right-upright-4511",
+          "face": 10
+        }
+      ],
+      "linear_swept_minimum_gap_m": [
+        0.02385679274999411,
+        {
+          "time_s": 22.605743565618248,
+          "interval_ticks": [
+            5425,
+            5426
+          ],
+          "object": "observatory-right-upright-4511",
+          "face": 4
+        }
+      ]
+    }
+  },
+  "conservative_radius_m": 0.240001,
+  "numerical_reserve_m": 1e-06,
+  "elapsed_s": 257.0094027519226,
+  "scope": "Pre-Blender raw static surfaces versus declared sphere plus explicit numerical reserve, full240Hz linear replay segments. No moving receiver, no render claim; compare actual evaluated mesh separately."
+}

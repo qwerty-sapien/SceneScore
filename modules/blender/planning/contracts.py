@@ -68,6 +68,8 @@ def compile_success(event):
             if c[key] is not True:
                 raise ValueError(key + ' must be true')
             rule(key, 'eq', True, 'boolean')
+    if kind == 'salient_collision':
+        rule('target_contact_onset_in_window', 'eq', True, 'boolean')
     if 'heading_change_min_deg' in c:
         if not 0 < c['heading_change_min_deg'] <= 180:
             raise ValueError('heading change must be in (0, 180] degrees')

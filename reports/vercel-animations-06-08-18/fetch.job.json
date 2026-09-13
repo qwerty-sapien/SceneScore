@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "tools/stage_video_publication.py",
+    "fetch"
+  ],
+  "timeout_s": 180,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 8846,
+  "pgid": 8846,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 39.46259487501811
+}

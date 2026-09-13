@@ -1,0 +1,234 @@
+{
+  "schema_version": "scene-intent-2",
+  "status": "DESIGN_INTENT_NOT_MEASURED",
+  "id": "02_cube_rebound",
+  "duration_s": 9.6,
+  "clock": "scene_seconds_zero_at_start",
+  "mechanics": {
+    "backend": "native_bullet",
+    "model_version": "blender-native-bullet-candidate-1",
+    "scope": "One dynamic convex cube against three fixed angled slabs and a fixed catcher.",
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "contact_model": "Proposed convex rigid-body contact; actual contact, gap and replay evidence remain required.",
+    "material_model": "Per-actor coefficients are declared in the companion Markdown card; no coefficient is calibrated or measured here.",
+    "actuation_model": "Gravity and contact determine free body motion; only declared visible latches may be prescribed.",
+    "limitations": [
+      "DESIGN_INTENT_NOT_MEASURED.",
+      "Historical Native Bullet transfer/convergence calibration failed; this plan neither repairs nor relaxes it.",
+      "Current analytic backend cannot validate this dynamic-body scope."
+    ]
+  },
+  "actors": [
+    {
+      "id": "cube-a",
+      "role": "actor",
+      "shape": "convex_mesh",
+      "motion": "dynamic",
+      "collision_enabled": true,
+      "scored": true,
+      "sonic_identity_id": "voice:cube-a"
+    },
+    {
+      "id": "slab-1",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "slab-2",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "slab-3",
+      "role": "interaction_surface",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "catcher",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    }
+  ],
+  "route_stages": [
+    {
+      "id": "first-rebound",
+      "actor_ids": [
+        "cube-a",
+        "slab-1"
+      ],
+      "window": {
+        "start_s": 0,
+        "end_s": 2
+      },
+      "entry_intent": "Released cube begins free fall toward first slab.",
+      "exit_intent": "Earned outgoing path reaches second slab.",
+      "mechanism": "Gravity and rigid contact."
+    },
+    {
+      "id": "second-rebound",
+      "actor_ids": [
+        "cube-a",
+        "slab-2"
+      ],
+      "window": {
+        "start_s": 2,
+        "end_s": 4.6
+      },
+      "entry_intent": "Incoming rotating cube approaches second slab.",
+      "exit_intent": "Earned outgoing path reaches third slab.",
+      "mechanism": "Gravity and rigid contact."
+    },
+    {
+      "id": "third-rebound",
+      "actor_ids": [
+        "cube-a",
+        "slab-3"
+      ],
+      "window": {
+        "start_s": 4.6,
+        "end_s": 7
+      },
+      "entry_intent": "Incoming cube passes intended rail-tip clearance then reaches third slab.",
+      "exit_intent": "Redirected cube enters catcher.",
+      "mechanism": "Gravity and rigid contact."
+    },
+    {
+      "id": "catch",
+      "actor_ids": [
+        "cube-a",
+        "catcher"
+      ],
+      "window": {
+        "start_s": 7,
+        "end_s": 9.6
+      },
+      "entry_intent": "Cube enters low catcher.",
+      "exit_intent": "Cube remains visibly supported through endpoint.",
+      "mechanism": "Fixed catcher dissipation; no freeze."
+    }
+  ],
+  "support_contacts": [],
+  "events": [
+    {
+      "id": "broad-face-rebound",
+      "kind": "bounce",
+      "actor_ids": [
+        "cube-a",
+        "slab-1"
+      ],
+      "stage_id": "first-rebound",
+      "target_window": {
+        "start_s": 1.05,
+        "end_s": 1.38
+      },
+      "physical_cause": "Gravity-driven free fall meets the first fixed angled slab.",
+      "measurement_required": "Independently classify the contact point as broad-face and measure contact onset plus outgoing velocity.",
+      "clearance": null
+    },
+    {
+      "id": "edge-biased-rebound",
+      "kind": "bounce",
+      "actor_ids": [
+        "cube-a",
+        "slab-2"
+      ],
+      "stage_id": "second-rebound",
+      "target_window": {
+        "start_s": 3.34,
+        "end_s": 3.72
+      },
+      "physical_cause": "The first earned tumble reaches the offset second fixed slab.",
+      "measurement_required": "Independently classify edge-first contact and measure a heading change without transform injection.",
+      "clearance": null
+    },
+    {
+      "id": "corner-rebound",
+      "kind": "bounce",
+      "actor_ids": [
+        "cube-a",
+        "slab-3"
+      ],
+      "stage_id": "third-rebound",
+      "target_window": {
+        "start_s": 5.86,
+        "end_s": 6.28
+      },
+      "physical_cause": "The preceding gravity/contact trajectory reaches the third fixed slab.",
+      "measurement_required": "Independently classify corner-biased contact; separately certify any pre-contact rail-tip clearance.",
+      "clearance": null
+    }
+  ],
+  "event_order": [
+    "broad-face-rebound",
+    "edge-biased-rebound",
+    "corner-rebound"
+  ],
+  "salience_policy": {
+    "minimum_gap_s": 1,
+    "maximum_duty_cycle": 0.3,
+    "maximum_events": 3,
+    "minimum_distinct_kinds": 1,
+    "maximum_simultaneous_events": 1,
+    "support_contact_policy": "retain_raw_do_not_count_as_salient"
+  },
+  "camera": {
+    "mode": "staged",
+    "focus_actor_ids": [
+      "cube-a"
+    ],
+    "readable_event_ids": [
+      "broad-face-rebound",
+      "edge-biased-rebound",
+      "corner-rebound"
+    ],
+    "framing_intent": "One wide three-quarter composition covers all slabs, the pre-contact graze and the catcher."
+  },
+  "ending": {
+    "kind": "supported_rest",
+    "actor_ids": [
+      "cube-a"
+    ],
+    "support_ids": [
+      "catcher"
+    ],
+    "window": {
+      "start_s": 8.35,
+      "end_s": 9.6
+    },
+    "keep_visible": true,
+    "reset_policy": "no_teleport",
+    "description": "Keep cube fully framed, physically supported and off-axis at the endpoint."
+  },
+  "reference_lessons": [
+    {
+      "id": "component-planning-note",
+      "source": "docs/MECHANISM_COMPONENTS.md",
+      "status": "visual_reference",
+      "lesson": "Use spatially separated supports and explicit collision geometry; no reference-media claim is made.",
+      "evidence_note": "This card consulted repository component/planning documentation, not a viewed reference clip; source bytes are intentionally unbound while concurrent work continues.",
+      "source_sha256": null,
+      "consumed_interval": null
+    }
+  ],
+  "music_hints": []
+}

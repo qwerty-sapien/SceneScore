@@ -1,0 +1,165 @@
+{
+  "pid": 71267,
+  "checks": [
+    {
+      "name": "library executes key change",
+      "evidence": {
+        "action": {
+          "kind": "ControlAction",
+          "schema_version": "0.1",
+          "id": "control-fb41b863-c61c-4b5c-a47d-e0246d780334",
+          "gesture_id": "fb41b863-c61c-4b5c-a47d-e0246d780334",
+          "sequence_id": "fb41b863-c61c-4b5c-a47d-e0246d780334",
+          "provenance": {
+            "source_mode": "keyboard",
+            "creator": "scenescore-manual-random-key-change",
+            "tool_version": "manual-prepared-choice-1",
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "input_hashes": [],
+            "seed": 2453859938
+          },
+          "gesture_count": 2,
+          "profile": "double_modulate_mvp",
+          "action": "request_modulation",
+          "request": {
+            "clock": "audio",
+            "epoch": "transport-0",
+            "seconds": 1.1319727891156464
+          },
+          "expires": {
+            "clock": "audio",
+            "epoch": "transport-0",
+            "seconds": 7.131972789115647
+          },
+          "boundary": "next_approved_bar_or_phrase",
+          "signed_semitones": 2,
+          "approved_plan_hash": "c5dd22fffd6948e06b0c32d5f8bdccb1ce0959adbe43858815470ef4d2c72696",
+          "scene_policy_id": "world-z-causal-1",
+          "status": "queued",
+          "reason": null,
+          "quality": {
+            "state": "good",
+            "reason": null
+          },
+          "before": {
+            "master_gain_db": -9,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          },
+          "after": {
+            "master_gain_db": -9,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          }
+        },
+        "tonic": 2,
+        "chord": {
+          "root_pc": 2,
+          "quality": "major"
+        },
+        "scheduled": 28,
+        "pcm": {
+          "peak": 0.3494807481765747,
+          "rms": 0.04290875381323419,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      }
+    },
+    {
+      "name": "music vertical executes progression",
+      "evidence": {
+        "action": {
+          "kind": "ControlAction",
+          "schema_version": "0.1",
+          "id": "control-7d5e7549-9cb1-4074-8425-c805e13733a8",
+          "gesture_id": "7d5e7549-9cb1-4074-8425-c805e13733a8",
+          "sequence_id": "7d5e7549-9cb1-4074-8425-c805e13733a8",
+          "provenance": {
+            "source_mode": "keyboard",
+            "creator": "scenescore-manual-random-key-change",
+            "tool_version": "manual-prepared-choice-1",
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "input_hashes": [],
+            "seed": 3449613622
+          },
+          "gesture_count": 2,
+          "profile": "double_modulate_mvp",
+          "action": "request_modulation",
+          "request": {
+            "clock": "audio",
+            "epoch": "transport-0",
+            "seconds": 5.015510204081632
+          },
+          "expires": {
+            "clock": "audio",
+            "epoch": "transport-0",
+            "seconds": 11.015510204081632
+          },
+          "boundary": "next_approved_bar_or_phrase",
+          "signed_semitones": 2,
+          "approved_plan_hash": "fd090867ab61fde774879f23ae56ea388e88db072521d9dd9f5a3bc5b489808d",
+          "scene_policy_id": "world-z-causal-1",
+          "status": "queued",
+          "reason": null,
+          "quality": {
+            "state": "good",
+            "reason": null
+          },
+          "before": {
+            "master_gain_db": -18,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          },
+          "after": {
+            "master_gain_db": -18,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          }
+        },
+        "tonic": 2,
+        "chord": {
+          "root_pc": 2,
+          "quality": "maj69"
+        },
+        "scheduled": 29,
+        "pcm": {
+          "peak": 0.012642962858080864,
+          "rms": 0.0019464229455636065,
+          "clipped": 0,
+          "sample_rate": 48000,
+          "duration_s": 30,
+          "channels": 2
+        }
+      }
+    },
+    {
+      "name": "scan discovery hides manual button; source selection alone does not",
+      "evidence": true
+    },
+    {
+      "name": "connected but bad-quality and disarmed Muse keeps button hidden",
+      "evidence": true
+    },
+    {
+      "name": "disconnect restores manual button",
+      "evidence": true
+    },
+    {
+      "name": "companion loss clears stale discovery and restores manual button",
+      "evidence": true
+    },
+    {
+      "name": "mobile has no horizontal overflow",
+      "evidence": true
+    }
+  ],
+  "errors": [],
+  "headset": "MOCKED",
+  "human_audition": "NOT_RUN",
+  "physical_output_measured": false,
+  "status": "passed",
+  "browser_closed": true
+}

@@ -3,8 +3,10 @@ import {Timeline,type Decision,type PlaybackSlice} from './transport';
 import {isVerticalVoice} from './model';
 import {scheduleWindowFade,validateWindow,type PlaybackWindow} from './window';
 import {amplitude,polyphony,validateMix,stemFor,type MixPoint,type Lanes} from './mix';
+import {prepareEffectMix,scheduleDucking,type EffectMix} from './effect-mix';
 export type {Lanes} from './mix';
 import {riffVoice} from './riff-voices';
+import {scenePianoVoice} from './piano-voices';
 const seedFor=(id:string)=>[...id].reduce((n,c)=>Math.imul(n^c.charCodeAt(0),16777619)>>>0,2166136261);
 // Articulation changes the envelope inside the occupied slot, never the score clock.
 export function articulationEnvelope(articulation:string,t:number,duration:number){
@@ -15,7 +17,7 @@ function* voiceSteps(ctx:BaseAudioContext,e:ScoreEvent):Generator<void,AudioBuff
  const n=Math.max(1,Math.ceil(e.duration_s*ctx.sampleRate));if(n>ctx.sampleRate*120)throw Error('Voice budget');
  const b=ctx.createBuffer(1,n,ctx.sampleRate),v=b.getChannelData(0);let rng=seedFor(e.id),filtered=0;
  const freq=e.midi_pitch===null?0:440*2**((e.midi_pitch-69)/12);
- const riff=riffVoice(e,ctx.sampleRate);
+ const riff=scenePianoVoice(e,ctx.sampleRate)??riffVoice(e,ctx.sampleRate);
  for(let i=0;i<n;i++){const t=i/ctx.sampleRate,remain=(n-1-i)/ctx.sampleRate;const fade=Math.min(1,t/.005,remain/.012);let sample=0;
   if(riff){sample=riff(t);}
   else if(e.midi_pitch!==null){const harmonic=Math.sin(2*Math.PI*freq*t)+.23*Math.sin(4*Math.PI*freq*t)+.07*Math.sin(6*Math.PI*freq*t);const decay=e.articulation==='legato'?Math.max(.35,Math.exp(-t*1.5)):Math.exp(-t*(e.instrument_id.includes('bass')?5:3));sample=harmonic*decay*.2;}
@@ -25,20 +27,25 @@ function* voiceSteps(ctx:BaseAudioContext,e:ScoreEvent):Generator<void,AudioBuff
  }return b;
 }
 export function voice(ctx:BaseAudioContext,e:ScoreEvent):AudioBuffer{const steps=voiceSteps(ctx,e);let next=steps.next();while(!next.done)next=steps.next();return next.value;}
-export async function renderOffline(events:ScoreEvent[],duration:number,gainDb=-18,lanes:Lanes={soundtrack:true,foley:true},rate=48000,journal?:MixPoint[],playbackSlices?:ReadonlyMap<string,PlaybackSlice>,window?:PlaybackWindow,finalFade=false):Promise<AudioBuffer>{
+export async function renderOffline(events:ScoreEvent[],duration:number,gainDb=-18,lanes:Lanes={soundtrack:true,foley:true},rate=48000,journal?:MixPoint[],playbackSlices?:ReadonlyMap<string,PlaybackSlice>,window?:PlaybackWindow,finalFade=false,mixReference:ScoreEvent[]=events):Promise<AudioBuffer>{
  if(events.length>5000||duration>120||duration<=0||rate<8000||rate>96000)throw Error('Offline render budget');
  polyphony(events);const points=journal??[{scene_s:0,gain_db:gainDb,muted:false,lanes}];validateMix(points,duration);
  if(window)validateWindow(window,duration);
  if(window&&(window.duration_s!==duration||rate!==48000))throw Error('Playback window output clock mismatch');
  const ctx=new OfflineAudioContext(2,window?window.audio_sample_count:Math.ceil(duration*rate),rate),buses={soundtrack:ctx.createGain(),foley:ctx.createGain()};
- const output=window||finalFade?ctx.createGain():null;
+ const duck=ctx.createGain(),output=window||finalFade?ctx.createGain():null;
  if(output){output.connect(ctx.destination);scheduleWindowFade(output.gain,duration,0,0,0);}
- for(const lane of ['soundtrack','foley'] as const){const gain=buses[lane];gain.gain.value=amplitude(points[0],lane);gain.connect(output??ctx.destination);for(const p of points.slice(1))gain.gain.setTargetAtTime(amplitude(p,lane),p.scene_s,.008);}
+ for(const lane of ['soundtrack','foley'] as const){const gain=buses[lane];gain.gain.value=amplitude(points[0],lane);gain.connect(lane==='soundtrack'?duck:output??ctx.destination);for(const p of points.slice(1))gain.gain.setTargetAtTime(amplitude(p,lane),p.scene_s,.008);}
+ duck.connect(output??ctx.destination);
+ const effectMix=prepareEffectMix(mixReference,duration,rate,e=>({data:voice(ctx,e).getChannelData(0)}));
+ scheduleDucking(duck.gain,effectMix.points,0,0,0,points[0].lanes.foley);
+ for(const point of points.slice(1))scheduleDucking(duck.gain,effectMix.points,point.scene_s,point.scene_s,point.scene_s,point.lanes.foley);
  const cache=playbackSlices?new Map<string,AudioBuffer>():null;let preparedBytes=0;
  for(const e of events){if(e.resolved_time_s>=duration)continue;const node=ctx.createBufferSource(),slice=playbackSlices?.get(e.id),input=slice?.bufferEvent??e;
   if(cache){const key=JSON.stringify([input.midi_pitch===null?input.id:'pitched',input.instrument_id,input.midi_pitch,Math.ceil(input.duration_s*rate),input.velocity,input.dynamics_db,input.articulation,input.timbre_id]);let buffer=cache.get(key);if(!buffer){preparedBytes+=Math.max(1,Math.ceil(input.duration_s*rate))*4;if(preparedBytes>128*1024*1024)throw Error('Offline preparation memory budget');buffer=voice(ctx,input);cache.set(key,buffer);}node.buffer=buffer;}else node.buffer=voice(ctx,input);
-  if(slice){const gain=ctx.createGain(),end=e.resolved_time_s+e.duration_s;node.connect(gain);gain.connect(buses[e.event_type==='foley'?'foley':'soundtrack']);gain.gain.setValueAtTime(0,e.resolved_time_s);gain.gain.linearRampToValueAtTime(1,e.resolved_time_s+.003);if(end<slice.bufferEvent.resolved_time_s+slice.bufferEvent.duration_s-1e-9){gain.gain.setValueAtTime(1,Math.max(e.resolved_time_s+.003,end-.008));gain.gain.linearRampToValueAtTime(0,end);}node.start(e.resolved_time_s,slice.offset_s);node.stop(end+.001);}
-  else{node.connect(buses[e.event_type==='foley'?'foley':'soundtrack']);node.start(e.resolved_time_s);}
+  const effect=ctx.createGain();effect.gain.value=effectMix.levels.get(e.id)??1;effect.connect(buses[e.event_type==='foley'?'foley':'soundtrack']);
+  if(slice){const gain=ctx.createGain(),end=e.resolved_time_s+e.duration_s;node.connect(gain);gain.connect(effect);gain.gain.setValueAtTime(0,e.resolved_time_s);gain.gain.linearRampToValueAtTime(1,e.resolved_time_s+.003);if(end<slice.bufferEvent.resolved_time_s+slice.bufferEvent.duration_s-1e-9){gain.gain.setValueAtTime(1,Math.max(e.resolved_time_s+.003,end-.008));gain.gain.linearRampToValueAtTime(0,end);}node.start(e.resolved_time_s,slice.offset_s);node.stop(end+.001);}
+  else{node.connect(effect);node.start(e.resolved_time_s);}
  }
  return ctx.startRendering();
 }
@@ -46,7 +53,7 @@ export async function renderOffline(events:ScoreEvent[],duration:number,gainDb=-
  * This reproduces the score schedule, not hardware output or live scheduling jitter. */
 export async function renderPerformedOffline(timeline:Timeline,duration:number,gainDb=-18,lanes:Lanes={soundtrack:true,foley:true},rate=48000,journal?:MixPoint[],stem?:ReturnType<typeof stemFor>){
  const performed=timeline.performedEvents(),events=stem?performed.filter(e=>stemFor(e)===stem):performed;
- return renderOffline(events,duration,gainDb,lanes,rate,journal,timeline.vertical?timeline.verticalSlices:undefined,timeline.bundle.playback_window,Boolean(timeline.bundle.sound_design));
+ return renderOffline(events,duration,gainDb,lanes,rate,journal,timeline.vertical?timeline.verticalSlices:undefined,timeline.bundle.playback_window,Boolean(timeline.bundle.sound_design),timeline.original);
 }
 
 export function pcmWav(b:AudioBuffer):ArrayBuffer{const channels=b.numberOfChannels,n=b.length,bytes=new ArrayBuffer(44+n*channels*2),v=new DataView(bytes);const str=(at:number,s:string)=>[...s].forEach((c,i)=>v.setUint8(at+i,c.charCodeAt(0)));str(0,'RIFF');v.setUint32(4,bytes.byteLength-8,true);str(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,channels,true);v.setUint32(24,b.sampleRate,true);v.setUint32(28,b.sampleRate*channels*2,true);v.setUint16(32,channels*2,true);v.setUint16(34,16,true);str(36,'data');v.setUint32(40,n*channels*2,true);for(let i=0;i<n;i++)for(let c=0;c<channels;c++)v.setInt16(44+(i*channels+c)*2,Math.round(Math.max(-1,Math.min(1,b.getChannelData(c)[i]))*32767),true);return bytes;}
@@ -54,7 +61,7 @@ export function measurements(b:AudioBuffer){let peak=0,sum=0,clipped=0;for(let c
 type Scheduled={source:AudioBufferSourceNode;gain:GainNode;event:ScoreEvent;end:number;source_id?:string;level?:number};
 export class Engine{
  context:AudioContext|null=null;master:GainNode|null=null;timer:ReturnType<typeof setInterval>|null=null;nodes:Scheduled[]=[];cache=new Map<string,AudioBuffer>();scheduled=new Set<string>();anchorAudio=0;anchorScene=0;gainDb=-18;mute=false;lanes:Lanes={soundtrack:true,foley:true};metrics:{scene_s:number;audio_s:number;event_id:string;generation:number}[]=[];onTick:()=>void=()=>{};onSuspend:()=>void=()=>{};
- windowBus:GainNode|null=null;
+ windowBus:GainNode|null=null;duckBus:GainNode|null=null;effectMix:EffectMix|null=null;
  buses:Record<keyof Lanes,GainNode>|null=null;mix:MixPoint[]=[];completed=false;discontinuous=false;historyStart=0;
  refreshTimer:ReturnType<typeof setTimeout>|null=null;refreshToken=0;refreshStats={slices:0,max_slice_ms:0};
  private refreshCancelled:(()=>void)|null=null;
@@ -93,7 +100,7 @@ export class Engine{
   });
  }
 
- async unlock(){if(!this.context){this.context=new AudioContext();this.master=this.context.createGain();if(this.timeline.bundle.playback_window||this.timeline.bundle.sound_design){this.windowBus=this.context.createGain();this.master.connect(this.windowBus);this.windowBus.connect(this.context.destination);}else this.master.connect(this.context.destination);this.buses={soundtrack:this.context.createGain(),foley:this.context.createGain()};for(const lane of ['soundtrack','foley'] as const){this.buses[lane].gain.value=amplitude({scene_s:0,gain_db:this.gainDb,muted:this.mute,lanes:this.lanes},lane);this.buses[lane].connect(this.master);}this.context.onstatechange=()=>{if(this.context?.state==='suspended'&&this.timeline.playing){this.pause();this.onSuspend();}};}await this.context.resume();this.setGain(this.gainDb);if(this.timeline.vertical)await this.prepareAsync();else this.prepare();}
+ async unlock(){if(!this.context){this.context=new AudioContext();this.master=this.context.createGain();if(this.timeline.bundle.playback_window||this.timeline.bundle.sound_design){this.windowBus=this.context.createGain();this.master.connect(this.windowBus);this.windowBus.connect(this.context.destination);}else this.master.connect(this.context.destination);this.duckBus=this.context.createGain();this.duckBus.connect(this.master);this.buses={soundtrack:this.context.createGain(),foley:this.context.createGain()};for(const lane of ['soundtrack','foley'] as const){this.buses[lane].gain.value=amplitude({scene_s:0,gain_db:this.gainDb,muted:this.mute,lanes:this.lanes},lane);this.buses[lane].connect(lane==='soundtrack'?this.duckBus:this.master);}this.context.onstatechange=()=>{if(this.context?.state==='suspended'&&this.timeline.playing){this.pause();this.onSuspend();}};}await this.context.resume();this.setGain(this.gainDb);if(this.timeline.vertical)await this.prepareAsync();else this.prepare();}
  prepare(){if(!this.context)return;if(this.timeline.vertical){const steps=this.verticalBuffers();let next=steps.next();while(!next.done)next=steps.next();this.preparedVersion=this.timeline.preparationVersion;this.timeline.preparationReady=true;this.timeline.preparationError=null;return;}polyphony(this.timeline.events);let frames=0;const needed=new Set<string>();for(const events of [this.timeline.events,...this.timeline.prepared.values()])for(const e of events){const k=this.key(e);if(needed.has(k))continue;needed.add(k);if(!this.cache.has(k))this.cache.set(k,voice(this.context,e));frames+=this.cache.get(k)!.length;if(frames*4>128*1024*1024)throw Error('Audio preparation memory budget');}for(const k of this.cache.keys())if(!needed.has(k))this.cache.delete(k);
   const reference=this.timeline.original.find(e=>e.midi_pitch!==null&&e.event_type==='note');
   if(reference&&!this.acknowledgements.size)for(let pc=0;pc<12;pc++)this.acknowledgements.set(pc,voice(this.context,{...reference,id:`control-ack-${pc}`,midi_pitch:60+pc,duration_s:.12,velocity:65,articulation:'staccato'}));
@@ -117,21 +124,22 @@ export class Engine{
   this.refreshTimer=setTimeout(run,0);
  }
  now(){return this.timeline.playing&&this.context?Math.min(this.timeline.bundle.scene.duration_s,this.anchorScene+Math.max(0,this.context.currentTime-this.anchorAudio)):this.timeline.position;}
- async play(){if(this.timeline.position>=this.timeline.bundle.scene.duration_s)this.timeline.reset(0,true);await this.unlock();if(this.timeline.position===0){this.completed=false;this.discontinuous=false;this.historyStart=this.timeline.history.length;this.mix=[{scene_s:0,gain_db:this.gainDb,muted:this.mute,lanes:{...this.lanes}}];}this.anchorScene=this.timeline.position;this.anchorAudio=this.context!.currentTime+.06;if(this.windowBus)scheduleWindowFade(this.windowBus.gain,this.timeline.bundle.scene.duration_s,this.anchorAudio,this.anchorScene,this.context!.currentTime);this.timeline.playing=true;this.fill();if(this.timer)clearInterval(this.timer);this.timer=setInterval(()=>this.fill(),25);}
+ async play(){if(this.timeline.position>=this.timeline.bundle.scene.duration_s)this.timeline.reset(0,true);await this.unlock();this.effectMix=prepareEffectMix(this.timeline.original,this.timeline.bundle.scene.duration_s,this.context!.sampleRate,e=>({data:(this.cache.get(this.key(e))??voice(this.context!,this.bufferEvent(e))).getChannelData(0),level:this.noteLevel(e)}));if(this.timeline.position===0){this.completed=false;this.discontinuous=false;this.historyStart=this.timeline.history.length;this.mix=[{scene_s:0,gain_db:this.gainDb,muted:this.mute,lanes:{...this.lanes}}];}this.anchorScene=this.timeline.position;this.anchorAudio=this.context!.currentTime+.06;if(this.windowBus)scheduleWindowFade(this.windowBus.gain,this.timeline.bundle.scene.duration_s,this.anchorAudio,this.anchorScene,this.context!.currentTime);this.timeline.playing=true;this.applyDucking();this.fill();if(this.timer)clearInterval(this.timer);this.timer=setInterval(()=>this.fill(),25);}
  fill(){if(!this.context||!this.master||!this.timeline.playing)return;const pos=this.now();this.timeline.advance(pos);if(pos>=this.timeline.bundle.scene.duration_s){this.completed=true;this.pause();this.onTick();return;}const now=this.context.currentTime,horizon=now+.15;
   this.nodes=this.nodes.filter(n=>n.end>now);
   for(const e of this.timeline.events){if(e.resolved_time_s>=this.timeline.bundle.scene.duration_s||this.scheduled.has(e.id))continue;const start=this.anchorAudio+e.resolved_time_s-this.anchorScene,end=start+e.duration_s;if(end<=now){this.scheduled.add(e.id);continue;}if(start>horizon)continue;this.scheduled.add(e.id);
-   const slice=this.timeline.verticalSlices.get(e.id),bufferEvent=slice?.bufferEvent??e,level=this.noteLevel(e);
+   const slice=this.timeline.verticalSlices.get(e.id),bufferEvent=slice?.bufferEvent??e,level=this.noteLevel(e)*(this.effectMix?.levels.get(e.id)??1);
    const source=this.context.createBufferSource(),gain=this.context.createGain();source.buffer=this.cache.get(this.key(bufferEvent))!;if(!source.buffer)throw Error('Audio buffer was not prepared');source.connect(gain);gain.connect(this.buses![e.event_type==='foley'?'foley':'soundtrack']);const at=Math.max(now+.002,start),offset=Math.max(0,at-start);if(offset>=e.duration_s)continue;gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(level,at+.003);if(slice&&e.resolved_time_s+e.duration_s<bufferEvent.resolved_time_s+bufferEvent.duration_s-1e-9){gain.gain.setValueAtTime(level,Math.max(at+.003,end-.008));gain.gain.linearRampToValueAtTime(0,end);}source.start(at,offset+(slice?.offset_s??0));source.stop(end+.001);source.onended=()=>{source.disconnect();gain.disconnect();};this.nodes.push({source,gain,event:e,end,source_id:slice?.source_id??e.id,level});this.metrics.push({scene_s:e.resolved_time_s,audio_s:at,event_id:e.id,generation:this.timeline.generation});
   }this.onTick();
  }
  clear(at?:number){this.cancelRefresh();if(!this.context)return;const t=at??this.context.currentTime;for(const n of this.nodes){try{n.gain.gain.cancelScheduledValues(t);n.gain.gain.setValueAtTime(n.gain.gain.value,t);n.gain.gain.linearRampToValueAtTime(0,t+.008);n.source.stop(t+.01);}catch{/*already ended*/}}this.nodes=[];this.scheduled.clear();if(this.timer)clearInterval(this.timer);this.timer=null;}
  pause(){const pos=this.now(),ready=this.preparedVersion===this.timeline.preparationVersion&&this.timeline.preparationReady;if(this.timeline.vertical&&!this.completed&&pos>0)this.discontinuous=true;this.clear();this.timeline.reset(pos);if(this.timeline.vertical){if(ready)this.preparedVersion=this.timeline.preparationVersion;else this.timeline.preparationReady=false;}else this.prepare();this.onTick();}
  seek(at:number){const ready=this.preparedVersion===this.timeline.preparationVersion&&this.timeline.preparationReady;this.completed=false;this.discontinuous=at!==0;this.mix=[];this.clear();this.timeline.reset(at,true);if(this.timeline.vertical){if(ready)this.preparedVersion=this.timeline.preparationVersion;else this.timeline.preparationReady=false;}else this.prepare();this.onTick();}
+ applyDucking(){if(this.context&&this.duckBus&&this.effectMix){const now=this.context.currentTime,scene=this.now();scheduleDucking(this.duckBus.gain,this.effectMix.points,Math.max(now,this.anchorAudio),scene,now,this.lanes.foley);}}
  applyMix(){if(!this.context||!this.buses)return;const point={scene_s:this.now(),gain_db:this.gainDb,muted:this.mute,lanes:this.lanes};for(const lane of ['soundtrack','foley'] as const)this.buses[lane].gain.setTargetAtTime(amplitude(point,lane),this.context.currentTime,.008);}
  setGain(db:number){if(!Number.isFinite(db)||db< -36||db>0)throw Error('Gain range');this.gainDb=db;this.recordMix();this.applyMix();}
  setMute(mute:boolean){this.mute=mute;this.setGain(this.gainDb);}
- setLanes(lanes:Lanes){this.lanes=lanes;this.recordMix();this.applyMix();}
+ setLanes(lanes:Lanes){this.lanes=lanes;this.recordMix();this.applyMix();if(this.timeline.playing)this.applyDucking();}
  private submitVertical(result:Decision){
   const context=this.context!,record=this.timeline.verticalPending(),started:Scheduled[]=[];
   const cancelDyad=()=>{for(const n of started){try{n.source.stop(context.currentTime);}catch{/* not started or already ended */}try{n.source.disconnect();n.gain.disconnect();}catch{/* already disconnected */}}this.nodes=this.nodes.filter(n=>!started.includes(n));};

@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "modules.blender.planning",
+    "reports/physics-components/invalid-plan-input.json",
+    "--out",
+    "reports/physics-components/invalid-plan"
+  ],
+  "pid": 72041,
+  "process_group": 72041,
+  "started_at": "2026-09-13T05:27:02.332311+00:00",
+  "exit_code": 1,
+  "duration_s": 0.236,
+  "process_group_absent": true
+}

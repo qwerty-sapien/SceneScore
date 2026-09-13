@@ -1,0 +1,28 @@
+✔ fragment token removed immediately, other URL state retained, no storage needed (2.076208ms)
+✔ default fetch bound correctly; only explicit API actions send consent or markers (157.600042ms)
+✔ API errors retained; oversized body rejected before request; exact delete sent (1.438292ms)
+✔ one keydown is one persisted label; repeat, held key and modifiers are ignored (3.235292ms)
+✔ failed delivery never acknowledges a label and queue can recover (1.634917ms)
+✔ only Train/Stop and concise notices appear; no controls to configure (22.445708ms)
+✔ absence of evaluation is never 0%, incomplete estimates and synthetic mode remain visible (0.493875ms)
+✔ automatic consent only goes with Train; server owns source, budgets and labels (57.171917ms)
+✔ connection and EEG check precede the Train button without adding dashboard controls (2.046917ms)
+✔ off-line service never shows cached successful hardware as live (1.0115ms)
+✔ fresh raw samples remain usable when separate Bluetooth inspection lacks permission (0.1965ms)
+✔ synthetic diagnostics stay visibly separate from hardware evidence (0.129ms)
+✔ connected inlet is not labelled live EEG until a fresh batch arrives (0.157542ms)
+✔ B down/up remains ordered, class/id stable, with repeat and text targets ignored (20.571292ms)
+✔ blur release closes once and server-stop clearing creates no late marker (14.528042ms)
+✔ cue state is separate timed preparation/activity/quiet; source truth needs a connection (2.77125ms)
+✔ review trace reload follows edited bounds and clamps the recorded range and ten-second budget (1.398792ms)
+✔ disconnected/empty input never creates synthetic traces (15.831084ms)
+✔ display is bounded, large DC is centered without editing raw samples (49.907791ms)
+✔ nonfinite samples break paths instead of drawing invented continuity (9.941209ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 546.175084

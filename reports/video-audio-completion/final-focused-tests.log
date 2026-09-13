@@ -1,0 +1,18 @@
+✔ music fades down before contact, holds at 80%, and recovers after the tail (0.727208ms)
+✔ overlapping and close effects share one duck; seeking reconstructs the envelope (0.751334ms)
+✔ effect RMS is 20% above ducked music, including overlapping effects (0.655083ms)
+✔ no effects means no duck; a silent base does not erase or infinitely amplify effects (0.187833ms)
+✔ all supported clip lengths receive deterministic, full-length original scores (144.056ms)
+✔ effects at the clip edges retain the full duck without duplicate automation times (0.204208ms)
+✔ mix journal validates time ordering and explicit mute at each point (0.695625ms)
+✔ voice bounds count overlapping intervals and permit adjacent notes (0.352417ms)
+✔ unprepared audio rolls back the entire pending modulation without preparing on acceptance (42.70675ms)
+✔ completed uninterrupted run is required for performance export; mix records edits (2.934292ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 555.153625

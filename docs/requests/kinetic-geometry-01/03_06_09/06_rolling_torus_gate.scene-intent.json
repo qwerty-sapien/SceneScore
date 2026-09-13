@@ -1,0 +1,76 @@
+{
+  "schema_version": "scene-intent-1",
+  "status": "DESIGN_INTENT_NOT_MEASURED",
+  "id": "06_rolling_torus_gate",
+  "duration_s": 10.2,
+  "seed": 305106,
+  "physics_backend": "native_bullet",
+  "visual_direction": "A cobalt-blue hoop rolls through a restrained stone-and-brass observatory. The wide central opening is always legible, with an intentionally framed stationary brass crossover visible through it before the gate sequence.",
+  "render_scope": {
+    "aspect_ratio": "9:16",
+    "proxy_px": [540, 960],
+    "final_px": [1080, 1920],
+    "simulation_hz": 240,
+    "replay_fps": 30,
+    "camera_grammar": "low-angle rolling follow; one continuous exterior shot"
+  },
+  "salience_policy": {
+    "minimum_gap_s": 0.75,
+    "maximum_duty_cycle": 0.3,
+    "maximum_beats": 3,
+    "maximum_simultaneous_salient_beats": 1,
+    "support_contact_policy": "retain_raw_do_not_count_as_salient"
+  },
+  "objects": [
+    {"id": "torus_hero", "role": "actor", "shape": "finite_torus", "motion": "dynamic", "scored": true, "mass_kg": 1.8, "dimensions_m": {"major_radius": 0.62, "tube_radius": 0.085}, "material": "cobalt_matte_enamel"},
+    {"id": "rolling_rail", "role": "silent_support", "shape": "finite_banked_rail", "motion": "fixed", "scored": false, "material": "warm_limestone_with_brass_edge"},
+    {"id": "crossover_rail", "role": "silent_support", "shape": "fixed_tube", "motion": "fixed", "scored": false, "material": "brass"},
+    {"id": "trigger_paddle", "role": "interaction_surface", "shape": "hinged_paddle", "motion": "dynamic", "scored": false, "mass_kg": 0.24, "material": "brass"},
+    {"id": "gate_panel", "role": "interaction_surface", "shape": "counterweighted_hinged_panel", "motion": "dynamic", "scored": false, "mass_kg": 0.8, "material": "translucent_smoke_glass"},
+    {"id": "gate_counterweight", "role": "actuator", "shape": "cable_weight", "motion": "dynamic", "scored": false, "mass_kg": 0.32, "material": "brass"},
+    {"id": "lower_cradle", "role": "silent_support", "shape": "fixed_u_cradle_with_compliant_face", "motion": "fixed", "scored": false, "material": "cork_and_limestone"}
+  ],
+  "route_and_camera": {
+    "route": "C2 exposed rail: release [-4.55,-1.15,3.10], S-bend trigger [-0.78,0.05,2.36], gate threshold [0.55,0.40,2.04], broad descending curve [2.10,1.20,1.32], lower cradle [3.72,1.78,0.86]. Minimum centerline radius 3.10 m; bank magnitude never exceeds 12 degrees.",
+    "central_hole_composition": "At 1.75-2.20 s, frame the fixed crossover rail 0.60 m behind the torus plane so it is plainly visible through the 1.07 m inner opening. It must remain clearance-only scenery, not a disguised guide.",
+    "gate": "Opening is 1.78 m wide x 1.72 m high. The panel starts closed across the route, raises about its upper hinge to a 74 degree supported stop, and leaves at least 0.15 m all-around torus passage clearance at its widest orientation.",
+    "camera": {"start_m": [-8.2,-9.4,2.75], "end_m": [-3.5,-11.2,2.20], "look_at_path": "follow [-2.7,-0.2,2.35] to [1.25,0.65,1.75] while retaining gate and lower curve", "lens_mm": 44, "rule": "No camera cut or fast pan during latch release or opening traversal; the torus hole, trigger, gate, and capture stay readable."}
+  },
+  "physical_parameters": {
+    "gravity_m_s2": 9.81,
+    "torus": {"rolling_radius_m": 0.62, "axial_inertia_kg_m2": 0.53, "static_friction": 0.58, "rolling_resistance": 0.018, "restitution": 0.03},
+    "collision_margin_m": 0.003,
+    "solver": {"substeps": 16, "iterations": 96},
+    "trigger": {"contact_face_m": [0.28,0.40], "hinge_axis": "+Y", "latch_withdrawal_impulse_threshold_Ns": 0.23, "required_torus_speed_at_contact_m_s": [2.6,3.4]},
+    "gate": {"hinge_axis": "+Y", "panel_inertia_kg_m2": 0.19, "counterweight_drum_radius_m": 0.18, "opening_stop_deg": 74, "hard_stop_deg": 80, "hinge_damping_Nms": 0.03, "latch_locked_before_trigger": true},
+    "capture": {"cradle_friction": 0.50, "cork_k_N_m": 70, "cork_c_Ns_m": 8.0}
+  },
+  "beats": [
+    {
+      "id": "no_slip_rollup",
+      "primary_kind": "acceleration",
+      "object_ids": ["torus_hero", "rolling_rail"],
+      "target_window_s": [0.40, 1.10],
+      "physical_cause": "Gravity on the descending banked rail and static contact friction accelerate the torus while its axle rotation changes at v/r. The rail, guards, and columns visibly supply the constraint.",
+      "measurement_required": "Falsify if the contact speed and axial angular speed fail the no-slip relation within the stated numerical tolerance, if a keyframed yaw substitutes for rolling, or if the track's reaction becomes tensile."
+    },
+    {
+      "id": "trigger_releases_counterweighted_gate",
+      "primary_kind": "collision",
+      "object_ids": ["torus_hero", "trigger_paddle", "gate_panel", "gate_counterweight"],
+      "target_window_s": [2.65, 3.25],
+      "physical_cause": "The rolling hoop strikes the finite paddle. Its measured impulse withdraws the latch; only then does the visible counterweight/cable convert gravitational potential into gate rotation. The hoop does not pass through a panel animated out of its way.",
+      "measurement_required": "Falsify if the latch opens before contact or below 0.23 N s, the gate moves while locked, the gate torque/weight path is absent, or passage at 3.70-4.15 s lacks a positive 0.15 m clearance envelope."
+    },
+    {
+      "id": "cradle_capture",
+      "primary_kind": "deceleration",
+      "object_ids": ["torus_hero", "lower_cradle"],
+      "target_window_s": [7.35, 7.95],
+      "physical_cause": "The long, broad lower curve dissipates rolling energy before the torus meets the cork-faced U cradle. The cradle transfers normal force through a visible base rather than freezing the hoop.",
+      "measurement_required": "Falsify if the torus clips the finite rail/cradle, receives a speed reset, or fails to sustain linear speed <0.02 m/s and angular speed <0.04 rad/s for 0.75 s by the terminal window."
+    }
+  ],
+  "ending": "At 9.40-10.20 s the cobalt torus rests upright in the lower-right cradle, its central hole still visible. The gate rests against its open stop and the counterweight is supported; neither object remains in unmotivated motion.",
+  "notes": "No near-miss is claimed. The rail observed through the central hole is deliberately a positive-clearance static element. Required backend controls include no-slip rolling with finite torus geometry, latch-disabled gate stability, real trigger impulse, open-gate sweep clearance, and compliant terminal capture."
+}

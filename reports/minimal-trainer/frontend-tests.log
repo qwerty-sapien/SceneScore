@@ -1,0 +1,42 @@
+✔ fragment token removed immediately, other URL state retained, no storage needed (4.112833ms)
+✔ default fetch bound correctly; only explicit API actions send consent or markers (44.315875ms)
+✔ API errors retained; oversized body rejected before request; exact delete sent (2.54825ms)
+✔ one keydown is one persisted label; repeat, held key and modifiers are ignored (1.826042ms)
+✔ failed delivery never acknowledges a label and queue can recover (0.975ms)
+✔ only Train/Stop and concise notices appear; no controls to configure (14.609333ms)
+✔ absence of evaluation is never 0%, incomplete estimates and synthetic mode remain visible (0.367458ms)
+✔ automatic consent only goes with Train; server owns source, budgets and labels (35.983042ms)
+✔ off-line service never shows cached successful hardware as live (1.48675ms)
+✔ fresh raw samples remain usable when separate Bluetooth inspection lacks permission (0.170042ms)
+✔ synthetic diagnostics stay visibly separate from hardware evidence (0.180208ms)
+✔ connected inlet is not labelled live EEG until a fresh batch arrives (0.154792ms)
+✔ B down/up remains ordered, class/id stable, with repeat and text targets ignored (1.843375ms)
+✔ blur release closes once and server-stop clearing creates no late marker (5.5205ms)
+✔ cue state is separate timed preparation/activity/quiet; source truth needs a connection (0.450125ms)
+✔ review trace reload follows edited bounds and clamps the recorded range and ten-second budget (0.260792ms)
+✔ disconnected/empty input never creates synthetic traces (0.952542ms)
+✔ display is bounded, large DC is centered without editing raw samples (13.517375ms)
+✔ nonfinite samples break paths instead of drawing invented continuity (0.367208ms)
+✔ scan UI needs an authenticated direct-BLE companion and supports empty scans (57.442208ms)
+✔ discovered device selection enables connect, not a raw identifier field (87.881583ms)
+✔ connection stages distinguish GATT connectivity from valid EEG and arm state (12.896333ms)
+✔ safe failures explain Bluetooth off, permission, expired discovery, and disconnect stages (6.671167ms)
+✔ missing profile, warmup, quality failure and every gate suppress arming (12.311292ms)
+✔ BLE clock caution identifies the uncalibrated allowance without claiming measured latency (2.003166ms)
+✔ LIVE_MUSE selection remains visible with keyboard fallback and never claims a false live stream (0.452ms)
+✔ client uses narrow authenticated requests and individual deadlines; poll stays available during scan (42.026208ms)
+✔ closed or superseded companion sessions reject late operations even when a fetcher ignores abort (2.256708ms)
+✔ arm/disarm serialize so a delayed arm cannot override a newer disarm (4.696917ms)
+✔ client refuses invalid discovery and uses safe error codes without native error traces (1.958375ms)
+✔ all four modes retain provenance and every live gate is required (4.493875ms)
+✔ feedback delayed beyond gesture and quiet window remains unreviewed, not truth (0.592708ms)
+✔ clock requires two anchors, estimates rate, propagates uncertainty and rejects stale/skewed sources (2.68775ms)
+✔ default fetch retains browser global receiver through authenticated handshake (62.856875ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 917.6575

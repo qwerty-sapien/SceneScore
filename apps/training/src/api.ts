@@ -15,6 +15,7 @@ export class TrainingAPI {
  async authenticate(token:string):Promise<Status>{const trimmed=token.trim();if(trimmed.length<16||trimmed.length>256||/\s/.test(trimmed))throw Error('Paste the token printed by the local training service.');const result=await(await this.response('/session',{},trimmed)).json();if(typeof result.session!=='string')throw Error('Invalid local session response.');this.session=result.session;return result.status;}
  status(signal?:AbortSignal){return this.json<Status>('/status',undefined,signal);}
  automaticStatus(signal?:AbortSignal){return this.json<AutomaticStatus>('/automatic/status',undefined,signal);}
+ connectAutomatic(){return this.json<AutomaticStatus>('/automatic/connect',{consent:true});}
  startAutomatic(){return this.json<AutomaticStatus>('/automatic/start',{consent:true});}
  stopAutomatic(){return this.json<AutomaticStatus>('/automatic/stop',{});}
  labelAutomatic(value:{id:string;client_ms:number;run_id:string}){return this.json<{saved:true;label_id:string;status:AutomaticStatus}>('/automatic/label',value);}

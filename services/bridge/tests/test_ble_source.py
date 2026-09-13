@@ -8,13 +8,16 @@ import pytest
 
 from modules.muse.acquisition.muse_protocol import EEGFrame
 from modules.muse.acquisition.tests.test_ble_manager import (
-    connect, manager_factory, on_loop, wait_for,
+    connect, on_loop, wait_for,
 )
+from modules.muse.acquisition.tests import test_ble_manager as manager_fixtures
 from modules.muse.runtime.quality import calibrate_profile, digest
 from modules.muse.runtime.tests.test_quality import profile as synthetic_profile, training_session
 from services.bridge.ble_source import BleCompanionSource, ble_metadata
 from services.bridge.server import Companion
 from scenescore.contracts import validate
+
+manager_factory = manager_fixtures.manager_factory  # Re-export the injected pytest fixture.
 
 
 class InspectableCompanion(Companion):
@@ -107,9 +110,10 @@ def test_real_profile_gate_warmup_arm_and_bad_signal_share_existing_causal_pipel
     companion = InspectableCompanion()
     source = BleCompanionSource(companion, fixture_real_profile())
     source.begin('Muse-fixture')
-    start = time.monotonic() - 3
     for index in range(64):
-        source.consume_frame(fixture_frame(index, start + index * 12 / 256))
+        # Source samples cover three logical seconds; actual fixture processing
+        # may be slower under concurrent work, so retain current receipt times.
+        source.consume_frame(fixture_frame(index))
     status = companion.status()
     assert status['quality'] == 'good' and status['warmup_ready'] and not status['armed']
     assert companion.arm()['armed']
@@ -192,3 +196,19 @@ def test_unexpected_disconnect_callback_faults_actual_companion(manager_factory)
     wait_for(lambda: not companion.connected)
     assert not companion.detector.armed and not companion.stream_verified
     assert companion.reason == 'unexpected_disconnect_reconnect_required'
+
+
+def test_adapter_cancels_pending_arm_and_clears_prior_checkpoint_display():
+    companion = InspectableCompanion()
+    if not hasattr(companion, 'pending_arm'):
+        pytest.skip('checkpoint integration belongs to the concurrent task')
+    source = BleCompanionSource(companion)
+    companion.pending_arm = True
+    companion.active_checkpoint = {'id': 'prior-session-fixture'}
+    companion.active_evaluation = {'status': 'prior-session-fixture'}
+    source.begin('Muse-fixture')
+    assert not companion.pending_arm
+    assert companion.active_checkpoint is None and companion.active_evaluation is None
+    companion.pending_arm = True
+    source.discontinuity('malformed_eeg_packet')
+    assert not companion.pending_arm and not companion.detector.armed

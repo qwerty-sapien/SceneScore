@@ -1,0 +1,12 @@
+{
+  "candidate": "08_spiral_observatory-v3",
+  "baseline": "08_spiral_observatory-v1",
+  "mechanics_states_bytes_identical": true,
+  "events_deep_equal": true,
+  "mechanics_states_sha256": "07f850132afdcaefe94088e122617edcea4c669d2fc09d7585284d29dde4b208",
+  "replay_states_sha256": "086c3d6454ec14b5cc592ab8d352fee0f9d5731a43095516edc8ce1a6bb0c05c",
+  "replay_states_bytes_identical": true,
+  "events_canonical_sha256": "5ee8f5ee58f08d07ccda5c8a8f0e027c7c3e91411282b5f5d9f7880dee99d819",
+  "evaluated_geometry_sha256": "9193a045acb429e06a5f39b8278f74f7b9f9bb59da9ea643f815fe83459d8253",
+  "packet_sha256": "94b3fae8e06883875d71ce1de7fb1e55911c48b907bf99306d546e21386b5312"
+}

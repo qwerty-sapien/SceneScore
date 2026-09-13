@@ -72,7 +72,7 @@ def main():
             ],
             cwd=root,
             check=True,
-            env={**os.environ, "VITE_STUDIO_URL": "https://scenescore-muse-vertical.vercel.app"},
+            env=os.environ.copy(),
         )
     if not (root / "artifacts/training-dist/index.html").is_file():
         parser.error("Training page is not built; omit --no-build")
@@ -96,8 +96,6 @@ def main():
         str(root / "artifacts/training-dist"),
         "--origin",
         "http://127.0.0.1:8767",
-        "--origin",
-        "https://scenescore-muse-vertical.vercel.app",
     ]
     process = subprocess.Popen(command, cwd=root, env=environment, start_new_session=True)
     print(f"TASK JOB PID={process.pid} PGID={process.pid} PORT=8767", flush=True)
@@ -136,7 +134,7 @@ def main():
         if not args.no_open:
             webbrowser.open(url)
         else:
-            print("Token is printed by the local service; paste it into the training page.", flush=True)
+            print("Open the authenticated URL printed by the local service in this browser.", flush=True)
         process.wait(timeout=args.seconds + 15)
         if process.returncode != 0:
             raise RuntimeError(f"Training service exited {process.returncode}")

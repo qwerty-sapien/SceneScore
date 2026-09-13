@@ -1,0 +1,7 @@
+{
+  "packet_sha256": "80fa90ba477c25610176377ad315b0e8737de5633b60ad4f988ca6cb11ea4b53",
+  "states_deep_equal_to_v1": true,
+  "events_deep_equal_to_v1": true,
+  "states_canonical_sha256": "338562a90757e83476e82b26fd2d1919e7a6906976a0ec8d5582df58442a9f81",
+  "events_canonical_sha256": "5ee8f5ee58f08d07ccda5c8a8f0e027c7c3e91411282b5f5d9f7880dee99d819"
+}

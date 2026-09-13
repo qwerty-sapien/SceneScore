@@ -1,0 +1,16 @@
+{
+  "preview_pid": 66892,
+  "preview_session": 29735,
+  "preview_exit_code": 143,
+  "browser_check_pids": [
+    68105,
+    70850,
+    71267
+  ],
+  "browser_checks_exited": true,
+  "browser_closed": true,
+  "pid_check": "No matching PIDs remained",
+  "preview_port": 8797,
+  "port_check": "No listener remained",
+  "other_jobs_started": false
+}

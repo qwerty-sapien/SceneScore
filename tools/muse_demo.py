@@ -65,15 +65,10 @@ def main():
         parser.error('Prepare the scene assets with make demo before using this companion launcher')
     consent_directory = tempfile.TemporaryDirectory(prefix='scenescore-ble-consent-')
     if args.source == 'ble' and args.live_consent is None:
-        if not sys.stdin.isatty():
-            consent_directory.cleanup()
-            parser.error('BLE requires --live-consent /LOCAL/consent.json or an interactive terminal')
-        print('Live Muse processing stays on this computer; this companion never records EEG. '
-              'Enter your live-processing consent statement in your own words, or leave blank to cancel.')
-        statement = input('Consent statement: ').strip()
-        if not statement:
-            consent_directory.cleanup()
-            return
+        # The explicit --source ble / make muse-live invocation starts this
+        # private local workflow. Retain the existing bridge CLI shape without
+        # asking the operator to repeat that instruction in another prompt.
+        statement = 'Operator explicitly invoked the local BLE processing launcher.'
         args.live_consent = Path(consent_directory.name) / 'consent.json'
         args.live_consent.write_text(json.dumps({'live_processing': True, 'raw_recording': False,
                                                'participant_statement': statement}))

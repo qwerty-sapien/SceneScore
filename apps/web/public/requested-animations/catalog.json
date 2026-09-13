@@ -1,0 +1,65 @@
+{
+  "version": "rendered-video-catalog-1",
+  "videos": [
+    {
+      "id": "15b9edf275984bc17134e45871c7db54ea5b0638bc70208089cd02d6164b2b57",
+      "title": "6 \u2014 Three Ways Down",
+      "duration": 30.0,
+      "video": "06-three-ways-down.mp4",
+      "video_sha256": "15b9edf275984bc17134e45871c7db54ea5b0638bc70208089cd02d6164b2b57",
+      "label": "Physics animation",
+      "source": "rendered",
+      "audio": "silent",
+      "entries": [],
+      "sourcePaths": [
+        "artifacts/blender/revamp/directions/06_three_ways_down-v4/renders/video.mp4"
+      ]
+    },
+    {
+      "id": "2f99e5bd9e8200a742146c4e34a4703768d3fed813c6e97ca99a27454a44cd45",
+      "title": "8 \u2014 Spiral Observatory",
+      "duration": 30.0,
+      "video": "08-spiral-observatory.mp4",
+      "video_sha256": "2f99e5bd9e8200a742146c4e34a4703768d3fed813c6e97ca99a27454a44cd45",
+      "label": "Physics animation",
+      "source": "rendered",
+      "audio": "silent",
+      "entries": [],
+      "sourcePaths": [
+        "artifacts/blender/revamp/directions/08_spiral_observatory-v3/renders/video.mp4"
+      ]
+    },
+    {
+      "id": "b13965df4f27a190d367b18cd0b4e0bdeecd2a8bb33809eafb16258006a0ed93",
+      "title": "18 \u2014 The Billiard Greenhouse",
+      "duration": 30.0,
+      "video": "18-billiard-greenhouse.mp4",
+      "video_sha256": "b13965df4f27a190d367b18cd0b4e0bdeecd2a8bb33809eafb16258006a0ed93",
+      "label": "Physics animation",
+      "source": "rendered",
+      "audio": "silent",
+      "entries": [],
+      "sourcePaths": [
+        "artifacts/blender/revamp/directions/18_billiard_greenhouse-v3/renders/video.mp4"
+      ]
+    },
+    {
+      "id": "d3a980678cb8488f8e20658c4e135f7a73171950556b505bebbc34d33911e617",
+      "title": "C \u2014 Turning Glass",
+      "duration": 6.366667,
+      "video": "c.mp4",
+      "video_sha256": "d3a980678cb8488f8e20658c4e135f7a73171950556b505bebbc34d33911e617",
+      "label": "Video-only live piano",
+      "source": "rendered",
+      "audio": "live",
+      "entries": [],
+      "sourcePaths": [
+        "C.mp4"
+      ],
+      "accompaniment": {
+        "version": "video-accompaniment-1",
+        "seed": 42
+      }
+    }
+  ]
+}

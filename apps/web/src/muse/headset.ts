@@ -37,6 +37,10 @@ export function museError(error:unknown):string {
 export function sameStream(a:BridgeStatus|null,b:BridgeStatus|null):boolean {
  return !!a&&!!b&&a.device_epoch===b.device_epoch&&a.host_epoch===b.host_epoch&&a.config_hash===b.config_hash&&a.mode===b.mode;
 }
+/** Detection is independent of arming/quality and never inferred from a selected input mode. */
+export function museDetected(status:BridgeStatus|null):boolean {
+ return !!status&&status.mode==='LIVE_MUSE'&&(status.ble_connected===true||(status.connected&&status.hardware_verified));
+}
 export function detectorEligible(status:BridgeStatus|null):boolean {
  return !!status&&status.source_available&&status.connected&&status.quality==='good'&&status.warmup_ready&&!status.reconnect_required&&(status.mode!=='LIVE_MUSE'||status.hardware_verified);
 }

@@ -1,0 +1,5 @@
+{"stage": "scanning", "recording": true, "pid": 88784}
+{"result": "FAIL", "transport": {"transport": "bleak", "bluetooth_state": "error", "device_name": null, "ble_connected": false, "reconnect_required": false, "last_error": "scan_timeout", "last_operation": "scan", "disconnect_stage": null, "time_connected_s": 0.0, "time_streaming_s": 0.0, "notification_count": 0, "packet_count": 0, "eeg_sample_count": 0, "notification_rate_hz": 0.0, "packet_rate_hz": 0.0, "last_packet_age_s": null, "dropped_samples": 0, "malformed_packets": 0, "rejected_packets": 0, "buffered_frames": 0}}
+{"recording": {"recording_created": false}}
+{"stage": "disconnected", "cleanup": "PASS", "ble_thread_alive": false, "recording_thread_alive": false}
+{"result": "FAIL", "error": "scan_timeout"}

@@ -50,13 +50,14 @@ def test_timing_boundaries_epochs_quality_and_background_are_not_hidden():
     assert not check_metrics(b, decisions(30), elapsed_s=150, usable_s=150, background_s=59, complete=True)["complete"]
 
 
-def manual(tmp_path):
+def manual(tmp_path, mode="synthetic"):
     clock = [0.0]
     description = copy.deepcopy(SyntheticSource.description)
     description["sample_rate_hz"] = 64
     source = SimpleNamespace(description=description, close=lambda: None)
-    trainer = AutomaticTrainer(tmp_path, SimpleNamespace(open=lambda _: source), synthetic=True, clock=lambda: clock[0])
-    trainer.run = {"id": "run-fixture", "format": FORMAT, "source_mode": "synthetic", "hardware_verified": False}
+    sources = SimpleNamespace(open=lambda _: source, discover=lambda: {"sources": [{"id": "fixture-real-descriptor"}]})
+    trainer = AutomaticTrainer(tmp_path, sources, synthetic=mode == "synthetic", clock=lambda: clock[0])
+    trainer.run = {"id": "run-fixture", "format": FORMAT, "source_mode": mode, "hardware_verified": False}
     trainer.path = tmp_path / "runs" / "run-fixture"
     atomic_json(trainer.path / "run.json", trainer.run)
     trainer._open()
@@ -74,13 +75,14 @@ def feed(trainer, clock, seconds):
 
 
 def test_real_descriptor_is_not_attested_by_auto_training_and_B_is_idempotent(tmp_path):
-    trainer, clock = manual(tmp_path)
+    trainer, clock = manual(tmp_path, mode="real_device")
     try:
         feed(trainer, clock, 4)
         body = {"id": "one", "run_id": trainer.run["id"], "client_ms": 25}
         assert trainer.label(body)["saved"]
         assert trainer.label(body)["saved"] and len(trainer.labels) == 1
         assert trainer.run["hardware_verified"] is False
+        assert trainer.metadata["provenance"]["source_mode"] == "real_device"
         assert trainer.learning[-1]["label"] == 1
         assert "client_ms" not in trainer.learning[-1]["features"]
         with pytest.raises(ValueError, match="stale"):
@@ -130,3 +132,105 @@ def test_history_reload_checks_digest_and_excludes_check_data(tmp_path):
             trainer._load_learning()
     finally:
         trainer.close()
+
+
+def test_false_detections_do_not_postpone_a_failed_check_or_delete_its_checkpoint(tmp_path):
+    trainer, clock = manual(tmp_path)
+    try:
+        trainer.checkpoint = trainer.store.save(checkpoint())
+        trainer.fit_result = trainer.checkpoint
+        trainer.last_source_s = 0
+        trainer._accept_fit()
+        clock[0], trainer.last_source_s = 300., 300.
+        trainer.labels = labels(30)
+        trainer.check_decisions = decisions(30) + [
+            {"id": f"extra-{i}", "epoch": "one", "final_blink_s": 291 + i, "decision_s": 291.5 + i}
+            for i in range(10)]
+        trainer.usable_intervals = [[0., 300.]]
+        trainer._maybe_check()
+        assert trainer.phase == "learning" and trainer.stage_new == [0, 0]
+        assert trainer.evaluation["complete"] and trainer.evaluation["fp"] == 10
+        assert not trainer.evaluation["target_reached"]
+        assert trainer.store.load(trainer.checkpoint["id"]) == trainer.checkpoint
+    finally:
+        trainer.close()
+
+
+def test_full_learning_saves_checkpoint_before_check_and_partial_check_keeps_it(tmp_path):
+    trainer, clock = manual(tmp_path)
+    try:
+        feed(trainer, clock, 100)
+        for i in range(20):
+            feed(trainer, clock, 3)
+            trainer.label({"id": f"learning-{i}", "client_ms": i, "run_id": trainer.run["id"]})
+        feed(trainer, clock, .5)
+        assert trainer.fit_thread is not None
+        trainer.fit_thread.join(5)
+        assert not trainer.fit_thread.is_alive()
+        assert trainer.store.latest(contract()) is not None
+        trainer._accept_fit()
+        assert trainer.phase == "checking" and trainer.evaluation is None
+        saved = trainer.checkpoint
+        feed(trainer, clock, 4)
+        trainer.label({"id": "check-only", "client_ms": 100, "run_id": trainer.run["id"]})
+        assert trainer.detector.armed and trainer.detector.count >= trainer.rate
+        trainer._save_check(complete=False)
+        assert trainer.store.latest(contract()) == saved
+        assert "check-only" not in str(saved["examples"])
+        assert trainer._load_learning() == trainer.learning
+    finally:
+        trainer.close()
+
+
+def test_http_automatic_flow_requires_explicit_train_and_cleans_up(tmp_path):
+    from services.training.tests.test_training import http_workspace, wait
+    with http_workspace(tmp_path) as (state, server, request):
+        state.automatic.synthetic = True
+        assert request("GET", "/v1/automatic/status")[1]["phase"] == "idle"
+        assert request("POST", "/v1/automatic/start", {"consent": False})[0] == 400
+        assert request("POST", "/v1/automatic/start", {"consent": True})[0] == 400
+        assert request("POST", "/v1/automatic/connect", {"consent": True})[0] == 200
+        wait(lambda: state.preparation.snapshot()["ready"], timeout=6)
+        assert state.automatic.run is None
+        assert not (tmp_path / "automatic" / "runs").exists()
+        assert request("POST", "/v1/automatic/start", {"consent": True})[0] == 200
+        wait(lambda: state.automatic.last_source_s is not None)
+        status = request("GET", "/v1/automatic/status")[1]
+        label = {"id": "http-label", "client_ms": 4, "run_id": status["run_id"]}
+        assert request("POST", "/v1/automatic/label", label)[1]["saved"]
+        assert request("POST", "/v1/automatic/label", label)[1]["saved"]
+        assert request("GET", "/v1/automatic/status")[1]["labels"] == 1
+        assert request("POST", "/v1/automatic/stop", {})[0] == 200
+        wait(lambda: not state.automatic.status()["active"])
+        assert state.automatic.source is None
+        assert not state.automatic.thread.is_alive()
+
+
+def test_ten_minute_cap_and_source_error_preserve_prior_checkpoint(tmp_path):
+    import time
+    clock = [0.0]
+    description = copy.deepcopy(SyntheticSource.description)
+    description["sample_rate_hz"] = 64
+    closed = []
+    def pull():
+        clock[0] = 600.1
+        return [], []
+    source = SimpleNamespace(description=description, pull=pull, close=lambda: closed.append(True))
+    trainer = AutomaticTrainer(tmp_path, SimpleNamespace(open=lambda _: source), synthetic=True, clock=lambda: clock[0])
+    saved = trainer.store.save(checkpoint())
+    trainer.start({"consent": True})
+    trainer.thread.join(5)
+    assert not trainer.thread.is_alive() and closed
+    assert trainer.store.latest(contract()) == saved
+    assert trainer.status()["elapsed_s"] >= 600
+    assert not trainer.status()["active"]
+    trainer.close()
+    # No waiting or data collection occurs after a known source fault.
+    clock[0] = time.monotonic()
+    source.pull = lambda: (_ for _ in ()).throw(OSError("fixture source fault"))
+    recovered = AutomaticTrainer(tmp_path, SimpleNamespace(open=lambda _: source), synthetic=True, clock=lambda: clock[0])
+    recovered.start({"consent": True})
+    recovered.thread.join(5)
+    assert recovered.phase == "error"
+    assert recovered.store.latest(contract()) == saved
+    recovered.close()

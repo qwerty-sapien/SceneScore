@@ -1,0 +1,198 @@
+{
+  "pid": 80277,
+  "pgid": 80277,
+  "input_sha256": {
+    "artifacts/blender/revamp/directions/06_three_ways_down-v3/packet.json": "d450b4be4e86caaff4024a0af7f0993f54104c23fff4febf712cb27994bbb01d",
+    "artifacts/blender/revamp/directions/06_three_ways_down-v3/evaluated_geometry.json": "85be9d8ab21b9e6c8ff445135678e162d06da92bfc6e99e0e0ae17fa1a017cc5",
+    "artifacts/blender/revamp/directions/06_three_ways_down-v3/replay_states.jsonl": "db91e7f1184e4288190b49112a11cc97a9c7b8ddc028ba04d6d174ef77a7df12"
+  },
+  "actors": {
+    "sphere": {
+      "bound": "circumsphere radius.24",
+      "own_rail_ids_excluded_only_after_halfspace_check": [
+        "sphere-guide-left",
+        "sphere-guide-left-upright-0",
+        "sphere-guide-left-upright-100",
+        "sphere-guide-left-upright-125",
+        "sphere-guide-left-upright-150",
+        "sphere-guide-left-upright-175",
+        "sphere-guide-left-upright-200",
+        "sphere-guide-left-upright-225",
+        "sphere-guide-left-upright-25",
+        "sphere-guide-left-upright-250",
+        "sphere-guide-left-upright-275",
+        "sphere-guide-left-upright-50",
+        "sphere-guide-left-upright-75",
+        "sphere-guide-right",
+        "sphere-guide-right-upright-0",
+        "sphere-guide-right-upright-100",
+        "sphere-guide-right-upright-125",
+        "sphere-guide-right-upright-150",
+        "sphere-guide-right-upright-175",
+        "sphere-guide-right-upright-200",
+        "sphere-guide-right-upright-225",
+        "sphere-guide-right-upright-25",
+        "sphere-guide-right-upright-250",
+        "sphere-guide-right-upright-275",
+        "sphere-guide-right-upright-50",
+        "sphere-guide-right-upright-75"
+      ],
+      "maximum_actual_Y_half_support_m": 0.24000035722053056,
+      "minimum_own_rail_Y_halfspace_m": 0.24000000953674316,
+      "Y_separation_lower_bound_m": -3.476837873994665e-07,
+      "maximum_local_Z_axle_deviation_from_world_Y": 4.214685074972205e-07,
+      "own_floor_Y_extrusion_verified": true,
+      "own_floor_exact_swept_gap_m": [
+        -5.3220804803189026e-06,
+        {
+          "time_s": 13.091666666666667,
+          "triangle": 343
+        }
+      ],
+      "other_static_sampled_gap_m": [
+        0.029909259621377637,
+        {
+          "time_s": 11.695833333333333,
+          "object": "sphere-support-cap-125",
+          "triangle": 2
+        }
+      ],
+      "other_static_inter_sample_gap_lower_bound_m": [
+        0.027623460014802228,
+        {
+          "interval_ticks": [
+            3455,
+            3456
+          ]
+        }
+      ],
+      "triangles_tested": 43420
+    },
+    "cylinder": {
+      "bound": "world-Y capsule radius.24 endpoints+/-.15",
+      "own_rail_ids_excluded_only_after_halfspace_check": [
+        "cylinder-guide-left",
+        "cylinder-guide-left-upright-0",
+        "cylinder-guide-left-upright-100",
+        "cylinder-guide-left-upright-125",
+        "cylinder-guide-left-upright-150",
+        "cylinder-guide-left-upright-175",
+        "cylinder-guide-left-upright-200",
+        "cylinder-guide-left-upright-225",
+        "cylinder-guide-left-upright-25",
+        "cylinder-guide-left-upright-250",
+        "cylinder-guide-left-upright-275",
+        "cylinder-guide-left-upright-50",
+        "cylinder-guide-left-upright-75",
+        "cylinder-guide-right",
+        "cylinder-guide-right-upright-0",
+        "cylinder-guide-right-upright-100",
+        "cylinder-guide-right-upright-125",
+        "cylinder-guide-right-upright-150",
+        "cylinder-guide-right-upright-175",
+        "cylinder-guide-right-upright-200",
+        "cylinder-guide-right-upright-225",
+        "cylinder-guide-right-upright-25",
+        "cylinder-guide-right-upright-250",
+        "cylinder-guide-right-upright-275",
+        "cylinder-guide-right-upright-50",
+        "cylinder-guide-right-upright-75"
+      ],
+      "maximum_actual_Y_half_support_m": 0.15000011917524053,
+      "minimum_own_rail_Y_halfspace_m": 0.15000000596046448,
+      "Y_separation_lower_bound_m": -1.1321477605408248e-07,
+      "maximum_local_Z_axle_deviation_from_world_Y": 3.4755185475461526e-07,
+      "own_floor_Y_extrusion_verified": true,
+      "own_floor_exact_swept_gap_m": [
+        -1.3734037986157244e-05,
+        {
+          "time_s": 12.125,
+          "triangle": 250
+        }
+      ],
+      "other_static_sampled_gap_m": [
+        0.006192021971024558,
+        {
+          "time_s": 16.695833333333333,
+          "object": "cylinder-receiver-contact-lamp",
+          "triangle": 1800
+        }
+      ],
+      "other_static_inter_sample_gap_lower_bound_m": [
+        0.003837097915444284,
+        {
+          "interval_ticks": [
+            3631,
+            3632
+          ]
+        }
+      ],
+      "triangles_tested": 43420
+    },
+    "hoop": {
+      "bound": "circumsphere radius.24",
+      "own_rail_ids_excluded_only_after_halfspace_check": [
+        "hoop-guide-left",
+        "hoop-guide-left-upright-0",
+        "hoop-guide-left-upright-100",
+        "hoop-guide-left-upright-125",
+        "hoop-guide-left-upright-150",
+        "hoop-guide-left-upright-175",
+        "hoop-guide-left-upright-200",
+        "hoop-guide-left-upright-225",
+        "hoop-guide-left-upright-25",
+        "hoop-guide-left-upright-250",
+        "hoop-guide-left-upright-275",
+        "hoop-guide-left-upright-50",
+        "hoop-guide-left-upright-75",
+        "hoop-guide-right",
+        "hoop-guide-right-upright-0",
+        "hoop-guide-right-upright-100",
+        "hoop-guide-right-upright-125",
+        "hoop-guide-right-upright-150",
+        "hoop-guide-right-upright-175",
+        "hoop-guide-right-upright-200",
+        "hoop-guide-right-upright-225",
+        "hoop-guide-right-upright-25",
+        "hoop-guide-right-upright-250",
+        "hoop-guide-right-upright-275",
+        "hoop-guide-right-upright-50",
+        "hoop-guide-right-upright-75"
+      ],
+      "maximum_actual_Y_half_support_m": 0.02500009657621529,
+      "minimum_own_rail_Y_halfspace_m": 0.02499997615814209,
+      "Y_separation_lower_bound_m": -1.204180732003457e-07,
+      "maximum_local_Z_axle_deviation_from_world_Y": 4.214685081410187e-07,
+      "own_floor_Y_extrusion_verified": true,
+      "own_floor_exact_swept_gap_m": [
+        -7.708623664698377e-06,
+        {
+          "time_s": 13.65,
+          "triangle": 276
+        }
+      ],
+      "other_static_sampled_gap_m": [
+        0.02989599690762762,
+        {
+          "time_s": 9.783333333333333,
+          "object": "hoop-support-cap-50",
+          "triangle": 2
+        }
+      ],
+      "other_static_inter_sample_gap_lower_bound_m": [
+        0.027830657159197518,
+        {
+          "interval_ticks": [
+            3871,
+            3872
+          ]
+        }
+      ],
+      "triangles_tested": 43420
+    }
+  },
+  "scope": "Evaluated static triangles at all7201poses. Own floor exact swept distances; other-static linear-between-key distance lower bound from1-Lipschitz translation. Own rail exclusion independently bounded in Y. Moving receivers remain covered by root explicit-pose/source-gap verification.",
+  "elapsed_s": 17.87415623664856,
+  "target_m": 0.0002,
+  "status": "PASSED_SCOPED_STATIC_GEOMETRY"
+}

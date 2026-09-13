@@ -4,7 +4,7 @@ import type {AutomaticStatus} from './types';
 export class TapLabelController {
  private held=false;
  private queue:Promise<unknown>=Promise.resolve();
- constructor(private send:(value:{id:string;client_ms:number;run_id:string})=>Promise<unknown>,private saved:()=>void,private failed:(error:unknown)=>void,private clock=()=>performance.now(),private id=()=>crypto.randomUUID()){}
+ constructor(private send:(value:{id:string;client_ms:number;run_id:string})=>Promise<unknown>,private saved:()=>void,private failed:(error:unknown)=>void,private clock=()=>performance.now(),private id:()=>string=()=>crypto.randomUUID()){}
  down(event:{code:string;repeat:boolean;target:EventTarget|null;ctrlKey?:boolean;metaKey?:boolean;altKey?:boolean},status:AutomaticStatus|null){
   if(event.code!=='KeyB'||event.repeat||this.held||event.ctrlKey||event.metaKey||event.altKey||editableTarget(event.target)||!status?.run_id||!['learning','fitting','checking'].includes(status.phase))return false;
   this.held=true;
@@ -23,5 +23,6 @@ export function progressText(status:AutomaticStatus|null):string {
  const measured=status.evaluation;
  const estimate=measured?` · B-label precision ${measured.precision===null?'—':(measured.precision*100).toFixed(1)+'%'} / recall ${measured.recall===null?'—':(measured.recall*100).toFixed(1)+'%'}${measured.complete?'':' (incomplete)'}`:status.checkpoint_id?' · Not yet evaluated':'';
  const collection=status.active?` · ${status.labels} labels · ${Math.floor(status.elapsed_s/60)}:${String(Math.floor(status.elapsed_s%60)).padStart(2,'0')}`:'';
- return mode+status.message+collection+estimate;
+ const counts=measured&&measured.tp!==undefined?` · ${measured.tp} matched / ${measured.fp} extra / ${measured.fn} missed`:'';
+ return mode+status.message+collection+estimate+counts;
 }

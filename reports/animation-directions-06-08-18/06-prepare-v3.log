@@ -1,0 +1,82 @@
+{
+  "out": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/06_three_ways_down-v3",
+  "validation": {
+    "actors": {
+      "sphere": {
+        "max_energy_residual_J": 1.5276668818842154e-13,
+        "min_floor_normal_N": 9.73978363239015,
+        "max_capture_rail_normal_N": 0.0,
+        "max_reaction_N": 9.852618126716282,
+        "max_guide_work_W": 4.440892098500626e-16,
+        "max_required_static_friction_coefficient": 0.07829339294825279,
+        "max_output_displacement_m": 0.004803454096463577,
+        "max_output_displacement_over_radius": 0.020014392068598237,
+        "dissipated_energy_J": 2.0796125511175587,
+        "source_energy_J": 21.582000000000004,
+        "final_mechanical_energy_J": 19.502387448882594,
+        "min_receiver_force_N": 0.0,
+        "min_receiver_gap_m": -5.848377337969168e-12,
+        "max_receiver_compression_m": 0.3861268863171242,
+        "receiver_contact_episodes": 2,
+        "final_speed_m_s": 0.0004440103452712096,
+        "last_motion_s": 24.575,
+        "dock_compression_m": 0.05526499336504082
+      },
+      "cylinder": {
+        "max_energy_residual_J": 7.460698725481052e-14,
+        "min_floor_normal_N": 9.556419254381508,
+        "max_capture_rail_normal_N": 0.0,
+        "max_reaction_N": 9.950222463452329,
+        "max_guide_work_W": 3.3306690738754696e-16,
+        "max_required_static_friction_coefficient": 0.09477180879159959,
+        "max_output_displacement_m": 0.0047204559934114695,
+        "max_output_displacement_over_radius": 0.019668566639214458,
+        "dissipated_energy_J": 2.212046283020302,
+        "source_energy_J": 21.582000000000004,
+        "final_mechanical_energy_J": 19.36995371697976,
+        "min_receiver_force_N": 0.0,
+        "min_receiver_gap_m": -6.401656982291115e-12,
+        "max_receiver_compression_m": 0.396071704832109,
+        "receiver_contact_episodes": 3,
+        "final_speed_m_s": -0.0005698218161590445,
+        "last_motion_s": 25.662499999999998,
+        "dock_compression_m": 0.0545685867472194
+      },
+      "hoop": {
+        "max_energy_residual_J": 7.460698725481052e-14,
+        "min_floor_normal_N": 9.766112085670807,
+        "max_capture_rail_normal_N": 0.0,
+        "max_reaction_N": 9.87447888717674,
+        "max_guide_work_W": 3.3306690738754696e-16,
+        "max_required_static_friction_coefficient": 0.13689608388622804,
+        "max_output_displacement_m": 0.004435125806039211,
+        "max_output_displacement_over_radius": 0.01847969085849671,
+        "dissipated_energy_J": 2.344370880498011,
+        "source_energy_J": 21.582000000000004,
+        "final_mechanical_energy_J": 19.23762911950206,
+        "min_receiver_force_N": 0.0,
+        "min_receiver_gap_m": -1.4194478925588783e-11,
+        "max_receiver_compression_m": 0.4182421146377475,
+        "receiver_contact_episodes": 3,
+        "final_speed_m_s": -0.008790469819975085,
+        "last_motion_s": 29.941666666666666,
+        "dock_compression_m": 0.05188780689839759
+      }
+    },
+    "assumptions": [
+      "Planar rolling: fixed world Y axles; no invisible steering.",
+      "Unit masses; exact solid sphere/cylinder and finite-torus axial inertias.",
+      "Initial 1m low-loss equal slope; later viscoelastic torque rises to \u22120.3*r*v N m; static coefficient 0.8.",
+      "Unilateral massless receiver: k=8 N/m, c=1.3 N s/m; separation, passive retraction and recontacts.",
+      "Race routes use different planar profiles; crossing routes/finish flag become electrical checkpoint lamps."
+    ],
+    "substeps": 8,
+    "gravity_m_s2": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "human_review": "PENDING",
+    "evaluated_blender_replay": "NOT_RUN"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "candidate": "08_spiral_observatory-v3",
+  "samples": 7201,
+  "local_vertex_radius_range_m": [
+    0.23999997102593773,
+    0.24000026285649503
+  ],
+  "scale_axis_ranges": [
+    [
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ]
+  ],
+  "maximum_scale_deviation_from_one": 0.0,
+  "quaternion_distinct_count": 1,
+  "first_quaternion_xyzw": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "root_rolling_source_sha256": "5d8741f0116ded2c628461a08efffd4ae81a9267795e62fc4b3a5ea337f054fa"
+}

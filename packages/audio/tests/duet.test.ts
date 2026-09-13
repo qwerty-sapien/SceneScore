@@ -16,9 +16,15 @@ test('duet binds a separate synchronized piano stem and rejects altered backing'
   const shifted=transition(b.events,p,b.composition,0,delta,0);
   for(const e of b.events.filter(e=>e.instrument_id==='piano_felt_comp_v1'||e.instrument_id==='guitar_fingerstyle_v1')){
    const next=shifted.find(n=>n.id===e.id)!;
-   assert.equal(next.midi_pitch,e.midi_pitch!+delta);
+   const beat=60/b.composition.tempo_map[0].bpm;
+   if(e.instrument_id==='piano_felt_comp_v1'&&e.resolved_time_s<4*beat){
+    // The manual/blink transition now reharmonizes the piano with bass for V → I.
+    const root=(delta+(e.resolved_time_s<beat?7:0)+12)%12;
+    assert.ok([0,4,7].some(interval=>(root+interval)%12===next.midi_pitch!%12));
+   }else assert.equal(next.midi_pitch,e.midi_pitch!+delta);
    assert.equal(next.resolved_time_s,e.resolved_time_s);
-   assert.equal(next.duration_s,e.duration_s);
+   const fragments=shifted.filter(n=>n.id===e.id||n.id===e.id+':arrival');
+   assert.ok(Math.abs(fragments.reduce((sum,n)=>sum+n.duration_s,0)-e.duration_s)<1e-9);
   }
  }
 });

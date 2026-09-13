@@ -1,0 +1,234 @@
+{
+  "schema_version": "scene-intent-2",
+  "status": "DESIGN_INTENT_NOT_MEASURED",
+  "id": "05_tumbling_tetrahedron",
+  "duration_s": 10.4,
+  "clock": "scene_seconds_zero_at_start",
+  "mechanics": {
+    "backend": "native_bullet",
+    "model_version": "blender-native-bullet-candidate-1",
+    "scope": "One dynamic convex tetrahedron with fixed isolated inclines, exposed lip and three separate fixed slot rails.",
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "contact_model": "Proposed convex rigid-body contact; actual contact, gap and replay evidence remain required.",
+    "material_model": "Per-actor coefficients are declared in the companion Markdown card; no coefficient is calibrated or measured here.",
+    "actuation_model": "Gravity and contact determine free body motion; only declared visible latches may be prescribed.",
+    "limitations": [
+      "DESIGN_INTENT_NOT_MEASURED.",
+      "Historical Native Bullet transfer/convergence calibration failed; this plan neither repairs nor relaxes it.",
+      "Current analytic backend cannot validate this dynamic-body scope."
+    ]
+  },
+  "actors": [
+    {
+      "id": "tetra-a",
+      "role": "actor",
+      "shape": "convex_mesh",
+      "motion": "dynamic",
+      "collision_enabled": true,
+      "scored": true,
+      "sonic_identity_id": "voice:tetra-a"
+    },
+    {
+      "id": "incline-a",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "incline-b",
+      "role": "interaction_surface",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "launch-lip",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    },
+    {
+      "id": "tetra-slot",
+      "role": "silent_support",
+      "shape": "obb",
+      "motion": "fixed",
+      "collision_enabled": true,
+      "scored": false,
+      "sonic_identity_id": null
+    }
+  ],
+  "route_stages": [
+    {
+      "id": "first-incline",
+      "actor_ids": [
+        "tetra-a",
+        "incline-a"
+      ],
+      "window": {
+        "start_s": 0,
+        "end_s": 2.2
+      },
+      "entry_intent": "Release from rest toward first incline.",
+      "exit_intent": "Tumble approaches opposing incline.",
+      "mechanism": "Gravity and convex contact."
+    },
+    {
+      "id": "second-incline",
+      "actor_ids": [
+        "tetra-a",
+        "incline-b",
+        "launch-lip"
+      ],
+      "window": {
+        "start_s": 2.2,
+        "end_s": 4.5
+      },
+      "entry_intent": "Irregular tumble approaches second incline.",
+      "exit_intent": "Exposed lip yields unsupported departure.",
+      "mechanism": "Gravity and convex contact."
+    },
+    {
+      "id": "flight-and-capture",
+      "actor_ids": [
+        "tetra-a",
+        "tetra-slot"
+      ],
+      "window": {
+        "start_s": 4.5,
+        "end_s": 8.4
+      },
+      "entry_intent": "Unsupported path traverses open air to slot.",
+      "exit_intent": "Tetrahedron enters three-rail receiver.",
+      "mechanism": "Gravity in flight, then rigid rail contact."
+    },
+    {
+      "id": "seat",
+      "actor_ids": [
+        "tetra-a",
+        "tetra-slot"
+      ],
+      "window": {
+        "start_s": 8.4,
+        "end_s": 10.4
+      },
+      "entry_intent": "Captured tetrahedron dissipates remaining motion.",
+      "exit_intent": "Supported canted endpoint stays in frame.",
+      "mechanism": "Fixed rails/base; no constraint handoff."
+    }
+  ],
+  "support_contacts": [],
+  "events": [
+    {
+      "id": "vertex-contact",
+      "kind": "bounce",
+      "actor_ids": [
+        "tetra-a",
+        "incline-a"
+      ],
+      "stage_id": "first-incline",
+      "target_window": {
+        "start_s": 1.1,
+        "end_s": 1.46
+      },
+      "physical_cause": "Released tetrahedron reaches the isolated first incline.",
+      "measurement_required": "Classify initial contact within the vertex tolerance and verify solver-derived tumble.",
+      "clearance": null
+    },
+    {
+      "id": "edge-contact",
+      "kind": "bounce",
+      "actor_ids": [
+        "tetra-a",
+        "incline-b"
+      ],
+      "stage_id": "second-incline",
+      "target_window": {
+        "start_s": 3.14,
+        "end_s": 3.58
+      },
+      "physical_cause": "Tumble reaches the opposing second incline and exposed lip.",
+      "measurement_required": "Classify a different edge contact and measure heading change; reject a hidden impulse.",
+      "clearance": null
+    },
+    {
+      "id": "slot-capture",
+      "kind": "settle",
+      "actor_ids": [
+        "tetra-a"
+      ],
+      "stage_id": "flight-and-capture",
+      "target_window": {
+        "start_s": 7.62,
+        "end_s": 8.18
+      },
+      "physical_cause": "Ballistic flight enters an open three-rail triangular receiver.",
+      "measurement_required": "Measure unsupported interval, rotation range, rail contacts and sustained base support; reject snap/penetration.",
+      "clearance": null
+    }
+  ],
+  "event_order": [
+    "vertex-contact",
+    "edge-contact",
+    "slot-capture"
+  ],
+  "salience_policy": {
+    "minimum_gap_s": 1,
+    "maximum_duty_cycle": 0.3,
+    "maximum_events": 3,
+    "minimum_distinct_kinds": 2,
+    "maximum_simultaneous_events": 1,
+    "support_contact_policy": "retain_raw_do_not_count_as_salient"
+  },
+  "camera": {
+    "mode": "tracking",
+    "focus_actor_ids": [
+      "tetra-a"
+    ],
+    "readable_event_ids": [
+      "vertex-contact",
+      "edge-contact",
+      "slot-capture"
+    ],
+    "framing_intent": "Descending camera keeps contact geometry, free-flight silhouette and slot opening in one continuous shot."
+  },
+  "ending": {
+    "kind": "supported_rest",
+    "actor_ids": [
+      "tetra-a"
+    ],
+    "support_ids": [
+      "tetra-slot"
+    ],
+    "window": {
+      "start_s": 8.4,
+      "end_s": 10.4
+    },
+    "keep_visible": true,
+    "reset_policy": "no_teleport",
+    "description": "Tetrahedron remains visibly supported in matching triangular slot."
+  },
+  "reference_lessons": [
+    {
+      "id": "component-planning-note",
+      "source": "docs/MECHANISM_COMPONENTS.md",
+      "status": "visual_reference",
+      "lesson": "Use spatially separated supports and explicit collision geometry; no reference-media claim is made.",
+      "evidence_note": "This card consulted repository component/planning documentation, not a viewed reference clip; source bytes are intentionally unbound while concurrent work continues.",
+      "source_sha256": null,
+      "consumed_interval": null
+    }
+  ],
+  "music_hints": []
+}

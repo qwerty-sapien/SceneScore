@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "modules.blender.planning",
+    "modules/blender/fixtures/scene-feasibility-plan.example.json",
+    "--out",
+    "reports/physics-components/valid-plan"
+  ],
+  "pid": 67979,
+  "process_group": 67979,
+  "started_at": "2026-09-13T05:23:20.153614+00:00",
+  "exit_code": 0,
+  "duration_s": 0.18,
+  "process_group_absent": true
+}

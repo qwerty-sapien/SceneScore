@@ -1,6 +1,6 @@
 import type {ClockMapping,ControlAction,GestureEvent} from '../../../../packages/contracts/generated';
 export type MuseMode='KEYBOARD'|'SYNTHETIC_TEST'|'REAL_REPLAY'|'LIVE_MUSE';
-export interface ModelEvaluation {precision:number|null;recall:number|null;complete:boolean;target_reached:boolean}
+export interface ModelEvaluation {precision:number|null;recall:number|null;complete:boolean;target_reached:boolean;tp?:number;fp?:number;fn?:number}
 export interface CheckpointCatalog {selection:string;active_checkpoint_id:string|null;checkpoints:{id:string;created_ns:number;parent_id:string|null;training_steps:number;source_mode:string;evaluation:ModelEvaluation|null}[];invalid_checkpoint_ids:string[]}
 export interface BridgeStatus {active_checkpoint_id?:string|null;checkpoint_selection?:string;evaluation?:ModelEvaluation|null;accuracy_target_advisory?:boolean;arming?:boolean}
 export interface MuseControlEnvelope {
@@ -11,6 +11,7 @@ export interface MuseControlEnvelope {
 export interface MusicControlContext {audio_s:number;audio_epoch:string;approved_plan_hash:string|null;scene_policy_id:string|null;signed_semitones:-2|0|2;lanes:ControlAction['before'];expires_after_s?:number;suppression_reason?:string|null}
 export interface MuseDecision {status:string;reason?:string|null;t4_received_s?:number|null;t5_ack_onset_s?:number|null;t6_boundary_s?:number|null}
 export interface MusePanelProps {
+ onHeadsetDetected?:(detected:boolean)=>void;
  onEnvelope:(envelope:MuseControlEnvelope)=>MuseDecision;
  onKeyboardRequest:()=>void;
  getMusicContext:(requestAudioS?:number)=>MusicControlContext|null;

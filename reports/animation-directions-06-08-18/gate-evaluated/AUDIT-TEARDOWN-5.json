@@ -1,0 +1,10 @@
+{
+  "pid": 66013,
+  "pgid": 66013,
+  "session": 24567,
+  "exit_code": 0,
+  "runtime_s": 67.71531796455383,
+  "runtime_cap_s": 300,
+  "checked_unix_s": 1789279584.184916,
+  "state": "ABSENT"
+}

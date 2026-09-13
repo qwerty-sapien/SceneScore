@@ -12,6 +12,7 @@ import math
 
 G = 9.81
 RADIUS = .24
+CONTACT_SKIN_ALLOWANCE_M = .00006
 
 
 def add(a, b):
@@ -75,6 +76,24 @@ class Path:
         b = cross(t, n)
         return p, t, n, b, curvature, h, dot(d, dd)/(h*h)
 
+    def geometry_second_derivative_bound(self, lo, hi):
+        """Analytic bound used only by the skin tessellator, never dynamics."""
+        start, result = 0., 0.
+        for length, evaluate in self.pieces:
+            a, b = max(lo, start), min(hi, start+length)
+            if b > a:
+                result = max(result, evaluate.geometry_second_bound(a-start, b-start))
+            start += length
+        return result
+
+
+def _bezier_split(control, t):
+    levels = [control]
+    while len(levels[-1]) > 1:
+        levels.append([add(mul(a, 1-t), mul(b, t))
+                       for a, b in zip(levels[-1], levels[-1][1:])])
+    return [level[0] for level in levels], [level[-1] for level in reversed(levels)]
+
 
 def _quintic(a, b, length):
     coefficients = []
@@ -103,6 +122,14 @@ def _quintic(a, b, length):
                 values.append(value)
             result.append(tuple(values))
         return tuple(result)
+    # The cubic Bernstein hull of p'' is an interval bound, not a sample maximum.
+    controls = [tuple(sum(derivatives[2][axis][i]*math.comb(k, i)/math.comb(3, i)
+                          for i in range(k+1)) for axis in range(3)) for k in range(4)]
+    def second_bound(lo, hi):
+        left = _bezier_split(controls, hi/length)[0]
+        restricted = _bezier_split(left, lo/hi if hi else 0.)[1]
+        return max(norm(value) for value in restricted)
+    evaluate.geometry_second_bound = second_bound
     return evaluate
 
 
@@ -126,6 +153,9 @@ def ramp_path(slope=-.045, length=6., y=0., profile=0):
             dz += amplitude*4*a*s**3*c
             ddz += amplitude*4*a*a*(3*s*s*c*c-s**4)
         return (x-3., y, z), (1., 0., dz), (0., 0., ddz)
+    cycles, amplitude = ((1, .024), (3, .008), (1, -.025))[profile]
+    derivative_bound = 1.875*abs(slope+.0055)+4*abs(amplitude)*(math.pi*cycles/(length-3))**2
+    evaluate.geometry_second_bound = lambda lo, hi: derivative_bound
     return Path([(length, evaluate)])
 
 
@@ -140,6 +170,7 @@ def _spiral(radius_a, radius_b, height_a, height_b, angle_a, angle_b):
         return ((r*c, r*s, height_a+dz*u),
                 (dr*c-sign*r*s, dr*s+sign*r*c, dz),
                 (-2*sign*dr*s-r*c, 2*sign*dr*c-r*s, 0.))
+    evaluate.geometry_second_bound = lambda lo, hi: max(abs(radius_a+dr*lo), abs(radius_a+dr*hi))+2*abs(dr)
     return length, evaluate
 
 
@@ -151,6 +182,7 @@ def spiral_path():
     chute = _quintic(lower[1](lower[0]), end, 2.8)
     def terminal(u):
         return add(end[0], mul(end[1], u)), end[1], end[2]
+    terminal.geometry_second_bound = lambda lo, hi: 0.
     return Path([outer, (1.5, bridge), lower, (2.8, chute), (1., terminal)])
 
 
@@ -339,6 +371,173 @@ def _channel(path, identifier, *, radius=RADIUS, width=.72, samples=500,
     geometry.append({'id': identifier+'-backstop', 'shape': 'box',
                      'position_m': list(back), 'half_extents_m': [.06, .36, .36],
                      'quaternion_xyzw': list(_align_x(t)), 'material': 'dark'})
+    return geometry
+
+
+def _skin_point(frame, profile_point):
+    p, _, n, b, _, _, _ = frame
+    height, lateral = profile_point
+    return add(add(p, mul(n, height)), mul(b, lateral))
+
+
+def _triangle_faces(faces):
+    return [[face[0], face[i], face[i+1]] for face in faces for i in range(1, len(face)-1)]
+
+
+def _skin_profiles(radius, width, side_half_width, capture):
+    # Declared finite mesh/replay proxy allowance. It never enters mechanics.
+    skin_radius = radius+CONTACT_SKIN_ALLOWANCE_M
+    skin_side = side_half_width+CONTACT_SKIN_ALLOWANCE_M
+    lateral = [-width/2, -.04, 0., .04, width/2]
+    profiles = {'floor': [(-skin_radius, b) for b in lateral]+[(-skin_radius-.04, b) for b in reversed(lateral)]}
+    for name, sign in (('left-contact-rail', -1), ('right-contact-rail', 1)):
+        profiles[name] = [(h, sign*skin_side) for h in (-.018, 0., .018)] + [
+            (h, sign*(skin_side+.024)) for h in (.018, 0., -.018)]
+    if capture:
+        profiles['capture-rail'] = [(skin_radius, b) for b in (-.035, 0., .035)] + [
+            (skin_radius+.025, b) for b in (.035, 0., -.035)]
+    return profiles
+
+
+def _station_errors(path, lo, hi, profiles, radius):
+    du = hi-lo
+    fractions = (0., .25, .5, .75, 1.)
+    frames = [path.frame(lo+fraction*du) for fraction in fractions]
+    second_bound = path.geometry_second_derivative_bound(lo, hi)
+    arc_bound = du*(min(frames[0][5], frames[-1][5])+second_bound*du)
+    chord_bound = second_bound*du*du/8
+    angle = max(math.acos(max(-1., min(1., dot(a[j], b[j]))))
+                for a, b in zip(frames, frames[1:]) for j in (1, 2, 3))
+    surface_chord, contact_plane_error, plane_ratio = 0., 0., 0.
+    for profile in profiles.values():
+        skins = [[_skin_point(frame, point) for point in profile] for frame in frames]
+        for i, fraction in enumerate(fractions[1:-1], 1):
+            surface_chord = max(surface_chord, max(math.dist(p, add(mul(a, 1-fraction), mul(b, fraction)))
+                              for p, a, b in zip(skins[i], skins[0], skins[-1])))
+        for j, first in enumerate(profile):
+            k = (j+1) % len(profile)
+            last = profile[k]
+            h0, b0 = first
+            h1, b1 = last
+            dh, db = h1-h0, b1-b0
+            alpha = max(0., min(1., -(h0*dh+b0*db)/max(1e-30, dh*dh+db*db)))
+            # Do not spend the outward allowance on coarser contact facets.
+            free_gap = max(0., math.hypot(h0+alpha*dh, b0+alpha*db)-radius-CONTACT_SKIN_ALLOWANCE_M)
+            allowed = .00003+.1*free_gap
+            a, b, c, d = skins[0][j], skins[0][k], skins[-1][k], skins[-1][j]
+            for index, u in enumerate(fractions[1:-1], 1):
+                for v in (.25, .5, .75):
+                    actual = _skin_point(frames[index], (h0+v*dh, b0+v*db))
+                    if u <= v:
+                        expected = add(add(mul(a, 1-v), mul(b, v-u)), mul(c, u))
+                        normal = cross(add(b, mul(a, -1)), add(c, mul(a, -1)))
+                    else:
+                        expected = add(add(mul(a, 1-u), mul(c, v)), mul(d, u-v))
+                        normal = cross(add(c, mul(a, -1)), add(d, mul(a, -1)))
+                    error = abs(dot(add(actual, mul(expected, -1)), normal))/max(1e-30, norm(normal))
+                    plane_ratio = max(plane_ratio, error/allowed)
+                    if free_gap < .0001:
+                        contact_plane_error = max(contact_plane_error, error)
+    return arc_bound, chord_bound, angle, surface_chord, contact_plane_error, plane_ratio
+
+
+def _adaptive_skin_stations(path, profiles, radius):
+    """World-distance, frame-turn and faceted-surface refinement; no time input."""
+    end = path.end+1.65/norm(path.at(path.end)[1])
+    knots = [0., *path.ends, end]
+    pending = [(a, b, 0) for a, b in reversed(list(zip(knots, knots[1:])))]
+    stations = [0.]
+    maxima = [0.]*6
+    while pending:
+        lo, hi, depth = pending.pop()
+        errors = _station_errors(path, lo, hi, profiles, radius)
+        accepted = (errors[0] <= .025 and errors[1] <= .00002 and errors[2] <= .01
+                    and errors[3] <= .000025 and errors[5] <= 1.)
+        if accepted:
+            stations.append(hi)
+            maxima = [max(a, b) for a, b in zip(maxima, errors)]
+        else:
+            if depth >= 22 or len(pending)+len(stations) > 30000:
+                raise ValueError('skin tessellation exceeded its explicit resource bound')
+            middle = (lo+hi)/2
+            pending.extend(((middle, hi, depth+1), (lo, middle, depth+1)))
+    return stations, {'version': 'adaptive-contact-skin-3', 'station_count': len(stations),
+                      'contact_skin_outward_allowance_m': CONTACT_SKIN_ALLOWANCE_M,
+                      'independent_surface_intrusion_limit_m': .0002,
+                      'max_station_arc_bound_m': maxima[0],
+                      'max_center_chord_bound_m': maxima[1],
+                      'max_quarter_interval_frame_turn_rad': maxima[2],
+                      'max_observed_surface_chord_error_m': maxima[3],
+                      'max_observed_contact_triangle_plane_error_m': maxima[4],
+                      'max_clearance_scaled_plane_error_ratio': maxima[5]}
+
+
+def _loft_skin(path, stations, profile, identifier, material):
+    vertices = [list(_skin_point(path.frame(u), point)) for u in stations for point in profile]
+    width = len(profile)
+    faces = []
+    for i in range(len(stations)-1):
+        for j in range(width):
+            k = (j+1) % width
+            a, b, c, d = i*width+j, i*width+k, (i+1)*width+k, (i+1)*width+j
+            faces.extend(([a, b, c], [a, c, d]))
+    faces.extend(_triangle_faces([list(reversed(range(width))),
+                                 list(range(len(vertices)-width, len(vertices)))]))
+    return _mesh(identifier, vertices, faces, material)
+
+
+def _frame_box(identifier, frame, tangent_limits, normal_limits, lateral_limits, material):
+    p, t, n, b, _, _, _ = frame
+    vertices = [list(add(add(add(p, mul(t, a)), mul(n, h)), mul(b, lateral)))
+                for h in normal_limits for lateral in lateral_limits for a in tangent_limits]
+    faces = [[0, 1, 3, 2], [4, 6, 7, 5], [0, 4, 5, 1],
+             [2, 3, 7, 6], [0, 2, 6, 4], [1, 5, 7, 3]]
+    return _mesh(identifier, vertices, _triangle_faces(faces), material)
+
+
+_legacy_channel = _channel
+
+
+def _channel(path, identifier, *, radius=RADIUS, width=.72, samples=500,
+             side_half_width=RADIUS, capture=False):
+    """Explicit facets and outward supports; mechanics and their clock are unchanged."""
+    profiles = _skin_profiles(radius, width, side_half_width, capture)
+    stations, proof = _adaptive_skin_stations(path, profiles, radius)
+    geometry = [_loft_skin(path, stations, profile, identifier+'-'+name,
+                           'track' if name == 'floor' else 'steel' if name == 'capture-rail' else 'brass')
+                for name, profile in profiles.items()]
+    geometry[0]['tessellation'] = {**proof, 'centerline_parameters': stations}
+    # Keep the previously checked grounded supports/backstop. Their source poses
+    # are independent of the adaptive station indexing.
+    for item in _legacy_channel(path, identifier, radius=radius, width=width,
+                                samples=samples, side_half_width=side_half_width, capture=False):
+        if '-support-' in item['id'] or item['id'].endswith('-backstop'):
+            if item['shape'] == 'mesh':
+                item['faces'] = _triangle_faces(item['faces'])
+            geometry.append(item)
+    arc = [0.]
+    for a, b in zip(stations, stations[1:]):
+        arc.append(arc[-1]+math.dist(path.at(a)[0], path.at(b)[0]))
+    next_support = 0.
+    for index, distance in enumerate(arc):
+        if distance+1e-12 < next_support:
+            continue
+        next_support += .9
+        frame = path.frame(stations[index])
+        top = radius+CONTACT_SKIN_ALLOWANCE_M+.05 if capture else .15
+        for label, sign in (('left', -1), ('right', 1)):
+            lateral = sorted((sign*(side_half_width+CONTACT_SKIN_ALLOWANCE_M+.024),
+                              sign*(side_half_width+CONTACT_SKIN_ALLOWANCE_M+.052)))
+            geometry.append(_frame_box(f'{identifier}-{label}-upright-{index}', frame,
+                                       (-.009, .009), (-radius-.03, top), lateral, 'steel'))
+            foot = sorted((sign*max(0., side_half_width-.04), sign*(side_half_width+.052)))
+            geometry.append(_frame_box(f'{identifier}-{label}-rail-foot-{index}', frame,
+                                       (-.014, .014), (-radius-.04, -radius-.005), foot, 'steel'))
+        if capture:
+            geometry.append(_frame_box(f'{identifier}-capture-brace-{index}', frame,
+                                       (-.014, .014), (radius+CONTACT_SKIN_ALLOWANCE_M+.025,
+                                                       radius+CONTACT_SKIN_ALLOWANCE_M+.05),
+                                       (-side_half_width-.052, side_half_width+.052), 'steel'))
     return geometry
 
 

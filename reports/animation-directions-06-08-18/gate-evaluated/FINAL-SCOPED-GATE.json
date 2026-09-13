@@ -1,0 +1,34 @@
+{
+  "status": "PASSED_SCOPED_EVALUATED_STATIC_GEOMETRY",
+  "independent_review": true,
+  "reviewer_authored_implementation": false,
+  "target_intrusion_m": 0.0002,
+  "candidates": {
+    "06_three_ways_down-v4": {
+      "status": "PASSED_SCOPED_STATIC_GEOMETRY",
+      "maximum_conservative_swept_floor_intrusion_m": 1.3734037986157244e-05,
+      "minimum_other_static_interval_clearance_m": 0.003837097915444284,
+      "own_rail_exclusion": "Independent actual evaluated Y halfspace proof against every body pose"
+    },
+    "08_spiral_observatory-v3": {
+      "status": "PASSED_SCOPED_STATIC_GEOMETRY",
+      "maximum_conservative_swept_guide_intrusion_m": 0.000168882879240162,
+      "minimum_other_static_swept_clearance_m": 0.023856539091366646,
+      "static_objects_excluded": []
+    }
+  },
+  "evidence_sha256": {
+    "RESULTS-06-v4.json": "dc2e7bebf7fef21c898616085391525c8317c09b3035962d3a6bb8d965d3ce98",
+    "LEAD-SHAPES-06-v4.json": "43ee07e500bd698a0f40ec31af3caf7c34bfa1d2615554b539db4e3463b85c90",
+    "RESULTS-08-final-evaluated-v3.json": "48aee144d1873d007bd5a9d83ef81f481e2d635fb50adb0654570e9dc2677c52",
+    "FINAL-08-V3-MECHANICS-IDENTITY.json": "8a7736d4fc9694531c78a99b53ef44073bb4bc1ab10a4b35795c9b7642d0ed9e",
+    "FINAL-08-V3-BEAD-SHAPE.json": "621937c2ed9cc3bd014f68b63168155d6e99f5f7ddee0dd4d91e6f2bc9ec73a1",
+    "AUDIT-TEARDOWN-5.json": "9e9575d875c04cb4db31aef9653919dc737853bf6ee5ce84dda5a603059a61ff"
+  },
+  "scope_limits": [
+    "06 moving receiver verification remains the integrator explicit-pose/source-gap check.",
+    "08 moving plunger and coil independently checked at every replay sample, not with an inter-sample moving-OBB sweep.",
+    "No full-motion perceptual acceptance, music audition, device validation, or human approval is asserted."
+  ],
+  "review_owned_jobs_remaining": []
+}

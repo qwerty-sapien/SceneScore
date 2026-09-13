@@ -37,7 +37,10 @@ Observed hashes and frontend comparison diffs are in
 Reconcile checkpoint state with BLE session changes after both tasks complete:
 the BLE adapter constructs a fresh baseline on first verified frames, so active
 checkpoint/evaluation display and pending-arm state need an explicit reset seam.
-Malformed packets must also cancel any pending checkpoint warmup arm request.
+The BLE-owned adapter now uses the existing disarm seam on connection and
+malformed input, cancelling pending warmup arms, and clears optional prior
+checkpoint/evaluation display at a new session. Focused fixtures cover this
+compatibility behavior without editing the active shared files.
 The new checkpoint API/accuracy semantics belong to the concurrent task and are
 outside the BLE feature's narrow API claims. Recheck detector selection, clock
 configuration hashes and rearm behavior on the final combined diff.

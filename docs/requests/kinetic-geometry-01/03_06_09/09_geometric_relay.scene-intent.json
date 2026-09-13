@@ -1,0 +1,79 @@
+{
+  "schema_version": "scene-intent-1",
+  "status": "DESIGN_INTENT_NOT_MEASURED",
+  "id": "09_geometric_relay",
+  "duration_s": 10.6,
+  "seed": 305109,
+  "physics_backend": "native_bullet",
+  "visual_direction": "A three-level relay sculpture moves from an amber ceramic sphere at upper-left, through a jade cube descending into depth, to a final copper triangular prism launched across a lower-right void. Ivory stone, dark steel, and limited brass keep the causal chain legible.",
+  "render_scope": {
+    "aspect_ratio": "9:16",
+    "proxy_px": [540, 960],
+    "final_px": [1080, 1920],
+    "simulation_hz": 240,
+    "replay_fps": 30,
+    "camera_grammar": "cinematic relay tracking; one continuous three-quarter move"
+  },
+  "salience_policy": {
+    "minimum_gap_s": 0.75,
+    "maximum_duty_cycle": 0.3,
+    "maximum_beats": 3,
+    "maximum_simultaneous_salient_beats": 1,
+    "support_contact_policy": "retain_raw_do_not_count_as_salient"
+  },
+  "objects": [
+    {"id": "sphere_a", "role": "actor", "shape": "sphere", "motion": "dynamic", "scored": true, "mass_kg": 0.55, "radius_m": 0.32, "material": "amber_ceramic"},
+    {"id": "cube_b", "role": "actor", "shape": "bevelled_cube", "motion": "dynamic", "scored": true, "mass_kg": 1.05, "side_m": 0.62, "bevel_m": 0.025, "material": "jade_matte_plastic"},
+    {"id": "triangle_c", "role": "actor", "shape": "bevelled_equilateral_triangular_prism", "motion": "dynamic", "scored": true, "mass_kg": 0.70, "dimensions_m": {"side": 0.80, "depth": 0.22, "bevel": 0.025}, "material": "satin_copper"},
+    {"id": "sphere_route", "role": "silent_support", "shape": "fixed_banked_rail", "motion": "fixed", "scored": false, "material": "ivory_stone"},
+    {"id": "sphere_cup", "role": "silent_support", "shape": "fixed_arrest_cup", "motion": "fixed", "scored": false, "material": "cork"},
+    {"id": "cube_sled", "role": "silent_support", "shape": "fixed_inclined_sled_with_rims", "motion": "fixed", "scored": false, "material": "dark_steel"},
+    {"id": "release_toggle", "role": "interaction_surface", "shape": "bistable_hinged_lever", "motion": "dynamic", "scored": false, "mass_kg": 0.18, "material": "brass"},
+    {"id": "triangle_launcher", "role": "actuator", "shape": "spring_arm_with_pin", "motion": "dynamic", "scored": false, "mass_kg": 0.82, "material": "walnut_and_brass"},
+    {"id": "triangle_receiver", "role": "silent_support", "shape": "fixed_v_cradle_with_cork_stop", "motion": "fixed", "scored": false, "material": "ivory_stone_and_cork"}
+  ],
+  "route_and_camera": {
+    "level_1_sphere": "Release [-4.25,-1.25,4.35] onto a 5.0 m C2 banked track descending 1.55 m to cube impact [-1.15,-0.10,2.68]. The sphere diverts into a cork arrest cup after the transfer.",
+    "level_2_cube": "Cube begins supported at [-0.78,0.05,2.43]; sphere impulse starts it down an 11 degree rimmed sled to the depthward toggle [1.55,1.22,1.67]. It is caught in a pad immediately beyond the toggle.",
+    "level_3_triangle": "The toggle withdraws the spring-arm pin at [1.63,1.30,1.55]. Triangle launch starts [1.75,1.36,1.55], crosses open lower-right space, and enters receiver [5.52,2.99,0.85].",
+    "camera": {"start_m": [-9.0,-12.0,6.8], "end_m": [-5.3,-13.2,5.3], "look_at_path": "[0.0,0.4,2.45] to [2.7,1.25,1.55]", "lens_mm": 42, "rule": "The wide portrait composition shows level 1 and level 2 at the first transfer, then eases laterally before level 3 launch; no cut conceals an impulse, latch, or final landing."}
+  },
+  "physical_parameters": {
+    "gravity_m_s2": 9.81,
+    "collision_margin_m": 0.003,
+    "solver": {"substeps": 16, "iterations": 96},
+    "sphere": {"static_friction": 0.58, "rolling_resistance": 0.022, "restitution": 0.22, "target_speed_at_cube_m_s": [3.5,4.2]},
+    "cube": {"sled_slope_deg": 11, "sled_friction": 0.18, "restitution": 0.20, "target_speed_at_toggle_m_s": [1.8,2.4]},
+    "toggle": {"hinge_axis": "+Y", "withdrawal_impulse_threshold_Ns": 0.30, "latch_travel_deg": 25, "locked_before_cube_contact": true},
+    "triangle_launch": {"torsion_preload_Nm": 28.0, "arm_length_m": 1.15, "linear_velocity_m_s": [3.70,1.60,4.30], "spin_axis_local": "+Y", "angular_velocity_rad_s": 7.0, "line_of_action_offset_m": 0.19, "expected_free_flight_rotations": [1.0,1.3]},
+    "receivers": {"sphere_cork_k_N_m": 65, "cube_pad_k_N_m": 90, "triangle_cork_k_N_m": 85, "triangle_cork_c_Ns_m": 9.0}
+  },
+  "beats": [
+    {
+      "id": "sphere_to_cube_transfer",
+      "primary_kind": "collision",
+      "object_ids": ["sphere_a", "cube_b", "sphere_route", "sphere_cup"],
+      "target_window_s": [1.65, 2.10],
+      "physical_cause": "The upper sphere's gravity-acquired rolling momentum contacts the resting cube on its supported sled. The cube's new motion comes from the measured contact impulse; the sphere's outgoing path is arrested visibly in its own cup.",
+      "measurement_required": "Falsify if the cube moves before sphere contact, the sphere-to-cube separation is nonzero at its claimed impulse, the transfer violates the declared candidate momentum/energy tolerance, or the sphere's catch relies on a speed reset."
+    },
+    {
+      "id": "cube_toggle_to_triangle_launch",
+      "primary_kind": "acceleration",
+      "object_ids": ["cube_b", "release_toggle", "triangle_launcher", "triangle_c"],
+      "target_window_s": [3.65, 4.25],
+      "physical_cause": "The independently travelling cube strikes a finite bistable toggle. Its impulse withdraws the launcher pin, and the already visible torsion spring/arm provides the triangle's launch work and off-centre spin. This is one connected causal release, not simultaneous unrelated animation.",
+      "measurement_required": "Falsify if the toggle releases without cube contact or below 0.30 N s, if the arm moves before latch withdrawal, if the triangle receives post-separation transform/velocity injection, or if cube capture occurs without real support contact."
+    },
+    {
+      "id": "triangle_final_capture",
+      "primary_kind": "collision",
+      "object_ids": ["triangle_c", "triangle_receiver"],
+      "target_window_s": [5.25, 5.80],
+      "physical_cause": "The spring-launched triangular prism completes its free airborne diagonal and enters the lower-right V cradle. Angled faces, chute normals, friction, and cork compliance dissipate rather than author a terminal pose.",
+      "measurement_required": "Falsify if triangle flight is not ballistic between launch and receiver, if its measured rotation is outside 1.0-1.3 turns, if it interpenetrates the cradle, or if it cannot remain supported with linear speed <0.02 m/s and angular speed <0.06 rad/s for 0.75 s."
+    }
+  ],
+  "ending": "By 9.70-10.60 s the amber sphere, jade cube, and copper prism occupy three separate visible catches at distinct elevations. The release toggle and launcher are on their mechanically supported post-transfer stops; no hero has been hidden, reset, or left unsupported.",
+  "notes": "No near-miss is claimed. This is intentionally a three-stage machine, not a flat lineup: the depthward cube leg and lower-right flight gap make the causal relay spatial. Candidate checks must test sphere release disabled, cube-toggle latch locked, triangle launcher disabled, and the complete transfer order as separate negative controls."
+}

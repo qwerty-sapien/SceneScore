@@ -1,0 +1,11 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "apps/web/tools/prepare_requested_videos.py"
+  ],
+  "timeout_s": 240,
+  "status": "running",
+  "process_group_absent": false,
+  "pid": 9185,
+  "pgid": 9185
+}

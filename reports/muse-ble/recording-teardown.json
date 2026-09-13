@@ -1,0 +1,19 @@
+{
+  "task_pids": {
+    "88784": "absent",
+    "89175": "absent"
+  },
+  "exec_sessions": {
+    "97314": "exit_1",
+    "38511": "exit_2",
+    "60102": "exit_2",
+    "3291": "exit_0",
+    "7509": "exit_0"
+  },
+  "ble_and_recording_threads": "joined; both hardware capture logs report false",
+  "recording_directories": {
+    "muse-ble-20260913-capture-01": false,
+    "muse-ble-20260913-capture-02": false
+  },
+  "task_owned_servers_or_containers_started": false
+}

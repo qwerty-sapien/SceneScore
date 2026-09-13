@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "mode": "SYNTHETIC_TEST",
+  "signal": "SIGTERM",
+  "launcher_pid": 69156,
+  "launcher_exit": 0,
+  "child_pgids": [
+    69204,
+    69205
+  ],
+  "child_groups_alive": false
+}

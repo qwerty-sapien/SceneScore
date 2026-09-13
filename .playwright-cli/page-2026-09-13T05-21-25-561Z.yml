@@ -1,0 +1,59 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - text: ANIMATION & SOUND
+      - heading "SceneScore." [level=1] [ref=e6]
+    - generic [ref=e7]: Live music · local playback
+  - region "Video library" [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Video library" [level=2] [ref=e11]
+        - paragraph [ref=e12]: Choose an animation. Hear its music and every contact.
+      - button "＋ Add video bundle" [ref=e13] [cursor=pointer]
+    - generic [ref=e14]:
+      - group "Video source" [ref=e15]:
+        - button "All videos 3" [pressed] [ref=e16] [cursor=pointer]
+        - button "On this device 0" [ref=e17] [cursor=pointer]
+      - generic [ref=e18]:
+        - generic [ref=e19]: Search videos
+        - searchbox "Search videos" [ref=e20]
+    - generic [ref=e21]:
+      - article [ref=e22]:
+        - button "Watch Projectile & tower" [ref=e23] [cursor=pointer]:
+          - generic [ref=e24]:
+            - generic [ref=e26]:
+              - text: ▶
+              - generic [ref=e27]: Watch & listen
+            - generic [ref=e28]: 0:30
+          - generic [ref=e29]:
+            - heading "Projectile & tower" [level=3] [ref=e30]
+            - generic [ref=e31]: ↗
+          - paragraph [ref=e32]: 10 soundtracks · Music + effects
+        - generic [ref=e34]: Legacy · authored choreography
+      - article [ref=e35]:
+        - button "Watch A near miss" [ref=e36] [cursor=pointer]:
+          - generic [ref=e37]:
+            - generic [ref=e39]:
+              - text: ▶
+              - generic [ref=e40]: Watch & listen
+            - generic [ref=e41]: 0:30
+          - generic [ref=e42]:
+            - heading "A near miss" [level=3] [ref=e43]
+            - generic [ref=e44]: ↗
+          - paragraph [ref=e45]: 9 soundtracks · Music + effects
+        - generic [ref=e47]: Legacy · authored choreography
+      - article [ref=e48]:
+        - button "Watch 05 bouncing staircase" [ref=e49] [cursor=pointer]:
+          - generic [ref=e50]:
+            - generic [ref=e52]:
+              - text: ▶
+              - generic [ref=e53]: Watch & listen
+            - generic [ref=e54]: 0:08
+          - generic [ref=e55]:
+            - heading "05 bouncing staircase" [level=3] [ref=e56]
+            - generic [ref=e57]: ↗
+          - paragraph [ref=e58]: 3 soundtracks · Music + effects
+        - generic [ref=e60]: Staged production review · acceptance pending
+  - generic [ref=e61]:
+    - generic [ref=e62]: ORIGINAL SCORES · BROWSER AUDIO
+    - generic [ref=e63]: Draft soundtracks · audition pending

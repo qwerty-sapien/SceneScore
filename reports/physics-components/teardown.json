@@ -1,0 +1,146 @@
+{
+  "checked_at": "2026-09-13T05:30:20.859444+00:00",
+  "jobs": [
+    {
+      "receipt": "a4-tests-fixed.json",
+      "pgid": 37621,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "a4-tests.json",
+      "pgid": 6592,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "authoring-final-guards.json",
+      "pgid": 69317,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "authoring-final.json",
+      "pgid": 67545,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "authoring-tests-corrected.json",
+      "pgid": 61685,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "authoring-tests-final.json",
+      "pgid": 61935,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "authoring-tests-verified.json",
+      "pgid": 62305,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "authoring-tests.json",
+      "pgid": 60368,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "blender-smoke-final.job.json",
+      "pgid": 67693,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "blender-smoke-final.json",
+      "pgid": 67693,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "blender-smoke.job.json",
+      "pgid": 61496,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "blender-smoke.json",
+      "pgid": 61496,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "component-tests.json",
+      "pgid": 57628,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "components-cli.json",
+      "pgid": 67981,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "contracts.json",
+      "pgid": 62442,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "diff-check.json",
+      "pgid": 68109,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "lint-final.json",
+      "pgid": 67980,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "lint-guards.json",
+      "pgid": 72044,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "lint.json",
+      "pgid": 62444,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "plan-cli-final.json",
+      "pgid": 72043,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "plan-cli-invalid.json",
+      "pgid": 72041,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "plan-cli.json",
+      "pgid": 67979,
+      "absent_now": true,
+      "reported_absent": true
+    },
+    {
+      "receipt": "regression.json",
+      "pgid": 62338,
+      "absent_now": true,
+      "reported_absent": true
+    }
+  ],
+  "all_absent": true,
+  "containers_started": 0,
+  "persistent_servers_started": 0
+}

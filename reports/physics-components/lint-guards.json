@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".venv/bin/ruff",
+    "check",
+    "modules/blender/planning",
+    "modules/blender/components",
+    "modules/blender/tests/test_plan_validation.py",
+    "modules/blender/tests/test_components.py",
+    "modules/blender/tests/blender_components_smoke.py",
+    "tools/component_library_smoke.py"
+  ],
+  "pid": 72044,
+  "process_group": 72044,
+  "started_at": "2026-09-13T05:27:02.469602+00:00",
+  "exit_code": 0,
+  "duration_s": 0.073,
+  "process_group_absent": true
+}

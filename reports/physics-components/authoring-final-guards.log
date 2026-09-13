@@ -1,0 +1,5 @@
+COMMAND [".venv/bin/python", "-m", "pytest", "-q", "modules/blender/tests/test_components.py", "modules/blender/tests/test_plan_validation.py", "modules/blender/tests/test_scene_intent.py"]
+........................................................................ [ 43%]
+........................................................................ [ 86%]
+......................                                                   [100%]
+166 passed in 3.33s

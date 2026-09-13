@@ -71,6 +71,12 @@ class BleCompanionSource:
     def begin(self, _device_name):
         companion = self.companion
         with companion.lock:
+            # Use the existing public disarm seam so concurrent detector adapters
+            # can also cancel a pending warmup/arm request before a new session.
+            companion.disarm()
+            for field in ('active_checkpoint', 'active_evaluation'):
+                if hasattr(companion, field):
+                    setattr(companion, field, None)
             companion.metadata = ble_metadata()
             companion.detector = CausalBaseline(companion.metadata)
             companion.host_epoch = 'ble-host-' + secrets.token_hex(12)
@@ -151,6 +157,7 @@ class BleCompanionSource:
         """Disarm on an invalid packet while preserving the current source epoch."""
         companion = self.companion
         with companion.lock:
+            companion.disarm()
             companion.detector.reset(reason)
             if companion.quality_gate is not None:
                 companion.quality_gate.reset()
