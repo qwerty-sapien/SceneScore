@@ -1,0 +1,85 @@
+{
+  "format": "scenescore.static-deployment/1",
+  "status": "READY",
+  "approved_by": "User reply: approve, explicitly referencing the proposed 14-file Vercel upload",
+  "approved_payload": "deployment-manifest.json",
+  "deployment_id": "dpl_AqXdGqvQDnW6VXLyoxdeUSYp8HCC",
+  "project": "chups-projects-4fe0e3a7/scenescore-muse-vertical",
+  "url": "https://scenescore-muse-vertical.vercel.app",
+  "immutable_url": "https://scenescore-muse-vertical-fylqfatxj-chups-projects-4fe0e3a7.vercel.app",
+  "target": "production",
+  "commands": [
+    {
+      "command": "vercel deploy --yes --name scenescore-muse-vertical",
+      "cwd": "/private/tmp/scenescore-muse-vertical",
+      "session_id": 41092,
+      "exit_code": 0,
+      "downloaded_build_files": 14
+    },
+    {
+      "command": "vercel inspect scenescore-muse-vertical.vercel.app",
+      "session_id": 63731,
+      "exit_code": 0,
+      "result": "Ready; production; aliases verified"
+    }
+  ],
+  "verification": {
+    "hashes": {
+      "/": {
+        "status": 200,
+        "bytes": 403,
+        "sha256": "2a2a0906591c9aa9585f1f32ad3410a647d1025e4af91f823a83ebe9e8ab480a",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "/assets/index-DhfNs5k7.css": {
+        "status": 200,
+        "bytes": 8821,
+        "sha256": "93e6bf561906243a3c8a19057786762a242878f97fabd5b79eb282e7e495ae0c",
+        "content_type": "text/css; charset=utf-8"
+      },
+      "/assets/index-z0EOXwAy.js": {
+        "status": 200,
+        "bytes": 454585,
+        "sha256": "1e391572f0c8e578949b27f81cfac7bde987553a308802f2464cefbd57a45e14",
+        "content_type": "application/javascript; charset=utf-8"
+      },
+      "/studio/catalog.json": {
+        "status": 200,
+        "bytes": 1480,
+        "sha256": "f173fd46de46ac277a70f3fa2c075792d32b0de4590d3c063fb6ceb10eea3f88",
+        "content_type": "application/json; charset=utf-8"
+      },
+      "/studio/contact-brush_swing_light_v1.json": {
+        "status": 200,
+        "bytes": 4311987,
+        "sha256": "474193c1f9348b5e3a2c710b85df615c5da684db023d5b435ee4ae442627c146",
+        "content_type": "application/json; charset=utf-8"
+      }
+    },
+    "video": {
+      "currentSrc": "blob:https://scenescore-muse-vertical.vercel.app/6b24ff48-d921-4e87-942e-15cef1b7d59a",
+      "readyState": 4,
+      "networkState": 1,
+      "duration": 30,
+      "videoWidth": 320,
+      "videoHeight": 180,
+      "error": null
+    },
+    "stopped": true,
+    "browser_demo": "browser-vercel.json",
+    "asset_hashes_match_manifest": true,
+    "headset_validation": "NOT_RUN",
+    "https_loopback_companion": "NOT_RUN"
+  },
+  "teardown": {
+    "browser_playback_stopped": true,
+    "browser_page_closed": true,
+    "local_services_started": false,
+    "cli_sessions_exited": true
+  },
+  "notes": [
+    "First CLI inspect failed due sandbox DNS and was repeated successfully with network permission.",
+    "Remote browser verification used semantic simulation, not synthetic raw EEG or a physical headset.",
+    "The site intentionally remains deployed; no persistent local job remains."
+  ]
+}

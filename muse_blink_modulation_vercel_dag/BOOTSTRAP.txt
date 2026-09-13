@@ -1,0 +1,19 @@
+Read START_HERE.md, then REPO_BASELINE.md, then SHARED_GUARDRAILS.md,
+PARTICIPANT_PROTOCOL.md and INTERFACE_CONTRACT.md, then execute DAG.json inside the
+existing SceneScore repository at /Users/agent/Desktop/SceneScore.
+
+This pack revises the earlier muse_blink_modulation_vercel_dag. It no longer asks you to
+discover the RAGTM lineage: `modules/muse/baseline/LINEAGE.md` already records the
+inspected files, the MIT licence copy, the ported candidate statistics and a Node oracle
+test that compares 1,500 decisions against verbatim extracted frontend statements. It also
+already records what that test does and does not establish. Treat REPO_BASELINE.md as
+prior knowledge to re-verify, not as permission to skip verification.
+
+Six-hour timebox. Build the blink-to-control vertical: acquire real EEG locally, detect a
+deliberate double blink with a causal pipeline, close the gesture before committing, and
+emit exactly one ControlAction into the music engine. A deployed surface runs the training
+protocol, feedback and replay, and must remain useful and visibly honest without hardware.
+
+The harmonic transition belongs to the companion music pack. This pack dispatches; it does
+not choose a key, a chord or a voicing. Raw EEG stays local. No accuracy is claimed that
+the collected data cannot support.

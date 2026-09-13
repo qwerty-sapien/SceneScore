@@ -1,0 +1,3 @@
+# Scoped staged-draft review protocol
+
+This new sample belongs only to the explicit staircase selection. It cannot certify the blocked launcher hero or entire catalogue. Select two of the three full existing-score excerpt mixes, one silent staged video and one of three corresponding muxes. Freeze paths and hashes before review; do not redraw. Full decode and source/time checks are automated; sampled images are model-visual only. Continuous native-motion perception and audio audition are unavailable and remain UNVERIFIED. No human approval follows. The prior Phase3 review protocol/sample is untouched.

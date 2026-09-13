@@ -1,0 +1,206 @@
+{
+  "hero": {
+    "bundle": "/Users/agent/Desktop/SceneScore/artifacts/blender/validated-hero/10_projectile_tower-default",
+    "counts": {
+      "approach": 6,
+      "contact_onset": 4,
+      "contact_release": 4,
+      "contact_sustain": 4,
+      "near_miss": 2,
+      "separation": 6
+    },
+    "near_misses": [
+      {
+        "certification": {
+          "geometry_method": "analytic_sphere_aabb_proxy",
+          "interval_s": [
+            3.59375,
+            22.96875
+          ],
+          "method": "fixed_proxy_lipschitz_gap_bound",
+          "minimum_sample_gap_m": 0.24330328179957106,
+          "scope": "piecewise linear evaluated segments; no sub-frame perceptual timing claim",
+          "segment_count": 620,
+          "source_event_id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1",
+          "uncertainty_m": 1e-05
+        },
+        "certified_no_tunnelling": true,
+        "clock": "scene",
+        "driver": 0.5133931958343325,
+        "driver_reason": null,
+        "duration_s": 19.375,
+        "epoch": "10_projectile_tower:default:ccf899f76881",
+        "event_type": "near_miss",
+        "id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1:music-v2",
+        "inputs": {
+          "closeness": 0.5133931958343325,
+          "min_gap_m": 0.24330340208283374
+        },
+        "loop_instance": 0,
+        "mass_inferred": false,
+        "method": "canonical_event_evaluated_states",
+        "minimum_s": 12.625,
+        "onset_s": 3.59375,
+        "pair": [
+          "10_projectile_tower:projectile",
+          "10_projectile_tower:tower-1"
+        ],
+        "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-1",
+        "restitution_claimed": false,
+        "scene_id": "10_projectile_tower:default:ccf899f76881",
+        "source_event_id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1",
+        "source_event_ids": [
+          "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1"
+        ]
+      },
+      {
+        "certification": {
+          "geometry_method": "analytic_sphere_aabb_proxy",
+          "interval_s": [
+            17.09375,
+            23.71875
+          ],
+          "method": "fixed_proxy_lipschitz_gap_bound",
+          "minimum_sample_gap_m": 1.0898632842159077,
+          "scope": "piecewise linear evaluated segments; no sub-frame perceptual timing claim",
+          "segment_count": 212,
+          "source_event_id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1",
+          "uncertainty_m": 1e-05
+        },
+        "certified_no_tunnelling": true,
+        "clock": "scene",
+        "driver": 0.0,
+        "driver_reason": null,
+        "duration_s": 6.625,
+        "epoch": "10_projectile_tower:default:ccf899f76881",
+        "event_type": "near_miss",
+        "id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1:music-v2",
+        "inputs": {
+          "closeness": 0.0,
+          "min_gap_m": 1.089863387996169
+        },
+        "loop_instance": 0,
+        "mass_inferred": false,
+        "method": "canonical_event_evaluated_states",
+        "minimum_s": 17.875,
+        "onset_s": 17.09375,
+        "pair": [
+          "10_projectile_tower:projectile",
+          "10_projectile_tower:tower-2"
+        ],
+        "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-2",
+        "restitution_claimed": false,
+        "scene_id": "10_projectile_tower:default:ccf899f76881",
+        "source_event_id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1",
+        "source_event_ids": [
+          "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1"
+        ]
+      }
+    ],
+    "null_drivers": {},
+    "provenance": {
+      "approval": null,
+      "audition_status": "AUDITION_PENDING",
+      "clock": "scene",
+      "config_hash": "7c552984050b1429ae53c5587fc96d9ffedd4d019967ad47138ba8637b33c5be",
+      "creator": "blender-music-semantics-2",
+      "epoch": "10_projectile_tower:default:ccf899f76881",
+      "events_hash": "3b0c271c62abee30466e90d9ec7b7d488b0ead44d063fbdd10f45bcc45b8a8aa",
+      "geometry_hash": "69b3c4c6601349fec0fa5c839de75f213a4d6e761c56a9f6fe99744a75d48238",
+      "input_file_hashes": {
+        "geometry.json": "cc2f52d3477b634634e6705a36bf403232e4f8ea1236cd4c9aa27760e28aea81",
+        "interactions.jsonl": "db3ad6fde9e12ed57a2fcc14f5bb7f8bd30cd59c0420a262ac75955c83bc9d8d",
+        "manifest.json": "2f2ad3e7d099303430056c52f38b791f23113ce32742edd396c7a56bc1b553b6",
+        "object_states.jsonl": "a5b02fe89fee3728babf8a5b76b5583356006e9ebcfebed0bac1d62ca193a3ab"
+      },
+      "mapping": "explicit creative kinematics, no inferred physics or emotion",
+      "scene_hash": "fe704d757cd402de6c51213154cf83316eb984719a4781ce13fba6c6b9bc11c6",
+      "source_cadence_fps": 8.0,
+      "source_exporter_hash": "c56a934ace66448e9f38643dea88f2f3a51a06efb6498bee23d02695facf02b4",
+      "source_generator_version": "blender-export-1.1",
+      "source_mode": "synthetic",
+      "states_hash": "848bdd5a1d231abeb1fc75e762376f49cc536754a7510c27e94112cc5f0a102f"
+    },
+    "suppression_counts": {
+      "area_ratio_below_rebound_threshold": 4
+    }
+  },
+  "near_miss": {
+    "bundle": "/Users/agent/Desktop/SceneScore/artifacts/blender/final-all-ten/02_near_miss_twins-default",
+    "counts": {
+      "approach": 1,
+      "near_miss": 1,
+      "separation": 1
+    },
+    "near_misses": [
+      {
+        "certification": {
+          "geometry_method": "analytic_sphere_proxy",
+          "interval_s": [
+            0.0,
+            3.0
+          ],
+          "method": "sphere_sweep_exact",
+          "minimum_sample_gap_m": 0.2999999672174454,
+          "scope": "piecewise linear evaluated segments; no sub-frame perceptual timing claim",
+          "segment_count": 96,
+          "source_event_id": "02_near_miss_twins:default:4e72e846bff0:02_near_miss_twins:left|02_near_miss_twins:right:e1",
+          "uncertainty_m": 1e-05
+        },
+        "certified_no_tunnelling": true,
+        "clock": "scene",
+        "driver": 0.40000009536743164,
+        "driver_reason": null,
+        "duration_s": 3.0,
+        "epoch": "02_near_miss_twins:default:4e72e846bff0",
+        "event_type": "near_miss",
+        "id": "02_near_miss_twins:default:4e72e846bff0:02_near_miss_twins:left|02_near_miss_twins:right:e1:music-v2",
+        "inputs": {
+          "closeness": 0.40000009536743164,
+          "min_gap_m": 0.2999999523162842
+        },
+        "loop_instance": 0,
+        "mass_inferred": false,
+        "method": "canonical_event_evaluated_states",
+        "minimum_s": 1.5,
+        "onset_s": 0.0,
+        "pair": [
+          "02_near_miss_twins:left",
+          "02_near_miss_twins:right"
+        ],
+        "pair_id": "02_near_miss_twins:left|02_near_miss_twins:right",
+        "restitution_claimed": false,
+        "scene_id": "02_near_miss_twins:default:4e72e846bff0",
+        "source_event_id": "02_near_miss_twins:default:4e72e846bff0:02_near_miss_twins:left|02_near_miss_twins:right:e1",
+        "source_event_ids": [
+          "02_near_miss_twins:default:4e72e846bff0:02_near_miss_twins:left|02_near_miss_twins:right:e1"
+        ]
+      }
+    ],
+    "null_drivers": {},
+    "provenance": {
+      "approval": null,
+      "audition_status": "AUDITION_PENDING",
+      "clock": "scene",
+      "config_hash": "7c552984050b1429ae53c5587fc96d9ffedd4d019967ad47138ba8637b33c5be",
+      "creator": "blender-music-semantics-2",
+      "epoch": "02_near_miss_twins:default:4e72e846bff0",
+      "events_hash": "f5cc30da4003d0dc66f26a147292035284eb83649911062d40a476d834762662",
+      "geometry_hash": "3c8fe57ce6a7171dcf5b8045d220661b34dca24e97aa7d7107d46373caf5169a",
+      "input_file_hashes": {
+        "geometry.json": "1adca073b8ad209dfb3a3e69605f76db2bff2c83fce76b8593d2beaca487363b",
+        "interactions.jsonl": "20f2aa8aa9342f45f7f8bf7c173fa3ec6cd99ddd82d5237625868e26fa131c76",
+        "manifest.json": "d73ce7c227fde5e01764610b562ead5140ee9bbe84ba87f988ed1a2264b52856",
+        "object_states.jsonl": "6e22e5debdb29abf5581ec0ca3766bdfe0b717909fcfd649259de3d1eafac485"
+      },
+      "mapping": "explicit creative kinematics, no inferred physics or emotion",
+      "scene_hash": "6e03124fc18e78b2743a97da2ac13b059c19dc3f5d17305209a1d3a5d6413e75",
+      "source_cadence_fps": 8.0,
+      "source_exporter_hash": "6bcb17fe33e863dd7fb6540eae54c5d78c5e2a90dfb0a0657efbb058da72c6dd",
+      "source_generator_version": "blender-export-1.1",
+      "source_mode": "synthetic",
+      "states_hash": "4328274e2230c2c2e4045c70319590e080554ddd109d6760d3af855b5307ed71"
+    },
+    "suppression_counts": {}
+  }
+}

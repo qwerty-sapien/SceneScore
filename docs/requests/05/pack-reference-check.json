@@ -1,0 +1,83 @@
+{
+  "execution_note": "Ran unchanged pack checker against an exact-byte module table copy in an automatically removed temporary directory; supplied pack unchanged.",
+  "failures": [],
+  "negative_controls": [
+    {
+      "mutation": "wrong to_pc",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "slot quality mismatch",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "arrival not on tonic",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "gain changed",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "articulation changed",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "lane sets overlap",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "acknowledgement budget blown",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "duplicate lookup key",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "default tier flag-gated",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "voice leading broken",
+      "rejected": true,
+      "target": "table"
+    },
+    {
+      "mutation": "near miss accents",
+      "rejected": true,
+      "target": "taxonomy"
+    },
+    {
+      "mutation": "rebound claims mass",
+      "rejected": true,
+      "target": "taxonomy"
+    },
+    {
+      "mutation": "unknown lane",
+      "rejected": true,
+      "target": "taxonomy"
+    },
+    {
+      "mutation": "reversed lane range",
+      "rejected": true,
+      "target": "taxonomy"
+    }
+  ],
+  "positive_controls": {
+    "motion_event_types": 8,
+    "motion_taxonomy_violations": [],
+    "transition_table_entries": 216,
+    "transition_table_violations": []
+  },
+  "status": "PASSED"
+}

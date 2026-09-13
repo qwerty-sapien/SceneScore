@@ -1,0 +1,80 @@
+# Blink training workspace
+
+Open **Launch Blink Trainer.command** in the repository, or run `make muse-train`.
+It builds the page and opens the local workspace at http://127.0.0.1:8767.
+The terminal owns a bounded, visible service. Ctrl-C stops it and its acquisition
+thread; it expires after an hour. No headset connection or recording starts merely
+because the page is open.
+
+## Connect and collect
+
+Start the same Muse LSL stream you use with RAGTM. Select that exact source in the
+training page, enter the actual headset model, and give live-processing consent.
+Before real recording, confirm that the selected source and its displayed channel
+names, units and rate match your named headset. This records your metadata
+confirmation; it does not certify electrode contact or detector performance.
+The supplied RAGTM implementation also reads an existing LSL stream. This page
+does not assume a remembered headset generation or create a Bluetooth connection
+behind the user's back. If the source is unavailable, its blocker stays visible.
+
+The official [MuseLSL guide](https://github.com/alexandrebarachant/muse-lsl/blob/master/README.md)
+documents listing headsets and starting an exact named stream with
+`muselsl stream --name YOUR_DEVICE_NAME`. MuseLSL itself is not installed by this
+task. The page's isolated LSL receiver dependency is prepared separately under
+ignored `artifacts/muse-training-runtime`; SceneScore's frozen environment and
+dependency locks are unchanged.
+
+Choose a pseudonymous participant ID, refit ID and whole-session role before
+recording. Give local-recording consent and press Start recording. The untouched
+raw EEG, timestamps, units and gaps are stored beneath ignored
+`private_data/02A/training-web`. No EEG is sent to Vercel or GPT.
+
+Use the current trial class and hold **B** over the intended trial, releasing it
+afterwards. The default is a comfortable double blink. Record single blinks,
+triples, ordinary activity, movement and keypress-only examples too. Guided cues provide
+an option without a simultaneous keypress. Keep blinking comfortable and stop
+whenever needed. No camera recording is implemented.
+
+## Review and train
+
+Stop recording, select each marked interval, inspect the EEG and adjust the actual
+interval/class before confirming it. Keep missed or unclear trials uncertain.
+A B interval or cue is an intent marker, not proof of an actual double blink;
+the model never receives B/cue timing as an input feature. Labels remain distinct
+from detector predictions. [LSL's synchronization documentation](https://labstreaminglayer.readthedocs.io/info/time_synchronization.html)
+explains why timestamps from different clocks require an explicit mapping; this
+page records keyboard, host receipt and source anchors separately.
+
+Train model fits a small local experimental classifier from reviewed training
+windows, with at least three positive and three negative examples. That minimum
+only enables the software experiment. It provides no accuracy guarantee. The
+model uses a causal two-second EEG window; no future samples or final-test data
+enter fitting. Collect whole development sessions after a fresh headset refit to
+obtain separate window-level results. Those results are not full-stream event
+recall, false activations per hour or a music-control certification.
+
+The default command remains a double blink because it is an explicit sequence
+that can be counted while ordinary singles do nothing. This does not establish
+that doubles are easier or more separable for this participant. Natural and
+intentional blink patterns can overlap, so they need comparison using real data;
+[this exploratory study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10213007/)
+also distinguishes the question of intention from merely detecting eyelid motion.
+
+The personal window model can be inspected and downloaded locally. Its predictions
+are experimental; it cannot automatically arm music or replace the existing
+double-only causal detector. A real music-control artifact still needs the held-out
+evaluation gates. Synthetic rehearsal is visibly separate and cannot qualify as
+real headset training or be mixed into a real model.
+
+## Privacy and lifecycle
+
+Downloads are explicitly requested local exports. Session deletion requires the
+exact session ID and invalidates a dependent model. Separately downloaded copies
+remain under the user's control and must be removed separately when desired.
+No import-time jobs, automatic uploads, remote raw-data storage or global settings
+changes are used. A source fault closes the current recording; reconnect starts
+a new session rather than hiding a dropout in existing data.
+
+Developer build: `node_modules/.bin/vite build apps/training --base ./ --outDir ../../artifacts/training-dist`.
+The webpage is a separate app and does not rebuild the concurrently evolving
+music/Blender demonstration.

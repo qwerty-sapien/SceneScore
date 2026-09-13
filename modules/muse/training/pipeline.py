@@ -89,12 +89,14 @@ def validate_split(sessions):
 def audit_real(root: Path, index):
     """No absent data can become a model. All bytes/labels are frozen before fitting."""
     from modules.muse.acquisition.store import manifest, replay
+    from modules.muse.acquisition.protocol import validate_protocol
 
     validate_split(index["sessions"])
     results = []
     for item in index["sessions"]:
-        path = (root / item["path"]).resolve()
-        if not path.is_relative_to(root.resolve()) or path.is_symlink():
+        unresolved = root / item["path"]
+        path = unresolved.resolve()
+        if not path.is_relative_to(root.resolve()) or unresolved.is_symlink():
             raise ValueError("session_outside_scope")
         m = manifest(path)
         meta = m["metadata"]
@@ -106,6 +108,14 @@ def audit_real(root: Path, index):
             raise ValueError("genuine_verified_session_required")
         if not item.get("consent_ref"):
             raise ValueError("consent_reference_required")
+        protocol_path = path / "protocol.json"
+        if not protocol_path.is_file() or protocol_path.is_symlink():
+            raise ValueError("recorded_participant_consent_protocol_required")
+        protocol = validate_protocol(json.loads(protocol_path.read_text()))
+        if any(protocol[key] != item[key] for key in ("participant_id", "refit_id", "role", "consent_ref")):
+            raise ValueError("split_differs_from_precollection_assignment")
+        if item.get("protocol_sha256") != hashlib.sha256(protocol_path.read_bytes()).hexdigest():
+            raise ValueError("changed_frozen_protocol")
         labels_path = path / "labels.jsonl"
         if not labels_path.is_file():
             raise ValueError("independent_labels_missing")
@@ -113,6 +123,8 @@ def audit_real(root: Path, index):
         if not labels or any(
             label["source"] not in ("independent_observation", "consented_local_video", "independent_review")
             or not label.get("reviewer")
+            or not label.get("evidence_ref")
+            or label.get("source_mode") != "real_device"
             for label in labels
         ):
             raise ValueError("independent_labels_required")

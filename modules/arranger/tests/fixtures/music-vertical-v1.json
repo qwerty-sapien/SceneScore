@@ -1,0 +1,43 @@
+{
+  "approval": null,
+  "audition_status": "AUDITION_PENDING",
+  "control_features": [
+    "near_miss",
+    "separation"
+  ],
+  "fixture_version": 1,
+  "holds": [
+    {
+      "end_s": 13.25,
+      "hold_beats": 1.0,
+      "id": "fixture:positive_near_miss:a|b:1:music-v2:hold",
+      "no_accent": true,
+      "no_foley": true,
+      "no_key_change": true,
+      "pair_id": "a|b",
+      "reason": "near_miss_withheld_resolution",
+      "root_pc": 5,
+      "source_event_id": "fixture:positive_near_miss:a|b:1",
+      "start_s": 12.625,
+      "withheld_pitch_classes": [
+        9
+      ]
+    }
+  ],
+  "identity": {
+    "changed_lead_ids": [
+      "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057"
+    ],
+    "changed_note_ids": [
+      "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0053",
+      "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057"
+    ],
+    "source_lead_count": 48,
+    "source_note_count": 162,
+    "unchanged_lead_fraction": 0.9791666666666666,
+    "unchanged_note_fraction": 0.9876543209876543
+  },
+  "musical_output_sha256": "48b34d59203783f92d3aaabd58cce5c2b1dfcfc998dc914b7d7c2a83cb909676",
+  "source_musical_sha256": "d78e6cccad42b7d25ff754603e2b8b7e8b5f04f4b670491b9c77ad661d7d8cdc",
+  "source_note_count": 162
+}

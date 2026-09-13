@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/Users/agent/Desktop/SceneScore/tools/audit_blender_delivery.py", line 91, in <module>
+    main()
+    ~~~~^^
+  File "/Users/agent/Desktop/SceneScore/tools/audit_blender_delivery.py", line 83, in main
+    result = audit(args.selection, args.report)
+  File "/Users/agent/Desktop/SceneScore/tools/audit_blender_delivery.py", line 28, in audit
+    raise ValueError('duplicate_export_bundle_identity')
+ValueError: duplicate_export_bundle_identity

@@ -48,3 +48,58 @@ The NEW baseline only consumes enabled AF/FP channels explicitly labelled uV. It
 Dropouts, changed epochs, stale indices and severe/unverified quality disarm and reset partial grammar; quality recovery requires warmup and explicit arming. Rejected/abstained periods must remain in future evaluation denominators. There is no interpolation, long cooldown trick, intensity/emotion inference or directional thought control.
 
 `modules.muse.acquisition.api:router` exposes read-only GET `/health` and POST `/diagnostics` for an already validated EEGChunk. No raw path browsing or recording starts via HTTP. `health() -> dict` is synchronous and side-effect free. Only the integrator mounts the router under `/muse`; no unbounded stream capability is registered here.
+
+## Muse vertical collection entrypoint
+
+`python -m modules.muse.acquisition diagnose` performs a bounded LSL metadata check
+without opening an inlet or reading EEG. Missing `pylsl`/native `liblsl` and absent
+streams return structured blockers with exit status 2. A discovered nominal rate
+is advertised metadata only. Unknown generation, firmware, channels and units
+stay null. Optional transport libraries are loaded only by explicit diagnostic or
+capture commands; nothing starts on import.
+
+When the participant is ready, fill a **local copy** of
+`examples/collection-protocol.template.json` with their actual consent words,
+retention date, pseudonymous participant/refit identity and preassigned role
+(`train`, `development`, `final_test`). Mode is `randomized_instructed`,
+`natural_activity` or `self_paced`. The blank template is deliberately invalid and
+contains no implied consent. Metadata must be canonical AcquisitionMetadata with
+verified device facts; no template supplies remembered Muse defaults.
+
+One foreground entrypoint records a bounded session, displays instruction cues,
+preserves the protocol and prints raw sample/exposure counts:
+
+```sh
+PYTHONPATH=.:src .venv/bin/python -m modules.muse.acquisition collect private_data/02A/SESSION metadata.json --protocol protocol.json --source-id ACTUAL_LSL_SOURCE --seconds 60 --start
+```
+
+Ctrl-C stops the inlet and closes the session. No simultaneous motor confirmation
+is requested. Cues and actual activity remain separate; negative activity exposure
+is a protocol assignment until independently reviewed. Contact quality is
+unverified on this LSL path, so controls remain disarmed. No data is uploaded.
+Remove and refit between separately identified sessions. Use at least three refit
+groups to assign independent train/development/final-test roles; this does not by
+itself satisfy the empirical acceptance gate.
+
+After collection:
+
+```sh
+PYTHONPATH=.:src .venv/bin/python -m modules.muse.acquisition review private_data/02A/SESSION
+PYTHONPATH=.:src .venv/bin/python -m modules.muse.acquisition confirm private_data/02A/SESSION CUE_ID --performed uncertain --confirmation-s 70
+PYTHONPATH=.:src .venv/bin/python -m modules.muse.acquisition label --help
+```
+
+`confirmation-s` is a protocol-clock response timestamp, never a predictive
+feature or proof of a blink. Confirmations and labels fail while recording is
+active. Label actual source-epoch onset/end/final-blink times from independent
+observation or delayed review against the raw trace, with reviewer/evidence.
+Keep uncertain/disagreement and natural negatives. Review/relabel/export/delete
+remain the existing local CLI operations. Deleting the session removes its raw,
+protocol, cue, response, label and in-session derived files; separately retained
+exports/index/model artifacts must also be deleted or invalidated on withdrawal.
+
+`modules.muse.baseline.replay.replay_session` is a deterministic utility around
+the same `CausalBaseline.consume` used by the live adapter. Its explicit initial
+arming does not rearm after a fault and EOF never supplies fabricated future
+time. `python -m modules.muse.acquisition.examples.synthetic_replay` demonstrates
+one accepted synthetic double and removes its temporary raw fixture at exit.

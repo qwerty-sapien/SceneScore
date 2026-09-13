@@ -1,0 +1,567 @@
+{
+  "version": "muse-grammar-semantics-1",
+  "source_sha256": "5826a0dc9c387c7af1bae9be60b2940bf30c73cd18924e962ac80449947b32d0",
+  "source_path": "muse_blink_modulation_vercel_dag/examples/gesture_grammar_cases.json",
+  "authority": "Repository Config and Grammar unchanged; corrections are a module supplement, not an amendment to immutable pack.",
+  "repository_gap": "next start minus previous end",
+  "repository_closure": "strictly after final end + max_gap_s",
+  "canonical_t0": "GestureEvent.final_blink equals final candidate end",
+  "original_cases": [
+    {
+      "id": "P1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "expect": "accept",
+      "reason": "separation 0.30 s is inside [min_separation_s, max_gap_s]; closes at 2.80 s",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1
+    },
+    {
+      "id": "P2",
+      "blinks_s": [
+        [
+          2.0,
+          0.05
+        ],
+        [
+          2.12,
+          0.05
+        ]
+      ],
+      "expect": "accept",
+      "reason": "short but legal durations, separation 0.12 s just above min_separation_s",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "P3",
+      "blinks_s": [
+        [
+          2.0,
+          0.38
+        ],
+        [
+          2.49,
+          0.38
+        ]
+      ],
+      "expect": "accept",
+      "reason": "long but legal durations, separation 0.49 s just under max_gap_s",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1
+    },
+    {
+      "id": "P4",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ],
+        [
+          5.0,
+          0.12
+        ],
+        [
+          5.3,
+          0.12
+        ]
+      ],
+      "expect": "accept_twice",
+      "reason": "two independent pairs well outside cooldown_s",
+      "pack_expected_actions": 2,
+      "repository_expected_actions": 2
+    },
+    {
+      "id": "N1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "single blink is never an action",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N2",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ],
+        [
+          2.6,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "triple; must not emit the leading double",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N3",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.6,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "separation 0.60 s exceeds max_gap_s; two singles, not a pair",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 1
+    },
+    {
+      "id": "N4",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.06,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "separation 0.06 s below min_separation_s; one artifact, not two blinks",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N5",
+      "blinks_s": [
+        [
+          2.0,
+          0.02
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "first duration below min_duration_s",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N6",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.55
+        ]
+      ],
+      "expect": "reject",
+      "reason": "second duration above max_duration_s; likely a squint or artifact",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N7",
+      "blinks_s": [
+        [
+          0.4,
+          0.12
+        ],
+        [
+          0.7,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "inside warmup_s; baseline statistics are not established",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N8",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ],
+        [
+          2.9,
+          0.12
+        ],
+        [
+          3.1,
+          0.12
+        ]
+      ],
+      "expect": "accept_once",
+      "reason": "second pair starts inside cooldown_s of the first decision and is suppressed with a reason",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N9",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "fault": {
+        "dropout_at_s": 2.15
+      },
+      "expect": "reject",
+      "reason": "packet loss between the two blinks clears partial state and requires re-arm",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    },
+    {
+      "id": "N10",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "fault": {
+        "quality_loss_at_s": 2.05
+      },
+      "expect": "reject",
+      "reason": "signal quality failure suppresses new controls while music continues",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0
+    }
+  ],
+  "corrected_cases": [
+    {
+      "id": "P1-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "expect": "accept",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1,
+      "original_id": "P1"
+    },
+    {
+      "id": "P2-repo-v1",
+      "blinks_s": [
+        [
+          2,
+          0.05
+        ],
+        [
+          2.16,
+          0.05
+        ]
+      ],
+      "expect": "accept",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. 0.12 onset gap minus 0.05 duration = 0.07 end-to-onset gap, below min_separation_s 0.10; corrected onset 2.16 gives 0.11.",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1,
+      "original_id": "P2"
+    },
+    {
+      "id": "P3-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.38
+        ],
+        [
+          2.49,
+          0.38
+        ]
+      ],
+      "expect": "accept",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1,
+      "original_id": "P3"
+    },
+    {
+      "id": "P4-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ],
+        [
+          5.0,
+          0.12
+        ],
+        [
+          5.3,
+          0.12
+        ]
+      ],
+      "expect": "accept_twice",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 2,
+      "repository_expected_actions": 2,
+      "original_id": "P4"
+    },
+    {
+      "id": "N1-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N1"
+    },
+    {
+      "id": "N2-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ],
+        [
+          2.6,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N2"
+    },
+    {
+      "id": "N3-repo-v1",
+      "blinks_s": [
+        [
+          2,
+          0.12
+        ],
+        [
+          2.64,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. 0.60 onset gap minus 0.12 duration = 0.48 end-to-onset gap, below max_gap_s 0.50; corrected onset 2.64 gives 0.52.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N3"
+    },
+    {
+      "id": "N4-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.06,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N4"
+    },
+    {
+      "id": "N5-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.02
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N5"
+    },
+    {
+      "id": "N6-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.55
+        ]
+      ],
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N6"
+    },
+    {
+      "id": "N7-repo-v1",
+      "blinks_s": [
+        [
+          0.4,
+          0.12
+        ],
+        [
+          0.7,
+          0.12
+        ]
+      ],
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N7"
+    },
+    {
+      "id": "N8-repo-v1",
+      "blinks_s": [
+        [
+          2,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ],
+        [
+          2.95,
+          0.12
+        ],
+        [
+          3.22,
+          0.12
+        ]
+      ],
+      "expect": "accept_once",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. third onset 2.90 precedes second end 2.42 + 0.50 closure; all four form one ambiguous train and emit zero. Corrected third onset 2.95 follows closure but precedes its cooldown expiration, so only first pair emits.",
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1,
+      "original_id": "N8"
+    },
+    {
+      "id": "N9-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "fault": {
+        "dropout_at_s": 2.15
+      },
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N9"
+    },
+    {
+      "id": "N10-repo-v1",
+      "blinks_s": [
+        [
+          2.0,
+          0.12
+        ],
+        [
+          2.3,
+          0.12
+        ]
+      ],
+      "fault": {
+        "quality_loss_at_s": 2.05
+      },
+      "expect": "reject",
+      "reason": "Repository semantics: gap is previous end to next onset; closure is strictly after final end + 0.5 s. Original timing retained; repository expected outcome agrees.",
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "original_id": "N10"
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "P2",
+      "reason": "0.12 onset gap minus 0.05 duration = 0.07 end-to-onset gap, below min_separation_s 0.10; corrected onset 2.16 gives 0.11."
+    },
+    {
+      "id": "N3",
+      "reason": "0.60 onset gap minus 0.12 duration = 0.48 end-to-onset gap, below max_gap_s 0.50; corrected onset 2.64 gives 0.52."
+    },
+    {
+      "id": "N8",
+      "reason": "third onset 2.90 precedes second end 2.42 + 0.50 closure; all four form one ambiguous train and emit zero. Corrected third onset 2.95 follows closure but precedes its cooldown expiration, so only first pair emits."
+    }
+  ],
+  "latency_discrepancies": [
+    "Pack t0 names second onset; canonical GestureEvent.final_blink is final end.",
+    "Pack reference closes at second onset + 0.5; repo requires strictly after second end + 0.5. For P1 the earliest decision is >2.92, not 2.80.",
+    "Pack t2-t1 subtracts host and device clocks without mapping; reported unavailable unless device-to-host mapping is supplied.",
+    "Existing Timeline Decision.boundary_s is scene pivot time, not audio tonic-arrival time."
+  ]
+}

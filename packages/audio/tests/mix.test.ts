@@ -20,12 +20,12 @@ test('voice bounds count overlapping intervals and permit adjacent notes',()=>{
  assert.equal(polyphony([event,{...event,resolved_time_s:1}],1),1);
  assert.throws(()=>polyphony(Array.from({length:25},()=>event)));
 });
-test('late buffer preparation rolls back the entire pending modulation',()=>{
+test('unprepared audio rolls back the entire pending modulation without preparing on acceptance',()=>{
  const bundle=copy(fixture.bundle) as unknown as Bundle,plan=JSON.parse(bundle.plan_bytes),timeline=new Timeline(bundle,plan,'a'.repeat(64)),engine=new Engine(timeline);
  const clock={currentTime:1};engine.context=clock as AudioContext;timeline.playing=true;
- const before=copy(timeline.events);engine.prepare=()=>{clock.currentTime=3;};
+ const before=copy(timeline.events);engine.prepare=()=>{throw Error('must not prepare on accepted path');};
  const result=engine.submit(keyboardAction(plan,timeline.planHash,timeline.epoch,1,2,'KEYBOARD'));
- assert.equal(result.status,'suppressed');assert.match(result.reason!,/preparation_missed_boundary/);assert.deepEqual(timeline.events,before);assert.equal(timeline.pending.length,0);
+ assert.equal(result.status,'suppressed');assert.match(result.reason!,/audio_not_prepared/);assert.deepEqual(timeline.events,before);assert.equal(timeline.pending.length,0);
 });
 test('completed uninterrupted run is required for performance export; mix records edits',()=>{
  const bundle=copy(fixture.bundle) as unknown as Bundle,engine=new Engine(new Timeline(bundle,JSON.parse(bundle.plan_bytes),'a'.repeat(64)));

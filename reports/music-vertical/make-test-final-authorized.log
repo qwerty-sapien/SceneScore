@@ -1,0 +1,520 @@
+PYTHONPATH=.:src .venv/bin/python -m scenescore.cli test-contracts
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "fixtures/contracts/AcquisitionMetadata.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/EEGChunk.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/BlinkCandidate.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/GestureEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ControlAction.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/SceneManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ObjectState.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/InteractionEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/CompositionSpec.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/BrushGroove.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ScoreEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/AudioAssetManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ArrangementPlan.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/Approval.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ClockMapping.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/RunManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/EvaluationReport.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/CapabilityRequest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/near-miss.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/separating-pair.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/packet-loss.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/no-event.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/bad-quality.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/gesture-1.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/gesture-3.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/bad-version.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-units.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/extra-field.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/self-pair.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/fake-impact.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/contact-near-miss.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-pair-id.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/stale-times.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/mismatched-channels.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/wrong-receipt-clock.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/time-reversal.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/mixed-epoch.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/count-mismatch.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/double-gain-change.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/single-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/triple-default-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-quality-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/missing-approval.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/duplicate-object.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/inverted-bounds.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/invalid-quaternion.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-hash.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/pitched-brush.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/overflow-note.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/tempo-reversal.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/unpitched-note.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/quantized-foley.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/double-swing.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/register-inversion.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-transition.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/leaky-split.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/fake-statistical-support.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/excess-armed-exposure.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/invalid-clock-range.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/non-positive-timeout.json",
+      "expected_valid": false,
+      "actual_valid": false
+    }
+  ],
+  "evidence_mode": "synthetic"
+}
+npm run test:contracts
+
+> scenescore-harness@0.1.0 test:contracts
+> node --import tsx --test tests/ts/*.test.ts
+
+✔ fixtures/contracts/AcquisitionMetadata.json (15.543458ms)
+✔ fixtures/contracts/EEGChunk.json (0.704125ms)
+✔ fixtures/contracts/BlinkCandidate.json (0.491666ms)
+✔ fixtures/contracts/GestureEvent.json (0.562875ms)
+✔ fixtures/contracts/ControlAction.json (0.877166ms)
+✔ fixtures/contracts/SceneManifest.json (0.765125ms)
+✔ fixtures/contracts/ObjectState.json (0.739541ms)
+✔ fixtures/contracts/InteractionEvent.json (0.5115ms)
+✔ fixtures/contracts/CompositionSpec.json (0.462625ms)
+✔ fixtures/contracts/BrushGroove.json (0.409167ms)
+✔ fixtures/contracts/ScoreEvent.json (0.35125ms)
+✔ fixtures/contracts/AudioAssetManifest.json (0.238083ms)
+✔ fixtures/contracts/ArrangementPlan.json (0.255917ms)
+✔ fixtures/contracts/Approval.json (0.212292ms)
+✔ fixtures/contracts/ClockMapping.json (0.193417ms)
+✔ fixtures/contracts/RunManifest.json (0.231083ms)
+✔ fixtures/contracts/EvaluationReport.json (0.215208ms)
+✔ fixtures/contracts/CapabilityRequest.json (0.197459ms)
+✔ fixtures/contracts/near-miss.json (0.198291ms)
+✔ fixtures/contracts/separating-pair.json (0.162333ms)
+✔ fixtures/contracts/packet-loss.json (0.242959ms)
+✔ fixtures/contracts/no-event.json (0.190666ms)
+✔ fixtures/contracts/bad-quality.json (0.179416ms)
+✔ fixtures/contracts/gesture-1.json (0.236125ms)
+✔ fixtures/contracts/gesture-3.json (0.1865ms)
+✔ fixtures/contracts/bad-version.json (0.339334ms)
+✔ fixtures/contracts/bad-units.json (0.188625ms)
+✔ fixtures/contracts/extra-field.json (0.217292ms)
+✔ fixtures/contracts/self-pair.json (0.192041ms)
+✔ fixtures/contracts/fake-impact.json (0.3225ms)
+✔ fixtures/contracts/contact-near-miss.json (0.293208ms)
+✔ fixtures/contracts/bad-pair-id.json (0.221625ms)
+✔ fixtures/contracts/stale-times.json (0.215583ms)
+✔ fixtures/contracts/mismatched-channels.json (0.182209ms)
+✔ fixtures/contracts/wrong-receipt-clock.json (0.165917ms)
+✔ fixtures/contracts/time-reversal.json (0.19075ms)
+✔ fixtures/contracts/mixed-epoch.json (0.181542ms)
+✔ fixtures/contracts/count-mismatch.json (0.244083ms)
+✔ fixtures/contracts/double-gain-change.json (0.309ms)
+✔ fixtures/contracts/single-action.json (0.204417ms)
+✔ fixtures/contracts/triple-default-action.json (0.197208ms)
+✔ fixtures/contracts/bad-quality-action.json (0.18075ms)
+✔ fixtures/contracts/missing-approval.json (0.163458ms)
+✔ fixtures/contracts/duplicate-object.json (0.163167ms)
+✔ fixtures/contracts/inverted-bounds.json (0.185625ms)
+✔ fixtures/contracts/invalid-quaternion.json (0.145875ms)
+✔ fixtures/contracts/bad-hash.json (0.153ms)
+✔ fixtures/contracts/pitched-brush.json (0.167541ms)
+✔ fixtures/contracts/overflow-note.json (0.202125ms)
+✔ fixtures/contracts/tempo-reversal.json (0.176791ms)
+✔ fixtures/contracts/unpitched-note.json (0.192041ms)
+✔ fixtures/contracts/quantized-foley.json (0.159666ms)
+✔ fixtures/contracts/double-swing.json (0.147541ms)
+✔ fixtures/contracts/register-inversion.json (0.186875ms)
+✔ fixtures/contracts/bad-transition.json (0.153459ms)
+✔ fixtures/contracts/leaky-split.json (0.179042ms)
+✔ fixtures/contracts/fake-statistical-support.json (0.172ms)
+✔ fixtures/contracts/excess-armed-exposure.json (0.136041ms)
+✔ fixtures/contracts/invalid-clock-range.json (0.167125ms)
+✔ fixtures/contracts/non-positive-timeout.json (0.155584ms)
+✔ nonfinite scores fail (0.289583ms)
+✔ clock and gesture boundary discipline (0.459625ms)
+✔ scheduler deduplicates sequence, preserves lanes and drops old epochs (1.60425ms)
+✔ content hashing is exact bytes (0.277375ms)
+✔ bundle rejects unknown references and catalogue versions (2.052875ms)
+✔ Python envelope action passes frozen TypeScript contract without extra canonical fields (13.7555ms)
+✔ keyboard: canonical adapter action uses Timeline.submit gates and one-pending limit (22.121375ms)
+✔ synthetic: canonical adapter action uses Timeline.submit gates and one-pending limit (7.666542ms)
+✔ replay: canonical adapter action uses Timeline.submit gates and one-pending limit (7.009208ms)
+✔ real_device: canonical adapter action uses Timeline.submit gates and one-pending limit (6.110625ms)
+ℹ tests 70
+ℹ suites 0
+ℹ pass 70
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 394.907666
+PYTHONPATH=.:src .venv/bin/python -m pytest -q
+........................................................................ [ 10%]
+........................................................................ [ 21%]
+........................................................................ [ 31%]
+........................................................................ [ 42%]
+........................................................................ [ 53%]
+........................................................................ [ 63%]
+........................................................................ [ 74%]
+........................................................................ [ 85%]
+........................................................................ [ 95%]
+.............................                                            [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/agent/Desktop/SceneScore/.venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /Users/agent/Desktop/SceneScore/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+677 passed, 2 warnings in 232.88s (0:03:52)
+PYTHONPATH=.:src .venv/bin/python -m pytest -q services/bridge/tests
+..........                                                               [100%]
+10 passed in 4.77s
+.venv/bin/ruff check src tests modules tools/*.py
+All checks passed!
+node --import tsx --test packages/audio/tests/*.test.ts apps/web/src/muse/tests/*.test.ts
+✔ all four modes retain provenance and every live gate is required (0.862042ms)
+✔ feedback delayed beyond gesture and quiet window remains unreviewed, not truth (0.466292ms)
+✔ clock requires two anchors, estimates rate, propagates uncertainty and rejects stale/skewed sources (0.563042ms)
+✔ default fetch retains browser global receiver through authenticated handshake (23.027708ms)
+✔ mix journal validates time ordering and explicit mute at each point (1.091291ms)
+✔ voice bounds count overlapping intervals and permit adjacent notes (0.472667ms)
+✔ unprepared audio rolls back the entire pending modulation without preparing on acceptance (39.883584ms)
+✔ completed uninterrupted run is required for performance export; mix records edits (5.749542ms)
+✔ prepared motion reader matches the causal reference across covered, missing and future times (12.391333ms)
+✔ explicit semantic simulation has no invented detector latency and preserves lanes (55.242ms)
+✔ browser adapter rejects stale clock, excessive uncertainty and preclosure gesture (7.814458ms)
+✔ cooperative tables exactly match synchronous transition output (248.529708ms)
+✔ ack returns before preparation and arrival never runs synchronous refresh (201.276ms)
+✔ pause and seek cancel staged buffers/tables without a stale commit (184.874041ms)
+✔ direct epoch reset invalidates staged preparation (154.50375ms)
+✔ new plan identity cancels staged preparation without publication (153.528167ms)
+synthetic AudioContext preparation evidence {"events":308,"bytes":62527688,"slices":79,"max_slice_ms":4.1362920000001395}
+✔ actual default bundle stays within memory across two async modulations and reset (2587.574166ms)
+✔ exact prepared bytes accept an intact bundle and reject mutated parsed score or scene (200.636291ms)
+✔ changed encoded source bytes cannot retain an earlier approval input hash (16.647792ms)
+✔ bound motion controls and holds cannot change while the exact plan remains unchanged (108.665ms)
+✔ musical projection preserves Python numeric tokens and strips only circular top-level fields (0.281083ms)
+✔ acknowledgement interval and musical wait are separate clock intervals (1.233291ms)
+✔ both guide-tone acknowledgements schedule at receipt +20 ms before any source access or synthesis (944.537541ms)
+✔ sounding lead/object/brush/Foley stay running while only the harmonic sustain is clipped (1175.452042ms)
+✔ actual tonic updates at arrival while pending remains through the complete landing (857.111834ms)
+✔ two signed modulations retain clipped timing, octave history, independent lanes and four exported acknowledgements (1158.857791ms)
+✔ near-miss holds are filtered before playback and no candidate overlaps them (871.245083ms)
+✔ pause cancels both acknowledgement sources and a pending program; seek clears performed history (869.563166ms)
+✔ pause after actual arrival retains the executed key and completed past audio in the editable export (860.824166ms)
+✔ partial acknowledgement scheduling failure fails closed and stops the first source (855.683667ms)
+✔ cooperative pre-play cache has bounded slices and cancellation cannot publish stale readiness (1124.336542ms)
+✔ normalized pitched buffers reuse velocity variants with exact independent gain restoration (854.826667ms)
+﹣ exact prepared music candidate fits the real 48kHz cache and two controls (0.069ms) # SKIP
+✔ restart from the completed end prepares the restored generation before accepting another control (856.162375ms)
+✔ offline performed rendering uses full prepared source buffers and preserved fragment offsets (1201.672125ms)
+✔ oversized pre-play cache fails before allocating buffers or making playback ready (19.183458ms)
+✔ local transition matches independent Python compiler golden (27.390166ms)
+✔ default double preserves independent expression and all unpitched events (2.768334ms)
+✔ causal geometry direction never reads future or unknown coverage (2.506958ms)
+✔ approval binds exact bytes and changing assets invalidates it (46.578292ms)
+✔ duplicate action and repeated train deliver once; pending queue capped (5.643ms)
+✔ late request selects next feasible boundary and never schedules past (3.689416ms)
+✔ seek clears queue, advances epoch and preserves external dedup history (9.15975ms)
+✔ bad quality, unrelated expression, wrong plan and unmapped clocks fail closed (7.188125ms)
+✔ stationary and experimental controls cannot silently act (5.2665ms)
+✔ video corrections are bounded and hard seeks rate-limited (0.256292ms)
+✔ stable hash independent of property insertion order (2.044334ms)
+✔ pause before queued boundary rolls back the unexecuted key change (5.91425ms)
+✔ staccato and tenuto sound differently inside the same occupied slot (5.408792ms)
+✔ offline preview is deterministic, preserves unrelated voices and never creates approval (147.158792ms)
+✔ offline near-miss hold cannot stack with an unresolved transition (29.292875ms)
+✔ preview rejects overlapping requests and holds on unknown motion (53.124041ms)
+✔ exact frozen 216-entry table has concrete bounded voice leading and stable arrivals (4.754584ms)
+✔ every enabled edge is indexed and jazz is inaccessible even for its ±2 edges (0.859083ms)
+✔ all precomputed programs preserve independent lanes and acknowledgement velocity (3.529417ms)
+✔ near-boundary selection uses earliest feasible safe arrival and honours strict expiry (0.354208ms)
+✔ accepted-path selector never traverses original score or constructs a program (23.740333ms)
+✔ unaffected lead/object/brush/Foley events retain reference and all independent fields (0.281959ms)
+✔ a long affected sustain is split around the program without gap or double coverage (19.9275ms)
+✔ two signed modulations resolve sequentially and tonic variants remain bounded (0.244042ms)
+✔ successive overlays preserve a clipped sustain identity, timing and signed pitch history (17.144583ms)
+✔ preparation rejects terminal or unordered arrivals, wrong table, and jazz activation (6.603625ms)
+✔ native frame and sample clocks cannot silently differ (0.964208ms)
+✔ selection preserves complete sustained event and source bytes (0.79225ms)
+✔ fade has same physical endpoint after resume inside final ten milliseconds (0.416208ms)
+ℹ tests 65
+ℹ suites 0
+ℹ pass 64
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 12239.84175
+npm run typecheck
+
+> scenescore-harness@0.1.0 typecheck
+> tsc --noEmit
+
+npm run build
+
+> scenescore-harness@0.1.0 build
+> vite build apps/web --outDir ../../artifacts/web-dist
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 215 modules transformed.
+
+(!) outDir /Users/agent/Desktop/SceneScore/artifacts/web-dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../artifacts/web-dist/index.html                   0.40 kB │ gzip:   0.29 kB
+../../artifacts/web-dist/assets/index-DhfNs5k7.css    8.82 kB │ gzip:   2.60 kB
+../../artifacts/web-dist/assets/index-BBrePzdL.js   546.17 kB │ gzip: 148.58 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.07s

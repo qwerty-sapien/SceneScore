@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "description": "Logical dependencies; actual path ownership established against the live repo in node 00.",
+  "nodes": [
+    {
+      "id": "00",
+      "prompt": "prompts/00_baseline_and_scope.md",
+      "depends_on": [],
+      "role": "coordinator"
+    },
+    {
+      "id": "01",
+      "prompt": "prompts/01_cli_and_mcp.md",
+      "depends_on": [
+        "00"
+      ],
+      "role": "tooling"
+    },
+    {
+      "id": "02",
+      "prompt": "prompts/02_story_and_art_direction.md",
+      "depends_on": [
+        "00"
+      ],
+      "role": "creative_brief"
+    },
+    {
+      "id": "03",
+      "prompt": "prompts/03_independent_tests.md",
+      "depends_on": [
+        "00"
+      ],
+      "role": "independent_tests"
+    },
+    {
+      "id": "04",
+      "prompt": "prompts/04_motion_implementation.md",
+      "depends_on": [
+        "01",
+        "02",
+        "03"
+      ],
+      "role": "motion_generation"
+    },
+    {
+      "id": "05",
+      "prompt": "prompts/05_physics_validation.md",
+      "depends_on": [
+        "04"
+      ],
+      "role": "independent_validation"
+    },
+    {
+      "id": "06",
+      "prompt": "prompts/06_visual_production.md",
+      "depends_on": [
+        "05",
+        "02"
+      ],
+      "role": "visual_production"
+    },
+    {
+      "id": "07",
+      "prompt": "prompts/07_scenescore_integration.md",
+      "depends_on": [
+        "06"
+      ],
+      "role": "coordinator_integration"
+    },
+    {
+      "id": "08",
+      "prompt": "prompts/08_final_review.md",
+      "depends_on": [
+        "07"
+      ],
+      "role": "independent_review"
+    }
+  ],
+  "execution_rules": {
+    "parallelism": "Only 01/02/03 are initially independent; parallelize only with disjoint actual write scopes and supported delegation.",
+    "single_writer": [
+      "live Blender/MCP session",
+      "mutable .blend",
+      "simulation cache",
+      "candidate output directory"
+    ],
+    "shared_paths_owner": "coordinator",
+    "repair_policy": "Return smallest repair to responsible owner; rerun affected downstream gates. Repairs are tracked iterations, not extra DAG edges.",
+    "suggested_repair_attempts_per_gate": 3,
+    "completion": "All mandatory exact-candidate gates passed; otherwise deliver truthful failed/blocked/unverified draft status."
+  }
+}

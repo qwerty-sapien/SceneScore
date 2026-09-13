@@ -1,0 +1,416 @@
+{
+  "version": "blender-delivery-catalogue-1",
+  "approval": null,
+  "entries": [
+    {
+      "path": "artifacts/blender/revamp/review/01_head_on",
+      "recipe": "01_head_on",
+      "variant": "default",
+      "duration_s": 8.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/01_head_on/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/01_head_on/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/01_head_on/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/01_head_on/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "f5ae3ed063e56741aba2900196df28477a1511ae86f312aa00e93610e5b04463",
+          "frame_count": 240
+        }
+      ],
+      "key_files": {
+        "production.json": "4ed7457647dbd19c3d3552554515a308b9a4cd46175a3dbf853797e9bf924127",
+        "simulation.blend": "390bf363efceeed46679ac412a4e14294443327375db8e68d751862ee82bb590",
+        "scene.blend": "1c5d4a9b116ca44f82f63b8a1f7eefbe78c4a9eddce169631e22182917c813d4",
+        "physics_states.jsonl": "9617a1177a9463fd2781cad74121c530cf4af3eccd2aa9fd3c0250fc3b913502",
+        "replay_validation.json": "66e05f57b10c3df1dd1ed11016a87f5da2b121dc6f136d80f9746705dc1d6d47",
+        "physical-validation.json": "2b49130ed530a567d6fb2ac78f9db00a74cdf92dd69f5cfb7b277adab9d8c2b6",
+        "handoff.json": "6942b6544720ee55ea22a1f26337c6d60c371aa45f5300649700f80489ef404b",
+        "features.jsonl": "9b33a9468fb55d1d4aff20d4971daab7724823aa7692eadbd8e7e21ad6f361f0"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/02_near_miss_twins",
+      "recipe": "02_near_miss_twins",
+      "variant": "default",
+      "duration_s": 8.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/02_near_miss_twins/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/02_near_miss_twins/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/02_near_miss_twins/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/02_near_miss_twins/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "d0da4a30d67844b27918752a072949fb54e36a248353a96291f99c8ef31b1adc",
+          "frame_count": 240
+        }
+      ],
+      "key_files": {
+        "production.json": "40503119cb85e63d2f775a5e8934f1f4945464e47cb8c72612fbf19f2a68dc3f",
+        "simulation.blend": "83d7f617943b36c5f8f940e8690dad9036993949ca4f0d6f2119144607bdc985",
+        "scene.blend": "34f6d16d8848f22571cd9d11549fb7c29cd6aa5f4724c010521541831d6c56af",
+        "physics_states.jsonl": "d663dcc7f96a57cd0e048d4fc1991a4c63d22a1903dcac6fe521b913a693cd0e",
+        "replay_validation.json": "2fedccf05aa176a8cefd7184cb7f82568fec09ed20aa44504e0df7f4bf20c1ac",
+        "physical-validation.json": "80d54544cccf9de6e236e85ff2819e87f64084e43b209ac8aa5e8bde6f6cafac",
+        "handoff.json": "84e8adc69eb5cd792b02d83caa85ef51c0f66217647ab56348bece517ea17f4e",
+        "features.jsonl": "40455078e4adb6b1c086f2a6cee71e0e9fd01e1cadfc9b21182071762bf30aed"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/04_orbital_approach",
+      "recipe": "04_orbital_approach",
+      "variant": "default",
+      "duration_s": 6.0,
+      "physical_status": "PASSED",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/04_orbital_approach/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/04_orbital_approach/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/04_orbital_approach/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/04_orbital_approach/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "b122b93176425c3edf537ce7d1ee09df3fb36e35b8b6be0c5333333a94376df7",
+          "frame_count": 180
+        },
+        {
+          "profile": "preview",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/04_orbital_approach/renders/preview/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/04_orbital_approach/renders/preview/beauty/media-validation.json",
+          "proof_sha256": "67d75e983f1c06b503974004085a230848eb41b2e3b8c43454da8f9f603bdc58",
+          "frame_count": 180
+        }
+      ],
+      "key_files": {
+        "production.json": "499eca7bf93d58c216c56403857157ccd08a63e013b9333b42e5369642b70012",
+        "simulation.blend": "55e5547f344614a7415f1c8dbe850d41f53761d912c5eecdad2c9b10025eebc5",
+        "scene.blend": "585ac3291bcc75d4afe2967db6fae2629fb46a602514250328b5b491c349ef9c",
+        "physics_states.jsonl": "00d2d37f733867a0f9cffb086ffd7a16420cf536239a83a761eb1860c03cf15f",
+        "replay_validation.json": "a93d3390ac7fbbe883e8bf27a6f160163af6f86260c5102d11fb2330e2cd8670",
+        "physical-validation.json": "52bc2310f93f26c70e0503bf7a3f1e25a2da12ab9c503211ae26ed180853bb3e",
+        "handoff.json": "6dac58f353d276244d32927ed14e9a184fbc41e88c7766502e4df5f2839b9ad2",
+        "features.jsonl": "f21f9d6471f76136bd14a1214061ce921d26c7b84d4d251a424773f619c66f63"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32",
+      "recipe": "05_bouncing_staircase",
+      "variant": "default",
+      "duration_s": 8.0,
+      "physical_status": "PASSED",
+      "backend": "fixed-obb-sphere-mechanics-1",
+      "simulation": "artifacts/blender/revamp/review/05_bouncing_staircase-32/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/05_bouncing_staircase-32/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "486729cd40b04c210de8bd74a28ff4fed3cefd3111ec586e327e943e02a0a031",
+          "frame_count": 240
+        },
+        {
+          "profile": "preview",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/media-validation.json",
+          "proof_sha256": "7b08a3fc7e749dfd6ca683242d1f5d224fa601476fe7a6b713111ba57e4464ac",
+          "frame_count": 240
+        }
+      ],
+      "key_files": {
+        "production.json": "921d18fdf190ef17b0fa1c9f039a92bd4e12555b636719919ec5848b0cd9da80",
+        "simulation.blend": "b935ddd27cc547f94b8baf0ce92483bebed21b30458845a14997013fbef66073",
+        "scene.blend": "854e00a2410ceab0aab690207a4649ad9c66c1255f7567cd954988ede1c6a30d",
+        "physics_states.jsonl": "56a805f56e89fd38d3095b60c206dce4b8cea3118456ce18b01e345f2b56bb74",
+        "replay_validation.json": "3d7fccfa543ad29bf8ab24425a8955718aa8ead5b51b317a7f293ddfd5f77df8",
+        "physical-validation.json": "70bbd227a476c5d26d7ed0a0e673d349bdb920ac55ff34ff87df4cbefe8b2253",
+        "handoff.json": "22fdfbffeee682607ad447a09bdc372ec80f981c6ae961a16c105681ec628712",
+        "features.jsonl": "3454090447b30a25bcb2ab90b6ffa9fa7c4ce7d8075e83ff06ab621ebf7a4ffd"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/06_sliding_contact",
+      "recipe": "06_sliding_contact",
+      "variant": "default",
+      "duration_s": 8.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/06_sliding_contact/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/06_sliding_contact/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/06_sliding_contact/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/06_sliding_contact/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "e54286ce4686e5b7aa25523af34f50cdd23f0e52f12107113d972ad5759616df",
+          "frame_count": 240
+        }
+      ],
+      "key_files": {
+        "production.json": "0a8151f3376f9f6ec3292beda76ead4293d39b9887b55d65fdfc97da93fc6b0d",
+        "simulation.blend": "21b2af9b94f7f97edfd4611f74449412e4bed4b9f48b3c4eefb0ebceef091d2d",
+        "scene.blend": "33f97bc6115f269eb3f75e429405852a0aa323f9d28891176406046373be4fc8",
+        "physics_states.jsonl": "ba29a073632d30cdf10d10a68a05adce3db6cc1768c46fdb350862bf595bca8e",
+        "replay_validation.json": "3232ce1b252257e5fb8b85311adb311727d0cf59d9dbb83aa435cf312784f8b8",
+        "physical-validation.json": "29d0188b9d49a8e76c0dd93b2cdaf2a0f77df1487292a054ac82199818013859",
+        "handoff.json": "9d5ee4c67d3d55b637c9ab8dca3a7731e74d62f16637763aa5ef322fab347af6",
+        "features.jsonl": "dc4dfeab91fb0c5001bda61eca6319efaca7b590ce89814b146e3ae56c8fa4cb"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/07_shape_contrast",
+      "recipe": "07_shape_contrast",
+      "variant": "default",
+      "duration_s": 10.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/07_shape_contrast/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/07_shape_contrast/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/07_shape_contrast/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/07_shape_contrast/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "e86523452a47d9ae9f5ea3acf00fdb57bc01fe5ad0e76468997f2df410295ccb",
+          "frame_count": 300
+        }
+      ],
+      "key_files": {
+        "production.json": "6ab5f003e46cc605a583e4c08e71367bbfffe787f8a7cfad830cd187a7b03c87",
+        "simulation.blend": "31650799ab25d3fdcddee2fdfb64ecfcab0adbbc21966b7c4e78fdf74675e756",
+        "scene.blend": "23037c788d4b8d35614412d37ef686e3d5f6b38effe7ad116d94ce76519d1e42",
+        "physics_states.jsonl": "c5910114ffae50e5c3cf7c086924193d9cc5fc008e2ce51212c0bf8f53d3c478",
+        "replay_validation.json": "03c3c1a61a7aefa1fd8c7ea9070c3410c028f0e9ac32ef10a7fa8573ee6ac560",
+        "physical-validation.json": "f27ca776eddc0d7a5524b55a0e9185edbcf1131c675b4682aa69a16b6c49e932",
+        "handoff.json": "8d7c115e34a18259030c48cd1872a80e8b1ea97c3ca7589d8720b11aaa980bee",
+        "features.jsonl": "64a2ed6dfc466727db084a82e5bf540dac77cf7842c965dc43282bec166a8f20"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/08_domino_cascade",
+      "recipe": "08_domino_cascade",
+      "variant": "default",
+      "duration_s": 8.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/08_domino_cascade/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/08_domino_cascade/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/08_domino_cascade/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/08_domino_cascade/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "50013dfe3df20fed3ce917f5d6590e8c2f69ab296c1c870bf2b4fe899184d60f",
+          "frame_count": 240
+        }
+      ],
+      "key_files": {
+        "production.json": "eb02c33d247b556b9a66f9b472796c121ff161af0a753888e7253b67e9b53e47",
+        "simulation.blend": "7d73e74f4943ee4fd0d1d0d70527ab729e39cf69c554f76fbfa904074f296b9d",
+        "scene.blend": "785a82a223c85a9747a2ffd0ec6e92db2ef46adae5d1f7414afb565299498a66",
+        "physics_states.jsonl": "7c75c8054c74e831a4fd8be5e3af4219c5b02ea477f33eeca2b08945429cedbc",
+        "replay_validation.json": "ac094b0755f2b1cc18df4ff78324d0da69982e0ab0a773d2af67cb7c3b6961fc",
+        "physical-validation.json": "011b2767a0123726d7b0bb07e83d25a947a2ffefd2b1511ad8cf7fdec03158dc",
+        "handoff.json": "cebabe76b8af9784eabec71e41f91a6094b3a3fac690cac63933680d1ddd11c5",
+        "features.jsonl": "5ccd92e52f2c99c2afcbdaa3665709f104c211d29ead9edd3e8ab1f9419e3c22"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/09_breathing_crowd",
+      "recipe": "09_breathing_crowd",
+      "variant": "default",
+      "duration_s": 6.0,
+      "physical_status": "PASSED",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/09_breathing_crowd/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/09_breathing_crowd/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/09_breathing_crowd/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/09_breathing_crowd/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "d4b3b6c6adbfc24681b90556fe755a9dceaa0bbbd79a811b51b69296d3f4ca0c",
+          "frame_count": 180
+        },
+        {
+          "profile": "preview",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/09_breathing_crowd/renders/preview/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/09_breathing_crowd/renders/preview/beauty/media-validation.json",
+          "proof_sha256": "e717838f604030b1dd3f578ebd3c6cf6c39dbce86bdff5aafbeac85ef7fcc05e",
+          "frame_count": 180
+        }
+      ],
+      "key_files": {
+        "production.json": "7d42ec0c9608727600413678f22e4e636f758b8bc53f1a0cfc73d2bca2dc9ea9",
+        "simulation.blend": "855ec8d7495cea295cb87db41e3e41bf70f6ba400df8ea2ce27fad7c4c7d38be",
+        "scene.blend": "a5211e28c998c3dbbfc178b37a7f8153e9dc05fc450c3546766a4794debaceab",
+        "physics_states.jsonl": "f6a54070166f74cd0b22a4c16584dc6b1996928afa7b4cd78cd510a4d4cb2951",
+        "replay_validation.json": "aa32f3163a6484a67fb6824ce11efbd7c1472de7f9bde7eae2f4405b332acb9c",
+        "physical-validation.json": "e51bb0b892e087799693614d6c811556dcdd3e9aab853e63ac1cf4fab5fec857",
+        "handoff.json": "b92d0654a25f3d52a4ff87c41b130c78fd4b9b4692a1b5783f0dc67efb9242e5",
+        "features.jsonl": "97f7b40ef0b7f8e56ccfb773bab8eb719b71a0c210a3858ef258cc1a9a320697"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/10_projectile_tower/contact",
+      "recipe": "10_projectile_tower",
+      "variant": "contact",
+      "duration_s": 7.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/10_projectile_tower/contact/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/10_projectile_tower/contact/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/10_projectile_tower/contact/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/10_projectile_tower/contact/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "013507d8adba424ef92dd38997028b5e17721bda3b0826de73b8bd0c12b09843",
+          "frame_count": 210
+        }
+      ],
+      "key_files": {
+        "production.json": "49de3176451d89bc55ed548e26226829f7c175beca370b103985e4bfcf2d4663",
+        "simulation.blend": "7ef6bf6162977b739553f3c68e8d625b6dc2e454e54f5655bdba069ac3e2441e",
+        "scene.blend": "72188c0d0c219a6f233305b615254199674fd55677617ecf730e25bfbf05983d",
+        "physics_states.jsonl": "5f4a65cd4da1c3758b77c7a9e7852ede010e41415824b74460d5a4d73c1448dc",
+        "replay_validation.json": "c65de6b603a6245aaf1f0825d7abaac4da87be9388166e741957221aac8a4f05",
+        "physical-validation.json": "333af77b24d0d68540560d3f8811181889d899f964b8d9d5de45294c8f0925e3",
+        "handoff.json": "96b2592e6a1116c7937d2bdde4078354a4831f2acd9a51bd87e9a97c051a4a92",
+        "features.jsonl": "a857d5ba0ab359b8d58cec9dbe3fe9397bd2749ae8b7879900982ae774318086"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/10_projectile_tower/near_miss",
+      "recipe": "10_projectile_tower",
+      "variant": "near_miss",
+      "duration_s": 7.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "a1028d7cb92e7dcca6176c54d266d828c0318c77b65e3e2cd6676f39a08094e8",
+          "frame_count": 210
+        }
+      ],
+      "key_files": {
+        "production.json": "537d5c673eda1162cd9d8659551fe4ea691495a6589f36521997c69ed9b7ff6d",
+        "simulation.blend": "a42e05221107721f68a31ef5c49e6393cb2f36b841166cf2f33d2a111d5767e8",
+        "scene.blend": "d3c6d1637c068201ad33ccb20ce6c6f81cab39010cd14ff5eb303b35fb0c0450",
+        "physics_states.jsonl": "7443185865bfc59f75b0e642a81e6d9e83d93cf7ba3bf38d67056e40ac34e981",
+        "replay_validation.json": "092502bb73196cb8895ccada144e91335fa6ec124ff9b2648c30b307ea0ffdf5",
+        "physical-validation.json": "afa284f4843a7c14858b1fffed9cb3913507c6e4e935cf9219432bd7cbb8a142",
+        "handoff.json": "53d868744032b9f153749881c91d66b0bcc4fab2fb4bbfac2469f960df50b824",
+        "features.jsonl": "0b861594d270e66918495a209292ced56bb578a4cf6da142803399d40aeb7dd2"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review/10_projectile_tower/no_launch",
+      "recipe": "10_projectile_tower",
+      "variant": "no_launch",
+      "duration_s": 7.0,
+      "physical_status": "NOT_RUN",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/simulation.blend",
+      "playback": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "05c3df1b66b1a2da2b38351f498219d122df36539e5c911e72984b84167dcc88",
+          "frame_count": 210
+        }
+      ],
+      "key_files": {
+        "production.json": "ad7326d9c133ff16652358e647287ff77b1600f1bb323a600c1e314221f23b91",
+        "simulation.blend": "b68fd9e8407e015a483c083028494aff8d920e9f601e71cf035a4df94dfec553",
+        "scene.blend": "e1a307beec61c385359a8d7b3f868c13c94461a935e9b6a1b59dc3066168ef8d",
+        "physics_states.jsonl": "6b8892638a84f9c8e29d8264f745b35ac125a5940bfaa40a6ad02a100e7f56f2",
+        "replay_validation.json": "a65b741f2365d66a79bbefb98cf7df96c6cc37fa121dbb72d0d4ac8c74bd3f77",
+        "physical-validation.json": "e0b23b05f9dc86cdca87111d0df306f6c4a4674ef041e4ad999d5ac0a0ff832c",
+        "handoff.json": "a27bed408b9384ebe101712022440545ef3226a550351562405c86dbb85390a1",
+        "features.jsonl": "30517d6dea10e5c06859553241a12ff29eefddf29384e282a33837abdcd0fe66"
+      }
+    },
+    {
+      "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent",
+      "recipe": "03_passing_ascent",
+      "variant": "default",
+      "duration_s": 6.0,
+      "physical_status": "PASSED",
+      "backend": "Bullet dynamics with explicitly driven mechanisms",
+      "simulation": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/simulation.blend",
+      "playback": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/scene.blend",
+      "renders": [
+        {
+          "profile": "diagnostic",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/renders/diagnostic/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/renders/diagnostic/beauty/media-validation.json",
+          "proof_sha256": "9d5548c0c924fc8ec28e7c723fb6a3db0b67dbe3ea336a45550b308709c5cb6c",
+          "frame_count": 180
+        },
+        {
+          "profile": "preview",
+          "camera": "beauty",
+          "status": "PASSED",
+          "video": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/renders/preview/beauty/video.mp4",
+          "proof": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/renders/preview/beauty/media-validation.json",
+          "proof_sha256": "ceae4a0235ccb81b3902595270753c32f19f3e5fdf77540815f2c196b7981edc",
+          "frame_count": 180
+        }
+      ],
+      "key_files": {
+        "production.json": "33c2864d55be620b78043fe10a63c5fdd640dd16d24365cbe04d4338c8e8ae96",
+        "simulation.blend": "3681bcc0b88c1b71278531ba50d4cb88556221c8c85188c31f10b5be124661e2",
+        "scene.blend": "38a82fc2f8fb24067a50ad9958bdbf76cdfd5e7033a251a1b4dccd59ca80b5fb",
+        "physics_states.jsonl": "7ef5828ee17617b3a6bdd743a0dd76972a59136f6f57e62b161b38f60841eae1",
+        "replay_validation.json": "41306dae5153b3640fad28dec4e24b2d30d063196997eb1588323f5b496dc756",
+        "physical-validation.json": "8bd865feb70ac2258b9ccbf7a1aefeb5c1ef2dae8015d649499b3b779b29ae53",
+        "handoff.json": "a0426a5d08b470599026719d1c0353311ec28123578d306ce09f87111082db4a",
+        "features.jsonl": "25a9a7cf840c1c77e9ecffdc6f654dd140e419faabf6bc177cf63b97dc363cd4"
+      }
+    }
+  ],
+  "continuous_motion_review": "UNVERIFIED",
+  "human_acceptance": "PENDING"
+}

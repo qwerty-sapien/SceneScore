@@ -1,0 +1,124 @@
+{
+  "document_type": "SceneScoreIndependentTransitionReview",
+  "document_version": 1,
+  "node": "05",
+  "reviewer": "independent agent /root/audit",
+  "review_status": "PASS_SCOPED_REPAIR_REVIEW",
+  "node_05_end_to_end_gate": "NOT_ASSESSED",
+  "final_node_08_gate": "NOT_STARTED",
+  "reviewed_at_utc": "2026-09-12T18:56:34.672641+00:00",
+  "scope": "Independent verification of the three transition findings and two follow-on API repairs. No final integrated candidate, shared Timeline.submit or scheduler review.",
+  "module_version": "music-vertical-transitions-2",
+  "resolved_findings": [
+    "Defining chord tones are retained before voice-path optimization; all 216 prepared entries remain feasible.",
+    "Every default acknowledgement explicitly carries its first chord's third and seventh.",
+    "Signed pitch steps preserve octave history; folding occurs when the register boundary requires it.",
+    "In-memory clipped sustains retain source identity, clipped timing and independent fields across successive programs.",
+    "Integration guidance documents current-event/signed-step arguments and source-plus-history reconstruction after serialization."
+  ],
+  "actionable_findings": [],
+  "canonical_pitch_digest": {
+    "algorithm": "SHA-256",
+    "sha256": "0ee37ce2a93f1a0752e64993abb0e8502f1fab733ebade804b0685080a59c284",
+    "python_matches_typescript": true,
+    "entry_count": 216,
+    "serialization": "UTF-8 JSON, no BOM and no trailing newline, no whitespace separators. Outer array contains all entries sorted lexicographically by ASCII entry.key. Each row is [entry.key, [[bass, harmony0, harmony1, harmony2], ...]]; slot order is the original table order. Integers use ordinary base-10 JSON notation. No metadata is included.",
+    "python_equivalent": "sha256(json.dumps([[e.key,[list(s.pitches) for s in e.slots]] for e in sorted(entries.values(),key=lambda e:e.key)],separators=(',',':')).encode('utf-8')).hexdigest()",
+    "typescript_equivalent": "createHash('sha256').update(JSON.stringify([...entries.values()].sort((a,b)=>a.key<b.key?-1:1).map(e=>[e.key,e.slots.map(s=>s.pitches)])),'utf8').digest('hex')"
+  },
+  "results": {
+    "python": {
+      "entries": 216,
+      "defining_tone_and_voice_movement_failures": [],
+      "voicing_digest": "0ee37ce2a93f1a0752e64993abb0e8502f1fab733ebade804b0685080a59c284"
+    },
+    "typescript": {
+      "entries": 216,
+      "voicing_digest": "0ee37ce2a93f1a0752e64993abb0e8502f1fab733ebade804b0685080a59c284",
+      "guide_dyads_checked": 72,
+      "guide_dyad_failures": 0,
+      "signed_pitch_sequence": [
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        58,
+        56,
+        54,
+        52,
+        50,
+        48
+      ],
+      "register_fold": {
+        "before": 96,
+        "step": 2,
+        "after": 86
+      },
+      "sequential_fragments": [
+        {
+          "start_s": 0,
+          "end_s": 1.25,
+          "pitch": 48
+        },
+        {
+          "start_s": 3.125,
+          "end_s": 3.75,
+          "pitch": 50
+        },
+        {
+          "start_s": 5.625,
+          "end_s": 9,
+          "pitch": 52
+        }
+      ],
+      "sequential_total_with_overlays_s": 9,
+      "fragment_independent_fields_preserved": true,
+      "serialized_fragment_rejected_as_documented": true
+    },
+    "integration_guidance_updated": true,
+    "snapshot_stable_during_probes": true
+  },
+  "evidence_provenance": {
+    "source_mode": "synthetic",
+    "input": "packages/audio/tests/fixture.json",
+    "modification": "The independent sequential-fragment probe extends one harmony-0 fixture note to 9 seconds / 13824 ticks in memory only.",
+    "timing": "Analytic scene intervals only; no accepted-control, browser scheduler, detector, acoustic or audiovisual measurement.",
+    "approval": null,
+    "audition_status": "AUDITION_PENDING",
+    "human_reviewer": null
+  },
+  "reviewed_file_sha256": {
+    "modules/music/transitions.py": "d5209b9b82794db8c43dff031694a8ede1e09577fdc144fae191e5221793e74c",
+    "packages/audio/model.ts": "4e3de4140590a92f2089d8a8ac78fce411d9644ba15007566ba2094fb1cf4880",
+    "packages/audio/vertical-preview.ts": "33ce22700de0eeffce3a57e2ee37a992a08d782260ae35ca47180292c326f505",
+    "modules/music/fixtures/transition-table-v1.json": "abc0f83a5cadfbc7919d8c6e75731e52f8fe6d8af70f30078ebb3f5e932a00ba",
+    "docs/requests/05/001-vertical-transport-integration.md": "577ecca71e0977603788878493046c931b370a0a6a70ad56475ee752d2661e64",
+    "packages/audio/tests/fixture.json": "d1f82ef9e72ac7e9aa5e272ae747653737863cfe1a5236ffeb919b0a1eb7db6c"
+  },
+  "residual_limitations": [
+    "This closes the identified node 05 implementation defects only; it is not node 05 end-to-end GO or final node 08 approval.",
+    "WeakMap fragment identity is in-memory only. Serialized fragments are deliberately rejected as prepared source events; exports must be rebuilt from the original score and recorded program history.",
+    "The offline preview is TransitionPreview data and does not validate the shared Timeline.submit path or scheduling latency.",
+    "No human listening, physical scene acceptance, live device performance, acoustic onset or measured audiovisual timing was evaluated.",
+    "No complete unit suite, build or typecheck was rerun by this independent review; those reported author/coordinator results are outside this evidence."
+  ],
+  "commands": [
+    {
+      "command": "PYTHONPATH=.:src /Users/agent/Desktop/SceneScore/.venv/bin/python -",
+      "input": "Inline independent read-only audit: enumerate all 216 entries, check defining tones/table pitch membership/upper-voice movement, calculate canonical pitch digest, run the Node probe, verify updated guidance and compare file SHA-256 snapshots before and after.",
+      "exit_code": 0
+    },
+    {
+      "command": "node --import tsx --input-type=module -",
+      "invoked_by": "Python subprocess.run with a 30-second timeout",
+      "stdin_sha256": "7367d7e97f5472d6f9def9ebe4499bea12ba3f3c130fd9987928647b2ad5413a",
+      "input": "Inline independent assertions: cross-language digest, all 72 default dyads, six +2 then six -2 steps, upper-bound fold, two sequential +2 overlays on a 9-second sustain, contiguous coverage, independent fields and documented serialized-fragment rejection.",
+      "exit_code": 0
+    }
+  ],
+  "resource_teardown": "Both foreground probes returned exit 0. No server, browser, container, watcher or persistent task-owned job was started.",
+  "modifications": "Only reports/music-vertical/TRANSITION-REVIEW.json was authored by this review."
+}

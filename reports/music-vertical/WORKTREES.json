@@ -1,0 +1,32 @@
+{
+  "base_commit": "527f949fbf10319b84428b1cf510c5d2c1c205d2",
+  "owned": [
+    {
+      "node": "01",
+      "path": "/private/tmp/scenescore-music-motion",
+      "branch": "codex/music-vertical-motion"
+    },
+    {
+      "node": "02_then_03",
+      "path": "/private/tmp/scenescore-music-source",
+      "branch": "codex/music-vertical-source"
+    },
+    {
+      "node": "05",
+      "path": "/private/tmp/scenescore-music-transition",
+      "branch": "codex/music-vertical-transition"
+    },
+    {
+      "node": "06_runtime",
+      "path": "/private/tmp/scenescore-music-runtime",
+      "branch": "codex/music-vertical-runtime",
+      "dependency_snapshot": "RUNTIME-DEPENDENCY.json"
+    }
+  ],
+  "preserved_unrelated": [
+    "/private/tmp/scenescore-revamp-brief",
+    "/private/tmp/scenescore-revamp-tooling",
+    "/private/tmp/scenescore-revamp-validation"
+  ],
+  "integration_policy": "Inspect owned diff and scoped checks, verify root target remains identical to base (or exact previously integrated source), copy reviewed bytes; do not resolve conflicts automatically. Keep uncommitted isolated work until archived and integration verified."
+}

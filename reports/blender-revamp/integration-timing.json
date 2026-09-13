@@ -1,0 +1,45 @@
+{
+  "source": "reports/blender-revamp/draft-mux-frames.json",
+  "full_decode_exit_code": 0,
+  "video_frame_count": 240,
+  "video_pts_start_s": 0.0,
+  "video_pts_last_s": 7.966667,
+  "max_pts_residual_s": 3.33333333379926e-07,
+  "audio_first_pts_s": 0.0,
+  "audio_last_pts_s": 7.978667,
+  "audio_decoded_samples_including_AAC_padding": 384000,
+  "lossless_source_samples": 384000,
+  "encoding_note": "AAC decoder padding can exceed the original lossless sample count; playback duration is8s and retained WAVs are authoritative.",
+  "av_software_observations": [
+    {
+      "source": "browser-take-1.json",
+      "n": 232,
+      "p95_abs_drift_s": 0.02973366664282473,
+      "max_abs_drift_s": 0.05423333323796878,
+      "completed": true,
+      "approval": null,
+      "status": "PASSED"
+    },
+    {
+      "source": "browser-seek-resume.json",
+      "n": 179,
+      "p95_abs_drift_s": 0.02613366661898464,
+      "max_abs_drift_s": 0.026333666666665145,
+      "completed": true,
+      "approval": null,
+      "status": "PASSED"
+    },
+    {
+      "source": "browser-final-take.json",
+      "n": 239,
+      "p95_abs_drift_s": 0.008500333333333554,
+      "max_abs_drift_s": 0.03003333333333036,
+      "completed": true,
+      "approval": null,
+      "status": "PASSED"
+    }
+  ],
+  "target_p95_abs_drift_s": 0.05,
+  "physical_output_measured": false,
+  "continuous_perception": "UNVERIFIED"
+}

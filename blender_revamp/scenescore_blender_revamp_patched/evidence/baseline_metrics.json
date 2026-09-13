@@ -1,0 +1,319 @@
+{
+  "kind": "read_only_baseline_analysis",
+  "limitations": [
+    "No Blender execution",
+    "Bounds and transforms come from supplied sidecars",
+    "Axis-aligned overlap is suitable here because recorded cube rotations are constant identity; it is insufficient for generally rotated meshes",
+    "No continuous-time collision guarantee from sampled states",
+    "No continuous playback or audio audition performed"
+  ],
+  "uploaded_video_sha256": "8b69ad6b639e670ed701e44f92aa49a359dee02c6e5d8a6755a1595941df2265",
+  "archive_video_sha256": "8b69ad6b639e670ed701e44f92aa49a359dee02c6e5d8a6755a1595941df2265",
+  "ffprobe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 320,
+        "height": 180,
+        "coded_width": 320,
+        "coded_height": 192,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 12,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "8/1",
+        "avg_frame_rate": "8/1",
+        "time_base": "1/16384",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 491520,
+        "duration": "30.000000",
+        "bit_rate": "7600",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "240",
+        "nb_read_frames": "240",
+        "extradata_size": 49,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.28.102 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 1440000,
+        "duration": "30.000000",
+        "bit_rate": "192018",
+        "nb_frames": "1408",
+        "nb_read_frames": "1407",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/mnt/data/scenescore-DRAFT.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "30.000000",
+      "size": "761677",
+      "bit_rate": "203113",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.12.102"
+      }
+    }
+  },
+  "source_sha256": {
+    "modules/blender/recipes.py": "577f60b487e3168b65da4fb0907d0b4505095ffc6a2d94f20a77e54bde2edd42",
+    "modules/blender/exporter.py": "7dd8ccf2529598f12bbb54c56e6b13421a9d3c3cf72676c6e0679d2efb18da7e",
+    "modules/blender/geometry.py": "d4292aecb9e8b12cb22d7fa3b6f1332e635c93cd076293f5c38553a27e982709",
+    "modules/blender/validate.py": "65aa8ca80e2c84800795fe408906b7bff789fd6ca0458d133f8db8b442c58112",
+    "modules/blender/batch.py": "c14e628eab5e960f38fb428673548f00cc20397e16bae42affa508b8a5fe40ef",
+    "apps/web/tools/prepare.py": "f4bc70d21b1712e1be23cb62884b00ff0bb4e7ec0c31d8daf5fc0cec465c471a",
+    "reports/media-evaluation/REVIEW.md": "8daa0a35932b55746e0ae2919beb0ad74d568538b83127ec489f99661ee11957"
+  },
+  "bundle_sidecar_sha256": {
+    "object_states.jsonl": "a5b02fe89fee3728babf8a5b76b5583356006e9ebcfebed0bac1d62ca193a3ab",
+    "geometry.json": "cc2f52d3477b634634e6705a36bf403232e4f8ea1236cd4c9aa27760e28aea81",
+    "config.json": "5cea0fe0c429e894ad7a1d48261460da2488386d7590e3f9ad32121e72b4424f",
+    "qa.json": "4074bdcec2f8f5358e57ac44f8473c29bbec0bd14eaef44d826baade9c419533"
+  },
+  "object_invariants": {
+    "10_projectile_tower:projectile": {
+      "samples": 961,
+      "z_min_m": 1.0,
+      "z_max_m": 1.0,
+      "dimension_ranges_m": [
+        [
+          0.9999990463256836,
+          0.9999995231628418
+        ],
+        [
+          0.9999996721744537,
+          0.9999996721744537
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "max_quaternion_component_deviation_from_initial": 0.0,
+      "initial_bounds_min_m": [
+        -6.499999523162842,
+        -0.49999967217445374,
+        0.5
+      ],
+      "final_bounds_min_m": [
+        -1.4999995231628418,
+        -0.49999967217445374,
+        0.5
+      ]
+    },
+    "10_projectile_tower:tower-0": {
+      "samples": 961,
+      "z_min_m": 0.5,
+      "z_max_m": 1.0,
+      "dimension_ranges_m": [
+        [
+          0.9999999403953552,
+          1.0000000596046448
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.9999999403953552,
+          1.0000000596046448
+        ]
+      ],
+      "max_quaternion_component_deviation_from_initial": 0.0,
+      "initial_bounds_min_m": [
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "final_bounds_min_m": [
+        1.0,
+        -0.5,
+        0.0
+      ]
+    },
+    "10_projectile_tower:tower-1": {
+      "samples": 961,
+      "z_min_m": 0.5,
+      "z_max_m": 2.049999952316284,
+      "dimension_ranges_m": [
+        [
+          0.9999998807907104,
+          1.0000001192092896
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.9999998807907104,
+          1.0000001192092896
+        ]
+      ],
+      "max_quaternion_component_deviation_from_initial": 0.0,
+      "initial_bounds_min_m": [
+        -0.5,
+        -0.5,
+        1.5499999523162842
+      ],
+      "final_bounds_min_m": [
+        2.049999952316284,
+        -0.5,
+        0.0
+      ]
+    },
+    "10_projectile_tower:tower-2": {
+      "samples": 961,
+      "z_min_m": 0.5,
+      "z_max_m": 3.0999999046325684,
+      "dimension_ranges_m": [
+        [
+          0.9999998807907104,
+          1.000000238418579
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.9999998807907104,
+          1.0000001192092896
+        ]
+      ],
+      "max_quaternion_component_deviation_from_initial": 0.0,
+      "initial_bounds_min_m": [
+        -0.5,
+        -0.5,
+        2.5999999046325684
+      ],
+      "final_bounds_min_m": [
+        3.0999999046325684,
+        -0.5,
+        0.0
+      ]
+    }
+  },
+  "independently_recomputed_cube_minimum_gaps": [
+    {
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-1"
+      ],
+      "t_s": 20.28125,
+      "signed_gap_m": -0.5337446928024292
+    },
+    {
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-2"
+      ],
+      "t_s": 21.15625,
+      "signed_gap_m": -0.0700523853302002
+    },
+    {
+      "pair": [
+        "10_projectile_tower:tower-1",
+        "10_projectile_tower:tower-2"
+      ],
+      "t_s": 21.9375,
+      "signed_gap_m": -0.5331274271011353
+    }
+  ]
+}

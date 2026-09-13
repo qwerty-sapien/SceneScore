@@ -1,0 +1,22 @@
+{
+  "audio_audition": "NOT_RUN",
+  "dag_acyclic": true,
+  "dag_nodes": 9,
+  "example_checker_exit": 0,
+  "example_checker_status": "PASSED",
+  "files_hashed": 21,
+  "human_approval": "NOT_RUN",
+  "motion_event_types": 8,
+  "muse_hardware": "NOT_RUN",
+  "negative_controls_rejected": 14,
+  "negative_controls_total": 14,
+  "prompt_files_present": true,
+  "python_sources_parse": true,
+  "repo_tests_run": "NOT_RUN",
+  "shared_interface_byte_identical_across_packs": true,
+  "shared_interface_sha256": "a6127896378718fb3648ea05d9ef63197dcf042feecd66bc815a9a09d8f0f3c8",
+  "status": "PASSED",
+  "transition_table_entries": 216,
+  "validation_scope": "Prompt pack integrity and analytic example controls only. Certifies nothing about the SceneScore implementation, audio, EEG or hardware.",
+  "write_scope_overlaps": []
+}

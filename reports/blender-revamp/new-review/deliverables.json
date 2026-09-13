@@ -1,0 +1,14 @@
+{
+  "version": "media-review-deliverables-1",
+  "scene_selection_sha256": "5e51110a180eeaf7912cf4be11b8f5d0e469a0d25b0522d936d8e892bfc9886d",
+  "music": [
+    "output/playwright/blender-revamp/final-exports/brush_ballad_sparse_v1/scenescore-DRAFT.wav",
+    "output/playwright/blender-revamp/final-exports/brush_straight_rag_v1/scenescore-DRAFT.wav",
+    "output/playwright/blender-revamp/final-exports/brush_swing_light_v1/scenescore-DRAFT.wav"
+  ],
+  "preview": [
+    "artifacts/blender/revamp/integration/final/ballad-DRAFT.mp4",
+    "artifacts/blender/revamp/integration/final/rag-DRAFT.mp4",
+    "artifacts/blender/revamp/integration/final/swing-DRAFT.mp4"
+  ]
+}

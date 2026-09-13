@@ -1,0 +1,129 @@
+{
+  "schema": "ship-kaggle-kernels.profile.v1",
+  "limits_file": "REPLACE/LMT.md",
+  "kernel": {
+    "directory": "REPLACE/kernel-package",
+    "metadata_file": "kernel-metadata.json",
+    "entrypoint": "script.py",
+    "artifact_sha256": "REPLACE_SHA256",
+    "metadata_sha256": "REPLACE_SHA256",
+    "package_inventory_sha256": "REPLACE_SHA256",
+    "upload_transport": "kaggle-cli-save-kernel.v1",
+    "command": ["{python}", "{entrypoint}"],
+    "expected_metadata": {
+      "id": "owner/kernel-slug",
+      "enable_internet": false
+    },
+    "self_contained": true,
+    "step0": {
+      "assignment_marker": "STEP0 = run_step0()",
+      "heavy_imports": ["numpy", "pandas", "torch", "zarr"],
+      "heavy_work_marker": "heavy_work_started",
+      "completion_marker": "REPLACE_WITH_STEP0_INVARIANTS_PASS_MARKER",
+      "receipt_path": "step0-invariants.json",
+      "deterministic_invariants": [
+        "input_identity",
+        "inventory",
+        "path_topology",
+        "cardinality"
+      ],
+      "probe": {}
+    },
+    "execution_control_env": ["KAGGLE_PREFLIGHT_UNITS"],
+    "forbidden_source_fragments": [".rglob(", "os.walk(", "glob(\"**"]
+  },
+  "mounts": [
+    {
+      "name": "input",
+      "remote_root": "/kaggle/input/datasets/owner/input-slug",
+      "local_root": "REPLACE/representative-input",
+      "inventory_sha256": "REPLACE_SHA256",
+      "provider_layout": {
+        "source_type": "dataset",
+        "source_id": "owner/input-slug",
+        "roundtrip_receipt": {
+          "path": "REPLACE/provider-roundtrip-receipt.json",
+          "sha256": "REPLACE_SHA256"
+        }
+      },
+      "numeric_indexed_namespaces": [
+        {
+          "id": "REPLACE_NAMESPACE_ID",
+          "entry_kind": "directory",
+          "root_template": "train/{identity}.zarr/0/c",
+          "identities": ["REPLACE_IDENTITY"],
+          "filename_template": "{index}",
+          "first_index": 0,
+          "count": 100
+        }
+      ],
+      "required_files": [
+        {"path": "manifest.json", "bytes": 1, "sha256": "REPLACE_SHA256"}
+      ]
+    }
+  ],
+  "scenarios": [],
+  "runtime": {
+    "total_workload_units": 1,
+    "remote_multiplier": 1.5,
+    "fixed_remote_overhead_seconds": 120,
+    "min_runs": 8,
+    "min_distinct_workloads": 4,
+    "max_relative_repeat_spread": 0.25,
+    "min_largest_sample_fraction": 0.02,
+    "memory_limit_bytes": 17179869184,
+    "memory_remote_multiplier": 1.25,
+    "calibration": []
+  },
+  "adversarial": {
+    "required": true,
+    "faults": [
+      "missing_mount",
+      "missing_required_file",
+      "corrupt_required_file",
+      "duplicate_basename",
+      "numeric_lexical_order",
+      "numeric_missing_index",
+      "numeric_extra_index",
+      "numeric_alias_index"
+    ],
+    "failure_markers": ["KernelError", "FAIL_CLOSED", "Traceback"],
+    "success_markers": ["status\": \"PASS"],
+    "heavy_work_markers": ["heavy_work_started\": true"]
+  },
+  "environment": {
+    "python_version_prefix": "3.12",
+    "required_imports": [],
+    "carrier_provided_imports": [],
+    "declared_release_imports": [],
+    "release_dependency_probe": {}
+  },
+  "runtime_safety": {
+    "post_heavy_tail": {
+      "mode": "exact_outer_entrypoint_probe",
+      "python_executable": "{python}",
+      "python_version_prefix": "3.12",
+      "entrypoint_marker": "REPLACE_WITH_POST_HEAVY_HANDOFF_MARKER",
+      "completion_marker": "REPLACE_WITH_FINAL_COMPLETION_MARKER",
+      "required_symbols": ["REPLACE_WITH_OUTER_TAIL_HELPER"],
+      "receipt_path": "post-heavy-tail.json",
+      "probe": {}
+    },
+    "dynamic_module_execution": {
+      "mode": "not_applicable"
+    },
+    "subprocess_monitor": {
+      "mode": "not_applicable"
+    },
+    "release_linker_environment": {
+      "mode": "not_applicable"
+    },
+    "child_diagnostics": {
+      "mode": "not_applicable"
+    },
+    "media": {
+      "promised_mp4_outputs": []
+    }
+  },
+  "secrets": ["KAGGLE_USERNAME", "KAGGLE_KEY"]
+}

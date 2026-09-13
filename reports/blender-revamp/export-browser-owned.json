@@ -1,0 +1,56 @@
+[
+  {
+    "pid": 66883,
+    "ppid": 66882,
+    "pgid": 66883,
+    "command": "/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m http.server 8773 --bind 127.0.0.1 --directory artifacts/web-dist"
+  },
+  {
+    "pid": 67856,
+    "ppid": 1,
+    "pgid": 67856,
+    "command": "/Users/agent/.nvm/versions/node/v24.14.0/bin/node /Users/agent/.nvm/versions/node/v24.14.0/lib/node_modules/@playwright/cli/node_modules/playwright-core/lib/entry/cliDaemon.js brx --headed"
+  },
+  {
+    "pid": 67857,
+    "ppid": 67856,
+    "pgid": 67857,
+    "command": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --remote-debugging-port=53960 --user-data-dir=/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/playwright_chromiumdev_profile-H1elEs --remote-debugging-pipe --no-startup-window"
+  },
+  {
+    "pid": 67863,
+    "ppid": 67857,
+    "pgid": 67857,
+    "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/152.0.7977.84/Helpers/Google Chrome Helper (GPU).app/Contents/MacOS/Google Chrome Helper (GPU) --type=gpu-process --no-sandbox --disable-breakpad --enable-unsafe-swiftshader --user-data-dir=/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/playwright_chromiumdev_profile-H1elEs --gpu-preferences=WAAAAAAAAAAgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAADAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --metrics-shmem-handle=1752395122,r,3416552434155868264,699833142549915491,262144 --field-trial-handle=1718379636,r,990308530634379563,6139029778975014441,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,14512803993502246396,5039411248350814376,4 --trace-process-track-uuid=3190708988185955192"
+  },
+  {
+    "pid": 67864,
+    "ppid": 67857,
+    "pgid": 67857,
+    "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/152.0.7977.84/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-GB --service-sandbox-type=network --no-sandbox --user-data-dir=/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/playwright_chromiumdev_profile-H1elEs --shared-files --metrics-shmem-handle=1752395122,r,15886046414022165127,15705098530282693188,524288 --field-trial-handle=1718379636,r,990308530634379563,6139029778975014441,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,14512803993502246396,5039411248350814376,4 --trace-process-track-uuid=3190708989122997041"
+  },
+  {
+    "pid": 67865,
+    "ppid": 67857,
+    "pgid": 67857,
+    "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/152.0.7977.84/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-GB --service-sandbox-type=service --no-sandbox --user-data-dir=/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/playwright_chromiumdev_profile-H1elEs --shared-files --metrics-shmem-handle=1752395122,r,8909763879231085860,758692357355739362,524288 --field-trial-handle=1718379636,r,990308530634379563,6139029778975014441,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,14512803993502246396,5039411248350814376,4 --trace-process-track-uuid=3190708990060038890"
+  },
+  {
+    "pid": 67871,
+    "ppid": 67857,
+    "pgid": 67857,
+    "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/152.0.7977.84/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --top-chrome-webui --user-data-dir=/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/playwright_chromiumdev_profile-H1elEs --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --remote-debugging-port=53960 --allow-pre-commit-input --lang=en-GB --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=6 --launch-time-ticks=842407723385 --shared-files --metrics-shmem-handle=1752395122,r,16824705940448825057,16655320815179123781,2097152 --field-trial-handle=1718379636,r,990308530634379563,6139029778975014441,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,14512803993502246396,5039411248350814376,4 --trace-process-track-uuid=3190708991934122588"
+  },
+  {
+    "pid": 67872,
+    "ppid": 67857,
+    "pgid": 67857,
+    "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/152.0.7977.84/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --user-data-dir=/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/playwright_chromiumdev_profile-H1elEs --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --remote-debugging-port=53960 --allow-pre-commit-input --lang=en-GB --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=8 --launch-time-ticks=842407757706 --shared-files --metrics-shmem-handle=1752395122,r,6530290063559655200,7007952656728901593,2097152 --field-trial-handle=1718379636,r,990308530634379563,6139029778975014441,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,14512803993502246396,5039411248350814376,4 --trace-process-track-uuid=3190708993808206286"
+  },
+  {
+    "pid": 67873,
+    "ppid": 67857,
+    "pgid": 67857,
+    "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/152.0.7977.84/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --user-data-dir=/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/playwright_chromiumdev_profile-H1elEs --no-sandbox --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --remote-debugging-port=53960 --allow-pre-commit-input --lang=en-GB --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=7 --launch-time-ticks=842407758240 --shared-files --metrics-shmem-handle=1752395122,r,11934687217183806930,14463075129153842988,2097152 --field-trial-handle=1718379636,r,990308530634379563,6139029778975014441,262144 --enable-features=CDPScreenshotNewSurface --disable-features=AutoDeElevate,AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,OptimizationHints,PaintHolding,RenderDocument,ThirdPartyStoragePartitioning,Translate,msEdgeUpdateLaunchServicesPreferredVersion,msForceBrowserSignIn --variations-seed-version --pseudonymization-salt-handle=1935764596,r,14512803993502246396,5039411248350814376,4 --trace-process-track-uuid=3190708992871164437"
+  }
+]

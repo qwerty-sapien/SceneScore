@@ -1,0 +1,59 @@
+### Ran Playwright code
+```js
+await (async (page) => {
+ const pending=[];let folder='';
+ const listener=download=>pending.push(download.saveAs('/Users/agent/Desktop/SceneScore/output/playwright/blender-revamp/final-exports/'+folder+'/'+download.suggestedFilename()));
+ page.on('download',listener);
+ try{
+  for(const groove of ['brush_swing_light_v1','brush_ballad_sparse_v1','brush_straight_rag_v1']){
+   await page.getByRole('combobox',{name:'Brush groove',exact:true}).selectOption(groove);
+   await page.waitForFunction(id=>window.__studio?.snapshot().bundle_id===id,'05_bouncing_staircase-'+groove,{timeout:20000});
+   await page.evaluate(()=>{delete window.__lastExport;});
+   pending.length=0;folder=groove;
+   await page.getByRole('button',{name:'Export draft audition',exact:true}).click();
+   await page.waitForFunction(id=>window.__lastExport?.bundle_id===id,'05_bouncing_staircase-'+groove,{timeout:60000});
+   for(let i=0;i<100&&pending.length<6;i++)await page.waitForTimeout(20);
+   if(pending.length!==6)throw Error('Expected exactly five WAVs plus report');
+   await Promise.all(pending);
+  }
+ }finally{page.off('download',listener);}
+}
+)(page);
+```
+### Events
+- Downloading file scenescore-DRAFT.wav ...
+- Downloaded file scenescore-DRAFT.wav to ".playwright-cli/scenescore-DRAFT.wav"
+- Downloading file scenescore-DRAFT-piano.wav ...
+- Downloaded file scenescore-DRAFT-piano.wav to ".playwright-cli/scenescore-DRAFT-piano.wav"
+- Downloading file scenescore-DRAFT-bass.wav ...
+- Downloaded file scenescore-DRAFT-bass.wav to ".playwright-cli/scenescore-DRAFT-bass.wav"
+- Downloading file scenescore-DRAFT-brush.wav ...
+- Downloaded file scenescore-DRAFT-brush.wav to ".playwright-cli/scenescore-DRAFT-brush.wav"
+- Downloading file scenescore-DRAFT-foley.wav ...
+- Downloaded file scenescore-DRAFT-foley.wav to ".playwright-cli/scenescore-DRAFT-foley.wav"
+- Downloading file scenescore-DRAFT.json ...
+- Downloaded file scenescore-DRAFT.json to ".playwright-cli/scenescore-DRAFT.json"
+- Downloading file scenescore-DRAFT.wav ...
+- Downloaded file scenescore-DRAFT.wav to ".playwright-cli/scenescore-DRAFT.wav"
+- Downloading file scenescore-DRAFT-piano.wav ...
+- Downloaded file scenescore-DRAFT-piano.wav to ".playwright-cli/scenescore-DRAFT-piano.wav"
+- Downloading file scenescore-DRAFT-bass.wav ...
+- Downloaded file scenescore-DRAFT-bass.wav to ".playwright-cli/scenescore-DRAFT-bass.wav"
+- Downloading file scenescore-DRAFT-brush.wav ...
+- Downloaded file scenescore-DRAFT-brush.wav to ".playwright-cli/scenescore-DRAFT-brush.wav"
+- Downloading file scenescore-DRAFT-foley.wav ...
+- Downloaded file scenescore-DRAFT-foley.wav to ".playwright-cli/scenescore-DRAFT-foley.wav"
+- Downloading file scenescore-DRAFT.json ...
+- Downloaded file scenescore-DRAFT.json to ".playwright-cli/scenescore-DRAFT.json"
+- Downloading file scenescore-DRAFT.wav ...
+- Downloaded file scenescore-DRAFT.wav to ".playwright-cli/scenescore-DRAFT.wav"
+- Downloading file scenescore-DRAFT-piano.wav ...
+- Downloaded file scenescore-DRAFT-piano.wav to ".playwright-cli/scenescore-DRAFT-piano.wav"
+- Downloading file scenescore-DRAFT-bass.wav ...
+- Downloaded file scenescore-DRAFT-bass.wav to ".playwright-cli/scenescore-DRAFT-bass.wav"
+- Downloading file scenescore-DRAFT-brush.wav ...
+- Downloaded file scenescore-DRAFT-brush.wav to ".playwright-cli/scenescore-DRAFT-brush.wav"
+- Downloading file scenescore-DRAFT-foley.wav ...
+- Downloaded file scenescore-DRAFT-foley.wav to ".playwright-cli/scenescore-DRAFT-foley.wav"
+- Downloading file scenescore-DRAFT.json ...
+- Downloaded file scenescore-DRAFT.json to ".playwright-cli/scenescore-DRAFT.json"

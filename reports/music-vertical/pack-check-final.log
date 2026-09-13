@@ -1,0 +1,11 @@
+{
+  "positive_controls": {
+    "transition_table_entries": 216,
+    "transition_table_violations": [],
+    "motion_event_types": 8,
+    "motion_taxonomy_violations": []
+  },
+  "status": "PASSED",
+  "failures": []
+}
+negative controls rejected: 14/14

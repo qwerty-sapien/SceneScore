@@ -1,0 +1,16 @@
+{
+  "command": [
+    "make",
+    "test"
+  ],
+  "timeout_s": 180,
+  "status": "timeout",
+  "process_group_absent": true,
+  "pid": 26156,
+  "pgid": 26156,
+  "cleanup_signals": [
+    "SIGTERM"
+  ],
+  "returncode": -15,
+  "duration_s": 180.04415075003635
+}

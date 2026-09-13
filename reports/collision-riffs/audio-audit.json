@@ -1,0 +1,104 @@
+[
+  {
+    "lead": "guitar",
+    "frames": 1440000,
+    "rate": 48000,
+    "stem_sum_error_lsb_max": 3,
+    "contacts": [
+      {
+        "scene_onset_s": 12.625,
+        "scheduled_sample": 606000,
+        "peak_pcm": 6080
+      },
+      {
+        "scene_onset_s": 16.84375,
+        "scheduled_sample": 808500,
+        "peak_pcm": 7326
+      },
+      {
+        "scene_onset_s": 18.8125,
+        "scheduled_sample": 903000,
+        "peak_pcm": 6643
+      },
+      {
+        "scene_onset_s": 20.96875,
+        "scheduled_sample": 1006500,
+        "peak_pcm": 4621
+      }
+    ],
+    "full_decode": {
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-nostdin",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/collision-riffs/guitar-v1/Pocket-Workshop-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 29828,
+      "pgid": 29828,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.13413804105948657
+    }
+  },
+  {
+    "lead": "vibraphone",
+    "frames": 1440000,
+    "rate": 48000,
+    "stem_sum_error_lsb_max": 3,
+    "contacts": [
+      {
+        "scene_onset_s": 12.625,
+        "scheduled_sample": 606000,
+        "peak_pcm": 6080
+      },
+      {
+        "scene_onset_s": 16.84375,
+        "scheduled_sample": 808500,
+        "peak_pcm": 7326
+      },
+      {
+        "scene_onset_s": 18.8125,
+        "scheduled_sample": 903000,
+        "peak_pcm": 6643
+      },
+      {
+        "scene_onset_s": 20.96875,
+        "scheduled_sample": 1006500,
+        "peak_pcm": 4621
+      }
+    ],
+    "full_decode": {
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-nostdin",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/collision-riffs/vibraphone-v1/Pocket-Workshop-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 120,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 29851,
+      "pgid": 29851,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.08613212499767542
+    }
+  }
+]

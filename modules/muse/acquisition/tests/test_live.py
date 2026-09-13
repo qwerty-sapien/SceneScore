@@ -99,3 +99,33 @@ def test_pre_cancel_still_tears_down(tmp_path, monkeypatch):
     capture_lsl(tmp_path/'s', live_metadata(), source_id='fixture', seconds=1, consent=True, stop=stop, report=lambda x: None)
     assert closed == [True]
     assert list(replay(tmp_path/'s')) == []
+
+
+def test_empty_stream_fails_loudly_and_closes(tmp_path, monkeypatch):
+    from modules.muse.acquisition import live
+    closed = []
+    channel_index = [0]
+    class Channel:
+        def child_value(self, name):
+            return ["AF7", "AF8"][channel_index[0]] if name == "label" else "uV"
+        def next_sibling(self):
+            channel_index[0] += 1
+            return self
+    class Description:
+        def child(self, name):
+            return Channel() if name == "channel" else self
+    info = SimpleNamespace(channel_count=lambda: 2, nominal_srate=lambda: 256, desc=Description)
+    class Inlet:
+        def __init__(self, *args, **kwargs):
+            pass
+        def pull_chunk(self, **kwargs):
+            return [], []
+        def close_stream(self):
+            closed.append(True)
+    ticks = iter([0.0, 0.1, 3.0])
+    monkeypatch.setattr(live.time, "monotonic", lambda: next(ticks))
+    monkeypatch.setitem(sys.modules, "pylsl", SimpleNamespace(resolve_byprop=lambda *a, **k: [info], StreamInlet=Inlet))
+    with pytest.raises(RuntimeError, match="NO_SAMPLES_RECORDED"):
+        capture_lsl(tmp_path / "s", live_metadata(), source_id="fixture", seconds=10, consent=True, report=lambda x: None)
+    assert closed == [True]
+    assert manifest(tmp_path / "s")["committed_chunks"] == 0

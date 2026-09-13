@@ -1,0 +1,164 @@
+{
+  "reviewed_at_utc": "2026-09-12T19:28:34.908577+00:00",
+  "candidate_sha256": "d9ce7fd69f7aa9d47b6db169a6c779fa82a8795fce299858b614f358b797a0c9",
+  "checks": {
+    "exact_candidate": true,
+    "byte_identical_repeat": true,
+    "plan_exact_bytes": true,
+    "events_exact_bytes": true,
+    "source_events_exact_bytes": true,
+    "unmodified_events_exact_bytes": true,
+    "holds_exact_bytes": true,
+    "scene_exact_bytes": true,
+    "composition_exact_bytes": true,
+    "plan_binding": true,
+    "mapped_musical_binding": true,
+    "source_musical_binding": true,
+    "canonical_validation": true,
+    "unique_ids": true,
+    "event_duration": true,
+    "source_brush_unchanged": true,
+    "independent_foley_stream": true,
+    "no_fabricated_approval": true,
+    "jazz_disabled": true,
+    "actual_one_beat_holds": true
+  },
+  "actual_interactions": {
+    "approach": 6,
+    "contact_onset": 4,
+    "contact_sustain": 4,
+    "separation": 6,
+    "contact_release": 4,
+    "near_miss": 2
+  },
+  "control_rows_by_feature": {
+    "approach": 159,
+    "contact_onset": 4,
+    "contact_sustain": 4,
+    "near_miss": 2,
+    "separation": 6,
+    "contact_release": 4
+  },
+  "holds": [
+    {
+      "start_s": 12.625,
+      "end_s": 13.25,
+      "duration_s": 0.625,
+      "withheld_pitch_classes": [
+        9
+      ],
+      "violations": []
+    },
+    {
+      "start_s": 17.875,
+      "end_s": 18.5,
+      "duration_s": 0.625,
+      "withheld_pitch_classes": [
+        1
+      ],
+      "violations": []
+    }
+  ],
+  "articulation_counts": {
+    "bass_pluck": 8,
+    "sweep": 24,
+    "tap": 48,
+    "soft_comp": 24,
+    "light_detached": 17,
+    "accented_swish": 24,
+    "soft_marker": 8,
+    "legato": 88,
+    "contact_onset": 4,
+    "contact_sustain": 4,
+    "staccato": 1,
+    "detached": 15,
+    "contact_release": 4
+  },
+  "events": 269,
+  "source_events": 258,
+  "foley_events": 12,
+  "identity": {
+    "changed_lead_ids": [
+      "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057"
+    ],
+    "changed_note_ids": [
+      "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0053",
+      "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057",
+      "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0074"
+    ],
+    "source_lead_count": 48,
+    "source_note_count": 162,
+    "unchanged_lead_fraction": 0.9791666666666666,
+    "unchanged_note_fraction": 0.9814814814814815
+  },
+  "physical_output_measured": false,
+  "approval": null,
+  "audition_status": "AUDITION_PENDING",
+  "human_reviewer": null,
+  "command": "PYTHONPATH=.:src .venv/bin/python - (independent inline candidate invariants)",
+  "immutable_inputs_rechecked": {
+    "count": 42,
+    "failures": []
+  },
+  "exact_preparation_code_snapshot": {
+    "count": 11,
+    "all_match": true,
+    "files": [
+      {
+        "path": "contracts/0.1/schema.json",
+        "expected": "55049ac4a18770c58cc8ecef0f188e77ef9456d9dece7dab1b13ed49f3e93784",
+        "actual": "55049ac4a18770c58cc8ecef0f188e77ef9456d9dece7dab1b13ed49f3e93784"
+      },
+      {
+        "path": "modules/arranger/core.py",
+        "expected": "6bf5a06031be0d10e8899555e671fff64228d679fbabc4c08383032ddeaedd72",
+        "actual": "6bf5a06031be0d10e8899555e671fff64228d679fbabc4c08383032ddeaedd72"
+      },
+      {
+        "path": "modules/blender/geometry.py",
+        "expected": "1f8b452dc7741ca75fbbc7b0be95efa7d3c045c3cdb20f5ecabc82bf02b39975",
+        "actual": "1f8b452dc7741ca75fbbc7b0be95efa7d3c045c3cdb20f5ecabc82bf02b39975"
+      },
+      {
+        "path": "modules/blender/summary.py",
+        "expected": "bea4fb3ee0d8dd0cc45778d8d4d1d0e66e9ef1733274cc7b37842d2b10c41f8b",
+        "actual": "bea4fb3ee0d8dd0cc45778d8d4d1d0e66e9ef1733274cc7b37842d2b10c41f8b"
+      },
+      {
+        "path": "modules/music/catalog.py",
+        "expected": "6a7e4bd0195a8e0b7d88d9a249f982a6875f80a73c6e979929ba229d8a5796bf",
+        "actual": "6a7e4bd0195a8e0b7d88d9a249f982a6875f80a73c6e979929ba229d8a5796bf"
+      },
+      {
+        "path": "modules/music/events.py",
+        "expected": "1805f4cd62c22c75491da4c2e4f38b3e1163f5b412508df3ed15efbae738f2f8",
+        "actual": "1805f4cd62c22c75491da4c2e4f38b3e1163f5b412508df3ed15efbae738f2f8"
+      },
+      {
+        "path": "modules/music/ornament.py",
+        "expected": "feed170dcb0e584d99088222757529ebdc18b669b740e05b1920b89c86cfdc67",
+        "actual": "feed170dcb0e584d99088222757529ebdc18b669b740e05b1920b89c86cfdc67"
+      },
+      {
+        "path": "modules/music/render.py",
+        "expected": "0faac3008f14ea389f31d16ad673640c267cec272e29faf4591b97fddfc9cec5",
+        "actual": "0faac3008f14ea389f31d16ad673640c267cec272e29faf4591b97fddfc9cec5"
+      },
+      {
+        "path": "modules/music/transitions.py",
+        "expected": "d5209b9b82794db8c43dff031694a8ede1e09577fdc144fae191e5221793e74c",
+        "actual": "d5209b9b82794db8c43dff031694a8ede1e09577fdc144fae191e5221793e74c"
+      },
+      {
+        "path": "src/scenescore/contracts.py",
+        "expected": "0889ca56b31816fe2bec429d1bdf5c3c22d05b552f9289b2810df7de310a2a3c",
+        "actual": "0889ca56b31816fe2bec429d1bdf5c3c22d05b552f9289b2810df7de310a2a3c"
+      },
+      {
+        "path": "tools/prepare_music_vertical.py",
+        "expected": "a4dc87be0b43fb040f784f9ffa3095dbb2db3dc3efa2ff6a9832500b01c132f3",
+        "actual": "a4dc87be0b43fb040f784f9ffa3095dbb2db3dc3efa2ff6a9832500b01c132f3"
+      }
+    ]
+  }
+}

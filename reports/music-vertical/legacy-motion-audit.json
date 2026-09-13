@@ -1,0 +1,149 @@
+{
+  "video_sha256": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+  "source": "evaluated legacy object_states.jsonl; no regeneration",
+  "objects": {
+    "10_projectile_tower:projectile": {
+      "dimensions_min_m": [
+        0.9999990463256836,
+        0.9999996721744537,
+        1.0
+      ],
+      "dimensions_max_m": [
+        0.9999995231628418,
+        0.9999996721744537,
+        1.0
+      ],
+      "first_motion_s": 3.625,
+      "last_motion_s": 12.625,
+      "velocity_min_m_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "velocity_max_m_s": [
+        0.555572509765625,
+        0.0,
+        0.0
+      ],
+      "median_moving_vx_m_s": 0.5555572509765625,
+      "final_position": [
+        -1.0,
+        0.0,
+        1.0
+      ]
+    },
+    "10_projectile_tower:tower-0": {
+      "dimensions_min_m": [
+        0.9999999403953552,
+        1.0,
+        0.9999999403953552
+      ],
+      "dimensions_max_m": [
+        1.0000000596046448,
+        1.0,
+        1.0000000596046448
+      ],
+      "first_motion_s": 15.03125,
+      "last_motion_s": 28.8125,
+      "velocity_min_m_s": [
+        0.0,
+        0.0,
+        -0.06944656372070312
+      ],
+      "velocity_max_m_s": [
+        0.20833587646484375,
+        0.0,
+        0.02777862548828125
+      ]
+    },
+    "10_projectile_tower:tower-1": {
+      "dimensions_min_m": [
+        0.9999998807907104,
+        1.0,
+        0.9999998807907104
+      ],
+      "dimensions_max_m": [
+        1.0000001192092896,
+        1.0,
+        1.0000001192092896
+      ],
+      "first_motion_s": 16.0625,
+      "last_motion_s": 28.8125,
+      "velocity_min_m_s": [
+        0.0,
+        0.0,
+        -0.22464370727539062
+      ],
+      "velocity_max_m_s": [
+        0.36957550048828125,
+        0.0,
+        0.030303955078125
+      ]
+    },
+    "10_projectile_tower:tower-2": {
+      "dimensions_min_m": [
+        0.9999998807907104,
+        1.0,
+        0.9999998807907104
+      ],
+      "dimensions_max_m": [
+        1.000000238418579,
+        1.0,
+        1.0000001192092896
+      ],
+      "first_motion_s": 17.125,
+      "last_motion_s": 28.8125,
+      "velocity_min_m_s": [
+        0.0,
+        0.0,
+        -0.39394378662109375
+      ],
+      "velocity_max_m_s": [
+        0.5454635620117188,
+        0.0,
+        0.03333473205566406
+      ]
+    }
+  },
+  "pair_overlap": [
+    {
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-1"
+      ],
+      "peak_minimum_translation_depth_m": 0.5337446928024292,
+      "time_s": 20.28125,
+      "intersection_extents_m": [
+        0.5365375280380249,
+        1.0,
+        0.5337446928024292
+      ]
+    },
+    {
+      "pair": [
+        "10_projectile_tower:tower-0",
+        "10_projectile_tower:tower-2"
+      ],
+      "peak_minimum_translation_depth_m": 0.0700523853302002,
+      "time_s": 21.15625,
+      "intersection_extents_m": [
+        0.0700523853302002,
+        1.0,
+        0.07039916515350342
+      ]
+    },
+    {
+      "pair": [
+        "10_projectile_tower:tower-1",
+        "10_projectile_tower:tower-2"
+      ],
+      "peak_minimum_translation_depth_m": 0.5331274271011353,
+      "time_s": 21.9375,
+      "intersection_extents_m": [
+        0.5371787548065186,
+        1.0,
+        0.5331274271011353
+      ]
+    }
+  ]
+}

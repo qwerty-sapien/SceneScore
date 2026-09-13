@@ -1,0 +1,90 @@
+{
+  "time": 19.012,
+  "history": [
+    {
+      "action": {
+        "kind": "ControlAction",
+        "schema_version": "0.1",
+        "id": "control-a64240f0-f111-4c24-a690-15434639caa9",
+        "gesture_id": "a64240f0-f111-4c24-a690-15434639caa9",
+        "sequence_id": "a64240f0-f111-4c24-a690-15434639caa9",
+        "provenance": {
+          "source_mode": "keyboard",
+          "creator": "scenescore-semantic-control",
+          "tool_version": "muse-control-1",
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "input_hashes": [],
+          "seed": null
+        },
+        "gesture_count": 2,
+        "profile": "double_modulate_mvp",
+        "action": "request_modulation",
+        "request": {
+          "clock": "audio",
+          "epoch": "transport-0",
+          "seconds": 24.666666666666668
+        },
+        "expires": {
+          "clock": "audio",
+          "epoch": "transport-0",
+          "seconds": 30.666666666666668
+        },
+        "boundary": "next_approved_bar_or_phrase",
+        "signed_semitones": -2,
+        "approved_plan_hash": "fd090867ab61fde774879f23ae56ea388e88db072521d9dd9f5a3bc5b489808d",
+        "scene_policy_id": "world-z-causal-1",
+        "status": "queued",
+        "reason": null,
+        "quality": {
+          "state": "good",
+          "reason": null
+        },
+        "before": {
+          "master_gain_db": -18,
+          "articulation": "score",
+          "expression_preset": "neutral"
+        },
+        "after": {
+          "master_gain_db": -18,
+          "articulation": "score",
+          "expression_preset": "neutral"
+        }
+      },
+      "audio_received_s": 24.666666666666668,
+      "id": "control-a64240f0-f111-4c24-a690-15434639caa9",
+      "status": "queued",
+      "requested_scene_s": 19.012,
+      "generation": 0,
+      "source": "keyboard",
+      "program_id": "34560:contract_default:0:-2:1",
+      "boundary_s": 22.5,
+      "boundary_tick": 34560,
+      "boundary_audio_s": 28.154666666666667,
+      "arrival_scene_s": 22.5,
+      "arrival_audio_s": 28.154666666666667,
+      "progression_start_s": 21.25,
+      "progression_end_s": 23.125,
+      "progression_start_audio_s": 26.904666666666667,
+      "progression_end_audio_s": 28.779666666666667,
+      "signed_semitones": -2,
+      "ack_onset_audio_s": 24.686666666666667
+    }
+  ],
+  "approval": null,
+  "preparation": {
+    "ready": true,
+    "error": null,
+    "cache_buffers": 1021,
+    "cache_bytes": 96361088,
+    "refresh": {
+      "slices": 2,
+      "max_slice_ms": 4
+    }
+  },
+  "sample_rate": 48000,
+  "scripts": [
+    "http://127.0.0.1:8772/assets/index-BBrePzdL.js"
+  ],
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+  "input": "Automated keyboard-button activation; no human approval or physical blink"
+}

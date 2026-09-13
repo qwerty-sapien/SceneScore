@@ -1,0 +1,98 @@
+E401 [*] Multiple imports on one line
+  --> muse_blink_modulation_vercel_dag/examples/check_pack_examples.py:11:1
+   |
+ 9 | of modules/muse/baseline/causal.py::Grammar.
+10 | """
+11 | import copy, json, pathlib, sys
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+12 |
+13 | HERE = pathlib.Path(__file__).resolve().parent
+   |
+help: Split imports
+   |
+10 | """
+   - import copy, json, pathlib, sys
+11 + import copy
+12 + import json
+13 + import pathlib
+14 + import sys
+15 |
+   |
+
+E741 Ambiguous variable name: `l`
+  --> muse_blink_modulation_vercel_dag/examples/check_pack_examples.py:59:21
+   |
+59 | def validate_ladder(l):
+   |                     ^
+60 |     bad, names = [], {s["name"] for s in l["stamps"]}
+61 |     for needed in ("t0_final_blink_s", "t1_decision_s", "t4_received_s", "t5_ack_onset_s", "t6_boundary_s"):
+   |
+
+E741 Ambiguous variable name: `l`
+   --> muse_blink_modulation_vercel_dag/examples/check_pack_examples.py:103:17
+    |
+101 |     for label, mutate in [
+102 |         ("300 ms gate moved onto the boundary wait",
+103 |          lambda l: l["budgets"].__setitem__(4, {"interval": "t6 - t5", "gate": "<= 300 ms", "source": "x"})),
+    |                 ^
+104 |         ("responsiveness gate deleted",
+105 |          lambda l: l["budgets"].__setitem__(3, {"interval": "t5 - t4", "gate": "best effort", "source": "x"})),
+    |
+
+E741 Ambiguous variable name: `l`
+   --> muse_blink_modulation_vercel_dag/examples/check_pack_examples.py:105:17
+    |
+103 |          lambda l: l["budgets"].__setitem__(4, {"interval": "t6 - t5", "gate": "<= 300 ms", "source": "x"})),
+104 |         ("responsiveness gate deleted",
+105 |          lambda l: l["budgets"].__setitem__(3, {"interval": "t5 - t4", "gate": "best effort", "source": "x"})),
+    |                 ^
+106 |         ("decision stamp removed", lambda l: l["stamps"].pop(1)),
+107 |         ("clock domains collapsed", lambda l: [s.update(clock="audio") for s in l["stamps"]]),
+    |
+
+E741 Ambiguous variable name: `l`
+   --> muse_blink_modulation_vercel_dag/examples/check_pack_examples.py:106:43
+    |
+104 |         ("responsiveness gate deleted",
+105 |          lambda l: l["budgets"].__setitem__(3, {"interval": "t5 - t4", "gate": "best effort", "source": "x"})),
+106 |         ("decision stamp removed", lambda l: l["stamps"].pop(1)),
+    |                                           ^
+107 |         ("clock domains collapsed", lambda l: [s.update(clock="audio") for s in l["stamps"]]),
+108 |     ]:
+    |
+
+E741 Ambiguous variable name: `l`
+   --> muse_blink_modulation_vercel_dag/examples/check_pack_examples.py:107:44
+    |
+105 |          lambda l: l["budgets"].__setitem__(3, {"interval": "t5 - t4", "gate": "best effort", "source": "x"})),
+106 |         ("decision stamp removed", lambda l: l["stamps"].pop(1)),
+107 |         ("clock domains collapsed", lambda l: [s.update(clock="audio") for s in l["stamps"]]),
+    |                                            ^
+108 |     ]:
+109 |         doc = copy.deepcopy(LADDER)
+    |
+
+E401 [*] Multiple imports on one line
+  --> scenescore_hackathon_music_dag/examples/check_pack_examples.py:8:1
+   |
+ 6 | not the SceneScore implementation; it certifies nothing about audio.
+ 7 | """
+ 8 | import copy, itertools, json, pathlib, sys
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9 |
+10 | HERE = pathlib.Path(__file__).resolve().parent
+   |
+help: Split imports
+   |
+7  | """
+   - import copy, itertools, json, pathlib, sys
+8  + import copy
+9  + import itertools
+10 + import json
+11 + import pathlib
+12 + import sys
+13 |
+   |
+
+Found 7 errors.
+[*] 2 fixable with the `--fix` option.

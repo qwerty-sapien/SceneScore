@@ -1,0 +1,259 @@
+{
+  "status": "passed",
+  "scope": "Frozen pack, canonical schema, dependency locks and selected source media; excludes dynamic Blender batch code",
+  "checked": 42,
+  "checks": [
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/geometry.json",
+      "expected": "cc2f52d3477b634634e6705a36bf403232e4f8ea1236cd4c9aa27760e28aea81",
+      "actual": "cc2f52d3477b634634e6705a36bf403232e4f8ea1236cd4c9aa27760e28aea81",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/summary.json",
+      "expected": "be244a2958b3e9ccf62e0ceecdbee8610d9096ff82030b1b98fe62e1655b863f",
+      "actual": "be244a2958b3e9ccf62e0ceecdbee8610d9096ff82030b1b98fe62e1655b863f",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/config.json",
+      "expected": "5cea0fe0c429e894ad7a1d48261460da2488386d7590e3f9ad32121e72b4424f",
+      "actual": "5cea0fe0c429e894ad7a1d48261460da2488386d7590e3f9ad32121e72b4424f",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/object_states.jsonl",
+      "expected": "a5b02fe89fee3728babf8a5b76b5583356006e9ebcfebed0bac1d62ca193a3ab",
+      "actual": "a5b02fe89fee3728babf8a5b76b5583356006e9ebcfebed0bac1d62ca193a3ab",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/manifest.json",
+      "expected": "2f2ad3e7d099303430056c52f38b791f23113ce32742edd396c7a56bc1b553b6",
+      "actual": "2f2ad3e7d099303430056c52f38b791f23113ce32742edd396c7a56bc1b553b6",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/preview.mp4",
+      "expected": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+      "actual": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/interactions.jsonl",
+      "expected": "db3ad6fde9e12ed57a2fcc14f5bb7f8bd30cd59c0420a262ac75955c83bc9d8d",
+      "actual": "db3ad6fde9e12ed57a2fcc14f5bb7f8bd30cd59c0420a262ac75955c83bc9d8d",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/validated-hero/10_projectile_tower-default/bundle_hashes.json",
+      "expected": "f7a5e9984ebe6079756c048f88f1f14d2f676de986d539d5697a2fc91edca86b",
+      "actual": "f7a5e9984ebe6079756c048f88f1f14d2f676de986d539d5697a2fc91edca86b",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/geometry.json",
+      "expected": "1adca073b8ad209dfb3a3e69605f76db2bff2c83fce76b8593d2beaca487363b",
+      "actual": "1adca073b8ad209dfb3a3e69605f76db2bff2c83fce76b8593d2beaca487363b",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/summary.json",
+      "expected": "ef8f27397396a70c1eff22bec9bbc70e115c1fc6e4ed982b9f4ef4e995d92833",
+      "actual": "ef8f27397396a70c1eff22bec9bbc70e115c1fc6e4ed982b9f4ef4e995d92833",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/config.json",
+      "expected": "1df33410e89d3689865e022968c082392434cded3915bc8eb00a906bcfd7c2b0",
+      "actual": "1df33410e89d3689865e022968c082392434cded3915bc8eb00a906bcfd7c2b0",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/object_states.jsonl",
+      "expected": "6e22e5debdb29abf5581ec0ca3766bdfe0b717909fcfd649259de3d1eafac485",
+      "actual": "6e22e5debdb29abf5581ec0ca3766bdfe0b717909fcfd649259de3d1eafac485",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/manifest.json",
+      "expected": "d73ce7c227fde5e01764610b562ead5140ee9bbe84ba87f988ed1a2264b52856",
+      "actual": "d73ce7c227fde5e01764610b562ead5140ee9bbe84ba87f988ed1a2264b52856",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/interactions.jsonl",
+      "expected": "20f2aa8aa9342f45f7f8bf7c173fa3ec6cd99ddd82d5237625868e26fa131c76",
+      "actual": "20f2aa8aa9342f45f7f8bf7c173fa3ec6cd99ddd82d5237625868e26fa131c76",
+      "passed": true
+    },
+    {
+      "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/bundle_hashes.json",
+      "expected": "3e44aa0614d40746194e1b3ab1f7c523ca53a7a35b4e10be1f9757745122f150",
+      "actual": "3e44aa0614d40746194e1b3ab1f7c523ca53a7a35b4e10be1f9757745122f150",
+      "passed": true
+    },
+    {
+      "path": "contracts/0.1/schema.json",
+      "expected": "55049ac4a18770c58cc8ecef0f188e77ef9456d9dece7dab1b13ed49f3e93784",
+      "actual": "55049ac4a18770c58cc8ecef0f188e77ef9456d9dece7dab1b13ed49f3e93784",
+      "passed": true
+    },
+    {
+      "path": "uv.lock",
+      "expected": "b36a97992bfe920b7716ea958797d8bf18ee4444a4afb2bbc51f4855130c4eb9",
+      "actual": "b36a97992bfe920b7716ea958797d8bf18ee4444a4afb2bbc51f4855130c4eb9",
+      "passed": true
+    },
+    {
+      "path": "package-lock.json",
+      "expected": "1cfe5a1ebf41d36928267a8b2f28e290ec2905fd790add8831d5fd59eb4f83b1",
+      "actual": "1cfe5a1ebf41d36928267a8b2f28e290ec2905fd790add8831d5fd59eb4f83b1",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/INTERFACE_CONTRACT.md",
+      "expected": "a6127896378718fb3648ea05d9ef63197dcf042feecd66bc815a9a09d8f0f3c8",
+      "actual": "a6127896378718fb3648ea05d9ef63197dcf042feecd66bc815a9a09d8f0f3c8",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/SHARED_GUARDRAILS.md",
+      "expected": "5a83c430d55df5bb3076a27f7a7017ae8c7f99fb496a3fcad1debf65668197e9",
+      "actual": "5a83c430d55df5bb3076a27f7a7017ae8c7f99fb496a3fcad1debf65668197e9",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/.DS_Store",
+      "expected": "d257aaa8cf0d5f878aa9e2e0b962ecd0058b538a2cfbe01ff709f163f61f5450",
+      "actual": "d257aaa8cf0d5f878aa9e2e0b962ecd0058b538a2cfbe01ff709f163f61f5450",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/BOOTSTRAP.txt",
+      "expected": "b6db91a480200f9a5fe785be6ed3ea3519aad47a7f4cfcd6fb505c53cba52c4a",
+      "actual": "b6db91a480200f9a5fe785be6ed3ea3519aad47a7f4cfcd6fb505c53cba52c4a",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/PACK_VALIDATION.json",
+      "expected": "fa9364adbf54f3f5d5d807a858046fc554a25abcb140a38ab60be06f85930875",
+      "actual": "fa9364adbf54f3f5d5d807a858046fc554a25abcb140a38ab60be06f85930875",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/START_HERE.md",
+      "expected": "9ddec25b11b2555afb24433d1b5f4cab48fcde3ec565e44e9293db13d56d7471",
+      "actual": "9ddec25b11b2555afb24433d1b5f4cab48fcde3ec565e44e9293db13d56d7471",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/README.md",
+      "expected": "c11479efeb514a28a7d3d5134076a76ebff6c631fcbd8fc145c9989ac4172277",
+      "actual": "c11479efeb514a28a7d3d5134076a76ebff6c631fcbd8fc145c9989ac4172277",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/REPO_BASELINE.md",
+      "expected": "35414869e2c52dc2c5aede5fbe3e74994725ec485f1484d51a893dc78a3fc9b1",
+      "actual": "35414869e2c52dc2c5aede5fbe3e74994725ec485f1484d51a893dc78a3fc9b1",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/CHECKSUMS.json",
+      "expected": "09ca37d88443c40e8fc9caa8dbdfdb1145d1835c82d51f821e5326be77b7cbe2",
+      "actual": "09ca37d88443c40e8fc9caa8dbdfdb1145d1835c82d51f821e5326be77b7cbe2",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/DAG.json",
+      "expected": "6b4dbdc0e0a5f7ad15617792dc8d04d5f196efbc2e52b2c27208b8dd74a4bb4e",
+      "actual": "6b4dbdc0e0a5f7ad15617792dc8d04d5f196efbc2e52b2c27208b8dd74a4bb4e",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/TIME_BUDGET.md",
+      "expected": "1e7b0df183e4dd688e97f3c82dcb0dcd7ac92ca804bccb3be01015ee4ad86e8c",
+      "actual": "1e7b0df183e4dd688e97f3c82dcb0dcd7ac92ca804bccb3be01015ee4ad86e8c",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/examples/transition_table.json",
+      "expected": "abc0f83a5cadfbc7919d8c6e75731e52f8fe6d8af70f30078ebb3f5e932a00ba",
+      "actual": "abc0f83a5cadfbc7919d8c6e75731e52f8fe6d8af70f30078ebb3f5e932a00ba",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/examples/motion_event_taxonomy.json",
+      "expected": "ee7a16fa59b0e916c4602393cc06699d9f7ea2cbaeeddc96eb63ac54171bb393",
+      "actual": "ee7a16fa59b0e916c4602393cc06699d9f7ea2cbaeeddc96eb63ac54171bb393",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/examples/check_pack_examples.py",
+      "expected": "db7687947c3ed336a50ad05b9c54033975720a941cea65170ce6c093e9914472",
+      "actual": "db7687947c3ed336a50ad05b9c54033975720a941cea65170ce6c093e9914472",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/examples/reference_check_results.json",
+      "expected": "893ad9f2ad95d1bf7423ae4036d2aaf7f79ae8ada896f476e663491b6ba32f4d",
+      "actual": "893ad9f2ad95d1bf7423ae4036d2aaf7f79ae8ada896f476e663491b6ba32f4d",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/08_independent_gate.md",
+      "expected": "bf7b42587550e237fb164b605825d09e92e4314d3fae02ccc7a67b2fc627b893",
+      "actual": "bf7b42587550e237fb164b605825d09e92e4314d3fae02ccc7a67b2fc627b893",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/05_harmonic_transition_table.md",
+      "expected": "7e1d30bf5c8998b98c5bf287a883e485615eccd8e36b0411deff77dd79a1f063",
+      "actual": "7e1d30bf5c8998b98c5bf287a883e485615eccd8e36b0411deff77dd79a1f063",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/03_bounded_transform_vocabulary.md",
+      "expected": "608f37b972c6eadedc37cdc3b4dc53083ebeaafef76fdebb612fa5ad6bbaefd0",
+      "actual": "608f37b972c6eadedc37cdc3b4dc53083ebeaafef76fdebb612fa5ad6bbaefd0",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/06_browser_performance_integration.md",
+      "expected": "51d8eff6c8b9741bb3ad145a651c011c2f8894413606804a1ba9a1277f85ca7d",
+      "actual": "51d8eff6c8b9741bb3ad145a651c011c2f8894413606804a1ba9a1277f85ca7d",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/07_audition_and_timing_measurement.md",
+      "expected": "64fc250e3e9753fd85b94ef56fcbcb10e025eeb29ea72a81ab70847d55e3df41",
+      "actual": "64fc250e3e9753fd85b94ef56fcbcb10e025eeb29ea72a81ab70847d55e3df41",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/00_baseline_freeze_and_slice.md",
+      "expected": "46fc96781fc1bc1f62b0a0d4b4a9f6c60700cab080a456701e51ef0feeeec70d",
+      "actual": "46fc96781fc1bc1f62b0a0d4b4a9f6c60700cab080a456701e51ef0feeeec70d",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/02_catalogue_audition_and_repair.md",
+      "expected": "61e824dec261642f521b1c4ae2516f4d734b6639ebc29564d50b53b914641e48",
+      "actual": "61e824dec261642f521b1c4ae2516f4d734b6639ebc29564d50b53b914641e48",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/04_motion_to_intent_mapping.md",
+      "expected": "88d12c675fe9aee91444ff162216b2a7a99baaf729e25c2643fd3a160c6765c0",
+      "actual": "88d12c675fe9aee91444ff162216b2a7a99baaf729e25c2643fd3a160c6765c0",
+      "passed": true
+    },
+    {
+      "path": "scenescore_hackathon_music_dag/prompts/01_motion_event_semantics.md",
+      "expected": "e01154a594fb0e5a3a39c223ea6b00e83a705235adc7937cde688de1c2590e16",
+      "actual": "e01154a594fb0e5a3a39c223ea6b00e83a705235adc7937cde688de1c2590e16",
+      "passed": true
+    }
+  ]
+}

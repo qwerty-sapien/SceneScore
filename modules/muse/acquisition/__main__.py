@@ -6,6 +6,8 @@ import sys
 from modules.muse.acquisition.store import (Recorder, read_json, replay, recover, export_session, delete_session,
                                            manifest, encoded, MAX_CHUNK_BYTES)
 from modules.muse.acquisition.live import health, capture_lsl
+from modules.muse.acquisition.diagnostics import diagnose_transport
+from modules.muse.acquisition.protocol import collect_session, review_session
 from modules.muse.baseline.causal import CausalBaseline, Config
 from modules.muse.annotation.workflow import cues, confirm, label
 
@@ -14,6 +16,18 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Local Muse tools; replay/synthetic are visibly labelled, no training")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("health")
+    diag = commands.add_parser("diagnose", help="Bounded advertised LSL metadata only; no recording")
+    diag.add_argument("--source-id")
+    diag.add_argument("--timeout-s", type=float, default=2.0)
+    collect = commands.add_parser("collect", help="Consented foreground collection; delayed independent labelling follows")
+    collect.add_argument("session", type=Path)
+    collect.add_argument("metadata", type=Path)
+    collect.add_argument("--protocol", type=Path, required=True)
+    collect.add_argument("--source-id", required=True)
+    collect.add_argument("--seconds", type=float, required=True)
+    collect.add_argument("--start", action="store_true", required=True)
+    review = commands.add_parser("review", help="Read-only raw count/exposure review")
+    review.add_argument("session", type=Path)
     record = commands.add_parser("record-file", help="Commit canonical input chunks unchanged; not live capture")
     record.add_argument("session", type=Path)
     record.add_argument("metadata", type=Path)
@@ -63,6 +77,14 @@ def main(argv=None):
         result = None
         if args.command == "health":
             result = health()
+        elif args.command == "diagnose":
+            result = diagnose_transport(source_id=args.source_id, timeout_s=args.timeout_s)
+        elif args.command == "collect":
+            result = collect_session(args.session, read_json(args.metadata), protocol=read_json(args.protocol),
+                                     source_id=args.source_id, seconds=args.seconds, explicitly_started=args.start,
+                                     report=lambda value: print(json.dumps(value, allow_nan=False), file=sys.stderr))
+        elif args.command == "review":
+            result = review_session(args.session)
         elif args.command == "record-file":
             if not 1 <= args.max_chunks <= 100000:
                 raise ValueError("chunk_budget_out_of_range")
@@ -129,6 +151,8 @@ def main(argv=None):
             result = label(path, **values)
         if result is not None:
             print(json.dumps(result, sort_keys=True, allow_nan=False))
+        if args.command == "diagnose" and result["status"] == "BLOCKED":
+            return 2
         return 0
     except (ValueError, OSError, RuntimeError, KeyError, TypeError) as exc:
         print(json.dumps({"code": "MUSE_OPERATION_FAILED", "message": str(exc), "retryable": False}), file=sys.stderr)

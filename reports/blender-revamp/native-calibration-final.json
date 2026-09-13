@@ -1,0 +1,410 @@
+{
+  "artifacts": {
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/bake-reopen.json": "3b2ae26b3173cfaea16526a3c35c73530bd4769914100f34c6b3f7a308f87fd2",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/bake.json": "55182ea89b5d381403677af03ee364e1b9841a6c91954666ca726c05c738aa4d",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/evaluated_geometry.json": "99288b28e8deb9dac5b0624b587bb91d2474a313d7053eda9185f403ed660303",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/physics_states.jsonl": "6b65dffe57f585ee77a27c7e7b30e830b81069d18dd44e5e8181fa5377be173f",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/production.json": "2157b4437834aff3172603a38d3a14aca0db987e164454cc2080ff0726b69710",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/replay_states.jsonl": "6b65dffe57f585ee77a27c7e7b30e830b81069d18dd44e5e8181fa5377be173f",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/replay_validation.json": "0f739f5f1bcc094a9c332d31aff3e1a7279d2798eec74c9d43594300ca5b1d5f",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/scene.blend": "52679a5ba65ed0dd111fec695eb29a838eeab15c910853cd2d1c988a21a7d2d4",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-100/simulation.blend": "e8beeb057b55b31d7454db21563ece186de4577516d769c0d03580ff6d759e8e",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/bake-reopen.json": "35f7ed4e903a714ace93d4ef129223dbb19f0a6a8f9e10fc5d507af68d04f812",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/bake.json": "46148c527045ab49ead7edee01b002b190cadacefc0e9046b8b6a8d050d38686",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/evaluated_geometry.json": "fa67a57b06a531be6146985cd41d4ba4704ba6f697fbae152b983358a1129519",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/physics_states.jsonl": "134123b46ff2320282a6ff69895631729a48eb47430335e851c7d4ed9963c513",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/production.json": "a96d6d7d72c4ecf9db50fd9b1037962b236cd595685a243d54f70176a8d0ead9",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/replay_states.jsonl": "134123b46ff2320282a6ff69895631729a48eb47430335e851c7d4ed9963c513",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/replay_validation.json": "40212a1ce184867cd8d362adfdb10a0d48c91ea6d3bb6ac07e99f663808a65d1",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/scene.blend": "e43ee74907004281e2f3757a9362c260293498da534e881e98786c2339cc9cce",
+    "../../artifacts/blender/revamp/controls/inelastic-high-drop-50/simulation.blend": "5c4ee4d8a9c2db40deb1215b723310154590b8bdb0e263138f4fcc61f5afc1fb",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/bake-reopen.json": "7d6535b506410e609d1f8b00560905b8129853017350d405eb08d4097ca18440",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/bake.json": "c671ce951c95f9a89fe771e8522d3e1ad68d59971bd1e404a0258e5a264454f1",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/evaluated_geometry.json": "83d77f79d57077def5fea61606aafc4a6ec2427bf7f115accd907d1d7cac82a8",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/physics_states.jsonl": "4aa2aeddeda39d4bbe5a10555dfb5f7b0a43d9e2886b18f140ae5961b62b4c03",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/production.json": "5e0d84a42d79a910fd4e5072ab845df1513a7ea253ea45357a440f3bc04370c1",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/replay_states.jsonl": "4aa2aeddeda39d4bbe5a10555dfb5f7b0a43d9e2886b18f140ae5961b62b4c03",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/replay_validation.json": "b97adabfc28f419f033f87b69c579cd84d3b9bccabe5609a8148493caace5bbe",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/scene.blend": "37144722b2a4577a89bf1b1323d2866f3133d84ad49ef1e5dae87aea0bedd355",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-100/simulation.blend": "08cd0fe0accd5c0731a5c4aa6fb94c254b90579959ac8cc6dd82f0cc91e1fbfa",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/bake-reopen.json": "43c790feb3c7e3e7068cfec0c373e303853a1bc10c34b8c0ce8308fb88b47b77",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/bake.json": "2f2ca5f205149c306d0a998df62b9577741ed3f3b3eb90825c642bed58094edf",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/evaluated_geometry.json": "83d77f79d57077def5fea61606aafc4a6ec2427bf7f115accd907d1d7cac82a8",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/physics_states.jsonl": "0c8c6e84e777cc712c0facb2eeca54203306eadbdaa5203fc9d51253574cbad4",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/production.json": "d0e315c29164030cf1b7250daa5337ce7982a62560742526b63cc9628154c5c4",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/replay_states.jsonl": "0c8c6e84e777cc712c0facb2eeca54203306eadbdaa5203fc9d51253574cbad4",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/replay_validation.json": "32f5f9accc35b2634ad6db01e926ccbe20ef991fe9f3019e39f14eb8b0e05e75",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/scene.blend": "246453b9611d16528aac2829f8b7bc35362d9a754098a79c7b9fa9fd8188faa2",
+    "../../artifacts/blender/revamp/controls/inelastic-high-transfer-50/simulation.blend": "75309891a40d51bfd1c81e7d20a1a4b4a0049883e47fdaa158bd25a817dc3829"
+  },
+  "controls": [
+    {
+      "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-drop-50",
+      "gates": {
+        "asset_integrity": {
+          "status": "PASSED"
+        },
+        "fresh_process_replay": {
+          "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-drop-50/replay_validation.json",
+          "independently_computed": {
+            "max_position_error_m": 0.0,
+            "max_rotation_error_rad": 0.0,
+            "max_scale_error": 0.0
+          },
+          "replay_states_sha256": "134123b46ff2320282a6ff69895631729a48eb47430335e851c7d4ed9963c513",
+          "scene_sha256": "e43ee74907004281e2f3757a9362c260293498da534e881e98786c2339cc9cce",
+          "sha256": "40212a1ce184867cd8d362adfdb10a0d48c91ea6d3bb6ac07e99f663808a65d1",
+          "status": "PASSED"
+        },
+        "geometric_contact": {
+          "status": "PASSED"
+        },
+        "physical_motion": {
+          "status": "PASSED"
+        }
+      },
+      "id": "drop_base",
+      "issues": [],
+      "measurements": {
+        "contact": {
+          "first_proximity_s": 0.6,
+          "first_proximity_tick": 144,
+          "minimum_signed_gap_m": 5.960464455334602e-09,
+          "minimum_time_s": 0.6,
+          "penetration_cap_m": 0.003
+        },
+        "kind": "inelastic_drop",
+        "max_postimpact_height_above_support_m": 5.960464483090178e-09,
+        "object_id": "control_drop:ball",
+        "response": {
+          "id": null,
+          "issues": [],
+          "kind": "fixed_wall_restitution",
+          "metrics": {
+            "contact_free_windows": [
+              true,
+              false
+            ],
+            "contact_time_s": 0.6,
+            "effective_restitution_expected": 0,
+            "effective_restitution_measured": -0.0,
+            "incoming_normal_m_s": 5.8864097679054375,
+            "normal_velocity_residual_m_s": 0.0,
+            "outgoing_normal_m_s": 0.0,
+            "postimpact_response": "supported_inelastic_contact",
+            "raw_window_normal_velocities_m_s": [
+              5.3754722679054385,
+              0.0
+            ],
+            "system_boundary": "dynamic body versus passive wall; gravity correction only in contact-free windows",
+            "tolerance_m_s": 0.1,
+            "unavailable_reason": null
+          },
+          "status": "PASSED"
+        },
+        "status": "PASSED",
+        "system_boundary": "one sphere with gravity, passive horizontal support, nominal restitution zero"
+      },
+      "status": "PASSED"
+    },
+    {
+      "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-drop-100",
+      "gates": {
+        "asset_integrity": {
+          "status": "PASSED"
+        },
+        "fresh_process_replay": {
+          "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-drop-100/replay_validation.json",
+          "independently_computed": {
+            "max_position_error_m": 0.0,
+            "max_rotation_error_rad": 0.0,
+            "max_scale_error": 0.0
+          },
+          "replay_states_sha256": "6b65dffe57f585ee77a27c7e7b30e830b81069d18dd44e5e8181fa5377be173f",
+          "scene_sha256": "52679a5ba65ed0dd111fec695eb29a838eeab15c910853cd2d1c988a21a7d2d4",
+          "sha256": "0f739f5f1bcc094a9c332d31aff3e1a7279d2798eec74c9d43594300ca5b1d5f",
+          "status": "PASSED"
+        },
+        "geometric_contact": {
+          "status": "PASSED"
+        },
+        "physical_motion": {
+          "status": "PASSED"
+        }
+      },
+      "id": "drop_fine",
+      "issues": [],
+      "measurements": {
+        "contact": {
+          "first_proximity_s": 0.6,
+          "first_proximity_tick": 144,
+          "minimum_signed_gap_m": 5.960464455334602e-09,
+          "minimum_time_s": 0.6,
+          "penetration_cap_m": 0.003
+        },
+        "kind": "inelastic_drop",
+        "max_postimpact_height_above_support_m": 5.960464483090178e-09,
+        "object_id": "control_drop:ball",
+        "response": {
+          "id": null,
+          "issues": [],
+          "kind": "fixed_wall_restitution",
+          "metrics": {
+            "contact_free_windows": [
+              true,
+              false
+            ],
+            "contact_time_s": 0.6,
+            "effective_restitution_expected": 0,
+            "effective_restitution_measured": -0.0,
+            "incoming_normal_m_s": 5.886205770681196,
+            "normal_velocity_residual_m_s": 0.0,
+            "outgoing_normal_m_s": 0.0,
+            "postimpact_response": "supported_inelastic_contact",
+            "raw_window_normal_velocities_m_s": [
+              5.375268270681197,
+              0.0
+            ],
+            "system_boundary": "dynamic body versus passive wall; gravity correction only in contact-free windows",
+            "tolerance_m_s": 0.1,
+            "unavailable_reason": null
+          },
+          "status": "PASSED"
+        },
+        "status": "PASSED",
+        "system_boundary": "one sphere with gravity, passive horizontal support, nominal restitution zero"
+      },
+      "status": "PASSED"
+    },
+    {
+      "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-transfer-50",
+      "gates": {
+        "asset_integrity": {
+          "status": "PASSED"
+        },
+        "fresh_process_replay": {
+          "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-transfer-50/replay_validation.json",
+          "independently_computed": {
+            "max_position_error_m": 0.0,
+            "max_rotation_error_rad": 0.0,
+            "max_scale_error": 0.0
+          },
+          "replay_states_sha256": "0c8c6e84e777cc712c0facb2eeca54203306eadbdaa5203fc9d51253574cbad4",
+          "scene_sha256": "246453b9611d16528aac2829f8b7bc35362d9a754098a79c7b9fa9fd8188faa2",
+          "sha256": "32f5f9accc35b2634ad6db01e926ccbe20ef991fe9f3019e39f14eb8b0e05e75",
+          "status": "PASSED"
+        },
+        "geometric_contact": {
+          "status": "PASSED"
+        },
+        "physical_motion": {
+          "status": "PASSED"
+        }
+      },
+      "id": "transfer_base",
+      "issues": [],
+      "measurements": {
+        "contact": {
+          "first_proximity_s": 1.2041666666666666,
+          "first_proximity_tick": 289,
+          "minimum_signed_gap_m": 6.160378456110394e-05,
+          "minimum_time_s": 1.2041666666666666,
+          "penetration_cap_m": 0.005
+        },
+        "effective_restitution_measured": 0.027374414421520325,
+        "expected_common_velocity_m_s": 1.5006066940642582,
+        "external_contact_confounds": [],
+        "incoming_normal_m_s": [
+          3.0012133881285727,
+          -5.621876590629341e-14
+        ],
+        "kind": "inelastic_transfer",
+        "kinetic_energy_after_j": 2.253507847623347,
+        "kinetic_energy_before_j": 4.503640900541093,
+        "measurement_windows_s": [
+          [
+            1.1241666666666665,
+            1.1791666666666667
+          ],
+          [
+            1.2291666666666665,
+            1.2841666666666667
+          ]
+        ],
+        "momentum_residual_kg_m_s": 1.5719102020028686e-08,
+        "object_ids": [
+          "control_transfer:left",
+          "control_transfer:right"
+        ],
+        "outgoing_normal_m_s": [
+          1.459528456677683,
+          1.5416849157317312
+        ],
+        "status": "PASSED",
+        "system_boundary": "two spheres on frictionless horizontal support, after paddle separation; horizontal momentum only",
+        "velocity_tolerance_m_s": 0.1,
+        "zero_restitution_velocity_residual_m_s": 0.08215645905404823
+      },
+      "status": "PASSED"
+    },
+    {
+      "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-transfer-100",
+      "gates": {
+        "asset_integrity": {
+          "status": "PASSED"
+        },
+        "fresh_process_replay": {
+          "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/controls/inelastic-high-transfer-100/replay_validation.json",
+          "independently_computed": {
+            "max_position_error_m": 0.0,
+            "max_rotation_error_rad": 0.0,
+            "max_scale_error": 0.0
+          },
+          "replay_states_sha256": "4aa2aeddeda39d4bbe5a10555dfb5f7b0a43d9e2886b18f140ae5961b62b4c03",
+          "scene_sha256": "37144722b2a4577a89bf1b1323d2866f3133d84ad49ef1e5dae87aea0bedd355",
+          "sha256": "b97adabfc28f419f033f87b69c579cd84d3b9bccabe5609a8148493caace5bbe",
+          "status": "PASSED"
+        },
+        "geometric_contact": {
+          "status": "PASSED"
+        },
+        "physical_motion": {
+          "status": "PASSED"
+        }
+      },
+      "id": "transfer_fine",
+      "issues": [
+        "measured inelastic response failed"
+      ],
+      "measurements": {
+        "contact": {
+          "first_proximity_s": 1.2041666666666666,
+          "first_proximity_tick": 289,
+          "minimum_signed_gap_m": 0.00015008687973017132,
+          "minimum_time_s": 1.2041666666666666,
+          "penetration_cap_m": 0.005
+        },
+        "effective_restitution_measured": 0.05455806109877005,
+        "expected_common_velocity_m_s": 1.5006066940642582,
+        "external_contact_confounds": [],
+        "incoming_normal_m_s": [
+          3.0012133881285727,
+          -5.621876590629341e-14
+        ],
+        "kind": "inelastic_transfer",
+        "kinetic_energy_after_j": 2.2585235324016244,
+        "kinetic_energy_before_j": 4.503640900541093,
+        "measurement_windows_s": [
+          [
+            1.1241666666666665,
+            1.1791666666666667
+          ],
+          [
+            1.2291666666666665,
+            1.2841666666666667
+          ]
+        ],
+        "momentum_residual_kg_m_s": 2.357993986734641e-07,
+        "object_ids": [
+          "control_transfer:left",
+          "control_transfer:right"
+        ],
+        "outgoing_normal_m_s": [
+          1.4187366202639733,
+          1.5824770036639417
+        ],
+        "status": "FAILED",
+        "system_boundary": "two spheres on frictionless horizontal support, after paddle separation; horizontal momentum only",
+        "velocity_tolerance_m_s": 0.1,
+        "zero_restitution_velocity_residual_m_s": 0.16374038339996844
+      },
+      "status": "FAILED"
+    }
+  ],
+  "convergence": {
+    "comparisons": {
+      "drop": {
+        "coarse_penetration_m": 0,
+        "coarse_solver": {
+          "solver_iterations": 120,
+          "substeps_per_frame": 50,
+          "use_split_impulse": true
+        },
+        "fine_penetration_m": 0,
+        "fine_solver": {
+          "solver_iterations": 120,
+          "substeps_per_frame": 100,
+          "use_split_impulse": true
+        },
+        "first_contact_shift_s": 0.0,
+        "maximum_position_difference_m": 0.00012177228927612305,
+        "maximum_rotation_difference_rad": 0.0,
+        "physics_hz_unchanged": 240,
+        "position_difference_object": "control_drop:ball",
+        "position_difference_time_s": 0.5958333333333333,
+        "position_tolerance_m": 0.005,
+        "status": "PASSED"
+      },
+      "transfer": {
+        "coarse_penetration_m": 0,
+        "coarse_solver": {
+          "solver_iterations": 120,
+          "substeps_per_frame": 50,
+          "use_split_impulse": true
+        },
+        "fine_penetration_m": 0,
+        "fine_solver": {
+          "solver_iterations": 120,
+          "substeps_per_frame": 100,
+          "use_split_impulse": true
+        },
+        "first_contact_shift_s": 0.0,
+        "maximum_position_difference_m": 0.03257036209106445,
+        "maximum_rotation_difference_rad": 0.0,
+        "physics_hz_unchanged": 240,
+        "position_difference_object": "control_transfer:left",
+        "position_difference_time_s": 2.0,
+        "position_tolerance_m": 0.005,
+        "status": "FAILED"
+      }
+    },
+    "status": "FAILED"
+  },
+  "implementation": {
+    "calibration_sha256": "92f187caa5a6f643a72b11a647b1ec516fb78d9e2b33e0efef07caf3989af767",
+    "validator_sha256": "12ac2c95a2e42d48dbc8cfff2c62d9f97b39dfb6be58a53b88cbb1d4dd17f362"
+  },
+  "limitations": [
+    "Input transforms came from actual independently reopened Blender assets; model claims remain restricted to these controls.",
+    "A passing input filename or advertised PASSED value is not accepted as measured material response.",
+    "Convergence measures solver changes at fixed output sampling; sampling convergence remains separate."
+  ],
+  "physics_hz": 240,
+  "policy": {
+    "contact_time_convergence_ticks": 1,
+    "energy_relative_arithmetic_tolerance": 1e-05,
+    "policy_source": "frozen restitution-case velocity tolerance and stable-state displacement/rotation caps",
+    "response_velocity_tolerance_m_s": 0.1,
+    "rotation_convergence_rad": 0.01,
+    "trajectory_convergence_m": 0.005
+  },
+  "scope": {
+    "certifies": "tested drop and frictionless supported transfer at declared solver settings",
+    "does_not_certify": [
+      "native elastic materials",
+      "arbitrary body shapes/masses/velocities",
+      "visual or audio review",
+      "analytic mechanics backend"
+    ],
+    "engine": "Blender Bullet",
+    "native_material_restitution": 0
+  },
+  "solver": {
+    "solver_iterations": 120,
+    "substeps_per_frame": 50,
+    "use_split_impulse": true
+  },
+  "source_mode": "blender_controls",
+  "status": "FAILED",
+  "version": "bullet-inelastic-calibration-1"
+}

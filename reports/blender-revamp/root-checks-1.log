@@ -1,0 +1,506 @@
+PYTHONPATH=.:src .venv/bin/python -m scenescore.cli test-contracts
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "fixtures/contracts/AcquisitionMetadata.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/EEGChunk.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/BlinkCandidate.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/GestureEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ControlAction.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/SceneManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ObjectState.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/InteractionEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/CompositionSpec.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/BrushGroove.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ScoreEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/AudioAssetManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ArrangementPlan.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/Approval.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ClockMapping.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/RunManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/EvaluationReport.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/CapabilityRequest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/near-miss.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/separating-pair.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/packet-loss.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/no-event.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/bad-quality.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/gesture-1.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/gesture-3.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/bad-version.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-units.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/extra-field.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/self-pair.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/fake-impact.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/contact-near-miss.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-pair-id.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/stale-times.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/mismatched-channels.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/wrong-receipt-clock.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/time-reversal.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/mixed-epoch.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/count-mismatch.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/double-gain-change.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/single-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/triple-default-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-quality-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/missing-approval.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/duplicate-object.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/inverted-bounds.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/invalid-quaternion.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-hash.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/pitched-brush.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/overflow-note.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/tempo-reversal.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/unpitched-note.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/quantized-foley.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/double-swing.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/register-inversion.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-transition.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/leaky-split.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/fake-statistical-support.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/excess-armed-exposure.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/invalid-clock-range.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/non-positive-timeout.json",
+      "expected_valid": false,
+      "actual_valid": false
+    }
+  ],
+  "evidence_mode": "synthetic"
+}
+npm run test:contracts
+
+> scenescore-harness@0.1.0 test:contracts
+> node --import tsx --test tests/ts/*.test.ts
+
+✔ fixtures/contracts/AcquisitionMetadata.json (14.315375ms)
+✔ fixtures/contracts/EEGChunk.json (0.752791ms)
+✔ fixtures/contracts/BlinkCandidate.json (0.50425ms)
+✔ fixtures/contracts/GestureEvent.json (0.566667ms)
+✔ fixtures/contracts/ControlAction.json (0.641083ms)
+✔ fixtures/contracts/SceneManifest.json (0.671584ms)
+✔ fixtures/contracts/ObjectState.json (0.617167ms)
+✔ fixtures/contracts/InteractionEvent.json (0.51375ms)
+✔ fixtures/contracts/CompositionSpec.json (0.4625ms)
+✔ fixtures/contracts/BrushGroove.json (0.431791ms)
+✔ fixtures/contracts/ScoreEvent.json (0.374875ms)
+✔ fixtures/contracts/AudioAssetManifest.json (0.243542ms)
+✔ fixtures/contracts/ArrangementPlan.json (0.263542ms)
+✔ fixtures/contracts/Approval.json (0.211083ms)
+✔ fixtures/contracts/ClockMapping.json (0.2ms)
+✔ fixtures/contracts/RunManifest.json (0.234375ms)
+✔ fixtures/contracts/EvaluationReport.json (0.224916ms)
+✔ fixtures/contracts/CapabilityRequest.json (0.653375ms)
+✔ fixtures/contracts/near-miss.json (0.476417ms)
+✔ fixtures/contracts/separating-pair.json (0.394166ms)
+✔ fixtures/contracts/packet-loss.json (0.375083ms)
+✔ fixtures/contracts/no-event.json (0.217542ms)
+✔ fixtures/contracts/bad-quality.json (1.325083ms)
+✔ fixtures/contracts/gesture-1.json (0.278292ms)
+✔ fixtures/contracts/gesture-3.json (0.187917ms)
+✔ fixtures/contracts/bad-version.json (0.342334ms)
+✔ fixtures/contracts/bad-units.json (0.187417ms)
+✔ fixtures/contracts/extra-field.json (0.222667ms)
+✔ fixtures/contracts/self-pair.json (0.189042ms)
+✔ fixtures/contracts/fake-impact.json (0.177917ms)
+✔ fixtures/contracts/contact-near-miss.json (0.174875ms)
+✔ fixtures/contracts/bad-pair-id.json (0.171916ms)
+✔ fixtures/contracts/stale-times.json (0.194375ms)
+✔ fixtures/contracts/mismatched-channels.json (0.171208ms)
+✔ fixtures/contracts/wrong-receipt-clock.json (0.182ms)
+✔ fixtures/contracts/time-reversal.json (0.189958ms)
+✔ fixtures/contracts/mixed-epoch.json (0.182042ms)
+✔ fixtures/contracts/count-mismatch.json (0.171292ms)
+✔ fixtures/contracts/double-gain-change.json (0.35725ms)
+✔ fixtures/contracts/single-action.json (0.229208ms)
+✔ fixtures/contracts/triple-default-action.json (0.183542ms)
+✔ fixtures/contracts/bad-quality-action.json (0.243125ms)
+✔ fixtures/contracts/missing-approval.json (0.403291ms)
+✔ fixtures/contracts/duplicate-object.json (0.356ms)
+✔ fixtures/contracts/inverted-bounds.json (1.24575ms)
+✔ fixtures/contracts/invalid-quaternion.json (0.355333ms)
+✔ fixtures/contracts/bad-hash.json (0.247917ms)
+✔ fixtures/contracts/pitched-brush.json (0.208459ms)
+✔ fixtures/contracts/overflow-note.json (0.241334ms)
+✔ fixtures/contracts/tempo-reversal.json (0.198333ms)
+✔ fixtures/contracts/unpitched-note.json (0.256541ms)
+✔ fixtures/contracts/quantized-foley.json (0.21175ms)
+✔ fixtures/contracts/double-swing.json (0.593917ms)
+✔ fixtures/contracts/register-inversion.json (0.234875ms)
+✔ fixtures/contracts/bad-transition.json (0.17425ms)
+✔ fixtures/contracts/leaky-split.json (0.198958ms)
+✔ fixtures/contracts/fake-statistical-support.json (0.189542ms)
+✔ fixtures/contracts/excess-armed-exposure.json (0.146417ms)
+✔ fixtures/contracts/invalid-clock-range.json (0.164458ms)
+✔ fixtures/contracts/non-positive-timeout.json (0.156ms)
+✔ nonfinite scores fail (0.354959ms)
+✔ clock and gesture boundary discipline (0.910125ms)
+✔ scheduler deduplicates sequence, preserves lanes and drops old epochs (1.183042ms)
+✔ content hashing is exact bytes (0.272625ms)
+✔ bundle rejects unknown references and catalogue versions (2.783084ms)
+✔ Python envelope action passes frozen TypeScript contract without extra canonical fields (13.859583ms)
+✔ keyboard: canonical adapter action uses Timeline.submit gates and one-pending limit (26.353834ms)
+✔ synthetic: canonical adapter action uses Timeline.submit gates and one-pending limit (8.901416ms)
+✔ replay: canonical adapter action uses Timeline.submit gates and one-pending limit (11.1105ms)
+✔ real_device: canonical adapter action uses Timeline.submit gates and one-pending limit (7.820833ms)
+ℹ tests 70
+ℹ suites 0
+ℹ pass 70
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 390.425959
+PYTHONPATH=.:src .venv/bin/python -m pytest -q
+........................................................................ [ 10%]
+........................................................................ [ 21%]
+........................................................................ [ 31%]
+........................................................................ [ 42%]
+........................................................................ [ 53%]
+........................................................................ [ 63%]
+........................................................................ [ 74%]
+........................................................................ [ 85%]
+........................................................................ [ 95%]
+.............................                                            [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/agent/Desktop/SceneScore/.venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv/lib/python3.13/site-packages/starlette/testclient.py:53
+  /Users/agent/Desktop/SceneScore/.venv/lib/python3.13/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+677 passed, 2 warnings in 232.10s (0:03:52)
+PYTHONPATH=.:src .venv/bin/python -m pytest -q services/bridge/tests
+F..F......                                                               [100%]
+=================================== FAILURES ===================================
+__________________ test_origin_host_auth_and_narrow_commands ___________________
+
+    def test_origin_host_auth_and_narrow_commands():
+>       with served() as server:
+             ^^^^^^^^
+
+services/bridge/tests/test_bridge.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py:141: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+services/bridge/tests/test_bridge.py:19: in served
+    server = BridgeServer(companion, [ORIGIN, 'https://studio.example'], token='a' * 43, port=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/bridge/server.py:318: in __init__
+    super().__init__(('127.0.0.1', port), Handler)
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <services.bridge.server.BridgeServer object at 0x1073863c0>
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+>       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py:478: PermissionError
+_______________ test_reconnect_and_event_overflow_require_rearm ________________
+
+    def test_reconnect_and_event_overflow_require_rearm():
+>       with served() as server:
+             ^^^^^^^^
+
+services/bridge/tests/test_bridge.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py:141: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+services/bridge/tests/test_bridge.py:19: in served
+    server = BridgeServer(companion, [ORIGIN, 'https://studio.example'], token='a' * 43, port=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/bridge/server.py:318: in __init__
+    super().__init__(('127.0.0.1', port), Handler)
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py:457: in __init__
+    self.server_bind()
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <services.bridge.server.BridgeServer object at 0x1073bac10>
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+>       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py:478: PermissionError
+=========================== short test summary info ============================
+FAILED services/bridge/tests/test_bridge.py::test_origin_host_auth_and_narrow_commands
+FAILED services/bridge/tests/test_bridge.py::test_reconnect_and_event_overflow_require_rearm
+2 failed, 8 passed in 4.78s
+make: *** [test] Error 1

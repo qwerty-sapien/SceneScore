@@ -264,3 +264,111 @@ def list_catalog():
                                                    'variations': list(VARIATIONS)} for c in compositions['compositions']],
             'grooves': [{'id': g['id'], 'version': g['version']} for g in grooves['grooves']],
             'presets': deepcopy(PRESETS), 'audition_status': 'AUDITION_PENDING'}
+
+
+VERTICAL_SOURCE_VERSION = 'music-vertical-source-1'
+VERTICAL_SOURCE_HASHES = {
+    'composition_sha256': '9a517e3ff24dc2d2855168a8233b8477b9fa3a993d1d16724989667d289c947d',
+    'groove_sha256': '4d537af9f3f293efecda5e07ed41e78a9f75d7787c152fbdeb47edf8c46b495d',
+}
+
+
+def eligible_arrival_boundaries(composition, *, max_gap_s=4.0):
+    """Module supplement: internal bar starts, with origin/terminal coverage audited.
+
+    These are authored eligibility points, not approval or a guarantee of an audible
+    transition. The terminal endpoint cannot establish a new key in an ended score.
+    """
+    import math
+    from .events import ticks_to_seconds
+
+    validate(composition)
+    if composition['kind'] != 'CompositionSpec':
+        raise ValueError('arrival_requires_composition')
+    if isinstance(max_gap_s, bool) or not math.isfinite(max_gap_s) or not 0 < max_gap_s <= 4:
+        raise ValueError('invalid_arrival_gap_budget')
+    numerator, denominator = composition['meter']
+    bar_ticks = composition['ppq'] * 4 * numerator / denominator
+    if not bar_ticks.is_integer() or composition['length_ticks'] % int(bar_ticks):
+        raise ValueError('arrival_requires_complete_bars')
+    bar_ticks = int(bar_ticks)
+    ticks = list(range(bar_ticks, composition['length_ticks'], bar_ticks))
+    seconds = [ticks_to_seconds(t, composition['tempo_map'], composition['ppq']) for t in ticks]
+    duration = ticks_to_seconds(composition['length_ticks'], composition['tempo_map'], composition['ppq'])
+    edges = [0.0, *seconds, duration]
+    maximum = max(b - a for a, b in zip(edges, edges[1:]))
+    if not ticks or maximum > max_gap_s + 1e-9:
+        raise ValueError('arrival_coverage_gap_exceeded')
+    return {'eligible_arrival_ticks': ticks, 'eligible_arrival_seconds': seconds,
+            'clock': 'scene', 'epoch': 'scene_start', 'origin_s': 0.0,
+            'terminal_tick': composition['length_ticks'], 'terminal_s': duration,
+            'terminal_is_eligible': False, 'maximum_gap_including_edges_s': maximum,
+            'maximum_allowed_gap_s': max_gap_s,
+            'approval_required': True, 'audition_status': 'AUDITION_PENDING'}
+
+
+def build_vertical_score(composition_id='tilted_blue_v1', version=1, *,
+                         groove_id='brush_swing_light_v1', groove_version=1, duration_s=30.0):
+    """Opt-in 30-second ending edition; the version-1 catalogue remains unchanged.
+
+    Canonical composition and groove records retain schema 0.1. Authored-ending and
+    arrival metadata live only in this versioned score supplement. Changed canonical
+    bytes carry new provenance and require a new exact human approval downstream.
+    """
+    from .events import ticks_to_seconds
+
+    source = get_composition(composition_id, version)
+    groove = get_groove(groove_id, groove_version)
+    if (composition_id, version, groove_id, groove_version) != (
+            'tilted_blue_v1', 1, 'brush_swing_light_v1', 1):
+        raise ValueError('unsupported_vertical_source')
+    source_hashes = {'composition_sha256': digest(source), 'groove_sha256': digest(groove)}
+    if source_hashes != VERTICAL_SOURCE_HASHES:
+        raise ValueError('frozen_vertical_source_changed')
+    actual_duration = ticks_to_seconds(source['length_ticks'], source['tempo_map'], source['ppq'])
+    if isinstance(duration_s, bool) or duration_s != actual_duration:
+        raise ValueError('vertical_scene_duration_mismatch')
+    score = build_score(composition_id, version)
+    composition = score['composition']
+    ending_start = composition['length_ticks'] - BAR
+    # Preserve the complete rhythmic phrase, including its last-beat space. Only
+    # F4 -> E4 and B3 -> C4 change; the middle D4 remains a descending passing tone.
+    final_notes = [n for n in composition['notes'] if n['start_tick'] >= ending_start]
+    if [n['midi_pitch'] for n in final_notes] != [65, 62, 59]:
+        raise ValueError('frozen_ending_phrase_changed')
+    for note, pitch in zip(final_notes, (64, 62, 60)):
+        note['midi_pitch'] = pitch
+    # Keep both existing half-bar chord slots: tonic blues colour settles to 6/9.
+    composition['harmony'][-2] = {**composition['harmony'][-2], 'root_pc': 0,
+                                   'quality': '7', 'intervals_semitones': [0, 4, 7, 10]}
+    composition['harmony'][-1] = {**composition['harmony'][-1], 'root_pc': 0,
+                                  'quality': '6/9', 'intervals_semitones': [0, 4, 7, 9, 14]}
+    composition['provenance'] = provenance(
+        {'edition': VERTICAL_SOURCE_VERSION, 'source_hashes': source_hashes,
+         'ending_start_tick': ending_start, 'duration_s': actual_duration},
+        seed=42, inputs=[source_hashes['composition_sha256'], source_hashes['groove_sha256']])
+    validate(composition)
+    score['parts'] = parts_for(composition)
+    score['chord_symbols'][-2:] = ['C7', 'C6/9']
+    score['lanes']['phrasing']['phrases'][-1]['role'] = 'authored_tonic_ending'
+    score['lanes']['phrasing']['lead_rests'] = rests_for(composition['notes'], composition['length_ticks'])
+    score['loop'] = {'start_tick': 0, 'end_tick': composition['length_ticks'],
+                     'ending': 'authored tonic ending E4-D4-C4 over C6/9; no repeat required',
+                     'audio_tail_policy': 'retain 30 seconds; omit only a verified silent renderer buffer'}
+    score['groove'] = groove
+    score['sidecar'] = {
+        'document_type': 'SceneScoreVerticalSource', 'document_version': 1,
+        'edition': VERTICAL_SOURCE_VERSION, 'source_hashes': source_hashes,
+        'composition_sha256': digest(composition), 'groove_sha256': digest(groove),
+        'tempo_change': {'old_bpm': 96, 'new_bpm': 96, 'reason': '12 complete bars already equal 30 seconds'},
+        'ending_region': {'start_tick': ending_start, 'end_tick': composition['length_ticks'],
+                          'start_s': 27.5, 'end_s': actual_duration,
+                          'lead_pitches': [64, 62, 60], 'tonic_pc': 0,
+                          'harmony': 'C7 -> C6/9', 'rhythm_preserved': True,
+                          'lead_pitch_changes': 2, 'source_lead_note_count': len(source['notes']),
+                          'musical_quality': 'AUDITION_PENDING'},
+        **eligible_arrival_boundaries(composition),
+        'approval': None, 'generation_mode': 'manual_plan',
+        'source_catalogue_preserved': True,
+    }
+    return score

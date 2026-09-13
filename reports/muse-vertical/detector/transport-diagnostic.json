@@ -1,0 +1,1 @@
+{"code": "OPTIONAL_DEPENDENCY_UNAVAILABLE", "detail": "No module named 'pylsl'", "device_model": null, "firmware": null, "format": "scenescore.transport-diagnostic/1", "hardware_verified": false, "reason": "pylsl or its native liblsl could not load", "recording": false, "samples_read": 0, "status": "BLOCKED", "streams": [], "transport": "lsl", "verified_sample_rate_hz": null}

@@ -26,7 +26,7 @@ def capture_lsl(path, metadata, *, source_id, seconds, consent, stop=None, repor
         raise ValueError("explicit_consent_verified_lsl_metadata_and_600s_budget_required")
     try:
         import pylsl
-    except ImportError as exc:
+    except (ImportError, RuntimeError, OSError) as exc:
         raise RuntimeError("OPTIONAL_DEPENDENCY_UNAVAILABLE:pylsl; no capture started") from exc
     streams = pylsl.resolve_byprop("source_id", source_id, minimum=1, timeout=2)
     if len(streams) != 1:
@@ -51,6 +51,8 @@ def capture_lsl(path, metadata, *, source_id, seconds, consent, stop=None, repor
         while time.monotonic()-start < seconds and not (stop and stop.is_set()):
             rows, timestamps = inlet.pull_chunk(timeout=.1, max_samples=256)
             received = time.monotonic()
+            if len(rows) != len(timestamps):
+                raise ValueError("lsl_sample_timestamp_count_mismatch")
             if not timestamps:
                 if received-last_received > 2:
                     reason = "stream_timeout_disconnect_rearm_required"
@@ -79,6 +81,7 @@ def capture_lsl(path, metadata, *, source_id, seconds, consent, stop=None, repor
                 recorder.append(chunk)
                 sequence, index, previous_time = sequence+1, index+gap+1, timestamp
             report({"mode": "real_device", "samples": index, "receipt_s": received,
+                    "elapsed_s": received-start,
                     "source_s": timestamps[-1], "quality": "unverified", "gap_estimate": gap,
                     "internal_gap": internal_gap, "raw_channels": dict(zip([c["name"] for c in metadata["channels"]], rows[-1])),
                     "controls": "DISARMED"})
@@ -95,4 +98,6 @@ def capture_lsl(path, metadata, *, source_id, seconds, consent, stop=None, repor
         finally:
             if recorder:
                 recorder.close(reason)
+    if sequence == 0 and reason not in {"cancelled", "user_stop"}:
+        raise RuntimeError("NO_SAMPLES_RECORDED:" + reason + "; empty local session retained for diagnosis")
     return {"status": reason, "chunks": sequence, "recording": False}

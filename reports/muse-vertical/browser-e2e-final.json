@@ -1,0 +1,1233 @@
+{
+  "url": "http://127.0.0.1:8771/",
+  "captured_at": "2026-09-12T18:55:06.264Z",
+  "snapshot": {
+    "mode": "SYNTHETIC_TEST",
+    "complete": true,
+    "time": 30,
+    "playing": false,
+    "generation": 2,
+    "history": [
+      {
+        "action": {
+          "kind": "ControlAction",
+          "schema_version": "0.1",
+          "id": "control-bridge-791d631be0d8a619-gesture-0",
+          "gesture_id": "bridge-791d631be0d8a619-gesture-0",
+          "sequence_id": "bridge-791d631be0d8a619-gesture-0",
+          "provenance": {
+            "source_mode": "synthetic",
+            "creator": "scenescore-muse",
+            "tool_version": "2A.1",
+            "config_hash": "057a585499b7865e3b573bde3b16285dd1b0a3021c4c518e354f5d97173a593b",
+            "input_hashes": [],
+            "seed": null
+          },
+          "gesture_count": 2,
+          "profile": "double_modulate_mvp",
+          "action": "request_modulation",
+          "request": {
+            "clock": "audio",
+            "epoch": "transport-1",
+            "seconds": 10.87035735149469
+          },
+          "expires": {
+            "clock": "audio",
+            "epoch": "transport-1",
+            "seconds": 16.87035735149469
+          },
+          "boundary": "next_approved_bar_or_phrase",
+          "signed_semitones": 2,
+          "approved_plan_hash": "ef3b14df58433ce06a6c603b9947390f7f7cd017d19a54d10435218d1a419474",
+          "scene_policy_id": "world-z-causal-1",
+          "status": "queued",
+          "reason": null,
+          "quality": {
+            "state": "good",
+            "reason": null
+          },
+          "before": {
+            "master_gain_db": -18,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          },
+          "after": {
+            "master_gain_db": -18,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          }
+        },
+        "audio_received_s": 10.88,
+        "id": "control-bridge-791d631be0d8a619-gesture-0",
+        "status": "executed",
+        "requested_scene_s": 24.659666666666666,
+        "generation": 1,
+        "source": "synthetic",
+        "boundary_s": 25,
+        "boundary_tick": 38400,
+        "boundary_audio_s": 11.220333333333333,
+        "arrival_scene_s": 25.625,
+        "arrival_audio_s": 11.845333333333333,
+        "signed_semitones": 2,
+        "ack_onset_audio_s": 10.89
+      }
+    ],
+    "scheduled": [
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "10_projectile_tower:projectile:motif:27",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "10_projectile_tower:tower-0:motif:27",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "10_projectile_tower:tower-1:motif:27",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "bass:6",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "brush:23040:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "brush:23040:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "harmony:6:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "harmony:6:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 15,
+        "audio_s": 1.2873333333333334,
+        "event_id": "harmony:6:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 15.625,
+        "audio_s": 1.8453333333333326,
+        "event_id": "brush:23040:3",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.041666666666668,
+        "audio_s": 2.2620000000000005,
+        "event_id": "10_projectile_tower:projectile:motif:28",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.041666666666668,
+        "audio_s": 2.2620000000000005,
+        "event_id": "10_projectile_tower:tower-0:motif:28",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.041666666666668,
+        "audio_s": 2.2620000000000005,
+        "event_id": "10_projectile_tower:tower-1:motif:28",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.041666666666668,
+        "audio_s": 2.2620000000000005,
+        "event_id": "brush:23040:4",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.25,
+        "audio_s": 2.4703333333333326,
+        "event_id": "brush:23040:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.25,
+        "audio_s": 2.4703333333333326,
+        "event_id": "brush:23040:5",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.666666666666668,
+        "audio_s": 2.8870000000000005,
+        "event_id": "10_projectile_tower:projectile:motif:29",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.666666666666668,
+        "audio_s": 2.8870000000000005,
+        "event_id": "10_projectile_tower:tower-0:motif:29",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.666666666666668,
+        "audio_s": 2.8870000000000005,
+        "event_id": "10_projectile_tower:tower-1:motif:29",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.84375,
+        "audio_s": 3.0640833333333326,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e1",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.84375,
+        "audio_s": 3.0640833333333326,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e2",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.875,
+        "audio_s": 3.0953333333333326,
+        "event_id": "10_projectile_tower:projectile:motif:30",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.875,
+        "audio_s": 3.0953333333333326,
+        "event_id": "10_projectile_tower:tower-0:motif:30",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.875,
+        "audio_s": 3.0953333333333326,
+        "event_id": "10_projectile_tower:tower-1:motif:30",
+        "generation": 1
+      },
+      {
+        "scene_s": 16.875,
+        "audio_s": 3.0953333333333326,
+        "event_id": "brush:23040:6",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.291666666666668,
+        "audio_s": 3.5120000000000005,
+        "event_id": "brush:23040:7",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "10_projectile_tower:projectile:motif:31",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "10_projectile_tower:tower-0:motif:31",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "10_projectile_tower:tower-1:motif:31",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "bass:7",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "brush:26880:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "brush:26880:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "harmony:7:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "harmony:7:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 17.5,
+        "audio_s": 3.7203333333333326,
+        "event_id": "harmony:7:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.125,
+        "audio_s": 4.345333333333333,
+        "event_id": "brush:26880:3",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.541666666666668,
+        "audio_s": 4.7620000000000005,
+        "event_id": "10_projectile_tower:projectile:motif:32",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.541666666666668,
+        "audio_s": 4.7620000000000005,
+        "event_id": "10_projectile_tower:tower-0:motif:32",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.541666666666668,
+        "audio_s": 4.7620000000000005,
+        "event_id": "10_projectile_tower:tower-1:motif:32",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.541666666666668,
+        "audio_s": 4.7620000000000005,
+        "event_id": "brush:26880:4",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.75,
+        "audio_s": 4.970333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:33",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.75,
+        "audio_s": 4.970333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:33",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.75,
+        "audio_s": 4.970333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:33",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.75,
+        "audio_s": 4.970333333333333,
+        "event_id": "brush:26880:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.75,
+        "audio_s": 4.970333333333333,
+        "event_id": "brush:26880:5",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.8125,
+        "audio_s": 5.032833333333333,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e1",
+        "generation": 1
+      },
+      {
+        "scene_s": 18.8125,
+        "audio_s": 5.032833333333333,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e2",
+        "generation": 1
+      },
+      {
+        "scene_s": 19.375,
+        "audio_s": 5.595333333333333,
+        "event_id": "brush:26880:6",
+        "generation": 1
+      },
+      {
+        "scene_s": 19.791666666666668,
+        "audio_s": 6.0120000000000005,
+        "event_id": "brush:26880:7",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:34",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:34",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:34",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "bass:8",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "brush:30720:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "brush:30720:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "harmony:8:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "harmony:8:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 20,
+        "audio_s": 6.220333333333333,
+        "event_id": "harmony:8:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 20.625,
+        "audio_s": 6.845333333333333,
+        "event_id": "brush:30720:3",
+        "generation": 1
+      },
+      {
+        "scene_s": 20.96875,
+        "audio_s": 7.189083333333333,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e1",
+        "generation": 1
+      },
+      {
+        "scene_s": 20.96875,
+        "audio_s": 7.189083333333333,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e2",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.041666666666664,
+        "audio_s": 7.261999999999997,
+        "event_id": "10_projectile_tower:projectile:motif:35",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.041666666666664,
+        "audio_s": 7.261999999999997,
+        "event_id": "10_projectile_tower:tower-0:motif:35",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.041666666666664,
+        "audio_s": 7.261999999999997,
+        "event_id": "10_projectile_tower:tower-1:motif:35",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.041666666666664,
+        "audio_s": 7.261999999999997,
+        "event_id": "brush:30720:4",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.25,
+        "audio_s": 7.470333333333333,
+        "event_id": "brush:30720:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.25,
+        "audio_s": 7.470333333333333,
+        "event_id": "brush:30720:5",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.375,
+        "audio_s": 7.595333333333333,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-0|10_projectile_tower:tower-2:e4",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.666666666666668,
+        "audio_s": 7.8870000000000005,
+        "event_id": "10_projectile_tower:projectile:motif:36",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.666666666666668,
+        "audio_s": 7.8870000000000005,
+        "event_id": "10_projectile_tower:tower-0:motif:36",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.666666666666668,
+        "audio_s": 7.8870000000000005,
+        "event_id": "10_projectile_tower:tower-1:motif:36",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.875,
+        "audio_s": 8.095333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:37",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.875,
+        "audio_s": 8.095333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:37",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.875,
+        "audio_s": 8.095333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:37",
+        "generation": 1
+      },
+      {
+        "scene_s": 21.875,
+        "audio_s": 8.095333333333333,
+        "event_id": "brush:30720:6",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.291666666666668,
+        "audio_s": 8.512,
+        "event_id": "brush:30720:7",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.5,
+        "audio_s": 8.720333333333333,
+        "event_id": "bass:9",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.5,
+        "audio_s": 8.720333333333333,
+        "event_id": "brush:34560:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.5,
+        "audio_s": 8.720333333333333,
+        "event_id": "brush:34560:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.5,
+        "audio_s": 8.720333333333333,
+        "event_id": "harmony:9:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.5,
+        "audio_s": 8.720333333333333,
+        "event_id": "harmony:9:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.5,
+        "audio_s": 8.720333333333333,
+        "event_id": "harmony:9:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.84375,
+        "audio_s": 9.064083333333333,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-0|10_projectile_tower:tower-1:e4",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.916666666666668,
+        "audio_s": 9.137,
+        "event_id": "10_projectile_tower:projectile:motif:38",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.916666666666668,
+        "audio_s": 9.137,
+        "event_id": "10_projectile_tower:tower-0:motif:38",
+        "generation": 1
+      },
+      {
+        "scene_s": 22.916666666666668,
+        "audio_s": 9.137,
+        "event_id": "10_projectile_tower:tower-1:motif:38",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.125,
+        "audio_s": 9.345333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:39",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.125,
+        "audio_s": 9.345333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:39",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.125,
+        "audio_s": 9.345333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:39",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.125,
+        "audio_s": 9.345333333333333,
+        "event_id": "brush:34560:3",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.541666666666668,
+        "audio_s": 9.762,
+        "event_id": "brush:34560:4",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.625,
+        "audio_s": 9.845333333333333,
+        "event_id": "foley:10_projectile_tower:default:ccf899f76881:10_projectile_tower:tower-1|10_projectile_tower:tower-2:e4",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.75,
+        "audio_s": 9.970333333333333,
+        "event_id": "brush:34560:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 23.75,
+        "audio_s": 9.970333333333333,
+        "event_id": "brush:34560:5",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.166666666666668,
+        "audio_s": 10.387,
+        "event_id": "10_projectile_tower:projectile:motif:40",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.166666666666668,
+        "audio_s": 10.387,
+        "event_id": "10_projectile_tower:tower-0:motif:40",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.166666666666668,
+        "audio_s": 10.387,
+        "event_id": "10_projectile_tower:tower-1:motif:40",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.375,
+        "audio_s": 10.595333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:41",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.375,
+        "audio_s": 10.595333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:41",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.375,
+        "audio_s": 10.595333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:41",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.375,
+        "audio_s": 10.595333333333333,
+        "event_id": "brush:34560:6",
+        "generation": 1
+      },
+      {
+        "scene_s": 24.791666666666668,
+        "audio_s": 11.012,
+        "event_id": "brush:34560:7",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:42",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:42",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:42",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "bass:10",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "brush:38400:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "brush:38400:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "harmony:10:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "harmony:10:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 25,
+        "audio_s": 11.220333333333333,
+        "event_id": "harmony:10:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 25.625,
+        "audio_s": 11.845333333333333,
+        "event_id": "bass:10:arrival",
+        "generation": 1
+      },
+      {
+        "scene_s": 25.625,
+        "audio_s": 11.845333333333333,
+        "event_id": "brush:38400:3",
+        "generation": 1
+      },
+      {
+        "scene_s": 25.625,
+        "audio_s": 11.845333333333333,
+        "event_id": "harmony:10:0:arrival",
+        "generation": 1
+      },
+      {
+        "scene_s": 25.625,
+        "audio_s": 11.845333333333333,
+        "event_id": "harmony:10:1:arrival",
+        "generation": 1
+      },
+      {
+        "scene_s": 25.625,
+        "audio_s": 11.845333333333333,
+        "event_id": "harmony:10:2:arrival",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.041666666666668,
+        "audio_s": 12.262,
+        "event_id": "10_projectile_tower:projectile:motif:43",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.041666666666668,
+        "audio_s": 12.262,
+        "event_id": "10_projectile_tower:tower-0:motif:43",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.041666666666668,
+        "audio_s": 12.262,
+        "event_id": "10_projectile_tower:tower-1:motif:43",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.041666666666668,
+        "audio_s": 12.262,
+        "event_id": "brush:38400:4",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.25,
+        "audio_s": 12.470333333333333,
+        "event_id": "bass:11",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.25,
+        "audio_s": 12.470333333333333,
+        "event_id": "brush:38400:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.25,
+        "audio_s": 12.470333333333333,
+        "event_id": "brush:38400:5",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.25,
+        "audio_s": 12.470333333333333,
+        "event_id": "harmony:11:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.25,
+        "audio_s": 12.470333333333333,
+        "event_id": "harmony:11:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.25,
+        "audio_s": 12.470333333333333,
+        "event_id": "harmony:11:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.666666666666668,
+        "audio_s": 12.887,
+        "event_id": "10_projectile_tower:projectile:motif:44",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.666666666666668,
+        "audio_s": 12.887,
+        "event_id": "10_projectile_tower:tower-0:motif:44",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.666666666666668,
+        "audio_s": 12.887,
+        "event_id": "10_projectile_tower:tower-1:motif:44",
+        "generation": 1
+      },
+      {
+        "scene_s": 26.875,
+        "audio_s": 13.095333333333333,
+        "event_id": "brush:38400:6",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.291666666666668,
+        "audio_s": 13.512,
+        "event_id": "brush:38400:7",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:45",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:45",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:45",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "bass:12",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "brush:42240:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "brush:42240:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "harmony:12:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "harmony:12:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 27.5,
+        "audio_s": 13.720333333333333,
+        "event_id": "harmony:12:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.125,
+        "audio_s": 14.345333333333333,
+        "event_id": "brush:42240:3",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.541666666666668,
+        "audio_s": 14.762,
+        "event_id": "10_projectile_tower:projectile:motif:46",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.541666666666668,
+        "audio_s": 14.762,
+        "event_id": "10_projectile_tower:tower-0:motif:46",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.541666666666668,
+        "audio_s": 14.762,
+        "event_id": "10_projectile_tower:tower-1:motif:46",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.541666666666668,
+        "audio_s": 14.762,
+        "event_id": "brush:42240:4",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "10_projectile_tower:projectile:motif:47",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "10_projectile_tower:tower-0:motif:47",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "10_projectile_tower:tower-1:motif:47",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "bass:13",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "brush:42240:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "brush:42240:5",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "harmony:13:0",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "harmony:13:1",
+        "generation": 1
+      },
+      {
+        "scene_s": 28.75,
+        "audio_s": 14.970333333333333,
+        "event_id": "harmony:13:2",
+        "generation": 1
+      },
+      {
+        "scene_s": 29.375,
+        "audio_s": 15.595333333333333,
+        "event_id": "brush:42240:6",
+        "generation": 1
+      },
+      {
+        "scene_s": 29.791666666666668,
+        "audio_s": 16.012,
+        "event_id": "brush:42240:7",
+        "generation": 1
+      }
+    ],
+    "approval": null,
+    "draft_conducting": true,
+    "tonic": 2,
+    "traces": [
+      {
+        "envelope": {
+          "version": "muse-control-envelope-1",
+          "action": {
+            "kind": "ControlAction",
+            "schema_version": "0.1",
+            "id": "control-bridge-791d631be0d8a619-gesture-0",
+            "gesture_id": "bridge-791d631be0d8a619-gesture-0",
+            "sequence_id": "bridge-791d631be0d8a619-gesture-0",
+            "provenance": {
+              "source_mode": "synthetic",
+              "creator": "scenescore-muse",
+              "tool_version": "2A.1",
+              "config_hash": "057a585499b7865e3b573bde3b16285dd1b0a3021c4c518e354f5d97173a593b",
+              "input_hashes": [],
+              "seed": null
+            },
+            "gesture_count": 2,
+            "profile": "double_modulate_mvp",
+            "action": "request_modulation",
+            "request": {
+              "clock": "audio",
+              "epoch": "transport-1",
+              "seconds": 10.87035735149469
+            },
+            "expires": {
+              "clock": "audio",
+              "epoch": "transport-1",
+              "seconds": 16.87035735149469
+            },
+            "boundary": "next_approved_bar_or_phrase",
+            "signed_semitones": 2,
+            "approved_plan_hash": "ef3b14df58433ce06a6c603b9947390f7f7cd017d19a54d10435218d1a419474",
+            "scene_policy_id": "world-z-causal-1",
+            "status": "queued",
+            "reason": null,
+            "quality": {
+              "state": "good",
+              "reason": null
+            },
+            "before": {
+              "master_gain_db": -18,
+              "articulation": "score",
+              "expression_preset": "neutral"
+            },
+            "after": {
+              "master_gain_db": -18,
+              "articulation": "score",
+              "expression_preset": "neutral"
+            }
+          },
+          "detector": {
+            "version": "scenescore-causal-pipeline",
+            "model_version": "scenescore-new-causal-median/1",
+            "grammar_hash": "057a585499b7865e3b573bde3b16285dd1b0a3021c4c518e354f5d97173a593b"
+          },
+          "timing": {
+            "t0_final_blink_s": 115.6484375,
+            "t1_decision_s": 116.15234375,
+            "t2_dispatch_s": 837185.181191208,
+            "t3_request_s": 10.87035735149469,
+            "t4_received_s": 10.88,
+            "t5_ack_onset_s": 10.89,
+            "t6_boundary_s": 11.845333333333333,
+            "device_epoch": "synthetic-0db11f74a283da84",
+            "host_epoch": "bridge-host-fff352ae8fe73a46",
+            "audio_epoch": "transport-1",
+            "clock_mapping_id": "7d4f8663-7224-4efa-bc5d-27fdeac6199f",
+            "unavailable_reasons": {
+              "physical_blink": "t0 is algorithmic candidate end, not independently observed physical blink",
+              "physical_output": "No acoustic measurement"
+            }
+          }
+        },
+        "intervals": {
+          "detector_closure_ms": 503.90625,
+          "mapped_request_to_receipt_ms": 9.642648505311158,
+          "accepted_to_scheduled_ack_ms": 9.999999999999787,
+          "musical_arrival_wait_ms": 965.3333333333318,
+          "host_to_browser_ms": null,
+          "physical_output_measured": false
+        }
+      }
+    ],
+    "drifts": [
+      0,
+      0.06233333333333313,
+      0.059333333333333016,
+      0.061666666666667425,
+      0.05866666666666731,
+      0.07166666666666721,
+      0.052666666666667084,
+      0.04966666666666697,
+      0.0519999999999996,
+      0.05966666666666498,
+      0.05133333333333212,
+      0.05900000000000105,
+      0.05066666666666819,
+      0.053000000000000824,
+      0.044666666666667965,
+      0.04166666666666785,
+      0.04400000000000048,
+      0.05166666666666586,
+      0.054000000000002046,
+      0.045666666666665634,
+      0.04800000000000182,
+      0.045000000000001705,
+      0.04200000000000159,
+      0.044333333333334224,
+      0.046666666666666856,
+      0.038333333333333997,
+      0.03533333333333388,
+      0.04299999999999926,
+      0.0346666666666664,
+      0.04766666666666808,
+      0.044666666666667965,
+      0.0470000000000006,
+      0.04400000000000048,
+      0.046333333333333115,
+      0.038000000000000256,
+      0.03500000000000014,
+      0.026666666666667282,
+      0.03966666666666896,
+      0.0259999999999998,
+      0.03366666666666873,
+      0.036000000000001364,
+      0.038333333333333997,
+      0.03533333333333388,
+      0.037666666666666515,
+      0.029333333333333655,
+      0.036999999999999034,
+      0.028666666666666174,
+      0.02566666666666606,
+      0.027999999999998693,
+      0.019666666666665833,
+      0.01666666666666572,
+      0.01899999999999835,
+      0.021333333333334537,
+      0.018333333333334423,
+      0.020666666666667055,
+      0.028333333333332433,
+      0.019999999999999574,
+      0.027666666666668505,
+      0.02466666666666839,
+      0.027000000000001023,
+      0.029333333333333655,
+      0.026333333333333542,
+      0.028666666666666174,
+      0.020333333333333314,
+      0.0173333333333332,
+      0.019666666666665833,
+      0.01666666666666572,
+      0.019000000000001904,
+      0.021333333333334537,
+      0.028999999999999915,
+      0.0259999999999998,
+      0.022999999999999687,
+      0.019999999999999574,
+      0.01699999999999946,
+      0.019333333333332092,
+      0.021666666666668277,
+      0.029333333333333655,
+      0.021000000000000796,
+      0.028666666666666174,
+      0.02566666666666606,
+      0.012000000000000455,
+      0.019666666666665833,
+      0.01666666666666572,
+      0.019000000000001904,
+      0.026666666666667282,
+      0.028999999999999915,
+      0.020666666666667055,
+      0.022999999999999687,
+      0.019999999999999574,
+      0.01699999999999946,
+      0.019333333333332092,
+      0.010999999999999233,
+      0.029333333333333655,
+      0.021000000000000796,
+      0.012666666666667936,
+      0.020333333333333314,
+      0.0173333333333332,
+      0.019666666666665833,
+      0.011333333333332973,
+      0.00833333333333286,
+      0.021333333333334537,
+      0.018333333333334423,
+      0.020666666666667055,
+      0.01766666666666694,
+      0.019999999999999574,
+      0.01699999999999946,
+      0.019333333333332092,
+      0.021666666666668277,
+      0.018666666666668164,
+      0.021000000000000796,
+      0.018000000000000682,
+      0.009666666666667822,
+      0.012000000000000455,
+      0.009000000000000341,
+      0.01666666666666572,
+      0.019000000000001904,
+      0.01600000000000179,
+      0.018333333333334423,
+      0.020666666666667055
+    ]
+  },
+  "feedback_check": {
+    "prepare_without_notes_consent": false,
+    "feedback_during_cue_enabled": false,
+    "feedback_after_delay_enabled": true,
+    "independent_review_pending": true,
+    "training_labels_created": false,
+    "raw_recording_started": false,
+    "test_notes_deleted": true,
+    "provenance": "Observed during earlier UI interactions in the same browser validation session; not a new observation at captured_at."
+  }
+}

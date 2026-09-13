@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-09-12T19:40:04.472Z",
+  "candidate_sha256": "d9ce7fd69f7aa9d47b6db169a6c779fa82a8795fce299858b614f358b797a0c9",
+  "exact_candidate_verified": true,
+  "musical_projection_sha256": "b36e9722e5f25198aea09869bf1b49cf1a50bb5766333042bca5357255e2bd4f",
+  "code_sha256": {
+    "packages/audio/model.ts": "a4d94d5788de1f20e6a7520a17b3a773750a20119f0183d5dbef4bd8a57c72ea",
+    "packages/audio/vertical-binding.ts": "70511eb2ed0ff08ff0d393d9aa8e34638cca027a92e979e63a9abcd5b26ce046",
+    "packages/audio/tests/music-bundle.test.ts": "d4ab36a37dd07db2c4ec8ab841dc67d966a01a60702f3ba179a0e85905a14e65",
+    "packages/audio/engine.ts": "3bb662bbbef40f2c5f6f286fe479f580fd4148061a639124447700ba64d4855d",
+    "packages/audio/transport.ts": "2245f9a55598e8c60cb4cf331ab0273121cb54bf744d555a45dfa07756abd371",
+    "apps/web/src/main.tsx": "8dee62fe85193929c9179419049ac68a0cb9a41c9ba0c3e282fb3237137b5f46"
+  },
+  "note": "Independent source inspection, unchanged exact-candidate verification and all five focused regression checks passed. No browser/acoustic or human audition claim.",
+  "finding": {
+    "owner": "06",
+    "first_reported_at_utc": "2026-09-12T19:30:00Z",
+    "priority": "P2",
+    "description": "Browser did not connect mapped musical content to the plan-bound digest, and optional vertical control/source-byte fields could skip verification.",
+    "disposition": "closed",
+    "repair": "Require the vertical byte/control packet and verify a lossless projection of musical JSON against the plan-bound digest. Frozen candidate bytes unchanged."
+  },
+  "focused_tests": {
+    "command": "node --import tsx --test packages/audio/tests/music-bundle.test.ts",
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "exit_code": 0
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "path": "apps/training/.gitignore",
+    "sha256": "ed19d3c9c8a5e34d0179e0b1a9c2907d2e657738733e4a432a8cf81c76ce56f1"
+  },
+  {
+    "path": "apps/training/DESIGN.md",
+    "sha256": "aa0749676920611398d646157b61e2a4a0da1e48da5f2e86219e0229be524f92"
+  },
+  {
+    "path": "apps/training/HANDOFF.md",
+    "sha256": "e960ba5aea366ff1afdb05e52345da7042e18c4964fb203258971d51df4c95d2"
+  },
+  {
+    "path": "apps/training/index.html",
+    "sha256": "498a1fa24d0568bc1d25e1771171e9f6cd3868d8716d3832d26e6771b9463635"
+  },
+  {
+    "path": "apps/training/src/TracePlot.tsx",
+    "sha256": "17b8e805b88e60157c2e5b09697619d4b2d48a08e4abc1290f73c162bd2ef385"
+  },
+  {
+    "path": "apps/training/src/api.ts",
+    "sha256": "825805def2ac59a46c45ba39b6a126f4459518872c8dff5aa186834f478bfad0"
+  },
+  {
+    "path": "apps/training/src/interaction.ts",
+    "sha256": "7b44e8c7e8e71d230f77bdc0915028e3666de9370d8560151e39d251690d2458"
+  },
+  {
+    "path": "apps/training/src/main.tsx",
+    "sha256": "599e4418cbe1d47f4239d3aebb4bbda674456691e6f9acf1b74c5cae8d66bfa2"
+  },
+  {
+    "path": "apps/training/src/style.css",
+    "sha256": "250027ee9dad792f26abb554434ad9422c47eb39ac260f70fdc56866e41a04b3"
+  },
+  {
+    "path": "apps/training/src/trace.ts",
+    "sha256": "68aff8238bc6eb1c904a375927d8cffc8934a2cf7f64bbe734cde7d7e6e9bcda"
+  },
+  {
+    "path": "apps/training/src/types.ts",
+    "sha256": "cc959f9935bc47a8ea440172719c78d1a9a7aaaa5252f35fa1dec3b1447202d6"
+  },
+  {
+    "path": "apps/training/tests/api.test.ts",
+    "sha256": "941937df6c8c2c6f8787c61f411d50236c0293a8209d35dc7a08b7a4a3b3c9df"
+  },
+  {
+    "path": "apps/training/tests/interaction.test.ts",
+    "sha256": "91c00d77500d2e3ecf658d3475f7417e80577ff171db4ef285e3d36d2698c43d"
+  },
+  {
+    "path": "apps/training/tests/trace.test.ts",
+    "sha256": "6df6ade12f351ee1a68ecc138b7f98ff65c086eff4e8137d10dfccc60ad637cf"
+  },
+  {
+    "path": "apps/training/tsconfig.json",
+    "sha256": "6ec0ba33acc5523cff79d2c31441e6afee39d13e2ca4b565012f3a21af7b0669"
+  }
+]

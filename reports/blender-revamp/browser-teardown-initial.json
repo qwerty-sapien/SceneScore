@@ -1,0 +1,10 @@
+{
+  "remaining": [
+    {
+      "pid": 51713,
+      "ppid": 51712,
+      "pgid": 51713,
+      "command": "/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m http.server 8773 --bind 127.0.0.1 --directory artifacts/web-dist"
+    }
+  ]
+}

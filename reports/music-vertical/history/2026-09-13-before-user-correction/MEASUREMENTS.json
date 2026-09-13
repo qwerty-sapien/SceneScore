@@ -1,0 +1,189 @@
+{
+  "version": "music-vertical-measurement-1",
+  "reported_at": "2026-09-13T00:59:29.941136+00:00",
+  "candidate_sha256": "d9ce7fd69f7aa9d47b6db169a6c779fa82a8795fce299858b614f358b797a0c9",
+  "asset_hashes": "ASSET-HASHES.json",
+  "plan_sha256": "fd090867ab61fde774879f23ae56ea388e88db072521d9dd9f5a3bc5b489808d",
+  "scene_sha256": "424d74fa8cf65b702354d94b592ea2b0e90fdaf779722ac6dc17ffc81145856a",
+  "composition_sha256": "e8b7b69331f3a17c121071d913154bfa84c6eb1a7735989d64a76f002392c2e6",
+  "video_sha256": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+  "config_hashes": {
+    "mapping_file_sha256": "5f5ff8c9c576a561d4e3987ab0311b46a12e79657d2ce5c0c3ef866c0f3f7133",
+    "binding_file_sha256": "89498ae19d3fa0fbc202c85a07ce22bb87ed5a67c611fa6cad1df56b966e9a52",
+    "control_track_input_sha256": "07d6bc685ccc7f08624382a0e4e59a630428bc602a60bec0d9f6b089e0b26282",
+    "holds_sha256": "8bc46cff89bc0c8781dcb4a3bc6aca1516e5da0b538c689fa94b12ffc2fead4b"
+  },
+  "labels": {
+    "animation": "LEGACY_SYNTHETIC_ANIMATION",
+    "source": "manual_plan",
+    "control_input": "automated keyboard UI",
+    "live_device": false,
+    "physical_output_measured": false,
+    "approval": null,
+    "audition_status": "AUDITION_PENDING"
+  },
+  "browser": {
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+    "sample_rate": 48000,
+    "duration_s": 30,
+    "source_fps": 8,
+    "script_urls": [
+      "http://127.0.0.1:8772/assets/index-BBrePzdL.js"
+    ],
+    "saved_build_directory": "browser-build",
+    "source_host_architecture_inferred_from_ua": false
+  },
+  "load": {
+    "concurrent_repository_make_test": true,
+    "automated_ui_timer_ms": 20,
+    "trace_snapshots": true,
+    "cpu_load_percentage_measured": false,
+    "cold_preparation_time_measured": false
+  },
+  "av_offset": {
+    "sample_count": 200,
+    "method": "nearest-rank, absolute last-200 callback offsets",
+    "p95_ms": 144.3333333333321,
+    "max_ms": 147.66666666666595,
+    "threshold_ms": 50,
+    "result": "FAILED",
+    "previous_p95_ms": 137.33,
+    "difference_from_rounded_previous_ms": 7.00333333333208,
+    "raw": "browser-two-control-take.json",
+    "physical_precision_limit": "8 fps source frame period 125 ms; software timestamps do not establish acoustic/display precision"
+  },
+  "controls": [
+    {
+      "status": "executed",
+      "requested_scene_s": 19.006666666666668,
+      "arrival_scene_s": 22.5,
+      "progression_start_s": 21.25,
+      "progression_end_s": 23.125,
+      "signed_semitones": -2,
+      "intervals": {
+        "detector_closure_ms": null,
+        "mapped_request_to_receipt_ms": 0,
+        "accepted_to_scheduled_ack_ms": 19.999999999999574,
+        "musical_arrival_wait_ms": 3493.333333333332,
+        "ack_to_arrival_wait_ms": 3473.3333333333326,
+        "host_to_browser_ms": null,
+        "physical_output_measured": false
+      }
+    },
+    {
+      "status": "executed",
+      "requested_scene_s": 24.505333333333336,
+      "arrival_scene_s": 27.5,
+      "progression_start_s": 26.25,
+      "progression_end_s": 28.125,
+      "signed_semitones": 2,
+      "intervals": {
+        "detector_closure_ms": null,
+        "mapped_request_to_receipt_ms": 0,
+        "accepted_to_scheduled_ack_ms": 19.999999999999574,
+        "musical_arrival_wait_ms": 2994.666666666664,
+        "ack_to_arrival_wait_ms": 2974.6666666666642,
+        "host_to_browser_ms": null,
+        "physical_output_measured": false
+      }
+    }
+  ],
+  "scheduled_ack": {
+    "sample_count": 2,
+    "threshold_ms": 300,
+    "result": "PASSED_SCHEDULED_ONLY",
+    "physical_output_measured": false
+  },
+  "cache": {
+    "buffers": 1021,
+    "bytes": 96361088,
+    "budget_bytes": 134217728,
+    "result": "PASSED",
+    "final_refresh": {
+      "slices": 2,
+      "max_slice_ms": 4
+    },
+    "final_refresh_is_cold_preparation": false
+  },
+  "browser_offline": {
+    "measurements": {
+      "peak": 0.012812906876206398,
+      "rms": 0.001987153563705984,
+      "clipped": 0,
+      "sample_rate": 48000,
+      "duration_s": 30,
+      "channels": 2
+    },
+    "approval": null,
+    "renderer": "Actual browser OfflineAudioContext with performed source-buffer offsets; no acoustic capture",
+    "captured_at": "2026-09-12T19:40:42.351Z"
+  },
+  "static_pcm": {
+    "mapped": {
+      "renderer": "existing-browser-voice-static-node-mix-1",
+      "render_scope": "Existing voice() buffers mixed at fixed -18dB in Node; no live AudioContext, scheduler, output device or human audition",
+      "approval": null
+    },
+    "unmodified": {
+      "renderer": "existing-browser-voice-static-node-mix-1",
+      "render_scope": "Existing voice() buffers mixed at fixed -18dB in Node; no live AudioContext, scheduler, output device or human audition",
+      "approval": null
+    }
+  },
+  "retained_attempts": [
+    "browser-first-control.json",
+    "browser-full-take.json",
+    "browser-two-control-take.json"
+  ],
+  "commands_run": [
+    "make doctor",
+    "make test",
+    "PYTHONPATH=.:src .venv/bin/python tools/prepare_music_vertical.py --out artifacts/music-vertical/candidate-v1",
+    "PYTHONPATH=.:src .venv/bin/python tools/prepare_music_vertical.py --out artifacts/music-vertical/candidate-v1-repeat",
+    "node --import tsx tools/render_music_vertical.ts artifacts/music-vertical/candidate-v1/candidate.json artifacts/music-vertical/candidate-v1/mapped-audio mapped",
+    "node --import tsx tools/render_music_vertical.ts artifacts/music-vertical/candidate-v1/candidate.json artifacts/music-vertical/candidate-v1/unmodified-audio unmodified",
+    "node --import tsx --test packages/audio/tests/music-bundle.test.ts",
+    "npm run typecheck",
+    "npm run build",
+    "PYTHONPATH=.:src .venv/bin/python tools/music_demo.py --candidate artifacts/music-vertical/candidate-v1 --port 8772 --seconds 600"
+  ],
+  "mux_commands": "Exact argv, PID, return code and absence checks are in both candidate-v1/*.mux.json files",
+  "checks": {
+    "combined_repository": "PASSED: 677 Python, 70 contract TS, 10 bridge, 64 audio plus 1 opt-in skip; Ruff, typecheck, build",
+    "opt_in_candidate_cache": "PASSED separately",
+    "binding_regressions": "PASSED 5",
+    "determinism": "PASSED two actual preparations",
+    "static_stems_and_mux": "PASSED",
+    "browser_two_controls": "PASSED",
+    "browser_offline_render": "PASSED",
+    "av_timing": "FAILED",
+    "human_audition": "BLOCKED / AUDITION_PENDING",
+    "browser_export_button": "BLOCKED: Playwright transport closed before confirmation",
+    "browser_fault_matrix": "NOT_RUN in this take; runtime unit coverage is separate",
+    "physical_blink_or_real_replay": "NOT_RUN",
+    "acoustic_or_display_onset": "NOT_RUN",
+    "clean_checkout_make_demo": "NOT_RUN"
+  },
+  "scope_limits": [
+    "Actual hero has no collision or asymmetric rebound.",
+    "Actual hero adds zero ornament notes; approach/separation articulation and dynamics and two one-beat third holds are realized. Some numeric ornament/register intentions remain sidecar data.",
+    "Fixture rebound can quantize up to 0.75 seconds after contact.",
+    "Static draft muxes omit live key-change requests. Performed browser events and actual OfflineAudioContext statistics are separate evidence.",
+    "Current root has later concurrent Blender edits; saved loaded build and preparation code snapshot identify the assessed versions."
+  ],
+  "verdict": "PIPELINE_TESTED_ONLY; release NOT_READY; task cleanup unresolved",
+  "defects": [
+    {
+      "time_utc": "2026-09-12T19:41:00Z",
+      "owner": "06/07",
+      "status": "OPEN",
+      "finding": "AV p95 exceeds target"
+    },
+    {
+      "time_utc": "2026-09-12T19:41:00Z",
+      "owner": "07/coordinator",
+      "status": "BLOCKED",
+      "finding": "Browser transport disconnected; export click and browser teardown cannot be confirmed"
+    }
+  ]
+}

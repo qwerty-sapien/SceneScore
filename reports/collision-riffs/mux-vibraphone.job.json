@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "tools/mux_performance.py",
+    "artifacts/collision-riffs/vibraphone-v1/DRAFT.json",
+    "apps/web/public/riff-studio/contact.mp4",
+    "--out",
+    "artifacts/collision-riffs/vibraphone-v1/Pocket-Workshop-DRAFT.mp4"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 26143,
+  "pgid": 26143,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 0.88494245801121
+}

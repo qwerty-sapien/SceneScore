@@ -36,6 +36,27 @@ def sphere_sweep(a0, a1, b0, b1, radius_sum):
     return t if 0 <= t <= 1 else None
 
 
+def normal_speed(a0, a1, b0, b1, duration_s, fraction=1.0):
+    """Relative velocity projected on the pair axis at a named point in a segment.
+
+    This is kinematics in metres/seconds, not an impulse or a dynamics estimate.
+    In particular, a swept contact must use its root fraction rather than the
+    following sample's axis (which may already point away from the contact).
+    A coincident pair has no defined normal and returns None.
+    """
+    if not math.isfinite(duration_s) or duration_s <= 0:
+        raise ValueError('normal-speed segment duration must be positive and finite')
+    if not math.isfinite(fraction) or not 0 <= fraction <= 1:
+        raise ValueError('normal-speed fraction must be within the segment')
+    for vector in (a0, a1, b0, b1):
+        if len(vector) != 3 or not all(math.isfinite(x) for x in vector):
+            raise ValueError('normal-speed positions must be finite world XYZ metres')
+    relative = sub(sub(b1, b0), sub(a1, a0))
+    axis = tuple(p + fraction*v for p, v in zip(sub(b0, a0), relative))
+    length = norm(axis)
+    return dot(relative, axis)/(duration_s*length) if length else None
+
+
 def gap(a, pa, b, pb):
     """Signed sphere/sphere or sphere/axis-aligned box gap; AABB box proxy otherwise."""
     d = norm(sub(pa, pb))

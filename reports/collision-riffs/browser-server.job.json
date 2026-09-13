@@ -1,0 +1,20 @@
+{
+  "command": [
+    "npm",
+    "run",
+    "dev",
+    "--",
+    "--port",
+    "8782"
+  ],
+  "timeout_s": 600,
+  "status": "timeout",
+  "process_group_absent": true,
+  "pid": 27173,
+  "pgid": 27173,
+  "cleanup_signals": [
+    "SIGTERM"
+  ],
+  "returncode": -15,
+  "duration_s": 600.062870459049
+}

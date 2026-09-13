@@ -1,0 +1,39 @@
+{
+  "stage": "/private/tmp/scenescore-muse-vertical",
+  "files_sha256": {
+    "assets/index-DhfNs5k7.css": "93e6bf561906243a3c8a19057786762a242878f97fabd5b79eb282e7e495ae0c",
+    "assets/index-z0EOXwAy.js": "1e391572f0c8e578949b27f81cfac7bde987553a308802f2464cefbd57a45e14",
+    "index.html": "2a2a0906591c9aa9585f1f32ad3410a647d1025e4af91f823a83ebe9e8ab480a",
+    "muse/README.md": "b3ae4ff6c85118a13ccedf0e3e6751795eeb69d982faf2f0a491559e51d536e9",
+    "studio/catalog.json": "f173fd46de46ac277a70f3fa2c075792d32b0de4590d3c063fb6ceb10eea3f88",
+    "studio/contact-brush_ballad_sparse_v1.json": "7746de4a7fbf9354f36fa4e95c299817325c365f501548b1a379cd0c5dacc070",
+    "studio/contact-brush_straight_rag_v1.json": "01bc4f6238d409127da64d53105093c6e8121353af4560594c56813dc863b19b",
+    "studio/contact-brush_swing_light_v1.json": "474193c1f9348b5e3a2c710b85df615c5da684db023d5b435ee4ae442627c146",
+    "studio/contact.mp4": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+    "studio/near-miss-brush_ballad_sparse_v1.json": "64eb2b01aaf873ae93608c53ae5b1f916e4730097f36a7980e7dae49eb0a34c6",
+    "studio/near-miss-brush_straight_rag_v1.json": "546c3413db1a1b22a8883d85c3ca2d3ab0b91bfa08e48df2eb6d930774d6e473",
+    "studio/near-miss-brush_swing_light_v1.json": "c7a86d3d71abff4252c396c4a3976efeaa0658cc945c0cb69bd4a4b51d40775c",
+    "studio/near-miss.mp4": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+    "vercel.json": "d05957ccfff936195ebd1f50e161e7b734129f3b695796801b481e7f6a6fa8d1"
+  },
+  "file_count": 14,
+  "bytes": 25839229,
+  "raw_eeg_records_found": false,
+  "source_sha256": {
+    "apps/web/src/main.tsx": "959038e3f79043ea30085132939fc01ac76896e55fba77fbbf85573cb461918b",
+    "packages/audio/model.ts": "15c9a3990ec5b35282295f9e5479a43d4d563e413273bb180d2c475fcd8b1d0c",
+    "packages/audio/control.ts": "2483dab8809b3dcc5fcb047d575989cf16b6a050de5cf9f27ed4d49620521ec7",
+    "packages/audio/engine.ts": "eaa64410c2595ee1f5d59caf5f0943f00f6de17f550b7a7831bb7fc467b32d18",
+    "packages/audio/transport.ts": "db437244e5723242690bd26fca87284a81ef8e1f95e3ee6f869333f0a81e0be8",
+    "modules/muse/baseline/causal.py": "dd2222fb283a40b8a353dad61bc92138e667bcdc78b2a562375390acf4545eb8",
+    "modules/muse/runtime/adapter.py": "2340abae05bf39569e2f5d27aed6d4c9b499e47c9c7848f1b97b1a16aee8777a",
+    "services/bridge/server.py": "82d6c6458a71fd896a6e1046c6c119a1e5f2879b7f24cbf0c253bb4b537c8b3d",
+    "services/bridge/lsl_clock.py": "f01e71d6434ea7d954ee174d25820157576a86952afe02bf74dee8e16a8c7e01",
+    "modules/muse/runtime/quality.py": "f415a543264242e346e7bc028e9d1f6436822d80f7f0ab79f7998bcbab9dd6ed",
+    "apps/web/src/muse/state.ts": "318027c681e1d6775ca811da1d0508ab74823bbcd17218db259d7959c83845a9",
+    "apps/web/src/muse/MusePanel.tsx": "a5a02fad16155f8a8f16b5316b4e8ab752ba0e4ecfe96389ac50ad7f28e65227",
+    "apps/web/src/muse/types.ts": "2f836a91322bc6bfd31d469e0823071c8fa258e819113300c38b4ccd9512c09b",
+    "apps/web/src/muse/bridge.ts": "dcb9d3cbe8269c5c240473079dba476cca5f0018f50167ae120396330046052d"
+  },
+  "scope": "static browser demo only; no private_data, models, credentials or repository upload"
+}

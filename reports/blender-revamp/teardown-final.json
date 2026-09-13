@@ -1,0 +1,6 @@
+{
+  "owned_browser_server_processes_remaining": [],
+  "recorded_owned_job_groups_currently_present": [],
+  "status": "PASSED",
+  "note": "Read actual process table after named browser close and exact server SIGTERM; unrelated processes untouched."
+}

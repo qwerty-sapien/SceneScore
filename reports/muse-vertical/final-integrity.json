@@ -1,0 +1,12 @@
+{
+  "stage_files_match": true,
+  "payload_file_count": 14,
+  "payload_bytes": 25839229,
+  "changed_stage_files": [],
+  "source_matches_build": false,
+  "source_files_changed_since_build": [
+    "packages/audio/model.ts"
+  ],
+  "stage_entry_count": 17,
+  "stage_file_count": 14
+}

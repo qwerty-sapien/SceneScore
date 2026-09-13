@@ -1,0 +1,33 @@
+{
+  "id": "muse-gesture-grammar-cases",
+  "version": "1",
+  "config_under_test": {
+    "source": "modules/muse/baseline/causal.py::Config defaults, unchanged",
+    "warmup_s": 1.0, "baseline_window_s": 3.0, "min_duration_s": 0.04, "max_duration_s": 0.4,
+    "min_separation_s": 0.10, "max_gap_s": 0.5, "cooldown_s": 0.25
+  },
+  "property_under_test": "Prefix safety: no prefix of a longer train may emit an action. A triple must never produce a double plus a triple, and must never produce a double at all.",
+  "positive_controls": [
+    {"id": "P1", "blinks_s": [[2.00, 0.12], [2.30, 0.12]], "expect": "accept", "reason": "separation 0.30 s is inside [min_separation_s, max_gap_s]; closes at 2.80 s"},
+    {"id": "P2", "blinks_s": [[2.00, 0.05], [2.12, 0.05]], "expect": "accept", "reason": "short but legal durations, separation 0.12 s just above min_separation_s"},
+    {"id": "P3", "blinks_s": [[2.00, 0.38], [2.49, 0.38]], "expect": "accept", "reason": "long but legal durations, separation 0.49 s just under max_gap_s"},
+    {"id": "P4", "blinks_s": [[2.00, 0.12], [2.30, 0.12], [5.00, 0.12], [5.30, 0.12]], "expect": "accept_twice", "reason": "two independent pairs well outside cooldown_s"}
+  ],
+  "negative_controls": [
+    {"id": "N1", "blinks_s": [[2.00, 0.12]], "expect": "reject", "reason": "single blink is never an action"},
+    {"id": "N2", "blinks_s": [[2.00, 0.12], [2.30, 0.12], [2.60, 0.12]], "expect": "reject", "reason": "triple; must not emit the leading double"},
+    {"id": "N3", "blinks_s": [[2.00, 0.12], [2.60, 0.12]], "expect": "reject", "reason": "separation 0.60 s exceeds max_gap_s; two singles, not a pair"},
+    {"id": "N4", "blinks_s": [[2.00, 0.12], [2.06, 0.12]], "expect": "reject", "reason": "separation 0.06 s below min_separation_s; one artifact, not two blinks"},
+    {"id": "N5", "blinks_s": [[2.00, 0.02], [2.30, 0.12]], "expect": "reject", "reason": "first duration below min_duration_s"},
+    {"id": "N6", "blinks_s": [[2.00, 0.12], [2.30, 0.55]], "expect": "reject", "reason": "second duration above max_duration_s; likely a squint or artifact"},
+    {"id": "N7", "blinks_s": [[0.40, 0.12], [0.70, 0.12]], "expect": "reject", "reason": "inside warmup_s; baseline statistics are not established"},
+    {"id": "N8", "blinks_s": [[2.00, 0.12], [2.30, 0.12], [2.90, 0.12], [3.10, 0.12]], "expect": "accept_once", "reason": "second pair starts inside cooldown_s of the first decision and is suppressed with a reason"},
+    {"id": "N9", "blinks_s": [[2.00, 0.12], [2.30, 0.12]], "fault": {"dropout_at_s": 2.15}, "expect": "reject", "reason": "packet loss between the two blinks clears partial state and requires re-arm"},
+    {"id": "N10", "blinks_s": [[2.00, 0.12], [2.30, 0.12]], "fault": {"quality_loss_at_s": 2.05}, "expect": "reject", "reason": "signal quality failure suppresses new controls while music continues"}
+  ],
+  "reset_obligations": [
+    "dropout, reconnect, quality failure, refit and model reload each clear pending candidates and require warmup before re-arm",
+    "a rejected sequence produces an enumerated reason, never a silent drop",
+    "a rejection is never retracted by a later emission for the same blinks"
+  ]
+}

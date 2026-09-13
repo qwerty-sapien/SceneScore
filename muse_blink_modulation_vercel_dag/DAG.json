@@ -1,0 +1,80 @@
+{
+  "name": "muse-double-blink-to-modulation",
+  "version": 2,
+  "timebox_hours": 6,
+  "description": "Logical dependencies. Actual path ownership is confirmed against the live repo in node 00; the write_scope lists below are the proposed freeze.",
+  "supersedes": "muse-double-blink-to-modulation-vercel (revision 1)",
+  "shared_interface": "INTERFACE_CONTRACT.md (byte-identical in scenescore_hackathon_music_dag_v2)",
+  "nodes": [
+    {
+      "id": "00",
+      "prompt": "prompts/00_lineage_and_architecture_freeze.md",
+      "depends_on": [],
+      "role": "coordinator",
+      "write_scope": ["docs/decisions/", "handoffs/"]
+    },
+    {
+      "id": "01",
+      "prompt": "prompts/01_control_seam_and_latency_ladder.md",
+      "depends_on": ["00"],
+      "role": "runtime_seam",
+      "write_scope": ["modules/muse/runtime/", "modules/muse/evaluation/"]
+    },
+    {
+      "id": "02",
+      "prompt": "prompts/02_acquisition_and_session_protocol.md",
+      "depends_on": ["00"],
+      "role": "acquisition",
+      "write_scope": ["modules/muse/acquisition/", "modules/muse/annotation/"]
+    },
+    {
+      "id": "03",
+      "prompt": "prompts/03_detector_ladder_and_causal_features.md",
+      "depends_on": ["02"],
+      "role": "detection",
+      "write_scope": ["modules/muse/baseline/", "modules/muse/training/pipeline.py"]
+    },
+    {
+      "id": "04",
+      "prompt": "prompts/04_real_data_and_frozen_evaluation.md",
+      "depends_on": ["03"],
+      "role": "evaluation",
+      "write_scope": ["modules/muse/training/", "reports/muse-vertical/"]
+    },
+    {
+      "id": "05",
+      "prompt": "prompts/05_deployed_training_feedback_surface.md",
+      "depends_on": ["01"],
+      "role": "deployed_surface",
+      "write_scope": ["apps/web/src/muse/", "apps/web/public/muse/", "services/bridge/"]
+    },
+    {
+      "id": "06",
+      "prompt": "prompts/06_dispatch_into_music_executor.md",
+      "depends_on": ["01"],
+      "role": "integration",
+      "write_scope": ["modules/muse/runtime/dispatch.py", "tests/ts/muse-dispatch.test.ts"]
+    },
+    {
+      "id": "07",
+      "prompt": "prompts/07_end_to_end_gate.md",
+      "depends_on": ["04", "05", "06"],
+      "role": "independent_review",
+      "write_scope": ["reports/muse-vertical/GATE.md"]
+    }
+  ],
+  "execution_rules": {
+    "parallelism": "01 with 02 after 00; 05 and 06 with 03 and 04 once the seam is frozen. Parallelize only with the confirmed disjoint write scopes above.",
+    "single_writer": [
+      "modules/muse/runtime/ belongs to 01; node 06 writes only dispatch.py within it",
+      "apps/web shared shell (src/main.tsx, style.css) belongs to the music pack node 06; this pack sends scoped requests via docs/requests/",
+      "the live headset capture process and any bridge socket",
+      "contracts/0.1/ and root locks belong to the integrator and to no node",
+      "any final-test split, which is immutable once claimed via FinalTestLock"
+    ],
+    "cross_pack_rule": "This pack constructs and dispatches ControlAction. The music pack validates, schedules and sounds it. Neither re-derives the other's fields; neither chooses signed_semitones.",
+    "repair_policy": "Route the smallest repair to its owning node and rerun affected downstream gates. Repairs are tracked iterations, not new DAG edges.",
+    "suggested_repair_attempts_per_gate": 3,
+    "completion": "All mandatory checks in node 07 passed on the exact demo path. Otherwise deliver a truthful failed, blocked or unverified status with a precise blocker and a replay demo that is not described as hardware-validated."
+  }
+}

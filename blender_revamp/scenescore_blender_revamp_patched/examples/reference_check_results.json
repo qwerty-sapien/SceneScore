@@ -1,0 +1,187 @@
+{
+  "scope": "analytical_example_data_only_no_Blender_execution",
+  "status": "PASSED",
+  "cases": 18,
+  "positives_accepted": 9,
+  "negatives_rejected": 9,
+  "results": [
+    {
+      "id": "P01_free_fall",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "max_position_residual_m": 0.0
+      }
+    },
+    {
+      "id": "N01_constant_speed_fall_from_rest",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "max_position_residual_m": 0.3085499999999999
+      }
+    },
+    {
+      "id": "P02_ballistic_with_constant_horizontal_speed",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "max_position_residual_m": 0.0
+      }
+    },
+    {
+      "id": "N02_unsupported_constant_height_flight",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "max_position_residual_m": 0.20379999999999976
+      }
+    },
+    {
+      "id": "P03_valid_zero_projectile_recoil",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "momentum_residual_kg_m_s": 0,
+        "kinetic_energy_before_j": 4.5,
+        "kinetic_energy_after_j": 4.5,
+        "restitution_residual_m_s": 0
+      }
+    },
+    {
+      "id": "N03_momentum_disappears",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "momentum_residual_kg_m_s": -3,
+        "kinetic_energy_before_j": 4.5,
+        "kinetic_energy_after_j": 0.0,
+        "restitution_residual_m_s": 3
+      }
+    },
+    {
+      "id": "P04_inelastic_momentum_transfer",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "momentum_residual_kg_m_s": 0.0,
+        "kinetic_energy_before_j": 4.5,
+        "kinetic_energy_after_j": 2.25,
+        "restitution_residual_m_s": 0.0
+      }
+    },
+    {
+      "id": "N04_unpowered_energy_creation",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "momentum_residual_kg_m_s": 0,
+        "kinetic_energy_before_j": 4.5,
+        "kinetic_energy_after_j": 8.5,
+        "restitution_residual_m_s": 2
+      }
+    },
+    {
+      "id": "P05_fixed_wall_rebound",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "normal_velocity_residual_m_s": 0.0
+      }
+    },
+    {
+      "id": "N05_unexplained_wall_freeze",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "normal_velocity_residual_m_s": 1.0
+      }
+    },
+    {
+      "id": "P06_separate_unit_cubes",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "signed_separating_axis_gap_m": 0.050000000000000044,
+        "broad_phase_aabbs_overlap": false
+      }
+    },
+    {
+      "id": "N06_baseline_scale_cube_overlap",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "signed_separating_axis_gap_m": -0.5337446928024292,
+        "broad_phase_aabbs_overlap": true
+      }
+    },
+    {
+      "id": "P07_rotated_boxes_AABB_false_positive",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "signed_separating_axis_gap_m": 0.09999999999999992,
+        "broad_phase_aabbs_overlap": true
+      }
+    },
+    {
+      "id": "N07_rotated_boxes_real_overlap",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "signed_separating_axis_gap_m": -0.050000000000000044,
+        "broad_phase_aabbs_overlap": true
+      }
+    },
+    {
+      "id": "P08_rigid_scale_constant",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "max_world_scale_drift": 0
+      }
+    },
+    {
+      "id": "N08_release_parent_scale_drift",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "max_world_scale_drift": 0.09999999999999998
+      }
+    },
+    {
+      "id": "P09_no_launch_stable_target",
+      "expected_accept": true,
+      "actual_accept": true,
+      "correct_classification": true,
+      "measurements": {
+        "maximum_displacement_m": 0.0
+      }
+    },
+    {
+      "id": "N09_scheduled_collapse_without_contact",
+      "expected_accept": false,
+      "actual_accept": false,
+      "correct_classification": true,
+      "measurements": {
+        "maximum_displacement_m": 1.0
+      }
+    }
+  ]
+}

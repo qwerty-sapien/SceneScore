@@ -1,0 +1,86 @@
+{
+  "name": "scenescore-animation-to-music",
+  "version": 2,
+  "timebox_hours": 6,
+  "description": "Logical dependencies. Actual path ownership is confirmed against the live repo in node 00; the write_scope lists below are the proposed freeze.",
+  "supersedes": "scenescore-hackathon-adaptive-music (revision 1)",
+  "shared_interface": "INTERFACE_CONTRACT.md (byte-identical in muse_blink_modulation_vercel_dag_v2)",
+  "nodes": [
+    {
+      "id": "00",
+      "prompt": "prompts/00_baseline_freeze_and_slice.md",
+      "depends_on": [],
+      "role": "coordinator",
+      "write_scope": ["docs/decisions/", "handoffs/"]
+    },
+    {
+      "id": "01",
+      "prompt": "prompts/01_motion_event_semantics.md",
+      "depends_on": ["00"],
+      "role": "motion_semantics",
+      "write_scope": ["modules/blender/geometry.py", "modules/blender/summary.py", "modules/blender/tests/"]
+    },
+    {
+      "id": "02",
+      "prompt": "prompts/02_catalogue_audition_and_repair.md",
+      "depends_on": ["00"],
+      "role": "musical_source",
+      "write_scope": ["modules/music/catalog.py", "modules/music/fixtures/", "modules/music/AUDITION.md"]
+    },
+    {
+      "id": "03",
+      "prompt": "prompts/03_bounded_transform_vocabulary.md",
+      "depends_on": ["02"],
+      "role": "transform_engine",
+      "write_scope": ["modules/music/events.py", "modules/music/ornament.py", "modules/music/tests/"]
+    },
+    {
+      "id": "04",
+      "prompt": "prompts/04_motion_to_intent_mapping.md",
+      "depends_on": ["01", "03"],
+      "role": "mapping",
+      "write_scope": ["modules/arranger/core.py", "modules/arranger/tests/", "modules/arranger/golden/"]
+    },
+    {
+      "id": "05",
+      "prompt": "prompts/05_harmonic_transition_table.md",
+      "depends_on": ["02"],
+      "role": "harmonic_transition",
+      "write_scope": ["modules/music/transitions.py", "packages/audio/model.ts", "packages/audio/tests/"]
+    },
+    {
+      "id": "06",
+      "prompt": "prompts/06_browser_performance_integration.md",
+      "depends_on": ["04", "05"],
+      "role": "integration",
+      "write_scope": ["apps/web/", "packages/audio/engine.ts", "packages/audio/transport.ts"]
+    },
+    {
+      "id": "07",
+      "prompt": "prompts/07_audition_and_timing_measurement.md",
+      "depends_on": ["06"],
+      "role": "measurement",
+      "write_scope": ["reports/music-vertical/", "artifacts/"]
+    },
+    {
+      "id": "08",
+      "prompt": "prompts/08_independent_gate.md",
+      "depends_on": ["07"],
+      "role": "independent_review",
+      "write_scope": ["reports/music-vertical/GATE.md"]
+    }
+  ],
+  "execution_rules": {
+    "parallelism": "01 with 02 after 00; 03 with 05 after 02. Parallelize only with the confirmed disjoint write scopes above.",
+    "single_writer": [
+      "modules/arranger/core.py belongs to 04; node 05 proposes changes through docs/requests/05/",
+      "packages/audio/model.ts belongs to 05; node 06 proposes changes through docs/requests/06/",
+      "contracts/0.1/ and root locks belong to the integrator and to no node",
+      "the live browser session and any candidate output directory"
+    ],
+    "cross_pack_rule": "The Muse pack constructs and dispatches ControlAction. This pack validates, schedules and sounds it. Neither re-derives the other's fields.",
+    "repair_policy": "Route the smallest repair to its owning node and rerun affected downstream gates. Repairs are tracked iterations, not new DAG edges.",
+    "suggested_repair_attempts_per_gate": 3,
+    "completion": "All mandatory exact-candidate gates in node 08 passed. Otherwise deliver a truthful failed, blocked or unverified draft status with the measurements actually taken."
+  }
+}

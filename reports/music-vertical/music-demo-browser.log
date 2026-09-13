@@ -1,0 +1,39 @@
+
+> scenescore-harness@0.1.0 build
+> vite build apps/web --outDir ../../artifacts/web-dist
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 215 modules transformed.
+
+(!) outDir /Users/agent/Desktop/SceneScore/artifacts/web-dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../artifacts/web-dist/index.html                   0.40 kB │ gzip:   0.29 kB
+../../artifacts/web-dist/assets/index-DhfNs5k7.css    8.82 kB │ gzip:   2.60 kB
+../../artifacts/web-dist/assets/index-DnNZC9xQ.js   546.05 kB │ gzip: 148.55 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.28s
+{"job_pid": 23506, "job_pgid": 23506, "url": "http://127.0.0.1:8772/?music=1", "seconds": 600.0, "approval": null, "instruction": "Start music demo; M requests a scene-directed key change."}
+127.0.0.1 - - [13/Sep/2026 03:35:48] "GET /?music=1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:35:48] "GET /assets/index-DhfNs5k7.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:35:48] "GET /assets/index-DnNZC9xQ.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:35:48] "GET /music-vertical/catalog.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:35:48] "GET /music-vertical/candidate.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:35:49] "GET /music-vertical/preview.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:36:44] "GET /?music=1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:36:44] "GET /assets/index-BBrePzdL.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:36:44] "GET /assets/index-DhfNs5k7.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:36:45] "GET /music-vertical/catalog.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:36:45] "GET /music-vertical/candidate.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 03:36:45] "GET /music-vertical/preview.mp4 HTTP/1.1" 200 -
+Serving HTTP on 127.0.0.1 port 8772 (http://127.0.0.1:8772/) ...
+
+Keyboard interrupt received, exiting.
+{"stopped_pid": 23506, "exit_code": 0}

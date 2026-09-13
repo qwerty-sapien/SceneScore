@@ -1,0 +1,15 @@
+{
+  "format": "scenescore.transport-diagnostic/1",
+  "transport": "lsl",
+  "recording": false,
+  "samples_read": 0,
+  "hardware_verified": false,
+  "device_model": null,
+  "firmware": null,
+  "verified_sample_rate_hz": null,
+  "reason": "No matching LSL source advertised during the bounded metadata check",
+  "status": "BLOCKED",
+  "code": "NO_ADVERTISED_LSL_STREAM",
+  "advertised_stream_count": 0,
+  "permission_scope": "bounded explicit metadata-only LSL discovery with network permission; no EEG samples read"
+}

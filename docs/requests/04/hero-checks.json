@@ -1,0 +1,3233 @@
+{
+  "append_region_sha256": "257e6176a20d9e1e741c09b95719d4870e16ee687828fc73ee0937dcc4cd4e5c",
+  "approval": null,
+  "audit": {
+    "approval": null,
+    "audition_status": "AUDITION_PENDING",
+    "density": {
+      "foley_excluded": true,
+      "hold_splits_included": true,
+      "maximum_added_events_per_second": 0,
+      "maximum_music_events_per_bar": 24
+    },
+    "foley_excluded_from_music_budget": true,
+    "hold_edits": [
+      {
+        "duration_preserving": false,
+        "envelope_perception": "AUDITION_PENDING",
+        "hold_ids": [
+          "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1:music-v2:hold"
+        ],
+        "method": "explicit_third_omission_inside_source_slot",
+        "retained_intervals_s": [
+          [
+            13.25,
+            13.333333333333334
+          ]
+        ],
+        "source_slot_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0053",
+        "source_slot_s": [
+          12.916666666666666,
+          13.333333333333334
+        ],
+        "unchanged_before_minimum": true
+      },
+      {
+        "duration_preserving": false,
+        "envelope_perception": "AUDITION_PENDING",
+        "hold_ids": [
+          "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1:music-v2:hold"
+        ],
+        "method": "explicit_third_omission_inside_source_slot",
+        "retained_intervals_s": [
+          [
+            13.25,
+            13.541666666666666
+          ]
+        ],
+        "source_slot_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057",
+        "source_slot_s": [
+          13.125,
+          13.541666666666666
+        ],
+        "unchanged_before_minimum": true
+      },
+      {
+        "duration_preserving": false,
+        "envelope_perception": "AUDITION_PENDING",
+        "hold_ids": [
+          "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1:music-v2:hold"
+        ],
+        "method": "explicit_third_omission_inside_source_slot",
+        "retained_intervals_s": [],
+        "source_slot_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0074",
+        "source_slot_s": [
+          17.916666666666668,
+          18.333333333333332
+        ],
+        "unchanged_before_minimum": true
+      }
+    ],
+    "identity": {
+      "changed_lead_ids": [
+        "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057"
+      ],
+      "changed_note_ids": [
+        "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0053",
+        "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057",
+        "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0074"
+      ],
+      "source_lead_count": 48,
+      "source_note_count": 162,
+      "unchanged_lead_fraction": 0.9791666666666666,
+      "unchanged_note_fraction": 0.9814814814814815
+    },
+    "protected_brush_unchanged": true,
+    "realization": {
+      "budgets": {
+        "low_register_floor": 48,
+        "max_events_per_bar": 96,
+        "max_events_per_second_added": 12,
+        "max_pitch": 96,
+        "max_requests": 256,
+        "max_simultaneous_ornaments": 2,
+        "min_low_interval": 5,
+        "min_note_duration_s": 0.025,
+        "min_pitch": 28
+      },
+      "explicit_lane_changes": [
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0053",
+          "lane": "dynamics",
+          "offset_db": -3.080359175005995
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0054",
+          "lane": "dynamics",
+          "offset_db": -3.080359175005995
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0056",
+          "lane": "dynamics",
+          "offset_db": -3.080359175005995
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0055",
+          "lane": "dynamics",
+          "offset_db": -3.080359175005995
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057",
+          "lane": "dynamics",
+          "offset_db": -3.080359175005995
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0058",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0011",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0008",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0059",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0060",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0061",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0062",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0012",
+          "lane": "dynamics",
+          "offset_db": 0.0
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0063",
+          "lane": "dynamics",
+          "offset_db": 0.0
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0064",
+          "lane": "dynamics",
+          "offset_db": -0.07215006526930497
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0065",
+          "lane": "dynamics",
+          "offset_db": -0.07215006526930497
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0066",
+          "lane": "dynamics",
+          "offset_db": -0.07215006526930497
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0067",
+          "lane": "dynamics",
+          "offset_db": -0.18037516317326288
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0013",
+          "lane": "dynamics",
+          "offset_db": -0.21645019580791522
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0068",
+          "lane": "dynamics",
+          "offset_db": -0.28860026107722053
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0069",
+          "lane": "dynamics",
+          "offset_db": -0.28860026107722053
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0071",
+          "lane": "dynamics",
+          "offset_db": -0.28860026107722053
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0070",
+          "lane": "dynamics",
+          "offset_db": -0.28860026107722053
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0072",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0014",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0009",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0073",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0074",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0075",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0076",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0010",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0077",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0015",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0011",
+          "lane": "dynamics",
+          "offset_db": -0.03161501195658943
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0078",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0079",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0080",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0081",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0016",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0082",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0083",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0084",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0085",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0086",
+          "lane": "dynamics",
+          "offset_db": -6.75
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0017",
+          "lane": "dynamics",
+          "offset_db": -6.75
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0087",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0088",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0089",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0090",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0091",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0018",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0012",
+          "lane": "dynamics",
+          "offset_db": -0.2063561284684165
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0092",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0093",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0094",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0095",
+          "lane": "dynamics",
+          "offset_db": -3
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0013",
+          "lane": "dynamics",
+          "offset_db": -0.04156608639016348
+        },
+        {
+          "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0096",
+          "lane": "dynamics",
+          "offset_db": -3
+        }
+      ],
+      "style_transform": {
+        "approval": null,
+        "audition_status": "AUDITION_PENDING",
+        "budgets": {
+          "low_register_floor": 48,
+          "max_events_per_bar": 96,
+          "max_events_per_second_added": 12,
+          "max_pitch": 96,
+          "max_requests": 256,
+          "max_simultaneous_ornaments": 2,
+          "min_low_interval": 5,
+          "min_note_duration_s": 0.025,
+          "min_pitch": 28
+        },
+        "composition_sha256": "76d75e3e98d31c48c7ea234c987efc03972b8f11e616c187d74f0a10fc6bc530",
+        "decorated_source_events": 0,
+        "document_type": "SceneScoreTransformAudit",
+        "document_version": 1,
+        "events_added": 0,
+        "maximum_added_events_per_second": 0,
+        "maximum_events_per_bar": 24,
+        "maximum_simultaneous_ornaments": 0,
+        "output_events_sha256": "ebb934c766ced8c4e9205eb275aa9716c01b6eec100d0b4486be01a89c2281c0",
+        "preserves_duration": true,
+        "protected_streams_unchanged": true,
+        "renderer_limits": [
+          "Browser articulation envelopes require the integrated engine version.",
+          "Python candidate renderer distinguishes legato; staccato/tenuto tokens alone do not change it.",
+          "No acoustic or perceptual quality is established by this audit."
+        ],
+        "requests": [
+          {
+            "decision_seed": 13740193640088372038,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0003"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0003",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              3.75,
+              4.21875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 3193589325803135119,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0002"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0002",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              3.75,
+              4.0625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 15341345417090916895,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0018"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0018",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              3.75,
+              5.0
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 4132438128373741575,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0019"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0019",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              4.166666666666667,
+              4.583333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 13690582579299924817,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0020"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0020",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              4.166666666666667,
+              4.583333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 364064914604791679,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0021"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0021",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              4.166666666666667,
+              4.583333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 17509817976979479417,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0004"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0004",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              5.0,
+              5.46875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 9784730764698633220,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0022"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0022",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              5.0,
+              5.625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 4935960586445305925,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0023"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0023",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              5.416666666666667,
+              5.833333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 15017372253369814759,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0024"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0024",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              5.416666666666667,
+              5.833333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 206170775738530570,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0025"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0025",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              5.416666666666667,
+              5.833333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 8840408720547875165,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0026"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0026",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              6.041666666666667,
+              6.25
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 7386960991564304963,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0005"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0005",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              6.25,
+              6.71875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 14774310230302156205,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0027"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0027",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              6.666666666666667,
+              7.083333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 5488248318524772713,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0028"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0028",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              6.666666666666667,
+              7.083333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 8100334836380984436,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0029"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0029",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              6.666666666666667,
+              6.875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 10568599057638389544,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0030"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0030",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              6.666666666666667,
+              7.083333333333333
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 16414878842389141306,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0031"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0031",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              6.875,
+              7.291666666666667
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 15341003310771774121,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0006"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0006",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              7.5,
+              7.96875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 6906794049885444051,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0032"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0032",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              7.5,
+              8.125
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 14442354026108396683,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0033"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0033",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              7.916666666666667,
+              8.333333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 4606615434393911719,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0034"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0034",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              7.916666666666667,
+              8.333333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 2843714325718515857,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0035"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0035",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              7.916666666666667,
+              8.333333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 16934511161028366740,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0004"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0004",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              8.125,
+              8.4375
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 12299047349968446572,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0036"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0036",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              8.541666666666666,
+              8.75
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 8899711705821153085,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0007"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0007",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              8.75,
+              9.21875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 2614127261612008897,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0005"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0005",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              8.75,
+              9.0625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 11779445221707930581,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0037"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0037",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              8.75,
+              9.375
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 5876153873415261311,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0038"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0038",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              9.166666666666666,
+              9.583333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 6537697660787574308,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0039"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0039",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              9.166666666666666,
+              9.583333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 7679742335466564799,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0040"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0040",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              9.166666666666666,
+              9.583333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 13589878717595029323,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0008"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0008",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              10.0,
+              10.46875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1042855198812244421,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0041"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0041",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              10.416666666666668,
+              10.833333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 12997369108730739543,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0042"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0042",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              10.416666666666668,
+              10.833333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 3820675698688065419,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0043"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0043",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              10.416666666666668,
+              10.625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 6696703770769664593,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0044"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0044",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              10.416666666666668,
+              10.833333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 17634442793759991569,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0045"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0045",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              10.625,
+              11.041666666666666
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 11932738486372679522,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0046"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0046",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              11.041666666666666,
+              11.25
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 7440307503646838116,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0009"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0009",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              11.25,
+              11.71875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 11022755534853340451,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0047"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0047",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              11.25,
+              11.875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 7853098382104536920,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0048"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0048",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              11.666666666666666,
+              12.083333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 7081048068359425386,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0049"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0049",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              11.666666666666666,
+              12.083333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 2998249328469766163,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0050"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0050",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              11.666666666666666,
+              12.083333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 8645539235226935456,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0051"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0051",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.291666666666666,
+              12.5
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 4016239273686945069,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0010"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0010",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.5,
+              12.96875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 5873531157524318051,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0006"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0006",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.5,
+              12.8125
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 14509574933052674109,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0052"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0052",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.5,
+              12.916666666666666
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 17163257732097347066,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0053"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "staccato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0053",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.916666666666666,
+              13.333333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 10296771468459636303,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0054"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0054",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.916666666666666,
+              13.333333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 18062338135404953318,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0055"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0055",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.916666666666666,
+              13.125
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 17402299470621529247,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0056"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0056",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              12.916666666666666,
+              13.333333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 11655225542040858000,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0057",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              13.125,
+              13.541666666666666
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 16962141500808340119,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0058"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0058",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              13.541666666666666,
+              13.75
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1146737841339109497,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0011"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0011",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              13.75,
+              14.21875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 11703233715681684575,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0008"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0008",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              13.75,
+              14.0625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 3486918826036247661,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0059"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0059",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              13.75,
+              15.0
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 15512207628186390833,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0060"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0060",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              14.166666666666666,
+              14.583333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 17596533917497848512,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0061"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0061",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              14.166666666666666,
+              14.583333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 10484917679111556901,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0062"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0062",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              14.166666666666666,
+              14.583333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 7223777187206851097,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0012"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0012",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              15.0,
+              15.46875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1831235941603226960,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0063"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0063",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              15.0,
+              15.625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 7252029448456765831,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0064"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0064",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              15.416666666666666,
+              15.833333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 12779288129337351809,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0065"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0065",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              15.416666666666666,
+              15.833333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 14251817477161308748,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0066"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0066",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              15.416666666666666,
+              15.833333333333334
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1994390666448733476,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0067"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0067",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              16.041666666666668,
+              16.25
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 12939799140208596859,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0013"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0013",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              16.25,
+              16.71875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 13937555657586709660,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0068"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0068",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              16.666666666666668,
+              17.083333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 18106437839400731844,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0069"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0069",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              16.666666666666668,
+              17.083333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 14967338158044025644,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0070"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0070",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              16.666666666666668,
+              16.875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 10300373052399639520,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0071"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0071",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              16.666666666666668,
+              17.083333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 2297482982684688180,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0072"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0072",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              16.875,
+              17.291666666666668
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 16048399149413262952,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0014"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0014",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              17.5,
+              17.96875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 17283737206619048738,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0009"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0009",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              17.5,
+              17.8125
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1345539841920395884,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0073"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0073",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              17.5,
+              18.125
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 8067693051726391240,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0074"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0074",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              17.916666666666668,
+              18.333333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 8311070675807255429,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0075"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0075",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              17.916666666666668,
+              18.333333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 14684276538994797103,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0076"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0076",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              17.916666666666668,
+              18.333333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 6181633938335470000,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0010"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0010",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              18.125,
+              18.4375
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 10018220064242086477,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0077"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0077",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              18.541666666666668,
+              18.75
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 406715614207209917,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0015"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0015",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              18.75,
+              19.21875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 11637145199992618718,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0011"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0011",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              18.75,
+              19.0625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 14354143808396847099,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0078"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0078",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              18.75,
+              19.375
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 6746552362251237645,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0079"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0079",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              19.166666666666668,
+              19.583333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 16405339566523625465,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0080"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0080",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              19.166666666666668,
+              19.583333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 2662534545932791813,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0081"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0081",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              19.166666666666668,
+              19.583333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1907730752495560920,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0016"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0016",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              20.0,
+              20.46875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 13504971230307781852,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0082"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0082",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              20.0,
+              20.625
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 18213578177884997939,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0083"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0083",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              20.416666666666664,
+              20.833333333333336
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 11084162462158464516,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0084"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0084",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              20.416666666666664,
+              20.833333333333336
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 9625289468310303381,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0085"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0085",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              20.416666666666664,
+              20.833333333333336
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 18053111274102763176,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0086"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0086",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              21.041666666666664,
+              21.25
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 12685093081601623282,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0017"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0017",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              21.25,
+              21.71875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1000253067120780977,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0087"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0087",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              21.666666666666668,
+              22.083333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 8229133151755629403,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0088"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0088",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              21.666666666666668,
+              22.083333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 490270565127477055,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0089"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0089",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              21.666666666666668,
+              22.083333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 10063322804537598444,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0090"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "legato",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0090",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              21.666666666666668,
+              21.875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 3721818460899725669,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0091"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0091",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              21.875,
+              22.5
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 4328040358479252969,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:bass:0018"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:bass:0018",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              22.5,
+              22.96875
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 10190700439589071119,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0012"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0012",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              22.5,
+              22.8125
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 13974814747062454269,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0092"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0092",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              22.916666666666668,
+              23.333333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 18336906918985570905,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0093"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0093",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              22.916666666666668,
+              23.333333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 15852821060338273950,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0094"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0094",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              22.916666666666668,
+              23.333333333333332
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 1456783084075157860,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0095"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0095",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              22.916666666666668,
+              23.125
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 2828749811018208105,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:object_motif:0013"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:object_motif:0013",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              23.125,
+              23.4375
+            ],
+            "status": "applied"
+          },
+          {
+            "decision_seed": 15001751010795090703,
+            "events_added": 0,
+            "output_event_ids": [
+              "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0096"
+            ],
+            "pitch_rule": "source_pitch_or_octave",
+            "reason": null,
+            "request": {
+              "articulation": "detached",
+              "direction": 1,
+              "event_id": "music-vertical-source:tilted_blue_v1:base:piano_or_lead:0096",
+              "kind": "articulation",
+              "preserves_duration": true,
+              "probability": 1.0,
+              "related_event_ids": [],
+              "subdivisions": 4,
+              "velocity_delta": 0
+            },
+            "source_slot_s": [
+              23.125,
+              23.75
+            ],
+            "status": "applied"
+          }
+        ],
+        "score_duration_s": 30.0,
+        "seed": 42,
+        "source_events_sha256": "7cb2845756c4aeaa536d9c250cdf7370c96403c7bd140f6cec67905f91443483",
+        "timing_policy": "subdivide_inside_once_resolved_slot; never apply swing again",
+        "version": "music-ornament-1"
+      },
+      "suppressed": [],
+      "transform": {
+        "approval": null,
+        "audition_status": "AUDITION_PENDING",
+        "budgets": {
+          "low_register_floor": 48,
+          "max_events_per_bar": 96,
+          "max_events_per_second_added": 12,
+          "max_pitch": 96,
+          "max_requests": 256,
+          "max_simultaneous_ornaments": 2,
+          "min_low_interval": 5,
+          "min_note_duration_s": 0.025,
+          "min_pitch": 28
+        },
+        "composition_sha256": "76d75e3e98d31c48c7ea234c987efc03972b8f11e616c187d74f0a10fc6bc530",
+        "decorated_source_events": 0,
+        "document_type": "SceneScoreTransformAudit",
+        "document_version": 1,
+        "events_added": 0,
+        "maximum_added_events_per_second": 0,
+        "maximum_events_per_bar": 24,
+        "maximum_simultaneous_ornaments": 0,
+        "output_events_sha256": "ebb934c766ced8c4e9205eb275aa9716c01b6eec100d0b4486be01a89c2281c0",
+        "preserves_duration": true,
+        "protected_streams_unchanged": true,
+        "renderer_limits": [
+          "Browser articulation envelopes require the integrated engine version.",
+          "Python candidate renderer distinguishes legato; staccato/tenuto tokens alone do not change it.",
+          "No acoustic or perceptual quality is established by this audit."
+        ],
+        "requests": [],
+        "score_duration_s": 30.0,
+        "seed": 42,
+        "source_events_sha256": "ebb934c766ced8c4e9205eb275aa9716c01b6eec100d0b4486be01a89c2281c0",
+        "timing_policy": "subdivide_inside_once_resolved_slot; never apply swing again",
+        "version": "music-ornament-1"
+      }
+    },
+    "score_duration_s": 30.0
+  },
+  "audition_status": "AUDITION_PENDING",
+  "control_rows": 179,
+  "controls_by_feature": {
+    "approach": 159,
+    "contact_onset": 4,
+    "contact_release": 4,
+    "contact_sustain": 4,
+    "near_miss": 2,
+    "separation": 6
+  },
+  "document_type": "MusicVerticalNode04HeroCheck",
+  "final_scoped_checks": {
+    "arranger_tests": 66,
+    "diff_check": "passed",
+    "existing_tests": 36,
+    "exit_code": 0,
+    "new_vertical_tests": 30,
+    "ruff": "passed",
+    "session_id": 64837,
+    "task_owned_resources_remaining": [],
+    "test_duration_s": 127.47
+  },
+  "foley_events": 12,
+  "holds": [
+    {
+      "end_s": 13.25,
+      "hold_beats": 1.0,
+      "id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1:music-v2:hold",
+      "no_accent": true,
+      "no_foley": true,
+      "no_key_change": true,
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-1",
+      "reason": "near_miss_withheld_resolution",
+      "root_pc": 5,
+      "source_event_id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-1:e1",
+      "start_s": 12.625,
+      "withheld_pitch_classes": [
+        9
+      ]
+    },
+    {
+      "end_s": 18.5,
+      "hold_beats": 1.0,
+      "id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1:music-v2:hold",
+      "no_accent": true,
+      "no_foley": true,
+      "no_key_change": true,
+      "pair_id": "10_projectile_tower:projectile|10_projectile_tower:tower-2",
+      "reason": "near_miss_withheld_resolution",
+      "root_pc": 9,
+      "source_event_id": "10_projectile_tower:default:ccf899f76881:10_projectile_tower:projectile|10_projectile_tower:tower-2:e1",
+      "start_s": 17.875,
+      "withheld_pitch_classes": [
+        1
+      ]
+    }
+  ],
+  "input_file_hashes": {
+    "geometry.json": "cc2f52d3477b634634e6705a36bf403232e4f8ea1236cd4c9aa27760e28aea81",
+    "interactions.jsonl": "db3ad6fde9e12ed57a2fcc14f5bb7f8bd30cd59c0420a262ac75955c83bc9d8d",
+    "manifest.json": "2f2ad3e7d099303430056c52f38b791f23113ce32742edd396c7a56bc1b553b6",
+    "object_states.jsonl": "a5b02fe89fee3728babf8a5b76b5583356006e9ebcfebed0bac1d62ca193a3ab",
+    "preview.mp4": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a"
+  },
+  "mapped_events": 269,
+  "motion_focus": {
+    "axis": "Z",
+    "deadband_m_s": 0.02,
+    "focus_object_id": "10_projectile_tower:tower-2",
+    "id": "world-z-causal-1",
+    "lookback_s": 0.3,
+    "stationary_action": "none"
+  },
+  "new_render": "NOT_RUN",
+  "plan_payload_sha256": "fd090867ab61fde774879f23ae56ea388e88db072521d9dd9f5a3bc5b489808d",
+  "pre04_core_prefix_sha256": "1cea0b2eda18e8c3ccf240b43fa0d046dab759c490138f926fe7e1a44405f2f4",
+  "provenance": {
+    "approval": null,
+    "audition_status": "AUDITION_PENDING",
+    "binding": {
+      "control_track_sha256": "07d6bc685ccc7f08624382a0e4e59a630428bc602a60bec0d9f6b089e0b26282",
+      "holds_sha256": "8bc46cff89bc0c8781dcb4a3bc6aca1516e5da0b538c689fa94b12ffc2fead4b",
+      "mapped_musical_sha256": "b36e9722e5f25198aea09869bf1b49cf1a50bb5766333042bca5357255e2bd4f",
+      "mapping_config": {
+        "articulation_enabled": true,
+        "dynamics_enabled": true,
+        "focus_object_id": "10_projectile_tower:tower-2",
+        "hold_beats": 1.0,
+        "max_changed_lead_fraction": 0.1,
+        "max_changed_note_fraction": 0.05,
+        "max_quantization_s": 0.75,
+        "ornaments_enabled": true
+      },
+      "ornament_version": "music-ornament-1",
+      "seed": 42,
+      "semantics_sha256": "41abfd15d58c254c60e20a7eaf0d9bc3a965e29b8bbae41e1b59935a3a323a45",
+      "source_musical_sha256": "5b4b0c48933cf94c35c8f9f259b2199acaad8288276cc6eba7193c10a40f5c66",
+      "transform_budgets": {
+        "low_register_floor": 48,
+        "max_events_per_bar": 96,
+        "max_events_per_second_added": 12,
+        "max_pitch": 96,
+        "max_requests": 256,
+        "max_simultaneous_ornaments": 2,
+        "min_low_interval": 5,
+        "min_note_duration_s": 0.025,
+        "min_pitch": 28
+      },
+      "variation": "base",
+      "version": "arranger-music-vertical-1"
+    },
+    "binding_sha256": "89498ae19d3fa0fbc202c85a07ce22bb87ed5a67c611fa6cad1df56b966e9a52",
+    "bound_brief": "Original blues/ragtime swing; restrained bossa accompaniment\narranger-music-vertical-1 binding 89498ae19d3fa0fbc202c85a07ce22bb87ed5a67c611fa6cad1df56b966e9a52",
+    "cached_gpt": false,
+    "composition_hash": "e8b7b69331f3a17c121071d913154bfa84c6eb1a7735989d64a76f002392c2e6",
+    "keyboard": false,
+    "manual_plan": true,
+    "mapped_events_sha256": "bc35b0daee9fc75f2d70f6bc7293d4083c09cbb179b39978b74304efa0ceac07",
+    "real_device": false,
+    "replay": false,
+    "scene_hash": "424d74fa8cf65b702354d94b592ea2b0e90fdaf779722ac6dc17ffc81145856a",
+    "scene_source_mode": "synthetic",
+    "source_events_sha256": "41b3187fa450baae5b29de85b42895a218b9f591c937f73357d5e6a4af15b91d",
+    "source_mode": "manual_plan",
+    "synthetic": true,
+    "version": "arranger-music-vertical-1"
+  },
+  "scene_dir": "/Users/agent/Desktop/SceneScore/artifacts/blender/validated-hero/10_projectile_tower-default",
+  "source_events": 258,
+  "source_hashes": {
+    "modules/arranger/core.py": "02765d9b05aafb373f10047ce8e4716b12e3ac4111946ec272e863104f4f8f42",
+    "modules/arranger/tests/fixtures/music-vertical-v1.json": "8e4a3ea3dae2673456a3c11c016b27f99eb1b00cc48d0cabef4e8ac6cb6effeb",
+    "modules/arranger/tests/test_music_vertical.py": "5c0ac9784c78f1bb5507e3a023fe6104e3ff2a793849b51c9682c8749518f472",
+    "modules/blender/summary.py": "bea4fb3ee0d8dd0cc45778d8d4d1d0e66e9ef1733274cc7b37842d2b10c41f8b",
+    "modules/music/catalog.py": "6a7e4bd0195a8e0b7d88d9a249f982a6875f80a73c6e979929ba229d8a5796bf",
+    "modules/music/ornament.py": "feed170dcb0e584d99088222757529ebdc18b669b740e05b1920b89c86cfdc67"
+  },
+  "status": "MACHINE_CHECKED_AUDITION_PENDING",
+  "world_z_direction_at_18s": -2
+}

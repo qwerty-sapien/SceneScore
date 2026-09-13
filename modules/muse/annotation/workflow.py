@@ -26,7 +26,7 @@ def append(path, stream, value):
     return value
 
 
-def cues(path, *, mode, seed=0, count=10, start_s=0):
+def cue_schedule(*, mode, seed=0, count=10, start_s=0):
     if mode not in {"natural_activity", "randomized_instructed", "self_paced"} or not 1 <= count <= 100:
         raise ValueError("bounded_protocol_required")
     rng, result, now = random.Random(seed), [], start_s
@@ -37,11 +37,18 @@ def cues(path, *, mode, seed=0, count=10, start_s=0):
                "requested_intent": rng.choice(ACTIVITIES) if mode == "natural_activity" else
                "comfortable_double_blink" if mode == "randomized_instructed" else "self_paced_if_comfortable",
                "is_ground_truth": False}
-        result.append(append(path, "cues", cue))
+        result.append(cue)
     return result
 
 
+def cues(path, *, mode, seed=0, count=10, start_s=0):
+    return [append(path, "cues", cue) for cue in
+            cue_schedule(mode=mode, seed=seed, count=count, start_s=start_s)]
+
+
 def confirm(path, cue_id, *, performed, confirmation_s):
+    if manifest(path)["status"] == "recording":
+        raise ValueError("confirmation_must_wait_until_recording_stops")
     if performed not in {"performed", "missed", "uncertain"} or not math.isfinite(confirmation_s):
         raise ValueError("invalid_delayed_response")
     cue_records = Path(path) / "cues.jsonl"
@@ -53,6 +60,8 @@ def confirm(path, cue_id, *, performed, confirmation_s):
 
 def label(path, *, reviewer, source, evidence_ref, epoch, onset_s, end_s, final_blink_s,
           gesture_count, intent, certainty, supersedes=None):
+    if manifest(path)["status"] == "recording":
+        raise ValueError("independent_review_must_wait_until_recording_stops")
     if source not in {"independent_observation", "consented_local_video", "independent_review"}:
         raise ValueError("independent_label_source_required")
     if not all(math.isfinite(v) for v in (onset_s, end_s, final_blink_s)):

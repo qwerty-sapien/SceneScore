@@ -1,0 +1,13 @@
+# 06: make the physically valid scene legible and polished
+
+Depends on 05 and 02. Own agreed presentation assets/scripts. Preserve the validated dynamics. Changes affecting geometry, release or collision shape return to 04/05.
+
+1. Implement the selected setting and visual hierarchy with enough detail to explain purpose, scale and support. Use restrained materials, plausible surface response, appropriate bevels/shading and motivated illumination. Ensure floor contact and target support read clearly. Remove technical labels from beauty renders, keeping them available in diagnostics.
+2. Compose the action so viewers see preparation, release, flight, impact/miss and aftermath. Verify character/ball grip, grounded feet, silhouettes, contact-point visibility, safe framing and scene depth. Purposeful anticipation, impact timing and follow-through should remain readable without audio. Keep a simple camera when a move adds no information.
+3. Use MCP to inspect actual geometry and camera/rendered viewport views, iterate in bounded steps, then capture all accepted changes in reproducible source. Review neutral-shaded contact clips and the beauty pass separately. Do not hide intersections in darkness, occlusion, bloom, depth-of-field or excessive motion blur.
+4. Render low-resolution previews at the intended final cadence and inspect the complete clip in real time, then inspect critical contact/release windows. Sampled stills cannot assess rhythm, cadence or settling. If your tools cannot perceive full motion, label that gate unverified and provide the playback artifacts for human review; do not substitute a model assertion.
+5. After the low-cost gates pass, render the hero/control at a target of 1920x1080 and native 30 fps, or record a justified delivery profile. Retain a sharp diagnostic version. Render an image sequence before encoding where that supports recovery. Record actual decoded resolution, cadence, frame count, duration and missing/duplicated frame checks. Never promote the old 8-fps output by frame duplication or interpolation.
+
+A simple successful setting is preferable to a cluttered one. A gradient can exist as a lighting element, but the scene still needs spatial and causal context. Do not force photorealism, expensive external assets or an elaborate rig when a coherent minimal style meets the brief.
+
+Apply the same visual language to the reviewed catalogue without turning every scene into an identical composition. Deliver final hero/control media, bounded native-cadence catalogue previews, source/bake identities and a frame/time-specific visual review. Separate model visual review from human acceptance.

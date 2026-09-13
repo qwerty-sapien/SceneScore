@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "seed": 42,
+  "scope": "Two actual frozen-hero compilations in fresh directories",
+  "checks": [
+    {
+      "path": "candidate.json",
+      "sha256": "d9ce7fd69f7aa9d47b6db169a6c779fa82a8795fce299858b614f358b797a0c9",
+      "repeat_sha256": "d9ce7fd69f7aa9d47b6db169a6c779fa82a8795fce299858b614f358b797a0c9"
+    },
+    {
+      "path": "events.json",
+      "sha256": "bc35b0daee9fc75f2d70f6bc7293d4083c09cbb179b39978b74304efa0ceac07",
+      "repeat_sha256": "bc35b0daee9fc75f2d70f6bc7293d4083c09cbb179b39978b74304efa0ceac07"
+    },
+    {
+      "path": "plan.json",
+      "sha256": "fd090867ab61fde774879f23ae56ea388e88db072521d9dd9f5a3bc5b489808d",
+      "repeat_sha256": "fd090867ab61fde774879f23ae56ea388e88db072521d9dd9f5a3bc5b489808d"
+    },
+    {
+      "path": "control-track.json",
+      "sha256": "e567807ab6474948f5edd519da4c0ef6ce44940cfeeaa457af9ebcfde9e04a0b",
+      "repeat_sha256": "e567807ab6474948f5edd519da4c0ef6ce44940cfeeaa457af9ebcfde9e04a0b"
+    },
+    {
+      "path": "holds.json",
+      "sha256": "8bc46cff89bc0c8781dcb4a3bc6aca1516e5da0b538c689fa94b12ffc2fead4b",
+      "repeat_sha256": "8bc46cff89bc0c8781dcb4a3bc6aca1516e5da0b538c689fa94b12ffc2fead4b"
+    },
+    {
+      "path": "score.mid",
+      "sha256": "a76878e0c68e9eb3312212c3a370365604c412904bbbe716758d90b1d252fdbf",
+      "repeat_sha256": "a76878e0c68e9eb3312212c3a370365604c412904bbbe716758d90b1d252fdbf"
+    }
+  ]
+}

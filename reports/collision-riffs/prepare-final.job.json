@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "tools/prepare_collision_riffs.py",
+    "--scores",
+    "artifacts/collision-riffs/scores-v2"
+  ],
+  "timeout_s": 300,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 54033,
+  "pgid": 54033,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 64.50067374994978
+}

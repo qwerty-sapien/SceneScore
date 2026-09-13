@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/agent/Desktop/SceneScore/.venv/bin/python",
+    "-m",
+    "http.server",
+    "8773",
+    "--bind",
+    "127.0.0.1",
+    "--directory",
+    "artifacts/web-dist"
+  ],
+  "timeout_s": 1500,
+  "status": "failed",
+  "process_group_absent": true,
+  "pid": 51713,
+  "pgid": 51713,
+  "returncode": -15,
+  "cleanup_signals": [],
+  "duration_s": 968.3704711659811
+}

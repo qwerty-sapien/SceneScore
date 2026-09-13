@@ -1,0 +1,5329 @@
+{
+  "cases": [
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            -3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            -2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.25,
+          [
+            -2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.375,
+          [
+            -3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "events": [
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0.125,
+          "event_type": "approach",
+          "id": "fixture:contact_episode:a|b:0",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -8,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:contact_episode",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        },
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0,
+          "event_type": "contact_onset",
+          "id": "fixture:contact_episode:a|b:1",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.125,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -8,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:contact_episode",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        },
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0.125,
+          "event_type": "contact_sustain",
+          "id": "fixture:contact_episode:a|b:2",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.125,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -8,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:contact_episode",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        },
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0.125,
+          "event_type": "separation",
+          "id": "fixture:contact_episode:a|b:3",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.25,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": 0,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:contact_episode",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        },
+        {
+          "centre_distance_m": 3,
+          "duration_s": 0,
+          "event_type": "contact_release",
+          "id": "fixture:contact_episode:a|b:4",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.375,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": 8,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:contact_episode",
+          "schema_version": "0.1",
+          "surface_gap_m": 1,
+          "uncertainty_m": 1e-05
+        }
+      ],
+      "expected": {
+        "drivers": {
+          "approach": 1.0,
+          "contact_onset": 1.0,
+          "contact_release": 1.0,
+          "contact_sustain": 0.125,
+          "separation": 1.0
+        },
+        "rebound_count": 0,
+        "types": [
+          "approach",
+          "contact_onset",
+          "contact_sustain",
+          "separation",
+          "contact_release"
+        ]
+      },
+      "geometry": {
+        "event_details": [
+          {
+            "end_s": 0.125,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:contact_episode:a|b:0",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          },
+          {
+            "end_s": 0.125,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:contact_episode:a|b:1",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          },
+          {
+            "end_s": 0.25,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:contact_episode:a|b:2",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          },
+          {
+            "end_s": 0.375,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:contact_episode:a|b:3",
+            "minimum_gap_time_s": 0.25,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          },
+          {
+            "end_s": 0.375,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:contact_episode:a|b:4",
+            "minimum_gap_time_s": 0.375,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          }
+        ],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "contact_episode",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.375,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:contact_episode",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -2,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -4,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:contact_episode:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -3,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -3,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:contact_episode:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:contact_episode:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:contact_episode:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:contact_episode:a:2",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:contact_episode:b:2",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -2,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -4,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 4.0,
+          "id": "fixture:contact_episode:a:3",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0.375,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -3,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -3,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 4.0,
+          "id": "fixture:contact_episode:b:3",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:contact_episode",
+          "scene_time_s": 0.375,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    },
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            -1,
+            2.25,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            0,
+            2.25,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.25,
+          [
+            1,
+            2.25,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "events": [
+        {
+          "centre_distance_m": 2.25,
+          "duration_s": 0.125,
+          "event_type": "approach",
+          "id": "fixture:positive_near_miss:a|b:0",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": 0,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:positive_near_miss",
+          "schema_version": "0.1",
+          "surface_gap_m": 0.25,
+          "uncertainty_m": 1e-05
+        },
+        {
+          "centre_distance_m": 2.25,
+          "duration_s": 0.25,
+          "event_type": "near_miss",
+          "id": "fixture:positive_near_miss:a|b:1",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": 0,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:positive_near_miss",
+          "schema_version": "0.1",
+          "surface_gap_m": 0.25,
+          "uncertainty_m": 1e-05
+        },
+        {
+          "centre_distance_m": 2.25,
+          "duration_s": 0.125,
+          "event_type": "separation",
+          "id": "fixture:positive_near_miss:a|b:2",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.125,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": 0,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:positive_near_miss",
+          "schema_version": "0.1",
+          "surface_gap_m": 0.25,
+          "uncertainty_m": 1e-05
+        }
+      ],
+      "expected": {
+        "drivers": {
+          "near_miss": 0.5
+        },
+        "minimum_s": 0.125,
+        "rebound_count": 0,
+        "types": [
+          "approach",
+          "near_miss",
+          "separation"
+        ]
+      },
+      "geometry": {
+        "event_details": [
+          {
+            "end_s": 0.125,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:positive_near_miss:a|b:0",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          },
+          {
+            "end_s": 0.25,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:positive_near_miss:a|b:1",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          },
+          {
+            "end_s": 0.25,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:positive_near_miss:a|b:2",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          }
+        ],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "positive_near_miss",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.25,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:positive_near_miss",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            0,
+            3.25,
+            1
+          ],
+          "bounds_min_m": [
+            -2,
+            1.25,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:positive_near_miss:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:positive_near_miss",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              2.25,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -1,
+              2.25,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:positive_near_miss:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:positive_near_miss",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            3.25,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            1.25,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:positive_near_miss:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:positive_near_miss",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              2.25,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              2.25,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:positive_near_miss:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:positive_near_miss",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            2,
+            3.25,
+            1
+          ],
+          "bounds_min_m": [
+            0,
+            1.25,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:positive_near_miss:a:2",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:positive_near_miss",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              2.25,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              1,
+              2.25,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:positive_near_miss:b:2",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:positive_near_miss",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    },
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            -5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "events": [
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0,
+          "event_type": "collision",
+          "id": "fixture:tunnelling_collision:a|b:0",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.0375,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -80,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:tunnelling_collision",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        }
+      ],
+      "expected": {
+        "drivers": {
+          "collision": 1.0
+        },
+        "normal_before_m_s": -80.0,
+        "onset_s": 0.0375,
+        "rebound_count": 0,
+        "types": [
+          "collision"
+        ]
+      },
+      "geometry": {
+        "event_details": [
+          {
+            "end_s": 0.0375,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:tunnelling_collision:a|b:0",
+            "minimum_gap_time_s": 0.0375,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          }
+        ],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "tunnelling_collision",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.125,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:tunnelling_collision",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -4,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -6,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:tunnelling_collision:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:tunnelling_collision",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -5,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -5,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:tunnelling_collision:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:tunnelling_collision",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            6,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            4,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:tunnelling_collision:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:tunnelling_collision",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              5,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              5,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:tunnelling_collision:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:tunnelling_collision",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    },
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            -2.5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            -2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.25,
+          [
+            -2.25,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "events": [
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0,
+          "event_type": "contact_onset",
+          "id": "fixture:small_over_large_rebound:a|b:0",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.125,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -4,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:small_over_large_rebound",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        }
+      ],
+      "expected": {
+        "area_ratio": 4.0,
+        "rebound_count": 1,
+        "rebounding_object_id": "a",
+        "speed_retention": 0.5,
+        "types": [
+          "contact_onset",
+          "asymmetric_rebound"
+        ]
+      },
+      "geometry": {
+        "event_details": [
+          {
+            "end_s": 0.125,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:small_over_large_rebound:a|b:0",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          }
+        ],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 4.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "small_over_large_rebound",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.25,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:small_over_large_rebound",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.5,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.5,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:small_over_large_rebound:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:small_over_large_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.5,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.5,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:small_over_large_rebound:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:small_over_large_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:small_over_large_rebound:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:small_over_large_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:small_over_large_rebound:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:small_over_large_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.25,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.25,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:small_over_large_rebound:a:2",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:small_over_large_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.25,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.25,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:small_over_large_rebound:b:2",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:small_over_large_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    },
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            -2.5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            -2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.25,
+          [
+            -2.25,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "events": [
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0,
+          "event_type": "contact_onset",
+          "id": "fixture:large_over_small_rebound:a|b:0",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.125,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -4,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:large_over_small_rebound",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        }
+      ],
+      "expected": {
+        "area_ratio": 4.0,
+        "rebound_count": 1,
+        "rebounding_object_id": "b",
+        "speed_retention": 0.5,
+        "types": [
+          "contact_onset",
+          "asymmetric_rebound"
+        ]
+      },
+      "geometry": {
+        "event_details": [
+          {
+            "end_s": 0.125,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:large_over_small_rebound:a|b:0",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          }
+        ],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 4.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "large_over_small_rebound",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.25,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:large_over_small_rebound",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.5,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.5,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:large_over_small_rebound:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:large_over_small_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.5,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.5,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:large_over_small_rebound:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:large_over_small_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:large_over_small_rebound:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:large_over_small_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:large_over_small_rebound:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:large_over_small_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.25,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.25,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:large_over_small_rebound:a:2",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:large_over_small_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.25,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.25,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:large_over_small_rebound:b:2",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:large_over_small_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    },
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            -2.5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            -2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.25,
+          [
+            -2.25,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "events": [
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0,
+          "event_type": "contact_onset",
+          "id": "fixture:equal_area_no_rebound:a|b:0",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.125,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -4,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:equal_area_no_rebound",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        }
+      ],
+      "expected": {
+        "area_ratio": 1.0,
+        "rebound_count": 0,
+        "rebounding_object_id": "b",
+        "speed_retention": 0.5,
+        "types": [
+          "contact_onset"
+        ]
+      },
+      "geometry": {
+        "event_details": [
+          {
+            "end_s": 0.125,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:equal_area_no_rebound:a|b:0",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          }
+        ],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "equal_area_no_rebound",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.25,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:equal_area_no_rebound",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.5,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.5,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:equal_area_no_rebound:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:equal_area_no_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.5,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.5,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:equal_area_no_rebound:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:equal_area_no_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:equal_area_no_rebound:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:equal_area_no_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:equal_area_no_rebound:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:equal_area_no_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.25,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.25,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:equal_area_no_rebound:a:2",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:equal_area_no_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.25,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.25,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:equal_area_no_rebound:b:2",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:equal_area_no_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    },
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            -2.003125,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            -2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          0.25,
+          [
+            -2.025,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "events": [
+        {
+          "centre_distance_m": 2,
+          "duration_s": 0,
+          "event_type": "contact_onset",
+          "id": "fixture:subfloor_rebound:a|b:0",
+          "impulse_ns": null,
+          "kind": "InteractionEvent",
+          "loop_instance": 0,
+          "method": "analytic",
+          "onset_s": 0.125,
+          "pair": [
+            "a",
+            "b"
+          ],
+          "pair_id": "a|b",
+          "physical_impact": false,
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "relative_normal_speed_m_s": -0.025,
+          "relative_tangential_speed_m_s": 0.0,
+          "scene_id": "fixture:subfloor_rebound",
+          "schema_version": "0.1",
+          "surface_gap_m": 0,
+          "uncertainty_m": 1e-05
+        }
+      ],
+      "expected": {
+        "rebound_count": 0,
+        "speed_retention": null,
+        "suppression": "normal_speed_below_rebound_floor",
+        "types": [
+          "contact_onset"
+        ]
+      },
+      "geometry": {
+        "event_details": [
+          {
+            "end_s": 0.125,
+            "geometry_method": "analytic_sphere_proxy",
+            "id": "fixture:subfloor_rebound:a|b:0",
+            "minimum_gap_time_s": 0.125,
+            "physical_dynamics": "synthetic analytic kinematics, no physical simulation"
+          }
+        ],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 4.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "subfloor_rebound",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.25,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:subfloor_rebound",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.0031249999999998,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.003125,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:subfloor_rebound:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:subfloor_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.003125,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.003125,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:subfloor_rebound:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:subfloor_rebound",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:subfloor_rebound:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:subfloor_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:subfloor_rebound:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:subfloor_rebound",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            -1.025,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -3.025,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:subfloor_rebound:a:2",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:subfloor_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              -2.025,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              -2.025,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:subfloor_rebound:b:2",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:subfloor_rebound",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    },
+    {
+      "analytic_samples": [
+        [
+          0,
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0
+          ]
+        ],
+        [
+          0.125,
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            3,
+            0
+          ]
+        ],
+        [
+          0.25,
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            3,
+            0
+          ]
+        ]
+      ],
+      "events": [],
+      "expected": {
+        "rebound_count": 0,
+        "types": []
+      },
+      "geometry": {
+        "event_details": [],
+        "geometry_version": "blender-geometry-1",
+        "objects": [
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  0,
+                  0
+                ],
+                [
+                  1.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "a",
+            "shape": "sphere",
+            "surface_area_m2": 1.0
+          },
+          {
+            "area_fixture": {
+              "triangles": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ],
+              "vertices": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  0,
+                  0
+                ],
+                [
+                  4.0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            "geometry_method": "synthetic evaluated world mesh triangles",
+            "object_id": "b",
+            "shape": "sphere",
+            "surface_area_m2": 4.0
+          }
+        ],
+        "substeps": 1
+      },
+      "name": "constant_separation",
+      "scene": {
+        "camera": {
+          "id": "fixture-camera",
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "duration_s": 0.25,
+        "fps": 8,
+        "fps_base": 1,
+        "generator_version": "synthetic-fixture-2",
+        "handedness": "right",
+        "id": "fixture:constant_separation",
+        "kind": "SceneManifest",
+        "matrix_layout": "row_major_column_vectors",
+        "objects": [
+          {
+            "object_id": "a",
+            "sonic_identity_id": "voice:a"
+          },
+          {
+            "object_id": "b",
+            "sonic_identity_id": "voice:b"
+          }
+        ],
+        "provenance": {
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "music-semantics-analytic-fixture-v2",
+          "input_hashes": [],
+          "seed": 42,
+          "source_mode": "synthetic",
+          "tool_version": "2"
+        },
+        "quaternion_order": "xyzw",
+        "render_hash": null,
+        "schema_version": "0.1",
+        "source_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "start_frame": 1,
+        "units": "metres",
+        "up_axis": "Z"
+      },
+      "states": [
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:constant_separation:a:0",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:constant_separation",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            1,
+            4,
+            1
+          ],
+          "bounds_min_m": [
+            -1,
+            2,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 1,
+          "id": "fixture:constant_separation:b:0",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:constant_separation",
+          "scene_time_s": 0,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              0,
+              3,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            2,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            0,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:constant_separation:a:1",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:constant_separation",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              1,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            2,
+            4,
+            1
+          ],
+          "bounds_min_m": [
+            0,
+            2,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 2.0,
+          "id": "fixture:constant_separation:b:1",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:constant_separation",
+          "scene_time_s": 0.125,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              1,
+              3,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            3,
+            1,
+            1
+          ],
+          "bounds_min_m": [
+            1,
+            -1,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:constant_separation:a:2",
+          "kind": "ObjectState",
+          "object_id": "a",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:constant_separation",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 1.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              2,
+              0,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        },
+        {
+          "acceleration_m_s2": null,
+          "bounds_max_m": [
+            3,
+            4,
+            1
+          ],
+          "bounds_min_m": [
+            1,
+            2,
+            -1
+          ],
+          "derivative_method": "analytic fixture: velocities calculated independently from finite segments",
+          "frame": 3.0,
+          "id": "fixture:constant_separation:b:2",
+          "kind": "ObjectState",
+          "object_id": "b",
+          "provenance": {
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "creator": "music-semantics-analytic-fixture-v2",
+            "input_hashes": [],
+            "seed": 42,
+            "source_mode": "synthetic",
+            "tool_version": "2"
+          },
+          "scene_id": "fixture:constant_separation",
+          "scene_time_s": 0.25,
+          "schema_version": "0.1",
+          "surface_area_m2": 4.0,
+          "transform": {
+            "matrix_row_major": [
+              1,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "position_m": [
+              2,
+              3,
+              0
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "unavailable_reason": "synthetic analytic fixture; no actual Blender export or physical dynamics",
+          "velocity_m_s": null,
+          "volume_m3": null
+        }
+      ]
+    }
+  ],
+  "fixture_version": "blender-music-semantics-fixtures-2",
+  "provenance": {
+    "approval": null,
+    "audition_status": "AUDITION_PENDING",
+    "blender_executed": false,
+    "method": "independent analytic trajectories and literal expected values; rectangle triangle areas are known width times unit height",
+    "source_mode": "synthetic"
+  }
+}

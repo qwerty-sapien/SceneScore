@@ -1,0 +1,91 @@
+{
+  "format": "scenescore.detector-readiness/1",
+  "status": "INSUFFICIENT_REAL_DATA",
+  "release_status": "PIPELINE_TESTED_ONLY",
+  "trained_real_models": 0,
+  "real_evaluation": "NOT_RUN",
+  "metrics": {
+    "tp": null,
+    "fn": null,
+    "fp": null,
+    "recall": null,
+    "precision": null,
+    "fp_per_armed_hour": null,
+    "fp_per_elapsed_monitored_hour": null,
+    "armed_hours": null,
+    "elapsed_monitored_hours": null,
+    "candidate_coverage": null,
+    "ambiguous_label_count": null,
+    "decision_latency_p50_ms": null,
+    "decision_latency_p95_ms": null,
+    "decision_latency_max_ms": null,
+    "armed_availability": null,
+    "recall_lower_95": null,
+    "false_activation_upper_95_per_armed_hour": null
+  },
+  "null_reason": "No eligible real held-out evaluation was run; zero denominators are not perfect metrics",
+  "per_session": [],
+  "per_refit": [],
+  "misses_by_cause": null,
+  "audited_sessions": [],
+  "blockers": [
+    "No frozen index of consented verified real sessions with independent labels and complete refit splits",
+    "No measured hardware/channel/unit/rate/quality verification in an eligible session",
+    "No train/development/final-test real replay comparison",
+    "Matcher tolerance and calibration segment require preregistration on independent development data"
+  ],
+  "config": {
+    "warmup_s": 1.0,
+    "baseline_window_s": 3.0,
+    "lowpass_hz": 10.0,
+    "high_z": 5.0,
+    "low_z": 2.0,
+    "floor_uv": 7.0,
+    "min_duration_s": 0.04,
+    "max_duration_s": 0.4,
+    "min_separation_s": 0.1,
+    "max_gap_s": 0.5,
+    "cooldown_s": 0.25
+  },
+  "config_sha256": "057a585499b7865e3b573bde3b16285dd1b0a3021c4c518e354f5d97173a593b",
+  "code_sha256": {
+    "modules/muse/training/readiness.py": "3df382ed68721fd111b1ee17ee01311c65cfafcf2efd41fb7a42a72a26de504d",
+    "modules/muse/training/pipeline.py": "6dc40db9fadebc0315366ec8b2f19a5230d3bffaed37641063e529ec59ba0c44",
+    "modules/muse/baseline/causal.py": "dd2222fb283a40b8a353dad61bc92138e667bcdc78b2a562375390acf4545eb8",
+    "modules/muse/baseline/ragtm.py": "d10090b06b9afcf8637c09c16f710cf89b9342bd764175af6bc58d5e997d0c76"
+  },
+  "data_sha256": null,
+  "model_sha256": null,
+  "matcher": {
+    "status": "NOT_LOCKED",
+    "tolerance_s": null,
+    "tie_rule": "nearest final blink, earliest final blink, lexical label ID",
+    "matching": "chronological one-to-one; full pipeline misses include quality and cooldown",
+    "numerical_tolerance": null
+  },
+  "ladder": [
+    {
+      "rung": "A",
+      "kind": "attributed_RAGTM_candidate_port",
+      "control_authority": false,
+      "real_comparison": "NOT_RUN"
+    },
+    {
+      "rung": "B",
+      "kind": "causal_median_MAD_and_double_only_grammar",
+      "candidate": true,
+      "real_comparison": "NOT_RUN"
+    },
+    {
+      "rung": "C",
+      "kind": "regularized_logistic_bounded_causal_features",
+      "candidate": false,
+      "real_comparison": "NOT_RUN",
+      "calibration": "uncalibrated_score"
+    }
+  ],
+  "closure_floor_ms": 500.0,
+  "grammar_semantics": "end-to-next-onset gaps, strict time-after-end-plus-max-gap closure; pack onset-gap examples differ",
+  "rollback": "python -m modules.muse.acquisition replay SESSION --detect --arm-after-s 1.0 (omit learned model; default causal baseline)",
+  "next_status_requires": "Consented, independently labelled verified Muse sessions across separate refits with a frozen split and matcher, followed by causal real replay evaluation"
+}

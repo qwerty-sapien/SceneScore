@@ -13,3 +13,9 @@ The user authorized 2E, then Phase 3, followed by GPT-5.6-Sol xhigh review of a 
 Still unresolved: human exact-plan approval and musical/full-motion audition; real Muse hardware/consent/labels/calibration/clock mapping; physical AV timing and Safari parity; configured model API access; organizer preparation rules. Wider composition selection, imported plan diff/numeric mapping UI and automatic looping remain incomplete. The current vertical slice cannot be promoted to full release because its software tests pass.
 
 Phase 4 remains unstarted and unauthorized. Resume by resolving the Phase 3 gate, not by silently advancing the phase number. Exact continuation wording is in RUNBOOK.
+
+## Authorized Blender production revamp — 2026-09-13
+
+Implementation and scoped draft integration are delivered; the complete revamp is **BLOCKED**, not accepted. Native Bullet hero calibration failed after three bounded repairs. Ten recipes plus matched hero controls have fresh Blender playback assets and native 30 fps diagnostic renders; four scoped backends/candidates also pass numerical gates and have beauty previews. The explicitly staged eight-second staircase powers three original-score excerpt bundles with `approval:null`. The final browser take measured 8.50 ms P95 software AV drift; physical output and full-motion/audio perception remain unverified. The frozen default hero selection is unchanged.
+
+Read [Blender delivery and exact artifacts](../reports/blender-revamp/DELIVERY.md), [DAG evidence](../reports/blender-revamp/EXECUTION.md), and the [native calibration failure](../reports/blender-revamp/native-calibration-final.json). This scoped timing result does not replace the historical Phase 3B result above, authorize Phase 4, or approve separate music/Muse work.

@@ -1,0 +1,7 @@
+{
+  "native_restitution": 0,
+  "launcher_elevation": 0.8,
+  "tower_half_x": 0.32,
+  "paddle_speed": 7,
+  "ball_mass": 4
+}

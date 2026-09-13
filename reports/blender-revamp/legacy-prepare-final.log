@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/agent/Desktop/SceneScore/apps/web/tools/prepare.py", line 9, in <module>
+    from modules.arranger.core import Context, baseline, compile_preview, encoded
+ModuleNotFoundError: No module named 'modules'

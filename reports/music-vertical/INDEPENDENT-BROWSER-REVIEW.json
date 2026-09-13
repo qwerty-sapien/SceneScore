@@ -1,0 +1,60 @@
+{
+  "reviewed_at_utc": "2026-09-12T19:41:57.565006+00:00",
+  "browser_report_sha256": "0f29e5047636b6d8014585d12386d16729cd1561b8de578bae5af49f21f617bc",
+  "candidate_sha256": "d9ce7fd69f7aa9d47b6db169a6c779fa82a8795fce299858b614f358b797a0c9",
+  "status": "independent arithmetic and record inspection; await node07 provenance report",
+  "complete": true,
+  "duration_s": 30,
+  "sample_rate": 48000,
+  "approval": null,
+  "control_count": 2,
+  "controls": [
+    {
+      "requested_scene_s": 19.006666666666668,
+      "signed_semitones": -2,
+      "arrival_scene_s": 22.5,
+      "status": "executed"
+    },
+    {
+      "requested_scene_s": 24.505333333333336,
+      "signed_semitones": 2,
+      "arrival_scene_s": 27.5,
+      "status": "executed"
+    }
+  ],
+  "final_tonic_pc": 0,
+  "performed_event_count": 279,
+  "maximum_event_end_s": 30.0,
+  "intervals": [
+    {
+      "detector_closure_ms": null,
+      "mapped_request_to_receipt_ms": 0,
+      "accepted_to_scheduled_ack_ms": 19.999999999999574,
+      "musical_arrival_wait_ms": 3493.333333333332,
+      "ack_to_arrival_wait_ms": 3473.3333333333326,
+      "host_to_browser_ms": null,
+      "physical_output_measured": false
+    },
+    {
+      "detector_closure_ms": null,
+      "mapped_request_to_receipt_ms": 0,
+      "accepted_to_scheduled_ack_ms": 19.999999999999574,
+      "musical_arrival_wait_ms": 2994.666666666664,
+      "ack_to_arrival_wait_ms": 2974.6666666666642,
+      "host_to_browser_ms": null,
+      "physical_output_measured": false
+    }
+  ],
+  "av_offset": {
+    "sample_count": 200,
+    "method": "nearest rank on last 200 absolute software video/audio differences, milliseconds",
+    "p95_ms": 144.3333333333321,
+    "max_ms": 147.66666666666595,
+    "target_p95_ms": 50,
+    "previous_p95_ms": 137.33,
+    "target_met": false
+  },
+  "physical_output_measured": false,
+  "human_reviewer": null,
+  "audition_status": "AUDITION_PENDING"
+}

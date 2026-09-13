@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/agent/Desktop/SceneScore/tools/mux_performance.py", line 141, in <module>
+    main()
+    ~~~~^^
+  File "/Users/agent/Desktop/SceneScore/tools/mux_performance.py", line 108, in main
+    report, mix = verify_export(args.report, args.video)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/agent/Desktop/SceneScore/tools/mux_performance.py", line 79, in verify_export
+    from modules.blender.production.playback import create_playback_window
+  File "/Users/agent/Desktop/SceneScore/modules/blender/production/playback.py", line 11, in <module>
+    from scenescore.contracts import validate
+ModuleNotFoundError: No module named 'scenescore'

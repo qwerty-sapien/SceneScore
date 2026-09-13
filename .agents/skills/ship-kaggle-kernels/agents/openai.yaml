@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ship Kaggle Kernels"
+  short_description: "Preflight Kaggle kernels, runtimes, and carriers"
+  default_prompt: "Use $ship-kaggle-kernels to validate this Dataset carrier or certify this Kaggle kernel, including target-minor dynamic modules, subprocesses, linker state, diagnostics, and MP4 release paths, before submission."

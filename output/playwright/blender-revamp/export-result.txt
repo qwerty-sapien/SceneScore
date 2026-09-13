@@ -1,0 +1,25 @@
+### Ran Playwright code
+```js
+await (async (page) => {
+ const downloads=[];
+ page.on('download',download=>{downloads.push(download.saveAs('/Users/agent/Desktop/SceneScore/output/playwright/blender-revamp/'+download.suggestedFilename()));});
+ await page.getByRole('button',{name:'Export draft audition',exact:true}).click();
+ await page.waitForFunction(()=>window.__lastExport?.files?.length===5,null,{timeout:60000});
+ await Promise.all(downloads);
+ console.log(JSON.stringify({downloads:downloads.length,report:await page.evaluate(()=>window.__lastExport)}));
+}
+)(page);
+```
+### Events
+- Downloading file scenescore-DRAFT.wav ...
+- Downloaded file scenescore-DRAFT.wav to ".playwright-cli/scenescore-DRAFT.wav"
+- Downloading file scenescore-DRAFT-piano.wav ...
+- Downloaded file scenescore-DRAFT-piano.wav to ".playwright-cli/scenescore-DRAFT-piano.wav"
+- Downloading file scenescore-DRAFT-bass.wav ...
+- Downloaded file scenescore-DRAFT-bass.wav to ".playwright-cli/scenescore-DRAFT-bass.wav"
+- Downloading file scenescore-DRAFT-brush.wav ...
+- Downloaded file scenescore-DRAFT-brush.wav to ".playwright-cli/scenescore-DRAFT-brush.wav"
+- Downloading file scenescore-DRAFT-foley.wav ...
+- Downloaded file scenescore-DRAFT-foley.wav to ".playwright-cli/scenescore-DRAFT-foley.wav"
+- Downloading file scenescore-DRAFT.json ...
+- Downloaded file scenescore-DRAFT.json to ".playwright-cli/scenescore-DRAFT.json"

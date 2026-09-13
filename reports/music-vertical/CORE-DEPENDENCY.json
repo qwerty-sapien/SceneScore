@@ -1,0 +1,6 @@
+{
+  "path": "modules/arranger/core.py",
+  "sha256": "1cea0b2eda18e8c3ccf240b43fa0d046dab759c490138f926fe7e1a44405f2f4",
+  "reason": "Reviewed additive concurrent Blender Context role_supplement/playback_policy support; accepted as dependency before node04 edits. Legacy None behavior unchanged.",
+  "root_integration_rule": "Root must still match this exact pre-04 hash before copying reviewed node04 file; otherwise hold for reconciliation."
+}

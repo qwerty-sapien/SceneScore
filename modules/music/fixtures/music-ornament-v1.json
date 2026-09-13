@@ -1,0 +1,155 @@
+{
+  "audit": {
+    "approval": null,
+    "audition_status": "AUDITION_PENDING",
+    "budgets": {
+      "low_register_floor": 48,
+      "max_events_per_bar": 96,
+      "max_events_per_second_added": 12,
+      "max_pitch": 96,
+      "max_requests": 256,
+      "max_simultaneous_ornaments": 2,
+      "min_low_interval": 5,
+      "min_note_duration_s": 0.025,
+      "min_pitch": 28
+    },
+    "composition_sha256": "76d75e3e98d31c48c7ea234c987efc03972b8f11e616c187d74f0a10fc6bc530",
+    "decorated_source_events": 1,
+    "document_type": "SceneScoreTransformAudit",
+    "document_version": 1,
+    "events_added": 1,
+    "maximum_added_events_per_second": 1,
+    "maximum_events_per_bar": 24,
+    "maximum_simultaneous_ornaments": 1,
+    "output_events_sha256": "6a235a3680bf44067e45cd9e2f00773f6b901807bd88a3626d5f2b381711c7c9",
+    "preserves_duration": true,
+    "protected_streams_unchanged": true,
+    "renderer_limits": [
+      "Browser articulation envelopes require the integrated engine version.",
+      "Python candidate renderer distinguishes legato; staccato/tenuto tokens alone do not change it.",
+      "No acoustic or perceptual quality is established by this audit."
+    ],
+    "requests": [
+      {
+        "decision_seed": 4721511783745064543,
+        "events_added": 1,
+        "output_event_ids": [
+          "manual-audition:tilted_blue_v1:base:piano_or_lead:0022:music-ornament-1:grace:0",
+          "manual-audition:tilted_blue_v1:base:piano_or_lead:0022"
+        ],
+        "pitch_rule": "chromatic_approach",
+        "reason": null,
+        "request": {
+          "articulation": null,
+          "direction": 1,
+          "event_id": "manual-audition:tilted_blue_v1:base:piano_or_lead:0022",
+          "kind": "grace",
+          "preserves_duration": true,
+          "probability": 1.0,
+          "related_event_ids": [],
+          "subdivisions": 4,
+          "velocity_delta": 0
+        },
+        "source_slot_s": [
+          5.0,
+          5.625
+        ],
+        "status": "applied"
+      },
+      {
+        "decision_seed": 13185404525474587855,
+        "events_added": 0,
+        "output_event_ids": [
+          "manual-audition:tilted_blue_v1:base:piano_or_lead:0026"
+        ],
+        "pitch_rule": "source_pitch_or_octave",
+        "reason": null,
+        "request": {
+          "articulation": null,
+          "direction": 1,
+          "event_id": "manual-audition:tilted_blue_v1:base:piano_or_lead:0026",
+          "kind": "velocity",
+          "preserves_duration": true,
+          "probability": 1.0,
+          "related_event_ids": [],
+          "subdivisions": 4,
+          "velocity_delta": 12
+        },
+        "source_slot_s": [
+          6.041666666666667,
+          6.25
+        ],
+        "status": "applied"
+      },
+      {
+        "decision_seed": 16588068016282472573,
+        "events_added": 0,
+        "output_event_ids": [
+          "manual-audition:tilted_blue_v1:base:piano_or_lead:0032"
+        ],
+        "pitch_rule": "source_pitch_or_octave",
+        "reason": null,
+        "request": {
+          "articulation": "legato",
+          "direction": 1,
+          "event_id": "manual-audition:tilted_blue_v1:base:piano_or_lead:0032",
+          "kind": "articulation",
+          "preserves_duration": true,
+          "probability": 1.0,
+          "related_event_ids": [],
+          "subdivisions": 4,
+          "velocity_delta": 0
+        },
+        "source_slot_s": [
+          7.5,
+          8.125
+        ],
+        "status": "applied"
+      }
+    ],
+    "score_duration_s": 30.0,
+    "seed": 42,
+    "source_events_sha256": "81017381a1d2ee1c1d0feb33df67cde7ff642d80715c044d19c7238178357114",
+    "timing_policy": "subdivide_inside_once_resolved_slot; never apply swing again",
+    "version": "music-ornament-1"
+  },
+  "document_type": "SceneScoreOrnamentFixture",
+  "document_version": 1,
+  "output_events_sha256": "6a235a3680bf44067e45cd9e2f00773f6b901807bd88a3626d5f2b381711c7c9",
+  "requests": [
+    {
+      "articulation": null,
+      "direction": 1,
+      "event_id": "manual-audition:tilted_blue_v1:base:piano_or_lead:0022",
+      "kind": "grace",
+      "preserves_duration": true,
+      "probability": 1.0,
+      "related_event_ids": [],
+      "subdivisions": 4,
+      "velocity_delta": 0
+    },
+    {
+      "articulation": null,
+      "direction": 1,
+      "event_id": "manual-audition:tilted_blue_v1:base:piano_or_lead:0026",
+      "kind": "velocity",
+      "preserves_duration": true,
+      "probability": 1.0,
+      "related_event_ids": [],
+      "subdivisions": 4,
+      "velocity_delta": 12
+    },
+    {
+      "articulation": "legato",
+      "direction": 1,
+      "event_id": "manual-audition:tilted_blue_v1:base:piano_or_lead:0032",
+      "kind": "articulation",
+      "preserves_duration": true,
+      "probability": 1.0,
+      "related_event_ids": [],
+      "subdivisions": 4,
+      "velocity_delta": 0
+    }
+  ],
+  "seed": 42
+}

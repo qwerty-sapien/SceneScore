@@ -1,0 +1,5 @@
+Read planning/blender_revamp/START_HERE.md and execute this Blender production revamp in the existing SceneScore repository. Treat this as authorization to implement the animation, validation, staging, render and directly affected integration changes described there. Preserve unrelated product behavior and human approval gates.
+
+Use the focused prompts and dependency graph. Discover the live repo and installed tools before choosing implementation details. Delegate only where supported and file ownership is disjoint; otherwise run sequentially. Use Blender CLI/Python for reproducible production and ahujasid/blender-mcp for bounded interactive inspection and iteration. Convert successful interactive edits back into source-controlled generation.
+
+Require independent physics tests, concrete positive and negative examples, native-cadence motion inspection and a meaningful cause-and-effect scene. Continue through implementation, rendering, repair and integration. Documentation, a successful render command, or attractive still frames alone cannot satisfy the request. Report actual artifacts and remaining blockers without inventing verification or human approval.

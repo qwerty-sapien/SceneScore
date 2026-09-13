@@ -1,0 +1,34 @@
+{
+  "id": "muse-latency-ladder",
+  "version": "1",
+  "authority": "INTERFACE_CONTRACT.md defines the stamp names. docs/EVALUATION.md defines the gates. This file records the arithmetic that constrains the detector configuration.",
+  "stamps": [
+    {"name": "t0_final_blink_s", "clock": "device", "meaning": "onset of the second blink of the pair", "measured_by": "detector candidate stream"},
+    {"name": "t1_decision_s", "clock": "device", "meaning": "grammar commits the closed double", "measured_by": "Grammar.advance"},
+    {"name": "t2_dispatch_s", "clock": "host_monotonic", "meaning": "ControlAction constructed", "measured_by": "runtime adapter"},
+    {"name": "t3_request_s", "clock": "audio", "meaning": "action.request.seconds after ClockMapping", "measured_by": "adapter"},
+    {"name": "t4_received_s", "clock": "audio", "meaning": "Decision.audio_received_s", "measured_by": "Timeline.submit"},
+    {"name": "t5_ack_onset_s", "clock": "audio", "meaning": "scheduled onset of the acknowledgement", "measured_by": "Engine scheduler"},
+    {"name": "t6_boundary_s", "clock": "audio", "meaning": "Decision.boundary_s, new key established", "measured_by": "Timeline"}
+  ],
+  "budgets": [
+    {"interval": "t1 - t0", "gate": "<= 750 ms p95", "source": "docs/EVALUATION.md final blink to decision"},
+    {"interval": "t2 - t1", "gate": "<= 20 ms", "source": "this pack"},
+    {"interval": "t4 - t3", "gate": "<= 5 ms", "source": "INTERFACE_CONTRACT.md"},
+    {"interval": "t5 - t4", "gate": "<= 300 ms", "source": "the responsiveness claim; this is the only interval the phrase 'sub-300 ms' may describe"},
+    {"interval": "t6 - t5", "gate": "musical, unbounded by design", "source": "must never be folded into any other interval"}
+  ],
+  "closure_arithmetic": {
+    "statement": "Under the double-only grammar, a decision cannot be committed until the sequence is closed, and closure requires observing that no third blink arrives within max_gap_s of the second.",
+    "floor_ms": "1000 * Config.max_gap_s = 500 ms",
+    "headroom_ms": "750 - 500 = 250 ms for filtering, scoring, hysteresis and dispatch",
+    "consequence": "Raising max_gap_s above 0.73 s makes the 750 ms p95 gate unreachable no matter how fast the classifier is. Any change to max_gap_s is a latency change, not only a grammar change, and must be reported as such.",
+    "forbidden": "Emitting on the second blink before closure to save latency. That converts every triple into a false activation and is the exact defect this grammar exists to prevent."
+  },
+  "reporting_rules": [
+    "Report armed exposure and elapsed monitored exposure separately; state which denominator any rate uses.",
+    "A scheduled onset is not an acoustic onset. Acoustic claims require loopback or microphone capture and must name the device.",
+    "Detector latency and musical boundary wait are reported as separate distributions, never summed into one headline number.",
+    "No sub-frame precision may be claimed from an 8 fps source video."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "format": "scenescore.collection-protocol/1",
+  "participant_id": null,
+  "refit_id": null,
+  "role": null,
+  "mode": null,
+  "headset_removed_and_refitted": null,
+  "consent_ref": null,
+  "consent_words": null,
+  "recorded_at_utc": null,
+  "retention_until": null,
+  "consent": {
+    "frontal_eeg_and_timestamps": false,
+    "local_storage_only": false,
+    "retention_understood": false,
+    "stop_and_delete_anytime": false
+  },
+  "seed": 0
+}

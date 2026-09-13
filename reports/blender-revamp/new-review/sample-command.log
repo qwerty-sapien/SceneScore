@@ -1,0 +1,27 @@
+{
+  "seed": 4220498367845866104,
+  "sample_count": 4,
+  "universe_count": 7,
+  "selected": [
+    {
+      "path": "output/playwright/blender-revamp/final-exports/brush_straight_rag_v1/scenescore-DRAFT.wav",
+      "sha256": "159c387975a29160fb5f49ab5cdeadb0aca1a251dddbe8743509868d4a5252c1",
+      "stratum": "music"
+    },
+    {
+      "path": "output/playwright/blender-revamp/final-exports/brush_ballad_sparse_v1/scenescore-DRAFT.wav",
+      "sha256": "e5870ed4add1facd912e746e05bcf1a35b6484f13a47a8bd655164496e14ce42",
+      "stratum": "music"
+    },
+    {
+      "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/preview.mp4",
+      "sha256": "4dda38d936d12b2948faf77712cd8767a8cbaae5ed11514f7776dbbf56c8cdc7",
+      "stratum": "scene"
+    },
+    {
+      "path": "artifacts/blender/revamp/integration/final/rag-DRAFT.mp4",
+      "sha256": "d147b90c9efbf63e7aec5fb16de28a2f621737723b92ed406ae211cbbcbc3a54",
+      "stratum": "preview"
+    }
+  ]
+}

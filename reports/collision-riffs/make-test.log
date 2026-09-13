@@ -1,0 +1,396 @@
+PYTHONPATH=.:src .venv/bin/python -m scenescore.cli test-contracts
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "fixtures/contracts/AcquisitionMetadata.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/EEGChunk.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/BlinkCandidate.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/GestureEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ControlAction.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/SceneManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ObjectState.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/InteractionEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/CompositionSpec.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/BrushGroove.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ScoreEvent.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/AudioAssetManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ArrangementPlan.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/Approval.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/ClockMapping.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/RunManifest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/EvaluationReport.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/CapabilityRequest.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/near-miss.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/separating-pair.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/packet-loss.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/no-event.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/bad-quality.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/gesture-1.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/gesture-3.json",
+      "expected_valid": true,
+      "actual_valid": true
+    },
+    {
+      "path": "fixtures/contracts/bad-version.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-units.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/extra-field.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/self-pair.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/fake-impact.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/contact-near-miss.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-pair-id.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/stale-times.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/mismatched-channels.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/wrong-receipt-clock.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/time-reversal.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/mixed-epoch.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/count-mismatch.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/double-gain-change.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/single-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/triple-default-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-quality-action.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/missing-approval.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/duplicate-object.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/inverted-bounds.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/invalid-quaternion.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-hash.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/pitched-brush.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/overflow-note.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/tempo-reversal.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/unpitched-note.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/quantized-foley.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/double-swing.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/register-inversion.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/bad-transition.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/leaky-split.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/fake-statistical-support.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/excess-armed-exposure.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/invalid-clock-range.json",
+      "expected_valid": false,
+      "actual_valid": false
+    },
+    {
+      "path": "fixtures/contracts/non-positive-timeout.json",
+      "expected_valid": false,
+      "actual_valid": false
+    }
+  ],
+  "evidence_mode": "synthetic"
+}
+npm run test:contracts
+
+> scenescore-harness@0.1.0 test:contracts
+> node --import tsx --test tests/ts/*.test.ts
+
+✔ fixtures/contracts/AcquisitionMetadata.json (13.783833ms)
+✔ fixtures/contracts/EEGChunk.json (0.678334ms)
+✔ fixtures/contracts/BlinkCandidate.json (0.501625ms)
+✔ fixtures/contracts/GestureEvent.json (0.550667ms)
+✔ fixtures/contracts/ControlAction.json (0.698625ms)
+✔ fixtures/contracts/SceneManifest.json (0.715584ms)
+✔ fixtures/contracts/ObjectState.json (0.622625ms)
+✔ fixtures/contracts/InteractionEvent.json (0.4965ms)
+✔ fixtures/contracts/CompositionSpec.json (0.441417ms)
+✔ fixtures/contracts/BrushGroove.json (0.413375ms)
+✔ fixtures/contracts/ScoreEvent.json (0.352708ms)
+✔ fixtures/contracts/AudioAssetManifest.json (0.239792ms)
+✔ fixtures/contracts/ArrangementPlan.json (0.25425ms)
+✔ fixtures/contracts/Approval.json (0.209917ms)
+✔ fixtures/contracts/ClockMapping.json (0.201416ms)
+✔ fixtures/contracts/RunManifest.json (0.228583ms)
+✔ fixtures/contracts/EvaluationReport.json (0.218084ms)
+✔ fixtures/contracts/CapabilityRequest.json (0.2015ms)
+✔ fixtures/contracts/near-miss.json (0.207375ms)
+✔ fixtures/contracts/separating-pair.json (0.16825ms)
+✔ fixtures/contracts/packet-loss.json (0.241584ms)
+✔ fixtures/contracts/no-event.json (0.183ms)
+✔ fixtures/contracts/bad-quality.json (0.200708ms)
+✔ fixtures/contracts/gesture-1.json (1.061708ms)
+✔ fixtures/contracts/gesture-3.json (0.25175ms)
+✔ fixtures/contracts/bad-version.json (0.367625ms)
+✔ fixtures/contracts/bad-units.json (0.198875ms)
+✔ fixtures/contracts/extra-field.json (0.229ms)
+✔ fixtures/contracts/self-pair.json (0.194ms)
+✔ fixtures/contracts/fake-impact.json (0.177209ms)
+✔ fixtures/contracts/contact-near-miss.json (0.18075ms)
+✔ fixtures/contracts/bad-pair-id.json (0.219917ms)
+✔ fixtures/contracts/stale-times.json (0.371083ms)
+✔ fixtures/contracts/mismatched-channels.json (0.208833ms)
+✔ fixtures/contracts/wrong-receipt-clock.json (0.172375ms)
+✔ fixtures/contracts/time-reversal.json (0.292875ms)
+✔ fixtures/contracts/mixed-epoch.json (0.204459ms)
+✔ fixtures/contracts/count-mismatch.json (0.164458ms)
+✔ fixtures/contracts/double-gain-change.json (0.233292ms)
+✔ fixtures/contracts/single-action.json (0.165458ms)
+✔ fixtures/contracts/triple-default-action.json (0.146875ms)
+✔ fixtures/contracts/bad-quality-action.json (0.15675ms)
+✔ fixtures/contracts/missing-approval.json (0.15425ms)
+✔ fixtures/contracts/duplicate-object.json (0.159625ms)
+✔ fixtures/contracts/inverted-bounds.json (0.182833ms)
+✔ fixtures/contracts/invalid-quaternion.json (0.13975ms)
+✔ fixtures/contracts/bad-hash.json (0.140042ms)
+✔ fixtures/contracts/pitched-brush.json (0.152417ms)
+✔ fixtures/contracts/overflow-note.json (0.185958ms)
+✔ fixtures/contracts/tempo-reversal.json (0.1725ms)
+✔ fixtures/contracts/unpitched-note.json (0.184708ms)
+✔ fixtures/contracts/quantized-foley.json (0.146042ms)
+✔ fixtures/contracts/double-swing.json (0.131416ms)
+✔ fixtures/contracts/register-inversion.json (0.169292ms)
+✔ fixtures/contracts/bad-transition.json (0.141042ms)
+✔ fixtures/contracts/leaky-split.json (0.172ms)
+✔ fixtures/contracts/fake-statistical-support.json (0.160458ms)
+✔ fixtures/contracts/excess-armed-exposure.json (0.128333ms)
+✔ fixtures/contracts/invalid-clock-range.json (0.150125ms)
+✔ fixtures/contracts/non-positive-timeout.json (0.14375ms)
+✔ nonfinite scores fail (0.249917ms)
+✔ clock and gesture boundary discipline (0.461167ms)
+✔ scheduler deduplicates sequence, preserves lanes and drops old epochs (0.909ms)
+✔ content hashing is exact bytes (0.13625ms)
+✔ bundle rejects unknown references and catalogue versions (2.264708ms)
+✔ Python envelope action passes frozen TypeScript contract without extra canonical fields (13.20275ms)
+✔ keyboard: canonical adapter action uses Timeline.submit gates and one-pending limit (21.7755ms)
+✔ synthetic: canonical adapter action uses Timeline.submit gates and one-pending limit (8.439666ms)
+✔ replay: canonical adapter action uses Timeline.submit gates and one-pending limit (7.06625ms)
+✔ real_device: canonical adapter action uses Timeline.submit gates and one-pending limit (6.136208ms)
+ℹ tests 70
+ℹ suites 0
+ℹ pass 70
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 308.566166
+PYTHONPATH=.:src .venv/bin/python -m pytest -q
+........................................................................ [  9%]
+........................................................................ [ 18%]
+........................................................................ [ 28%]
+........................................................................ [ 37%]
+................................................................make: *** [test] Terminated: 15

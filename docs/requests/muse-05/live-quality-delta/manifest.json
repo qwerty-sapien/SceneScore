@@ -1,0 +1,47 @@
+[
+  {
+    "path": "services/bridge/server.py",
+    "before_sha256": "121c8557f512028f81ab9a98b57fb6b2042195309facbc7532033c938bc64b07",
+    "after_sha256": "82d6c6458a71fd896a6e1046c6c119a1e5f2879b7f24cbf0c253bb4b537c8b3d"
+  },
+  {
+    "path": "services/bridge/lsl_clock.py",
+    "before_sha256": null,
+    "after_sha256": "f01e71d6434ea7d954ee174d25820157576a86952afe02bf74dee8e16a8c7e01"
+  },
+  {
+    "path": "services/bridge/tests/test_bridge.py",
+    "before_sha256": "abeda0711be9f07bdaf5c19f3fdf486ec2386b60500c6594baa414440f3b5ed9",
+    "after_sha256": "9e5e275d049c3c8de7ccc4d0cc687261192adace37d2d86372cdea10fb5e70e5"
+  },
+  {
+    "path": "services/bridge/tests/test_lsl_clock.py",
+    "before_sha256": null,
+    "after_sha256": "5a526b6f65a5a5df3af1686945f668c362c3ccf6ef3ea563146692af4c287ba0"
+  },
+  {
+    "path": "services/bridge/README.md",
+    "before_sha256": "ba9225e61879aa4bc525704eeb4962ec63c65338239c261f5c046c01701e1695",
+    "after_sha256": "434ad4ce3ac23fd0a42c905c511db9b9964557eea979ed8712c34551d4e2337f"
+  },
+  {
+    "path": "apps/web/src/muse/bridge.ts",
+    "before_sha256": "57d05941493dacea4da78799683ff6c304a56575ce15c92887183e6e768db49b",
+    "after_sha256": "dcb9d3cbe8269c5c240473079dba476cca5f0018f50167ae120396330046052d"
+  },
+  {
+    "path": "apps/web/src/muse/MusePanel.tsx",
+    "before_sha256": "5f635a4f5b7b5375cf5a73c3a3c419759389608d0ba688fa30e2f34031847613",
+    "after_sha256": "a5a02fad16155f8a8f16b5316b4e8ab752ba0e4ecfe96389ac50ad7f28e65227"
+  },
+  {
+    "path": "apps/web/src/muse/tests/state.test.ts",
+    "before_sha256": "c0b317c57bdb7e0878ef6aa06f35e1eaa6a7e9902e47bafed83ea54adbb69f3e",
+    "after_sha256": "3d9f564517815a11d6cace14aff30ac158e691a2f4787bebd28d1fb80b352fbe"
+  },
+  {
+    "path": "handoffs/muse-05.md",
+    "before_sha256": "5a3f1e12997c23e7635729fb1fbf8ccb2d6fd4c5f62c9301019ced24b3c417ba",
+    "after_sha256": "2ecf4c0300100509f8b736a3045dea41033b4784540f96abda549d0baeead016"
+  }
+]

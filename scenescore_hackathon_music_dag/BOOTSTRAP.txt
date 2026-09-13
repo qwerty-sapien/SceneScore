@@ -1,0 +1,18 @@
+Read START_HERE.md, then REPO_BASELINE.md, then SHARED_GUARDRAILS.md and
+INTERFACE_CONTRACT.md, then execute DAG.json inside the existing SceneScore repository at
+/Users/agent/Desktop/SceneScore.
+
+This pack revises the earlier scenescore_hackathon_music_dag. It no longer asks you to
+discover whether a music stack exists. It exists: frozen contract 0.1, modules/blender,
+modules/music, modules/arranger, packages/audio and apps/web are implemented and tested,
+and reports/phase3/GATE.md records exactly what is delivered and what is failing. Treat
+REPO_BASELINE.md as prior knowledge to re-verify, not as permission to skip verification.
+
+Six-hour timebox. Build the animation-to-music vertical: eight motion semantics drive
+bounded, rhythm-preserving performance changes to an existing original score, and an
+accepted deliberate double blink triggers a precomputed harmonic transition with an
+audible acknowledgement inside 300 ms. The blink vertical itself belongs to the companion
+muse pack; this pack owns the music side of the seam and nothing on the EEG side.
+
+Do not rewrite the music stack. Do not touch the frozen schema without a scoped request.
+Do not manufacture approval, audition or timing evidence.

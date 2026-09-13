@@ -1,0 +1,161 @@
+[
+  {
+    "video": "artifacts/blender/revamp/integration/final/ballad-DRAFT.mp4",
+    "frames": 240,
+    "audio_samples": 384000,
+    "first_video_pts": 0.0,
+    "first_audio_pts": 0.0,
+    "status": "PASSED",
+    "decode_job": {
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/blender/revamp/integration/final/ballad-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 90,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68863,
+      "pgid": 68863,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.08325712499208748
+    },
+    "probe_job": {
+      "command": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-show_streams",
+        "-show_frames",
+        "-of",
+        "json",
+        "artifacts/blender/revamp/integration/final/ballad-DRAFT.mp4"
+      ],
+      "timeout_s": 90,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68862,
+      "pgid": 68862,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.09212220902554691
+    }
+  },
+  {
+    "video": "artifacts/blender/revamp/integration/final/rag-DRAFT.mp4",
+    "frames": 240,
+    "audio_samples": 384000,
+    "first_video_pts": 0.0,
+    "first_audio_pts": 0.0,
+    "status": "PASSED",
+    "decode_job": {
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/blender/revamp/integration/final/rag-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 90,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68865,
+      "pgid": 68865,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.09121395891997963
+    },
+    "probe_job": {
+      "command": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-show_streams",
+        "-show_frames",
+        "-of",
+        "json",
+        "artifacts/blender/revamp/integration/final/rag-DRAFT.mp4"
+      ],
+      "timeout_s": 90,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68864,
+      "pgid": 68864,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.08566395903471857
+    }
+  },
+  {
+    "video": "artifacts/blender/revamp/integration/final/swing-DRAFT.mp4",
+    "frames": 240,
+    "audio_samples": 384000,
+    "first_video_pts": 0.0,
+    "first_audio_pts": 0.0,
+    "status": "PASSED",
+    "decode_job": {
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-i",
+        "artifacts/blender/revamp/integration/final/swing-DRAFT.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeout_s": 90,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68867,
+      "pgid": 68867,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.08524095802567899
+    },
+    "probe_job": {
+      "command": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-threads",
+        "2",
+        "-show_streams",
+        "-show_frames",
+        "-of",
+        "json",
+        "artifacts/blender/revamp/integration/final/swing-DRAFT.mp4"
+      ],
+      "timeout_s": 90,
+      "status": "passed",
+      "process_group_absent": true,
+      "pid": 68866,
+      "pgid": 68866,
+      "returncode": 0,
+      "cleanup_signals": [],
+      "duration_s": 0.08622329193167388
+    }
+  }
+]

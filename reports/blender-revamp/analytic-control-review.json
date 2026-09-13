@@ -1,0 +1,1768 @@
+{
+  "calibration_installation": "NOT_RUN",
+  "candidates": {
+    "05_bouncing_staircase-32": {
+      "directory": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32",
+      "independent_validator": {
+        "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32",
+        "gates": {
+          "asset_integrity": {
+            "status": "PASSED"
+          },
+          "fresh_process_replay": {
+            "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32/replay_validation.json",
+            "independently_computed": {
+              "max_position_error_m": 0.0,
+              "max_rotation_error_rad": 3.7223088731756253e-07,
+              "max_scale_error": 5.900558791525164e-07
+            },
+            "replay_states_sha256": "28ec2c74861f62ad610b72e8e89463296c4a59520180d974afda1650fb263088",
+            "scene_sha256": "54372af0b09bf2a8cc62f987e3134e051346cc451b2a628adc60bc9fbfa18e8e",
+            "sha256": "133cd48f9a96c49c4e093447e3ca1f9ca8d429f370f9e87aef8c89310ad77536",
+            "status": "PASSED"
+          },
+          "geometric_contact": {
+            "status": "PASSED"
+          },
+          "perceptual_story_appearance": {
+            "status": "NOT_RUN"
+          },
+          "physical_candidate": {
+            "requires": [
+              "asset_integrity",
+              "geometric_contact",
+              "physical_motion",
+              "fresh_process_replay",
+              "solver_calibration"
+            ],
+            "status": "NOT_RUN"
+          },
+          "physical_motion": {
+            "status": "PASSED"
+          },
+          "rendered_temporal": {
+            "status": "NOT_RUN"
+          },
+          "solver_calibration": {
+            "status": "NOT_RUN"
+          }
+        },
+        "inputs": {
+          "physics_states.jsonl": "02a56a8f2dc9a502ffe1a3649d3abc7fb6c8c10ce0e2f4f3d78688283a28e279",
+          "production.json": "70597b578d26d4b7ec08fa5b78ec077cf26c8f7168af31c9e9ff7dc12a8019c9"
+        },
+        "issues": [],
+        "limitations": [
+          "Sampled evaluated solids; no global continuous-time guarantee.",
+          "Copied metadata does not establish Blender provenance; fresh asset evidence is a separate gate.",
+          "No motion-perception, soundtrack audition or human approval is implied."
+        ],
+        "metrics": {
+          "cases": [
+            {
+              "id": null,
+              "issues": [],
+              "kind": "supported_rest",
+              "metrics": {
+                "first_unsupported_s": null,
+                "max_angular_speed_rad_s": 0.0,
+                "max_speed_m_s": 0.0,
+                "unsupported_samples": 0
+              },
+              "status": "PASSED"
+            }
+          ],
+          "event_validation": {
+            "reason": "production_events.json absent",
+            "status": "NOT_RUN"
+          },
+          "excluded_pairs": [
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:back_stop"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-3",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            }
+          ],
+          "maximum_scale_drift": {
+            "05_bouncing_staircase:back_stop": 0.0,
+            "05_bouncing_staircase:bouncer": 4.76837158203125e-07,
+            "05_bouncing_staircase:floor": 0.0,
+            "05_bouncing_staircase:front_rail": 0.0,
+            "05_bouncing_staircase:rear_rail": 0.0,
+            "05_bouncing_staircase:start-ramp": 0.0,
+            "05_bouncing_staircase:step-0": 0.0,
+            "05_bouncing_staircase:step-1": 0.0,
+            "05_bouncing_staircase:step-2": 0.0,
+            "05_bouncing_staircase:step-3": 0.0
+          },
+          "objects": 10,
+          "pairs": [
+            {
+              "minimum_sampled_gap_m": -5.364418032005602e-08,
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.003,
+              "swept_interpolation": null,
+              "tick": 936,
+              "time_s": 3.9
+            },
+            {
+              "minimum_sampled_gap_m": -1.1444091796430911e-07,
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.0024,
+              "swept_interpolation": null,
+              "tick": 1105,
+              "time_s": 4.604166666666667
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499998450279235,
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 784,
+              "time_s": 3.2666666666666666
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499998450279235,
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 784,
+              "time_s": 3.2666666666666666
+            },
+            {
+              "minimum_sampled_gap_m": 0.0027788996696471724,
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null,
+              "tick": 312,
+              "time_s": 1.3
+            },
+            {
+              "minimum_sampled_gap_m": 0.0030379533767699307,
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null,
+              "tick": 414,
+              "time_s": 1.725
+            },
+            {
+              "minimum_sampled_gap_m": 0.0031839072704314964,
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null,
+              "tick": 526,
+              "time_s": 2.191666666666667
+            },
+            {
+              "minimum_sampled_gap_m": 0.0028438895940781084,
+              "pair": [
+                "05_bouncing_staircase:step-3",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.003999999999999999,
+              "swept_interpolation": null,
+              "tick": 641,
+              "time_s": 2.6708333333333334
+            },
+            {
+              "minimum_sampled_gap_m": -2.0732740269036043e-07,
+              "pair": [
+                "05_bouncing_staircase:start-ramp",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.0012,
+              "swept_interpolation": null,
+              "tick": 184,
+              "time_s": 0.7666666666666667
+            }
+          ],
+          "rest": {
+            "05_bouncing_staircase:bouncer": {
+              "max_final_angular_speed_rad_s": 0.0,
+              "max_final_speed_m_s": 0.0,
+              "supported_at_end": true,
+              "window_s": [
+                7.754166666666666,
+                8.0
+              ]
+            }
+          },
+          "samples": 1921
+        },
+        "status": "NOT_RUN",
+        "tolerance_policy": {
+          "arithmetic_floor_m": 1e-05,
+          "calibration_status": "ANALYTICAL_ONLY_SOLVER_CALIBRATION_PENDING",
+          "free_flight_acceleration_error_m_s2": 0.5,
+          "penetration_absolute_cap_m": 0.005,
+          "penetration_dimension_fraction": 0.01,
+          "quaternion_norm_error": 0.0001,
+          "replay_position_m": 1e-05,
+          "replay_rotation_rad": 0.0001,
+          "rest_angular_speed_rad_s": 0.05,
+          "rest_speed_m_s": 0.02,
+          "rest_window_s": 0.25,
+          "scale_drift": 1e-05,
+          "stable_target_rotation_rad": 0.01,
+          "stable_target_translation_m": 0.005,
+          "version": "production-tolerances-1"
+        },
+        "version": "blender-independent-validation-1"
+      },
+      "inputs": {
+        "bake.json": "12fc36ba110d460508c9d1dd67491bbfba2171455239e10cf3084b904eea44ce",
+        "mechanics_states.json": "def1e1110c17766e9b6191674c2f4c7a5ae746737e5ab02fc87596968d77acef",
+        "physics_states.jsonl": "02a56a8f2dc9a502ffe1a3649d3abc7fb6c8c10ce0e2f4f3d78688283a28e279",
+        "production.json": "70597b578d26d4b7ec08fa5b78ec077cf26c8f7168af31c9e9ff7dc12a8019c9",
+        "replay_states.jsonl": "28ec2c74861f62ad610b72e8e89463296c4a59520180d974afda1650fb263088",
+        "replay_validation.json": "133cd48f9a96c49c4e093447e3ca1f9ca8d429f370f9e87aef8c89310ad77536",
+        "scene.blend": "54372af0b09bf2a8cc62f987e3134e051346cc451b2a628adc60bc9fbfa18e8e",
+        "simulation.blend": "4adf9a5d8b3dada1e5f2acf72b1289b2300db5179068d4224cf9920372f9abcc"
+      }
+    },
+    "05_bouncing_staircase-64": {
+      "directory": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-64",
+      "independent_validator": {
+        "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-64",
+        "gates": {
+          "asset_integrity": {
+            "status": "PASSED"
+          },
+          "fresh_process_replay": {
+            "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-64/replay_validation.json",
+            "independently_computed": {
+              "max_position_error_m": 0.0,
+              "max_rotation_error_rad": 3.332000937312532e-07,
+              "max_scale_error": 5.900558791525164e-07
+            },
+            "replay_states_sha256": "94640e51b044ff348a6dec4dcf0cfd444b9b6bea3d2feebd3f6aa1aa916fbf26",
+            "scene_sha256": "7220f187e26677b1756ca12b9dbf5c036a01cc001b091e311d44d3bd62253d2e",
+            "sha256": "610c406389ba679e83e9a2d360fac65404943d71fd5bb08afce1a602f153d683",
+            "status": "PASSED"
+          },
+          "geometric_contact": {
+            "status": "PASSED"
+          },
+          "perceptual_story_appearance": {
+            "status": "NOT_RUN"
+          },
+          "physical_candidate": {
+            "requires": [
+              "asset_integrity",
+              "geometric_contact",
+              "physical_motion",
+              "fresh_process_replay",
+              "solver_calibration"
+            ],
+            "status": "NOT_RUN"
+          },
+          "physical_motion": {
+            "status": "PASSED"
+          },
+          "rendered_temporal": {
+            "status": "NOT_RUN"
+          },
+          "solver_calibration": {
+            "status": "NOT_RUN"
+          }
+        },
+        "inputs": {
+          "physics_states.jsonl": "f3af19d4990db5db571fbfc6dbcd33c2d51b2ee9e9d7cc03c3753a8ac3f5a022",
+          "production.json": "ef37e3d38240582ff20e8e5c9ad386d6e758404b94da23c0e80fac7d72447bac"
+        },
+        "issues": [],
+        "limitations": [
+          "Sampled evaluated solids; no global continuous-time guarantee.",
+          "Copied metadata does not establish Blender provenance; fresh asset evidence is a separate gate.",
+          "No motion-perception, soundtrack audition or human approval is implied."
+        ],
+        "metrics": {
+          "cases": [
+            {
+              "id": null,
+              "issues": [],
+              "kind": "supported_rest",
+              "metrics": {
+                "first_unsupported_s": null,
+                "max_angular_speed_rad_s": 0.0,
+                "max_speed_m_s": 0.0,
+                "unsupported_samples": 0
+              },
+              "status": "PASSED"
+            }
+          ],
+          "event_validation": {
+            "reason": "production_events.json absent",
+            "status": "NOT_RUN"
+          },
+          "excluded_pairs": [
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:back_stop"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-3",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            }
+          ],
+          "maximum_scale_drift": {
+            "05_bouncing_staircase:back_stop": 0.0,
+            "05_bouncing_staircase:bouncer": 4.76837158203125e-07,
+            "05_bouncing_staircase:floor": 0.0,
+            "05_bouncing_staircase:front_rail": 0.0,
+            "05_bouncing_staircase:rear_rail": 0.0,
+            "05_bouncing_staircase:start-ramp": 0.0,
+            "05_bouncing_staircase:step-0": 0.0,
+            "05_bouncing_staircase:step-1": 0.0,
+            "05_bouncing_staircase:step-2": 0.0,
+            "05_bouncing_staircase:step-3": 0.0
+          },
+          "objects": 10,
+          "pairs": [
+            {
+              "minimum_sampled_gap_m": -7.351239522668251e-08,
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.003,
+              "swept_interpolation": null,
+              "tick": 950,
+              "time_s": 3.9583333333333335
+            },
+            {
+              "minimum_sampled_gap_m": -1.1444091796430911e-07,
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.0024,
+              "swept_interpolation": null,
+              "tick": 1105,
+              "time_s": 4.604166666666667
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499998251597084,
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 950,
+              "time_s": 3.9583333333333335
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499998251597084,
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 950,
+              "time_s": 3.9583333333333335
+            },
+            {
+              "minimum_sampled_gap_m": 0.0028194109598795314,
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null,
+              "tick": 312,
+              "time_s": 1.3
+            },
+            {
+              "minimum_sampled_gap_m": 0.0030670404434203213,
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null,
+              "tick": 414,
+              "time_s": 1.725
+            },
+            {
+              "minimum_sampled_gap_m": 0.00312954783439634,
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null,
+              "tick": 526,
+              "time_s": 2.191666666666667
+            },
+            {
+              "minimum_sampled_gap_m": 0.0027911394834518877,
+              "pair": [
+                "05_bouncing_staircase:step-3",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.003999999999999999,
+              "swept_interpolation": null,
+              "tick": 641,
+              "time_s": 2.6708333333333334
+            },
+            {
+              "minimum_sampled_gap_m": -1.7209802843920485e-07,
+              "pair": [
+                "05_bouncing_staircase:start-ramp",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "penetration_tolerance_m": 0.0012,
+              "swept_interpolation": null,
+              "tick": 215,
+              "time_s": 0.8958333333333334
+            }
+          ],
+          "rest": {
+            "05_bouncing_staircase:bouncer": {
+              "max_final_angular_speed_rad_s": 7.1525573730472816e-06,
+              "max_final_speed_m_s": 0.0,
+              "supported_at_end": true,
+              "window_s": [
+                7.754166666666666,
+                8.0
+              ]
+            }
+          },
+          "samples": 1921
+        },
+        "status": "NOT_RUN",
+        "tolerance_policy": {
+          "arithmetic_floor_m": 1e-05,
+          "calibration_status": "ANALYTICAL_ONLY_SOLVER_CALIBRATION_PENDING",
+          "free_flight_acceleration_error_m_s2": 0.5,
+          "penetration_absolute_cap_m": 0.005,
+          "penetration_dimension_fraction": 0.01,
+          "quaternion_norm_error": 0.0001,
+          "replay_position_m": 1e-05,
+          "replay_rotation_rad": 0.0001,
+          "rest_angular_speed_rad_s": 0.05,
+          "rest_speed_m_s": 0.02,
+          "rest_window_s": 0.25,
+          "scale_drift": 1e-05,
+          "stable_target_rotation_rad": 0.01,
+          "stable_target_translation_m": 0.005,
+          "version": "production-tolerances-1"
+        },
+        "version": "blender-independent-validation-1"
+      },
+      "inputs": {
+        "bake.json": "169c231bc4e0804d9507bebaa328fa27ed1d47741048e7a7a285dc2fd1fa759d",
+        "mechanics_states.json": "e5da986b187eb80eb49406b5889f487684d150ae576903acba10e4db3822e46e",
+        "physics_states.jsonl": "f3af19d4990db5db571fbfc6dbcd33c2d51b2ee9e9d7cc03c3753a8ac3f5a022",
+        "production.json": "ef37e3d38240582ff20e8e5c9ad386d6e758404b94da23c0e80fac7d72447bac",
+        "replay_states.jsonl": "94640e51b044ff348a6dec4dcf0cfd444b9b6bea3d2feebd3f6aa1aa916fbf26",
+        "replay_validation.json": "610c406389ba679e83e9a2d360fac65404943d71fd5bb08afce1a602f153d683",
+        "scene.blend": "7220f187e26677b1756ca12b9dbf5c036a01cc001b091e311d44d3bd62253d2e",
+        "simulation.blend": "855a3552c48af7c6dab153f064b1fceb9e53b8d4a2f27ec416c6a69b24dfc096"
+      }
+    },
+    "control_analytic_bounce-32": {
+      "directory": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/control_analytic_bounce-32",
+      "independent_validator": {
+        "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/control_analytic_bounce-32",
+        "gates": {
+          "asset_integrity": {
+            "status": "PASSED"
+          },
+          "fresh_process_replay": {
+            "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/control_analytic_bounce-32/replay_validation.json",
+            "independently_computed": {
+              "max_position_error_m": 0.0,
+              "max_rotation_error_rad": 0.0,
+              "max_scale_error": 0.0
+            },
+            "replay_states_sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+            "scene_sha256": "be2ca930c850892159bd48a0161310a83642e3a892f4e02b1295285743d73ace",
+            "sha256": "bef45dac9b49c17629caeb047001aa1be0df479625ff8cf5d68955763d138999",
+            "status": "PASSED"
+          },
+          "geometric_contact": {
+            "status": "PASSED"
+          },
+          "perceptual_story_appearance": {
+            "status": "NOT_RUN"
+          },
+          "physical_candidate": {
+            "requires": [
+              "asset_integrity",
+              "geometric_contact",
+              "physical_motion",
+              "fresh_process_replay",
+              "solver_calibration"
+            ],
+            "status": "NOT_RUN"
+          },
+          "physical_motion": {
+            "status": "PASSED"
+          },
+          "rendered_temporal": {
+            "status": "NOT_RUN"
+          },
+          "solver_calibration": {
+            "status": "NOT_RUN"
+          }
+        },
+        "inputs": {
+          "physics_states.jsonl": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "production.json": "8e5f87e19ec42565e4a969fc682e917592d3afadfed9440cc6b40af4feeb40bc"
+        },
+        "issues": [],
+        "limitations": [
+          "Sampled evaluated solids; no global continuous-time guarantee.",
+          "Copied metadata does not establish Blender provenance; fresh asset evidence is a separate gate.",
+          "No motion-perception, soundtrack audition or human approval is implied."
+        ],
+        "metrics": {
+          "cases": [
+            {
+              "id": null,
+              "issues": [],
+              "kind": "free_flight",
+              "metrics": {
+                "expected_acceleration_m_s2": [
+                  0,
+                  0,
+                  -9.81
+                ],
+                "max_acceleration_error_m_s2": 0.011568603529298116,
+                "time_s": 0.42916666666666664,
+                "tolerance_m_s2": 0.5
+              },
+              "status": "PASSED"
+            }
+          ],
+          "event_validation": {
+            "reason": "production_events.json absent",
+            "status": "NOT_RUN"
+          },
+          "excluded_pairs": [
+            {
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:back_stop"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:back_stop",
+                "control_analytic_bounce:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:back_stop",
+                "control_analytic_bounce:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:rear_rail",
+                "control_analytic_bounce:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            }
+          ],
+          "maximum_scale_drift": {
+            "control_analytic_bounce:back_stop": 0.0,
+            "control_analytic_bounce:ball": 0.0,
+            "control_analytic_bounce:floor": 0.0,
+            "control_analytic_bounce:front_rail": 0.0,
+            "control_analytic_bounce:rear_rail": 0.0
+          },
+          "objects": 5,
+          "pairs": [
+            {
+              "minimum_sampled_gap_m": 0.008639848232269265,
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.003,
+              "swept_interpolation": null,
+              "tick": 143,
+              "time_s": 0.5958333333333333
+            },
+            {
+              "minimum_sampled_gap_m": 5.229999904632568,
+              "pair": [
+                "control_analytic_bounce:back_stop",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.0024,
+              "swept_interpolation": null,
+              "tick": 124,
+              "time_s": 0.5166666666666667
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499999046325683,
+              "pair": [
+                "control_analytic_bounce:rear_rail",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 138,
+              "time_s": 0.575
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499999046325683,
+              "pair": [
+                "control_analytic_bounce:front_rail",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 138,
+              "time_s": 0.575
+            }
+          ],
+          "rest": {
+            "control_analytic_bounce:ball": {
+              "max_final_angular_speed_rad_s": 0.0,
+              "max_final_speed_m_s": 2.975349426269542,
+              "supported_at_end": false,
+              "window_s": [
+                1.2541666666666667,
+                1.5
+              ]
+            }
+          },
+          "samples": 361
+        },
+        "status": "NOT_RUN",
+        "tolerance_policy": {
+          "arithmetic_floor_m": 1e-05,
+          "calibration_status": "ANALYTICAL_ONLY_SOLVER_CALIBRATION_PENDING",
+          "free_flight_acceleration_error_m_s2": 0.5,
+          "penetration_absolute_cap_m": 0.005,
+          "penetration_dimension_fraction": 0.01,
+          "quaternion_norm_error": 0.0001,
+          "replay_position_m": 1e-05,
+          "replay_rotation_rad": 0.0001,
+          "rest_angular_speed_rad_s": 0.05,
+          "rest_speed_m_s": 0.02,
+          "rest_window_s": 0.25,
+          "scale_drift": 1e-05,
+          "stable_target_rotation_rad": 0.01,
+          "stable_target_translation_m": 0.005,
+          "version": "production-tolerances-1"
+        },
+        "version": "blender-independent-validation-1"
+      },
+      "inputs": {
+        "bake.json": "a3c4ccf5b42b205119c35f42df944d8380c185fd29de77abfe179890db296ea0",
+        "mechanics_states.json": "9142711c07ebe59b011a72c00ecbab8c209d253251dc1d7c198b3f2114115217",
+        "physics_states.jsonl": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+        "production.json": "8e5f87e19ec42565e4a969fc682e917592d3afadfed9440cc6b40af4feeb40bc",
+        "replay_states.jsonl": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+        "replay_validation.json": "bef45dac9b49c17629caeb047001aa1be0df479625ff8cf5d68955763d138999",
+        "scene.blend": "be2ca930c850892159bd48a0161310a83642e3a892f4e02b1295285743d73ace",
+        "simulation.blend": "e7f0c1858a8c9eca3a2527613b8a1c009a47c7425fb497d0a05578300a7f2f91"
+      }
+    },
+    "control_analytic_bounce-64": {
+      "directory": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/control_analytic_bounce-64",
+      "independent_validator": {
+        "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/control_analytic_bounce-64",
+        "gates": {
+          "asset_integrity": {
+            "status": "PASSED"
+          },
+          "fresh_process_replay": {
+            "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/control_analytic_bounce-64/replay_validation.json",
+            "independently_computed": {
+              "max_position_error_m": 0.0,
+              "max_rotation_error_rad": 0.0,
+              "max_scale_error": 0.0
+            },
+            "replay_states_sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+            "scene_sha256": "a99a592e847849d14dc4256bc81a3c9edb71c6dfaf94dc35bae64eaeeee0843f",
+            "sha256": "8bc0617990141915319a24d7bf67dc738aab4ebb306696a788ee84053677e15e",
+            "status": "PASSED"
+          },
+          "geometric_contact": {
+            "status": "PASSED"
+          },
+          "perceptual_story_appearance": {
+            "status": "NOT_RUN"
+          },
+          "physical_candidate": {
+            "requires": [
+              "asset_integrity",
+              "geometric_contact",
+              "physical_motion",
+              "fresh_process_replay",
+              "solver_calibration"
+            ],
+            "status": "NOT_RUN"
+          },
+          "physical_motion": {
+            "status": "PASSED"
+          },
+          "rendered_temporal": {
+            "status": "NOT_RUN"
+          },
+          "solver_calibration": {
+            "status": "NOT_RUN"
+          }
+        },
+        "inputs": {
+          "physics_states.jsonl": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "production.json": "c85cf506681cac87313e0f48bc84d033b70663fd4408bff18b11104a9f65a522"
+        },
+        "issues": [],
+        "limitations": [
+          "Sampled evaluated solids; no global continuous-time guarantee.",
+          "Copied metadata does not establish Blender provenance; fresh asset evidence is a separate gate.",
+          "No motion-perception, soundtrack audition or human approval is implied."
+        ],
+        "metrics": {
+          "cases": [
+            {
+              "id": null,
+              "issues": [],
+              "kind": "free_flight",
+              "metrics": {
+                "expected_acceleration_m_s2": [
+                  0,
+                  0,
+                  -9.81
+                ],
+                "max_acceleration_error_m_s2": 0.011568603529298116,
+                "time_s": 0.42916666666666664,
+                "tolerance_m_s2": 0.5
+              },
+              "status": "PASSED"
+            }
+          ],
+          "event_validation": {
+            "reason": "production_events.json absent",
+            "status": "NOT_RUN"
+          },
+          "excluded_pairs": [
+            {
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:back_stop"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:back_stop",
+                "control_analytic_bounce:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:back_stop",
+                "control_analytic_bounce:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "control_analytic_bounce:rear_rail",
+                "control_analytic_bounce:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            }
+          ],
+          "maximum_scale_drift": {
+            "control_analytic_bounce:back_stop": 0.0,
+            "control_analytic_bounce:ball": 0.0,
+            "control_analytic_bounce:floor": 0.0,
+            "control_analytic_bounce:front_rail": 0.0,
+            "control_analytic_bounce:rear_rail": 0.0
+          },
+          "objects": 5,
+          "pairs": [
+            {
+              "minimum_sampled_gap_m": 0.008639848232269265,
+              "pair": [
+                "control_analytic_bounce:floor",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.003,
+              "swept_interpolation": null,
+              "tick": 143,
+              "time_s": 0.5958333333333333
+            },
+            {
+              "minimum_sampled_gap_m": 5.229999904632568,
+              "pair": [
+                "control_analytic_bounce:back_stop",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.0024,
+              "swept_interpolation": null,
+              "tick": 124,
+              "time_s": 0.5166666666666667
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499999046325683,
+              "pair": [
+                "control_analytic_bounce:rear_rail",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 138,
+              "time_s": 0.575
+            },
+            {
+              "minimum_sampled_gap_m": 3.2499999046325683,
+              "pair": [
+                "control_analytic_bounce:front_rail",
+                "control_analytic_bounce:ball"
+              ],
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null,
+              "tick": 138,
+              "time_s": 0.575
+            }
+          ],
+          "rest": {
+            "control_analytic_bounce:ball": {
+              "max_final_angular_speed_rad_s": 0.0,
+              "max_final_speed_m_s": 2.975349426269542,
+              "supported_at_end": false,
+              "window_s": [
+                1.2541666666666667,
+                1.5
+              ]
+            }
+          },
+          "samples": 361
+        },
+        "status": "NOT_RUN",
+        "tolerance_policy": {
+          "arithmetic_floor_m": 1e-05,
+          "calibration_status": "ANALYTICAL_ONLY_SOLVER_CALIBRATION_PENDING",
+          "free_flight_acceleration_error_m_s2": 0.5,
+          "penetration_absolute_cap_m": 0.005,
+          "penetration_dimension_fraction": 0.01,
+          "quaternion_norm_error": 0.0001,
+          "replay_position_m": 1e-05,
+          "replay_rotation_rad": 0.0001,
+          "rest_angular_speed_rad_s": 0.05,
+          "rest_speed_m_s": 0.02,
+          "rest_window_s": 0.25,
+          "scale_drift": 1e-05,
+          "stable_target_rotation_rad": 0.01,
+          "stable_target_translation_m": 0.005,
+          "version": "production-tolerances-1"
+        },
+        "version": "blender-independent-validation-1"
+      },
+      "inputs": {
+        "bake.json": "396c2801b735077796f6837dc378902ed6d2ce0955c65208c509686e245fc8da",
+        "mechanics_states.json": "bf4b17abd762dc37533fffdcfc50f22f851c7c4d659d369cbc485c2d8aa1936a",
+        "physics_states.jsonl": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+        "production.json": "c85cf506681cac87313e0f48bc84d033b70663fd4408bff18b11104a9f65a522",
+        "replay_states.jsonl": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+        "replay_validation.json": "8bc0617990141915319a24d7bf67dc738aab4ebb306696a788ee84053677e15e",
+        "scene.blend": "a99a592e847849d14dc4256bc81a3c9edb71c6dfaf94dc35bae64eaeeee0843f",
+        "simulation.blend": "388ea09b18732e1cabde1b6d8bdd14996c1e6418024764fdc4eacc9e5a7fab26"
+      }
+    }
+  },
+  "commands": [
+    ".venv/bin/python (inline stdlib equations, OLS fits, evaluated-state comparisons, and modules.blender.production.validation.validate_candidate for four actual candidates)"
+  ],
+  "convergence": {
+    "05_bouncing_staircase": {
+      "changed_source_hashes": {
+        "modules/blender/production/export.py": [
+          "64872b774f1013e85621c5fdef78cee4801489c0d7bedd868636d993896d63aa",
+          "c85953840ed47870c41f61100f662e51c5c02094391129bc18bc495b36a3032a"
+        ]
+      },
+      "ending_position_difference_m": 0.0,
+      "exact_position_match": false,
+      "identical_physical_objects_and_camera": true,
+      "internal_substeps": [
+        32,
+        64
+      ],
+      "max_first_step_contact_time_difference_s": 0.0,
+      "max_position_difference_m": 0.0004372596740722656,
+      "max_position_object": "05_bouncing_staircase:bouncer",
+      "max_position_time_s": 4.245833333333334,
+      "max_quaternion_angle_difference_rad": 0.0015685384901549216,
+      "max_rotation_object": "05_bouncing_staircase:bouncer",
+      "max_rotation_time_s": 4.245833333333334,
+      "physics_hz": 240,
+      "same_contact_order": true,
+      "source_difference_scope": "only exporter metadata file changed; analytic solver, scene authoring and Blender driver hashes agree",
+      "status": "PASSED"
+    },
+    "control_analytic_bounce": {
+      "changed_source_hashes": {},
+      "exact_position_match": true,
+      "identical_physical_objects_and_camera": true,
+      "internal_substeps": [
+        32,
+        64
+      ],
+      "max_position_difference_m": 0.0,
+      "max_position_object": null,
+      "max_position_time_s": null,
+      "max_quaternion_angle_difference_rad": 0.0,
+      "max_rotation_object": null,
+      "max_rotation_time_s": null,
+      "physics_hz": 240,
+      "source_difference_scope": "all captured source hashes agree",
+      "status": "PASSED"
+    }
+  },
+  "created_at_utc": "2026-09-12T18:36:11.714923+00:00",
+  "elastic_control": {
+    "control_analytic_bounce-32": {
+      "expected": {
+        "apex_height_m": 2.0,
+        "apex_time_s": 1.194619265114655,
+        "first_impact_time_s": 0.5973096325573275,
+        "gravity_m_s2": 9.81,
+        "incoming_velocity_m_s": -5.859607495387383,
+        "initial_height_m": 2.0,
+        "mechanical_energy_above_floor_contact_j": 17.1675,
+        "outgoing_velocity_m_s": 5.859607495387383,
+        "radius_m": 0.25
+      },
+      "measured": {
+        "effective_normal_restitution": 0.9999999995430402,
+        "energy_max_j": 17.167549514302827,
+        "energy_min_j": 17.167451165680703,
+        "fitted_apex_height_m": 1.999999993530441,
+        "fitted_apex_time_s": 1.194619266408973,
+        "impact_interval_s": [
+          0.5958333333333333,
+          0.6
+        ],
+        "impact_time_error_s": 2.1310339048952187e-09,
+        "incoming_velocity_extrapolated_m_s": -5.859607489856805,
+        "inferred_impact_time_s": 0.5973096346883614,
+        "max_energy_error_j": 4.951430282673641e-05,
+        "max_position_error_against_independent_equation_m": 6.695917553756203e-08,
+        "minimum_sampled_floor_gap_m": 0.00863984227180481,
+        "minimum_sampled_time_s": 0.5958333333333333,
+        "normal_response_residual_m_s": 2.677604804546263e-09,
+        "outgoing_velocity_extrapolated_m_s": 5.8596074871792005,
+        "post_fit_residual_m": 6.359946969070052e-08,
+        "pre_fit_residual_m": 6.350498304996677e-08,
+        "sampled_apex_height_m": 1.9999927282333374,
+        "sampled_apex_time_s": 1.1958333333333333
+      },
+      "method": "pre [0.1,0.5] and post [0.7,1.4] seconds OLS on z+g*t*t/2; intersect independently fitted parabolas; central position-difference energy excludes two ticks either side of impact",
+      "rotation_basis": "all control quaternions are identity at all evaluated samples",
+      "rotation_energy_j": 0,
+      "sampled_exact_contact": false,
+      "status": "PASSED"
+    },
+    "control_analytic_bounce-64": {
+      "expected": {
+        "apex_height_m": 2.0,
+        "apex_time_s": 1.194619265114655,
+        "first_impact_time_s": 0.5973096325573275,
+        "gravity_m_s2": 9.81,
+        "incoming_velocity_m_s": -5.859607495387383,
+        "initial_height_m": 2.0,
+        "mechanical_energy_above_floor_contact_j": 17.1675,
+        "outgoing_velocity_m_s": 5.859607495387383,
+        "radius_m": 0.25
+      },
+      "measured": {
+        "effective_normal_restitution": 0.9999999995430402,
+        "energy_max_j": 17.167549514302827,
+        "energy_min_j": 17.167451165680703,
+        "fitted_apex_height_m": 1.999999993530441,
+        "fitted_apex_time_s": 1.194619266408973,
+        "impact_interval_s": [
+          0.5958333333333333,
+          0.6
+        ],
+        "impact_time_error_s": 2.1310339048952187e-09,
+        "incoming_velocity_extrapolated_m_s": -5.859607489856805,
+        "inferred_impact_time_s": 0.5973096346883614,
+        "max_energy_error_j": 4.951430282673641e-05,
+        "max_position_error_against_independent_equation_m": 6.695917553756203e-08,
+        "minimum_sampled_floor_gap_m": 0.00863984227180481,
+        "minimum_sampled_time_s": 0.5958333333333333,
+        "normal_response_residual_m_s": 2.677604804546263e-09,
+        "outgoing_velocity_extrapolated_m_s": 5.8596074871792005,
+        "post_fit_residual_m": 6.359946969070052e-08,
+        "pre_fit_residual_m": 6.350498304996677e-08,
+        "sampled_apex_height_m": 1.9999927282333374,
+        "sampled_apex_time_s": 1.1958333333333333
+      },
+      "method": "pre [0.1,0.5] and post [0.7,1.4] seconds OLS on z+g*t*t/2; intersect independently fitted parabolas; central position-difference energy excludes two ticks either side of impact",
+      "rotation_basis": "all control quaternions are identity at all evaluated samples",
+      "rotation_energy_j": 0,
+      "sampled_exact_contact": false,
+      "status": "PASSED"
+    }
+  },
+  "limitations": [
+    "No video was rendered or viewed by this task; causal/staging/appearance and native-motion perception remain unverified.",
+    "This validates one sphere against fixed obstacles, not dynamic sphere-sphere response, dominoes or a falling tower.",
+    "240 Hz samples need not contain the exact impact point; fitted impact times are inferred under independently checked free-flight equations.",
+    "Solver calibration report is not installed by this review; overall candidate status may remain NOT_RUN.",
+    "Quaternion convergence is measured but has no newly invented solver-convergence acceptance threshold."
+  ],
+  "mode": "actual Blender-evaluated and fresh-reopened replay of declared fixed-obstacle analytic mechanics; synthetic production scene",
+  "no_solver_import_verified": true,
+  "product_acceptance": "NOT_CLAIMED",
+  "reviewer": "independent brief/export worker; generator solver was neither read nor imported in this task",
+  "rules": {
+    "apex_and_position_cap_m": 0.005,
+    "contact_time_cap_s": 0.004166666666666667,
+    "normal_response_residual_cap_m_s": 0.1,
+    "provenance": "existing frozen geometry/rest thresholds; response residual uses existing material-response default 0.1 m/s; these are review criteria, not a claim of preregistration",
+    "rest_angular_speed_cap_rad_s": 0.05,
+    "rest_speed_cap_m_s": 0.02,
+    "rest_window_s": 0.25
+  },
+  "scope": [
+    "canonical clocked evaluated positions/quaternions and actual saved-asset lineage",
+    "independent e=1 ballistic equations and response fits",
+    "32/64 internal-substep convergence with unchanged 240 Hz observation clock",
+    "staircase surface-contact order and final support/rest"
+  ],
+  "staircase": {
+    "05_bouncing_staircase-32": {
+      "all_surface_episode_starts": [
+        {
+          "contact_envelope_m": 0.0021999999999999997,
+          "first_envelope_sample_s": 0.058333333333333334,
+          "minimum_gap_m": -2.0732740269036043e-07,
+          "minimum_gap_time_s": 0.7666666666666667,
+          "object_id": "05_bouncing_staircase:start-ramp",
+          "penetration_cap_m": 0.0012
+        },
+        {
+          "contact_envelope_m": 0.006,
+          "first_envelope_sample_s": 1.2958333333333334,
+          "minimum_gap_m": 0.0027788996696471724,
+          "minimum_gap_time_s": 1.3,
+          "object_id": "05_bouncing_staircase:step-0",
+          "penetration_cap_m": 0.005
+        },
+        {
+          "contact_envelope_m": 0.006,
+          "first_envelope_sample_s": 1.725,
+          "minimum_gap_m": 0.0030379533767699307,
+          "minimum_gap_time_s": 1.725,
+          "object_id": "05_bouncing_staircase:step-1",
+          "penetration_cap_m": 0.005
+        },
+        {
+          "contact_envelope_m": 0.006,
+          "first_envelope_sample_s": 2.191666666666667,
+          "minimum_gap_m": 0.0031839072704314964,
+          "minimum_gap_time_s": 2.191666666666667,
+          "object_id": "05_bouncing_staircase:step-2",
+          "penetration_cap_m": 0.005
+        },
+        {
+          "contact_envelope_m": 0.004999999999999999,
+          "first_envelope_sample_s": 2.6708333333333334,
+          "minimum_gap_m": 0.0028438895940781084,
+          "minimum_gap_time_s": 2.6708333333333334,
+          "object_id": "05_bouncing_staircase:step-3",
+          "penetration_cap_m": 0.003999999999999999
+        },
+        {
+          "contact_envelope_m": 0.004,
+          "first_envelope_sample_s": 3.154166666666667,
+          "minimum_gap_m": -5.364418032005602e-08,
+          "minimum_gap_time_s": 3.9,
+          "object_id": "05_bouncing_staircase:floor",
+          "penetration_cap_m": 0.003
+        },
+        {
+          "contact_envelope_m": 0.0034,
+          "first_envelope_sample_s": 4.25,
+          "minimum_gap_m": -1.1444091796430911e-07,
+          "minimum_gap_time_s": 4.604166666666667,
+          "object_id": "05_bouncing_staircase:back_stop",
+          "penetration_cap_m": 0.0024
+        }
+      ],
+      "contact_order_status": "PASSED",
+      "end_position_m": [
+        5.230000019073486,
+        0.0,
+        0.25
+      ],
+      "end_status": "PASSED",
+      "ending_floor_gap_range_m": [
+        5.960464455334602e-09,
+        5.960464455334602e-09
+      ],
+      "first_step_contact_times_s": [
+        1.2958333333333334,
+        1.725,
+        2.191666666666667,
+        2.6708333333333334
+      ],
+      "max_ending_angular_speed_rad_s": 0.0,
+      "max_ending_linear_speed_m_s": 0.0,
+      "method": "independent sphere/oriented-box gap against evaluated transforms; envelope includes unchanged penetration cap and two declared margins; endpoint rest measured from consecutive sampled translations/quaternions",
+      "observed_step_order": [
+        "05_bouncing_staircase:step-0",
+        "05_bouncing_staircase:step-1",
+        "05_bouncing_staircase:step-2",
+        "05_bouncing_staircase:step-3"
+      ],
+      "rest_window_s": [
+        7.75,
+        8.0
+      ]
+    },
+    "05_bouncing_staircase-64": {
+      "all_surface_episode_starts": [
+        {
+          "contact_envelope_m": 0.0021999999999999997,
+          "first_envelope_sample_s": 0.058333333333333334,
+          "minimum_gap_m": -1.7209802843920485e-07,
+          "minimum_gap_time_s": 0.8958333333333334,
+          "object_id": "05_bouncing_staircase:start-ramp",
+          "penetration_cap_m": 0.0012
+        },
+        {
+          "contact_envelope_m": 0.006,
+          "first_envelope_sample_s": 1.2958333333333334,
+          "minimum_gap_m": 0.0028194109598795314,
+          "minimum_gap_time_s": 1.3,
+          "object_id": "05_bouncing_staircase:step-0",
+          "penetration_cap_m": 0.005
+        },
+        {
+          "contact_envelope_m": 0.006,
+          "first_envelope_sample_s": 1.725,
+          "minimum_gap_m": 0.0030670404434203213,
+          "minimum_gap_time_s": 1.725,
+          "object_id": "05_bouncing_staircase:step-1",
+          "penetration_cap_m": 0.005
+        },
+        {
+          "contact_envelope_m": 0.006,
+          "first_envelope_sample_s": 2.191666666666667,
+          "minimum_gap_m": 0.00312954783439634,
+          "minimum_gap_time_s": 2.191666666666667,
+          "object_id": "05_bouncing_staircase:step-2",
+          "penetration_cap_m": 0.005
+        },
+        {
+          "contact_envelope_m": 0.004999999999999999,
+          "first_envelope_sample_s": 2.6708333333333334,
+          "minimum_gap_m": 0.0027911394834518877,
+          "minimum_gap_time_s": 2.6708333333333334,
+          "object_id": "05_bouncing_staircase:step-3",
+          "penetration_cap_m": 0.003999999999999999
+        },
+        {
+          "contact_envelope_m": 0.004,
+          "first_envelope_sample_s": 3.154166666666667,
+          "minimum_gap_m": -7.351239522668251e-08,
+          "minimum_gap_time_s": 3.9583333333333335,
+          "object_id": "05_bouncing_staircase:floor",
+          "penetration_cap_m": 0.003
+        },
+        {
+          "contact_envelope_m": 0.0034,
+          "first_envelope_sample_s": 4.25,
+          "minimum_gap_m": -1.1444091796430911e-07,
+          "minimum_gap_time_s": 4.604166666666667,
+          "object_id": "05_bouncing_staircase:back_stop",
+          "penetration_cap_m": 0.0024
+        }
+      ],
+      "contact_order_status": "PASSED",
+      "end_position_m": [
+        5.230000019073486,
+        0.0,
+        0.25
+      ],
+      "end_status": "PASSED",
+      "ending_floor_gap_range_m": [
+        5.960464455334602e-09,
+        5.960464455334602e-09
+      ],
+      "first_step_contact_times_s": [
+        1.2958333333333334,
+        1.725,
+        2.191666666666667,
+        2.6708333333333334
+      ],
+      "max_ending_angular_speed_rad_s": 7.152557373046875e-06,
+      "max_ending_linear_speed_m_s": 0.0,
+      "method": "independent sphere/oriented-box gap against evaluated transforms; envelope includes unchanged penetration cap and two declared margins; endpoint rest measured from consecutive sampled translations/quaternions",
+      "observed_step_order": [
+        "05_bouncing_staircase:step-0",
+        "05_bouncing_staircase:step-1",
+        "05_bouncing_staircase:step-2",
+        "05_bouncing_staircase:step-3"
+      ],
+      "rest_window_s": [
+        7.75,
+        8.0
+      ]
+    }
+  },
+  "status": "SCOPED_NUMERICAL_CONTROLS_PASSED",
+  "validator_sha256": "12ac2c95a2e42d48dbc8cfff2c62d9f97b39dfb6be58a53b88cbb1d4dd17f362",
+  "version": "independent-analytic-control-review-1"
+}

@@ -1,0 +1,116 @@
+{
+  "id": "scenescore-motion-event-taxonomy",
+  "version": "1",
+  "source_of_truth": "modules/blender/geometry.py::pair_timeline emits the first seven types today. asymmetric_rebound is NEW in this pack and is a module-versioned supplement, never a silent field on a canonical InteractionEvent.",
+  "honesty_rules": [
+    "Gap and area are geometric proxies. No impulse, force, mass or energy is inferred.",
+    "Proximity is not impact: a near miss requires an independent bracketed positive minimum plus a certified no-tunnelling segment.",
+    "Unavailable measures are null with a reason. Never a fabricated zero.",
+    "These are declared creative mappings, not acoustics and not emotion detection."
+  ],
+  "lane_vocabulary": {
+    "existing": ["ornament", "dynamics", "phrasing", "timbre", "register"],
+    "added_by_this_pack": ["tension", "accent"],
+    "note": "Lanes remain independent controls. A mapping may not change key, gain, articulation or expression preset as a side effect."
+  },
+  "events": [
+    {
+      "event_type": "approach",
+      "emitted_by": "pair_timeline strict-turn bracket, onset at bracket start, duration to the minimum",
+      "musical_intent": "Rising expectation without resolution.",
+      "lanes": {"ornament": [0.0, 1.0], "tension": [0.0, 0.8], "register": [0, 5]},
+      "driver": "normalized closing rate = clamp(-normal / approach_ref_speed_m_s, 0, 1)",
+      "defaults": {"approach_ref_speed_m_s": 2.0},
+      "accent": false,
+      "notes": "Ornament density rises toward the minimum. Do not pre-announce the outcome: an approach that ends in a near miss must sound identical to one that ends in contact until the moment of resolution."
+    },
+    {
+      "event_type": "near_miss",
+      "emitted_by": "pair_timeline when the bracketed minimum gap stays positive AND every segment is certified against tunnelling",
+      "musical_intent": "Withheld resolution. The signature sound of this project.",
+      "lanes": {"tension": [0.4, 1.0], "phrasing": [0.0, 1.0], "dynamics": [-6, 0]},
+      "driver": "closeness = clamp(1 - min_gap_m / near_miss_ref_gap_m, 0, 1)",
+      "defaults": {"near_miss_ref_gap_m": 0.5},
+      "accent": false,
+      "required_behaviour": "Leave the prevailing harmony unresolved for at least one beat past the minimum (sus4 or an upper structure with the 3rd withheld), then release without a downbeat accent. A near miss must never produce a contact-like transient; the absence of the hit is the musical event.",
+      "forbidden": ["percussive accent", "Foley trigger", "key change", "cadence resolution on the minimum"]
+    },
+    {
+      "event_type": "separation",
+      "emitted_by": "pair_timeline after the bracketed minimum, running to the recovery sample",
+      "musical_intent": "Parting away: release, thinning, settling.",
+      "lanes": {"dynamics": [-12, 0], "register": [-7, 0], "ornament": [0.0, 0.3]},
+      "driver": "normalized opening rate = clamp(normal / approach_ref_speed_m_s, 0, 1)",
+      "accent": false,
+      "notes": "Density decays monotonically across the episode. Do not restate the approach material in retrograde; thin it."
+    },
+    {
+      "event_type": "contact_onset",
+      "emitted_by": "pair_timeline first sample with gap <= tolerance",
+      "musical_intent": "Arrival.",
+      "lanes": {"accent": [0.0, 1.0], "timbre": [0.0, 1.0]},
+      "driver": "clamp(|normal_before| / contact_ref_speed_m_s, 0, 1)",
+      "defaults": {"contact_ref_speed_m_s": 3.0},
+      "accent": true,
+      "foley": "Independent scene-second event stream. Foley is not quantized to ticks and is not part of the soundtrack lane budget."
+    },
+    {
+      "event_type": "contact_sustain",
+      "emitted_by": "pair_timeline for a contiguous run of non-positive gaps",
+      "musical_intent": "Weight held in place.",
+      "lanes": {"timbre": [0.0, 1.0], "dynamics": [-9, -3]},
+      "driver": "clamp(duration_s / sustain_ref_s, 0, 1)",
+      "defaults": {"sustain_ref_s": 1.0},
+      "accent": false,
+      "notes": "A low damped pedal or brush sustain. No repeated re-articulation: a sustain is one decision, not a tremolo."
+    },
+    {
+      "event_type": "contact_release",
+      "emitted_by": "pair_timeline first sample after the contact run",
+      "musical_intent": "Damping and letting go.",
+      "lanes": {"phrasing": [0.0, 1.0], "dynamics": [-6, 0]},
+      "driver": "clamp(|normal_after| / contact_ref_speed_m_s, 0, 1)",
+      "accent": false
+    },
+    {
+      "event_type": "collision",
+      "emitted_by": "pair_timeline swept-sphere test, for contacts that occur entirely between two samples",
+      "musical_intent": "Same as contact_onset, with explicit sub-sample provenance.",
+      "lanes": {"accent": [0.0, 1.0], "timbre": [0.0, 1.0]},
+      "driver": "clamp(|relative closing speed at sweep root| / contact_ref_speed_m_s, 0, 1)",
+      "accent": true,
+      "deduplication": "A collision within contact_dedupe_s of a contact_onset for the same pair is one musical event, not two. Keep the swept timestamp and record method='swept_sphere_exact'.",
+      "defaults": {"contact_dedupe_s": 0.03}
+    },
+    {
+      "event_type": "asymmetric_rebound",
+      "status": "NEW in this pack. Derived descriptor, module-versioned supplement.",
+      "emitted_by": "Derived in node 01 from an existing contact_onset or collision plus ObjectState geometry. Never emitted by canonical pair_timeline without a version bump.",
+      "musical_intent": "A small object bounces off a large one: the small body speaks, the large body only registers.",
+      "preconditions": {
+        "trigger": "a contact_onset or collision for pair (a, b)",
+        "area_ratio": "max(area_m2) / min(area_m2) >= rebound_min_area_ratio, both areas non-null from evaluated meshes",
+        "normal_reversal": "sign(normal_before) < 0 and sign(normal_after) > 0",
+        "speed_floor": "|normal_before| >= rebound_min_speed_m_s and |normal_after| >= rebound_min_speed_m_s"
+      },
+      "defaults": {"rebound_min_area_ratio": 4.0, "rebound_min_speed_m_s": 0.05, "rebound_window_s": 0.25},
+      "fields": {
+        "rebounding_object_id": "the smaller evaluated area",
+        "anchor_object_id": "the larger evaluated area",
+        "area_ratio": "float >= rebound_min_area_ratio",
+        "speed_retention": "clamp(|normal_after| / |normal_before|, 0, 1.5), null when |normal_before| < rebound_min_speed_m_s",
+        "method": "evaluated_area_ratio_proxy",
+        "mass_inferred": false,
+        "restitution_claimed": false
+      },
+      "lanes": {"accent": [0.0, 1.0], "register": [0, 12], "ornament": [0.0, 0.7]},
+      "musical_rule": "The rebounding object's motif takes a grace-note or appoggiatura figure at the contact tick, register biased up by curve(register, area_ratio), velocity scaled by speed_retention. The anchor object gets at most one low damped note and never a melodic figure. A rebound chain (multiple rebounds inside rebound_window_s) decays in velocity and must not increase event density beyond the plan's budget.",
+      "forbidden": ["asserting mass, momentum, restitution coefficient or energy", "emitting when either evaluated area is null", "emitting without a triggering contact_onset or collision", "using screen-space size instead of world-space evaluated area"]
+    }
+  ],
+  "global_budget": {
+    "max_events_per_second_added": 12,
+    "max_simultaneous_ornaments": 2,
+    "fallback": "Any event whose driver inputs are null or out of coverage falls back to the unmodified score and is logged with a reason. Silence on missing data, never an invented default."
+  }
+}

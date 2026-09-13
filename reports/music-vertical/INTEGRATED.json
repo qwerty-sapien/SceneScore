@@ -1,0 +1,430 @@
+[
+  {
+    "node": "02",
+    "path": "modules/music/catalog.py",
+    "sha256": "6a7e4bd0195a8e0b7d88d9a249f982a6875f80a73c6e979929ba229d8a5796bf"
+  },
+  {
+    "node": "02",
+    "path": "modules/music/fixtures/music-vertical-source-v1.json",
+    "sha256": "295549888ba4bc31357b45083e81b1bbe7a4530bd482653b7f06d3c583bdb2b9"
+  },
+  {
+    "node": "02",
+    "path": "modules/music/fixtures/render_vertical_source_v1.py",
+    "sha256": "5080d34c094efea1c4e703888dd9fbcbc80afdc6527c81c304689a61de089933"
+  },
+  {
+    "node": "02",
+    "path": "modules/music/tests/test_vertical_source.py",
+    "sha256": "207e70b526ecc59f607ed2050c21475f84e11980fd3294dc04d6ce020eb07f72"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/object_motif.wav",
+    "sha256": "803803d0fbad71b4ae1e1d849cac92ae527d8052a9369e29d6792ef86b0abef3"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/brush.json",
+    "sha256": "4d537af9f3f293efecda5e07ed41e78a9f75d7787c152fbdeb47edf8c46b495d"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/events.json",
+    "sha256": "81017381a1d2ee1c1d0feb33df67cde7ff642d80715c044d19c7238178357114"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/brushes.wav",
+    "sha256": "82673c4a5f1165ebbd09cd0940b139306a5c1306f264ed9cbd5b1c941897b0d0"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/measurements.json",
+    "sha256": "0ee57998e01b88426e0177770043d81d09fb5759ed234f62b64467e1f068e32e"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/score.json",
+    "sha256": "b3a5c7efcf7b7a3f3da4b4acc5517831271795d8a04755aabc4a4e385a7d036f"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/mix.wav",
+    "sha256": "ad365a0a4ad0732370551968c30782736500ccc36fa2f956270fd33e12cbe046"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/piano_or_lead.wav",
+    "sha256": "e87958c185c17d21addd671b36c216046f612e7c923d0afd4c37c946bb0c8924"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/score.mid",
+    "sha256": "7c24cddc74f274c18f3b5b251f50c601b9765201200d44b01bbd2f828ad04dc6"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/manifest.json",
+    "sha256": "44567825835e211434d3edafdeb6c063eb5317533eae3053e65121f2154cd5f7"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/composition.json",
+    "sha256": "76d75e3e98d31c48c7ea234c987efc03972b8f11e616c187d74f0a10fc6bc530"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/authored-ending/bass.wav",
+    "sha256": "c67fd3fda19201bbf51c20ddbceb18e2bb454f9516efdc3ae49c900f6c561a4f"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/object_motif.wav",
+    "sha256": "803803d0fbad71b4ae1e1d849cac92ae527d8052a9369e29d6792ef86b0abef3"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/brush.json",
+    "sha256": "4d537af9f3f293efecda5e07ed41e78a9f75d7787c152fbdeb47edf8c46b495d"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/events.json",
+    "sha256": "a9dbc87c0bcce5923c643ba7085b3776ee676c032490ec1380b4b47e3e276dfd"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/brushes.wav",
+    "sha256": "82673c4a5f1165ebbd09cd0940b139306a5c1306f264ed9cbd5b1c941897b0d0"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/measurements.json",
+    "sha256": "1219fbe3d4391d2f2152ad8f50b20e7e7aaa598a386ab669d1b74a74db4e0fe7"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/score.json",
+    "sha256": "f374508376055cbb9b3d99cb36d01fb87203c839bc7f3654afb4ad6542a8df2a"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/mix.wav",
+    "sha256": "9d3ccd60fad79f117b39d16275e30218309756809ee61ef90cd9d6b85c67af82"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/piano_or_lead.wav",
+    "sha256": "995c6a35b0c43dc93ea535b8017f5845ae6177dce4e80a24203a552eb94e7253"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/score.mid",
+    "sha256": "e115003f4082889099367adfa685e718db1634bf8fe91328da9b3e0375a099f3"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/manifest.json",
+    "sha256": "0e6d49b7f3d58afbcdb23aec700fa399066a74f782190b95e3402242338b4222"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/composition.json",
+    "sha256": "9a517e3ff24dc2d2855168a8233b8477b9fa3a993d1d16724989667d289c947d"
+  },
+  {
+    "node": "02",
+    "path": "artifacts/music/music-vertical-source/unmodified/bass.wav",
+    "sha256": "4488622a4a1744fd46e4cfa17e58a7da563feded9b6ca8d464fec98bb1de9216"
+  },
+  {
+    "node": "02",
+    "path": "modules/music/AUDITION.md",
+    "sha256": "ae36b59537a4c8be4cb1a21ba64cb418b99e9b28a6a0287db9be292598e85309"
+  },
+  {
+    "node": "02",
+    "path": "handoffs/music-02.md",
+    "sha256": "403a3edda6fb50c432da32755361e7afe85846bd8b728009700c30839eb0c7be"
+  },
+  {
+    "node": "01",
+    "path": "modules/blender/geometry.py",
+    "sha256": "1f8b452dc7741ca75fbbc7b0be95efa7d3c045c3cdb20f5ecabc82bf02b39975"
+  },
+  {
+    "node": "01",
+    "path": "modules/blender/summary.py",
+    "sha256": "bea4fb3ee0d8dd0cc45778d8d4d1d0e66e9ef1733274cc7b37842d2b10c41f8b"
+  },
+  {
+    "node": "01",
+    "path": "modules/blender/tests/test_music_semantics.py",
+    "sha256": "51032b51a1651966da40747e3e97babcf3b66f8cfe8a7dd753f6615b3c54e76c"
+  },
+  {
+    "node": "01",
+    "path": "modules/blender/tests/fixtures/music-semantics-v2.json",
+    "sha256": "85b7edbe7cbc4504ccb3be10f67acb22414c7f387f1edf909548926a0f2b74c3"
+  },
+  {
+    "node": "01",
+    "path": "docs/requests/01/module-supplement.md",
+    "sha256": "2f411a8b338bdc34a2e09ff839bb583841ba9cf513688094234674005fd13fea"
+  },
+  {
+    "node": "01",
+    "path": "docs/requests/01/bundle-checks.json",
+    "sha256": "662dde2016e66235c6d3f1cbbc7e8dfe219fae0a72bc2246e5d04286477c5402"
+  },
+  {
+    "node": "01",
+    "path": "docs/requests/01/source-checks.json",
+    "sha256": "99dd90d3fde2e523eea8ce8309dc9e9c152af929efc25e02185e8eada529f830"
+  },
+  {
+    "node": "01",
+    "path": "handoffs/music-01.md",
+    "sha256": "1e4e6b752fe9b004000a2a2bea0054eda2d29ea1c6da0d398da82f2bda562a95"
+  },
+  {
+    "node": "05",
+    "path": "packages/audio/model.ts",
+    "sha256": "2010ff41eaa81bf0d7b99efdfe9a63f59e4ddfd6c48ae31d04ef4d162aa58ca6"
+  },
+  {
+    "node": "05",
+    "path": "modules/music/transitions.py",
+    "sha256": "fbb67e1aa9c44ccf7066077ac5d7303f7eb1dfd0184ef58d23131364cf039351"
+  },
+  {
+    "node": "05",
+    "path": "modules/music/fixtures/transition-table-v1.json",
+    "sha256": "abc0f83a5cadfbc7919d8c6e75731e52f8fe6d8af70f30078ebb3f5e932a00ba"
+  },
+  {
+    "node": "05",
+    "path": "modules/music/tests/test_vertical_transitions.py",
+    "sha256": "813bd08ef4dcc9220b385f2f6ad140330e51205139622e6566a4d683aac78a1a"
+  },
+  {
+    "node": "05",
+    "path": "packages/audio/tests/vertical-transitions.test.ts",
+    "sha256": "0a4683bad0d6da9f93149d78732c1c5189fe5bda1d99c74017a993cd9a6d7df2"
+  },
+  {
+    "node": "05",
+    "path": "handoffs/music-05.md",
+    "sha256": "ca9fd2640f95b272439a6bbe8f7fb6e314f31c466fbfd18912fff2c3e62d007f"
+  },
+  {
+    "node": "05",
+    "path": "docs/requests/05/001-vertical-transport-integration.md",
+    "sha256": "ea256bffdedb59f079849b5005f320aaceca45c0696b052c8628f97a1a54f7f6"
+  },
+  {
+    "node": "05",
+    "path": "docs/requests/05/pack-reference-check.json",
+    "sha256": "ce79bcfd8612df0b74f11b5323e7ad98a5620737f6cde7d5fa785f196ba209cb"
+  },
+  {
+    "node": "03",
+    "path": "modules/music/ornament.py",
+    "sha256": "feed170dcb0e584d99088222757529ebdc18b669b740e05b1920b89c86cfdc67"
+  },
+  {
+    "node": "03",
+    "path": "modules/music/tests/test_ornament.py",
+    "sha256": "68aacb23364a58e84e48ec0aaf77d4fc41cb94e31ab2b510c4abb4519e54c991"
+  },
+  {
+    "node": "03",
+    "path": "modules/music/fixtures/music-ornament-v1.json",
+    "sha256": "8bec9fcfe4f202af48d94318b9a5179e1354223f6699b2e4b6a396e2bfcb98bc"
+  },
+  {
+    "node": "03",
+    "path": "modules/music/fixtures/render_ornament_v1.py",
+    "sha256": "5d49a18061ac9056a8ed4108c404f8c72a1a11dbafee9cfa0ed826034e18b892"
+  },
+  {
+    "node": "03",
+    "path": "handoffs/music-03.md",
+    "sha256": "6863ef56018a692d14ffe8f795156fb9b54a8ff46424adf9116d33f4a7484201"
+  },
+  {
+    "node": "03",
+    "path": "docs/requests/03/integration.md",
+    "sha256": "57759693d60584dc79d496c67dab08c04360f0dfaf0a6b3a5bda2e3de3c3108f"
+  },
+  {
+    "node": "03",
+    "path": "artifacts/music/music-vertical-ornaments/B-variation.events.json",
+    "sha256": "b3b44b65817cce3c10c4ecad2cb6cd6d8be56d299f7d3b3abf7210491dab9e04"
+  },
+  {
+    "node": "03",
+    "path": "artifacts/music/music-vertical-ornaments/transform-audit.json",
+    "sha256": "c3260a13a618b752be7da67432c01b5fc2c789897b832183c97606739626bf1d"
+  },
+  {
+    "node": "03",
+    "path": "artifacts/music/music-vertical-ornaments/A-source.events.json",
+    "sha256": "44bed463275823e6fa58afb76df5fd6c9ba252e32db45805dcb24c05808b40fc"
+  },
+  {
+    "node": "03",
+    "path": "artifacts/music/music-vertical-ornaments/manifest.json",
+    "sha256": "39bfeb77c1e08710d46d68e64aa830dce76ef9ab22010b84ca354f0a284c688d"
+  },
+  {
+    "node": "03",
+    "path": "artifacts/music/music-vertical-ornaments/A-source.wav",
+    "sha256": "5200e4a4895e13a3875346a48ddf4de547e600b5e34574a2cb2932c93de1de61"
+  },
+  {
+    "node": "03",
+    "path": "artifacts/music/music-vertical-ornaments/B-variation.wav",
+    "sha256": "eec5fc17db08fa85ba3487a38abb810344faa15b9789640b37e17e96c795e9c2"
+  },
+  {
+    "node": "03",
+    "path": "artifacts/music/music-vertical-ornaments/independent-ab-check.json",
+    "sha256": "c10e288e977e1736ae84f6d4f2e5cfb0bc147ead481cfad207b8deb152a49f2c"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "modules/music/transitions.py",
+    "sha256": "d5209b9b82794db8c43dff031694a8ede1e09577fdc144fae191e5221793e74c"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "modules/music/tests/test_vertical_transitions.py",
+    "sha256": "5603b7533c2920945b2cc8e8ccd240040d89afe176ec35a9ca4ec94ff28959e1"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "packages/audio/model.ts",
+    "sha256": "4e3de4140590a92f2089d8a8ac78fce411d9644ba15007566ba2094fb1cf4880"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "packages/audio/tests/vertical-transitions.test.ts",
+    "sha256": "6e657969a0619de2b4bd7a79d6704bfabf7c82ae7a5064d07feed88012c85a14"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "docs/requests/05/001-vertical-transport-integration.md",
+    "sha256": "577ecca71e0977603788878493046c931b370a0a6a70ad56475ee752d2661e64"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "docs/requests/05/002-voicing-repair-and-offline-preview.md",
+    "sha256": "ded94b0859a3e514ac13cd2e5696499b273fa08001fb568c9d49c976223402c6"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "packages/audio/vertical-preview.ts",
+    "sha256": "33ce22700de0eeffce3a57e2ee37a992a08d782260ae35ca47180292c326f505"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "packages/audio/tests/vertical-preview.test.ts",
+    "sha256": "fc85d59aa0083d624091a4b8cdadcdf446676f7b9638bc4e4f870c638853ef10"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "packages/audio/tests/vertical-engine.test.ts",
+    "sha256": "c1dff3498f37e37fbf00de3ef923833454ce4861573f6d7e653246afbd5e02f4"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "tools/render_music_vertical.ts",
+    "sha256": "d5a308e63a22118747e643f64d6d2a3c3f7baabd48240ef3d3ebf4d36570da6d"
+  },
+  {
+    "node": "05-repair-and-draft-preparation",
+    "path": "tools/prepare_music_vertical_preview.ts",
+    "sha256": "5b47eb1e5be0ba8b2af000f45ba70d987bc4a3cb2878555dc6efe7ad348a39a0"
+  },
+  {
+    "node": "06-preparation",
+    "path": "tools/prepare_music_vertical.py",
+    "sha256": "a4dc87be0b43fb040f784f9ffa3095dbb2db3dc3efa2ff6a9832500b01c132f3"
+  },
+  {
+    "node": "06-preparation",
+    "path": "tests/test_music_vertical_preparation.py",
+    "sha256": "8a8b1cc4d6aa58a42c2074c046c8df5b062fd25ddf04c45b0c2f0fb58178a4cd"
+  },
+  {
+    "node": "06-preparation",
+    "path": "docs/requests/06/preparation.md",
+    "sha256": "15877e617729767b21fff8aa2d459518f260bd47d434755c4719969f9fd0ea25"
+  },
+  {
+    "node": "04",
+    "path": "modules/arranger/core.py",
+    "sha256": "6bf5a06031be0d10e8899555e671fff64228d679fbabc4c08383032ddeaedd72",
+    "integration": "append only; reviewed Context.scene_inputs extraction preserved",
+    "root_before_sha256": "ed4e3e852494e47804ac3492e7f7a4bc320d25e9717c7dc71e31ce445ebe2d87",
+    "append_sha256": "257e6176a20d9e1e741c09b95719d4870e16ee687828fc73ee0937dcc4cd4e5c"
+  },
+  {
+    "node": "04",
+    "path": "modules/arranger/tests/test_music_vertical.py",
+    "sha256": "5c0ac9784c78f1bb5507e3a023fe6104e3ff2a793849b51c9682c8749518f472"
+  },
+  {
+    "node": "04",
+    "path": "modules/arranger/tests/fixtures/music-vertical-v1.json",
+    "sha256": "8e4a3ea3dae2673456a3c11c016b27f99eb1b00cc48d0cabef4e8ac6cb6effeb"
+  },
+  {
+    "node": "04",
+    "path": "docs/requests/04/integration.md",
+    "sha256": "cd0b00a96cba17f4ca8aa77e5cd3b06741b4f37bbfcec0674c027609939ed68b"
+  },
+  {
+    "node": "04",
+    "path": "docs/requests/04/hero-checks.json",
+    "sha256": "626154894d801e9301419cf1ba979d7e1d89679d1b58fd7472e56ca40858cb83"
+  },
+  {
+    "node": "04",
+    "path": "handoffs/music-04.md",
+    "sha256": "8d5e873aefed3fb54f3d1e48e333efac9e017be082acff58c6b123c2d65fe2d2"
+  },
+  {
+    "node": "06-runtime",
+    "path": "packages/audio/engine.ts",
+    "sha256": "3bb662bbbef40f2c5f6f286fe479f580fd4148061a639124447700ba64d4855d"
+  },
+  {
+    "node": "06-runtime",
+    "path": "packages/audio/transport.ts",
+    "sha256": "2245f9a55598e8c60cb4cf331ab0273121cb54bf744d555a45dfa07756abd371"
+  },
+  {
+    "node": "06-runtime",
+    "path": "packages/audio/tests/music-runtime.test.ts",
+    "sha256": "71b9ad9c684b31ea5c9aca3d22b10caf2b8d479136397930dbc053877f1e3aa4"
+  },
+  {
+    "node": "06-runtime",
+    "path": "handoffs/music-06-runtime.md",
+    "sha256": "21d097fc74232dbbc17dedbd621b7154e69ed9040ab757c722fdb162bc106fc0"
+  },
+  {
+    "node": "06-runtime",
+    "path": "docs/requests/06/runtime.md",
+    "sha256": "52d39529f2301f52f35a850122ee2e03146c4e8569000910b70f99d8df177962"
+  },
+  {
+    "node": "04-final-clarification",
+    "path": "handoffs/music-04.md",
+    "sha256": "db86a86e1a7c3eb43d5cd858eab0976dfe211f0f4b7cc7b3202e730840b8c9d4"
+  }
+]

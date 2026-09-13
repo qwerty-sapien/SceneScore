@@ -1,0 +1,22 @@
+✔ exact playback and handoff bytes pass preparation without claiming actual media (9.297041ms)
+✔ changed exact source_events_bytes rejects before unlock (2.458542ms)
+✔ changed exact playback_window_bytes rejects before unlock (0.886417ms)
+✔ changed exact music_handoff_bytes rejects before unlock (1.144542ms)
+✔ feature binding and handoff scene must agree (1.193792ms)
+✔ silent support cannot become focus or motif owner (0.763666ms)
+✔ optional exact prepared Blender review candidate (112.325708ms)
+✔ bound runtime policy rejects remove_window (0.83225ms)
+✔ bound runtime policy rejects remove_policy (0.672625ms)
+✔ bound runtime policy rejects different_policy (0.890375ms)
+✔ native frame and sample clocks cannot silently differ (0.685042ms)
+✔ selection preserves complete sustained event and source bytes (0.982792ms)
+✔ fade has same physical endpoint after resume inside final ten milliseconds (0.209958ms)
+✔ omitted and truncated ledgers must cover the exact complete source (0.584208ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 427.84075

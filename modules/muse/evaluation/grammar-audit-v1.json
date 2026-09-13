@@ -1,0 +1,195 @@
+{
+  "version": "muse-grammar-audit-1",
+  "source_sha256": "5826a0dc9c387c7af1bae9be60b2940bf30c73cd18924e962ac80449947b32d0",
+  "mode": "synthetic",
+  "release_status": "PIPELINE_TESTED_ONLY",
+  "original_pack_matches": 11,
+  "original_case_count": 14,
+  "repository_expectation_matches": 14,
+  "original_cases": [
+    {
+      "id": "P1",
+      "observed_actions": 1,
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "P2",
+      "observed_actions": 0,
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 0,
+      "matches_pack": false,
+      "matches_repository": true
+    },
+    {
+      "id": "P3",
+      "observed_actions": 1,
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 1,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "P4",
+      "observed_actions": 2,
+      "pack_expected_actions": 2,
+      "repository_expected_actions": 2,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N1",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N2",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N3",
+      "observed_actions": 1,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 1,
+      "matches_pack": false,
+      "matches_repository": true
+    },
+    {
+      "id": "N4",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N5",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N6",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N7",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N8",
+      "observed_actions": 0,
+      "pack_expected_actions": 1,
+      "repository_expected_actions": 0,
+      "matches_pack": false,
+      "matches_repository": true
+    },
+    {
+      "id": "N9",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    },
+    {
+      "id": "N10",
+      "observed_actions": 0,
+      "pack_expected_actions": 0,
+      "repository_expected_actions": 0,
+      "matches_pack": true,
+      "matches_repository": true
+    }
+  ],
+  "corrected_cases": [
+    {
+      "id": "P1-repo-v1",
+      "observed_actions": 1,
+      "expected_actions": 1
+    },
+    {
+      "id": "P2-repo-v1",
+      "observed_actions": 1,
+      "expected_actions": 1
+    },
+    {
+      "id": "P3-repo-v1",
+      "observed_actions": 1,
+      "expected_actions": 1
+    },
+    {
+      "id": "P4-repo-v1",
+      "observed_actions": 2,
+      "expected_actions": 2
+    },
+    {
+      "id": "N1-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N2-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N3-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N4-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N5-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N6-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N7-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N8-repo-v1",
+      "observed_actions": 1,
+      "expected_actions": 1
+    },
+    {
+      "id": "N9-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    },
+    {
+      "id": "N10-repo-v1",
+      "observed_actions": 0,
+      "expected_actions": 0
+    }
+  ]
+}

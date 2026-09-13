@@ -197,3 +197,15 @@ def test_bad_quality_candidate_never_gets_good_quality_gesture():
     result = grammar.advance(3)[0]
     assert result['status'] == 'rejected'
     assert result['quality']['state'] == 'unverified'
+
+
+def test_candidate_score_precedes_current_sample_statistics_update():
+    """A one-sample normalization leak would suppress this threshold crossing."""
+    from collections import deque
+    detector = CausalBaseline(metadata(), Config(high_z=3.0, low_z=1.0))
+    detector.consume(chunk(count=256))
+    detector.arm()
+    detector.history = [deque([0.0, 10.0, 20.0], maxlen=3) for _ in detector.indices]
+    detector.filtered = [20.0 for _ in detector.indices]
+    detector.consume(chunk(1, 256, count=1, value=200.0))
+    assert detector.active == 1.0

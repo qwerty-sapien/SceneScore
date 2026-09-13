@@ -1,0 +1,2292 @@
+{
+  "version": "production-sidecar-fault-injection-1",
+  "description": "Mutated production sidecar fault injection",
+  "created_at": "2026-09-12T18:59:45.141390+00:00",
+  "status": "COMPLETED",
+  "approval": null,
+  "source_validator": "/Users/agent/Desktop/SceneScore/modules/blender/production/validation.py",
+  "validator_sha256": "0a952f538270864a385a0deaefe19c9f236c2286cc3799bdc91809205598876c",
+  "mutator_sha256": "cb500adc33d1a3d2b104febbcaa8eab1c4d79b123bafb40ef3f6738053343964",
+  "blender_jobs_started": 0,
+  "baselines": {
+    "staircase": {
+      "command": [
+        "/Users/agent/Desktop/SceneScore/.venv/bin/python",
+        "/private/tmp/scenescore-production-mutation-after-20260913/validator_snapshot.py",
+        "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32"
+      ],
+      "job": {
+        "command": [
+          "/Users/agent/Desktop/SceneScore/.venv/bin/python",
+          "/private/tmp/scenescore-production-mutation-after-20260913/validator_snapshot.py",
+          "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32"
+        ],
+        "timeout_s": 180.0,
+        "status": "passed",
+        "process_group_absent": true,
+        "pid": 21142,
+        "pgid": 21142,
+        "returncode": 0,
+        "cleanup_signals": [],
+        "duration_s": 0.8645353749161586
+      },
+      "log": "/private/tmp/scenescore-production-mutation-after-20260913/baseline-staircase.log",
+      "log_sha256": "f850b1c0e15e179ef7568b1dd9223034d0283f58b95c4b2e854edb3ff5b3b29c",
+      "validation": {
+        "version": "blender-independent-validation-1",
+        "candidate": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32",
+        "status": "PASSED",
+        "gates": {
+          "asset_integrity": {
+            "status": "PASSED"
+          },
+          "geometric_contact": {
+            "status": "PASSED"
+          },
+          "physical_motion": {
+            "status": "PASSED"
+          },
+          "fresh_process_replay": {
+            "status": "PASSED",
+            "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32/replay_validation.json",
+            "sha256": "133cd48f9a96c49c4e093447e3ca1f9ca8d429f370f9e87aef8c89310ad77536",
+            "independently_computed": {
+              "max_position_error_m": 0.0,
+              "max_rotation_error_rad": 3.7223088731756253e-07,
+              "max_scale_error": 5.900558791525164e-07
+            },
+            "replay_states_sha256": "28ec2c74861f62ad610b72e8e89463296c4a59520180d974afda1650fb263088",
+            "scene_sha256": "54372af0b09bf2a8cc62f987e3134e051346cc451b2a628adc60bc9fbfa18e8e"
+          },
+          "solver_calibration": {
+            "status": "PASSED",
+            "evidence": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32/solver_calibration.json"
+          },
+          "rendered_temporal": {
+            "status": "NOT_RUN"
+          },
+          "perceptual_story_appearance": {
+            "status": "NOT_RUN"
+          },
+          "physical_candidate": {
+            "status": "PASSED",
+            "requires": [
+              "asset_integrity",
+              "geometric_contact",
+              "physical_motion",
+              "fresh_process_replay",
+              "solver_calibration"
+            ]
+          }
+        },
+        "metrics": {
+          "samples": 1921,
+          "objects": 10,
+          "pairs": [
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": -5.364418032005602e-08,
+              "time_s": 3.9,
+              "tick": 936,
+              "penetration_tolerance_m": 0.003,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": -1.1444091796430911e-07,
+              "time_s": 4.604166666666667,
+              "tick": 1105,
+              "penetration_tolerance_m": 0.0024,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": 3.2499998450279235,
+              "time_s": 3.2666666666666666,
+              "tick": 784,
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": 3.2499998450279235,
+              "time_s": 3.2666666666666666,
+              "tick": 784,
+              "penetration_tolerance_m": 0.002,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": 0.0027788996696471724,
+              "time_s": 1.3,
+              "tick": 312,
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": 0.0030379533767699307,
+              "time_s": 1.725,
+              "tick": 414,
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": 0.0031839072704314964,
+              "time_s": 2.191666666666667,
+              "tick": 526,
+              "penetration_tolerance_m": 0.005,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-3",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": 0.0028438895940781084,
+              "time_s": 2.6708333333333334,
+              "tick": 641,
+              "penetration_tolerance_m": 0.003999999999999999,
+              "swept_interpolation": null
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:start-ramp",
+                "05_bouncing_staircase:bouncer"
+              ],
+              "minimum_sampled_gap_m": -2.0732740269036043e-07,
+              "time_s": 0.7666666666666667,
+              "tick": 184,
+              "penetration_tolerance_m": 0.0012,
+              "swept_interpolation": null
+            }
+          ],
+          "excluded_pairs": [
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:back_stop"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:floor",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:rear_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:back_stop",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:front_rail"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:rear_rail",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-0"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:front_rail",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-1"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-0",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:step-2"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-1",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:step-3"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-2",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            },
+            {
+              "pair": [
+                "05_bouncing_staircase:step-3",
+                "05_bouncing_staircase:start-ramp"
+              ],
+              "reason": "both passive structural colliders"
+            }
+          ],
+          "maximum_scale_drift": {
+            "05_bouncing_staircase:floor": 0.0,
+            "05_bouncing_staircase:back_stop": 0.0,
+            "05_bouncing_staircase:rear_rail": 0.0,
+            "05_bouncing_staircase:front_rail": 0.0,
+            "05_bouncing_staircase:step-0": 0.0,
+            "05_bouncing_staircase:step-1": 0.0,
+            "05_bouncing_staircase:step-2": 0.0,
+            "05_bouncing_staircase:step-3": 0.0,
+            "05_bouncing_staircase:start-ramp": 0.0,
+            "05_bouncing_staircase:bouncer": 4.76837158203125e-07
+          },
+          "native_motion_holds": {
+            "05_bouncing_staircase:bouncer": {
+              "short_active_holds": [],
+              "counts_by_length": {}
+            }
+          },
+          "rest": {
+            "05_bouncing_staircase:bouncer": {
+              "max_final_speed_m_s": 0.0,
+              "max_final_angular_speed_rad_s": 0.0,
+              "supported_at_end": true,
+              "window_s": [
+                7.754166666666666,
+                8.0
+              ]
+            }
+          },
+          "cases": [
+            {
+              "kind": "supported_rest",
+              "id": null,
+              "status": "PASSED",
+              "metrics": {
+                "unsupported_samples": 0,
+                "first_unsupported_s": null,
+                "max_speed_m_s": 0.0,
+                "max_angular_speed_rad_s": 0.0
+              },
+              "issues": []
+            }
+          ],
+          "event_validation": {
+            "status": "NOT_RUN",
+            "reason": "production_events.json absent"
+          }
+        },
+        "issues": [],
+        "tolerance_policy": {
+          "version": "production-tolerances-1",
+          "penetration_absolute_cap_m": 0.005,
+          "penetration_dimension_fraction": 0.01,
+          "arithmetic_floor_m": 1e-05,
+          "scale_drift": 1e-05,
+          "quaternion_norm_error": 0.0001,
+          "rest_speed_m_s": 0.02,
+          "rest_angular_speed_rad_s": 0.05,
+          "rest_window_s": 0.25,
+          "free_flight_acceleration_error_m_s2": 0.5,
+          "stable_target_translation_m": 0.005,
+          "stable_target_rotation_rad": 0.01,
+          "replay_position_m": 1e-05,
+          "replay_rotation_rad": 0.0001,
+          "calibration_status": "BLENDER_CONTROLS_REPORTED_WITH_HASHED_EVIDENCE"
+        },
+        "limitations": [
+          "Sampled evaluated solids; no global continuous-time guarantee.",
+          "Copied metadata does not establish Blender provenance; fresh asset evidence is a separate gate.",
+          "No motion-perception, soundtrack audition or human approval is implied."
+        ],
+        "inputs": {
+          "production.json": "70597b578d26d4b7ec08fa5b78ec077cf26c8f7168af31c9e9ff7dc12a8019c9",
+          "physics_states.jsonl": "02a56a8f2dc9a502ffe1a3649d3abc7fb6c8c10ce0e2f4f3d78688283a28e279"
+        }
+      }
+    }
+  },
+  "mutations": [
+    {
+      "name": "low_rate_physics",
+      "source": "staircase",
+      "mutation": {
+        "mutation": "low_rate_physics",
+        "scope": "copied production sidecar fault, not Blender-generated physics",
+        "object_id": "05_bouncing_staircase:bouncer",
+        "changed_files": [
+          "physics_states.jsonl"
+        ],
+        "source_hz": 240,
+        "held_sampling_hz": 30,
+        "consecutive_exact_object_state_repetitions": 1781,
+        "limitation": "Tick/time fields preserved; transforms held between 30 Hz samples.",
+        "lineage_policy": "Original hash claims and fresh-process replay report preserved unchanged; never rebound to synthetic data."
+      },
+      "copied_mutant_input_hashes": {
+        "../05_bouncing_staircase-64/bake-reopen.json": {
+          "sha256": "1f4766792483e76761b5021d11a9d65fbcb563d7212ffaa12ab06d08803af6ad",
+          "size_bytes": 196
+        },
+        "../05_bouncing_staircase-64/bake.json": {
+          "sha256": "169c231bc4e0804d9507bebaa328fa27ed1d47741048e7a7a285dc2fd1fa759d",
+          "size_bytes": 1391
+        },
+        "../05_bouncing_staircase-64/evaluated_geometry.json": {
+          "sha256": "78b9ccf1b2608863886a8af858fc085fdcfd780a54eda90d33efa1086885a2ee",
+          "size_bytes": 170859
+        },
+        "../05_bouncing_staircase-64/mechanics_states.json": {
+          "sha256": "e5da986b187eb80eb49406b5889f487684d150ae576903acba10e4db3822e46e",
+          "size_bytes": 1082717
+        },
+        "../05_bouncing_staircase-64/physics_states.jsonl": {
+          "sha256": "f3af19d4990db5db571fbfc6dbcd33c2d51b2ee9e9d7cc03c3753a8ac3f5a022",
+          "size_bytes": 3034986
+        },
+        "../05_bouncing_staircase-64/production.json": {
+          "sha256": "ef37e3d38240582ff20e8e5c9ad386d6e758404b94da23c0e80fac7d72447bac",
+          "size_bytes": 8797
+        },
+        "../05_bouncing_staircase-64/replay_states.jsonl": {
+          "sha256": "94640e51b044ff348a6dec4dcf0cfd444b9b6bea3d2feebd3f6aa1aa916fbf26",
+          "size_bytes": 3032520
+        },
+        "../05_bouncing_staircase-64/replay_validation.json": {
+          "sha256": "610c406389ba679e83e9a2d360fac65404943d71fd5bb08afce1a602f153d683",
+          "size_bytes": 868
+        },
+        "../05_bouncing_staircase-64/scene.blend": {
+          "sha256": "7220f187e26677b1756ca12b9dbf5c036a01cc001b091e311d44d3bd62253d2e",
+          "size_bytes": 281613
+        },
+        "../05_bouncing_staircase-64/simulation.blend": {
+          "sha256": "855a3552c48af7c6dab153f064b1fceb9e53b8d4a2f27ec416c6a69b24dfc096",
+          "size_bytes": 279211
+        },
+        "../control_analytic_bounce-32/bake-reopen.json": {
+          "sha256": "83a3bb69f8b09adf6126145387a5bd057cd3942659752eb134c93a7d756886d6",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-32/bake.json": {
+          "sha256": "a3c4ccf5b42b205119c35f42df944d8380c185fd29de77abfe179890db296ea0",
+          "size_bytes": 1390
+        },
+        "../control_analytic_bounce-32/evaluated_geometry.json": {
+          "sha256": "03ca1fefdad93adddaa181663edecc0055dc4466198bb9b365f6db64a3ad15de",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-32/mechanics_states.json": {
+          "sha256": "9142711c07ebe59b011a72c00ecbab8c209d253251dc1d7c198b3f2114115217",
+          "size_bytes": 173635
+        },
+        "../control_analytic_bounce-32/physics_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-32/production.json": {
+          "sha256": "8e5f87e19ec42565e4a969fc682e917592d3afadfed9440cc6b40af4feeb40bc",
+          "size_bytes": 6268
+        },
+        "../control_analytic_bounce-32/replay_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-32/replay_validation.json": {
+          "sha256": "bef45dac9b49c17629caeb047001aa1be0df479625ff8cf5d68955763d138999",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-32/scene.blend": {
+          "sha256": "be2ca930c850892159bd48a0161310a83642e3a892f4e02b1295285743d73ace",
+          "size_bytes": 132271
+        },
+        "../control_analytic_bounce-32/simulation.blend": {
+          "sha256": "e7f0c1858a8c9eca3a2527613b8a1c009a47c7425fb497d0a05578300a7f2f91",
+          "size_bytes": 131840
+        },
+        "../control_analytic_bounce-64/bake-reopen.json": {
+          "sha256": "4ffd20edc4396042f224f0bf902e8d751d5f48fdeb654489180f72d5db364d1b",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-64/bake.json": {
+          "sha256": "396c2801b735077796f6837dc378902ed6d2ce0955c65208c509686e245fc8da",
+          "size_bytes": 1390
+        },
+        "../control_analytic_bounce-64/evaluated_geometry.json": {
+          "sha256": "2c3cdddfa99573de61de75e09391d3cc7aed869d720debf4f76b1f2e0e4fd4e7",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-64/mechanics_states.json": {
+          "sha256": "bf4b17abd762dc37533fffdcfc50f22f851c7c4d659d369cbc485c2d8aa1936a",
+          "size_bytes": 173694
+        },
+        "../control_analytic_bounce-64/physics_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-64/production.json": {
+          "sha256": "c85cf506681cac87313e0f48bc84d033b70663fd4408bff18b11104a9f65a522",
+          "size_bytes": 6268
+        },
+        "../control_analytic_bounce-64/replay_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-64/replay_validation.json": {
+          "sha256": "8bc0617990141915319a24d7bf67dc738aab4ebb306696a788ee84053677e15e",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-64/scene.blend": {
+          "sha256": "a99a592e847849d14dc4256bc81a3c9edb71c6dfaf94dc35bae64eaeeee0843f",
+          "size_bytes": 132037
+        },
+        "../control_analytic_bounce-64/simulation.blend": {
+          "sha256": "388ea09b18732e1cabde1b6d8bdd14996c1e6418024764fdc4eacc9e5a7fab26",
+          "size_bytes": 131754
+        },
+        "../control_analytic_bounce-material-fine/bake-reopen.json": {
+          "sha256": "78eba0b45f8c814cdb88480a8131698912b9f84f1000e55e5ab9a43dff960368",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-material-fine/bake.json": {
+          "sha256": "d0d00d6a457163908d286aee4e10f8a0b02e670e34e595768b60206823dff2f6",
+          "size_bytes": 1734
+        },
+        "../control_analytic_bounce-material-fine/evaluated_geometry.json": {
+          "sha256": "d7b7ed2091918df9181fd85357ad281e1a084947c0015ae84fc0d91ac5c44bcd",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-material-fine/mechanics_states.json": {
+          "sha256": "528295ef7b8e09f30ab48b4b60b826ec748db10e54abdeb693930d91a1c7694c",
+          "size_bytes": 173864
+        },
+        "../control_analytic_bounce-material-fine/physics_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material-fine/production.json": {
+          "sha256": "f0ab46a040e4cd7030618589df622b6847a72030c9e940327e2b1550c3288355",
+          "size_bytes": 6618
+        },
+        "../control_analytic_bounce-material-fine/replay_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material-fine/replay_validation.json": {
+          "sha256": "d477ec7ad917681cd592854d555def8fa07c5b63a39541ed437a430f53eefcdf",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-material-fine/scene.blend": {
+          "sha256": "a7265ff375206aab7973abaafcf83e7f21d9260ffe1d29288c5b24340e5c6173",
+          "size_bytes": 132435
+        },
+        "../control_analytic_bounce-material-fine/simulation.blend": {
+          "sha256": "b3106d3cbbee0f40c036c122f1d304a2c6c9672d2ab50fd8920a3e830e834e3e",
+          "size_bytes": 132202
+        },
+        "../control_analytic_bounce-material/bake-reopen.json": {
+          "sha256": "9b4c0b967646d1211e6d3b9dd555976ef58a68a94d4b39ef6cdcc1c29e9918e3",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-material/bake.json": {
+          "sha256": "c5d010f4348c559209d56e4dd71837f1d233221cd5fa9a5db45bd939a4958035",
+          "size_bytes": 1734
+        },
+        "../control_analytic_bounce-material/evaluated_geometry.json": {
+          "sha256": "2e950854d508842c5c47982e8d0a2ca8567eca908484f927424cb6402ad41267",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-material/mechanics_states.json": {
+          "sha256": "215413e6a6a0578e0bc137ababa32dcb162750261e0e133c54d72057cef25557",
+          "size_bytes": 173810
+        },
+        "../control_analytic_bounce-material/physics_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material/production.json": {
+          "sha256": "b47717b0b538c149220614f6d78b5d3b8a0d678aa4c2458930e74fd51d6a7c54",
+          "size_bytes": 6618
+        },
+        "../control_analytic_bounce-material/replay_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material/replay_validation.json": {
+          "sha256": "4017d7ca85c2ca30e369c6955f425d922bae07acd62d728260e1f604df61e9e4",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-material/scene.blend": {
+          "sha256": "58501e00064a907965ce545bd7c33226ff2c157cb38207f20ac72e2b63ef6968",
+          "size_bytes": 132359
+        },
+        "../control_analytic_bounce-material/simulation.blend": {
+          "sha256": "4b08fa2be0534701f61e10ce807bfb37710c55ef9b76a31f39982d8ec72d29c1",
+          "size_bytes": 132127
+        },
+        "bake-reopen.json": {
+          "sha256": "5c1df71cd10f592cb5ba913ae367ab9aae9ae6e0525b371a3b9bec0721dbb31f",
+          "size_bytes": 196
+        },
+        "bake.json": {
+          "sha256": "12fc36ba110d460508c9d1dd67491bbfba2171455239e10cf3084b904eea44ce",
+          "size_bytes": 1391
+        },
+        "evaluated_geometry.json": {
+          "sha256": "66aeb3c9de832e27835bf810632f48077558f7114af2f268c303b1558ab94548",
+          "size_bytes": 170859
+        },
+        "mechanics_states.json": {
+          "sha256": "def1e1110c17766e9b6191674c2f4c7a5ae746737e5ab02fc87596968d77acef",
+          "size_bytes": 1082517
+        },
+        "physics_states.jsonl": {
+          "sha256": "1db377d1b694368f46cd69816c1a3ab305bd676e88d4131a677fab75b16cf5a0",
+          "size_bytes": 3033679
+        },
+        "production.json": {
+          "sha256": "70597b578d26d4b7ec08fa5b78ec077cf26c8f7168af31c9e9ff7dc12a8019c9",
+          "size_bytes": 8797
+        },
+        "replay_states.jsonl": {
+          "sha256": "28ec2c74861f62ad610b72e8e89463296c4a59520180d974afda1650fb263088",
+          "size_bytes": 3033892
+        },
+        "replay_validation.json": {
+          "sha256": "133cd48f9a96c49c4e093447e3ca1f9ca8d429f370f9e87aef8c89310ad77536",
+          "size_bytes": 866
+        },
+        "scene.blend": {
+          "sha256": "54372af0b09bf2a8cc62f987e3134e051346cc451b2a628adc60bc9fbfa18e8e",
+          "size_bytes": 281635
+        },
+        "simulation.blend": {
+          "sha256": "4adf9a5d8b3dada1e5f2acf72b1289b2300db5179068d4224cf9920372f9abcc",
+          "size_bytes": 277900
+        },
+        "solver_calibration.json": {
+          "sha256": "e731acdfdde795cad2bd9f732fdd337fb1a31eef4846e17c7de121d9eb36acc3",
+          "size_bytes": 29063
+        }
+      },
+      "run": {
+        "command": [
+          "/Users/agent/Desktop/SceneScore/.venv/bin/python",
+          "/private/tmp/scenescore-production-mutation-after-20260913/validator_snapshot.py",
+          "/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/scenescore-sidecar-faults-af8jfogv/low_rate_physics"
+        ],
+        "job": {
+          "command": [
+            "/Users/agent/Desktop/SceneScore/.venv/bin/python",
+            "/private/tmp/scenescore-production-mutation-after-20260913/validator_snapshot.py",
+            "/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/scenescore-sidecar-faults-af8jfogv/low_rate_physics"
+          ],
+          "timeout_s": 180.0,
+          "status": "failed",
+          "process_group_absent": true,
+          "pid": 21171,
+          "pgid": 21171,
+          "returncode": 1,
+          "cleanup_signals": [],
+          "duration_s": 0.7020829999819398
+        },
+        "log": "/private/tmp/scenescore-production-mutation-after-20260913/low_rate_physics.log",
+        "log_sha256": "097962a40082f329c8e5be9f35b3f2b27f320223d38b1e70a33883683524cebd",
+        "validation": {
+          "version": "blender-independent-validation-1",
+          "candidate": "/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/scenescore-sidecar-faults-af8jfogv/low_rate_physics",
+          "status": "FAILED",
+          "gates": {
+            "asset_integrity": {
+              "status": "FAILED"
+            },
+            "geometric_contact": {
+              "status": "PASSED"
+            },
+            "physical_motion": {
+              "status": "FAILED"
+            },
+            "fresh_process_replay": {
+              "status": "FAILED"
+            },
+            "solver_calibration": {
+              "status": "FAILED",
+              "evidence": "/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/scenescore-sidecar-faults-af8jfogv/low_rate_physics/solver_calibration.json",
+              "reason": "passing actual controls/convergence, matching backend/candidate scope and hashed artifacts required"
+            },
+            "rendered_temporal": {
+              "status": "NOT_RUN"
+            },
+            "perceptual_story_appearance": {
+              "status": "NOT_RUN"
+            },
+            "physical_candidate": {
+              "status": "FAILED",
+              "requires": [
+                "asset_integrity",
+                "geometric_contact",
+                "physical_motion",
+                "fresh_process_replay",
+                "solver_calibration"
+              ]
+            }
+          },
+          "metrics": {
+            "samples": 1921,
+            "objects": 10,
+            "pairs": [
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": -5.364418032005602e-08,
+                "time_s": 3.9,
+                "tick": 936,
+                "penetration_tolerance_m": 0.003,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": -1.1444091796430911e-07,
+                "time_s": 4.633333333333334,
+                "tick": 1112,
+                "penetration_tolerance_m": 0.0024,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:rear_rail",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": 3.2499998450279235,
+                "time_s": 3.2666666666666666,
+                "tick": 784,
+                "penetration_tolerance_m": 0.002,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:front_rail",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": 3.2499998450279235,
+                "time_s": 3.2666666666666666,
+                "tick": 784,
+                "penetration_tolerance_m": 0.002,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-0",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": 0.0027788996696471724,
+                "time_s": 1.3,
+                "tick": 312,
+                "penetration_tolerance_m": 0.005,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-1",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": 0.014632129669189364,
+                "time_s": 1.7333333333333334,
+                "tick": 416,
+                "penetration_tolerance_m": 0.005,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-2",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": 0.010829216241836526,
+                "time_s": 2.2,
+                "tick": 528,
+                "penetration_tolerance_m": 0.005,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-3",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": 0.0159918993711472,
+                "time_s": 2.6666666666666665,
+                "tick": 640,
+                "penetration_tolerance_m": 0.003999999999999999,
+                "swept_interpolation": null
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:start-ramp",
+                  "05_bouncing_staircase:bouncer"
+                ],
+                "minimum_sampled_gap_m": -2.0732740269036043e-07,
+                "time_s": 0.7666666666666667,
+                "tick": 184,
+                "penetration_tolerance_m": 0.0012,
+                "swept_interpolation": null
+              }
+            ],
+            "excluded_pairs": [
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:back_stop"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:rear_rail"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:front_rail"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:step-0"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:step-1"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:step-2"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:step-3"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:floor",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:rear_rail"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:front_rail"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:step-0"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:step-1"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:step-2"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:step-3"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:back_stop",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:rear_rail",
+                  "05_bouncing_staircase:front_rail"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:rear_rail",
+                  "05_bouncing_staircase:step-0"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:rear_rail",
+                  "05_bouncing_staircase:step-1"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:rear_rail",
+                  "05_bouncing_staircase:step-2"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:rear_rail",
+                  "05_bouncing_staircase:step-3"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:rear_rail",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:front_rail",
+                  "05_bouncing_staircase:step-0"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:front_rail",
+                  "05_bouncing_staircase:step-1"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:front_rail",
+                  "05_bouncing_staircase:step-2"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:front_rail",
+                  "05_bouncing_staircase:step-3"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:front_rail",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-0",
+                  "05_bouncing_staircase:step-1"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-0",
+                  "05_bouncing_staircase:step-2"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-0",
+                  "05_bouncing_staircase:step-3"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-0",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-1",
+                  "05_bouncing_staircase:step-2"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-1",
+                  "05_bouncing_staircase:step-3"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-1",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-2",
+                  "05_bouncing_staircase:step-3"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-2",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              },
+              {
+                "pair": [
+                  "05_bouncing_staircase:step-3",
+                  "05_bouncing_staircase:start-ramp"
+                ],
+                "reason": "both passive structural colliders"
+              }
+            ],
+            "maximum_scale_drift": {
+              "05_bouncing_staircase:floor": 0.0,
+              "05_bouncing_staircase:back_stop": 0.0,
+              "05_bouncing_staircase:rear_rail": 0.0,
+              "05_bouncing_staircase:front_rail": 0.0,
+              "05_bouncing_staircase:step-0": 0.0,
+              "05_bouncing_staircase:step-1": 0.0,
+              "05_bouncing_staircase:step-2": 0.0,
+              "05_bouncing_staircase:step-3": 0.0,
+              "05_bouncing_staircase:start-ramp": 0.0,
+              "05_bouncing_staircase:bouncer": 4.76837158203125e-07
+            },
+            "native_motion_holds": {
+              "05_bouncing_staircase:bouncer": {
+                "short_active_holds": [
+                  {
+                    "tick": 8,
+                    "samples": 8,
+                    "time_s": 0.03333333333333333
+                  },
+                  {
+                    "tick": 16,
+                    "samples": 8,
+                    "time_s": 0.06666666666666667
+                  },
+                  {
+                    "tick": 24,
+                    "samples": 8,
+                    "time_s": 0.1
+                  },
+                  {
+                    "tick": 32,
+                    "samples": 8,
+                    "time_s": 0.13333333333333333
+                  },
+                  {
+                    "tick": 40,
+                    "samples": 8,
+                    "time_s": 0.16666666666666666
+                  },
+                  {
+                    "tick": 48,
+                    "samples": 8,
+                    "time_s": 0.2
+                  },
+                  {
+                    "tick": 56,
+                    "samples": 8,
+                    "time_s": 0.23333333333333334
+                  },
+                  {
+                    "tick": 64,
+                    "samples": 8,
+                    "time_s": 0.26666666666666666
+                  },
+                  {
+                    "tick": 72,
+                    "samples": 8,
+                    "time_s": 0.3
+                  },
+                  {
+                    "tick": 80,
+                    "samples": 8,
+                    "time_s": 0.3333333333333333
+                  },
+                  {
+                    "tick": 88,
+                    "samples": 8,
+                    "time_s": 0.36666666666666664
+                  },
+                  {
+                    "tick": 96,
+                    "samples": 8,
+                    "time_s": 0.4
+                  },
+                  {
+                    "tick": 104,
+                    "samples": 8,
+                    "time_s": 0.43333333333333335
+                  },
+                  {
+                    "tick": 112,
+                    "samples": 8,
+                    "time_s": 0.4666666666666667
+                  },
+                  {
+                    "tick": 120,
+                    "samples": 8,
+                    "time_s": 0.5
+                  },
+                  {
+                    "tick": 128,
+                    "samples": 8,
+                    "time_s": 0.5333333333333333
+                  },
+                  {
+                    "tick": 136,
+                    "samples": 8,
+                    "time_s": 0.5666666666666667
+                  },
+                  {
+                    "tick": 144,
+                    "samples": 8,
+                    "time_s": 0.6
+                  },
+                  {
+                    "tick": 152,
+                    "samples": 8,
+                    "time_s": 0.6333333333333333
+                  },
+                  {
+                    "tick": 160,
+                    "samples": 8,
+                    "time_s": 0.6666666666666666
+                  },
+                  {
+                    "tick": 168,
+                    "samples": 8,
+                    "time_s": 0.7
+                  },
+                  {
+                    "tick": 176,
+                    "samples": 8,
+                    "time_s": 0.7333333333333333
+                  },
+                  {
+                    "tick": 184,
+                    "samples": 8,
+                    "time_s": 0.7666666666666667
+                  },
+                  {
+                    "tick": 192,
+                    "samples": 8,
+                    "time_s": 0.8
+                  },
+                  {
+                    "tick": 200,
+                    "samples": 8,
+                    "time_s": 0.8333333333333334
+                  },
+                  {
+                    "tick": 208,
+                    "samples": 8,
+                    "time_s": 0.8666666666666667
+                  },
+                  {
+                    "tick": 216,
+                    "samples": 8,
+                    "time_s": 0.9
+                  },
+                  {
+                    "tick": 224,
+                    "samples": 8,
+                    "time_s": 0.9333333333333333
+                  },
+                  {
+                    "tick": 232,
+                    "samples": 8,
+                    "time_s": 0.9666666666666667
+                  },
+                  {
+                    "tick": 240,
+                    "samples": 8,
+                    "time_s": 1.0
+                  },
+                  {
+                    "tick": 248,
+                    "samples": 8,
+                    "time_s": 1.0333333333333334
+                  },
+                  {
+                    "tick": 256,
+                    "samples": 8,
+                    "time_s": 1.0666666666666667
+                  },
+                  {
+                    "tick": 264,
+                    "samples": 8,
+                    "time_s": 1.1
+                  },
+                  {
+                    "tick": 272,
+                    "samples": 8,
+                    "time_s": 1.1333333333333333
+                  },
+                  {
+                    "tick": 280,
+                    "samples": 8,
+                    "time_s": 1.1666666666666667
+                  },
+                  {
+                    "tick": 288,
+                    "samples": 8,
+                    "time_s": 1.2
+                  },
+                  {
+                    "tick": 296,
+                    "samples": 8,
+                    "time_s": 1.2333333333333334
+                  },
+                  {
+                    "tick": 304,
+                    "samples": 8,
+                    "time_s": 1.2666666666666666
+                  },
+                  {
+                    "tick": 312,
+                    "samples": 8,
+                    "time_s": 1.3
+                  },
+                  {
+                    "tick": 320,
+                    "samples": 8,
+                    "time_s": 1.3333333333333333
+                  },
+                  {
+                    "tick": 328,
+                    "samples": 8,
+                    "time_s": 1.3666666666666667
+                  },
+                  {
+                    "tick": 336,
+                    "samples": 8,
+                    "time_s": 1.4
+                  },
+                  {
+                    "tick": 344,
+                    "samples": 8,
+                    "time_s": 1.4333333333333333
+                  },
+                  {
+                    "tick": 352,
+                    "samples": 8,
+                    "time_s": 1.4666666666666666
+                  },
+                  {
+                    "tick": 360,
+                    "samples": 8,
+                    "time_s": 1.5
+                  },
+                  {
+                    "tick": 368,
+                    "samples": 8,
+                    "time_s": 1.5333333333333334
+                  },
+                  {
+                    "tick": 376,
+                    "samples": 8,
+                    "time_s": 1.5666666666666667
+                  },
+                  {
+                    "tick": 384,
+                    "samples": 8,
+                    "time_s": 1.6
+                  },
+                  {
+                    "tick": 392,
+                    "samples": 8,
+                    "time_s": 1.6333333333333333
+                  },
+                  {
+                    "tick": 400,
+                    "samples": 8,
+                    "time_s": 1.6666666666666667
+                  },
+                  {
+                    "tick": 408,
+                    "samples": 8,
+                    "time_s": 1.7
+                  },
+                  {
+                    "tick": 416,
+                    "samples": 8,
+                    "time_s": 1.7333333333333334
+                  },
+                  {
+                    "tick": 424,
+                    "samples": 8,
+                    "time_s": 1.7666666666666666
+                  },
+                  {
+                    "tick": 432,
+                    "samples": 8,
+                    "time_s": 1.8
+                  },
+                  {
+                    "tick": 440,
+                    "samples": 8,
+                    "time_s": 1.8333333333333333
+                  },
+                  {
+                    "tick": 448,
+                    "samples": 8,
+                    "time_s": 1.8666666666666667
+                  },
+                  {
+                    "tick": 456,
+                    "samples": 8,
+                    "time_s": 1.9
+                  },
+                  {
+                    "tick": 464,
+                    "samples": 8,
+                    "time_s": 1.9333333333333333
+                  },
+                  {
+                    "tick": 472,
+                    "samples": 8,
+                    "time_s": 1.9666666666666666
+                  },
+                  {
+                    "tick": 480,
+                    "samples": 8,
+                    "time_s": 2.0
+                  },
+                  {
+                    "tick": 488,
+                    "samples": 8,
+                    "time_s": 2.033333333333333
+                  },
+                  {
+                    "tick": 496,
+                    "samples": 8,
+                    "time_s": 2.066666666666667
+                  },
+                  {
+                    "tick": 504,
+                    "samples": 8,
+                    "time_s": 2.1
+                  },
+                  {
+                    "tick": 512,
+                    "samples": 8,
+                    "time_s": 2.1333333333333333
+                  },
+                  {
+                    "tick": 520,
+                    "samples": 8,
+                    "time_s": 2.1666666666666665
+                  },
+                  {
+                    "tick": 528,
+                    "samples": 8,
+                    "time_s": 2.2
+                  },
+                  {
+                    "tick": 536,
+                    "samples": 8,
+                    "time_s": 2.2333333333333334
+                  },
+                  {
+                    "tick": 544,
+                    "samples": 8,
+                    "time_s": 2.2666666666666666
+                  },
+                  {
+                    "tick": 552,
+                    "samples": 8,
+                    "time_s": 2.3
+                  },
+                  {
+                    "tick": 560,
+                    "samples": 8,
+                    "time_s": 2.3333333333333335
+                  },
+                  {
+                    "tick": 568,
+                    "samples": 8,
+                    "time_s": 2.3666666666666667
+                  },
+                  {
+                    "tick": 576,
+                    "samples": 8,
+                    "time_s": 2.4
+                  },
+                  {
+                    "tick": 584,
+                    "samples": 8,
+                    "time_s": 2.433333333333333
+                  },
+                  {
+                    "tick": 592,
+                    "samples": 8,
+                    "time_s": 2.466666666666667
+                  },
+                  {
+                    "tick": 600,
+                    "samples": 8,
+                    "time_s": 2.5
+                  },
+                  {
+                    "tick": 608,
+                    "samples": 8,
+                    "time_s": 2.533333333333333
+                  },
+                  {
+                    "tick": 616,
+                    "samples": 8,
+                    "time_s": 2.566666666666667
+                  },
+                  {
+                    "tick": 624,
+                    "samples": 8,
+                    "time_s": 2.6
+                  },
+                  {
+                    "tick": 632,
+                    "samples": 8,
+                    "time_s": 2.6333333333333333
+                  },
+                  {
+                    "tick": 640,
+                    "samples": 8,
+                    "time_s": 2.6666666666666665
+                  },
+                  {
+                    "tick": 648,
+                    "samples": 8,
+                    "time_s": 2.7
+                  },
+                  {
+                    "tick": 656,
+                    "samples": 8,
+                    "time_s": 2.7333333333333334
+                  },
+                  {
+                    "tick": 664,
+                    "samples": 8,
+                    "time_s": 2.7666666666666666
+                  },
+                  {
+                    "tick": 672,
+                    "samples": 8,
+                    "time_s": 2.8
+                  },
+                  {
+                    "tick": 680,
+                    "samples": 8,
+                    "time_s": 2.8333333333333335
+                  },
+                  {
+                    "tick": 688,
+                    "samples": 8,
+                    "time_s": 2.8666666666666667
+                  },
+                  {
+                    "tick": 696,
+                    "samples": 8,
+                    "time_s": 2.9
+                  },
+                  {
+                    "tick": 704,
+                    "samples": 8,
+                    "time_s": 2.933333333333333
+                  },
+                  {
+                    "tick": 712,
+                    "samples": 8,
+                    "time_s": 2.966666666666667
+                  },
+                  {
+                    "tick": 720,
+                    "samples": 8,
+                    "time_s": 3.0
+                  },
+                  {
+                    "tick": 728,
+                    "samples": 8,
+                    "time_s": 3.033333333333333
+                  },
+                  {
+                    "tick": 736,
+                    "samples": 8,
+                    "time_s": 3.066666666666667
+                  },
+                  {
+                    "tick": 744,
+                    "samples": 8,
+                    "time_s": 3.1
+                  },
+                  {
+                    "tick": 752,
+                    "samples": 8,
+                    "time_s": 3.1333333333333333
+                  },
+                  {
+                    "tick": 760,
+                    "samples": 8,
+                    "time_s": 3.1666666666666665
+                  },
+                  {
+                    "tick": 768,
+                    "samples": 8,
+                    "time_s": 3.2
+                  },
+                  {
+                    "tick": 776,
+                    "samples": 8,
+                    "time_s": 3.2333333333333334
+                  },
+                  {
+                    "tick": 784,
+                    "samples": 8,
+                    "time_s": 3.2666666666666666
+                  },
+                  {
+                    "tick": 792,
+                    "samples": 8,
+                    "time_s": 3.3
+                  },
+                  {
+                    "tick": 800,
+                    "samples": 8,
+                    "time_s": 3.3333333333333335
+                  },
+                  {
+                    "tick": 808,
+                    "samples": 8,
+                    "time_s": 3.3666666666666667
+                  },
+                  {
+                    "tick": 816,
+                    "samples": 8,
+                    "time_s": 3.4
+                  },
+                  {
+                    "tick": 824,
+                    "samples": 8,
+                    "time_s": 3.433333333333333
+                  },
+                  {
+                    "tick": 832,
+                    "samples": 8,
+                    "time_s": 3.466666666666667
+                  },
+                  {
+                    "tick": 840,
+                    "samples": 8,
+                    "time_s": 3.5
+                  },
+                  {
+                    "tick": 848,
+                    "samples": 8,
+                    "time_s": 3.533333333333333
+                  },
+                  {
+                    "tick": 856,
+                    "samples": 8,
+                    "time_s": 3.566666666666667
+                  },
+                  {
+                    "tick": 864,
+                    "samples": 8,
+                    "time_s": 3.6
+                  },
+                  {
+                    "tick": 872,
+                    "samples": 8,
+                    "time_s": 3.6333333333333333
+                  },
+                  {
+                    "tick": 880,
+                    "samples": 8,
+                    "time_s": 3.6666666666666665
+                  },
+                  {
+                    "tick": 888,
+                    "samples": 8,
+                    "time_s": 3.7
+                  },
+                  {
+                    "tick": 896,
+                    "samples": 8,
+                    "time_s": 3.7333333333333334
+                  },
+                  {
+                    "tick": 904,
+                    "samples": 8,
+                    "time_s": 3.7666666666666666
+                  },
+                  {
+                    "tick": 912,
+                    "samples": 8,
+                    "time_s": 3.8
+                  },
+                  {
+                    "tick": 920,
+                    "samples": 8,
+                    "time_s": 3.8333333333333335
+                  },
+                  {
+                    "tick": 928,
+                    "samples": 8,
+                    "time_s": 3.8666666666666667
+                  },
+                  {
+                    "tick": 936,
+                    "samples": 8,
+                    "time_s": 3.9
+                  },
+                  {
+                    "tick": 944,
+                    "samples": 8,
+                    "time_s": 3.933333333333333
+                  },
+                  {
+                    "tick": 952,
+                    "samples": 8,
+                    "time_s": 3.966666666666667
+                  },
+                  {
+                    "tick": 960,
+                    "samples": 8,
+                    "time_s": 4.0
+                  },
+                  {
+                    "tick": 968,
+                    "samples": 8,
+                    "time_s": 4.033333333333333
+                  },
+                  {
+                    "tick": 976,
+                    "samples": 8,
+                    "time_s": 4.066666666666666
+                  },
+                  {
+                    "tick": 984,
+                    "samples": 8,
+                    "time_s": 4.1
+                  },
+                  {
+                    "tick": 992,
+                    "samples": 8,
+                    "time_s": 4.133333333333334
+                  },
+                  {
+                    "tick": 1000,
+                    "samples": 8,
+                    "time_s": 4.166666666666667
+                  },
+                  {
+                    "tick": 1008,
+                    "samples": 8,
+                    "time_s": 4.2
+                  },
+                  {
+                    "tick": 1016,
+                    "samples": 8,
+                    "time_s": 4.233333333333333
+                  },
+                  {
+                    "tick": 1024,
+                    "samples": 8,
+                    "time_s": 4.266666666666667
+                  },
+                  {
+                    "tick": 1032,
+                    "samples": 8,
+                    "time_s": 4.3
+                  },
+                  {
+                    "tick": 1040,
+                    "samples": 8,
+                    "time_s": 4.333333333333333
+                  },
+                  {
+                    "tick": 1048,
+                    "samples": 8,
+                    "time_s": 4.366666666666666
+                  },
+                  {
+                    "tick": 1056,
+                    "samples": 8,
+                    "time_s": 4.4
+                  },
+                  {
+                    "tick": 1064,
+                    "samples": 8,
+                    "time_s": 4.433333333333334
+                  },
+                  {
+                    "tick": 1072,
+                    "samples": 8,
+                    "time_s": 4.466666666666667
+                  },
+                  {
+                    "tick": 1080,
+                    "samples": 8,
+                    "time_s": 4.5
+                  },
+                  {
+                    "tick": 1088,
+                    "samples": 8,
+                    "time_s": 4.533333333333333
+                  },
+                  {
+                    "tick": 1096,
+                    "samples": 8,
+                    "time_s": 4.566666666666666
+                  }
+                ],
+                "counts_by_length": {
+                  "8": 137
+                }
+              }
+            },
+            "rest": {
+              "05_bouncing_staircase:bouncer": {
+                "max_final_speed_m_s": 0.0,
+                "max_final_angular_speed_rad_s": 0.0,
+                "supported_at_end": true,
+                "window_s": [
+                  7.754166666666666,
+                  8.0
+                ]
+              }
+            },
+            "cases": [
+              {
+                "kind": "supported_rest",
+                "id": null,
+                "status": "PASSED",
+                "metrics": {
+                  "unsupported_samples": 0,
+                  "first_unsupported_s": null,
+                  "max_speed_m_s": 0.0,
+                  "max_angular_speed_rad_s": 0.0
+                },
+                "issues": []
+              }
+            ],
+            "event_validation": {
+              "status": "NOT_RUN",
+              "reason": "production_events.json absent"
+            }
+          },
+          "issues": [
+            {
+              "code": "stale_state_digest",
+              "gate": "asset_integrity"
+            },
+            {
+              "code": "duplicated_low_rate_motion",
+              "gate": "physical_motion",
+              "object_id": "05_bouncing_staircase:bouncer",
+              "evidence": "physics_states.jsonl repeated active hold pattern",
+              "counts_by_length": {
+                "8": 137
+              }
+            },
+            {
+              "code": "replay_evidence_mismatch",
+              "gate": "fresh_process_replay",
+              "evidence": "/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/scenescore-sidecar-faults-af8jfogv/low_rate_physics/replay_validation.json",
+              "independently_computed": {
+                "max_position_error_m": 0.0,
+                "max_rotation_error_rad": 0.0,
+                "max_scale_error": 0.0
+              }
+            },
+            {
+              "code": "calibration_evidence_hash_mismatch",
+              "gate": "solver_calibration",
+              "artifact": "physics_states.jsonl"
+            },
+            {
+              "code": "calibration_scope_mismatch",
+              "gate": "solver_calibration"
+            }
+          ],
+          "tolerance_policy": {
+            "version": "production-tolerances-1",
+            "penetration_absolute_cap_m": 0.005,
+            "penetration_dimension_fraction": 0.01,
+            "arithmetic_floor_m": 1e-05,
+            "scale_drift": 1e-05,
+            "quaternion_norm_error": 0.0001,
+            "rest_speed_m_s": 0.02,
+            "rest_angular_speed_rad_s": 0.05,
+            "rest_window_s": 0.25,
+            "free_flight_acceleration_error_m_s2": 0.5,
+            "stable_target_translation_m": 0.005,
+            "stable_target_rotation_rad": 0.01,
+            "replay_position_m": 1e-05,
+            "replay_rotation_rad": 0.0001,
+            "calibration_status": "ANALYTICAL_ONLY_SOLVER_CALIBRATION_PENDING"
+          },
+          "limitations": [
+            "Sampled evaluated solids; no global continuous-time guarantee.",
+            "Copied metadata does not establish Blender provenance; fresh asset evidence is a separate gate.",
+            "No motion-perception, soundtrack audition or human approval is implied."
+          ],
+          "inputs": {
+            "production.json": "70597b578d26d4b7ec08fa5b78ec077cf26c8f7168af31c9e9ff7dc12a8019c9",
+            "physics_states.jsonl": "1db377d1b694368f46cd69816c1a3ab305bd676e88d4131a677fab75b16cf5a0"
+          }
+        }
+      },
+      "outcome": {
+        "status": "DETECTED",
+        "expected_gate": "physical_motion",
+        "expected_fault_codes": [],
+        "new_issue_codes": [
+          "calibration_evidence_hash_mismatch",
+          "calibration_scope_mismatch",
+          "duplicated_low_rate_motion",
+          "replay_evidence_mismatch",
+          "stale_state_digest"
+        ],
+        "relevant_fault_detected": true,
+        "new_physics_or_geometry_issue_codes": [
+          "duplicated_low_rate_motion"
+        ],
+        "integrity_or_replay_only": false,
+        "gate_statuses": {
+          "asset_integrity": "FAILED",
+          "geometric_contact": "PASSED",
+          "physical_motion": "FAILED",
+          "fresh_process_replay": "FAILED",
+          "solver_calibration": "FAILED",
+          "rendered_temporal": "NOT_RUN",
+          "perceptual_story_appearance": "NOT_RUN",
+          "physical_candidate": "FAILED"
+        },
+        "overall_candidate_status": "FAILED",
+        "baseline_failures_are_not_credited": []
+      }
+    }
+  ],
+  "sources": {
+    "staircase": {
+      "path": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/analytic/05_bouncing_staircase-32",
+      "inputs": {
+        "../05_bouncing_staircase-64/bake-reopen.json": {
+          "sha256": "1f4766792483e76761b5021d11a9d65fbcb563d7212ffaa12ab06d08803af6ad",
+          "size_bytes": 196
+        },
+        "../05_bouncing_staircase-64/bake.json": {
+          "sha256": "169c231bc4e0804d9507bebaa328fa27ed1d47741048e7a7a285dc2fd1fa759d",
+          "size_bytes": 1391
+        },
+        "../05_bouncing_staircase-64/evaluated_geometry.json": {
+          "sha256": "78b9ccf1b2608863886a8af858fc085fdcfd780a54eda90d33efa1086885a2ee",
+          "size_bytes": 170859
+        },
+        "../05_bouncing_staircase-64/mechanics_states.json": {
+          "sha256": "e5da986b187eb80eb49406b5889f487684d150ae576903acba10e4db3822e46e",
+          "size_bytes": 1082717
+        },
+        "../05_bouncing_staircase-64/physics_states.jsonl": {
+          "sha256": "f3af19d4990db5db571fbfc6dbcd33c2d51b2ee9e9d7cc03c3753a8ac3f5a022",
+          "size_bytes": 3034986
+        },
+        "../05_bouncing_staircase-64/production.json": {
+          "sha256": "ef37e3d38240582ff20e8e5c9ad386d6e758404b94da23c0e80fac7d72447bac",
+          "size_bytes": 8797
+        },
+        "../05_bouncing_staircase-64/replay_states.jsonl": {
+          "sha256": "94640e51b044ff348a6dec4dcf0cfd444b9b6bea3d2feebd3f6aa1aa916fbf26",
+          "size_bytes": 3032520
+        },
+        "../05_bouncing_staircase-64/replay_validation.json": {
+          "sha256": "610c406389ba679e83e9a2d360fac65404943d71fd5bb08afce1a602f153d683",
+          "size_bytes": 868
+        },
+        "../05_bouncing_staircase-64/scene.blend": {
+          "sha256": "7220f187e26677b1756ca12b9dbf5c036a01cc001b091e311d44d3bd62253d2e",
+          "size_bytes": 281613
+        },
+        "../05_bouncing_staircase-64/simulation.blend": {
+          "sha256": "855a3552c48af7c6dab153f064b1fceb9e53b8d4a2f27ec416c6a69b24dfc096",
+          "size_bytes": 279211
+        },
+        "../control_analytic_bounce-32/bake-reopen.json": {
+          "sha256": "83a3bb69f8b09adf6126145387a5bd057cd3942659752eb134c93a7d756886d6",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-32/bake.json": {
+          "sha256": "a3c4ccf5b42b205119c35f42df944d8380c185fd29de77abfe179890db296ea0",
+          "size_bytes": 1390
+        },
+        "../control_analytic_bounce-32/evaluated_geometry.json": {
+          "sha256": "03ca1fefdad93adddaa181663edecc0055dc4466198bb9b365f6db64a3ad15de",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-32/mechanics_states.json": {
+          "sha256": "9142711c07ebe59b011a72c00ecbab8c209d253251dc1d7c198b3f2114115217",
+          "size_bytes": 173635
+        },
+        "../control_analytic_bounce-32/physics_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-32/production.json": {
+          "sha256": "8e5f87e19ec42565e4a969fc682e917592d3afadfed9440cc6b40af4feeb40bc",
+          "size_bytes": 6268
+        },
+        "../control_analytic_bounce-32/replay_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-32/replay_validation.json": {
+          "sha256": "bef45dac9b49c17629caeb047001aa1be0df479625ff8cf5d68955763d138999",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-32/scene.blend": {
+          "sha256": "be2ca930c850892159bd48a0161310a83642e3a892f4e02b1295285743d73ace",
+          "size_bytes": 132271
+        },
+        "../control_analytic_bounce-32/simulation.blend": {
+          "sha256": "e7f0c1858a8c9eca3a2527613b8a1c009a47c7425fb497d0a05578300a7f2f91",
+          "size_bytes": 131840
+        },
+        "../control_analytic_bounce-64/bake-reopen.json": {
+          "sha256": "4ffd20edc4396042f224f0bf902e8d751d5f48fdeb654489180f72d5db364d1b",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-64/bake.json": {
+          "sha256": "396c2801b735077796f6837dc378902ed6d2ce0955c65208c509686e245fc8da",
+          "size_bytes": 1390
+        },
+        "../control_analytic_bounce-64/evaluated_geometry.json": {
+          "sha256": "2c3cdddfa99573de61de75e09391d3cc7aed869d720debf4f76b1f2e0e4fd4e7",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-64/mechanics_states.json": {
+          "sha256": "bf4b17abd762dc37533fffdcfc50f22f851c7c4d659d369cbc485c2d8aa1936a",
+          "size_bytes": 173694
+        },
+        "../control_analytic_bounce-64/physics_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-64/production.json": {
+          "sha256": "c85cf506681cac87313e0f48bc84d033b70663fd4408bff18b11104a9f65a522",
+          "size_bytes": 6268
+        },
+        "../control_analytic_bounce-64/replay_states.jsonl": {
+          "sha256": "037d80aead358cb2924d2783334f1c34009483db948f04e64dd5f99853b8fefa",
+          "size_bytes": 281310
+        },
+        "../control_analytic_bounce-64/replay_validation.json": {
+          "sha256": "8bc0617990141915319a24d7bf67dc738aab4ebb306696a788ee84053677e15e",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-64/scene.blend": {
+          "sha256": "a99a592e847849d14dc4256bc81a3c9edb71c6dfaf94dc35bae64eaeeee0843f",
+          "size_bytes": 132037
+        },
+        "../control_analytic_bounce-64/simulation.blend": {
+          "sha256": "388ea09b18732e1cabde1b6d8bdd14996c1e6418024764fdc4eacc9e5a7fab26",
+          "size_bytes": 131754
+        },
+        "../control_analytic_bounce-material-fine/bake-reopen.json": {
+          "sha256": "78eba0b45f8c814cdb88480a8131698912b9f84f1000e55e5ab9a43dff960368",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-material-fine/bake.json": {
+          "sha256": "d0d00d6a457163908d286aee4e10f8a0b02e670e34e595768b60206823dff2f6",
+          "size_bytes": 1734
+        },
+        "../control_analytic_bounce-material-fine/evaluated_geometry.json": {
+          "sha256": "d7b7ed2091918df9181fd85357ad281e1a084947c0015ae84fc0d91ac5c44bcd",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-material-fine/mechanics_states.json": {
+          "sha256": "528295ef7b8e09f30ab48b4b60b826ec748db10e54abdeb693930d91a1c7694c",
+          "size_bytes": 173864
+        },
+        "../control_analytic_bounce-material-fine/physics_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material-fine/production.json": {
+          "sha256": "f0ab46a040e4cd7030618589df622b6847a72030c9e940327e2b1550c3288355",
+          "size_bytes": 6618
+        },
+        "../control_analytic_bounce-material-fine/replay_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material-fine/replay_validation.json": {
+          "sha256": "d477ec7ad917681cd592854d555def8fa07c5b63a39541ed437a430f53eefcdf",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-material-fine/scene.blend": {
+          "sha256": "a7265ff375206aab7973abaafcf83e7f21d9260ffe1d29288c5b24340e5c6173",
+          "size_bytes": 132435
+        },
+        "../control_analytic_bounce-material-fine/simulation.blend": {
+          "sha256": "b3106d3cbbee0f40c036c122f1d304a2c6c9672d2ab50fd8920a3e830e834e3e",
+          "size_bytes": 132202
+        },
+        "../control_analytic_bounce-material/bake-reopen.json": {
+          "sha256": "9b4c0b967646d1211e6d3b9dd555976ef58a68a94d4b39ef6cdcc1c29e9918e3",
+          "size_bytes": 196
+        },
+        "../control_analytic_bounce-material/bake.json": {
+          "sha256": "c5d010f4348c559209d56e4dd71837f1d233221cd5fa9a5db45bd939a4958035",
+          "size_bytes": 1734
+        },
+        "../control_analytic_bounce-material/evaluated_geometry.json": {
+          "sha256": "2e950854d508842c5c47982e8d0a2ca8567eca908484f927424cb6402ad41267",
+          "size_bytes": 112909
+        },
+        "../control_analytic_bounce-material/mechanics_states.json": {
+          "sha256": "215413e6a6a0578e0bc137ababa32dcb162750261e0e133c54d72057cef25557",
+          "size_bytes": 173810
+        },
+        "../control_analytic_bounce-material/physics_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material/production.json": {
+          "sha256": "b47717b0b538c149220614f6d78b5d3b8a0d678aa4c2458930e74fd51d6a7c54",
+          "size_bytes": 6618
+        },
+        "../control_analytic_bounce-material/replay_states.jsonl": {
+          "sha256": "b32138be9118bdc54457b3fd8860c52b8dc7748a3dfd75c908722233422d9720",
+          "size_bytes": 281380
+        },
+        "../control_analytic_bounce-material/replay_validation.json": {
+          "sha256": "4017d7ca85c2ca30e369c6955f425d922bae07acd62d728260e1f604df61e9e4",
+          "size_bytes": 794
+        },
+        "../control_analytic_bounce-material/scene.blend": {
+          "sha256": "58501e00064a907965ce545bd7c33226ff2c157cb38207f20ac72e2b63ef6968",
+          "size_bytes": 132359
+        },
+        "../control_analytic_bounce-material/simulation.blend": {
+          "sha256": "4b08fa2be0534701f61e10ce807bfb37710c55ef9b76a31f39982d8ec72d29c1",
+          "size_bytes": 132127
+        },
+        "bake-reopen.json": {
+          "sha256": "5c1df71cd10f592cb5ba913ae367ab9aae9ae6e0525b371a3b9bec0721dbb31f",
+          "size_bytes": 196
+        },
+        "bake.json": {
+          "sha256": "12fc36ba110d460508c9d1dd67491bbfba2171455239e10cf3084b904eea44ce",
+          "size_bytes": 1391
+        },
+        "evaluated_geometry.json": {
+          "sha256": "66aeb3c9de832e27835bf810632f48077558f7114af2f268c303b1558ab94548",
+          "size_bytes": 170859
+        },
+        "mechanics_states.json": {
+          "sha256": "def1e1110c17766e9b6191674c2f4c7a5ae746737e5ab02fc87596968d77acef",
+          "size_bytes": 1082517
+        },
+        "physics_states.jsonl": {
+          "sha256": "02a56a8f2dc9a502ffe1a3649d3abc7fb6c8c10ce0e2f4f3d78688283a28e279",
+          "size_bytes": 3035601
+        },
+        "production.json": {
+          "sha256": "70597b578d26d4b7ec08fa5b78ec077cf26c8f7168af31c9e9ff7dc12a8019c9",
+          "size_bytes": 8797
+        },
+        "replay_states.jsonl": {
+          "sha256": "28ec2c74861f62ad610b72e8e89463296c4a59520180d974afda1650fb263088",
+          "size_bytes": 3033892
+        },
+        "replay_validation.json": {
+          "sha256": "133cd48f9a96c49c4e093447e3ca1f9ca8d429f370f9e87aef8c89310ad77536",
+          "size_bytes": 866
+        },
+        "scene.blend": {
+          "sha256": "54372af0b09bf2a8cc62f987e3134e051346cc451b2a628adc60bc9fbfa18e8e",
+          "size_bytes": 281635
+        },
+        "simulation.blend": {
+          "sha256": "4adf9a5d8b3dada1e5f2acf72b1289b2300db5179068d4224cf9920372f9abcc",
+          "size_bytes": 277900
+        },
+        "solver_calibration.json": {
+          "sha256": "e731acdfdde795cad2bd9f732fdd337fb1a31eef4846e17c7de121d9eb36acc3",
+          "size_bytes": 29063
+        }
+      }
+    }
+  },
+  "limitations": [
+    "These faults are injected into copied sidecars; no claim Blender generated them.",
+    "Baseline NOT_RUN gates remain unverified; no baseline is promoted by fault rejection.",
+    "Integrity-only rejection does not establish physical detection of a fault.",
+    "Rendering, continuous-motion perception and native solver calibration are not run."
+  ],
+  "temporary_mutant_directories_removed": true,
+  "source_inputs_unchanged": true,
+  "validator_source_unchanged": true,
+  "owned_process_groups_absent": true,
+  "coverage_gaps": []
+}

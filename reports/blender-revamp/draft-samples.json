@@ -1,0 +1,66 @@
+{
+  "version": "blender-draft-sample-check-1",
+  "approval": null,
+  "dimensions": {
+    "mix": {
+      "rate": 48000,
+      "samples": 384000,
+      "channels": 2,
+      "width": 2
+    },
+    "piano": {
+      "rate": 48000,
+      "samples": 384000,
+      "channels": 2,
+      "width": 2
+    },
+    "bass": {
+      "rate": 48000,
+      "samples": 384000,
+      "channels": 2,
+      "width": 2
+    },
+    "brush": {
+      "rate": 48000,
+      "samples": 384000,
+      "channels": 2,
+      "width": 2
+    },
+    "foley": {
+      "rate": 48000,
+      "samples": 384000,
+      "channels": 2,
+      "width": 2
+    }
+  },
+  "frame_sample_ratio": 1600,
+  "mix_minus_sum_stems_max_lsb": 2,
+  "mix_minus_sum_stems_rms_lsb": 0.5434721512337745,
+  "last_sample_lsb": {
+    "mix": [
+      0,
+      0
+    ],
+    "piano": [
+      0,
+      0
+    ],
+    "bass": [
+      0,
+      0
+    ],
+    "brush": [
+      0,
+      0
+    ],
+    "foley": [
+      0,
+      0
+    ]
+  },
+  "source_event_count": 304,
+  "export_event_count": 304,
+  "projections": 95,
+  "source_report_sha256": "c79b6bd0a3998492cdfbaccb4afefddac10afcbe5ba4f48cda9a78d6d5cd8060",
+  "scope": "Actual OfflineAudioContext WAV bytes; automated sample alignment, not audition."
+}

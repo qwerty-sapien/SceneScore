@@ -1,0 +1,125 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - text: LOCAL ANIMATION · ORIGINAL MUSIC
+      - heading "SceneScore." [level=1] [ref=e6]
+    - generic [ref=e7]:
+      - strong [ref=e8]: LAST INPUT · KEYBOARD
+      - generic [ref=e9]: BASELINE · AUDITION PENDING
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - heading "Scene preview" [level=2] [ref=e13]
+        - generic [ref=e14]: Staged review · 0 seconds
+      - generic [ref=e15]:
+        - generic:
+          - generic: EVALUATED BLENDER SCENE
+          - generic: 0.00 / 0s
+      - generic [ref=e17]:
+        - button "Start blink demo" [disabled] [ref=e18]
+        - button "Play approved" [disabled] [ref=e19]
+        - button "Audition draft" [disabled] [ref=e20]
+        - button "↤ Start" [ref=e21] [cursor=pointer]
+        - generic [ref=e22]:
+          - text: C
+          - generic [ref=e23]: blues centre
+        - generic [ref=e24]:
+          - text: Volume
+          - slider "Master volume" [ref=e25] [cursor=pointer]: "-18"
+          - text: "-18 dB"
+        - button "Mute" [ref=e26] [cursor=pointer]
+      - generic [ref=e27]:
+        - text: Position
+        - slider "Seek position" [ref=e28] [cursor=pointer]: "0"
+      - generic [ref=e29]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: "01"
+          - generic [ref=e33]: Soundtrack
+          - checkbox "Enable soundtrack" [checked] [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - generic [ref=e38]: "02"
+          - generic [ref=e39]: Collision / Foley
+          - checkbox "Enable foley" [checked] [ref=e40] [cursor=pointer]
+        - generic [ref=e43]:
+          - generic [ref=e44]: "03"
+          - generic [ref=e45]: Conducting
+      - status [ref=e47]: Loading local scene…
+    - complementary [ref=e48]:
+      - text: ARRANGEMENT
+      - heading "Tilted Blue" [level=2] [ref=e49]
+      - paragraph [ref=e50]: Original blues swing · 96 BPM · 4/4
+      - generic [ref=e51]:
+        - text: Brush groove
+        - combobox "Brush groove" [ref=e52] [cursor=pointer]:
+          - option "Light swing" [selected]
+          - option "Sparse brush"
+          - option "Straight rag"
+      - generic [ref=e53]:
+        - text: Conducting focus
+        - combobox "Conducting focus" [ref=e54] [cursor=pointer]
+      - paragraph [ref=e55]: World Z · up +2 / down −2. Stationary motion holds the key.
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - text: Low note
+          - spinbutton "Low note" [ref=e58]: "28"
+        - generic [ref=e59]:
+          - text: High note
+          - spinbutton "High note" [ref=e60]: "96"
+      - group [ref=e61]:
+        - generic "Mapping rules & exact plan" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - text: Reviewer
+          - textbox "Reviewer" [ref=e65]:
+            - /placeholder: Your name
+        - button "Approve exact plan" [disabled] [ref=e66]
+        - button "Reject / clear" [disabled] [ref=e67]
+        - paragraph [ref=e68]: Approval records the plan and input hashes. Listening judgments remain separate.
+      - generic [ref=e69]:
+        - paragraph [ref=e70]: "Recent control: KEYBOARD. Choose the current source in the Muse panel below."
+        - generic [ref=e71]:
+          - checkbox "Arm conducting" [disabled] [ref=e72] [cursor=pointer]
+          - text: Arm conducting
+        - button "Request modulation M" [disabled] [ref=e73]:
+          - text: Request modulation
+          - generic [ref=e74]: M
+        - paragraph [ref=e75]: Double only. Gain and articulation stay fixed. Triple and amplitude controls are disabled.
+      - button "Export draft audition" [disabled] [ref=e76]
+      - button "Export audio + score log ↗" [disabled] [ref=e77]
+  - region "Muse conducting and training" [ref=e78]:
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - text: OCULAR-GESTURE CONDUCTING
+        - heading "A blink, a prepared key change." [level=2] [ref=e81]
+      - generic [ref=e82]:
+        - strong [ref=e83]: KEYBOARD
+        - generic [ref=e84]: Keyboard · no headset required
+    - paragraph [ref=e85]: A deliberate double blink requests the next prepared harmonic transition. Natural blink clusters can resemble that gesture; the detector cannot guarantee intent.
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - text: Conducting source
+        - combobox "Muse source" [ref=e88] [cursor=pointer]:
+          - option "Keyboard · permanent fallback" [selected]
+          - option "Simulated · software fixture"
+          - option "Real replay · local recording"
+          - option "Live Muse · verified stream required"
+      - button "Keyboard request M" [ref=e89] [cursor=pointer]:
+        - text: Keyboard request
+        - generic [ref=e90]: M
+      - button "Simulate accepted double blink" [ref=e91] [cursor=pointer]
+    - status [ref=e92]: Keyboard and simulation are ready. The local companion is optional.
+    - paragraph [ref=e93]: Music paused
+    - group [ref=e94]:
+      - generic "Local companion & detector" [ref=e95] [cursor=pointer]
+    - group [ref=e96]:
+      - generic "Guided collection & delayed feedback" [ref=e97] [cursor=pointer]
+      - option "Train" [selected]
+      - option "Development"
+      - option "Final test · freeze before evaluation"
+    - group [ref=e98]:
+      - generic "Candidate, decision & timing diagnostics" [ref=e99] [cursor=pointer]
+  - group [ref=e100]:
+    - generic "Timing & provenance" [ref=e101] [cursor=pointer]
+  - generic [ref=e102]:
+    - text: LOCAL-FIRST · EDITABLE SCORE · NO CLOUD IN PLAYBACK
+    - generic [ref=e103]: Audition before performance.

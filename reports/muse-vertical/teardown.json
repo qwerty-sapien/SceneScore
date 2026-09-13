@@ -1,0 +1,47 @@
+{
+  "format": "scenescore.task-resource-teardown/1",
+  "verified_at_utc": "2026-09-12T18:59:11.883820+00:00",
+  "jobs": [
+    {
+      "identity": "uvicorn PID 12860, exec session 64840, loopback 8771",
+      "stop": "SIGTERM to verified task PID; escalation required for signal permission",
+      "exit_code": 143,
+      "evidence": "Application shutdown complete; Finished server process [12860]; session exit and no listening port"
+    },
+    {
+      "identity": "synthetic bridge exec session 84359, loopback 8766",
+      "stop": "bounded 180-second lifetime",
+      "exit_code": 0,
+      "evidence": "write_stdin completion and no listening port"
+    },
+    {
+      "identity": "earlier synthetic bridge PID 66003, exec session 51894",
+      "stop": "bounded 600-second lifetime",
+      "exit_code": 0
+    },
+    {
+      "identity": "launcher children PIDs/PGIDs 46497 and 46500, ports 8781/8766",
+      "stop": "bounded 10-second launcher SIGINT and waits",
+      "exit_codes": [
+        0,
+        0
+      ],
+      "evidence": "STOPPED output and no listening ports"
+    },
+    {
+      "identity": "Playwright task page",
+      "stop": "browser_close",
+      "evidence": "No open tabs"
+    }
+  ],
+  "final_listener_check": {
+    "command": "lsof -nP -iTCP:8771 -iTCP:8766 -iTCP:8781 -sTCP:LISTEN",
+    "exit_code": 1,
+    "output": "",
+    "meaning": "no listeners on task ports"
+  },
+  "persistent_jobs_remaining": [],
+  "deployment_started": false,
+  "unrelated_jobs_terminated": false,
+  "notes": "Preserved parallel task resources and review worktrees. No Docker containers started."
+}

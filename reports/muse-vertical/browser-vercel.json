@@ -1,0 +1,168 @@
+{
+  "url": "https://scenescore-muse-vertical.vercel.app/",
+  "captured_at": "2026-09-12T19:03:38.745Z",
+  "mode": "SYNTHETIC_TEST",
+  "tonic": 10,
+  "approval": null,
+  "draft_conducting": true,
+  "history": [
+    {
+      "action": {
+        "kind": "ControlAction",
+        "schema_version": "0.1",
+        "id": "control-9cd05c5d-c3a1-495d-aa61-fb8d9a43ca0e",
+        "gesture_id": "9cd05c5d-c3a1-495d-aa61-fb8d9a43ca0e",
+        "sequence_id": "9cd05c5d-c3a1-495d-aa61-fb8d9a43ca0e",
+        "provenance": {
+          "source_mode": "synthetic",
+          "creator": "scenescore-semantic-control",
+          "tool_version": "muse-control-1",
+          "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "input_hashes": [],
+          "seed": null
+        },
+        "gesture_count": 2,
+        "profile": "double_modulate_mvp",
+        "action": "request_modulation",
+        "request": {
+          "clock": "audio",
+          "epoch": "transport-1",
+          "seconds": 2.2133333333333334
+        },
+        "expires": {
+          "clock": "audio",
+          "epoch": "transport-1",
+          "seconds": 8.213333333333333
+        },
+        "boundary": "next_approved_bar_or_phrase",
+        "signed_semitones": -2,
+        "approved_plan_hash": "ef3b14df58433ce06a6c603b9947390f7f7cd017d19a54d10435218d1a419474",
+        "scene_policy_id": "world-z-causal-1",
+        "status": "queued",
+        "reason": null,
+        "quality": {
+          "state": "good",
+          "reason": null
+        },
+        "before": {
+          "master_gain_db": -18,
+          "articulation": "score",
+          "expression_preset": "neutral"
+        },
+        "after": {
+          "master_gain_db": -18,
+          "articulation": "score",
+          "expression_preset": "neutral"
+        }
+      },
+      "audio_received_s": 2.2133333333333334,
+      "id": "control-9cd05c5d-c3a1-495d-aa61-fb8d9a43ca0e",
+      "status": "executed",
+      "requested_scene_s": 16.030333333333335,
+      "generation": 1,
+      "source": "synthetic",
+      "boundary_s": 17.5,
+      "boundary_tick": 26880,
+      "boundary_audio_s": 3.683,
+      "arrival_scene_s": 18.125,
+      "arrival_audio_s": 4.308,
+      "signed_semitones": -2,
+      "ack_onset_audio_s": 2.223333333333333
+    }
+  ],
+  "traces": [
+    {
+      "envelope": {
+        "version": "muse-control-envelope-1",
+        "action": {
+          "kind": "ControlAction",
+          "schema_version": "0.1",
+          "id": "control-9cd05c5d-c3a1-495d-aa61-fb8d9a43ca0e",
+          "gesture_id": "9cd05c5d-c3a1-495d-aa61-fb8d9a43ca0e",
+          "sequence_id": "9cd05c5d-c3a1-495d-aa61-fb8d9a43ca0e",
+          "provenance": {
+            "source_mode": "synthetic",
+            "creator": "scenescore-semantic-control",
+            "tool_version": "muse-control-1",
+            "config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "input_hashes": [],
+            "seed": null
+          },
+          "gesture_count": 2,
+          "profile": "double_modulate_mvp",
+          "action": "request_modulation",
+          "request": {
+            "clock": "audio",
+            "epoch": "transport-1",
+            "seconds": 2.2133333333333334
+          },
+          "expires": {
+            "clock": "audio",
+            "epoch": "transport-1",
+            "seconds": 8.213333333333333
+          },
+          "boundary": "next_approved_bar_or_phrase",
+          "signed_semitones": -2,
+          "approved_plan_hash": "ef3b14df58433ce06a6c603b9947390f7f7cd017d19a54d10435218d1a419474",
+          "scene_policy_id": "world-z-causal-1",
+          "status": "queued",
+          "reason": null,
+          "quality": {
+            "state": "good",
+            "reason": null
+          },
+          "before": {
+            "master_gain_db": -18,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          },
+          "after": {
+            "master_gain_db": -18,
+            "articulation": "score",
+            "expression_preset": "neutral"
+          }
+        },
+        "detector": {
+          "version": "explicit-accepted-event-simulator-1",
+          "model_version": "none",
+          "grammar_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "timing": {
+          "t0_final_blink_s": null,
+          "t1_decision_s": null,
+          "t2_dispatch_s": null,
+          "t3_request_s": 2.2133333333333334,
+          "t4_received_s": 2.2133333333333334,
+          "t5_ack_onset_s": 2.223333333333333,
+          "t6_boundary_s": 4.308,
+          "device_epoch": null,
+          "host_epoch": null,
+          "audio_epoch": "transport-1",
+          "clock_mapping_id": null,
+          "unavailable_reasons": {
+            "detector_latency": "Explicit semantic simulation; no sampled blink or detector",
+            "host_dispatch": "Browser-only event; no host monotonic stamp",
+            "physical_output": "No acoustic measurement"
+          }
+        }
+      },
+      "intervals": {
+        "detector_closure_ms": null,
+        "mapped_request_to_receipt_ms": 0,
+        "accepted_to_scheduled_ack_ms": 9.999999999999787,
+        "musical_arrival_wait_ms": 2094.6666666666665,
+        "host_to_browser_ms": null,
+        "physical_output_measured": false
+      }
+    }
+  ],
+  "scene_time": 18.15833333333333,
+  "playing": true,
+  "rendered_mode": "SYNTHETIC_TEST\nSimulated · no headset evidence",
+  "prior_attempt": {
+    "result": "suppressed",
+    "reason": "stationary_world_z",
+    "scene_time": 15.125,
+    "note": "Immediate simulation at the first scene frame was correctly suppressed; verification resumed with elapsed scene motion at 16.03 s."
+  }
+}

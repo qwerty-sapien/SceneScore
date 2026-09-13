@@ -1,0 +1,14 @@
+{
+  "command": [
+    "make",
+    "test"
+  ],
+  "timeout_s": 900,
+  "status": "failed",
+  "process_group_absent": true,
+  "pid": 32565,
+  "pgid": 32565,
+  "returncode": 2,
+  "cleanup_signals": [],
+  "duration_s": 410.285752124968
+}

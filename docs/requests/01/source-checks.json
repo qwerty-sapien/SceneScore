@@ -1,0 +1,13 @@
+{
+  "approval": null,
+  "audition_status": "AUDITION_PENDING",
+  "base_commit": "527f949fbf10319b84428b1cf510c5d2c1c205d2",
+  "new_blender_render": "NOT_RUN",
+  "pair_timeline_source_unchanged": true,
+  "source_hashes": {
+    "modules/blender/geometry.py": "1f8b452dc7741ca75fbbc7b0be95efa7d3c045c3cdb20f5ecabc82bf02b39975",
+    "modules/blender/summary.py": "bea4fb3ee0d8dd0cc45778d8d4d1d0e66e9ef1733274cc7b37842d2b10c41f8b",
+    "modules/blender/tests/fixtures/music-semantics-v2.json": "85b7edbe7cbc4504ccb3be10f67acb22414c7f387f1edf909548926a0f2b74c3",
+    "modules/blender/tests/test_music_semantics.py": "51032b51a1651966da40747e3e97babcf3b66f8cfe8a7dd753f6615b3c54e76c"
+  }
+}

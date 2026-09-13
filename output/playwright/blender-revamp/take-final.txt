@@ -1,0 +1,4 @@
+### Ran Playwright code
+```js
+await (async (page) => { await page.getByRole("button", {name:"Audition draft",exact:true}).click(); await page.waitForFunction(()=>window.__studio?.snapshot().complete===true,null,{timeout:20000}); console.log(JSON.stringify(await page.evaluate(()=>window.__studio.snapshot()))); })(page);
+```

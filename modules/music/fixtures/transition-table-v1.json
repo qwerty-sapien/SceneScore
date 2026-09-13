@@ -1,0 +1,7857 @@
+{
+  "arrival_boundary": "next_declared_safe_bar",
+  "bar_ticks": 3840,
+  "gestures": {
+    "backdoor_v1": {
+      "acknowledgement": "guide_tone_dyad_of_first_slot",
+      "label": "bVII7 to I",
+      "note": "Blues-rooted; least disruptive for a +-2 shift under a swing groove.",
+      "tier": "contract_default"
+    },
+    "common_tone_dim_v1": {
+      "acknowledgement": "held_common_tone",
+      "label": "#ivdim7 to I",
+      "note": "Holds a common tone across the shift; intended for the +-5 edges.",
+      "tier": "auditioned_jazz"
+    },
+    "dominant_prep_v1": {
+      "acknowledgement": "guide_tone_dyad_of_first_slot",
+      "label": "V7 to I",
+      "note": "Matches the behaviour already implemented in packages/audio/model.ts::transition.",
+      "tier": "contract_default"
+    },
+    "ii_v_i_v1": {
+      "acknowledgement": "guide_tone_dyad_of_first_slot",
+      "label": "ii-7 V7 Imaj6/9",
+      "note": "Two-bar lead-in; use when the accepted request lands with a full bar of headroom.",
+      "tier": "contract_default"
+    },
+    "modal_pivot_biii_v1": {
+      "acknowledgement": "guide_tone_dyad_of_first_slot",
+      "label": "bIII V7 I",
+      "note": "Two-bar modal pivot for wider shifts. Audition before enabling.",
+      "tier": "auditioned_jazz"
+    },
+    "tritone_sub_v1": {
+      "acknowledgement": "guide_tone_dyad_of_first_slot",
+      "label": "bII7 to I",
+      "note": "Chromatic bass descent into the new tonic. Audition before enabling.",
+      "tier": "auditioned_jazz"
+    }
+  },
+  "id": "scenescore-transition-table",
+  "invariants": {
+    "acknowledgement": {
+      "max_ms_from_accepted_control": 300,
+      "must_not_change_master_gain": true,
+      "must_not_interrupt_sounding_melody": true,
+      "velocity_max": 60
+    },
+    "articulation_change": false,
+    "expression_preset_change": false,
+    "gain_db_delta": 0,
+    "lanes_affected": [
+      "bass",
+      "harmony-0",
+      "harmony-1",
+      "harmony-2"
+    ],
+    "lanes_untouched": [
+      "piano_or_lead",
+      "brushes",
+      "object_motif",
+      "foley"
+    ],
+    "max_new_events_per_modulation": 24,
+    "register_max": 96,
+    "register_min": 28,
+    "voice_leading": {
+      "bass_may_leap": true,
+      "max_semitones_per_voice": 3,
+      "outer_voice_parallel_fifths": "forbidden",
+      "require_common_tone": "when_available"
+    }
+  },
+  "meter": "4/4",
+  "ppq": 960,
+  "purpose": "Precomputed, enumerable destinations for an accepted deliberate double blink. Lookup is keyed by (tier, from_pc, signed_semitones, lead_bars) and is O(1). No runtime search, inference, network call or model is permitted on this path.",
+  "qualities": {
+    "dim7": [
+      0,
+      3,
+      6,
+      9
+    ],
+    "dom7": [
+      0,
+      4,
+      7,
+      10
+    ],
+    "dom7b5": [
+      0,
+      4,
+      6,
+      10
+    ],
+    "maj69": [
+      0,
+      4,
+      7,
+      9
+    ],
+    "min7": [
+      0,
+      3,
+      7,
+      10
+    ],
+    "sus4": [
+      0,
+      5,
+      7,
+      10
+    ]
+  },
+  "resolved": [
+    {
+      "from_pc": 0,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "min7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "min7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "min7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "min7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "min7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "min7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "min7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "min7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "min7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "dominant_prep_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "ii_v_i_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "min7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": -2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 2,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 0,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        }
+      ],
+      "to_pc": 5
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 1,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        }
+      ],
+      "to_pc": 6
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 2,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        }
+      ],
+      "to_pc": 7
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 3,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "quality": "maj69",
+          "root_pc": 8
+        }
+      ],
+      "to_pc": 8
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 4,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 9
+        }
+      ],
+      "to_pc": 9
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 5,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            5,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 10
+        }
+      ],
+      "to_pc": 10
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 6,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            6,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            3,
+            6,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 11
+        }
+      ],
+      "to_pc": 11
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 7,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 0
+        }
+      ],
+      "to_pc": 0
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "quality": "dom7b5",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 8,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            3,
+            6,
+            8
+          ],
+          "quality": "dom7",
+          "root_pc": 8
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 1
+        }
+      ],
+      "to_pc": 1
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            4,
+            7,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 0
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            3,
+            7,
+            9
+          ],
+          "quality": "dom7b5",
+          "root_pc": 3
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 9,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "quality": "maj69",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            4,
+            7,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 9
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            2,
+            6,
+            9,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 2
+        }
+      ],
+      "to_pc": 2
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            1,
+            5,
+            8,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 1
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "quality": "dom7b5",
+          "root_pc": 4
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 10,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            1,
+            3,
+            6,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 6
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            2,
+            5,
+            8,
+            10
+          ],
+          "quality": "dom7",
+          "root_pc": 10
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            0,
+            3,
+            7,
+            10
+          ],
+          "quality": "maj69",
+          "root_pc": 3
+        }
+      ],
+      "to_pc": 3
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "backdoor_v1",
+      "lead_bars": 0.5,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            0,
+            2,
+            6,
+            9
+          ],
+          "quality": "dom7",
+          "root_pc": 2
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "tritone_sub_v1",
+      "lead_bars": 1.0,
+      "lead_ticks": 1920,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "quality": "dom7b5",
+          "root_pc": 5
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    },
+    {
+      "from_pc": 11,
+      "gesture_id": "modal_pivot_biii_v1",
+      "lead_bars": 2.0,
+      "lead_ticks": 3840,
+      "signed_semitones": 5,
+      "slots": [
+        {
+          "offset_ticks": -3840,
+          "pitch_classes": [
+            2,
+            4,
+            7,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 7
+        },
+        {
+          "offset_ticks": -1920,
+          "pitch_classes": [
+            3,
+            6,
+            9,
+            11
+          ],
+          "quality": "dom7",
+          "root_pc": 11
+        },
+        {
+          "offset_ticks": 0,
+          "pitch_classes": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "quality": "maj69",
+          "root_pc": 4
+        }
+      ],
+      "to_pc": 4
+    }
+  ],
+  "tiers": {
+    "auditioned_jazz": {
+      "audition_required": true,
+      "authority": "Requires a recorded human audition per edge plus a decision record amending VISION eligibility.",
+      "default_gesture": "ii_v_i_v1",
+      "eligible_signed_semitones": [
+        -5,
+        -2,
+        2,
+        5
+      ],
+      "enable_flag": "SCENESCORE_JAZZ_TRANSITIONS",
+      "gesture_by_lead_bars": {
+        "0.5": "backdoor_v1",
+        "1": "tritone_sub_v1",
+        "2": "modal_pivot_biii_v1"
+      }
+    },
+    "contract_default": {
+      "audition_required": false,
+      "authority": "docs/VISION.md signed motion policy; plan.transitions in modules/arranger/core.py",
+      "default_gesture": "dominant_prep_v1",
+      "eligible_signed_semitones": [
+        -2,
+        2
+      ],
+      "enable_flag": null,
+      "gesture_by_lead_bars": {
+        "0.5": "dominant_prep_v1",
+        "1": "backdoor_v1",
+        "2": "ii_v_i_v1"
+      }
+    }
+  },
+  "version": "1"
+}

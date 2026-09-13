@@ -1,0 +1,16 @@
+{
+  "status": "INVALIDATED_DOWNSTREAM_EXPORT_COPIES",
+  "reason": "Playwright download listeners from earlier script calls remained registered in the same browser session and overwrote earlier export directories during later groove exports. Product candidate and browser input bundles unchanged. Recreate three exports in a fresh session with one scoped listener and assert unique bundle IDs before acceptance.",
+  "superseded": [
+    "reports/blender-revamp/delivery-audit.json",
+    "artifacts/blender/revamp/integration/staircase-DRAFT.mp4",
+    "artifacts/blender/revamp/integration/staircase-ballad-DRAFT.mp4",
+    "artifacts/blender/revamp/integration/staircase-rag-DRAFT.mp4"
+  ],
+  "preserved_timing": [
+    "browser-take-1.json",
+    "browser-seek-resume.json",
+    "browser-final-take.json"
+  ],
+  "approval": null
+}

@@ -1,0 +1,12 @@
+{
+  "mode": "in_process_API_with_actual_local_assets",
+  "staged_summary_status": 200,
+  "staged_scene_id": "05_bouncing_staircase:default:c5ee061e06e8074c",
+  "duration_s": 8.0,
+  "render_hash": "4dda38d936d12b2948faf77712cd8767a8cbaae5ed11514f7776dbbf56c8cdc7",
+  "selected_video_hash": "4dda38d936d12b2948faf77712cd8767a8cbaae5ed11514f7776dbbf56c8cdc7",
+  "event_status": 200,
+  "legacy_hero_status": 200,
+  "legacy_id": "10_projectile_tower:default:ccf899f76881",
+  "approval": null
+}

@@ -1,0 +1,4 @@
+# Optional local LSL runtime; separate from the frozen SceneScore environment.
+# Resolved for the existing Python 3.13.7; no Python download or version change.
+numpy==2.5.3
+pylsl==1.18.2

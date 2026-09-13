@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from fastapi import APIRouter, HTTPException
 from modules.blender.summary import compact_summary, event_query, state_query
+from modules.blender.selection import selected_bundle, verify_bundle
 
 router=APIRouter()
 ARTIFACT_ROOT=Path(__file__).resolve().parents[2]/'artifacts/blender'
@@ -22,9 +23,19 @@ def get_health():
 
 
 def scope(bundle):
+    if bundle in ('hero','contact','near_miss','near-miss'):
+        try:
+            return selected_bundle(bundle)[0]
+        except (ValueError,KeyError,FileNotFoundError):
+            raise HTTPException(409,detail={'code':'selection_invalid','message':'Selected scene failed integrity checks','retryable':False})
     path=(ARTIFACT_ROOT/bundle).resolve()
     if not path.is_relative_to(ARTIFACT_ROOT.resolve()) or not path.is_dir():
         raise HTTPException(404,detail={'code':'bundle_not_found','message':'Unknown local bundle','retryable':False})
+    if (path/'bundle_hashes.json').is_file():
+        try:
+            verify_bundle(path, require_render=False)
+        except (ValueError,KeyError,FileNotFoundError):
+            raise HTTPException(409,detail={'code':'bundle_invalid','message':'Scene bundle failed integrity checks','retryable':False})
     return path
 
 

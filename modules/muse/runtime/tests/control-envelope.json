@@ -1,0 +1,75 @@
+{
+  "version": "muse-control-envelope-1",
+  "action": {
+    "kind": "ControlAction",
+    "schema_version": "0.1",
+    "id": "control:synthetic-session-gesture-0",
+    "provenance": {
+      "source_mode": "synthetic",
+      "creator": "scenescore-muse",
+      "tool_version": "2A.1",
+      "config_hash": "057a585499b7865e3b573bde3b16285dd1b0a3021c4c518e354f5d97173a593b",
+      "input_hashes": [],
+      "seed": null
+    },
+    "gesture_id": "synthetic-session-gesture-0",
+    "sequence_id": "synthetic-session-gesture-0",
+    "gesture_count": 2,
+    "profile": "double_modulate_mvp",
+    "action": "request_modulation",
+    "request": {
+      "seconds": 12.920001,
+      "clock": "audio",
+      "epoch": "transport-0"
+    },
+    "expires": {
+      "seconds": 18.920001,
+      "clock": "audio",
+      "epoch": "transport-0"
+    },
+    "boundary": "next_approved_bar_or_phrase",
+    "signed_semitones": 2,
+    "scene_policy_id": "motion-test",
+    "approved_plan_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "status": "queued",
+    "reason": null,
+    "quality": {
+      "state": "good",
+      "reason": null
+    },
+    "before": {
+      "master_gain_db": -18,
+      "articulation": "score",
+      "expression_preset": "neutral"
+    },
+    "after": {
+      "master_gain_db": -18,
+      "articulation": "score",
+      "expression_preset": "neutral"
+    }
+  },
+  "detector": {
+    "version": "muse-runtime-1",
+    "model_version": "scenescore-new-causal-median/1",
+    "grammar_hash": "057a585499b7865e3b573bde3b16285dd1b0a3021c4c518e354f5d97173a593b"
+  },
+  "timing": {
+    "t0_final_blink_s": 2.42,
+    "t1_decision_s": 2.920001,
+    "t2_dispatch_s": 102.920001,
+    "t3_request_s": 12.920001,
+    "t4_received_s": null,
+    "t5_ack_onset_s": null,
+    "t6_boundary_s": null,
+    "device_epoch": "device-test",
+    "host_epoch": "host-test",
+    "audio_epoch": "transport-0",
+    "clock_mapping_id": "mapping-test",
+    "unavailable_reasons": {
+      "t4_received_s": "awaiting_music_receipt",
+      "t5_ack_onset_s": "awaiting_music_scheduler",
+      "t6_boundary_s": "awaiting_music_scheduler",
+      "dispatch_after_decision_ms": "device_to_host_mapping_not_supplied"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "closure_floor_ms": 500.0,
+  "failures": [],
+  "grammar_cases": [
+    {
+      "accepted": 1,
+      "expect": "accept",
+      "id": "P1",
+      "passed": true
+    },
+    {
+      "accepted": 1,
+      "expect": "accept",
+      "id": "P2",
+      "passed": true
+    },
+    {
+      "accepted": 1,
+      "expect": "accept",
+      "id": "P3",
+      "passed": true
+    },
+    {
+      "accepted": 2,
+      "expect": "accept_twice",
+      "id": "P4",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N1",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N2",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N3",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N4",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N5",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N6",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N7",
+      "passed": true
+    },
+    {
+      "accepted": 1,
+      "expect": "accept_once",
+      "id": "N8",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N9",
+      "passed": true
+    },
+    {
+      "accepted": 0,
+      "expect": "reject",
+      "id": "N10",
+      "passed": true
+    }
+  ],
+  "latency_ladder_violations": [],
+  "negative_controls": [
+    {
+      "mutation": "300 ms gate moved onto the boundary wait",
+      "rejected": true
+    },
+    {
+      "mutation": "responsiveness gate deleted",
+      "rejected": true
+    },
+    {
+      "mutation": "decision stamp removed",
+      "rejected": true
+    },
+    {
+      "mutation": "clock domains collapsed",
+      "rejected": true
+    },
+    {
+      "mutation": "max_gap_s raised past the latency gate",
+      "rejected": true
+    },
+    {
+      "mutation": "separation bounds inverted",
+      "rejected": true
+    }
+  ],
+  "processing_headroom_ms": 250.0,
+  "status": "PASSED"
+}

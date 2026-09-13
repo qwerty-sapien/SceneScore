@@ -1,0 +1,39 @@
+{
+  "status": "PASSED",
+  "validation_scope": "Prompt pack integrity and analytical example checks only",
+  "dag_nodes": 9,
+  "dag_acyclic": true,
+  "python_sources_parse": true,
+  "analytical_positive_controls_accepted": 9,
+  "analytical_negative_controls_rejected": 9,
+  "clip_decode_metadata": [
+    {
+      "file": "evidence/clips/12-17s-contact-freeze.mp4",
+      "width": 320,
+      "height": 180,
+      "avg_frame_rate": "8/1",
+      "duration": "5.000000",
+      "nb_read_frames": "40"
+    },
+    {
+      "file": "evidence/clips/18-24s-block-overlap.mp4",
+      "width": 320,
+      "height": 180,
+      "avg_frame_rate": "8/1",
+      "duration": "6.000000",
+      "nb_read_frames": "48"
+    },
+    {
+      "file": "evidence/clips/24-30s-unsupported-ending.mp4",
+      "width": 320,
+      "height": 180,
+      "avg_frame_rate": "8/1",
+      "duration": "6.000000",
+      "nb_read_frames": "48"
+    }
+  ],
+  "Blender_simulation": "NOT_RUN",
+  "MCP_connection": "NOT_RUN",
+  "continuous_visual_review": "NOT_RUN",
+  "audio_audition": "NOT_RUN"
+}

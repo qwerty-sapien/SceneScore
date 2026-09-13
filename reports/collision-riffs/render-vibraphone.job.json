@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "--import",
+    "tsx",
+    "tools/render_collision_riffs.ts",
+    "apps/web/public/riff-studio/contact-brush_swing_light_v1-vibraphone.json",
+    "artifacts/collision-riffs/vibraphone-v1"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 25152,
+  "pgid": 25152,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 1.437922167009674
+}

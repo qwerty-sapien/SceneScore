@@ -1,0 +1,10 @@
+{
+  "python": "3.13.7",
+  "pylsl": "1.18.2",
+  "numpy": "2.5.3",
+  "liblsl_version": 117,
+  "local_clock_is_positive": true,
+  "network_discovery_started": false,
+  "recording": false,
+  "runtime_directory": "artifacts/muse-training-runtime"
+}

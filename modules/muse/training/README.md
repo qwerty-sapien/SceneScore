@@ -31,3 +31,31 @@ Failure taxonomy and next collection action:
 | Timing/reconnect drift | Source epoch and packet-loss replay; no stale sequence discharge |
 
 Triple/amplitude experiments and online adaptation remain disabled. No live Muse path or trained accuracy is claimed.
+
+## Frozen collection protocol and readiness report
+
+The Muse vertical adds `scenescore.frozen-session-index/2`. Every session must now
+include the recorded participant consent protocol from `acquisition collect`.
+`audit_real` binds its exact persisted bytes using `protocol_sha256`, checks its
+participant/refit/role against the index, and rejects synthetic labels/sources.
+Older indices without this evidence require an independently documented consent
+and split audit; do not retroactively invent consent or pretend a role was
+assigned before model comparison.
+
+Prepare an assignments JSON containing the `sessions` fields described above,
+with paths relative to the data root. Every role must exist and a participant's
+refit cannot occur in multiple roles. Freeze it with an exclusive output:
+
+```sh
+PYTHONPATH=.:src .venv/bin/python -m modules.muse.training --data-root private_data/02A --freeze-assignments private_data/02A/assignments.json --output private_data/02A/split.json
+PYTHONPATH=.:src .venv/bin/python -m modules.muse.training --data-root private_data/02A --index private_data/02A/split.json --output reports/muse-vertical/detector/readiness.json
+```
+
+With no eligible data/index, omit `--index` to produce the truthful no-data
+readiness report. Real TP/FN/FP, recall, precision, rates, confidence bounds and
+latencies are null; no model is trained or promoted. The report supplies exact
+code/default config hashes and the baseline rollback command. RAGTM remains an
+attributed candidate comparator only. Logistic features/fit are research
+primitives tested on synthetic fixtures, and the optional self-training rung is
+not attempted without its independent development gates. Final matcher numeric
+values remain uncalibrated; the report does not fabricate a lock.

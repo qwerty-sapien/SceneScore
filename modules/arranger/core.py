@@ -6,6 +6,7 @@ from dataclasses import asdict, dataclass
 import hashlib
 import json
 import math
+import re
 from typing import Any
 
 from scenescore.contracts import approved_payload, validate, validate_bundle
@@ -55,8 +56,24 @@ class Context:
     interactions: list[dict]
     composition: dict
     groove: dict
+    role_supplement: dict | None = None
+    playback_policy: dict | None = None
+    music_handoff_binding: dict | None = None
 
     def __post_init__(self):
+        if self.music_handoff_binding is not None:
+            binding=self.music_handoff_binding
+            if (binding.get('version')!='scene-music-input-binding-1' or
+                    any(not isinstance(binding.get(k),str) or not re.fullmatch(r'[0-9a-f]{64}',binding[k])
+                        for k in ('handoff_sha256','features_sha256','handoff_index_sha256'))):
+                raise ValueError('invalid_music_handoff_binding')
+        if self.role_supplement is not None:
+            known={o['object_id'] for o in self.scene.get('objects',[])}
+            scored=self.role_supplement.get('scored_object_ids',[])
+            if not scored or len(set(scored))!=len(scored) or not set(scored)<=known:
+                raise ValueError('invalid_scored_object_roles')
+            if self.role_supplement.get('scene_id')!=self.scene.get('id'):
+                raise ValueError('stale_object_roles')
         if len(self.states) > 30000 or len(self.interactions) > 512 or len(self.scene.get("objects", [])) > 64:
             raise ValueError("scene_record_budget")
         validate_bundle([self.scene, *self.states, *self.interactions, self.composition, self.groove])
@@ -80,12 +97,24 @@ class Context:
 
     @property
     def objects(self):
-        return sorted(o["object_id"] for o in self.scene["objects"])
+        return sorted(self.role_supplement['scored_object_ids'] if self.role_supplement is not None
+                      else (o["object_id"] for o in self.scene["objects"]))
+
+    @property
+    def scene_inputs(self):
+        inputs={"scene": self.scene, "states": sorted(self.states, key=lambda s: s["id"]),
+                "interactions": sorted(self.interactions, key=lambda s: s["id"])}
+        if self.role_supplement is not None:
+            inputs['role_supplement']=self.role_supplement
+        if self.playback_policy is not None:
+            inputs['playback_policy']=self.playback_policy
+        if self.music_handoff_binding is not None:
+            inputs['music_handoff_binding']=self.music_handoff_binding
+        return inputs
 
     @property
     def scene_hash(self):
-        return digest({"scene": self.scene, "states": sorted(self.states, key=lambda s: s["id"]),
-                       "interactions": sorted(self.interactions, key=lambda s: s["id"])})
+        return digest(self.scene_inputs)
 
     @property
     def composition_hash(self):
@@ -320,6 +349,9 @@ def compile_preview(ctx, plan, policy=Policy(), brief="Original blues/ragtime sw
             e.update(event_type="brush", midi_pitch=None)
             events.append(e)
     for interaction in ctx.interactions:
+        if ctx.role_supplement is not None and (interaction['event_type']!='contact_onset' or
+                interaction['id'] not in ctx.role_supplement.get('validated_contact_ids',[])):
+            continue
         if interaction["event_type"] not in ("collision", "contact_onset", "contact_sustain", "contact_release"):
             continue
         e = base_record("ScoreEvent", "foley:"+interaction["id"], plan["provenance"])
@@ -481,3 +513,502 @@ class ApprovedSession(TransitionPreview):
         super().__init__(plan, ctx, policy, brief)
         self._plan_hash = hashlib.sha256(payload).hexdigest()
         self._approved = True
+
+
+# Additive music vertical. The canonical/legacy compiler above is intentionally unchanged.
+VERTICAL_VERSION = 'arranger-music-vertical-1'
+VERTICAL_LANES = {
+    ('approach', 'ornament'): (0, 1), ('approach', 'tension'): (0, .8), ('approach', 'register'): (0, 5),
+    ('near_miss', 'tension'): (.4, 1), ('near_miss', 'phrasing'): (0, 1), ('near_miss', 'dynamics'): (-6, 0),
+    ('separation', 'dynamics'): (-12, 0), ('separation', 'register'): (-7, 0), ('separation', 'ornament'): (0, .3),
+    ('contact_onset', 'accent'): (0, 1), ('contact_onset', 'timbre'): (0, 1),
+    ('contact_sustain', 'timbre'): (0, 1), ('contact_sustain', 'dynamics'): (-9, -3),
+    ('contact_release', 'phrasing'): (0, 1), ('contact_release', 'dynamics'): (-6, 0),
+    ('collision', 'accent'): (0, 1), ('collision', 'timbre'): (0, 1),
+    ('asymmetric_rebound', 'accent'): (0, 1), ('asymmetric_rebound', 'register'): (0, 12),
+    ('asymmetric_rebound', 'ornament'): (0, .7),
+}
+
+
+def _vertical_configuration(ctx, supplied):
+    config = {'articulation_enabled': True, 'dynamics_enabled': True, 'ornaments_enabled': True,
+              'hold_beats': 1.0, 'max_quantization_s': .75, 'max_changed_note_fraction': .05,
+              'max_changed_lead_fraction': .1, 'focus_object_id': ctx.objects[0]}
+    supplied = {} if supplied is None else deepcopy(supplied)
+    if set(supplied)-config.keys():
+        raise ValueError('unknown_vertical_mapping_configuration')
+    config.update(supplied)
+    for key in ('articulation_enabled', 'dynamics_enabled', 'ornaments_enabled'):
+        if type(config[key]) is not bool:
+            raise ValueError('invalid_vertical_boolean')
+    bounds = {'hold_beats': (1, 2), 'max_quantization_s': (0, 1),
+              'max_changed_note_fraction': (0, .05), 'max_changed_lead_fraction': (0, .1)}
+    for key, (lo, hi) in bounds.items():
+        value = config[key]
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or not lo <= value <= hi:
+            raise ValueError('invalid_vertical_mapping_range:' + key)
+    if config['focus_object_id'] not in ctx.objects:
+        raise ValueError('unknown_vertical_focus_object')
+    return config
+
+
+def _vertical_musical(events):
+    """Remove only circular plan/provenance fields for the plan's content binding."""
+    return [{key: value for key, value in event.items() if key not in ('plan_id', 'provenance')}
+            for event in sorted(events, key=lambda e: (e['resolved_time_s'], e['id']))]
+
+
+def _vertical_source(ctx, policy, variation):
+    from modules.music.events import resolve_events
+    events = resolve_events(ctx.composition, ctx.groove, plan_id='music-vertical-source',
+                            object_id=ctx.objects[0], variation=variation)
+    owner_index, slots = 0, {}
+    for event in events:
+        event['dynamics_db'] = policy.gain_db
+        if event['lane_id'] == 'object_motif':
+            event['object_id'] = ctx.objects[owner_index % len(ctx.objects)]
+            owner_index += 1
+        elif event['articulation'] == 'soft_comp':
+            key = (event['start_tick'], event['duration_ticks'], event['resolved_time_s'])
+            slots.setdefault(key, []).append(event)
+    for group in slots.values():
+        if len(group) != 3:
+            raise ValueError('vertical_requires_three_authored_comping_voices')
+        for index, event in enumerate(sorted(group, key=lambda e: (e['midi_pitch'], e['id']))):
+            event['lane_id'] = f'harmony-{index}'
+    return events
+
+
+def _causal_pair_closing(ctx, pair, at, reference_speed):
+    from modules.blender.geometry import normal_speed
+    rows = []
+    for oid in pair:
+        rows.append({s['scene_time_s']: s for s in ctx.states
+                     if s['object_id'] == oid and s['scene_time_s'] <= at})
+    times = sorted(rows[0].keys() & rows[1].keys())
+    max_gap = ctx.scene['fps_base']/ctx.scene['fps']
+    if len(times) < 2 or at-times[-1] > max_gap+1e-9 or times[-1]-times[-2] > max_gap+1e-9:
+        return None
+    before, now = times[-2:]
+    points = [rows[j][t]['transform']['position_m'] for j, t in [(0, before), (0, now), (1, before), (1, now)]]
+    normal = normal_speed(*points, now-before)
+    return None if normal is None else min(1., max(0., -normal/reference_speed))
+
+
+def _vertical_chord(ctx, seconds):
+    for chord in reversed(ctx.composition['harmony']):
+        if tick_seconds(ctx.composition, chord['start_tick']) <= seconds+1e-9:
+            return chord
+    raise ValueError('vertical_harmony_out_of_coverage')
+
+
+def _vertical_beat_end(ctx, start, beats):
+    """Integrate beats over the authored tempo map; no assumed global tempo."""
+    tempos = ctx.composition['tempo_map']
+    remaining, cursor = beats, start
+    for index, tempo in enumerate(tempos):
+        begin = tick_seconds(ctx.composition, tempo['tick'])
+        end = tick_seconds(ctx.composition, tempos[index+1]['tick']) if index+1 < len(tempos) else ctx.scene['duration_s']
+        if end <= cursor or begin > cursor+1e-9:
+            continue
+        available = (end-cursor)*tempo['bpm']/60
+        if remaining <= available+1e-9:
+            return cursor+remaining*60/tempo['bpm']
+        remaining -= available
+        cursor = end
+    raise ValueError('near_miss_one_beat_hold_exceeds_media')
+
+
+def _vertical_control_values(feature, driver, mappings):
+    # Reuse the original bounded linear curve and its mapping record shape.
+    return {mapping['lane']: curve({'mappings': [mapping]}, feature, driver)
+            for mapping in mappings if mapping['feature'] == feature}
+
+
+def _vertical_controls(ctx, semantics, source, config, policy):
+    mappings = [{'feature': feature, 'lane': lane, 'input_min': 0., 'input_max': 1.,
+                 'output_min': lo, 'output_max': hi} for (feature, lane), (lo, hi) in VERTICAL_LANES.items()]
+    for mapping in mappings:
+        if (mapping['feature'], mapping['lane']) == ('asymmetric_rebound', 'register'):
+            mapping.update(input_min=1., input_max=16.)
+    controls, holds, suppressed = [], [], deepcopy(semantics['suppressed'])
+    cadence = ctx.scene['fps_base']/ctx.scene['fps']
+    for episode in semantics['events']:
+        feature, driver = episode['event_type'], episode['driver']
+        if driver is None:
+            continue
+        start, end = episode['onset_s'], episode['onset_s']+episode['duration_s']
+        if feature == 'near_miss':
+            if episode.get('certified_no_tunnelling') is not True or episode.get('minimum_s') is None:
+                suppressed.append({'source_event_id': episode['source_event_id'], 'reason': 'uncertified_near_miss'})
+                continue
+            start = episode['minimum_s']
+            end = _vertical_beat_end(ctx, start, config['hold_beats'])
+            chord = _vertical_chord(ctx, start)
+            thirds = [i for i in chord['intervals_semitones'] if i % 12 in (3, 4)]
+            holds.append({'id': episode['id']+':hold', 'source_event_id': episode['source_event_id'],
+                          'start_s': start, 'end_s': end, 'root_pc': chord['root_pc'],
+                          'withheld_pitch_classes': sorted({(chord['root_pc']+i) % 12 for i in thirds}),
+                          'reason': 'near_miss_withheld_resolution', 'hold_beats': config['hold_beats'],
+                          'pair_id': episode['pair_id'], 'no_accent': True, 'no_foley': True, 'no_key_change': True})
+        end = min(ctx.scene['duration_s'], max(end, start+cadence))
+        if end <= start:
+            suppressed.append({'source_event_id': episode['source_event_id'], 'reason': 'event_has_no_media_coverage'})
+            continue
+        basic = {'id': episode['id']+':control', 'source_event_id': episode['source_event_id'],
+                 'feature': feature, 'pair_id': episode['pair_id'], 'object_ids': list(episode['pair']),
+                 'start_s': start, 'end_s': end, 'driver': driver,
+                 'values': _vertical_control_values(feature, driver, mappings),
+                 'intent': feature, 'source_slot_ids': [], 'quantization_delay_s': None}
+        if feature == 'asymmetric_rebound':
+            basic.update(rebounding_object_id=episode['rebounding_object_id'], anchor_object_id=episode['anchor_object_id'],
+                         area_ratio=episode['area_ratio'], speed_retention=episode['speed_retention'],
+                         chain_index=episode['chain_index'], mass_inferred=False, restitution_claimed=False)
+            area_curve = next(mapping for mapping in mappings if
+                              (mapping['feature'], mapping['lane']) == ('asymmetric_rebound', 'register'))
+            basic['values']['register'] = curve({'mappings': [area_curve]}, feature, episode['area_ratio'])
+        if feature == 'approach':
+            # Resolve only at existing source slots and only from evaluated samples
+            # at/before each slot. Neither future minimum scalar nor gap is used.
+            for note in source:
+                at = note['resolved_time_s']
+                if note['event_type'] != 'note' or not start <= at < end:
+                    continue
+                if note['object_id'] not in (None, *episode['pair']):
+                    continue
+                causal = _causal_pair_closing(ctx, episode['pair'], at, semantics['config']['approach_ref_speed_m_s'])
+                if causal is None:
+                    suppressed.append({'source_event_id': episode['source_event_id'], 'source_slot_id': note['id'],
+                                       'reason': 'causal_pair_motion_out_of_coverage', 'fallback': 'unmodified_score'})
+                    continue
+                controls.append({**basic, 'id': basic['id']+':'+note['id'], 'start_s': at,
+                                 'end_s': min(end, at+note['duration_s']), 'driver': causal,
+                                 'values': _vertical_control_values(feature, causal, mappings),
+                                 'source_slot_ids': [note['id']], 'motion_sample_latest_s': max(
+                                     s['scene_time_s'] for s in ctx.states if s['object_id'] in episode['pair'] and s['scene_time_s'] <= at)})
+        else:
+            controls.append(basic)
+    controls.sort(key=lambda row: (row['start_s'], row['feature'], row['id']))
+    return {'document_type': 'SceneScoreMotionControlTrack', 'document_version': 1,
+            'clock': 'scene', 'epoch': ctx.scene['id'], 'duration_s': ctx.scene['duration_s'],
+            'config': config, 'mappings': mappings, 'events': controls, 'suppressed': suppressed}, holds
+
+
+def _vertical_realize(ctx, source, track, holds, config, seed):
+    from modules.music.ornament import TransformBudgets, TransformRequest, apply_transforms
+    notes = [event for event in source if event['event_type'] == 'note']
+    lookup = {event['id']: event for event in notes}
+    requests, dynamics, register, diagnostics = {}, {}, {}, []
+    decorated = set()
+    changed_limit = math.floor(len(notes)*config['max_changed_note_fraction'])
+
+    def request(note, kind, control, **parameters):
+        key = (note['id'], kind)
+        # Later causal controls win at the same source slot; iteration is stable.
+        requests[key] = TransformRequest(note['id'], kind, **parameters)
+        if note['id'] not in control['source_slot_ids']:
+            control['source_slot_ids'].append(note['id'])
+
+    def first_slot(control, owner=None):
+        candidates = [event for event in notes if event['resolved_time_s'] >= control['start_s']-1e-9
+                      and event['resolved_time_s']-control['start_s'] <= config['max_quantization_s']+1e-9
+                      and (event['object_id'] == owner if owner is not None else
+                           event['object_id'] in control['object_ids'])]
+        if not candidates and owner is None:
+            candidates = [event for event in notes if event['lane_id'].startswith('harmony-')
+                          and control['start_s'] <= event['resolved_time_s'] <= control['start_s']+config['max_quantization_s']]
+        if not candidates:
+            diagnostics.append({'source_event_id': control['source_event_id'], 'reason': 'no_existing_source_slot_in_window'})
+            return None
+        event = min(candidates, key=lambda e: (e['resolved_time_s'], e['id']))
+        delay = event['resolved_time_s']-control['start_s']
+        if control['quantization_delay_s'] is None:
+            control['quantization_delay_s'] = delay
+        control.setdefault('source_slot_delays_s', {})[event['id']] = delay
+        return event
+
+    priority = {'approach': 0, 'separation': 1, 'contact_sustain': 2, 'contact_release': 3,
+                'near_miss': 4, 'contact_onset': 5, 'collision': 5, 'asymmetric_rebound': 6}
+    for control in sorted(track['events'], key=lambda row: (row['start_s'], priority[row['feature']], row['id'])):
+        feature, driver = control['feature'], control['driver']
+        if feature == 'approach':
+            note = lookup[control['source_slot_ids'][0]]
+            if config['articulation_enabled'] and driver > .01:
+                request(note, 'articulation', control, articulation='legato')
+        elif feature in ('contact_onset', 'collision', 'asymmetric_rebound'):
+            owner = control.get('rebounding_object_id')
+            note = first_slot(control, owner)
+            if note is None:
+                continue
+            if config['articulation_enabled']:
+                request(note, 'articulation', control, articulation='staccato' if feature != 'asymmetric_rebound' else 'tenuto')
+            if feature == 'asymmetric_rebound':
+                velocity = max(1, round(note['velocity']*control['speed_retention']*(.8**control['chain_index'])))
+                if abs(velocity-note['velocity']) > 32:
+                    diagnostics.append({'source_event_id': control['source_event_id'],
+                                        'reason': 'rebound_velocity_outside_transform_delta_budget',
+                                        'fallback': 'no_rebound_decoration'})
+                    continue
+                if config['ornaments_enabled'] and len(decorated) < changed_limit:
+                    request(note, 'grace', control)
+                    decorated.add(note['id'])
+                # Explicit separate register/velocity declarations, never coupled
+                # to the accepted key-change control or global expression preset.
+                shift = round(control['values']['register'])
+                register[note['id']] = shift
+                request(note, 'velocity', control, velocity_delta=velocity-note['velocity'])
+                anchor = first_slot(control, control['anchor_object_id'])
+                if anchor is not None and config['articulation_enabled']:
+                    request(anchor, 'articulation', control, articulation='staccato')
+                    register[anchor['id']] = -12
+        elif feature in ('separation', 'contact_sustain', 'contact_release', 'near_miss'):
+            for note in notes:
+                at = note['resolved_time_s']
+                if not control['start_s'] <= at < control['end_s']:
+                    continue
+                if note['object_id'] not in (None, *control['object_ids']):
+                    continue
+                if config['articulation_enabled']:
+                    articulation = 'legato' if feature in ('near_miss', 'contact_sustain') else 'detached'
+                    request(note, 'articulation', control, articulation=articulation)
+                if config['dynamics_enabled']:
+                    progress = (at-control['start_s'])/(control['end_s']-control['start_s'])
+                    offset = -12*driver*progress if feature == 'separation' else (
+                        -6*driver if feature in ('near_miss', 'contact_release') else control['values']['dynamics'])
+                    dynamics[note['id']] = min(dynamics.get(note['id'], 0.), offset)
+    # No added decorative attack may coincide with an unresolved-harmony hold.
+    for key, item in list(requests.items()):
+        note = lookup[item.event_id]
+        if item.kind == 'grace' and any(note['resolved_time_s'] < hold['end_s'] and
+                                        note['resolved_time_s']+note['duration_s'] > hold['start_s'] for hold in holds):
+            del requests[key]
+            diagnostics.append({'source_slot_id': note['id'], 'reason': 'ornament_suppressed_during_near_miss_hold'})
+    budgets = TransformBudgets()
+    # Style lanes execute before decorations. Applying velocity after a grace
+    # would correctly be rejected by node03's existing-ornament guard.
+    styles = [item for item in requests.values() if item.kind in ('articulation', 'velocity')]
+    decorations = [item for item in requests.values() if item.kind not in ('articulation', 'velocity')]
+    styled = apply_transforms(source, styles, ctx.composition, seed=seed, budgets=budgets)
+    transformed = apply_transforms(styled.events, decorations, ctx.composition, seed=seed, budgets=budgets)
+    events = transformed.events
+    explicit = []
+    for event in events:
+        if event['event_type'] != 'note':
+            continue
+        parent_id = event['id'].split(':music-ornament-1:')[0]
+        if parent_id in dynamics:
+            event['dynamics_db'] = max(-48., min(-3., event['dynamics_db']+dynamics[parent_id]))
+            explicit.append({'event_id': event['id'], 'lane': 'dynamics', 'offset_db': dynamics[parent_id]})
+        if parent_id in register:
+            event['midi_pitch'] = bounded_pitch(event['midi_pitch']+register[parent_id], 28, 96)
+            explicit.append({'event_id': event['id'], 'lane': 'register', 'semitones': register[parent_id]})
+    return events, {'transform': transformed.audit, 'style_transform': styled.audit, 'explicit_lane_changes': explicit,
+                    'suppressed': diagnostics, 'budgets': asdict(budgets)}
+
+
+def _vertical_withhold_thirds(events, holds):
+    """Declared source-slot omission/splitting, with no new attack at a minimum."""
+    output, edits = [], []
+    for event in events:
+        if event['event_type'] != 'note':
+            output.append(event)
+            continue
+        start, end = event['resolved_time_s'], event['resolved_time_s']+event['duration_s']
+        pieces = [(start, end)]
+        causes = []
+        for hold in holds:
+            if event['midi_pitch'] % 12 not in hold['withheld_pitch_classes']:
+                continue
+            if start >= hold['end_s'] or end <= hold['start_s']:
+                continue
+            causes.append(hold['id'])
+            remaining = []
+            for left, right in pieces:
+                if right <= hold['start_s'] or left >= hold['end_s']:
+                    remaining.append((left, right))
+                else:
+                    if left < hold['start_s']:
+                        remaining.append((left, hold['start_s']))
+                    if right > hold['end_s']:
+                        remaining.append((hold['end_s'], right))
+            pieces = remaining
+        if not causes:
+            output.append(event)
+            continue
+        kept = []
+        for index, (left, right) in enumerate(pieces):
+            if right-left < .025:
+                continue
+            raw_start = event['start_tick']+round(event['duration_ticks']*(left-start)/(end-start))
+            raw_end = event['start_tick']+round(event['duration_ticks']*(right-start)/(end-start))
+            if raw_end <= raw_start:
+                continue
+            note = {**deepcopy(event), 'id': event['id'] if not kept else event['id']+f':hold-resume:{index}',
+                    'resolved_time_s': left, 'duration_s': right-left, 'start_tick': raw_start,
+                    'duration_ticks': raw_end-raw_start, 'phrasing': 'near-miss-third-withheld'}
+            kept.append(note)
+        output.extend(kept)
+        edits.append({'source_slot_id': event['id'], 'hold_ids': causes, 'source_slot_s': [start, end],
+                      'retained_intervals_s': [[e['resolved_time_s'], e['resolved_time_s']+e['duration_s']] for e in kept],
+                      'method': 'explicit_third_omission_inside_source_slot', 'duration_preserving': False,
+                      'unchanged_before_minimum': True, 'envelope_perception': 'AUDITION_PENDING'})
+    return sorted(output, key=lambda e: (e['resolved_time_s'], e['id'])), edits
+
+
+def _vertical_foley(ctx, semantics, policy):
+    events = []
+    for source in semantics['events']:
+        kind, start = source['event_type'], source['onset_s']
+        if kind not in ('contact_onset', 'collision', 'contact_sustain', 'contact_release') or source['driver'] is None:
+            continue
+        duration = min(max(.01, source['duration_s']), ctx.scene['duration_s']-start)
+        if duration <= 0:
+            continue
+        event = base_record('ScoreEvent', 'vertical-foley:'+source['source_event_id'], ctx.scene['provenance'])
+        event.update(plan_id='music-vertical-source', object_id=source['pair'][0], lane_id='contact:'+source['pair_id'],
+                     event_type='foley', instrument_id=INSTRUMENTS['foley'], start_tick=None, duration_ticks=None,
+                     resolved_time_s=start, duration_s=duration, scene_time_s=start, midi_pitch=None,
+                     velocity=90 if kind in ('collision', 'contact_onset') else 40, dynamics_db=policy.gain_db,
+                     articulation=kind, phrasing='exact-scene-time', ornament=None,
+                     timbre_id='contact-bright' if source['driver'] >= .5 else 'contact-soft',
+                     swing_applied=False, swing_application_count=0)
+        events.append(event)
+    return events
+
+
+def _vertical_identity_audit(source, output, config):
+    fields = ('start_tick', 'duration_ticks', 'resolved_time_s', 'duration_s', 'midi_pitch')
+    lookup = {event['id']: event for event in output}
+    notes = [event for event in source if event['event_type'] == 'note']
+    lead = [event for event in notes if event['lane_id'] == 'piano_or_lead']
+    changed = [event['id'] for event in notes if event['id'] not in lookup or
+               any(event[key] != lookup[event['id']][key] for key in fields)]
+    changed_lead = [event['id'] for event in lead if event['id'] in changed]
+    if len(changed) > len(notes)*config['max_changed_note_fraction']+1e-9:
+        raise ValueError('vertical_source_note_identity_budget')
+    if len(changed_lead) > len(lead)*config['max_changed_lead_fraction']+1e-9:
+        raise ValueError('vertical_source_lead_identity_budget')
+    return {'source_note_count': len(notes), 'changed_note_ids': changed,
+            'unchanged_note_fraction': 1-len(changed)/len(notes) if notes else 1.,
+            'source_lead_count': len(lead), 'changed_lead_ids': changed_lead,
+            'unchanged_lead_fraction': 1-len(changed_lead)/len(lead) if lead else 1.}
+
+
+def _vertical_density_audit(source, output, composition):
+    from collections import Counter
+    original_ids = {event['id'] for event in source}
+    added = sorted(event['resolved_time_s'] for event in output
+                   if event['event_type'] != 'foley' and event['id'] not in original_ids)
+    left, maximum = 0, 0
+    for right, at in enumerate(added):
+        while added[left] <= at-1+1e-9:
+            left += 1
+        maximum = max(maximum, right-left+1)
+    bar_ticks = composition['ppq']*4*composition['meter'][0]//composition['meter'][1]
+    maximum_bar = max(Counter(event['start_tick']//bar_ticks for event in output
+                              if event['event_type'] != 'foley').values(), default=0)
+    if maximum > 12 or maximum_bar > 96:
+        raise ValueError('vertical_combined_added_density_budget')
+    return {'maximum_added_events_per_second': maximum, 'maximum_music_events_per_bar': maximum_bar,
+            'hold_splits_included': True, 'foley_excluded': True}
+
+
+def validate_vertical_result(result):
+    """Validate an offline candidate's exact packet bindings; never grant approval."""
+    prov = result['provenance']
+    binding = prov['binding']
+    payload = result['plan_payload'].encode()
+    track = {key: value for key, value in result['control_track'].items() if key != 'provenance'}
+    checks = [(encoded(result['plan']), payload),
+              (hashlib.sha256(payload).hexdigest(), result['plan_payload_sha256']),
+              (digest(binding), prov['binding_sha256']),
+              (digest(_vertical_musical(result['source_events'])), binding['source_musical_sha256']),
+              (digest(_vertical_musical(result['events'])), binding['mapped_musical_sha256']),
+              (digest(result['source_events']), prov['source_events_sha256']),
+              (digest(result['events']), prov['mapped_events_sha256']),
+              (digest(track), binding['control_track_sha256']),
+              (digest(result['holds']), binding['holds_sha256'])]
+    if any(actual != expected for actual, expected in checks):
+        raise ValueError('stale_vertical_candidate_binding')
+    if (prov['binding_sha256'] not in result['plan']['provenance']['input_hashes']
+            or result['control_track']['provenance']['plan_payload_sha256'] != result['plan_payload_sha256']):
+        raise ValueError('unbound_vertical_plan_or_controls')
+    if result['approval'] is not None or result['plan']['review_status'] != 'draft':
+        raise ValueError('vertical_compiler_output_cannot_synthesize_approval')
+    return result
+
+
+def compile_vertical_preview(ctx: Context, *, geometry, policy=Policy(), seed=42, variation='base',
+                             mapping_config=None,
+                             brief='Original blues/ragtime swing; restrained bossa accompaniment'):
+    """Compile the opt-in source-preserving music vertical; approval remains null.
+
+    The exact supplied composition/groove (including an explicitly selected ending
+    edition) is authoritative. No render, scheduler, network or approval runs here.
+    Return data includes the bound canonical plan/payload, source and mapped events,
+    separate controls/holds/Foley, and objective audits. Canonical schema 0.1 and
+    all legacy compiler behavior remain unchanged.
+    """
+    from modules.blender.summary import motion_semantics_summary
+    from modules.music.ornament import VERSION as ornament_version
+    config = _vertical_configuration(ctx, mapping_config)
+    duration = tick_seconds(ctx.composition, ctx.composition['length_ticks'])
+    if abs(duration-ctx.scene['duration_s']) > 1e-9:
+        raise ValueError('vertical_score_scene_duration_mismatch')
+    if type(seed) is not int or not 0 <= seed < 2**64:
+        raise ValueError('invalid_vertical_seed')
+    semantics = motion_semantics_summary(ctx.scene, ctx.states, ctx.interactions, geometry=geometry)
+    source = _vertical_source(ctx, policy, variation)
+    track, holds = _vertical_controls(ctx, semantics, source, config, policy)
+    mapped, realization = _vertical_realize(ctx, source, track, holds, config, seed)
+    mapped, hold_edits = _vertical_withhold_thirds(mapped, holds)
+    identity = _vertical_identity_audit(source, mapped, config)
+    density = _vertical_density_audit(source, mapped, ctx.composition)
+    foley = _vertical_foley(ctx, semantics, policy)
+    mapped = sorted([*mapped, *foley], key=lambda e: (e['resolved_time_s'], e['id']))
+    binding = {'version': VERTICAL_VERSION, 'ornament_version': ornament_version, 'seed': seed,
+               'semantics_sha256': digest(semantics), 'mapping_config': config, 'variation': variation,
+               'control_track_sha256': digest(track), 'holds_sha256': digest(holds),
+               'source_musical_sha256': digest(_vertical_musical(source)),
+               'mapped_musical_sha256': digest(_vertical_musical(mapped)),
+               'transform_budgets': realization['budgets']}
+    bound_brief = brief+'\n'+VERTICAL_VERSION+' binding '+digest(binding)
+    plan = baseline(ctx, policy, bound_brief, seed)
+    plan['motion_policy']['focus_object_id'] = config['focus_object_id']
+    plan['palette_ids'] = sorted(set(plan['palette_ids']) | {event['instrument_id'] for event in mapped})
+    plan['provenance']['input_hashes'].append(digest(binding))
+    plan['uncertainties'] = [item for item in plan['uncertainties']
+                             if item != 'Objects beyond configured voice budget retain identity but are silent.']
+    plan['uncertainties'] += ['Source-preserving music vertical; supplemental control/hold hashes are bound in config.',
+                              'Persistent object identities share existing authored motif slots; melodies are not duplicated.',
+                              'Source slot quantization is disclosed; fixture rebounds are not hero observations.']
+    validate(plan)
+    for event in [*source, *mapped, *foley]:
+        event['plan_id'] = plan['id']
+        validate(event)
+        if event['resolved_time_s']+event['duration_s'] > duration+1e-9:
+            raise ValueError('vertical_event_past_media')
+        if event['instrument_id'] not in plan['palette_ids']:
+            raise ValueError('vertical_unknown_palette')
+    # Foley has an independent stream and never consumes music voice/rate budget.
+    validate_event_budget([event for event in mapped if event['event_type'] != 'foley'], plan, policy)
+    protected = [event for event in source if event['event_type'] != 'note']
+    if protected != [event for event in mapped if event['event_type'] == 'brush']:
+        raise ValueError('vertical_protected_brush_changed')
+    payload = encoded(plan)
+    provenance = {'version': VERTICAL_VERSION, 'source_mode': 'manual_plan', 'scene_source_mode': ctx.scene['provenance']['source_mode'],
+                  'real_device': False, 'replay': False, 'synthetic': ctx.scene['provenance']['source_mode'] == 'synthetic',
+                  'cached_gpt': False, 'manual_plan': True, 'keyboard': False,
+                  'scene_hash': ctx.scene_hash, 'composition_hash': ctx.composition_hash,
+                  'binding': binding, 'binding_sha256': digest(binding), 'bound_brief': bound_brief,
+                  'source_events_sha256': digest(source), 'mapped_events_sha256': digest(mapped),
+                  'approval': None, 'audition_status': 'AUDITION_PENDING'}
+    track['provenance'] = {'binding_sha256': digest(binding), 'plan_payload_sha256': hashlib.sha256(payload).hexdigest()}
+    audit = {'identity': identity, 'density': density, 'realization': realization, 'hold_edits': hold_edits,
+             'protected_brush_unchanged': True, 'foley_excluded_from_music_budget': True,
+             'score_duration_s': duration, 'approval': None, 'audition_status': 'AUDITION_PENDING'}
+    result = {'plan': plan, 'plan_payload': payload.decode(), 'plan_payload_sha256': hashlib.sha256(payload).hexdigest(),
+            'source_events': source, 'source_with_foley_events': sorted([*source, *foley], key=lambda e: (e['resolved_time_s'], e['id'])),
+            'events': mapped, 'foley_events': foley, 'control_track': track, 'holds': holds, 'audit': audit,
+            'provenance': provenance, 'duration_s': duration, 'approval': None, 'audition_status': 'AUDITION_PENDING'}
+    return validate_vertical_result(result)

@@ -1,0 +1,29 @@
+{
+  "status": "ISOLATED_RUNTIME_READY",
+  "bound_python": "3.13.7",
+  "packages": {
+    "numpy": "2.5.3",
+    "pylsl": "1.18.2"
+  },
+  "target": "artifacts/muse-training-runtime",
+  "base_environment_changed": false,
+  "root_locks_changed": false,
+  "before_probe": "/private/tmp/scenescore-training-env-before.json",
+  "before_probe_findings": [
+    "pylsl absent",
+    "pip absent in uv-managed base; uv pip check passed for all 28 base packages",
+    "global Ruff scans immutable pack examples and reports preexisting style errors; task-owned code checked separately",
+    "default uv cache sandbox restriction; temporary cache used for resolution"
+  ],
+  "manifest_hashes": {
+    "uv.lock": "b36a97992bfe920b7716ea958797d8bf18ee4444a4afb2bbc51f4855130c4eb9",
+    "package-lock.json": "1cfe5a1ebf41d36928267a8b2f28e290ec2905fd790add8831d5fd59eb4f83b1",
+    "pyproject.toml": "fdff5098229c42877da326b03fe617d88928bb51eeb99a5f82ba7c250a497934",
+    "tools/muse-training-requirements.txt": "5f5e01fd612688e3ebbfa46d72638eeb514e23fd21d0a623f518ba6b50f332a7"
+  },
+  "success_gate": "runtime-smoke.json confirms Python binding and native liblsl117 load; no device or discovery claim",
+  "rollback": "Remove only artifacts/muse-training-runtime (the task-owned optional dependency directory); base environment requires no rollback.",
+  "bounded_lsl_discovery": "transport-diagnostic.json",
+  "native_import_status": "PASS",
+  "base_environment_dependency_metadata": "uv pip check: 28 compatible packages"
+}

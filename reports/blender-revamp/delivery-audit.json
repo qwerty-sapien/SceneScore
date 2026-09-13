@@ -1,0 +1,570 @@
+{
+  "version": "blender-delivery-audit-1",
+  "selection": {
+    "selection_file": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/staircase-selection.json",
+    "selection_sha256": "5e51110a180eeaf7912cf4be11b8f5d0e469a0d25b0522d936d8e892bfc9886d",
+    "variant": "05_bouncing_staircase",
+    "entry": {
+      "bundle_index_hash": "760d30c8198be56067bd8afaf2ef6cfe3369971084f829573cac4b6a5c99cc80",
+      "media_validation_hash": "7b08a3fc7e749dfd6ca683242d1f5d224fa601476fe7a6b713111ba57e4464ac",
+      "media_validation_path": "renders/preview/beauty/media-validation.json",
+      "music_handoff_hash": "22fdfbffeee682607ad447a09bdc372ec80f981c6ae961a16c105681ec628712",
+      "path": "revamp/review/05_bouncing_staircase-32",
+      "physical_validation_hash": "70bbd227a476c5d26d7ed0a0e673d349bdb920ac55ff34ff87df4cbefe8b2253",
+      "roles_hash": "6693da608f36a6f81d982e4546156ab8a8eafb59643b4c2b5bea6e73d6f562be",
+      "scene_id": "05_bouncing_staircase:default:c5ee061e06e8074c",
+      "source_hash": "854e00a2410ceab0aab690207a4649ad9c66c1255f7567cd954988ede1c6a30d",
+      "video_hash": "4dda38d936d12b2948faf77712cd8767a8cbaae5ed11514f7776dbbf56c8cdc7"
+    },
+    "legacy_choreography": false,
+    "label": "Staged production review \u00b7 acceptance pending",
+    "approval": null
+  },
+  "approval": null,
+  "exports": [
+    {
+      "report": "output/playwright/blender-revamp/scenescore-DRAFT.json",
+      "sha256": "5099e40d16290708552abc53694e73619c942d7275841dc7f278a03d1abdccaa",
+      "dimensions": {
+        "mix": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "piano": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "bass": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "brush": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "foley": [
+          2,
+          2,
+          48000,
+          384000
+        ]
+      },
+      "max_stem_sum_error_lsb": 2,
+      "rms_stem_sum_error_lsb": 0.5432037486063586,
+      "final_samples_lsb": {
+        "mix": [
+          0,
+          0
+        ],
+        "piano": [
+          0,
+          0
+        ],
+        "bass": [
+          0,
+          0
+        ],
+        "brush": [
+          0,
+          0
+        ],
+        "foley": [
+          0,
+          0
+        ]
+      },
+      "original_events": 280,
+      "certified_foley_events": 8,
+      "window_events": 89,
+      "files": [
+        {
+          "stem": "mix",
+          "filename": "scenescore-DRAFT.wav",
+          "sha256": "4b73e47bed00375cea5dba99906865e3ea2faf4427f4567041ed56e3e7fc33e9",
+          "measurements": {
+            "peak": 0.01839480921626091,
+            "rms": 0.0035079196215005207,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "piano",
+          "filename": "scenescore-DRAFT-piano.wav",
+          "sha256": "4f67bd79a02ddb4cd51a768a05c0861c741434c9fec04104f0b783af4a9c86c9",
+          "measurements": {
+            "peak": 0.01643352583050728,
+            "rms": 0.00343338339976269,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "bass",
+          "filename": "scenescore-DRAFT-bass.wav",
+          "sha256": "fd834fa54757bf8d577083d5b5b2e048a15d26d3cf9a375eac3ddd8b50be493c",
+          "measurements": {
+            "peak": 0.0032412896398454905,
+            "rms": 0.0005042587615394485,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "brush",
+          "filename": "scenescore-DRAFT-brush.wav",
+          "sha256": "03887fc9649bc373e1a2a4239d16327c84d2081d8f73b435500967ea4ffc38fd",
+          "measurements": {
+            "peak": 0.0012877479894086719,
+            "rms": 0.0002468086868610889,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "foley",
+          "filename": "scenescore-DRAFT-foley.wav",
+          "sha256": "4750bffa167c8d86025e8c57efd980e79b79ce70f73b2152577266ee43fed9b8",
+          "measurements": {
+            "peak": 0.002265369985252619,
+            "rms": 5.03518137367885e-05,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        }
+      ]
+    },
+    {
+      "report": "output/playwright/blender-revamp/brush_ballad_sparse_v1/scenescore-DRAFT.json",
+      "sha256": "5099e40d16290708552abc53694e73619c942d7275841dc7f278a03d1abdccaa",
+      "dimensions": {
+        "mix": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "piano": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "bass": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "brush": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "foley": [
+          2,
+          2,
+          48000,
+          384000
+        ]
+      },
+      "max_stem_sum_error_lsb": 2,
+      "rms_stem_sum_error_lsb": 0.5432037486063586,
+      "final_samples_lsb": {
+        "mix": [
+          0,
+          0
+        ],
+        "piano": [
+          0,
+          0
+        ],
+        "bass": [
+          0,
+          0
+        ],
+        "brush": [
+          0,
+          0
+        ],
+        "foley": [
+          0,
+          0
+        ]
+      },
+      "original_events": 280,
+      "certified_foley_events": 8,
+      "window_events": 89,
+      "files": [
+        {
+          "stem": "mix",
+          "filename": "scenescore-DRAFT.wav",
+          "sha256": "4b73e47bed00375cea5dba99906865e3ea2faf4427f4567041ed56e3e7fc33e9",
+          "measurements": {
+            "peak": 0.01839480921626091,
+            "rms": 0.0035079196215005207,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "piano",
+          "filename": "scenescore-DRAFT-piano.wav",
+          "sha256": "4f67bd79a02ddb4cd51a768a05c0861c741434c9fec04104f0b783af4a9c86c9",
+          "measurements": {
+            "peak": 0.01643352583050728,
+            "rms": 0.00343338339976269,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "bass",
+          "filename": "scenescore-DRAFT-bass.wav",
+          "sha256": "fd834fa54757bf8d577083d5b5b2e048a15d26d3cf9a375eac3ddd8b50be493c",
+          "measurements": {
+            "peak": 0.0032412896398454905,
+            "rms": 0.0005042587615394485,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "brush",
+          "filename": "scenescore-DRAFT-brush.wav",
+          "sha256": "03887fc9649bc373e1a2a4239d16327c84d2081d8f73b435500967ea4ffc38fd",
+          "measurements": {
+            "peak": 0.0012877479894086719,
+            "rms": 0.0002468086868610889,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "foley",
+          "filename": "scenescore-DRAFT-foley.wav",
+          "sha256": "4750bffa167c8d86025e8c57efd980e79b79ce70f73b2152577266ee43fed9b8",
+          "measurements": {
+            "peak": 0.002265369985252619,
+            "rms": 5.03518137367885e-05,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        }
+      ]
+    },
+    {
+      "report": "output/playwright/blender-revamp/brush_straight_rag_v1/scenescore-DRAFT.json",
+      "sha256": "5099e40d16290708552abc53694e73619c942d7275841dc7f278a03d1abdccaa",
+      "dimensions": {
+        "mix": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "piano": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "bass": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "brush": [
+          2,
+          2,
+          48000,
+          384000
+        ],
+        "foley": [
+          2,
+          2,
+          48000,
+          384000
+        ]
+      },
+      "max_stem_sum_error_lsb": 2,
+      "rms_stem_sum_error_lsb": 0.5432037486063586,
+      "final_samples_lsb": {
+        "mix": [
+          0,
+          0
+        ],
+        "piano": [
+          0,
+          0
+        ],
+        "bass": [
+          0,
+          0
+        ],
+        "brush": [
+          0,
+          0
+        ],
+        "foley": [
+          0,
+          0
+        ]
+      },
+      "original_events": 280,
+      "certified_foley_events": 8,
+      "window_events": 89,
+      "files": [
+        {
+          "stem": "mix",
+          "filename": "scenescore-DRAFT.wav",
+          "sha256": "4b73e47bed00375cea5dba99906865e3ea2faf4427f4567041ed56e3e7fc33e9",
+          "measurements": {
+            "peak": 0.01839480921626091,
+            "rms": 0.0035079196215005207,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "piano",
+          "filename": "scenescore-DRAFT-piano.wav",
+          "sha256": "4f67bd79a02ddb4cd51a768a05c0861c741434c9fec04104f0b783af4a9c86c9",
+          "measurements": {
+            "peak": 0.01643352583050728,
+            "rms": 0.00343338339976269,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "bass",
+          "filename": "scenescore-DRAFT-bass.wav",
+          "sha256": "fd834fa54757bf8d577083d5b5b2e048a15d26d3cf9a375eac3ddd8b50be493c",
+          "measurements": {
+            "peak": 0.0032412896398454905,
+            "rms": 0.0005042587615394485,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "brush",
+          "filename": "scenescore-DRAFT-brush.wav",
+          "sha256": "03887fc9649bc373e1a2a4239d16327c84d2081d8f73b435500967ea4ffc38fd",
+          "measurements": {
+            "peak": 0.0012877479894086719,
+            "rms": 0.0002468086868610889,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        },
+        {
+          "stem": "foley",
+          "filename": "scenescore-DRAFT-foley.wav",
+          "sha256": "4750bffa167c8d86025e8c57efd980e79b79ce70f73b2152577266ee43fed9b8",
+          "measurements": {
+            "peak": 0.002265369985252619,
+            "rms": 5.03518137367885e-05,
+            "clipped": 0,
+            "sample_rate": 48000,
+            "duration_s": 8,
+            "channels": 2
+          }
+        }
+      ]
+    }
+  ],
+  "marker_frames": [
+    {
+      "id": "interval-release:supported-release-0000",
+      "type": "release",
+      "time_s": 1.145446079548219,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 1.1791666666666667,
+      "frame": 35,
+      "frame_interval_s": [
+        1.1333333333333333,
+        1.1666666666666667
+      ],
+      "nearest_audio_sample": 54981,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000035.png",
+      "image_sha256": "069148c89209b1d8a7f05d15872c0930822d4804f1c2c5c4f94072057f86d94b"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0000",
+      "type": "contact",
+      "time_s": 1.2975492926275338,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 1.325,
+      "frame": 39,
+      "frame_interval_s": [
+        1.2666666666666666,
+        1.3
+      ],
+      "nearest_audio_sample": 62282,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000039.png",
+      "image_sha256": "12b6e7162e22c53837942dc60229e5d3dfa1bf7984620530cc09cbb2ef7641ed"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0001",
+      "type": "contact",
+      "time_s": 1.7228939224449809,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 1.75,
+      "frame": 52,
+      "frame_interval_s": [
+        1.7,
+        1.7333333333333334
+      ],
+      "nearest_audio_sample": 82699,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000052.png",
+      "image_sha256": "0f4951d730309b73253fa8afdb723b5f98c66fe2c7c593be63275f2bd7fbb17f"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0002",
+      "type": "contact",
+      "time_s": 2.192677171970641,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 2.2083333333333335,
+      "frame": 66,
+      "frame_interval_s": [
+        2.1666666666666665,
+        2.2
+      ],
+      "nearest_audio_sample": 105249,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000066.png",
+      "image_sha256": "55469a41d5fbb5a274456c07684a196730e22ba41e0ab0ae1a626c45ff664724"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0003",
+      "type": "contact",
+      "time_s": 2.6717275382865777,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 2.6958333333333333,
+      "frame": 81,
+      "frame_interval_s": [
+        2.6666666666666665,
+        2.7
+      ],
+      "nearest_audio_sample": 128243,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000081.png",
+      "image_sha256": "e268e8a081389db16245a358c86971fcd5dde3183262d8006fcdb1b895d97e68"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0004",
+      "type": "contact",
+      "time_s": 3.152873021727337,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 3.1875,
+      "frame": 95,
+      "frame_interval_s": [
+        3.1333333333333333,
+        3.1666666666666665
+      ],
+      "nearest_audio_sample": 151338,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000095.png",
+      "image_sha256": "cf59aebb1afcbfd9d72dfafc461ad545c8921e8698edaa7edeeb6544dabebbcb"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0005",
+      "type": "contact",
+      "time_s": 3.4651781388625906,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 3.4916666666666667,
+      "frame": 104,
+      "frame_interval_s": [
+        3.433333333333333,
+        3.466666666666667
+      ],
+      "nearest_audio_sample": 166329,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000104.png",
+      "image_sha256": "a8baca636a3d9ff0015b6cdc8fb50165d5eef89d9456e93393a6baa9e45003e7"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0006",
+      "type": "contact",
+      "time_s": 3.615084597314616,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 3.6458333333333335,
+      "frame": 109,
+      "frame_interval_s": [
+        3.6,
+        3.6333333333333333
+      ],
+      "nearest_audio_sample": 173524,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000109.png",
+      "image_sha256": "11933e5a8d7731328dad45a76c9d2fccd49d17eb07ea57ea9acc04d5a0db64af"
+    },
+    {
+      "id": "interval-contact:ballistic-contact-0007",
+      "type": "contact",
+      "time_s": 4.3782495261161465,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 4.4125,
+      "frame": 132,
+      "frame_interval_s": [
+        4.366666666666666,
+        4.4
+      ],
+      "nearest_audio_sample": 210156,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000132.png",
+      "image_sha256": "459a97f626be600efa04c86af87d58c3ae8eaad2038bd54e610ccbed5c664eae"
+    },
+    {
+      "id": "settling:0",
+      "type": "settling",
+      "time_s": 7.754166666666666,
+      "uncertainty_s": 0.004166666666666667,
+      "confirmation_time_s": 8.0,
+      "frame": 233,
+      "frame_interval_s": [
+        7.733333333333333,
+        7.766666666666667
+      ],
+      "nearest_audio_sample": 372200,
+      "image": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/frame_000233.png",
+      "image_sha256": "8b830a2d9438e861ea43389a81f04c320140ae8c42af11d33a44ced9467b8e6c"
+    }
+  ],
+  "scope": "Byte, clock, PCM and declared contact correspondence. No auditory or continuous-motion perception.",
+  "status": "PASSED"
+}

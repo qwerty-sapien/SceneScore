@@ -1,0 +1,13 @@
+{
+  "measurements": {
+    "peak": 0.012812906876206398,
+    "rms": 0.001987153563705984,
+    "clipped": 0,
+    "sample_rate": 48000,
+    "duration_s": 30,
+    "channels": 2
+  },
+  "approval": null,
+  "renderer": "Actual browser OfflineAudioContext with performed source-buffer offsets; no acoustic capture",
+  "captured_at": "2026-09-12T19:40:42.351Z"
+}

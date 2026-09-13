@@ -1,0 +1,16 @@
+{
+  "command": [
+    "node",
+    "--import",
+    "tsx",
+    "tools/audit_collision_riffs.ts"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 27118,
+  "pgid": 27118,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 4.698579624993727
+}

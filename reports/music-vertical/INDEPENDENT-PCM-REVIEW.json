@@ -1,0 +1,125 @@
+{
+  "observed_at_utc": "2026-09-12T19:31:01.309879+00:00",
+  "candidate_sha256": "d9ce7fd69f7aa9d47b6db169a6c779fa82a8795fce299858b614f358b797a0c9",
+  "mode": "independent PCM inspection, not listening",
+  "physical_output_measured": false,
+  "variants": {
+    "mapped": {
+      "files": [
+        {
+          "stem": "mix",
+          "sha256": "be2cc7d80acdd3d8c114ae4585f0ac1485aa84a679fc2552b46f01b74465f201",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 405,
+          "rms_pcm16": 64.02645220488516,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "piano",
+          "sha256": "53517e3640cb9589bde5f1b509bedc517dc47643fc8b15a9c4f5caa4a1cf308c",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 337,
+          "rms_pcm16": 54.964527923571865,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "bass",
+          "sha256": "87f7b262792b6c8091acbab53d04c67a4efa97625a8b4ef20af369ae6ed6aba7",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 110,
+          "rms_pcm16": 26.408264988867067,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "brush",
+          "sha256": "8834e9975a48e8daabad8f16dd192121d355cabf8e14b61af315dee34a25d74c",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 65,
+          "rms_pcm16": 10.170542089234422,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "foley",
+          "sha256": "491ba5844b27381151dbb8d7bebd9f2df07417f21328e0af884bed0bba23f754",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 155,
+          "rms_pcm16": 15.846877277383214,
+          "endpoints_zero": true
+        }
+      ],
+      "mix_vs_quantized_stem_sum_max_lsb": 2,
+      "approval": null,
+      "audition_status": "AUDITION_PENDING",
+      "renderer": "existing-browser-voice-static-node-mix-1"
+    },
+    "unmodified": {
+      "files": [
+        {
+          "stem": "mix",
+          "sha256": "d596c758d85a9f66320708394301086dbdad32c2db7cca8cd303a3675ef367b2",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 380,
+          "rms_pcm16": 60.116144958922824,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "piano",
+          "sha256": "b9f613d1f8bf6ec2adfaa8a8dc5b496d12013eacdb94da4b41d9f95adcc9408f",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 337,
+          "rms_pcm16": 53.010962008395545,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "bass",
+          "sha256": "a2ef9f5cbf29c820569017ffa8ea26e5a8d6d81401a5bb1bfc764f0979e50643",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 109,
+          "rms_pcm16": 20.868919873023298,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "brush",
+          "sha256": "8834e9975a48e8daabad8f16dd192121d355cabf8e14b61af315dee34a25d74c",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 65,
+          "rms_pcm16": 10.170542089234422,
+          "endpoints_zero": true
+        },
+        {
+          "stem": "foley",
+          "sha256": "491ba5844b27381151dbb8d7bebd9f2df07417f21328e0af884bed0bba23f754",
+          "frames": 1440000,
+          "channels": 2,
+          "sample_rate": 48000,
+          "peak_pcm16": 155,
+          "rms_pcm16": 15.846877277383214,
+          "endpoints_zero": true
+        }
+      ],
+      "mix_vs_quantized_stem_sum_max_lsb": 2,
+      "approval": null,
+      "audition_status": "AUDITION_PENDING",
+      "renderer": "existing-browser-voice-static-node-mix-1"
+    }
+  },
+  "command_note": "An initial NumPy import failed before inspection; this stdlib-only retry is authoritative."
+}

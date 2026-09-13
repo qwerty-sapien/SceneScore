@@ -1,0 +1,5 @@
+[mcp_servers.blender]
+command = "/Users/agent/Desktop/SceneScore/artifacts/tools/blender-mcp-env/bin/blender-mcp"
+tool_timeout_sec = 30
+env = { BLENDER_HOST = "127.0.0.1", BLENDER_PORT = "9876", BLENDER_MCP_SAFE_MODE = "1", DISABLE_TELEMETRY = "true" }
+enabled_tools = ["get_addon_status", "get_scene_info", "get_object_info", "get_viewport_screenshot", "execute_blender_code"]

@@ -1,0 +1,41 @@
+{
+  "version": "music-vertical-teardown-1",
+  "status": "COMPLETE_USER_CONFIRMED_BROWSER_CLOSED",
+  "server": {
+    "exec_session": 28673,
+    "pid": 23506,
+    "pgid": 23506,
+    "exit_code": 0,
+    "confirmed_absent_by_ps": true,
+    "log": "music-demo-browser.log"
+  },
+  "browser": {
+    "tool": "Playwright MCP",
+    "tab_index": 0,
+    "url": "http://127.0.0.1:8772/?music=1",
+    "last_observation": {
+      "playing": false,
+      "complete": true,
+      "time_s": 30,
+      "timer_id": 1488,
+      "timer_complete": true
+    },
+    "close_attempts": "Repeated browser_close and browser_tabs returned Transport closed",
+    "fallback": "CUA inventory exposed only an empty in-app browser; getApp(com.google.Chrome) timed out",
+    "page_closed_confirmed": true,
+    "shared_browser_processes": "No generic browser process was terminated; task ownership was not established",
+    "closure_authority": {
+      "type": "direct_user_statement",
+      "date": "2026-09-13",
+      "statement": "it's always been closed",
+      "independent_tool_verification": false
+    }
+  },
+  "other_resources": {
+    "worker_jobs": "All workers reported no live jobs",
+    "foreground_test_render_sessions": "Exited",
+    "mux_jobs": "All process groups absent per mux reports",
+    "containers_started": 0,
+    "retained_worktrees": "WORKTREES.json; no live jobs intended"
+  }
+}

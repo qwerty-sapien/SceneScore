@@ -1,0 +1,23 @@
+{
+  "command": [
+    "ffmpeg",
+    "-v",
+    "error",
+    "-nostdin",
+    "-threads",
+    "2",
+    "-i",
+    "artifacts/collision-riffs/vibraphone-v1/Pocket-Workshop-DRAFT.mp4",
+    "-f",
+    "null",
+    "-"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 29851,
+  "pgid": 29851,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 0.08613212499767542
+}

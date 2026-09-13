@@ -1,0 +1,103 @@
+{
+  "approval": null,
+  "authored_ending_mix": {
+    "channels": 1,
+    "clipped_samples": 0,
+    "duration_s": 30.0,
+    "first_sample": 0,
+    "frames": 1440000,
+    "last_sample": 0,
+    "rms": 0.019272529787528907,
+    "sample_peak": 0.124176025390625,
+    "sample_rate_hz": 48000,
+    "sha256": "ad365a0a4ad0732370551968c30782736500ccc36fa2f956270fd33e12cbe046"
+  },
+  "document_type": "SceneScoreVerticalSourceEvidence",
+  "document_version": 1,
+  "human_audition": "AUDITION_PENDING",
+  "python_version": "3.13.7",
+  "source": {
+    "approval": null,
+    "approval_required": true,
+    "audition_status": "AUDITION_PENDING",
+    "clock": "scene",
+    "composition_sha256": "76d75e3e98d31c48c7ea234c987efc03972b8f11e616c187d74f0a10fc6bc530",
+    "document_type": "SceneScoreVerticalSource",
+    "document_version": 1,
+    "edition": "music-vertical-source-1",
+    "eligible_arrival_seconds": [
+      2.5,
+      5.0,
+      7.5,
+      10.0,
+      12.5,
+      15.0,
+      17.5,
+      20.0,
+      22.5,
+      25.0,
+      27.5
+    ],
+    "eligible_arrival_ticks": [
+      3840,
+      7680,
+      11520,
+      15360,
+      19200,
+      23040,
+      26880,
+      30720,
+      34560,
+      38400,
+      42240
+    ],
+    "ending_region": {
+      "end_s": 30.0,
+      "end_tick": 46080,
+      "harmony": "C7 -> C6/9",
+      "lead_pitch_changes": 2,
+      "lead_pitches": [
+        64,
+        62,
+        60
+      ],
+      "musical_quality": "AUDITION_PENDING",
+      "rhythm_preserved": true,
+      "source_lead_note_count": 48,
+      "start_s": 27.5,
+      "start_tick": 42240,
+      "tonic_pc": 0
+    },
+    "epoch": "scene_start",
+    "generation_mode": "manual_plan",
+    "groove_sha256": "4d537af9f3f293efecda5e07ed41e78a9f75d7787c152fbdeb47edf8c46b495d",
+    "maximum_allowed_gap_s": 4.0,
+    "maximum_gap_including_edges_s": 2.5,
+    "origin_s": 0.0,
+    "source_catalogue_preserved": true,
+    "source_hashes": {
+      "composition_sha256": "9a517e3ff24dc2d2855168a8233b8477b9fa3a993d1d16724989667d289c947d",
+      "groove_sha256": "4d537af9f3f293efecda5e07ed41e78a9f75d7787c152fbdeb47edf8c46b495d"
+    },
+    "tempo_change": {
+      "new_bpm": 96,
+      "old_bpm": 96,
+      "reason": "12 complete bars already equal 30 seconds"
+    },
+    "terminal_is_eligible": false,
+    "terminal_s": 30.0,
+    "terminal_tick": 46080
+  },
+  "unmodified_mix": {
+    "channels": 1,
+    "clipped_samples": 0,
+    "duration_s": 30.0,
+    "first_sample": 0,
+    "frames": 1440000,
+    "last_sample": 0,
+    "rms": 0.019274696298396794,
+    "sample_peak": 0.124176025390625,
+    "sample_rate_hz": 48000,
+    "sha256": "9d3ccd60fad79f117b39d16275e30218309756809ee61ef90cd9d6b85c67af82"
+  }
+}

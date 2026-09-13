@@ -1,0 +1,15 @@
+✔ all four modes retain provenance and every live gate is required (0.544875ms)
+✔ feedback delayed beyond gesture and quiet window remains unreviewed, not truth (0.353792ms)
+✔ clock requires two anchors, estimates rate, propagates uncertainty and rejects stale/skewed sources (0.47425ms)
+✔ default fetch retains browser global receiver through authenticated handshake (13.959208ms)
+✔ prepared motion reader matches the causal reference across covered, missing and future times (10.370042ms)
+✔ explicit semantic simulation has no invented detector latency and preserves lanes (13.041416ms)
+✔ browser adapter rejects stale clock, excessive uncertainty and preclosure gesture (4.928958ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 365.740333
