@@ -1,4 +1,6 @@
 export type SourceMode='real_device'|'synthetic';
+export interface CheckEstimate {precision:number|null;recall:number|null;complete:boolean;target_reached:boolean;labels:number;monitored_s:number;background_s:number;availability:number}
+export interface AutomaticStatus {phase:'idle'|'connecting'|'learning'|'fitting'|'checking'|'stopping'|'stopped'|'complete'|'error';active:boolean;message:string;run_id:string|null;source_mode:SourceMode;elapsed_s:number;limit_s:number;labels:number;usable_positive_windows:number;background_windows:number;checkpoint_id:string|null;training_steps:number;evaluation:CheckEstimate|null;target:number;target_advisory:true}
 export type Role='train'|'development'|'final_test';
 export type TrialClass='double'|'single'|'triple'|'natural'|'artifact'|'keypress_only';
 export interface Channel {name:string;unit:string}

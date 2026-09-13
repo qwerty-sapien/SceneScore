@@ -123,8 +123,15 @@ class Grammar:
 class CausalBaseline:
     version = "scenescore-new-causal-median/1"
 
-    def __init__(self, metadata, config=Config()):
-        validate(metadata)
+    def __init__(self, metadata, config=Config(), *, exploratory_metadata=False):
+        try:
+            validate(metadata)
+        except ValueError as error:
+            # Automatic local training may inspect an unverified live descriptor.
+            # It stores an exploratory run, never a validated Recorder manifest.
+            # Production and canonical recording retain the strict default.
+            if not exploratory_metadata or str(error) != 'unverified_real_device':
+                raise
         self.metadata, self.config = metadata, config
         self.indices = [i for i, c in enumerate(metadata["channels"])
                         if c["enabled"] and c["name"].lower().startswith(("af", "fp")) and c["unit"] == "uV"]

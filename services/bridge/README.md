@@ -5,6 +5,14 @@ Its HTTP response contains semantic candidates, closed gestures and gate diagnos
 It never serves raw samples, recordings, filesystem paths or arbitrary commands. It
 never records EEG. The deployed Vite site still loads and simulates without it.
 
+Direct classic Muse BLE is now available with `make muse-live`, using locked
+Bleak on one owned asyncio loop. Authenticate the companion, then scan/select/
+connect from the studio Muse panel. The direct path needs no LSL or BrainFlow.
+See [direct BLE instructions](../../docs/MUSE_BLE.md) for live-processing consent,
+diagnostics, supported profile, lifecycle and the unresolved physical timing
+calibration. Missing quality calibration keeps arming disabled; the unchanged
+20 ms browser timing gate also suppresses uncalibrated BLE conducting.
+
 Run from the repository root with the existing environment:
 
 ```sh
@@ -82,8 +90,10 @@ valid clock never falls back to an assumed zero offset. The extended correction 
 
 Protocol: POST `/v1/session` authenticates the startup token and returns a short-lived
 session token; authenticated GET `/v1/status`, GET `/v1/events?cursor=N` and POST
-`/v1/clock`, `/v1/arm`, `/v1/disarm` are the entire API. POST bodies must be `{}` and at
-most 2048 bytes. Event subscriptions wait at most 400 ms and return immediately on an
+`/v1/clock`, `/v1/arm`, `/v1/disarm` retain their semantics. BLE mode adds only
+POST `/v1/muse/scan`, `/v1/muse/connect`, `/v1/muse/disconnect`. POST bodies must
+be `{}`, except connect accepts exactly one bounded `device_id` from that
+session's recent scan; all are at most 2048 bytes. Event subscriptions wait at most 400 ms and return immediately on an
 event. At most eight concurrent HTTP handlers and four sessions exist; the event ring has
 128 entries. Overflow clears state and requires re-arm. Tokens are omitted from access
 logs; all responses disable caching. Loopback Host checks and exact CORS origins apply

@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 from .io import load_plan, write_outputs
-from .validator import validate_plan
+from .validator import validate_plan, CHECKS
 from .contracts import RESOLVED_VERSION
 
 
@@ -15,7 +15,7 @@ def main(argv=None):
     try:
         report, resolved = validate_plan(load_plan(args.input))
     except (ValueError, TypeError, OSError, ImportError) as error:
-        report = {'status': 'FAILED', 'errors': [{'code': 'INVALID_INPUT', 'message': str(error)}], 'physics_validated': False}
+        report = {'status': 'FAILED', 'errors': [{'code': 'INVALID_INPUT', 'message': str(error)}], 'physics_validated': False, 'answers': dict.fromkeys(CHECKS, 'NOT_EVALUATED')}
         resolved = {'schema_version': RESOLVED_VERSION, 'status': 'BLOCKED', 'constraints': None}
     try:
         write_outputs(args.out, report, resolved)

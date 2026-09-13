@@ -15,6 +15,7 @@ VERSION = 'scene-plan-validator-1'
 BACKEND = 'fixed-obb-sphere-mechanics-1'
 WARNING_POLICY = {'planar_relative_thickness': .05, 'event_cluster_relative_span': .25,
                   'uniform_gap_coefficient_of_variation': .1, 'weak_ending_speed_m_s': .2}
+CHECKS = ['coherent_sequence', 'supported_mechanics', 'sparse_events', 'measurable_criteria', 'defined_route', 'sparse_music_mapping']
 
 
 def canonical_hash(value):
@@ -44,6 +45,7 @@ def validate_plan(document):
               'status': 'FAILED', 'errors': errors, 'warnings': warnings, 'metrics': {},
               'scope': 'Authoring feasibility screening; simulation, contact certification and visual review still required.',
               'physics_validated': False, 'approval': None, 'warning_policy': WARNING_POLICY.copy()}
+    report['answers'] = dict.fromkeys(CHECKS, 'NOT_EVALUATED')
     blocked = {'schema_version': RESOLVED_VERSION, 'status': 'BLOCKED', 'constraints': None}
     try:
         digest = canonical_hash(document)
@@ -59,24 +61,26 @@ def validate_plan(document):
             issue('A3_INTENT_REQUIRES_RESOLUTION', 'Wrap the abstract intent with numeric event conditions, route start/terminal and a motion contract.')
         return report, blocked
     raw = copy.deepcopy(document)
-    try:
-        intent = SceneIntent.from_dict(raw['intent'])
-    except IntentValidationError as error:
-        # A4 explicitly makes incomplete camera exposure a soft warning. A local
-        # validation copy checks all other A3 invariants; the input is never changed.
-        camera_message = 'camera must intend coverage of every salient event'
-        if str(error) == camera_message:
-            validation_copy = copy.deepcopy(raw['intent'])
-            validation_copy['camera']['readable_event_ids'] = [e['id'] for e in validation_copy['events']]
-            try:
-                intent = SceneIntent.from_dict(validation_copy)
-            except IntentValidationError as nested:
-                issue('ABSTRACT_INTENT_INVALID', str(nested), 'intent')
+    # A4 explicitly treats missing camera coverage/focus as a warning. Retry a
+    # validation-only copy, preserving all other A3 invariants and the original input.
+    validation_copy = copy.deepcopy(raw['intent'])
+    for _ in range(4):
+        try:
+            intent = SceneIntent.from_dict(validation_copy)
+            break
+        except IntentValidationError as error:
+            message = str(error)
+            if message in {'camera must intend coverage of every salient event', 'camera readable events: must not be empty'}:
+                validation_copy['camera']['readable_event_ids'] = [e['id'] for e in validation_copy['events']]
+            elif message == 'camera focus: must not be empty':
+                validation_copy['camera']['focus_actor_ids'] = [a['id'] for a in validation_copy['actors'] if a['motion'] == 'dynamic']
+            else:
+                issue('ABSTRACT_INTENT_INVALID', message, 'intent')
                 return report, blocked
-            issue('CAMERA_INTERACTION_HIDDEN', camera_message, 'intent.camera', warning=True)
-        else:
-            issue('ABSTRACT_INTENT_INVALID', str(error), 'intent')
-            return report, blocked
+            issue('CAMERA_INTERACTION_HIDDEN', message, 'intent.camera', warning=True)
+    else:
+        issue('ABSTRACT_INTENT_INVALID', 'Unable to validate camera-independent intent invariants.', 'intent')
+        return report, blocked
     actors = {a.id: a for a in intent.actors}
     moving = [a for a in intent.actors if a.motion != 'fixed']
     if intent.mechanics.backend != BACKEND or len(moving) != 1 or moving[0].shape != 'sphere' or moving[0].motion != 'dynamic':
@@ -125,6 +129,10 @@ def validate_plan(document):
             issue('EVENT_ACTOR_MISMATCH', 'Every salient event must use the declared dynamic sphere.', name)
         target = event['target']
         expected_targets = set(base.actor_ids) - {event['actor']}
+        if base.kind == 'settle' and event['type'] == 'supported_catch':
+            # A3 settle is a unary actor event; A4 resolves its physical support
+            # from the explicit terminal contract rather than changing A3 arity.
+            expected_targets = {terminal['target']}
         if ({target} if target is not None else set()) != expected_targets:
             issue('EVENT_TARGET_MISMATCH', 'Event target must match the abstract physical participant.', name)
         if target is not None and (target not in actors or actors[target].motion != 'fixed' or not actors[target].collision_enabled):
@@ -193,9 +201,20 @@ def validate_plan(document):
         issue('CAMERA_INTERACTION_HIDDEN', 'Camera focus omits the dynamic actor.', warning=True)
     report['metrics'] = {**metrics, 'event_span_m': event_span, 'event_gaps_s': gaps, 'salient_duty_cycle': duty,
                          'lossless_speed_upper_bound_m_s': max_speed, 'simulation_performed': False}
-    checks = ['coherent_sequence', 'supported_mechanics', 'sparse_events', 'measurable_criteria', 'defined_route', 'sparse_music_mapping']
-    # All six answers require a coherent whole plan; errors remain individually located.
-    report['answers'] = {key: 'NO' if errors else 'YES_AT_PLANNING_LEVEL' for key in checks}
+    categories = {
+        'coherent_sequence': {'EVENT_ORDER_CONTRADICTION', 'EVENT_WINDOW_CONTRADICTION', 'EVENT_ID_MISMATCH'},
+        'supported_mechanics': {'UNSUPPORTED_MECHANICS', 'UNSUPPORTED_GRAVITY', 'UNVALIDATED_ACTUATION', 'TRAJECTORY_OVERRIDE',
+                                'HIDDEN_TELEPORT_OR_CONTROL', 'UNSUPPORTED_EVENT', 'INVALID_MATERIAL'},
+        'sparse_events': {'SALIENCE_SPACING', 'SALIENCE_DUTY'},
+        'measurable_criteria': {'UNMEASURABLE_EVENT', 'FAILURE_CRITERIA_MISSING', 'CLEARANCE_CONTRADICTION', 'CATCH_WINDOW_TOO_SHORT',
+                                'EVENT_ACTOR_MISMATCH', 'EVENT_TARGET_MISMATCH', 'UNKNOWN_OR_MOVING_TARGET'},
+        'defined_route': {'UNDEFINED_START', 'UNDEFINED_TERMINAL', 'TERMINAL_CONTRADICTION', 'ROUTE_ACTOR_MISMATCH',
+                         'ROUTE_STAGE_MISMATCH', 'INVALID_ACTOR_RADIUS', 'INSUFFICIENT_GRAVITATIONAL_ENERGY',
+                         'INFEASIBLE_SPEED_GAIN', 'UNREACHABLE_EVENT_DEADLINE'},
+    }
+    codes = {e['code'] for e in errors}
+    report['answers'].update({key: 'NO' if codes & reasons else 'YES_AT_PLANNING_LEVEL' for key, reasons in categories.items()})
+    report['answers']['sparse_music_mapping'] = 'NO' if errors else 'YES_AT_PLANNING_LEVEL'
     if errors:
         return report, blocked
     report['status'] = 'PASSED'

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "make",
+    "test-contracts"
+  ],
+  "pid": 62442,
+  "process_group": 62442,
+  "started_at": "2026-09-13T05:17:37.071123+00:00",
+  "exit_code": 0,
+  "duration_s": 1.199,
+  "process_group_absent": true
+}

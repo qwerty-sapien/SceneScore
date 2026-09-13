@@ -1,0 +1,29 @@
+COMMAND [".venv/bin/python", "-m", "pytest", "-q", "modules/blender/tests/test_components.py", "modules/blender/tests/test_plan_validation.py", "modules/blender/tests/test_scene_intent.py"]
+........................................................................ [ 45%]
+...........F............................................................ [ 90%]
+...............                                                          [100%]
+=================================== FAILURES ===================================
+________ test_valid_supported_catch_compiles_all_measurable_conditions _________
+
+plan = {'schema_version': 'scene-feasibility-plan-1', 'intent': {'actors': [{'collision_enabled': True, 'id': 'marble', 'moti...0.5]}], 'terminal': {'actor': 'marble', 'target': 'catcher', 'position_m': [5.5, 3, 0.5], 'speed_max_m_s': 0.02}}, ...}
+
+    def test_valid_supported_catch_compiles_all_measurable_conditions(plan):
+        # A catch may be the final sparse event as well as the terminal state.
+        last = plan['intent']['events'][-1]
+        last.update(kind='settle', actor_ids=['marble', 'catcher'], stage_id='catch', clearance=None)
+        last['target_window'] = {'start_s': 14., 'end_s': 14.6}
+        plan['events'][-1]['time_window'] = [14., 14.6]
+        plan['events'][-1].update(type='supported_catch', target='catcher', success_condition={
+            'target_contact': True, 'speed_max_m_s': .02, 'supported_duration_min_s': .25})
+        report, resolved = validate_plan(plan)
+>       assert report['status'] == 'PASSED', report
+E       AssertionError: {'schema_version': 'scene-plan-validation-1', 'validator_version': 'scene-plan-validator-1', 'status': 'FAILED', 'errors': [{'code': 'ABSTRACT_INTENT_INVALID', 'path': 'intent', 'message': 'clearance: wrong event participant count'}], ...}
+E       assert 'FAILED' == 'PASSED'
+E         
+E         - PASSED
+E         + FAILED
+
+modules/blender/tests/test_plan_validation.py:196: AssertionError
+=========================== short test summary info ============================
+FAILED modules/blender/tests/test_plan_validation.py::test_valid_supported_catch_compiles_all_measurable_conditions
+1 failed, 158 passed in 2.80s

@@ -17,14 +17,14 @@ def load_plan(path):
         return result
     if path.suffix.lower() in {'.yaml', '.yml'}:
         import yaml
-        if any(isinstance(token, yaml.tokens.AliasToken) for token in yaml.scan(text)):
-            raise ValueError('YAML aliases are not supported in scene plans')
         class UniqueLoader(yaml.SafeLoader):
             pass
         def mapping(loader, node):
             return unique((loader.construct_object(k, deep=True), loader.construct_object(v, deep=True)) for k, v in node.value)
         UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, mapping)
         try:
+            if any(isinstance(token, yaml.tokens.AliasToken) for token in yaml.scan(text)):
+                raise ValueError('YAML aliases are not supported in scene plans')
             result = yaml.load(text, Loader=UniqueLoader)
         except yaml.YAMLError as error:
             raise ValueError(str(error)) from error

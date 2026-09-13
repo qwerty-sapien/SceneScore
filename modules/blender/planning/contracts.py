@@ -16,7 +16,7 @@ def array(items, minimum=0):
     return {'type': 'array', 'items': items, 'minItems': minimum}
 
 
-NUMBER = {'type': 'number'}
+NUMBER = {'type': 'number', 'minimum': -1e6, 'maximum': 1e6}
 TEXT = {'type': 'string', 'minLength': 1}
 VECTOR = {'type': 'array', 'items': NUMBER, 'minItems': 3, 'maxItems': 3}
 WINDOW = {'type': 'array', 'items': NUMBER, 'minItems': 2, 'maxItems': 2}

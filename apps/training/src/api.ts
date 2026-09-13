@@ -1,19 +1,23 @@
-import type {DiagnosticsReport,MarkerRequest,ModelSummary,Review,ReviewBundle,Role,Source,Status,Trace} from './types';
+import type {AutomaticStatus,DiagnosticsReport,MarkerRequest,ModelSummary,Review,ReviewBundle,Role,Source,Status,Trace} from './types';
 export const API_ROOT='http://127.0.0.1:8767/v1';
 export class TrainingAPI {
  private session:string|null=null;
- constructor(private readonly fetcher:typeof fetch=globalThis.fetch.bind(globalThis)){}
+ constructor(private readonly fetcher:typeof fetch=globalThis.fetch.bind(globalThis),private readonly root=API_ROOT){}
  private async response(path:string,body?:unknown,startupToken?:string,signal?:AbortSignal){
   const token=startupToken??this.session;if(!token)throw Error('Connect the local training service first.');
   const requestBody=body===undefined?undefined:JSON.stringify(body);
   if(requestBody!==undefined&&new TextEncoder().encode(requestBody).length>16384)throw Error('Request exceeds the local service limit.');
-  const response=await this.fetcher(API_ROOT+path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+token,...(body===undefined?{}:{'Content-Type':'application/json'})},body:requestBody,cache:'no-store',credentials:'omit',redirect:'error',signal:signal??AbortSignal.timeout(path==='/train'?60000:6000)});
+  const response=await this.fetcher(this.root+path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+token,...(body===undefined?{}:{'Content-Type':'application/json'})},body:requestBody,cache:'no-store',credentials:'omit',redirect:'error',signal:signal??AbortSignal.timeout(path==='/train'?60000:6000)});
   if(!response.ok){let message='Local service request failed ('+response.status+').';try{const error=await response.json();if(typeof error.error==='string')message=error.error;}catch{/* bounded server may omit error body */}throw Error(message);}
   return response;
  }
  private async json<T>(path:string,body?:unknown,signal?:AbortSignal):Promise<T>{return (await this.response(path,body,undefined,signal)).json();}
  async authenticate(token:string):Promise<Status>{const trimmed=token.trim();if(trimmed.length<16||trimmed.length>256||/\s/.test(trimmed))throw Error('Paste the token printed by the local training service.');const result=await(await this.response('/session',{},trimmed)).json();if(typeof result.session!=='string')throw Error('Invalid local session response.');this.session=result.session;return result.status;}
  status(signal?:AbortSignal){return this.json<Status>('/status',undefined,signal);}
+ automaticStatus(signal?:AbortSignal){return this.json<AutomaticStatus>('/automatic/status',undefined,signal);}
+ startAutomatic(){return this.json<AutomaticStatus>('/automatic/start',{consent:true});}
+ stopAutomatic(){return this.json<AutomaticStatus>('/automatic/stop',{});}
+ labelAutomatic(value:{id:string;client_ms:number;run_id:string}){return this.json<{saved:true;label_id:string;status:AutomaticStatus}>('/automatic/label',value);}
  diagnostics(signal?:AbortSignal){return this.json<DiagnosticsReport>('/diagnostics',undefined,signal);}
  monitorDiagnostics(enabled:boolean){return this.json<DiagnosticsReport>('/diagnostics/monitor',{enabled});}
  checkDiagnostics(request_bluetooth_permission=false){return this.json<DiagnosticsReport>('/diagnostics/check',{request_bluetooth_permission});}

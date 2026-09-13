@@ -1,0 +1,212 @@
+{
+  "actor_radius_m": 0.15,
+  "components": [
+    {
+      "collision": {
+        "friction": 0.35,
+        "mode": "fixed",
+        "restitution": 0.55,
+        "shape": "obb_union"
+      },
+      "component_id": "ramp",
+      "entry_anchor": null,
+      "exit_anchor": null,
+      "material_role": "structure",
+      "parameters": {},
+      "transform": {
+        "position_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "type": "Ramp",
+      "visual": {
+        "bevel_m": 0.0
+      }
+    },
+    {
+      "collision": {
+        "friction": 0.35,
+        "mode": "fixed",
+        "restitution": 0.55,
+        "shape": "obb_union"
+      },
+      "component_id": "approach",
+      "entry_anchor": null,
+      "exit_anchor": null,
+      "material_role": "structure",
+      "parameters": {
+        "length_m": 1.0
+      },
+      "transform": {
+        "position_m": [
+          1.9999999999999998,
+          0.0,
+          2.5
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.12218326369570447,
+          0.0,
+          0.992507556682903
+        ]
+      },
+      "type": "StraightChannel",
+      "visual": {
+        "bevel_m": 0.0
+      }
+    },
+    {
+      "collision": {
+        "friction": 0.35,
+        "mode": "fixed",
+        "restitution": 0.55,
+        "shape": "obb_union"
+      },
+      "component_id": "deflector",
+      "entry_anchor": null,
+      "exit_anchor": null,
+      "material_role": "structure",
+      "parameters": {},
+      "transform": {
+        "position_m": [
+          2.970142500145332,
+          0.0,
+          2.257464374963667
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.12218326369570447,
+          0.0,
+          0.992507556682903
+        ]
+      },
+      "type": "CurvedChannel",
+      "visual": {
+        "bevel_m": 0.0
+      }
+    },
+    {
+      "collision": {
+        "friction": 0.35,
+        "mode": "fixed",
+        "restitution": 0.55,
+        "shape": "obb_union"
+      },
+      "component_id": "post",
+      "entry_anchor": null,
+      "exit_anchor": null,
+      "material_role": "structure",
+      "parameters": {
+        "length_m": 1.0
+      },
+      "transform": {
+        "position_m": [
+          4.328342000348796,
+          1.3999999999999997,
+          1.9179144999128006
+        ],
+        "quaternion_xyzw": [
+          0.08639661430673673,
+          0.08639661430673674,
+          0.7018088237093724,
+          0.7018088237093725
+        ]
+      },
+      "type": "StraightChannel",
+      "visual": {
+        "bevel_m": 0.0
+      }
+    },
+    {
+      "collision": {
+        "friction": 0.35,
+        "mode": "fixed",
+        "restitution": 0.55,
+        "shape": "obb_union"
+      },
+      "component_id": "catcher",
+      "entry_anchor": null,
+      "exit_anchor": null,
+      "material_role": "structure",
+      "parameters": {},
+      "transform": {
+        "position_m": [
+          4.328342000348796,
+          2.3999999999999995,
+          1.9179144999128006
+        ],
+        "quaternion_xyzw": [
+          0.08639661430673673,
+          0.08639661430673674,
+          0.7018088237093724,
+          0.7018088237093725
+        ]
+      },
+      "type": "Catcher",
+      "visual": {
+        "bevel_m": 0.0
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "ramp",
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "to": "approach"
+    },
+    {
+      "from": "approach",
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "to": "deflector"
+    },
+    {
+      "from": "deflector",
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "to": "post"
+    },
+    {
+      "from": "post",
+      "policy": {
+        "available_entry_speed_m_s": 0.0,
+        "distance_tolerance_m": 0.001,
+        "joint_region_radius_m": 0.6,
+        "maximum_direction_mismatch_deg": 10.0,
+        "maximum_joint_overlap_m": 0.06,
+        "radius_clearance_margin_m": 0.005
+      },
+      "to": "catcher"
+    }
+  ],
+  "schema_version": "component-route-1",
+  "start_component": "ramp",
+  "terminal_component": "catcher"
+}

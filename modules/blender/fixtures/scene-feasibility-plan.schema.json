@@ -1,0 +1,344 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "events": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "actor": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "after": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "items": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "minItems": 0,
+                "type": "array"
+              }
+            ]
+          },
+          "failure_conditions": {
+            "items": {
+              "enum": [
+                "success_condition_not_met",
+                "missed_time_window",
+                "unphysical_motion",
+                "wrong_target",
+                "unexpected_contact"
+              ]
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "music_salience": {
+            "enum": [
+              "primary",
+              "secondary"
+            ]
+          },
+          "success_condition": {
+            "additionalProperties": false,
+            "properties": {
+              "heading_change_min_deg": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "speed_gain_min": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "speed_loss_min": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "speed_max_m_s": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "support_released": {
+                "type": "boolean"
+              },
+              "supported_duration_min_s": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "surface_clearance_m": {
+                "additionalProperties": false,
+                "properties": {
+                  "max": {
+                    "maximum": 1000000.0,
+                    "minimum": -1000000.0,
+                    "type": "number"
+                  },
+                  "min": {
+                    "maximum": 1000000.0,
+                    "minimum": -1000000.0,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "min",
+                  "max"
+                ],
+                "type": "object"
+              },
+              "target_contact": {
+                "type": "boolean"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "target": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_window": {
+            "items": {
+              "maximum": 1000000.0,
+              "minimum": -1000000.0,
+              "type": "number"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "actor",
+          "target",
+          "after",
+          "time_window",
+          "success_condition",
+          "failure_conditions",
+          "music_salience"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "intent": {
+      "type": "object"
+    },
+    "motion_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "actor_radius_m": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "overrides_after_release": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "post_release_animation": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sphere_material": {
+          "additionalProperties": false,
+          "properties": {
+            "friction": {
+              "maximum": 1000000.0,
+              "minimum": -1000000.0,
+              "type": "number"
+            },
+            "restitution": {
+              "maximum": 1000000.0,
+              "minimum": -1000000.0,
+              "type": "number"
+            },
+            "rolling_resistance": {
+              "maximum": 1000000.0,
+              "minimum": -1000000.0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "restitution",
+            "friction",
+            "rolling_resistance"
+          ],
+          "type": "object"
+        },
+        "teleportation": {
+          "type": "boolean"
+        },
+        "trajectory_source": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "actor_radius_m",
+        "trajectory_source",
+        "post_release_animation",
+        "teleportation",
+        "overrides_after_release",
+        "sphere_material"
+      ],
+      "type": "object"
+    },
+    "route": {
+      "additionalProperties": false,
+      "properties": {
+        "stages": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "position_m": {
+                "items": {
+                  "maximum": 1000000.0,
+                  "minimum": -1000000.0,
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              },
+              "stage_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "stage_id",
+              "position_m"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "start": {
+          "additionalProperties": false,
+          "properties": {
+            "actor": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "position_m": {
+              "items": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            "support": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "velocity_m_s": {
+              "items": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            }
+          },
+          "required": [
+            "actor",
+            "support",
+            "position_m",
+            "velocity_m_s"
+          ],
+          "type": "object"
+        },
+        "terminal": {
+          "additionalProperties": false,
+          "properties": {
+            "actor": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "position_m": {
+              "items": {
+                "maximum": 1000000.0,
+                "minimum": -1000000.0,
+                "type": "number"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            "speed_max_m_s": {
+              "maximum": 1000000.0,
+              "minimum": -1000000.0,
+              "type": "number"
+            },
+            "target": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "actor",
+            "target",
+            "position_m",
+            "speed_max_m_s"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "start",
+        "stages",
+        "terminal"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "scene-feasibility-plan-1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "intent",
+    "motion_contract",
+    "route",
+    "events"
+  ],
+  "title": "scene-feasibility-plan-1",
+  "type": "object"
+}

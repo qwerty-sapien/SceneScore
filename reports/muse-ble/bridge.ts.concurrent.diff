@@ -1,0 +1,17 @@
+--- /private/tmp/scenescore-ble-web/apps/web/src/muse/bridge.ts	2026-09-13 13:04:59
++++ apps/web/src/muse/bridge.ts	2026-09-13 13:14:23
+@@ -1,4 +1,5 @@
+ import type {ClockMapping} from '../../../../packages/contracts/generated';
++import type {CheckpointCatalog} from './types';
+ import type {BridgeBatch,BridgeStatus,ClockProbe,MusicControlContext,MuseOperation,MuseScan} from './types';
+ const endpoint='http://127.0.0.1:8766/v1';
+ export const bridgeTimeouts={normal:3500,scan:15000,connect:25000,disconnect:8000} as const;
+@@ -27,6 +28,8 @@
+   this.session=data.session;this.initialCursor=Number.isSafeInteger(data.cursor)?data.cursor:0;return data.status;
+  }
+  async status():Promise<BridgeStatus>{return this.request('/status');}
++ async models():Promise<CheckpointCatalog>{return this.request('/models');}
++ async selectModel(selection:string):Promise<CheckpointCatalog>{return this.request('/models/select','POST',{selection});}
+  private controlRequest(path:'/arm'|'/disarm'):Promise<BridgeStatus>{
+   const lifecycle=this.lifecycle;
+   const pending=this.controlQueue.catch(()=>{}).then(()=>{

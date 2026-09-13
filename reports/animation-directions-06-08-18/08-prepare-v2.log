@@ -1,0 +1,42 @@
+{
+  "out": "/Users/agent/Desktop/SceneScore/artifacts/blender/revamp/directions/08_spiral_observatory-v2",
+  "validation": {
+    "actors": {
+      "bead": {
+        "max_energy_residual_J": 1.2024556831136124e-05,
+        "min_floor_normal_N": -33.54225404710979,
+        "max_capture_rail_normal_N": 33.54225404710979,
+        "max_reaction_N": 126.36515131308559,
+        "max_guide_work_W": 1.2789769243681803e-13,
+        "max_required_static_friction_coefficient": 0.0,
+        "max_output_displacement_m": 0.0308217241405825,
+        "max_output_displacement_over_radius": 0.12842385058576042,
+        "dissipated_energy_J": 27.376541257981593,
+        "source_energy_J": 32.373,
+        "final_mechanical_energy_J": 4.996446717465157,
+        "min_receiver_force_N": 0.0,
+        "min_receiver_gap_m": -1.0602890787581032e-10,
+        "max_receiver_compression_m": 0.765894750922008,
+        "receiver_contact_episodes": 3,
+        "final_speed_m_s": 0.00028945597207097584,
+        "last_motion_s": 28.724999999999998,
+        "dock_compression_m": 0.0204943989187373
+      }
+    },
+    "assumptions": [
+      "Polished sliding bead, zero spin: no claim of 3D no-slip rolling.",
+      "Frictionless ideal groove reactions pass through bead center and do zero work; visible upper rail supplies downward reaction.",
+      "Two opposite spirals joined by C2 descending crossover and receiver chute.",
+      "Short freefall and off-center bowl become supported C2 guide segments.",
+      "Unilateral massless receiver plunger: k=32 N/m, c=5 N s/m; passive retraction, all energy sink recorded."
+    ],
+    "substeps": 8,
+    "gravity_m_s2": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "human_review": "PENDING",
+    "evaluated_blender_replay": "NOT_RUN"
+  }
+}

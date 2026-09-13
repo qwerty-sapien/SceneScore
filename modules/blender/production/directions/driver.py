@@ -138,6 +138,13 @@ def make_object(spec, *, moving=False):
     obj.rotation_quaternion = [q[3], *q[:3]]
     obj.data.materials.append(material(spec.get('material', 'stone'),
         stripe=moving and shape in ('sphere', 'cylinder') and not spec.get('zero_spin', False)))
+    if spec.get('checkpoint_time_s') is not None:
+        signal = obj.data.materials[0].copy()
+        signal.name = spec['id'] + '-signal'
+        obj.data.materials[0] = signal
+        bsdf = signal.node_tree.nodes.get('Principled BSDF')
+        bsdf.inputs['Base Color'].default_value = (.035, .045, .04, 1)
+        bsdf.inputs['Emission Strength'].default_value = 0
     obj['role'] = spec.get('role', 'mechanical_actor' if moving else 'support')
     obj['mechanics_id'] = spec['id']
     return obj
@@ -216,8 +223,127 @@ def presentation_geometry(packet):
             # the independently checked original support envelope.
             spec['half_extents_m'] = [.015, .50, .025]
             spec['material'] = 'brass'
-        specs.append(spec)
+        if packet['id'] in ('06', '08') and ('-guide-left' in spec['id'] or '-guide-right' in spec['id']):
+            specs.extend(open_side_rail(packet, spec))
+        else:
+            specs.append(spec)
     return specs
+
+
+def open_side_rail(packet, wall):
+    """Keep the actual contact strip; put its thickness outside the guide."""
+    from mathutils import Vector
+    other_id = wall['id'].replace('-guide-left', '-guide-right') if '-guide-left' in wall['id'] else wall['id'].replace('-guide-right', '-guide-left')
+    other = next(g for g in packet['geometry'] if g['id'] == other_id)
+    capture = packet['id'] == '08'
+    fraction = .5 if capture else .24 / (.24 + .15)
+    frames = []
+    for i in range(0, len(wall['vertices']), 2):
+        low, high = map(Vector, wall['vertices'][i:i+2])
+        opposite_low, opposite_high = map(Vector, other['vertices'][i:i+2])
+        center = low.lerp(high, fraction)
+        opposite = opposite_low.lerp(opposite_high, fraction)
+        n = (high-low).normalized()
+        outward = (center-opposite).normalized()
+        frames.append((low, high, center, n, outward))
+
+    def mesh(id_, indices, full=False):
+        vertices, faces = [], []
+        for j, i in enumerate(indices):
+            low, high, center, n, outward = frames[i]
+            bottom = low if full else center - n*.018
+            top = high if full else center + n*.018
+            vertices.extend([list(bottom), list(top), list(bottom+outward*.024), list(top+outward*.024)])
+            if j:
+                a, b = (j-1)*4, j*4
+                faces.extend([[a, b, b+1, a+1], [a+2, a+3, b+3, b+2],
+                              [a, a+2, b+2, b], [a+1, b+1, b+3, a+3]])
+        end = (len(indices)-1)*4
+        faces.extend([[0, 1, 3, 2], [end, end+2, end+3, end+1]])
+        return dict(id=id_, shape='mesh', vertices=vertices, faces=faces,
+                    material='brass' if not full else 'steel', role='silent_support')
+    result = [mesh(wall['id'], list(range(len(frames))))]
+    step = 45 if capture else 25
+    for i in range(0, len(frames)-1, step):
+        result.append(mesh(wall['id']+f'-upright-{i}', [i, i+1], full=True))
+    return result
+
+
+def checkpoint_specs(packet):
+    if packet['id'] != '06':
+        return []
+    result = []
+    colors = dict(sphere='coral', cylinder='blue', hoop='gold')
+    for event in packet['events']:
+        if event['type'] not in ('equal-slope-exit', 'profile-checkpoint', 'lower-checkpoint', 'receiver-contact'):
+            continue
+        oid = event['actor_id'] + '-' + event['type'] + '-lamp'
+        p = event['position_m']
+        position = [p[0], p[1] - .43, p[2] + .08]
+        result.extend([
+            dict(id=oid + '-post', shape='cylinder', radius_m=.014, length_m=position[2],
+                 position_m=[position[0], position[1], position[2]/2], material='charcoal', role='silent_support'),
+            dict(id=oid, shape='sphere', radius_m=.045, position_m=position,
+                 material=colors[event['actor_id']], role='electrical_checkpoint_indicator',
+                 checkpoint_time_s=event['time_s']),
+        ])
+    return result
+
+
+def animate_checkpoints(packet, out):
+    import bpy
+    evidence = []
+    for spec in checkpoint_specs(packet):
+        if 'checkpoint_time_s' not in spec:
+            continue
+        mat = bpy.data.objects[spec['id']].data.materials[0]
+        bsdf = mat.node_tree.nodes.get('Principled BSDF')
+        base = bsdf.inputs['Base Color']
+        emission = bsdf.inputs['Emission Color']
+        strength = bsdf.inputs['Emission Strength']
+        base.default_value = (.035, .045, .04, 1)
+        strength.default_value = 0
+        base.keyframe_insert('default_value', frame=1)
+        strength.keyframe_insert('default_value', frame=1)
+        frame = 1 + spec['checkpoint_time_s'] * 30
+        base.default_value = PALETTE[spec['material']]
+        emission.default_value = PALETTE[spec['material']]
+        strength.default_value = 2
+        base.keyframe_insert('default_value', frame=frame)
+        strength.keyframe_insert('default_value', frame=frame)
+        action = mat.node_tree.animation_data.action
+        for layer in action.layers:
+            for strip in layer.strips:
+                bag = strip.channelbag(mat.node_tree.animation_data.action_slot)
+                if bag:
+                    for curve in bag.fcurves:
+                        for key in curve.keyframe_points:
+                            key.interpolation = 'CONSTANT'
+        evidence.append(dict(id=spec['id'], physical_event_time_s=spec['checkpoint_time_s'],
+                             playback_frame=frame, position_m=spec['position_m']))
+    dump(out / 'checkpoint_indicators.json', dict(indicators=evidence,
+        scope='electrical indication of computed crossings; no force, motor or body pose added'))
+
+
+def fit_course_camera(packet, objects):
+    """Keep the complete apparatus in view; broad ground plates may run offscreen."""
+    import bpy
+    from mathutils import Vector
+    if packet['id'] not in ('06', '08'):
+        return
+    scene = bpy.context.scene
+    camera = scene.camera
+    bpy.context.view_layer.update()
+    inverse = camera.matrix_world.inverted()
+    corners = [inverse @ (obj.matrix_world @ Vector(corner))
+               for oid, obj in objects.items() if oid != 'grounded-base'
+               for corner in obj.bound_box]
+    left, right = min(p.x for p in corners), max(p.x for p in corners)
+    bottom, top = min(p.y for p in corners), max(p.y for p in corners)
+    aspect = scene.render.resolution_x / scene.render.resolution_y
+    camera.data.ortho_scale = max(right-left, (top-bottom)*aspect) * 1.13
+    shift = camera.matrix_world.to_quaternion() @ Vector([(left+right)/2, (bottom+top)/2, 0])
+    camera.location += shift
 
 
 def configure_scene(packet):
@@ -240,6 +366,8 @@ def configure_scene(packet):
     camera = packet.get('camera', {})
     if packet.get('direction_id') == '18':
         camera = dict(position=[0, -7, 26], look_at=[0, -1, 1.1], ortho_scale=13.5)
+    elif packet['id'] == '06':
+        camera = dict(position=[3, -10, 17], look_at=[.6, 0, 1.6], ortho_scale=10)
     position = camera.get('position', [12, -18, 16])
     target = Vector(camera.get('look_at', [0, 0, 1]))
     data = bpy.data.cameras.new('camera_beauty')
@@ -270,7 +398,8 @@ def build(out):
     samples = [cable_poses(packet, sample) for sample in rows(out / 'mechanics_states.jsonl')]
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete(use_global=False)
-    specs = presentation_geometry(packet) + packet['actors'] + cable_specs(packet) + support_specs(packet)
+    specs = (presentation_geometry(packet) + packet['actors'] + cable_specs(packet)
+             + support_specs(packet) + checkpoint_specs(packet))
     moving = {s['id'] for s in packet['actors'] + cable_specs(packet)}
     objects = {s['id']: make_object(s, moving=s['id'] in moving) for s in specs}
     scene = bpy.context.scene
@@ -282,8 +411,9 @@ def build(out):
         add_keys(objects[oid], samples, oid, packet['hz'], packet['hz'])
     configure_scene(packet)
     scene.frame_set(1)
+    fit_course_camera(packet, objects)
     scene['motion_source'] = packet['backend']
-    scene['scope'] = packet.get('scope', '')
+    scene['scope'] = packet.get('scope', '; '.join(packet.get('validation', {}).get('assumptions', [])))
     scene['mechanics_states_sha256'] = digest(out / 'mechanics_states.jsonl')
     scene['approval'] = 'pending human review'
     deps = bpy.context.evaluated_depsgraph_get()
@@ -360,6 +490,7 @@ def replay(out):
                         curve.update()
     scene.render.fps, scene.render.fps_base = 30, 1
     scene.frame_start, scene.frame_end = 1, round(packet['duration_s'] * 30)
+    animate_checkpoints(packet, out)
     scene.frame_set(1)
     bpy.ops.wm.save_as_mainfile(filepath=str(out / 'scene.blend'), check_existing=False)
     dump(out / 'replay.json', dict(status='PASSED', scene_sha256=digest(out / 'scene.blend'),

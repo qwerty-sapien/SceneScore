@@ -1,0 +1,2 @@
+COMMAND [".venv/bin/ruff", "check", "modules/blender/planning", "modules/blender/components", "modules/blender/tests/test_plan_validation.py", "modules/blender/tests/test_components.py", "modules/blender/tests/blender_components_smoke.py", "tools/component_library_smoke.py"]
+All checks passed!

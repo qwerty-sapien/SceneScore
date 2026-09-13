@@ -41,9 +41,12 @@ demo dev-replay:
 service:
 	PYTHONPATH=.:src .venv/bin/uvicorn scenescore.service:app --host 127.0.0.1 --port 8765
 
-.PHONY: muse-demo muse-diagnose muse-readiness
+.PHONY: muse-demo muse-live muse-diagnose muse-readiness
 muse-demo:
 	$(RUN) tools/muse_demo.py
+
+muse-live:
+	$(RUN) tools/muse_demo.py --source ble $(if $(LIVE_CONSENT),--live-consent "$(LIVE_CONSENT)") $(if $(QUALITY_PROFILE),--quality-profile "$(QUALITY_PROFILE)")
 
 muse-diagnose:
 	$(RUN) -m modules.muse.acquisition diagnose

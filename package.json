@@ -9,6 +9,8 @@
   },
   "packageManager": "npm@11.9.0",
   "scripts": {
+    "predev": "node apps/web/tools/catalog.mjs",
+    "prebuild": "node apps/web/tools/catalog.mjs",
     "generate": "node tools/generate-types.mjs",
     "typecheck": "tsc --noEmit",
     "test:contracts": "node --import tsx --test tests/ts/*.test.ts",

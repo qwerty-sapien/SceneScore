@@ -2,7 +2,12 @@
 name = "scenescore-harness"
 version = "0.1.0"
 requires-python = ">=3.13,<3.14"
-dependencies = ["jsonschema>=4.23,<5", "fastapi>=0.115,<1", "uvicorn>=0.34,<1"]
+dependencies = [
+    "jsonschema>=4.23,<5",
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+    "bleak>=3.0.2,<4",
+]
 
 [dependency-groups]
 dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.16,<1", "pyyaml>=6,<7"]

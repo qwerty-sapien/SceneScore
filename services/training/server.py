@@ -178,8 +178,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json({"session": session, "status": state.status()})
             if not mutation and route in {"/status", "/trace"}:
                 state.touch()
+            if not mutation and route == "/automatic/status":
+                state.automatic.touch()
             if mutation:
                 handlers = {
+                    "/automatic/start": state.automatic_start,
+                    "/automatic/stop": lambda _: state.automatic.stop(),
+                    "/automatic/label": state.automatic.label,
                     "/connect": state.connect,
                     "/disconnect": lambda _: state.disconnect(),
                     "/record/start": state.record_start,
@@ -193,6 +198,8 @@ class Handler(BaseHTTPRequestHandler):
                 }
             else:
                 handlers = {
+                    "/automatic/status": lambda _: state.automatic.status(),
+                    "/automatic/checkpoints": lambda _: state.automatic.store.summaries(),
                     "/status": lambda _: state.status(),
                     "/diagnostics": lambda _: state.diagnostics.snapshot(),
                     "/sources": lambda _: state.sources.discover(),
@@ -260,12 +267,14 @@ def main(argv=None):
     parser.add_argument("--web-root", type=Path, default=Path("artifacts/training-dist"))
     parser.add_argument("--origin", action="append")
     parser.add_argument("--token", default=os.environ.get("SCENESCORE_TRAINING_TOKEN"))
+    parser.add_argument("--synthetic-rehearsal", action="store_true", help="Explicit synthetic trainer; no real accuracy evidence")
     args = parser.parse_args(argv)
     if not 1 <= args.seconds <= 3600 or not 1024 <= args.port <= 65535:
         parser.error("runtime must be1..3600seconds; port1024..65535")
     token = args.token or secrets.token_urlsafe(32)
     origin = f"http://127.0.0.1:{args.port}"
     workspace = Workspace(args.data_root)
+    workspace.automatic.synthetic = args.synthetic_rehearsal
     server = TrainingServer(("127.0.0.1", args.port), workspace, token, args.web_root, args.origin or [origin])
     print(
         json.dumps(

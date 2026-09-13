@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "modules/blender/tests/test_plan_validation.py",
+    "modules/blender/tests/test_scene_intent.py"
+  ],
+  "pid": 37621,
+  "process_group": 37621,
+  "started_at": "2026-09-13T04:59:49.960209+00:00",
+  "exit_code": 0,
+  "duration_s": 1.632,
+  "process_group_absent": true
+}

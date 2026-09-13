@@ -1,0 +1,11 @@
+--- /private/tmp/scenescore-ble-web/apps/web/src/muse/types.ts	2026-09-13 12:49:51
++++ apps/web/src/muse/types.ts	2026-09-13 13:14:23
+@@ -1,5 +1,8 @@
+ import type {ClockMapping,ControlAction,GestureEvent} from '../../../../packages/contracts/generated';
+ export type MuseMode='KEYBOARD'|'SYNTHETIC_TEST'|'REAL_REPLAY'|'LIVE_MUSE';
++export interface ModelEvaluation {precision:number|null;recall:number|null;complete:boolean;target_reached:boolean}
++export interface CheckpointCatalog {selection:string;active_checkpoint_id:string|null;checkpoints:{id:string;created_ns:number;parent_id:string|null;training_steps:number;source_mode:string;evaluation:ModelEvaluation|null}[];invalid_checkpoint_ids:string[]}
++export interface BridgeStatus {active_checkpoint_id?:string|null;checkpoint_selection?:string;evaluation?:ModelEvaluation|null;accuracy_target_advisory?:boolean;arming?:boolean}
+ export interface MuseControlEnvelope {
+  version:'muse-control-envelope-1'; action:ControlAction;
+  detector:{version:string;model_version:string;grammar_hash:string};

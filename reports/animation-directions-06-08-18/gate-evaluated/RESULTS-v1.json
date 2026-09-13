@@ -1,0 +1,490 @@
+{
+  "pid": 61613,
+  "pgid": 61613,
+  "started_unix_s": 1789276329.440044,
+  "input_sha256": {
+    "artifacts/blender/revamp/directions/06_three_ways_down-v1/packet.json": "d450b4be4e86caaff4024a0af7f0993f54104c23fff4febf712cb27994bbb01d",
+    "artifacts/blender/revamp/directions/06_three_ways_down-v1/evaluated_geometry.json": "1dc29532954d65abc4f6921c5aedf5159435173b41502caae71dd2d8579ca983",
+    "artifacts/blender/revamp/directions/06_three_ways_down-v1/replay_states.jsonl": "db91e7f1184e4288190b49112a11cc97a9c7b8ddc028ba04d6d174ef77a7df12",
+    "artifacts/blender/revamp/directions/08_spiral_observatory-v1/packet.json": "0006d3d2de51ebfd5539365dca3b4c7a74f22f36323f994d8a1368bd6ed4dd17",
+    "artifacts/blender/revamp/directions/08_spiral_observatory-v1/evaluated_geometry.json": "be856c13a1afd458516301ede5eb7c9ac695d461e54758900afe19106cd2a6a8",
+    "artifacts/blender/revamp/directions/08_spiral_observatory-v1/replay_states.jsonl": "086c3d6454ec14b5cc592ab8d352fee0f9d5731a43095516edc8ce1a6bb0c05c"
+  },
+  "shapes": {
+    "06_three_ways_down-v1": {
+      "sphere": {
+        "shape": "sphere",
+        "vertices": 922,
+        "triangles": 1840,
+        "local_bounds_m": [
+          -0.2400001883506775,
+          -0.24000012874603271,
+          -0.23999999463558197,
+          0.24000005424022675,
+          0.24000026285648346,
+          0.23999999463558197
+        ],
+        "initial_transform": {
+          "position_m": [
+            -3.0,
+            -1.100000023841858,
+            2.200000047683716
+          ],
+          "quaternion_xyzw": [
+            -0.70710688829422,
+            -0.0,
+            -0.0,
+            0.7071066498756409
+          ],
+          "scale": [
+            1.0,
+            1.0000001192092896,
+            1.0000001192092896
+          ]
+        },
+        "vertex_radius_m": [
+          0.23999997102593773,
+          0.24000026285649503
+        ],
+        "circumsphere_to_inscribed_face_deficit_m": 0.0012489739184499693
+      },
+      "sphere-plunger": {
+        "shape": "box",
+        "vertices": 8,
+        "triangles": 12,
+        "local_bounds_m": [
+          -0.02500000037252903,
+          -0.19200000166893005,
+          -0.14000000059604645,
+          0.02500000037252903,
+          0.19200000166893005,
+          0.14000000059604645
+        ],
+        "initial_transform": {
+          "position_m": [
+            3.2647321224212646,
+            -1.100000023841858,
+            1.9773370027542114
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.022482937201857567,
+            0.0,
+            0.9997472167015076
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "sphere-coil": {
+        "shape": "coil",
+        "vertices": 2568,
+        "triangles": 5120,
+        "local_bounds_m": [
+          -0.49910449981689453,
+          -0.06944200396537781,
+          -0.0699993148446083,
+          0.49916982650756836,
+          0.06943754851818085,
+          0.06999914348125458
+        ],
+        "initial_transform": {
+          "position_m": [
+            3.9140748977661133,
+            -1.100000023841858,
+            1.948116660118103
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.022482937201857567,
+            0.0,
+            0.9997472167015076
+          ],
+          "scale": [
+            1.25,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "cylinder": {
+        "shape": "cylinder",
+        "vertices": 128,
+        "triangles": 252,
+        "local_bounds_m": [
+          -0.23999999463558197,
+          -0.23999999463558197,
+          -0.15000000596046448,
+          0.23999999463558197,
+          0.23999999463558197,
+          0.15000000596046448
+        ],
+        "initial_transform": {
+          "position_m": [
+            -3.0,
+            0.0,
+            2.200000047683716
+          ],
+          "quaternion_xyzw": [
+            -0.70710688829422,
+            -0.0,
+            -0.0,
+            0.7071066498756409
+          ],
+          "scale": [
+            1.0,
+            1.0000001192092896,
+            1.0000001192092896
+          ]
+        },
+        "radial_vertex_error_m": 1.8437353532796408e-08,
+        "axial_length_error_m": 1.1920928966180355e-08
+      },
+      "cylinder-plunger": {
+        "shape": "box",
+        "vertices": 8,
+        "triangles": 12,
+        "local_bounds_m": [
+          -0.02500000037252903,
+          -0.11999999731779099,
+          -0.14000000059604645,
+          0.02500000037252903,
+          0.11999999731779099,
+          0.14000000059604645
+        ],
+        "initial_transform": {
+          "position_m": [
+            3.564732074737549,
+            0.0,
+            1.9638370275497437
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.022482937201857567,
+            0.0,
+            0.9997472167015076
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "cylinder-coil": {
+        "shape": "coil",
+        "vertices": 2568,
+        "triangles": 5120,
+        "local_bounds_m": [
+          -0.49910449981689453,
+          -0.06944200396537781,
+          -0.0699993148446083,
+          0.49916982650756836,
+          0.06943754851818085,
+          0.06999914348125458
+        ],
+        "initial_transform": {
+          "position_m": [
+            4.214075088500977,
+            0.0,
+            1.9346166849136353
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.022482937201857567,
+            0.0,
+            0.9997472167015076
+          ],
+          "scale": [
+            1.25,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "hoop": {
+        "shape": "hoop",
+        "vertices": 1152,
+        "triangles": 2304,
+        "local_bounds_m": [
+          -0.24000000953674316,
+          -0.24000000953674316,
+          -0.02500000037252903,
+          0.24000000953674316,
+          0.24000000953674316,
+          0.02500000037252903
+        ],
+        "initial_transform": {
+          "position_m": [
+            -3.0,
+            1.100000023841858,
+            2.200000047683716
+          ],
+          "quaternion_xyzw": [
+            -0.70710688829422,
+            -0.0,
+            -0.0,
+            0.7071066498756409
+          ],
+          "scale": [
+            1.0,
+            1.0000001192092896,
+            1.0000001192092896
+          ]
+        },
+        "torus_surface_vertex_error_m": 2.3622343407747604e-08,
+        "finite_torus_inertia_ratio": 0.8106553819444443
+      },
+      "hoop-plunger": {
+        "shape": "box",
+        "vertices": 8,
+        "triangles": 12,
+        "local_bounds_m": [
+          -0.02500000037252903,
+          -0.019999999552965164,
+          -0.14000000059604645,
+          0.02500000037252903,
+          0.019999999552965164,
+          0.14000000059604645
+        ],
+        "initial_transform": {
+          "position_m": [
+            3.864732027053833,
+            1.100000023841858,
+            1.9503370523452759
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.022482937201857567,
+            0.0,
+            0.9997472167015076
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "hoop-coil": {
+        "shape": "coil",
+        "vertices": 2568,
+        "triangles": 5120,
+        "local_bounds_m": [
+          -0.498421311378479,
+          -0.01399475522339344,
+          -0.013996436260640621,
+          0.4984033703804016,
+          0.01399262621998787,
+          0.013992750085890293
+        ],
+        "initial_transform": {
+          "position_m": [
+            4.514074802398682,
+            1.100000023841858,
+            1.921116590499878
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.022482937201857567,
+            0.0,
+            0.9997472167015076
+          ],
+          "scale": [
+            1.25,
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "08_spiral_observatory-v1": {
+      "bead": {
+        "shape": "sphere",
+        "vertices": 922,
+        "triangles": 1840,
+        "local_bounds_m": [
+          -0.2400001883506775,
+          -0.24000012874603271,
+          -0.23999999463558197,
+          0.24000005424022675,
+          0.24000026285648346,
+          0.23999999463558197
+        ],
+        "initial_transform": {
+          "position_m": [
+            3.200000047683716,
+            0.0,
+            3.299999952316284
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "vertex_radius_m": [
+          0.23999997102593773,
+          0.24000026285649503
+        ],
+        "circumsphere_to_inscribed_face_deficit_m": 0.0012489739184499693
+      },
+      "observatory-plunger": {
+        "shape": "box",
+        "vertices": 8,
+        "triangles": 12,
+        "local_bounds_m": [
+          -0.02500000037252903,
+          -0.18000000715255737,
+          -0.14000000059604645,
+          0.02500000037252903,
+          0.18000000715255737,
+          0.14000000059604645
+        ],
+        "initial_transform": {
+          "position_m": [
+            -1.064413070678711,
+            -1.0,
+            0.49237245321273804
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.9994460940361023,
+            0.0,
+            0.03327794000506401
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "observatory-coil": {
+        "shape": "coil",
+        "vertices": 2568,
+        "triangles": 5120,
+        "local_bounds_m": [
+          -0.49910449981689453,
+          -0.06944200396537781,
+          -0.0699993148446083,
+          0.49916982650756836,
+          0.06943754851818085,
+          0.06999914348125458
+        ],
+        "initial_transform": {
+          "position_m": [
+            -1.7129734754562378,
+            -1.0,
+            0.44913509488105774
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.9994460940361023,
+            0.0,
+            0.03327794000506401
+          ],
+          "scale": [
+            1.25,
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  "static_geometry": {
+    "06_three_ways_down-v1": {
+      "mesh_vertex_count_matches": true,
+      "maximum_packet_to_evaluated_vertex_error_m": [
+        2.642490755507346e-07,
+        "hoop-guide-right"
+      ]
+    },
+    "08_spiral_observatory-v1": {
+      "mesh_vertex_count_matches": true,
+      "maximum_packet_to_evaluated_vertex_error_m": [
+        1.7249532051461143e-07,
+        "observatory-guide-left"
+      ]
+    }
+  },
+  "clearance": {
+    "guide": {
+      "triangles": 12856,
+      "samples": 7201,
+      "minimum_center_to_triangle_minus_radius_m": [
+        -0.0309786152553031,
+        {
+          "tick": 4913,
+          "time_s": 20.470833333333335,
+          "object": "observatory-guide-left",
+          "triangle": 650
+        }
+      ],
+      "maximum_nearest_gap_m": 9.53674320069986e-09,
+      "minimum_linear_swept_clearance_m": [
+        -0.03101539003490178,
+        {
+          "time_s": 20.469867125903477,
+          "interval_ticks": [
+            4912,
+            4913
+          ],
+          "object": "observatory-guide-left",
+          "triangle": 650
+        }
+      ]
+    },
+    "other_static": {
+      "triangles": 1348,
+      "samples": 7201,
+      "minimum_center_to_triangle_minus_radius_m": [
+        0.028027177354562283,
+        {
+          "tick": 5395,
+          "time_s": 22.479166666666668,
+          "object": "observatory-support-cap-675",
+          "triangle": 7
+        }
+      ],
+      "maximum_nearest_gap_m": 2.1511859376391884,
+      "minimum_linear_swept_clearance_m": [
+        0.027822470811311895,
+        {
+          "time_s": 22.480813625597012,
+          "interval_ticks": [
+            5395,
+            5396
+          ],
+          "object": "observatory-support-cap-675",
+          "triangle": 7
+        }
+      ]
+    },
+    "moving_plunger_sampled": {
+      "samples": 7201,
+      "minimum_gap_m": [
+        -6.99197224007797e-08,
+        24.779166666666665
+      ]
+    }
+  },
+  "method": "Independent exact point/segment-to-triangle Euclidean distances with AABB BVH; radius0.24m is conservative versus the inscribed evaluated bead. Segment sweeps use Blender linear translation between adjacent240Hz keys. Moving plunger sampled separately. No native Bullet or perceptual acceptance claim.",
+  "limitations": [
+    "Surface-clearance sign denotes sphere/surface overlap, not a general signed-distance field for arbitrary closed meshes. Analytic point-inside exclusions and exact rendered-sphere mesh contact are not separately certified.",
+    "Coil/lead mesh collision is not included; moving receiver plunger is sampled, not swept.",
+    "06 full body-to-mesh sweeps are not performed; shape and static mesh agreement only."
+  ],
+  "elapsed_s": 15.764932870864868,
+  "status": "MEASURED_NOT_GLOBAL_ACCEPTANCE"
+}

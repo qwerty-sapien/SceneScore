@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/Applications/Blender.app/Contents/MacOS/Blender",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "1",
+    "--threads",
+    "2",
+    "--python",
+    "/Users/agent/Desktop/SceneScore/modules/blender/tests/blender_components_smoke.py",
+    "--",
+    "/Users/agent/Desktop/SceneScore/artifacts/blender/component-library-a5-20260913"
+  ],
+  "timeout_s": 120,
+  "status": "passed",
+  "process_group_absent": true,
+  "pid": 61496,
+  "pgid": 61496,
+  "returncode": 0,
+  "cleanup_signals": [],
+  "duration_s": 1.2992936660302803
+}

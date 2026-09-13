@@ -78,6 +78,8 @@ class Workspace:
         self.records = {}
         self.raw_cache = RawCache()
         self.diagnostics = Diagnostics(self)
+        from .automatic import AutomaticTrainer
+        self.automatic = AutomaticTrainer(self.root / "automatic", self.sources)
         for path in sorted(self.root.glob("session-*")):
             if len(self.records) >= 64:
                 raise ValueError("session_capacity_exceeded")
@@ -147,6 +149,8 @@ class Workspace:
         return {key: self.model.get(key) for key in keys}
 
     def connect(self, body):
+        if self.automatic.status()["active"]:
+            raise ValueError("stop_automatic_training_before_manual_connection")
         if body.get("consent") is not True:
             raise ValueError("explicit_live_processing_consent_required")
         source_id, device_model = text(body.get("source_id"), 256), text(body.get("device_model"), 100)
@@ -372,6 +376,14 @@ class Workspace:
         if error is not None:
             raise RuntimeError("recording_persistence_fault:" + str(error))
         return self.status()
+
+    def automatic_start(self, body):
+        with self.lock:
+            if self.recorder is not None or self.training:
+                raise ValueError("stop_manual_recording_or_training_first")
+        if self.connected:
+            self.disconnect()
+        return self.automatic.start(body)
 
     def record_start(self, body):
         participant, refit = identifier(body.get("participant_id")), identifier(body.get("refit_id"))
@@ -816,4 +828,7 @@ class Workspace:
         try:
             self.diagnostics.close()
         finally:
-            self.disconnect()
+            try:
+                self.automatic.close()
+            finally:
+                self.disconnect()

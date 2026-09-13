@@ -1,0 +1,10 @@
+{
+  "policy": "No further edits to these files after observing concurrent checkpoint integration. Existing BLE edits and new concurrent additions are preserved.",
+  "paths": {
+    "apps/web/src/muse/MusePanel.tsx": "59e6ecf7fbbdcdc5787921f71ac88872791b00e88f0390ca612281f6b5eff58c",
+    "apps/web/src/muse/bridge.ts": "9cdc9aadb9e3e25035f6cbdc65e84c23be80c8dfd51d8ee0600bade22aba3f20",
+    "apps/web/src/muse/types.ts": "a0e93e6711a63a36c4da359f7b9e74aef454ef8ccd60b42102e49c02f2e92716",
+    "services/bridge/server.py": "67e6a336e323329ad59a34fece3e3cc2e6400bb6e42fa438dfc6f61d2e181abc",
+    "modules/muse/baseline/causal.py": "87cd58651787103573a62eccca2ae4f6fe69f32b45b44e9d38f071ab34991fce"
+  }
+}

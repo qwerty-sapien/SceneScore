@@ -9,7 +9,8 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "types": [
-      "node"
+      "node",
+      "vite/client"
     ],
     "skipLibCheck": true
   },
