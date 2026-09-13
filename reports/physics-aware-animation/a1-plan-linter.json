@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".venv/bin/python",
+    ".agents/skills/physics-aware-animation/scripts/check_story_plan.py",
+    ".agents/skills/physics-aware-animation/assets/scene-intent.example.json"
+  ],
+  "pid": 37378,
+  "process_group": 37378,
+  "started_at": "2026-09-13T04:10:10.528844+00:00",
+  "exit_code": 0,
+  "duration_s": 0.075,
+  "process_group_absent": true
+}

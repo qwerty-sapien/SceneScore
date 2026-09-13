@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv/bin/ruff",
+    "check",
+    "modules/blender",
+    "tools/blender_mcp",
+    "tools/blender_scene_mutations.py",
+    "tests/test_production_media.py"
+  ],
+  "pid": 54169,
+  "process_group": 54169,
+  "started_at": "2026-09-13T04:16:24.411217+00:00",
+  "exit_code": 1,
+  "duration_s": 0.128,
+  "process_group_absent": true
+}

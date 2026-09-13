@@ -188,10 +188,13 @@ class Handler(BaseHTTPRequestHandler):
                     "/review": state.review,
                     "/train": lambda _: state.train(),
                     "/delete": state.delete,
+                    "/diagnostics/monitor": state.diagnostics.monitor,
+                    "/diagnostics/check": state.diagnostics.check_now,
                 }
             else:
                 handlers = {
                     "/status": lambda _: state.status(),
+                    "/diagnostics": lambda _: state.diagnostics.snapshot(),
                     "/sources": lambda _: state.sources.discover(),
                     "/trace": lambda _: state.trace(),
                     "/review": lambda b: state.review_get(b["session_id"]),

@@ -1,0 +1,25 @@
+{
+  "stage": "/private/tmp/scenescore-muse-diagnostics-publication",
+  "files_sha256": {
+    "assets/index-DhfNs5k7.css": "93e6bf561906243a3c8a19057786762a242878f97fabd5b79eb282e7e495ae0c",
+    "assets/index-z0EOXwAy.js": "1e391572f0c8e578949b27f81cfac7bde987553a308802f2464cefbd57a45e14",
+    "index.html": "2a2a0906591c9aa9585f1f32ad3410a647d1025e4af91f823a83ebe9e8ab480a",
+    "muse/README.md": "b3ae4ff6c85118a13ccedf0e3e6751795eeb69d982faf2f0a491559e51d536e9",
+    "studio/catalog.json": "f173fd46de46ac277a70f3fa2c075792d32b0de4590d3c063fb6ceb10eea3f88",
+    "studio/contact-brush_ballad_sparse_v1.json": "7746de4a7fbf9354f36fa4e95c299817325c365f501548b1a379cd0c5dacc070",
+    "studio/contact-brush_straight_rag_v1.json": "01bc4f6238d409127da64d53105093c6e8121353af4560594c56813dc863b19b",
+    "studio/contact-brush_swing_light_v1.json": "474193c1f9348b5e3a2c710b85df615c5da684db023d5b435ee4ae442627c146",
+    "studio/contact.mp4": "07a65b59bda1afc07fc1397f72232f2855df595b2cfe3948ea602d517890a04a",
+    "studio/near-miss-brush_ballad_sparse_v1.json": "64eb2b01aaf873ae93608c53ae5b1f916e4730097f36a7980e7dae49eb0a34c6",
+    "studio/near-miss-brush_straight_rag_v1.json": "546c3413db1a1b22a8883d85c3ca2d3ab0b91bfa08e48df2eb6d930774d6e473",
+    "studio/near-miss-brush_swing_light_v1.json": "c7a86d3d71abff4252c396c4a3976efeaa0658cc945c0cb69bd4a4b51d40775c",
+    "studio/near-miss.mp4": "bd5699cf6ae23e7e12e8b53b4d53433cc578966d9a5fdf74189e1df85ee27f8d",
+    "train/assets/index-BAPxdS0y.js": "680367c4a8e6151324260cfa04b1554341b2084575744fa7fcad35affba47ed2",
+    "train/assets/index-DIciIfa_.css": "8cceb791b8b7c458b21be6647a4d16777d3cc65cfaa3f80a2c25b02b4702cc8b",
+    "train/index.html": "aabab6c3923798804c312dea24c367127bb1a89941a12036c2a76594f19ff5e8",
+    "vercel.json": "a6f950c637f01f8d1399f9597e6ebc404d14c379b18394cb9c38544e7c081446"
+  },
+  "file_count": 17,
+  "bytes": 26119969,
+  "scope": "17 static files only; existing studio assets preserved. No EEG, diagnostics, device IDs, helper binaries, dependencies or credentials."
+}

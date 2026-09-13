@@ -8,6 +8,36 @@ Use `Launch Blink Trainer.command` or `make muse-train` for the authenticated lo
 page. The hosted page needs browser Local network access permission to reach the
 local service. Raw EEG, reviews and models are never part of the static deployment.
 
+## Subsequent connection-diagnostics update
+
+The user's next request added active fault isolation and explanations for the
+unused MUSE_TRANSPORT/MUSE_BOARD_ID/MUSE_UNITS placeholders. The published page
+now polls Bluetooth/Muse-service and LSL metadata every ten seconds, sample health
+every second, and distinguishes missing/invalid/stale evidence. See decision 0013,
+`diagnostics-verification.json` and `diagnostics-deployment-manifest.json`.
+
+**41 backend/model tests + 14 UI tests passed**; scoped typecheck, production build,
+Ruff and diff checks passed. Native CoreBluetooth probing reported permission
+allowed and power on, with zero Muse-service devices in its bounded two-second
+scan. This is a current observation, not a permanent host fact or proof that a
+headset is disconnected. No real EEG outlet was observed outside test fixtures.
+
+Actual browser checks detected an automatically discovered metadata-only LSL
+fixture and isolated its deliberate `mV` unit incompatibility. That fixture pushed
+zero samples. Separate synthetic preview showed fresh batches, 256 Hz, no recent
+gaps and channel variation without recording. Desktop was visually inspected;
+the fallback in-app browser verified the 390px disconnected layout and the final
+published diagnostics/configuration explanation. The original Playwright transport
+closed before export/pause browser checks completed; those paths were not claimed
+as browser passes. Pause, subscriber timeout and shutdown passed backend tests.
+
+The native helper never pairs or connects, and an OS permission request requires
+the explicit Enable Bluetooth check action. Existing raw consent and recording
+gates remain intact. The actual metadata outlet and local service both exited
+cleanly, and all in-app test tabs were closed. Final publication is
+`dpl_Dv36y2qCVAQntf5TLbmNr9syiV9r`, READY/production, at the same training URL;
+the existing deployed studio assets were hash-checked and preserved.
+
 ## Delivered
 
 - Standalone React page with existing-source LSL discovery, frontal raw traces,

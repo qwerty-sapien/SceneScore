@@ -1,0 +1,1478 @@
+[
+  {
+    "path": "artifacts/blender/all-ten-smoke/01_head_on-default/manifest.json",
+    "bytes": 1589
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/01_head_on-default/scene.blend",
+    "bytes": 117727
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/02_near_miss_twins-default/manifest.json",
+    "bytes": 1613
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/02_near_miss_twins-default/scene.blend",
+    "bytes": 121982
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/03_passing_ascent-default/manifest.json",
+    "bytes": 1630
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/03_passing_ascent-default/scene.blend",
+    "bytes": 129083
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/04_orbital_approach-default/manifest.json",
+    "bytes": 1634
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/04_orbital_approach-default/scene.blend",
+    "bytes": 126389
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/05_bouncing_staircase-default/manifest.json",
+    "bytes": 1948
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/05_bouncing_staircase-default/scene.blend",
+    "bytes": 124778
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/06_sliding_contact-default/manifest.json",
+    "bytes": 1623
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/06_sliding_contact-default/scene.blend",
+    "bytes": 119269
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/07_shape_contrast-default/manifest.json",
+    "bytes": 1710
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/07_shape_contrast-default/scene.blend",
+    "bytes": 131432
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/08_domino_cascade-default/manifest.json",
+    "bytes": 2024
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/08_domino_cascade-default/scene.blend",
+    "bytes": 109729
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/09_breathing_crowd-default/manifest.json",
+    "bytes": 2269
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/09_breathing_crowd-default/scene.blend",
+    "bytes": 130388
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/10_projectile_tower-default/manifest.json",
+    "bytes": 1844
+  },
+  {
+    "path": "artifacts/blender/all-ten-smoke/10_projectile_tower-default/scene.blend",
+    "bytes": 123378
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/01_head_on-default/manifest.json",
+    "bytes": 1593
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/01_head_on-default/scene.blend",
+    "bytes": 117782
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/manifest.json",
+    "bytes": 1617
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/02_near_miss_twins-default/scene.blend",
+    "bytes": 118080
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/03_passing_ascent-default/manifest.json",
+    "bytes": 1634
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/03_passing_ascent-default/scene.blend",
+    "bytes": 128726
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/04_orbital_approach-default/manifest.json",
+    "bytes": 1638
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/04_orbital_approach-default/scene.blend",
+    "bytes": 121357
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/05_bouncing_staircase-default/manifest.json",
+    "bytes": 1952
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/05_bouncing_staircase-default/scene.blend",
+    "bytes": 124817
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/06_sliding_contact-default/manifest.json",
+    "bytes": 1627
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/06_sliding_contact-default/scene.blend",
+    "bytes": 119315
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/07_shape_contrast-default/manifest.json",
+    "bytes": 1714
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/07_shape_contrast-default/scene.blend",
+    "bytes": 131234
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/08_domino_cascade-default/manifest.json",
+    "bytes": 2028
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/08_domino_cascade-default/scene.blend",
+    "bytes": 109775
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/09_breathing_crowd-default/manifest.json",
+    "bytes": 2273
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/09_breathing_crowd-default/scene.blend",
+    "bytes": 130494
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/10_projectile_tower-default/manifest.json",
+    "bytes": 1848
+  },
+  {
+    "path": "artifacts/blender/final-all-ten/10_projectile_tower-default/scene.blend",
+    "bytes": 123295
+  },
+  {
+    "path": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss/manifest.json",
+    "bytes": 1913
+  },
+  {
+    "path": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss/preview.mp4",
+    "bytes": 25807
+  },
+  {
+    "path": "artifacts/blender/final-near-miss/10_projectile_tower-near_miss/scene.blend",
+    "bytes": 123054
+  },
+  {
+    "path": "artifacts/blender/hero-full/10_projectile_tower-default/manifest.json",
+    "bytes": 1907
+  },
+  {
+    "path": "artifacts/blender/hero-full/10_projectile_tower-default/preview.mp4",
+    "bytes": 26595
+  },
+  {
+    "path": "artifacts/blender/hero-full/10_projectile_tower-default/scene.blend",
+    "bytes": 123184
+  },
+  {
+    "path": "artifacts/blender/hero-near-miss/10_projectile_tower-near_miss/manifest.json",
+    "bytes": 1909
+  },
+  {
+    "path": "artifacts/blender/hero-near-miss/10_projectile_tower-near_miss/preview.mp4",
+    "bytes": 20236
+  },
+  {
+    "path": "artifacts/blender/hero-near-miss/10_projectile_tower-near_miss/scene.blend",
+    "bytes": 123026
+  },
+  {
+    "path": "artifacts/blender/rational-fps/manifest.json",
+    "bytes": 1602
+  },
+  {
+    "path": "artifacts/blender/rational-fps/scene.blend",
+    "bytes": 117705
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/05_bouncing_staircase-32/physical-validation.json",
+    "bytes": 13581
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/05_bouncing_staircase-32/renders/diagnostic/beauty/video.mp4",
+    "bytes": 72655
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/05_bouncing_staircase-32/scene.blend",
+    "bytes": 281635
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/05_bouncing_staircase-32/simulation.blend",
+    "bytes": 277900
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/05_bouncing_staircase-64/scene.blend",
+    "bytes": 281613
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/05_bouncing_staircase-64/simulation.blend",
+    "bytes": 279211
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-32/scene.blend",
+    "bytes": 132271
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-32/simulation.blend",
+    "bytes": 131840
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-64/scene.blend",
+    "bytes": 132037
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-64/simulation.blend",
+    "bytes": 131754
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-material/scene.blend",
+    "bytes": 132359
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-material/simulation.blend",
+    "bytes": 132127
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-material-fine/scene.blend",
+    "bytes": 132435
+  },
+  {
+    "path": "artifacts/blender/revamp/analytic/control_analytic_bounce-material-fine/simulation.blend",
+    "bytes": 132202
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/animated_scale/physical-validation.json",
+    "bytes": 6020
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/animated_scale/scene.blend",
+    "bytes": 128867
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/animated_scale/simulation.blend",
+    "bytes": 121306
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/baseline_driven/physical-validation.json",
+    "bytes": 6499
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/baseline_driven/scene.blend",
+    "bytes": 140900
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/baseline_driven/simulation.blend",
+    "bytes": 119048
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/baseline_drop/physical-validation.json",
+    "bytes": 5946
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/baseline_drop/scene.blend",
+    "bytes": 128273
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/baseline_drop/simulation.blend",
+    "bytes": 120809
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/disabled_floor/physical-validation.json",
+    "bytes": 6421
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/disabled_floor/scene.blend",
+    "bytes": 132388
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/disabled_floor/simulation.blend",
+    "bytes": 121696
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/initial_penetration/physical-validation.json",
+    "bytes": 6259
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/initial_penetration/scene.blend",
+    "bytes": 131935
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/initial_penetration/simulation.blend",
+    "bytes": 121712
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/kinematic_hover/physical-validation.json",
+    "bytes": 6970
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/kinematic_hover/scene.blend",
+    "bytes": 124823
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/kinematic_hover/simulation.blend",
+    "bytes": 120294
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/low_rate_replay/physical-validation.json",
+    "bytes": 6319
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/low_rate_replay/scene.blend",
+    "bytes": 122663
+  },
+  {
+    "path": "artifacts/blender/revamp/blender-scene-mutations-1/low_rate_replay/simulation.blend",
+    "bytes": 119061
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/01_head_on/physical-validation.json",
+    "bytes": 10803
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/01_head_on/scene.blend",
+    "bytes": 475389
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/01_head_on/simulation.blend",
+    "bytes": 198947
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/02_near_miss_twins/physical-validation.json",
+    "bytes": 11654
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/02_near_miss_twins/scene.blend",
+    "bytes": 600109
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/02_near_miss_twins/simulation.blend",
+    "bytes": 227125
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/03_passing_ascent/physical-validation.json",
+    "bytes": 14936
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/03_passing_ascent/renders/diagnostic/beauty/video.mp4",
+    "bytes": 108676
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/03_passing_ascent/scene.blend",
+    "bytes": 291540
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/03_passing_ascent/simulation.blend",
+    "bytes": 162548
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/04_orbital_approach/physical-validation.json",
+    "bytes": 13471
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/04_orbital_approach/renders/diagnostic/beauty/video.mp4",
+    "bytes": 91544
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/04_orbital_approach/scene.blend",
+    "bytes": 412026
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/04_orbital_approach/simulation.blend",
+    "bytes": 185331
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/06_sliding_contact/physical-validation.json",
+    "bytes": 7717
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/06_sliding_contact/scene.blend",
+    "bytes": 422670
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/06_sliding_contact/simulation.blend",
+    "bytes": 186379
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/07_shape_contrast/physical-validation.json",
+    "bytes": 20490
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/07_shape_contrast/scene.blend",
+    "bytes": 579633
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/07_shape_contrast/simulation.blend",
+    "bytes": 228246
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/08_domino_cascade/physical-validation.json",
+    "bytes": 21359
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/08_domino_cascade/renders/diagnostic/beauty/video.mp4",
+    "bytes": 81148
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/08_domino_cascade/scene.blend",
+    "bytes": 1476878
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/08_domino_cascade/simulation.blend",
+    "bytes": 388988
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/09_breathing_crowd/physical-validation.json",
+    "bytes": 66846
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/09_breathing_crowd/renders/diagnostic/beauty/video.mp4",
+    "bytes": 109450
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/09_breathing_crowd/scene.blend",
+    "bytes": 709650
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-1/09_breathing_crowd/simulation.blend",
+    "bytes": 209249
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/01_head_on/physical-validation.json",
+    "bytes": 10190
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/01_head_on/renders/diagnostic/beauty/video.mp4",
+    "bytes": 77062
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/01_head_on/scene.blend",
+    "bytes": 551824
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/01_head_on/simulation.blend",
+    "bytes": 213127
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/02_near_miss_twins/physical-validation.json",
+    "bytes": 10728
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/02_near_miss_twins/renders/diagnostic/beauty/video.mp4",
+    "bytes": 80924
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/02_near_miss_twins/scene.blend",
+    "bytes": 615636
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/02_near_miss_twins/simulation.blend",
+    "bytes": 232380
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/06_sliding_contact/physical-validation.json",
+    "bytes": 7065
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/06_sliding_contact/renders/diagnostic/beauty/video.mp4",
+    "bytes": 69771
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/06_sliding_contact/scene.blend",
+    "bytes": 312112
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/06_sliding_contact/simulation.blend",
+    "bytes": 160052
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/07_shape_contrast/physical-validation.json",
+    "bytes": 20363
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/07_shape_contrast/renders/diagnostic/beauty/video.mp4",
+    "bytes": 129274
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/07_shape_contrast/scene.blend",
+    "bytes": 618699
+  },
+  {
+    "path": "artifacts/blender/revamp/catalogue-trial-2/07_shape_contrast/simulation.blend",
+    "bytes": 234662
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-base/scene.blend",
+    "bytes": 131461
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-base/simulation.blend",
+    "bytes": 122425
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-fine/scene.blend",
+    "bytes": 131454
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-fine/simulation.blend",
+    "bytes": 122450
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-single/simulation.blend",
+    "bytes": 123899
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-split240/scene.blend",
+    "bytes": 138396
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-split240/simulation.blend",
+    "bytes": 123941
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-split480/scene.blend",
+    "bytes": 158778
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-split480/simulation.blend",
+    "bytes": 133036
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-split960/scene.blend",
+    "bytes": 180047
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/bounce-split960/simulation.blend",
+    "bytes": 145177
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/driven/scene.blend",
+    "bytes": 140903
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/driven/simulation.blend",
+    "bytes": 119053
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/drop-base/scene.blend",
+    "bytes": 131339
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/drop-base/simulation.blend",
+    "bytes": 122449
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/fast-negative/scene.blend",
+    "bytes": 133667
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/fast-negative/simulation.blend",
+    "bytes": 124360
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-drop/manifest.json",
+    "bytes": 2463
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-drop/scene.blend",
+    "bytes": 131311
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-drop/simulation.blend",
+    "bytes": 122513
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-drop-fine/scene.blend",
+    "bytes": 131320
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-drop-fine/simulation.blend",
+    "bytes": 122472
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-drop-100/scene.blend",
+    "bytes": 131368
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-drop-100/simulation.blend",
+    "bytes": 122510
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-drop-50/scene.blend",
+    "bytes": 131337
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-drop-50/simulation.blend",
+    "bytes": 122402
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-transfer-100/scene.blend",
+    "bytes": 233542
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-transfer-100/simulation.blend",
+    "bytes": 142290
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-transfer-50/scene.blend",
+    "bytes": 234157
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-high-transfer-50/simulation.blend",
+    "bytes": 142325
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-drop-1/scene.blend",
+    "bytes": 132258
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-drop-1/simulation.blend",
+    "bytes": 122716
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-drop-2/scene.blend",
+    "bytes": 130999
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-drop-2/simulation.blend",
+    "bytes": 122457
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-drop-4/scene.blend",
+    "bytes": 131773
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-drop-4/simulation.blend",
+    "bytes": 122524
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-transfer-1/scene.blend",
+    "bytes": 233245
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-transfer-1/simulation.blend",
+    "bytes": 142189
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-transfer-2/scene.blend",
+    "bytes": 232070
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-transfer-2/simulation.blend",
+    "bytes": 142042
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-transfer-4/scene.blend",
+    "bytes": 235503
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-low-transfer-4/simulation.blend",
+    "bytes": 142337
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-drop-base/scene.blend",
+    "bytes": 131530
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-drop-base/simulation.blend",
+    "bytes": 122504
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-drop-fine/scene.blend",
+    "bytes": 131393
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-drop-fine/simulation.blend",
+    "bytes": 122460
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-transfer-base/scene.blend",
+    "bytes": 234065
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-transfer-base/simulation.blend",
+    "bytes": 142406
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-transfer-fine/scene.blend",
+    "bytes": 233009
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-split-transfer-fine/simulation.blend",
+    "bytes": 142268
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-transfer/scene.blend",
+    "bytes": 233990
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-transfer/simulation.blend",
+    "bytes": 142240
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-transfer-fine/scene.blend",
+    "bytes": 233064
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/inelastic-transfer-fine/simulation.blend",
+    "bytes": 142308
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/rotated/scene.blend",
+    "bytes": 123451
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/rotated/simulation.blend",
+    "bytes": 109254
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/stack-base/scene.blend",
+    "bytes": 273192
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/stack-base/simulation.blend",
+    "bytes": 137960
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/stack-fine/scene.blend",
+    "bytes": 254129
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/stack-fine/simulation.blend",
+    "bytes": 135491
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/transfer/scene.blend",
+    "bytes": 234268
+  },
+  {
+    "path": "artifacts/blender/revamp/controls/transfer/simulation.blend",
+    "bytes": 142291
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/contact/physical-validation.json",
+    "bytes": 23031
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/contact/renders/diagnostic/beauty/video.mp4",
+    "bytes": 98245
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/contact/scene.blend",
+    "bytes": 744153
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/contact/simulation.blend",
+    "bytes": 237126
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/near_miss/physical-validation.json",
+    "bytes": 23267
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/near_miss/renders/diagnostic/beauty/video.mp4",
+    "bytes": 70078
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/near_miss/scene.blend",
+    "bytes": 832384
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/near_miss/simulation.blend",
+    "bytes": 259268
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/no_launch/physical-validation.json",
+    "bytes": 22826
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/no_launch/renders/diagnostic/beauty/video.mp4",
+    "bytes": 60038
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/no_launch/scene.blend",
+    "bytes": 664971
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-review/no_launch/simulation.blend",
+    "bytes": 234214
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/contact/physical-validation.json",
+    "bytes": 1698
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/contact/scene.blend",
+    "bytes": 1147969
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/contact/simulation.blend",
+    "bytes": 319387
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/near_miss/physical-validation.json",
+    "bytes": 1700
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/near_miss/scene.blend",
+    "bytes": 1157617
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/near_miss/simulation.blend",
+    "bytes": 322493
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/no_launch/physical-validation.json",
+    "bytes": 22896
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/no_launch/scene.blend",
+    "bytes": 881102
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-1/no_launch/simulation.blend",
+    "bytes": 275727
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-2/contact/renders/diagnostic/beauty/video.mp4",
+    "bytes": 150680
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-2/contact/scene.blend",
+    "bytes": 997038
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-2/contact/simulation.blend",
+    "bytes": 283898
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-2/near_miss/scene.blend",
+    "bytes": 1160576
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-2/near_miss/simulation.blend",
+    "bytes": 322056
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-2/no_launch/scene.blend",
+    "bytes": 883874
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-2/no_launch/simulation.blend",
+    "bytes": 279452
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/contact/physical-validation.json",
+    "bytes": 23030
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/contact/scene.blend",
+    "bytes": 693987
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/contact/simulation.blend",
+    "bytes": 226286
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/near_miss/physical-validation.json",
+    "bytes": 23599
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/near_miss/scene.blend",
+    "bytes": 758925
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/near_miss/simulation.blend",
+    "bytes": 244313
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/no_launch/physical-validation.json",
+    "bytes": 22872
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/no_launch/scene.blend",
+    "bytes": 585742
+  },
+  {
+    "path": "artifacts/blender/revamp/hero-trial-3/no_launch/simulation.blend",
+    "bytes": 218680
+  },
+  {
+    "path": "artifacts/blender/revamp/integration/final/ballad-DRAFT.mp4",
+    "bytes": 281541
+  },
+  {
+    "path": "artifacts/blender/revamp/integration/final/rag-DRAFT.mp4",
+    "bytes": 281568
+  },
+  {
+    "path": "artifacts/blender/revamp/integration/final/swing-DRAFT.mp4",
+    "bytes": 281475
+  },
+  {
+    "path": "artifacts/blender/revamp/integration/staircase-DRAFT.mp4",
+    "bytes": 281475
+  },
+  {
+    "path": "artifacts/blender/revamp/integration/staircase-ballad-DRAFT.mp4",
+    "bytes": 281586
+  },
+  {
+    "path": "artifacts/blender/revamp/integration/staircase-rag-DRAFT.mp4",
+    "bytes": 281586
+  },
+  {
+    "path": "artifacts/blender/revamp/legacy-preparation-regression/contact.mp4",
+    "bytes": 32163
+  },
+  {
+    "path": "artifacts/blender/revamp/legacy-preparation-regression/near-miss.mp4",
+    "bytes": 25807
+  },
+  {
+    "path": "artifacts/blender/revamp/pre-window-integration/web-dist/blender-review/05_bouncing_staircase.mp4",
+    "bytes": 82737
+  },
+  {
+    "path": "artifacts/blender/revamp/pre-window-integration/web-dist/music-vertical/preview.mp4",
+    "bytes": 32163
+  },
+  {
+    "path": "artifacts/blender/revamp/pre-window-integration/web-dist/studio/contact.mp4",
+    "bytes": 32163
+  },
+  {
+    "path": "artifacts/blender/revamp/pre-window-integration/web-dist/studio/near-miss.mp4",
+    "bytes": 25807
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/01_head_on/physical-validation.json",
+    "bytes": 29103
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/01_head_on/scene.blend",
+    "bytes": 515590
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/01_head_on/simulation.blend",
+    "bytes": 220274
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/02_near_miss_twins/physical-validation.json",
+    "bytes": 31175
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/02_near_miss_twins/scene.blend",
+    "bytes": 568003
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/02_near_miss_twins/simulation.blend",
+    "bytes": 239194
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/03_passing_ascent/physical-validation.json",
+    "bytes": 14834
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/03_passing_ascent/scene.blend",
+    "bytes": 291646
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/03_passing_ascent/simulation.blend",
+    "bytes": 162449
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/05_bouncing_staircase-32/physical-validation.json",
+    "bytes": 23466
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/05_bouncing_staircase-32/scene.blend",
+    "bytes": 283765
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/05_bouncing_staircase-32/simulation.blend",
+    "bytes": 283797
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/05_bouncing_staircase-64/physical-validation.json",
+    "bytes": 23499
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/05_bouncing_staircase-64/scene.blend",
+    "bytes": 284529
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/05_bouncing_staircase-64/simulation.blend",
+    "bytes": 282967
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/06_sliding_contact/physical-validation.json",
+    "bytes": 13684
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/06_sliding_contact/scene.blend",
+    "bytes": 315525
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/06_sliding_contact/simulation.blend",
+    "bytes": 162818
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/07_shape_contrast/physical-validation.json",
+    "bytes": 32596
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/07_shape_contrast/scene.blend",
+    "bytes": 626890
+  },
+  {
+    "path": "artifacts/blender/revamp/presentation/07_shape_contrast/simulation.blend",
+    "bytes": 237531
+  },
+  {
+    "path": "artifacts/blender/revamp/review/01_head_on/manifest.json",
+    "bytes": 3702
+  },
+  {
+    "path": "artifacts/blender/revamp/review/01_head_on/physical-validation.json",
+    "bytes": 29091
+  },
+  {
+    "path": "artifacts/blender/revamp/review/01_head_on/renders/diagnostic/beauty/video.mp4",
+    "bytes": 78148
+  },
+  {
+    "path": "artifacts/blender/revamp/review/01_head_on/scene.blend",
+    "bytes": 515671
+  },
+  {
+    "path": "artifacts/blender/revamp/review/01_head_on/simulation.blend",
+    "bytes": 220212
+  },
+  {
+    "path": "artifacts/blender/revamp/review/02_near_miss_twins/manifest.json",
+    "bytes": 3838
+  },
+  {
+    "path": "artifacts/blender/revamp/review/02_near_miss_twins/physical-validation.json",
+    "bytes": 31163
+  },
+  {
+    "path": "artifacts/blender/revamp/review/02_near_miss_twins/renders/diagnostic/beauty/video.mp4",
+    "bytes": 79891
+  },
+  {
+    "path": "artifacts/blender/revamp/review/02_near_miss_twins/scene.blend",
+    "bytes": 568036
+  },
+  {
+    "path": "artifacts/blender/revamp/review/02_near_miss_twins/simulation.blend",
+    "bytes": 239273
+  },
+  {
+    "path": "artifacts/blender/revamp/review/03_passing_ascent/physical-validation.json",
+    "bytes": 14950
+  },
+  {
+    "path": "artifacts/blender/revamp/review/03_passing_ascent/renders/diagnostic/beauty/video.mp4",
+    "bytes": 110443
+  },
+  {
+    "path": "artifacts/blender/revamp/review/03_passing_ascent/scene.blend",
+    "bytes": 291285
+  },
+  {
+    "path": "artifacts/blender/revamp/review/03_passing_ascent/simulation.blend",
+    "bytes": 162505
+  },
+  {
+    "path": "artifacts/blender/revamp/review/04_orbital_approach/manifest.json",
+    "bytes": 3044
+  },
+  {
+    "path": "artifacts/blender/revamp/review/04_orbital_approach/physical-validation.json",
+    "bytes": 13469
+  },
+  {
+    "path": "artifacts/blender/revamp/review/04_orbital_approach/preview.mp4",
+    "bytes": 107249
+  },
+  {
+    "path": "artifacts/blender/revamp/review/04_orbital_approach/renders/diagnostic/beauty/video.mp4",
+    "bytes": 91544
+  },
+  {
+    "path": "artifacts/blender/revamp/review/04_orbital_approach/renders/preview/beauty/video.mp4",
+    "bytes": 107249
+  },
+  {
+    "path": "artifacts/blender/revamp/review/04_orbital_approach/scene.blend",
+    "bytes": 412090
+  },
+  {
+    "path": "artifacts/blender/revamp/review/04_orbital_approach/simulation.blend",
+    "bytes": 185537
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/manifest.json",
+    "bytes": 3944
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/physical-validation.json",
+    "bytes": 23589
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/preview.mp4",
+    "bytes": 82737
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/diagnostic/beauty/video.mp4",
+    "bytes": 72627
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/renders/preview/beauty/video.mp4",
+    "bytes": 82737
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/scene.blend",
+    "bytes": 283758
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-32/simulation.blend",
+    "bytes": 283804
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-64/scene.blend",
+    "bytes": 284380
+  },
+  {
+    "path": "artifacts/blender/revamp/review/05_bouncing_staircase-64/simulation.blend",
+    "bytes": 284990
+  },
+  {
+    "path": "artifacts/blender/revamp/review/06_sliding_contact/manifest.json",
+    "bytes": 3106
+  },
+  {
+    "path": "artifacts/blender/revamp/review/06_sliding_contact/physical-validation.json",
+    "bytes": 13672
+  },
+  {
+    "path": "artifacts/blender/revamp/review/06_sliding_contact/renders/diagnostic/beauty/video.mp4",
+    "bytes": 71387
+  },
+  {
+    "path": "artifacts/blender/revamp/review/06_sliding_contact/scene.blend",
+    "bytes": 315553
+  },
+  {
+    "path": "artifacts/blender/revamp/review/06_sliding_contact/simulation.blend",
+    "bytes": 162817
+  },
+  {
+    "path": "artifacts/blender/revamp/review/07_shape_contrast/manifest.json",
+    "bytes": 3767
+  },
+  {
+    "path": "artifacts/blender/revamp/review/07_shape_contrast/physical-validation.json",
+    "bytes": 32257
+  },
+  {
+    "path": "artifacts/blender/revamp/review/07_shape_contrast/renders/diagnostic/beauty/video.mp4",
+    "bytes": 175764
+  },
+  {
+    "path": "artifacts/blender/revamp/review/07_shape_contrast/scene.blend",
+    "bytes": 733663
+  },
+  {
+    "path": "artifacts/blender/revamp/review/07_shape_contrast/simulation.blend",
+    "bytes": 262565
+  },
+  {
+    "path": "artifacts/blender/revamp/review/08_domino_cascade/manifest.json",
+    "bytes": 3112
+  },
+  {
+    "path": "artifacts/blender/revamp/review/08_domino_cascade/physical-validation.json",
+    "bytes": 22032
+  },
+  {
+    "path": "artifacts/blender/revamp/review/08_domino_cascade/renders/diagnostic/beauty/video.mp4",
+    "bytes": 81148
+  },
+  {
+    "path": "artifacts/blender/revamp/review/08_domino_cascade/scene.blend",
+    "bytes": 1476848
+  },
+  {
+    "path": "artifacts/blender/revamp/review/08_domino_cascade/simulation.blend",
+    "bytes": 389044
+  },
+  {
+    "path": "artifacts/blender/revamp/review/09_breathing_crowd/manifest.json",
+    "bytes": 4424
+  },
+  {
+    "path": "artifacts/blender/revamp/review/09_breathing_crowd/physical-validation.json",
+    "bytes": 66844
+  },
+  {
+    "path": "artifacts/blender/revamp/review/09_breathing_crowd/preview.mp4",
+    "bytes": 133261
+  },
+  {
+    "path": "artifacts/blender/revamp/review/09_breathing_crowd/renders/diagnostic/beauty/video.mp4",
+    "bytes": 109450
+  },
+  {
+    "path": "artifacts/blender/revamp/review/09_breathing_crowd/renders/preview/beauty/video.mp4",
+    "bytes": 133261
+  },
+  {
+    "path": "artifacts/blender/revamp/review/09_breathing_crowd/scene.blend",
+    "bytes": 709855
+  },
+  {
+    "path": "artifacts/blender/revamp/review/09_breathing_crowd/simulation.blend",
+    "bytes": 209417
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/contact/manifest.json",
+    "bytes": 3347
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/contact/physical-validation.json",
+    "bytes": 23551
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/contact/renders/diagnostic/beauty/video.mp4",
+    "bytes": 98245
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/contact/scene.blend",
+    "bytes": 744116
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/contact/simulation.blend",
+    "bytes": 237056
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/manifest.json",
+    "bytes": 3349
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/physical-validation.json",
+    "bytes": 23787
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/renders/diagnostic/beauty/video.mp4",
+    "bytes": 70078
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/scene.blend",
+    "bytes": 832450
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/near_miss/simulation.blend",
+    "bytes": 259477
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/manifest.json",
+    "bytes": 3349
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/physical-validation.json",
+    "bytes": 23346
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/renders/diagnostic/beauty/video.mp4",
+    "bytes": 60038
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/scene.blend",
+    "bytes": 664870
+  },
+  {
+    "path": "artifacts/blender/revamp/review/10_projectile_tower/no_launch/simulation.blend",
+    "bytes": 234324
+  },
+  {
+    "path": "artifacts/blender/revamp/review/control_driven/scene.blend",
+    "bytes": 141049
+  },
+  {
+    "path": "artifacts/blender/revamp/review/control_driven/simulation.blend",
+    "bytes": 119059
+  },
+  {
+    "path": "artifacts/blender/revamp/review/staircase-selection.json",
+    "bytes": 1121
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/manifest.json",
+    "bytes": 3163
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/physical-validation.json",
+    "bytes": 14998
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/preview.mp4",
+    "bytes": 105161
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/renders/diagnostic/beauty/video.mp4",
+    "bytes": 102801
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/renders/preview/beauty/video.mp4",
+    "bytes": 105161
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/scene.blend",
+    "bytes": 291655
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/03_passing_ascent/simulation.blend",
+    "bytes": 162337
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/control_driven/scene.blend",
+    "bytes": 140907
+  },
+  {
+    "path": "artifacts/blender/revamp/review-camera-repair-2/control_driven/simulation.blend",
+    "bytes": 119052
+  },
+  {
+    "path": "artifacts/blender/smoke/10_projectile_tower-default/manifest.json",
+    "bytes": 1844
+  },
+  {
+    "path": "artifacts/blender/smoke/10_projectile_tower-default/scene.blend",
+    "bytes": 123275
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/01_head_on-default/manifest.json",
+    "bytes": 1593
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/01_head_on-default/scene.blend",
+    "bytes": 117907
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/02_near_miss_twins-default/manifest.json",
+    "bytes": 1617
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/02_near_miss_twins-default/scene.blend",
+    "bytes": 122668
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/03_passing_ascent-default/manifest.json",
+    "bytes": 1634
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/03_passing_ascent-default/scene.blend",
+    "bytes": 128987
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/04_orbital_approach-default/manifest.json",
+    "bytes": 1638
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/04_orbital_approach-default/scene.blend",
+    "bytes": 126653
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/05_bouncing_staircase-default/manifest.json",
+    "bytes": 1952
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/05_bouncing_staircase-default/scene.blend",
+    "bytes": 124786
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/06_sliding_contact-default/manifest.json",
+    "bytes": 1627
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/06_sliding_contact-default/scene.blend",
+    "bytes": 119310
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/07_shape_contrast-default/manifest.json",
+    "bytes": 1714
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/07_shape_contrast-default/scene.blend",
+    "bytes": 131239
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/08_domino_cascade-default/manifest.json",
+    "bytes": 2028
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/08_domino_cascade-default/scene.blend",
+    "bytes": 109773
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/09_breathing_crowd-default/manifest.json",
+    "bytes": 2273
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/09_breathing_crowd-default/scene.blend",
+    "bytes": 132001
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/10_projectile_tower-default/manifest.json",
+    "bytes": 1848
+  },
+  {
+    "path": "artifacts/blender/validated-all-ten/10_projectile_tower-default/scene.blend",
+    "bytes": 123328
+  },
+  {
+    "path": "artifacts/blender/validated-hero/10_projectile_tower-default/manifest.json",
+    "bytes": 1911
+  },
+  {
+    "path": "artifacts/blender/validated-hero/10_projectile_tower-default/preview.mp4",
+    "bytes": 32163
+  },
+  {
+    "path": "artifacts/blender/validated-hero/10_projectile_tower-default/scene.blend",
+    "bytes": 123312
+  },
+  {
+    "path": "artifacts/blender/validated-near-miss/10_projectile_tower-near_miss/manifest.json",
+    "bytes": 1913
+  },
+  {
+    "path": "artifacts/blender/validated-near-miss/10_projectile_tower-near_miss/preview.mp4",
+    "bytes": 23501
+  },
+  {
+    "path": "artifacts/blender/validated-near-miss/10_projectile_tower-near_miss/scene.blend",
+    "bytes": 123084
+  }
+]

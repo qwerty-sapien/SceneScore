@@ -19,6 +19,31 @@ Origin and cross-site Fetch Metadata. Requests are bounded to 16 KiB,120/10 seco
 Static access stays within the selected web root; dot paths, hidden targets and
 outside symlinks are rejected. No cookies, uploads or public raw endpoints exist.
 
+`GET /v1/diagnostics` provides timestamped connection evidence and raw-signal
+summaries, with no raw sample arrays. `POST /v1/diagnostics/monitor {enabled:true}`
+starts metadata discovery every ten seconds while the browser polls; disabling it
+or losing diagnostic polls for five seconds stops the worker. `/diagnostics/check`
+requests an immediate check. Its optional `request_bluetooth_permission:true`
+flag is sent only by the explicit Enable Bluetooth check button. Discovery never
+selects an inlet, pairs the headset or records data.
+
+The launcher compiles `tools/muse_bluetooth.swift` into an ignored local helper
+with its Bluetooth usage description. It only observes FE8D service advertising
+and system-connected peripherals. Each helper process is bounded, its exact
+identity retained, then reaped; shutdown terminates an active helper and joins
+the diagnostic thread. Streaming disables active BLE scans while retaining the
+system-connection query. The metadata monitor serializes bounded LSL discovery
+without putting it in the acquisition lock or audio path. Invalid EEG outlets
+remain visible as descriptor failures; non-EEG outlets are ignored.
+
+Checks separately report permission/power, device observations, LSL metadata,
+selected inlet, sample receipt age and recent continuity/rate/variation. Stale
+hardware observations expire after twenty seconds. Freshness is a diagnostic
+0.5-second batch-age check; source timeout stays two seconds and rate mismatch
+uses the existing 2% recording criterion. Neither varying data nor BLE discovery
+certifies electrode contact or a physical Muse identity. `.env`'s MUSE_TRANSPORT,
+MUSE_BOARD_ID and MUSE_UNITS are unused by this LSL trainer.
+
 Endpoints match `docs/requests/muse-training-api.md`. Source connection and
 recording have separate consent actions. Real discovery opens a bounded LSL
 inlet to inspect `info()`'s full descriptor, then closes it. Selection is by

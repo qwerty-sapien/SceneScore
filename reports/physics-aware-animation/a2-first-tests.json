@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tools/blender_mcp/test_response_guard.py",
+    "tests/test_production_media.py",
+    "tests/test_blender_scene_mutations.py",
+    "modules/blender/tests/test_production_runner.py"
+  ],
+  "pid": 48069,
+  "process_group": 48069,
+  "started_at": "2026-09-13T04:14:18.046671+00:00",
+  "exit_code": 1,
+  "duration_s": 1.564,
+  "process_group_absent": true
+}

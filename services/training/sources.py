@@ -2,6 +2,7 @@
 
 import math
 import time
+import threading
 
 
 def normalized_unit(value):
@@ -108,19 +109,32 @@ class SyntheticSource:
 class Sources:
     def __init__(self):
         self.known = {}
+        self.lock = threading.Lock()
+        self.discovery_lock = threading.Lock()
 
     def discover(self):
-        sources, blockers, seen, duplicates = [], [], set(), set()
+        with self.discovery_lock:
+            return self._discover()
+
+    def _discover(self):
+        sources, blockers, observed, seen, duplicates = [], [], [], set(), set()
         try:
             import pylsl
 
             advertised = pylsl.resolve_streams(wait_time=1)
-            if len(advertised) > 8:
-                raise ValueError("discovery_capacity_exceeded")
-            for item in advertised:
-                inlet = pylsl.StreamInlet(item, max_buflen=1, recover=False)
+            eeg = [item for item in advertised if not hasattr(item, "type") or item.type().lower() == "eeg"]
+            if len(eeg) > 8:
+                blockers.append("More than eight EEG outlets; narrow the streaming setup.")
+            deadline = time.monotonic() + 3
+            for item in eeg[:8]:
+                if time.monotonic() >= deadline:
+                    blockers.append("Descriptor discovery time budget reached; retry.")
+                    break
+                inlet = None
+                observation = {"name": item.name()[:80], "id": item.source_id()[:256]}
                 try:
-                    value = descriptor(inlet.info(timeout=1))
+                    inlet = pylsl.StreamInlet(item, max_buflen=1, recover=False)
+                    value = descriptor(inlet.info(timeout=min(1, max(0.01, deadline - time.monotonic()))))
                     if value["id"] in seen:
                         duplicates.add(value["id"])
                         raise ValueError("duplicate_source_id")
@@ -128,19 +142,25 @@ class Sources:
                     sources.append(value)
                 except (ValueError, RuntimeError, OSError) as exc:
                     blockers.append(str(exc))
+                    observation["error"] = str(exc)
                 finally:
-                    inlet.close_stream()
+                    observed.append(observation)
+                    if inlet is not None:
+                        inlet.close_stream()
         except (ImportError, ValueError, RuntimeError, OSError) as exc:
             blockers.append("LSL_unavailable:" + str(exc))
         sources = [s for s in sources if s["id"] not in duplicates]
-        self.known = {s["id"]: s for s in sources}
+        with self.lock:
+            self.known = {s["id"]: s for s in sources}
         if not sources and not blockers:
             blockers.append("No advertised verified-descriptor LSL source found")
-        return {"sources": sources, "blockers": blockers}
+        return {"sources": sources, "blockers": blockers, "observed": observed}
 
     def open(self, source_id):
         if source_id == "synthetic":
             return SyntheticSource()
-        if source_id not in self.known:
-            raise ValueError("select_a_discovered_source_first")
-        return LSLSource(source_id, self.known[source_id])
+        with self.lock:
+            if source_id not in self.known:
+                raise ValueError("select_a_discovered_source_first")
+            expected = self.known[source_id]
+        return LSLSource(source_id, expected)

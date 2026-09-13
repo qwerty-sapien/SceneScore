@@ -1,0 +1,55 @@
+COMMAND [".venv/bin/ruff", "check", "modules/blender", "tools/blender_mcp", "tools/blender_scene_mutations.py", "tests/test_production_media.py"]
+E402 Module level import not at top of file
+  --> modules/blender/production/directions/driver.py:10:1
+   |
+ 8 | ROOT = Path(__file__).resolve().parents[4]
+ 9 | sys.path.insert(0, str(ROOT))
+10 | from modules.blender.production.common import digest, dump, read, rows
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11 | from modules.blender.production.driver import linear_keys, state
+   |
+help: Move module level imports to top of file
+
+E402 Module level import not at top of file
+  --> modules/blender/production/directions/driver.py:11:1
+   |
+ 9 | sys.path.insert(0, str(ROOT))
+10 | from modules.blender.production.common import digest, dump, read, rows
+11 | from modules.blender.production.driver import linear_keys, state
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Move module level imports to top of file
+
+E702 Multiple statements on one line (semicolon)
+  --> modules/blender/production/directions/driver.py:54:47
+   |
+52 |         separate = nodes.new('ShaderNodeSeparateXYZ')
+53 |         links.new(coord.outputs['Generated'], separate.inputs[0])
+54 |         subtract = nodes.new('ShaderNodeMath'); subtract.operation = 'SUBTRACT'
+   |                                               ^
+55 |         subtract.inputs[1].default_value = .5
+56 |         links.new(separate.outputs['X'], subtract.inputs[0])
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> modules/blender/production/directions/driver.py:57:47
+   |
+55 |         subtract.inputs[1].default_value = .5
+56 |         links.new(separate.outputs['X'], subtract.inputs[0])
+57 |         absolute = nodes.new('ShaderNodeMath'); absolute.operation = 'ABSOLUTE'
+   |                                               ^
+58 |         links.new(subtract.outputs[0], absolute.inputs[0])
+59 |         band = nodes.new('ShaderNodeMath'); band.operation = 'LESS_THAN'
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> modules/blender/production/directions/driver.py:59:43
+   |
+57 |         absolute = nodes.new('ShaderNodeMath'); absolute.operation = 'ABSOLUTE'
+58 |         links.new(subtract.outputs[0], absolute.inputs[0])
+59 |         band = nodes.new('ShaderNodeMath'); band.operation = 'LESS_THAN'
+   |                                           ^
+60 |         band.inputs[1].default_value = .075
+61 |         links.new(absolute.outputs[0], band.inputs[0])
+   |
+
+Found 5 errors.

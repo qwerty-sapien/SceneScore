@@ -17,7 +17,7 @@ export class IntentMarkerController {
 export type CuePhase='ready'|'active'|'quiet'|'complete';
 export function cuePhase(start:number,now:number):CuePhase {const elapsed=now-start;return elapsed<2000?'ready':elapsed<4000?'active':elapsed<6000?'quiet':'complete';}
 export function validateReview(start:number,end:number,reviewer:string){if(!Number.isFinite(start)||!Number.isFinite(end)||start<0||end<=start)throw Error('Enter a valid device-time interval with end after start.');if(!reviewer.trim())throw Error('Add a reviewer name or initials.');}
-export function sourceLabel(mode:string|null|undefined,connected:boolean){if(!connected)return 'NO STREAM';return mode==='real_device'?'LIVE EEG':mode==='synthetic'?'SYNTHETIC REHEARSAL':'UNVERIFIED SOURCE';}
+export function sourceLabel(mode:string|null|undefined,connected:boolean,age:number|null=0){if(!connected)return 'NO STREAM';if(mode==='synthetic')return 'SYNTHETIC REHEARSAL';if(mode==='real_device')return age===null?'WAITING FOR EEG':age>.5?'EEG STALLED':'LIVE EEG';return 'UNVERIFIED SOURCE';}
 
 export function reviewSegmentBounds(start:number,end:number,recordedStart=0,recordedEnd=Infinity){
  if(!Number.isFinite(start)||!Number.isFinite(end)||end<=start)throw Error('Enter valid interval bounds before loading its trace.');

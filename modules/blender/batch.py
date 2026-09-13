@@ -8,6 +8,7 @@ import subprocess
 import threading
 import time
 from modules.blender.recipes import IDS
+from modules.blender.executables import blender_executable
 
 
 def _group_exists(pgid):
@@ -133,7 +134,7 @@ def bounded(command, log, timeout=600, *, cleanup_grace=2):
 
 def main(argv=None):
     p = argparse.ArgumentParser()
-    p.add_argument('--blender', default=os.environ.get('BLENDER_BIN'))
+    p.add_argument('--blender', help='executable; otherwise BLENDER_BIN, PATH, then platform default')
     p.add_argument('--out', required=True, type=Path)
     p.add_argument('--recipe', choices=IDS, action='append')
     p.add_argument('--duration', type=float)
@@ -146,8 +147,10 @@ def main(argv=None):
                    help='explicit resolution overrides profile dimensions')
     p.add_argument('--variant', choices=['default', 'near_miss', 'contact'], default='default')
     a = p.parse_args(argv)
-    if not a.blender or not Path(a.blender).is_file():
-        p.error('verified --blender or BLENDER_BIN required')
+    try:
+        a.blender = blender_executable(a.blender)
+    except FileNotFoundError as error:
+        p.error(str(error))
     if not 1 <= a.timeout <= 1800:
         p.error('timeout must be 1..1800 seconds')
     if not 1 <= a.fps <= 120 or (a.duration is not None and not 0 < a.duration <= 60):

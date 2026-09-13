@@ -1,0 +1,17 @@
+{
+  "command": [
+    "artifacts/tools/blender-mcp-env/bin/python",
+    "tools/blender_mcp/client.py",
+    "--inspect-only",
+    "--out",
+    "reports/physics-aware-animation/a2-mcp-inspection",
+    "--prompt",
+    "If a live Blender MCP server is available, perform one harmless inspection command and record the result."
+  ],
+  "pid": 53624,
+  "process_group": 53624,
+  "started_at": "2026-09-13T04:16:23.190360+00:00",
+  "exit_code": 1,
+  "duration_s": 1.512,
+  "process_group_absent": true
+}

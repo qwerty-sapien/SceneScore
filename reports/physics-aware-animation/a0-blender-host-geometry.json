@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Applications/Blender.app/Contents/MacOS/Blender",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "1",
+    "--threads",
+    "2",
+    "--python",
+    "modules/blender/tests/blender_geometry_check.py"
+  ],
+  "pid": 35302,
+  "process_group": 35302,
+  "started_at": "2026-09-13T04:08:22.154156+00:00",
+  "exit_code": 0,
+  "duration_s": 1.234,
+  "process_group_absent": true
+}

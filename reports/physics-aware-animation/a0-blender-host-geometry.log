@@ -1,0 +1,5 @@
+COMMAND ["/Applications/Blender.app/Contents/MacOS/Blender", "--background", "--factory-startup", "--disable-autoexec", "--python-exit-code", "1", "--threads", "2", "--python", "modules/blender/tests/blender_geometry_check.py"]
+EVALUATED_MODIFIER_AREA_PASS 36.00000069938221 expected 36
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

@@ -80,3 +80,36 @@ a new session rather than hiding a dropout in existing data.
 Developer build: `node_modules/.bin/vite build apps/training --base ./ --outDir ../../artifacts/training-dist`.
 The webpage is a separate app and does not rebuild the concurrently evolving
 music/Blender demonstration.
+
+## Automatic connection diagnostics
+
+After local authentication, the page checks Bluetooth/Muse-service and LSL
+metadata every ten seconds, and sample health every second. **Check now** forces
+a refresh; **Automatic checks** pauses hardware discovery. No check pairs the
+headset, connects an EEG inlet or starts a recording. Use the separate source
+connection and recording controls for those actions.
+
+The checklist separates local service, Bluetooth power/permission, a Muse-service
+advertisement or macOS connection, an LSL EEG outlet and valid descriptor, the
+selected inlet, arriving samples, and signal continuity. Each failure includes a
+next action. Timestamped changes appear in connection history. Diagnostic reports
+can be downloaded locally; they contain metadata and summary values, no raw EEG
+samples or tokens. A changing signal alone does not verify electrode contact.
+
+The local launcher builds a small macOS CoreBluetooth metadata helper. If macOS
+permission has not been requested, click **Enable Bluetooth check**, then respond
+to the OS prompt. If permission was denied, enable Bluetooth for the app running
+the launcher (usually Terminal) in System Settings → Privacy & Security → Bluetooth.
+An LSL stream can still work when independent Bluetooth inspection is unavailable.
+No visible Muse advertisement is not proof of disconnection; the headset may
+already be in use, not advertising, or outside this bounded service scan.
+
+`MUSE_TRANSPORT`, `MUSE_BOARD_ID`, and `MUSE_UNITS` in `.env` are unused placeholders
+in this trainer. Leave them blank: transport is LSL, no BrainFlow board ID is used,
+and channel units come from the source descriptor (frontal channels require µV).
+A BrainFlow board ID selects its hardware driver, not a particular headset's
+Bluetooth address: see the [BrainFlow API](https://brainflow.readthedocs.io/en/stable/UserAPI.html).
+The distinction between LSL outlets and actual sample receipt is described by the
+[LSL user guide](https://labstreaminglayer.readthedocs.io/info/user_guide.html).
+Muse-service discovery uses the FE8D service identified by
+[MuseLSL](https://github.com/alexandrebarachant/muse-lsl/blob/master/muselsl/constants.py).

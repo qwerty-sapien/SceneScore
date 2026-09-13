@@ -1,0 +1,76 @@
+{
+  "source_sha256": {
+    "services/training/diagnostics.py": "5ee464bac3fda4a42bd4291f3f9837d83c365063f94a6e9d6548b76a861140e9",
+    "services/training/sources.py": "ea83bf6aca056a0f35f4c5312310c538a02ddfc199fa9e6b24ca89cc923d97ca",
+    "services/training/server.py": "24b6cf1008a7947813477e659ede4b94cf2abb28b7c1485dd8bee9a6f86ae5a4",
+    "services/training/state.py": "4ac402a74a6e1c90e9f13b9e772655cbe4b5afaabe37986bfef912a61f24ea1f",
+    "services/training/tests/test_diagnostics.py": "fd75c74274bc06883f11131d33fab64316b8c65c7a255e99d710653898dfc2df",
+    "apps/training/src/ConnectionDiagnostics.tsx": "3e6ebdb5c0219a87ea12c705479413f16ccc0d1472c2f83952312a7bffbaf9e2",
+    "apps/training/src/api.ts": "4c63d13b41c1064d2bb1f701dc4af2f44b19c6ab0515f6307fa4893a166e9ebe",
+    "apps/training/src/types.ts": "fd6ee3647a00daf26e7f1ce848998a30bf7568318336b94577c69e4ad1731083",
+    "apps/training/src/main.tsx": "b35ceac4c98507beffa0c6262c552cedbca0768d5a1d722b37a0882fd8f83c5d",
+    "apps/training/src/interaction.ts": "1d2e7732e7d2166dd0aa2126a7af706e2696741b4742caa9b5b954b2f4d5f59f",
+    "apps/training/src/style.css": "6ed692e4f952f867ff1c9682a54c5b72eb483a169fcd1180879fb781820f2147",
+    "apps/training/tests/diagnostics.test.ts": "b3c1f1bb3338ca9f334bf52b4c1c004740d2b5f925b401622449b677e0bbef81",
+    "tools/muse_training.py": "22ee874dba5bb5c38e8ed1279dc33a57c558e6d738c8ca6ce2872fb581c20415",
+    "tools/muse_bluetooth.swift": "ee4904de916f7c3eea66a9d112d31e8247d89ccbd82a247de3f38baa3730e02f",
+    "tools/muse_bluetooth_info.plist": "7814f2447302f6c3abbf4c40e492fbbc478d0309209761fb9c6ee8644597d360"
+  },
+  "backend_and_model_tests": 41,
+  "ui_tests": 14,
+  "typecheck": "PASS",
+  "build": "PASS",
+  "ruff": "PASS",
+  "host_bluetooth_check": {
+    "authorization": "allowed",
+    "power": "on",
+    "muse_service_devices_observed": 0,
+    "scan_seconds": 2,
+    "scope": "bounded FE8D metadata check; no connection or EEG capture"
+  },
+  "browser": {
+    "automatic_bluetooth_status": "PASS",
+    "automatic_invalid_LSL_descriptor": "PASS unknown_channel_unit:mV",
+    "fixture_raw_samples_pushed": 0,
+    "synthetic_fresh_samples": "PASS",
+    "observed_synthetic_rate_hz": 256,
+    "synthetic_recent_gaps": 0,
+    "no_recording_started": true,
+    "desktop_visual": "PASS",
+    "mobile_unauthed_390px_no_overflow": "PASS using in-app browser",
+    "export_and_pause_browser_checks": "NOT COMPLETED: Playwright tool transport closed; backend pause/subscriber/close tests passed",
+    "recording_and_model_regression_tests": "PASS"
+  },
+  "lifecycle": {
+    "training_service_pid": 16169,
+    "training_service_session": 21513,
+    "training_service_exit": 0,
+    "metadata_fixture_pid": 19691,
+    "metadata_fixture_session": 40871,
+    "metadata_fixture_exit": 0,
+    "native_standalone_probe_session": 61308,
+    "native_standalone_probe_exit": 0,
+    "native_helper_children": "owned by service, bounded communicate and shutdown join; parent exited",
+    "port8767_listener_after_teardown": false,
+    "fallback_browser_tab_closed": true,
+    "launcher_smoke": {
+      "child_pid": 37133,
+      "session": 3108,
+      "seconds": 10,
+      "exit": 0,
+      "source_started": false,
+      "recording": false
+    }
+  },
+  "hardware_accuracy_claim": null,
+  "deployment": {
+    "id": "dpl_Dv36y2qCVAQntf5TLbmNr9syiV9r",
+    "state": "READY",
+    "target": "production",
+    "url": "https://scenescore-muse-vertical.vercel.app/train/",
+    "immutable_url": "https://scenescore-muse-vertical-nd3q930c1-chups-projects-4fe0e3a7.vercel.app/train/",
+    "published_configuration_explanation": "verified in in-app browser",
+    "static_files": 17,
+    "private_data_uploaded": false
+  }
+}

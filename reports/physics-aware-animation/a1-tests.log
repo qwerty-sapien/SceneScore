@@ -1,0 +1,8 @@
+COMMAND [".venv/bin/python", "-m", "pytest", "-q", "modules/blender/tests", "tests/test_blender_scene_mutations.py", "tests/test_production_mutations.py", "tests/test_production_media.py", ".agents/skills/physics-aware-animation/tests", "tools/blender_mcp/test_response_guard.py"]
+........................................................................ [ 18%]
+........................................................................ [ 37%]
+........................................................................ [ 55%]
+........................................................................ [ 74%]
+........................................................................ [ 92%]
+............................                                         [100%]
+388 passed, 4 subtests passed in 30.89s

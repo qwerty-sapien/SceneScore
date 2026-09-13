@@ -15,6 +15,7 @@ import time
 from modules.muse.acquisition.store import Recorder, atomic, encoded, manifest, replay
 from .sources import Sources
 from .storage import RawCache
+from .diagnostics import Diagnostics
 
 VERSION = "muse-training-1"
 CLASSES = {"double", "single", "triple", "natural", "artifact", "keypress_only"}
@@ -76,6 +77,7 @@ class Workspace:
         self.model_revision = 0
         self.records = {}
         self.raw_cache = RawCache()
+        self.diagnostics = Diagnostics(self)
         for path in sorted(self.root.glob("session-*")):
             if len(self.records) >= 64:
                 raise ValueError("session_capacity_exceeded")
@@ -119,6 +121,7 @@ class Workspace:
                 "measured_rate_hz": self.measured_rate_hz,
                 "sample_count": self.sample_count,
                 "last_device_s": self.last_device_s,
+                "sample_age_s": None if self.last_host_s is None else max(0, time.monotonic() - self.last_host_s),
                 "device_epoch": None if not self.metadata else self.metadata["clock_epoch"],
                 "quality": self.quality,
                 "reason": self.reason,
@@ -810,4 +813,7 @@ class Workspace:
         with self.lock:
             self.closed = True
             self.model_revision += 1
-        self.disconnect()
+        try:
+            self.diagnostics.close()
+        finally:
+            self.disconnect()

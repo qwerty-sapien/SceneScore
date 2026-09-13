@@ -13,10 +13,10 @@ import json
 import math
 from pathlib import Path
 import re
-import shutil
 import uuid
 
 from modules.blender.batch import bounded
+from modules.blender.executables import resolve_executable
 
 
 VERSION = 'scene-production-media-validation-1'
@@ -256,10 +256,8 @@ def verify_media(candidate, profile='diagnostic', camera='beauty', *, timeout=18
         ids = [item['object_id'] for item in production['objects']]
         moving = motion_frames(samples, ids, production['physics_hz'], count)
         report['checks']['source_motion_clock'] = _gate([], moving_transition_count=len(moving))
-        ffprobe = ffprobe or shutil.which('ffprobe')
-        ffmpeg = ffmpeg or shutil.which('ffmpeg')
-        if not ffprobe or not ffmpeg:
-            raise ValueError('FFprobe and FFmpeg are required')
+        ffprobe = resolve_executable('ffprobe', ffprobe)
+        ffmpeg = resolve_executable('ffmpeg', ffmpeg)
         probe_command = [str(ffprobe), '-v', 'error', '-threads', '2', '-select_streams', 'v:0',
                          '-show_program_version', '-show_streams', '-show_frames',
                          '-show_entries', 'frame=pts_time,duration_time:stream=width,height,avg_frame_rate,r_frame_rate,duration,codec_name,time_base,nb_frames',

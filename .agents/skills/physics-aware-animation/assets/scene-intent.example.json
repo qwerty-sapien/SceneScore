@@ -1,0 +1,44 @@
+{
+  "schema_version": "scene-intent-1",
+  "status": "DESIGN_INTENT_NOT_MEASURED",
+  "id": "offset-chute-study",
+  "duration_s": 16,
+  "physics_backend": "fixed-obb-sphere-mechanics-1",
+  "visual_direction": "Original compact kinetic sculpture; layered routes, visible supports, restrained studio materials. Not a reconstruction of either reference.",
+  "salience_policy": {
+    "minimum_gap_s": 1.0,
+    "maximum_duty_cycle": 0.3,
+    "maximum_beats": 4,
+    "maximum_simultaneous_salient_beats": 1,
+    "support_contact_policy": "retain_raw_do_not_count_as_salient"
+  },
+  "objects": [
+    {"id": "marble", "role": "actor", "shape": "sphere", "motion": "dynamic", "scored": true},
+    {"id": "ramp", "role": "silent_support", "shape": "obb", "motion": "fixed", "scored": false},
+    {"id": "deflector", "role": "interaction_surface", "shape": "obb", "motion": "fixed", "scored": true},
+    {"id": "post", "role": "silent_support", "shape": "obb", "motion": "fixed", "scored": false},
+    {"id": "catcher", "role": "silent_support", "shape": "obb", "motion": "fixed", "scored": false}
+  ],
+  "beats": [
+    {
+      "id": "sustained-speedup", "primary_kind": "acceleration", "object_ids": ["marble"],
+      "target_window_s": [2.0, 2.7],
+      "physical_cause": "Gravity-driven descent on a supported ramp; target timing is a design request, not a measurement.",
+      "measurement_required": "Measure tangential speed and energy against the declared contact model. A camera movement is not object acceleration."
+    },
+    {
+      "id": "redirect", "primary_kind": "bounce", "object_ids": ["marble", "deflector"],
+      "target_window_s": [6.0, 6.5],
+      "physical_cause": "An oblique fixed surface redirects the incoming physical trajectory.",
+      "measurement_required": "Contact-time interval, surface normal and pre/post velocities from evaluated states; no position/velocity injection."
+    },
+    {
+      "id": "clearance", "primary_kind": "near_miss", "object_ids": ["marble", "post"],
+      "target_window_s": [10.0, 10.6], "requires_positive_surface_gap": true,
+      "physical_cause": "The outgoing trajectory passes a static post with positive separation before entering a supported ending.",
+      "measurement_required": "Bracket the closest approach and certify a positive surface gap across the entire approach/separation interval, with numerical uncertainty; inspect camera readability."
+    }
+  ],
+  "ending": "Keep the actor visible as it reaches a supported catch area; no offscreen parking or teleport reset.",
+  "notes": "This file is NOT accepted by the current production CLI. It is an authoring supplement requiring a new plan-to-component builder and actual optimization. All numbers are proposed timing targets, not solved geometry or a runnable scene. The current create_scene wrapper starts analytic motion at rest; extend only under reviewed source changes."
+}

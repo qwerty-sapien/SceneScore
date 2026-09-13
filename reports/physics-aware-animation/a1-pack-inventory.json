@@ -1,0 +1,101 @@
+{
+  "archive_sha256": "f26b45b154c5a5c1223ab7a4b7b8d51599a9507db837cbea3bc7cc3c86733884",
+  "temporary_directory": "/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/scenescore-physics-pack-wd_2mttp",
+  "files": [
+    {
+      "path": "scenescore_physics_skill_pack/.agents/skills/physics-aware-animation/SKILL.md",
+      "bytes": 13764,
+      "sha256": "d8b683436e45f76cdbc3d331dd3ee840642abc7793eeac1ad8c1938ea02f979d"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/.agents/skills/physics-aware-animation/assets/scene-intent.example.json",
+      "bytes": 2894,
+      "sha256": "44ed4403d02df2dd86770c7aa772be2fbf96042ed00eb3033d87c8cf4279a65e"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/.agents/skills/physics-aware-animation/references/EXEMPLARS.md",
+      "bytes": 3461,
+      "sha256": "9b9b7687c0bfbb4dd674789c761d386bec567aacc24656c13c30cae0d09ee86f"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/.agents/skills/physics-aware-animation/references/MCP_LOOP.md",
+      "bytes": 3270,
+      "sha256": "7a210f0125162e93a2b881aefe122c4ef5235dfdc83b8bbd6f26fad40a48fc1b"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/.agents/skills/physics-aware-animation/references/REPO_AUDIT.md",
+      "bytes": 6520,
+      "sha256": "06cd92e4f98167f32d0ccd46e95789ce0b6b3edc806008a6549746faa69863c1"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/.agents/skills/physics-aware-animation/scripts/check_story_plan.py",
+      "bytes": 7744,
+      "sha256": "adde641a755e89afaceda2e7eb4881bbf54eebe9d3c55f48af2db29a49399c97"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/.agents/skills/physics-aware-animation/tests/test_check_story_plan.py",
+      "bytes": 3664,
+      "sha256": "5d9e47f474668ecc23ffddf7dd8d77f4250b511d415ade4112b92d720e7eabf8"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/MANIFEST.json",
+      "bytes": 2279,
+      "sha256": "8245ea5c04a6a49d4ba4b9399f26f51e025e900d90972971ea83deedad5c01ff"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/README.md",
+      "bytes": 3812,
+      "sha256": "69bc28317fb6818e4d40a01c4f0d02bc6468251cbcc57fbee8a1576134df299f"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/docs/requests/blender-skill-repair.md",
+      "bytes": 4008,
+      "sha256": "5516ad78b2c1e59281bf1287ce28a3b4ce1f9fabee321153ab2070b5a53b5b42"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/evidence/NEW_CHECKS.md",
+      "bytes": 1144,
+      "sha256": "dae6a1af66e798724b267359c4cd9b63ef57c27381e9352e4cfe69369d3110c5"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/evidence/SOURCE_EXCERPTS.md",
+      "bytes": 41575,
+      "sha256": "b19c2f9c7a1ec1b96fcdee43629de89b612bf95212f8ec2db04d2eff7c9b5cf2"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/evidence/existing-scoped-tests.log",
+      "bytes": 181,
+      "sha256": "96e6bcfc0dc56ab501030a497e86a87d6a18fcf7db25f196a9783fbb15547d58"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/evidence/mcp-guard-tests.log",
+      "bytes": 1265,
+      "sha256": "0ac70e1fa3eced677cc7c38708bf3aebfa8383c0d42d8ae4cede8b74f4b77993"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/evidence/reference_metadata.json",
+      "bytes": 1312,
+      "sha256": "43490d4b6d7af2c28e751666d1b88ff5c689c30a93d239b06032148e6d1237b0"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/evidence/story-tests.log",
+      "bytes": 2081,
+      "sha256": "3fad0188f095036ff434deeca93cc2c5f07fdcabdb1dd95b4516af387b28123f"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/patches/mcp_client_result_handling.patch",
+      "bytes": 1752,
+      "sha256": "0f310ae8861468ff1b3a596d5938a4d838500625d667980ce6bec45a522b9bb5"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/tools/blender_mcp/response_guard.py",
+      "bytes": 2916,
+      "sha256": "b6ff4a08bd141595565424344338443600e98e55d38fa81a4985037be53d82e7"
+    },
+    {
+      "path": "scenescore_physics_skill_pack/tools/blender_mcp/test_response_guard.py",
+      "bytes": 2521,
+      "sha256": "1d474415458e592663f02e2d465df759eab258828ecd5b38cdf81fda99f84c54"
+    }
+  ]
+}

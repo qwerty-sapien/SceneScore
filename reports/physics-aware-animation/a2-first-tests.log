@@ -1,0 +1,140 @@
+COMMAND [".venv/bin/python", "-m", "pytest", "-q", "tools/blender_mcp/test_response_guard.py", "tests/test_production_media.py", "tests/test_blender_scene_mutations.py", "modules/blender/tests/test_production_runner.py"]
+.................F.FFFFF.............................                    [100%]
+=================================== FAILURES ===================================
+__________ test_report_binds_inputs_and_does_not_promote_other_gates ___________
+
+tmp_path = PosixPath('/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/pytest-of-agent/pytest-169/test_report_binds_inputs_and_d0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a5b9480>
+
+    def test_report_binds_inputs_and_does_not_promote_other_gates(tmp_path, monkeypatch):
+        candidate, directory = candidate_fixture(tmp_path)
+        monkeypatch.setattr(media, 'bounded', fake_tools)
+        path, report = media.verify_media(candidate, ffmpeg='fake-ffmpeg', ffprobe='fake-ffprobe')
+        assert path == directory / 'media-validation.json'
+>       assert report['status'] == 'PASSED'
+E       AssertionError: assert 'FAILED' == 'PASSED'
+E         
+E         - PASSED
+E         + FAILED
+
+tests/test_production_media.py:137: AssertionError
+_____________ test_failed_or_unclean_process_never_passes[timeout] _____________
+
+tmp_path = PosixPath('/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/pytest-of-agent/pytest-169/test_failed_or_unclean_process0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a611130>
+failure = 'timeout'
+
+    @pytest.mark.parametrize('failure', ['timeout', 'failed', 'cancelled', 'group_remains'])
+    def test_failed_or_unclean_process_never_passes(tmp_path, monkeypatch, failure):
+        candidate, _ = candidate_fixture(tmp_path)
+    
+        def fail_tool(command, log, timeout):
+            return {'status': 'passed' if failure == 'group_remains' else failure,
+                    'process_group_absent': failure != 'group_remains'}
+    
+        monkeypatch.setattr(media, 'bounded', fail_tool)
+        _, report = media.verify_media(candidate, ffmpeg='fake', ffprobe='fake')
+        assert report['status'] == 'FAILED'
+>       assert len(report['jobs']) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests/test_production_media.py:172: AssertionError
+_____________ test_failed_or_unclean_process_never_passes[failed] ______________
+
+tmp_path = PosixPath('/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/pytest-of-agent/pytest-169/test_failed_or_unclean_process1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a4bf570>
+failure = 'failed'
+
+    @pytest.mark.parametrize('failure', ['timeout', 'failed', 'cancelled', 'group_remains'])
+    def test_failed_or_unclean_process_never_passes(tmp_path, monkeypatch, failure):
+        candidate, _ = candidate_fixture(tmp_path)
+    
+        def fail_tool(command, log, timeout):
+            return {'status': 'passed' if failure == 'group_remains' else failure,
+                    'process_group_absent': failure != 'group_remains'}
+    
+        monkeypatch.setattr(media, 'bounded', fail_tool)
+        _, report = media.verify_media(candidate, ffmpeg='fake', ffprobe='fake')
+        assert report['status'] == 'FAILED'
+>       assert len(report['jobs']) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests/test_production_media.py:172: AssertionError
+____________ test_failed_or_unclean_process_never_passes[cancelled] ____________
+
+tmp_path = PosixPath('/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/pytest-of-agent/pytest-169/test_failed_or_unclean_process2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a4bf8a0>
+failure = 'cancelled'
+
+    @pytest.mark.parametrize('failure', ['timeout', 'failed', 'cancelled', 'group_remains'])
+    def test_failed_or_unclean_process_never_passes(tmp_path, monkeypatch, failure):
+        candidate, _ = candidate_fixture(tmp_path)
+    
+        def fail_tool(command, log, timeout):
+            return {'status': 'passed' if failure == 'group_remains' else failure,
+                    'process_group_absent': failure != 'group_remains'}
+    
+        monkeypatch.setattr(media, 'bounded', fail_tool)
+        _, report = media.verify_media(candidate, ffmpeg='fake', ffprobe='fake')
+        assert report['status'] == 'FAILED'
+>       assert len(report['jobs']) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests/test_production_media.py:172: AssertionError
+__________ test_failed_or_unclean_process_never_passes[group_remains] __________
+
+tmp_path = PosixPath('/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/pytest-of-agent/pytest-169/test_failed_or_unclean_process3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a5df950>
+failure = 'group_remains'
+
+    @pytest.mark.parametrize('failure', ['timeout', 'failed', 'cancelled', 'group_remains'])
+    def test_failed_or_unclean_process_never_passes(tmp_path, monkeypatch, failure):
+        candidate, _ = candidate_fixture(tmp_path)
+    
+        def fail_tool(command, log, timeout):
+            return {'status': 'passed' if failure == 'group_remains' else failure,
+                    'process_group_absent': failure != 'group_remains'}
+    
+        monkeypatch.setattr(media, 'bounded', fail_tool)
+        _, report = media.verify_media(candidate, ffmpeg='fake', ffprobe='fake')
+        assert report['status'] == 'FAILED'
+>       assert len(report['jobs']) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests/test_production_media.py:172: AssertionError
+______________ test_input_changes_during_decode_invalidate_report ______________
+
+tmp_path = PosixPath('/private/var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/pytest-of-agent/pytest-169/test_input_changes_during_deco0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a5dfe50>
+
+    def test_input_changes_during_decode_invalidate_report(tmp_path, monkeypatch):
+        candidate, _ = candidate_fixture(tmp_path)
+    
+        def mutate_after_decode(command, log, timeout):
+            result = fake_tools(command, log, timeout)
+            if '-show_frames' not in command:
+                (candidate / 'scene.blend').write_bytes(b'concurrently replaced')
+            return result
+    
+        monkeypatch.setattr(media, 'bounded', mutate_after_decode)
+        _, report = media.verify_media(candidate, ffmpeg='fake', ffprobe='fake')
+        assert report['status'] == 'FAILED'
+>       assert report['checks']['immutable_inputs']['status'] == 'FAILED'
+E       AssertionError: assert 'PASSED' == 'FAILED'
+E         
+E         - FAILED
+E         + PASSED
+
+tests/test_production_media.py:187: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_production_media.py::test_report_binds_inputs_and_does_not_promote_other_gates
+FAILED tests/test_production_media.py::test_failed_or_unclean_process_never_passes[timeout]
+FAILED tests/test_production_media.py::test_failed_or_unclean_process_never_passes[failed]
+FAILED tests/test_production_media.py::test_failed_or_unclean_process_never_passes[cancelled]
+FAILED tests/test_production_media.py::test_failed_or_unclean_process_never_passes[group_remains]
+FAILED tests/test_production_media.py::test_input_changes_during_decode_invalidate_report
+6 failed, 47 passed in 1.17s

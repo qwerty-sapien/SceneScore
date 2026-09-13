@@ -1,0 +1,15 @@
+COMMAND ["/usr/local/bin/blender", "--background", "--factory-startup", "--disable-autoexec", "--python-exit-code", "1", "--threads", "2", "--python", "modules/blender/tests/blender_geometry_check.py"]
+ ArchWarn: ARCH_CACHE_LINE_SIZE != Arch_ObtainCacheLineSize()
+ Function: Arch_ValidateAssumptions
+     File: /Users/jonas/blender-dev-deps/build_darwin/deps_arm64/build/usd/src/external_usd/pxr/base/arch/assumptions.cpp
+     Line: 140
+00:00.007  color_management | Using fallback mode for management
+00:00.090  translation      | WARNING 'locale' data path for translations not found
+blf_load_font_default: 'fonts' data path not found for 'Inter.woff2', will not be able to display text
+blf_load_font_default: 'fonts' data path not found for 'DejaVuSansMono.woff2', will not be able to display text
+blf_load_font_default: 'fonts' data path not found for 'DejaVuSansMono.woff2', will not be able to display text
+blf_load_font_default: 'fonts' data path not found for 'Inter.woff2', will not be able to display text
+blf_load_font_default: 'fonts' data path not found for 'DejaVuSansMono.woff2', will not be able to display text
+Font data directory "fonts/" could not be detected!
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+Writing: /var/folders/25/mfwfyswn3fv3xk0pqjykygbc0000gn/T/blender.crash.txt

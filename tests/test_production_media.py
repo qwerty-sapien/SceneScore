@@ -2,6 +2,7 @@
 import copy
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 import pytest
@@ -132,7 +133,7 @@ def fake_tools(command, log, timeout):
 def test_report_binds_inputs_and_does_not_promote_other_gates(tmp_path, monkeypatch):
     candidate, directory = candidate_fixture(tmp_path)
     monkeypatch.setattr(media, 'bounded', fake_tools)
-    path, report = media.verify_media(candidate, ffmpeg='fake-ffmpeg', ffprobe='fake-ffprobe')
+    path, report = media.verify_media(candidate, ffmpeg=sys.executable, ffprobe=sys.executable)
     assert path == directory / 'media-validation.json'
     assert report['status'] == 'PASSED'
     assert report['approval'] is None
@@ -167,7 +168,7 @@ def test_failed_or_unclean_process_never_passes(tmp_path, monkeypatch, failure):
                 'process_group_absent': failure != 'group_remains'}
 
     monkeypatch.setattr(media, 'bounded', fail_tool)
-    _, report = media.verify_media(candidate, ffmpeg='fake', ffprobe='fake')
+    _, report = media.verify_media(candidate, ffmpeg=sys.executable, ffprobe=sys.executable)
     assert report['status'] == 'FAILED'
     assert len(report['jobs']) == 1
 
@@ -182,7 +183,7 @@ def test_input_changes_during_decode_invalidate_report(tmp_path, monkeypatch):
         return result
 
     monkeypatch.setattr(media, 'bounded', mutate_after_decode)
-    _, report = media.verify_media(candidate, ffmpeg='fake', ffprobe='fake')
+    _, report = media.verify_media(candidate, ffmpeg=sys.executable, ffprobe=sys.executable)
     assert report['status'] == 'FAILED'
     assert report['checks']['immutable_inputs']['status'] == 'FAILED'
 

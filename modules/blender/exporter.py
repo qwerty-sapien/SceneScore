@@ -11,6 +11,7 @@ import sys
 
 from modules.blender.geometry import area, norm, pair_timeline, sub
 from modules.blender.recipes import position, recipe
+from modules.blender.executables import resolve_executable
 
 VERSION='blender-export-1.1'
 
@@ -252,7 +253,7 @@ def run(recipe_id):
         for label,index in [('start',0),('approach',int(count*.4)),('event',int(count*.5)),('ending',count-1)]:
             shutil.copyfile(pngs[index],out/(label+'.png'))
         render_status='FRAME_SEQUENCE_RENDERED'
-        encoder=shutil.which('ffmpeg')
+        encoder=resolve_executable('ffmpeg', required=False)
         if encoder:
             command=[encoder,'-v','error','-nostdin','-n','-framerate',f'{a.fps}/{a.fps_base}',
                 '-start_number','1','-i',str(out/'frames'/'frame_%04d.png'),'-c:v','libx264','-pix_fmt','yuv420p',str(out/'preview.mp4')]

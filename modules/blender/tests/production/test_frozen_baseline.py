@@ -7,7 +7,7 @@ import pytest
 
 from modules.blender.production.validation import gap, supported_objects, tolerance
 
-BASELINE = Path("/Users/agent/Desktop/SceneScore/artifacts/blender/validated-hero/10_projectile_tower-default/object_states.jsonl")
+BASELINE = Path(__file__).resolve().parents[4] / "artifacts/blender/validated-hero/10_projectile_tower-default/object_states.jsonl"
 BASELINE_SHA256 = "a5b02fe89fee3728babf8a5b76b5583356006e9ebcfebed0bac1d62ca193a3ab"
 
 

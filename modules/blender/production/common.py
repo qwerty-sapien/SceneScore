@@ -31,7 +31,8 @@ def source_hashes():
     # Freeze the production inputs independently of downstream reviews/exports.
     paths=['modules/blender/production/'+name for name in
            ('__init__.py','__main__.py','common.py','driver.py','scenes.py','analytic.py')]
-    paths += ['modules/blender/batch.py','modules/blender/recipes.py','modules/blender/geometry.py']
+    paths += ['modules/blender/batch.py','modules/blender/recipes.py','modules/blender/geometry.py',
+              'modules/blender/executables.py']
     return {name:digest(ROOT/name) for name in sorted(paths)}
 
 

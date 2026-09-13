@@ -1,0 +1,32 @@
+[
+  {
+    "tool": "get_scene_info",
+    "arguments": {
+      "user_prompt": "If a live Blender MCP server is available, perform one harmless inspection command and record the result."
+    },
+    "response": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running.",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "result": "Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running."
+      },
+      "isError": false
+    },
+    "verdict": {
+      "status": "FAILED",
+      "reasons": [
+        "content: Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running.",
+        "structuredContent.result: Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running."
+      ],
+      "empty_content_policy": "required_nonempty",
+      "scope": "MCP call result only; not production, physics or perception acceptance"
+    }
+  }
+]

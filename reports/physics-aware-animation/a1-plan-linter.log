@@ -1,0 +1,5 @@
+COMMAND [".venv/bin/python", ".agents/skills/physics-aware-animation/scripts/check_story_plan.py", ".agents/skills/physics-aware-animation/assets/scene-intent.example.json"]
+{
+  "status": "PLAN_VALID_NOT_PHYSICS_VALIDATED",
+  "errors": []
+}

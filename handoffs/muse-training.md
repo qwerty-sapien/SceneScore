@@ -6,6 +6,14 @@ in `modules/muse/training/web_model.py`. The root launcher is
 `Launch Blink Trainer.command` / `make muse-train`.
 
 Public page: https://scenescore-muse-vertical.vercel.app/train/.
+
+The later diagnostics request is also implemented/published: automatic bounded
+Bluetooth/LSL metadata checks, sample freshness/continuity/rate/flatness, staged
+failure hints, history and local diagnostic export. Reopen the launcher to load
+the new service/helper. The .env MUSE_TRANSPORT/BOARD_ID/UNITS placeholders remain
+unused; no BrainFlow board ID is needed for the current LSL receiver. Updated
+focused validation is 41 backend/model + 14 UI tests. See the subsequent-update
+section in the delivery gate for actual hardware observations and browser limits.
 Start locally to authenticate automatically and avoid the hosted page's browser
 Local network access permission. Select an existing Muse LSL source; no stream
 or recording starts automatically. See [user guide](../docs/MUSE_TRAINING.md).

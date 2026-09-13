@@ -1,11 +1,11 @@
 """Explicit, serial production stages using the installed Blender executable."""
 import argparse
-import os
 from pathlib import Path
 import shutil
 import sys
 
 from modules.blender.batch import bounded
+from modules.blender.executables import blender_executable
 from .common import ROOT, dump, read
 
 
@@ -13,7 +13,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage', choices=['build', 'bake', 'replay', 'verify-replay', 'export', 'render', 'validate'])
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--blender', default=os.environ.get('BLENDER_BIN', '/Applications/Blender.app/Contents/MacOS/Blender'))
+    parser.add_argument('--blender', help='executable; otherwise BLENDER_BIN, PATH, then platform default')
     parser.add_argument('--recipe', default='10_projectile_tower')
     parser.add_argument('--variant', choices=['contact', 'near_miss', 'no_launch', 'default'], default='contact')
     parser.add_argument('--seconds', type=float, default=10)
@@ -55,6 +55,10 @@ def main():
         proof=validate_candidate(out)
         if proof.get('status')!='PASSED':
             parser.error('production rendering requires current passed physical gates; use neutral diagnostics to inspect failures')
+    try:
+        args.blender = blender_executable(args.blender)
+    except FileNotFoundError as error:
+        parser.error(str(error))
     out.mkdir(parents=True, exist_ok=True)
     command = [args.blender, '--background', '--factory-startup', '--disable-autoexec', '--python-exit-code', '1',
                '--threads', '2', '--python', str(Path(__file__).with_name('driver.py')), '--', args.stage,

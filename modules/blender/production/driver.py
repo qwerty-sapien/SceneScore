@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 from modules.blender.production.common import data_hash, digest, dump, read, rows, source_hashes  # noqa: E402
+from modules.blender.executables import resolve_executable  # noqa: E402
 
 
 def state(obj, deps):
@@ -243,7 +244,7 @@ def render(args):
     expected = {f'frame_{frame:06d}.png' for frame in range(1, total+1)}
     if expected.issubset({p.name for p in target.glob('*.png')}):
         video = target/'video.mp4'
-        cmd = ['/opt/homebrew/bin/ffmpeg', '-v', 'error', '-nostdin', '-y', '-framerate', '30',
+        cmd = [resolve_executable('ffmpeg'), '-v', 'error', '-nostdin', '-y', '-framerate', '30',
                '-start_number', '1', '-i', str(target/'frame_%06d.png'), '-frames:v', str(total),
                '-c:v', 'libx264', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', str(video)]
         encoded = subprocess.run(cmd, capture_output=True, text=True, timeout=180)

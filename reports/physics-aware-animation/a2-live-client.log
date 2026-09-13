@@ -1,0 +1,15 @@
+COMMAND ["artifacts/tools/blender-mcp-env/bin/python", "tools/blender_mcp/client.py", "--inspect-only", "--out", "reports/physics-aware-animation/a2-mcp-inspection", "--prompt", "If a live Blender MCP server is available, perform one harmless inspection command and record the result."]
+<frozen runpy>:128: RuntimeWarning: 'blender_mcp.server' found in sys.modules after import of package 'blender_mcp', but prior to execution of 'blender_mcp.server'; this may result in unpredictable behaviour
+2026-09-13 12:16:24,472 - BlenderMCPServer - INFO - BlenderMCP server starting up
+2026-09-13 12:16:24,473 - BlenderMCPServer - WARNING - MCP for Blender addon not found in any Blender addons folder. Run `uvx blender-mcp install-addon` to install it.
+2026-09-13 12:16:24,474 - BlenderMCPServer - ERROR - Failed to connect to Blender: [Errno 1] Operation not permitted
+2026-09-13 12:16:24,475 - BlenderMCPServer - ERROR - Failed to connect to Blender
+2026-09-13 12:16:24,475 - BlenderMCPServer - WARNING - Could not connect to Blender on startup: Could not connect to Blender. Make sure the Blender addon is running.
+2026-09-13 12:16:24,475 - BlenderMCPServer - WARNING - Make sure the Blender addon is running before using Blender resources or tools
+2026-09-13 12:16:24,482 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-09-13 12:16:24,488 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-09-13 12:16:24,489 - BlenderMCPServer - ERROR - Failed to connect to Blender: [Errno 1] Operation not permitted
+2026-09-13 12:16:24,489 - BlenderMCPServer - ERROR - Failed to connect to Blender
+2026-09-13 12:16:24,489 - BlenderMCPServer - ERROR - Error getting scene info from Blender: Could not connect to Blender. Make sure the Blender addon is running.
+{"tool": "get_scene_info", "isError": false, "verdict": {"status": "FAILED", "reasons": ["content: Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running.", "structuredContent.result: Error getting scene info: Could not connect to Blender. Make sure the Blender addon is running."], "empty_content_policy": "required_nonempty", "scope": "MCP call result only; not production, physics or perception acceptance"}}
+2026-09-13 12:16:24,495 - BlenderMCPServer - INFO - BlenderMCP server shut down

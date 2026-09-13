@@ -1,4 +1,4 @@
-import type {MarkerRequest,ModelSummary,Review,ReviewBundle,Role,Source,Status,Trace} from './types';
+import type {DiagnosticsReport,MarkerRequest,ModelSummary,Review,ReviewBundle,Role,Source,Status,Trace} from './types';
 export const API_ROOT='http://127.0.0.1:8767/v1';
 export class TrainingAPI {
  private session:string|null=null;
@@ -14,6 +14,9 @@ export class TrainingAPI {
  private async json<T>(path:string,body?:unknown,signal?:AbortSignal):Promise<T>{return (await this.response(path,body,undefined,signal)).json();}
  async authenticate(token:string):Promise<Status>{const trimmed=token.trim();if(trimmed.length<16||trimmed.length>256||/\s/.test(trimmed))throw Error('Paste the token printed by the local training service.');const result=await(await this.response('/session',{},trimmed)).json();if(typeof result.session!=='string')throw Error('Invalid local session response.');this.session=result.session;return result.status;}
  status(signal?:AbortSignal){return this.json<Status>('/status',undefined,signal);}
+ diagnostics(signal?:AbortSignal){return this.json<DiagnosticsReport>('/diagnostics',undefined,signal);}
+ monitorDiagnostics(enabled:boolean){return this.json<DiagnosticsReport>('/diagnostics/monitor',{enabled});}
+ checkDiagnostics(request_bluetooth_permission=false){return this.json<DiagnosticsReport>('/diagnostics/check',{request_bluetooth_permission});}
  sources(){return this.json<{sources:Source[];blockers:string[]}>('/sources');}
  connect(source_id:string,device_model:string){return this.json<Status>('/connect',{source_id,device_model,consent:true});}
  disconnect(){return this.json<Status>('/disconnect',{});}

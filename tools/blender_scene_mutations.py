@@ -11,7 +11,6 @@ import argparse
 import hashlib
 import json
 import math
-import os
 from pathlib import Path
 import shutil
 import sys
@@ -391,7 +390,7 @@ def main(argv=None):
         command = sub.add_parser(name)
         command.add_argument("--repo", type=Path, default=ROOT)
         command.add_argument("--out", type=Path, required=True)
-        command.add_argument("--blender", default=os.environ.get("BLENDER_BIN", "/Applications/Blender.app/Contents/MacOS/Blender"))
+        command.add_argument("--blender", help="executable; otherwise BLENDER_BIN, PATH, then platform default")
         command.add_argument("--include-low-rate", action="store_true")
         command.add_argument("--timeout", type=int, default=1800)
     internal = sub.add_parser("_stage")
@@ -407,6 +406,11 @@ def main(argv=None):
         args.out = validate_output(args.repo, args.out, require_new=False)
         return blender_stage(args)
     args.out = validate_output(args.repo, args.out)
+    from modules.blender.executables import blender_executable
+    try:
+        args.blender = blender_executable(args.blender, required=args.command == 'run') or 'blender'
+    except FileNotFoundError as error:
+        parser.error(str(error))
     if args.command == "plan":
         plan = candidate_plan(args.out, args.include_low_rate)
         print(json.dumps({"status": "NOT_RUN", "blender_jobs_started": 0,

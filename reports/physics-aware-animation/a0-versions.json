@@ -1,0 +1,152 @@
+[
+  {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "git version 2.55.0"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "Python 3.13.7"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "pytest 9.1.1"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/ruff",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "ruff 0.16.7"
+    ]
+  },
+  {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "v24.14.0"
+    ]
+  },
+  {
+    "command": [
+      "npm",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "11.9.0"
+    ]
+  },
+  {
+    "command": [
+      "uv",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "uv 0.11.28 (Homebrew 2026-07-07 aarch64-apple-darwin)"
+    ]
+  },
+  {
+    "command": [
+      "/usr/local/bin/blender",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "Blender 5.2.1 LTS",
+      "\tbuild date: 2026-08-25",
+      "\tbuild time: 01:35:57",
+      "\tbuild commit date: 2026-08-24"
+    ]
+  },
+  {
+    "command": [
+      "/opt/homebrew/bin/ffmpeg",
+      "-version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+      "built with Apple clang version 21.0.0 (clang-2100.0.123.102)",
+      "configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon",
+      "libavutil      60. 26.102 / 60. 26.102"
+    ]
+  },
+  {
+    "command": [
+      "/opt/homebrew/bin/ffprobe",
+      "-version"
+    ],
+    "exit_code": 0,
+    "output": [
+      "ffprobe version 8.1.2 Copyright (c) 2007-2026 the FFmpeg developers",
+      "built with Apple clang version 21.0.0 (clang-2100.0.123.102)",
+      "configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon",
+      "libavutil      60. 26.102 / 60. 26.102"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "metadata: mcp, blender-mcp"
+    ],
+    "exit_code": 1,
+    "output": [
+      "Traceback (most recent call last):",
+      "  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/__init__.py\", line 407, in from_name",
+      "    return next(iter(cls.discover(name=name)))",
+      "StopIteration",
+      "",
+      "During handling of the above exception, another exception occurred:",
+      "",
+      "Traceback (most recent call last):",
+      "  File \"<string>\", line 1, in <module>",
+      "    import importlib.metadata as m; print({n:m.version(n) for n in ['mcp','blender-mcp']})",
+      "                                             ~~~~~~~~~^^^",
+      "  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/__init__.py\", line 987, in version",
+      "    return distribution(distribution_name).version",
+      "           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^",
+      "  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/__init__.py\", line 960, in distribution",
+      "    return Distribution.from_name(distribution_name)",
+      "           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^",
+      "  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/__init__.py\", line 409, in from_name",
+      "    raise PackageNotFoundError(name)",
+      "importlib.metadata.PackageNotFoundError: No package metadata was found for mcp"
+    ]
+  },
+  {
+    "command": [
+      "artifacts/tools/blender-mcp-env/bin/python",
+      "metadata: mcp, blender-mcp"
+    ],
+    "exit_code": 0,
+    "output": [
+      "{'mcp': '1.30.0', 'blender-mcp': '1.9.1'}"
+    ]
+  }
+]
