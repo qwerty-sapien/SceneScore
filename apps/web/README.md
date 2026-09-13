@@ -1,5 +1,17 @@
 # SceneScore video library and local studio
 
+Windows prepared demo: double-click `start-music-demo.cmd` in the repository root.
+It uses the existing Node dependencies, opens `http://127.0.0.1:5176/?review=1`
+with the bouncing staircase selected, and serves its original music and collision
+Foley locally. Choose **Audition draft** to listen. Keep the launcher window open;
+press Ctrl+C there when finished. No Python service or new render is required.
+The home page at `/` opens the prepared video library.
+
+Prepared JSON files must retain their original LF bytes: Windows CRLF checkout
+conversion breaks their SHA-256 checks. `.gitattributes` pins their line endings;
+the catalog hashes and playback verification must not be weakened or refreshed
+to accept a changed asset.
+
 Prepare from repo root: `PYTHONPATH=.:src .venv/bin/python apps/web/tools/prepare.py --assets-root artifacts --out apps/web/public/studio`.
 Run: `make demo` for the prepared/built studio on 127.0.0.1:8765. For development, `npm run dev -- --port 5176 --strictPort` binds loopback. Stop the exact server when finished.
 

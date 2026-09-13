@@ -1,0 +1,4 @@
+# Prepared bundles are verified against SHA-256 of their exact original bytes.
+# Preserve LF even when Git checks out this repository on Windows.
+apps/web/public/**/*.json text eol=lf
+modules/music/fixtures/transition-table-v1.json text eol=lf

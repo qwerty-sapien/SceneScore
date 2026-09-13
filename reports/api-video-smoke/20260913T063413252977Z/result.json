@@ -1,0 +1,309 @@
+{
+  "source_mode": "live_api",
+  "media_mode": "synthetic_blender_render",
+  "video": "blender_revamp\\evidence\\original-DRAFT.mp4",
+  "video_sha256": "8b69ad6b639e670ed701e44f92aa49a359dee02c6e5d8a6755a1595941df2265",
+  "frames": [
+    {
+      "file": "frame-001.jpg",
+      "timestamp_s": 0,
+      "sha256": "c3c73eca88223c11f3621bd7a8aedc0816fdcb51ed3283893c9aea34f2a67368"
+    },
+    {
+      "file": "frame-002.jpg",
+      "timestamp_s": 1,
+      "sha256": "b6ab33c98ac4eac8f5368fc7651d1c841ae627d20c4263aedf7c36902f368d55"
+    },
+    {
+      "file": "frame-003.jpg",
+      "timestamp_s": 2,
+      "sha256": "a0048ee6d5920e86c26ad8e50df8d89021e50407d1fe872b1d3f0d501bfea920"
+    },
+    {
+      "file": "frame-004.jpg",
+      "timestamp_s": 3,
+      "sha256": "ae6ac3ad90e3511cc5e12c887c575c07d06aecf53a94f27e0eaf8f22eaf9e70b"
+    },
+    {
+      "file": "frame-005.jpg",
+      "timestamp_s": 4,
+      "sha256": "9981577ff8dc354cc7168d213a860306b73c71eba83ad0be23d15ebd3cae85f2"
+    },
+    {
+      "file": "frame-006.jpg",
+      "timestamp_s": 5,
+      "sha256": "8713969e45b617ef2faea496a627a00e8d14c4c5f71958ab8ac4755e5330332d"
+    },
+    {
+      "file": "frame-007.jpg",
+      "timestamp_s": 6,
+      "sha256": "b4e48a5df8cca2242d35a3b647150ff5b4549c40a0177874f4d6279afedd54b6"
+    },
+    {
+      "file": "frame-008.jpg",
+      "timestamp_s": 7,
+      "sha256": "17d6e750e883599c5490460e16ae4832c8a865d9acdbc4a3c33561d4c16e7000"
+    },
+    {
+      "file": "frame-009.jpg",
+      "timestamp_s": 8,
+      "sha256": "135410250d128ecdeb58a4f7afb1cecd0637e37ccc1fc6f7bfa5e716b4f31df8"
+    },
+    {
+      "file": "frame-010.jpg",
+      "timestamp_s": 9,
+      "sha256": "090172922abd296b252a6ac7ab770675d3f92312b9a49c6b751a89a8949bd693"
+    },
+    {
+      "file": "frame-011.jpg",
+      "timestamp_s": 10,
+      "sha256": "3adc0030c18502deef343b24defe3f85f4d7ebe3e7ddae1591346d9fe2a27982"
+    },
+    {
+      "file": "frame-012.jpg",
+      "timestamp_s": 11,
+      "sha256": "7bbd193613b3e9fc965e955583553c3cdeb16f32e152f8224779acbaebf75059"
+    },
+    {
+      "file": "frame-013.jpg",
+      "timestamp_s": 12,
+      "sha256": "94a5675b77ce8a297031347988935ad8260b9c4b148a817d560bf28091c12638"
+    },
+    {
+      "file": "frame-014.jpg",
+      "timestamp_s": 13,
+      "sha256": "089b2471d441b215f1e3267af9f43d79e276aa93eee5c75ff47b83f48f5907b0"
+    },
+    {
+      "file": "frame-015.jpg",
+      "timestamp_s": 14,
+      "sha256": "0fc4232881218898dbfd5d0a7a760a8f0575e6bd195af29399b2fb1cd5c43bba"
+    },
+    {
+      "file": "frame-016.jpg",
+      "timestamp_s": 15,
+      "sha256": "3b4de6362187d326b729aae89a7278d91fc6916a07082550858eb5bb320f6846"
+    },
+    {
+      "file": "frame-017.jpg",
+      "timestamp_s": 16,
+      "sha256": "fcc194110976a86971a9b392104008e76db2b9bdc9dd53c2cac3667f2b6a5e5b"
+    },
+    {
+      "file": "frame-018.jpg",
+      "timestamp_s": 17,
+      "sha256": "9bf58628bf5cba9b1d56803ed61a4a385ebd46df90e8052954051065f903afab"
+    },
+    {
+      "file": "frame-019.jpg",
+      "timestamp_s": 18,
+      "sha256": "b319d17ded5b54d1a20f4a152714cf8e9780e97aae04440567a75acad2326b28"
+    },
+    {
+      "file": "frame-020.jpg",
+      "timestamp_s": 19,
+      "sha256": "b51866a5bf6d55fce4d8cd6b76d4a4853ecb260f14e44d5e501df9026454bf52"
+    },
+    {
+      "file": "frame-021.jpg",
+      "timestamp_s": 20,
+      "sha256": "0d5432eba5accbb6dc670579991d76f50e3fbd29525546ec45512b6db3ea25de"
+    },
+    {
+      "file": "frame-022.jpg",
+      "timestamp_s": 21,
+      "sha256": "3cce96b93b299d656b6b928f3bc18a6a7df20155e7b8042678bc03ee7705205e"
+    },
+    {
+      "file": "frame-023.jpg",
+      "timestamp_s": 22,
+      "sha256": "30fcef141de7984b81381d510a261e541aad79569ac04485cf7b01334762220e"
+    },
+    {
+      "file": "frame-024.jpg",
+      "timestamp_s": 23,
+      "sha256": "06c6501d18a98e369af5a4c9605f716e6faad36f92c60f9d2b88c0261869d78c"
+    },
+    {
+      "file": "frame-025.jpg",
+      "timestamp_s": 24,
+      "sha256": "c8980ff66701a7cfc16a3ead86501cf70d6531dfe255d20ecaee0146ed4f3a9f"
+    },
+    {
+      "file": "frame-026.jpg",
+      "timestamp_s": 25,
+      "sha256": "28a7118b28b153d5b7f33096a1b45326ff2749234e9ffccaa59407726d095832"
+    },
+    {
+      "file": "frame-027.jpg",
+      "timestamp_s": 26,
+      "sha256": "a084a4a67dbfafffe6f6b1f42c4978c1d8cedc3fa0eea92cec6bf0399a60c7f1"
+    },
+    {
+      "file": "frame-028.jpg",
+      "timestamp_s": 27,
+      "sha256": "373376180468045d5fed8c6ddf7e2feeb45345dfbec60268feea29947366f700"
+    },
+    {
+      "file": "frame-029.jpg",
+      "timestamp_s": 28,
+      "sha256": "3f43cc3c7ca374fb34cbd9b3e2fcce6a7f576ed35ea603a43d804592da525362"
+    },
+    {
+      "file": "frame-030.jpg",
+      "timestamp_s": 29,
+      "sha256": "c7c2a2319483613a2fa790f9719f2b38396b082a6c6d0ee1bed2e2a52e211fdc"
+    },
+    {
+      "file": "frame-031.jpg",
+      "timestamp_s": 29.875,
+      "sha256": "77df8214fede798dba82b098acf95f7d0fe6dc79eae8d908756caf210d5463f9"
+    }
+  ],
+  "prompt": "Analyze this chronological sequence of frames from a synthetic animation.\nFrames are sampled at one-second intervals plus the last frame. Times are seconds\nfrom video start, NOT frame numbers. Inspect only visible evidence; you have no\naudio, geometry or hidden frames. Stable object names must be used throughout.\nAssess all seven event types: approach (pair gap decreases), near_miss (approach\nthen separation with visible clearance and no contact), separation (gap increases),\ncontact (apparent first touch), sustained_contact (apparent touch persists),\ncontact_release (apparent touch ends), rebound (direction reversal following touch).\nDo not force all seven to occur. 2D overlap cannot prove 3D contact; contact-related\nclaims should remain uncertain when depth or motion is ambiguous. Static holding\ndoes not prove sustained physical contact. A separation alone is not a rebound.\nReturn a concise JSON object with summary, objects, assessments (one per event\ntype; status observed/uncertain/not_observed; intervals with start_s, end_s,\nobjects and evidence_timestamps_s; reason), and limitations. Give broad intervals\nsupported by samples, never sub-frame precision. No music, approval or execution.",
+  "requested_model": "gpt-4.1-mini",
+  "detail": "low",
+  "max_output_tokens": 2200,
+  "attempts": 1,
+  "approval": null,
+  "audio_analyzed": false,
+  "utc": "2026-09-13T06:34:13.690947+00:00",
+  "limitations": [
+    "Exploratory single-clip trial; not an accuracy benchmark",
+    "Baseline sidecars and review were not supplied to the model",
+    "Timestamp mapping uses verified baseline constant 8 fps and zero start"
+  ],
+  "http_status": 200,
+  "request_id": "req_b938fa831f8046a18fd289fbf9b97932",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 3504,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 871,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4375
+  },
+  "text": "{\n  \"summary\": \"A spherical projectile approaches a three-block tower from the left side. Around 12 to 13 seconds, the projectile appears to contact the tower near the bottom block. The contact seems to persist for approximately 4-5 seconds as the projectile moves rightward along the tower face while the tower itself begins to tilt and topple over between approx. 16 to 22 seconds. After about 21 to 22 seconds, the projectile separates from the tower and moves away to the left side again. No clear rebound or distinct near miss without contact is observed.\",\n  \"objects\": [\n    \"projectile\",\n    \"three-block tower (lower green block, middle pink block, upper blue block)\"\n  ],\n  \"assessments\": {\n    \"approach\": {\n      \"status\": \"observed\",\n      \"intervals\": [\n        {\n          \"start_s\": 0,\n          \"end_s\": 12,\n          \"objects\": [\"projectile\", \"three-block tower\"],\n          \"evidence_timestamps_s\": [0, 12],\n          \"reason\": \"The gap between the projectile and tower visibly decreases from initial times until about 12 seconds.\"\n        }\n      ],\n      \"reason\": \"Projectile clearly moves closer to tower while approaching from the left.\"\n    },\n    \"near_miss\": {\n      \"status\": \"not_observed\",\n      \"intervals\": [],\n      \"reason\": \"No interval shows the projectile approaching and then separating without apparent contact; contact is visible once close enough.\"\n    },\n    \"separation\": {\n      \"status\": \"observed\",\n      \"intervals\": [\n        {\n          \"start_s\": 21,\n          \"end_s\": 29.875,\n          \"objects\": [\"projectile\", \"three-block tower\"],\n          \"evidence_timestamps_s\": [21, 29.875],\n          \"reason\": \"After contact, the projectile moves away to the left and the tower tilts, increasing their visible gap.\"\n        }\n      ],\n      \"reason\": \"Separation occurs after apparent contact and some sustained contact.\"\n    },\n    \"contact\": {\n      \"status\": \"uncertain\",\n      \"intervals\": [\n        {\n          \"start_s\": 12,\n          \"end_s\": 13,\n          \"objects\": [\"projectile\", \"three-block tower\"],\n          \"evidence_timestamps_s\": [12, 13],\n          \"reason\": \"Visual overlap and proximity strongly suggest first touch, but 3D depth ambiguity leaves contact uncertain.\"\n        }\n      ],\n      \"reason\": \"Overlap and proximity suggest contact but depth cannot be confirmed definitively as physical contact.\"\n    },\n    \"sustained_contact\": {\n      \"status\": \"uncertain\",\n      \"intervals\": [\n        {\n          \"start_s\": 13,\n          \"end_s\": 21,\n          \"objects\": [\"projectile\", \"three-block tower\"],\n          \"evidence_timestamps_s\": [13, 21],\n          \"reason\": \"Projectile stays adjacent and moves alongside the tower as it tilts, suggesting persistent contact but depth ambiguity remains.\"\n        }\n      ],\n      \"reason\": \"Projectile visually stays adjacent and relative position is stable, but no explicit holding or physical interaction is confirmed.\"\n    },\n    \"contact_release\": {\n      \"status\": \"observed\",\n      \"intervals\": [\n        {\n          \"start_s\": 21,\n          \"end_s\": 22,\n          \"objects\": [\"projectile\", \"three-block tower\"],\n          \"evidence_timestamps_s\": [21, 22],\n          \"reason\": \"Projectile visibly moves away from tower and gap increases, signaling end of apparent contact.\"\n        }\n      ],\n      \"reason\": \"Projectile visibly separates from tower after sustained proximity.\"\n    },\n    \"rebound\": {\n      \"status\": \"not_observed\",\n      \"intervals\": [],\n      \"reason\": \"While the projectile changes direction after contact, no reversal of direction with a clear bounce or rebound effect is visible.\"\n    }\n  },\n  \"limitations\": \"Analysis limited to 2D projection and frame samples; depth and exact physical contact are uncertain. No subframe timing or audio cues, and tower rotation complicates proximity judgment.\"\n}",
+  "analysis": {
+    "summary": "A spherical projectile approaches a three-block tower from the left side. Around 12 to 13 seconds, the projectile appears to contact the tower near the bottom block. The contact seems to persist for approximately 4-5 seconds as the projectile moves rightward along the tower face while the tower itself begins to tilt and topple over between approx. 16 to 22 seconds. After about 21 to 22 seconds, the projectile separates from the tower and moves away to the left side again. No clear rebound or distinct near miss without contact is observed.",
+    "objects": [
+      "projectile",
+      "three-block tower (lower green block, middle pink block, upper blue block)"
+    ],
+    "assessments": {
+      "approach": {
+        "status": "observed",
+        "intervals": [
+          {
+            "start_s": 0,
+            "end_s": 12,
+            "objects": [
+              "projectile",
+              "three-block tower"
+            ],
+            "evidence_timestamps_s": [
+              0,
+              12
+            ],
+            "reason": "The gap between the projectile and tower visibly decreases from initial times until about 12 seconds."
+          }
+        ],
+        "reason": "Projectile clearly moves closer to tower while approaching from the left."
+      },
+      "near_miss": {
+        "status": "not_observed",
+        "intervals": [],
+        "reason": "No interval shows the projectile approaching and then separating without apparent contact; contact is visible once close enough."
+      },
+      "separation": {
+        "status": "observed",
+        "intervals": [
+          {
+            "start_s": 21,
+            "end_s": 29.875,
+            "objects": [
+              "projectile",
+              "three-block tower"
+            ],
+            "evidence_timestamps_s": [
+              21,
+              29.875
+            ],
+            "reason": "After contact, the projectile moves away to the left and the tower tilts, increasing their visible gap."
+          }
+        ],
+        "reason": "Separation occurs after apparent contact and some sustained contact."
+      },
+      "contact": {
+        "status": "uncertain",
+        "intervals": [
+          {
+            "start_s": 12,
+            "end_s": 13,
+            "objects": [
+              "projectile",
+              "three-block tower"
+            ],
+            "evidence_timestamps_s": [
+              12,
+              13
+            ],
+            "reason": "Visual overlap and proximity strongly suggest first touch, but 3D depth ambiguity leaves contact uncertain."
+          }
+        ],
+        "reason": "Overlap and proximity suggest contact but depth cannot be confirmed definitively as physical contact."
+      },
+      "sustained_contact": {
+        "status": "uncertain",
+        "intervals": [
+          {
+            "start_s": 13,
+            "end_s": 21,
+            "objects": [
+              "projectile",
+              "three-block tower"
+            ],
+            "evidence_timestamps_s": [
+              13,
+              21
+            ],
+            "reason": "Projectile stays adjacent and moves alongside the tower as it tilts, suggesting persistent contact but depth ambiguity remains."
+          }
+        ],
+        "reason": "Projectile visually stays adjacent and relative position is stable, but no explicit holding or physical interaction is confirmed."
+      },
+      "contact_release": {
+        "status": "observed",
+        "intervals": [
+          {
+            "start_s": 21,
+            "end_s": 22,
+            "objects": [
+              "projectile",
+              "three-block tower"
+            ],
+            "evidence_timestamps_s": [
+              21,
+              22
+            ],
+            "reason": "Projectile visibly moves away from tower and gap increases, signaling end of apparent contact."
+          }
+        ],
+        "reason": "Projectile visibly separates from tower after sustained proximity."
+      },
+      "rebound": {
+        "status": "not_observed",
+        "intervals": [],
+        "reason": "While the projectile changes direction after contact, no reversal of direction with a clear bounce or rebound effect is visible."
+      }
+    },
+    "limitations": "Analysis limited to 2D projection and frame samples; depth and exact physical contact are uncertain. No subframe timing or audio cues, and tower rotation complicates proximity judgment."
+  },
+  "elapsed_seconds": 13.871
+}

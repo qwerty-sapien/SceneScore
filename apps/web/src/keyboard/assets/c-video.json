@@ -1,0 +1,127 @@
+{
+  "id": "c-video-api-20260913",
+  "title": "C \u00b7 Ring and wooden balls",
+  "duration_s": 6.366666666666666,
+  "video_sha256": "d3a980678cb8488f8e20658c4e135f7a73171950556b505bebbc34d33911e617",
+  "analysis_sha256": "b3ec0d72766b230270db7ae1895c863bfebf63fb2ac34d7f894bbf3159b16db0",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "request_id": "req_9e00a3e83e9d4b0bb29b34a94599b3ad",
+  "source_mode": "api_frame_proposals",
+  "selection": "user_selected_for_keyboard_audition",
+  "approval": null,
+  "sample_fps": 10,
+  "mapping": "Approach ends at the interval end; contact/release use the midpoint of the onset bracket; other events start at interval onset. Existing two-beat musical effects and newest-marker precedence apply. Near miss has no proposal.",
+  "markers": [
+    {
+      "id": 1,
+      "kind": 0,
+      "at": 1.0,
+      "event_type": "approach",
+      "model_status": "observed",
+      "source_interval_s": [
+        0.7,
+        1.0
+      ],
+      "evidence_timestamps_s": [
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ]
+    },
+    {
+      "id": 2,
+      "kind": 3,
+      "at": 1.05,
+      "event_type": "contact",
+      "model_status": "uncertain",
+      "source_interval_s": [
+        1.0,
+        1.1
+      ],
+      "evidence_timestamps_s": [
+        1.0,
+        1.1
+      ]
+    },
+    {
+      "id": 3,
+      "kind": 4,
+      "at": 1.1,
+      "event_type": "sustained_contact",
+      "model_status": "observed",
+      "source_interval_s": [
+        1.1,
+        2.3
+      ],
+      "evidence_timestamps_s": [
+        1.1,
+        1.2,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7,
+        1.8,
+        1.9,
+        2.0,
+        2.1,
+        2.2,
+        2.3
+      ]
+    },
+    {
+      "id": 4,
+      "kind": 2,
+      "at": 2.3,
+      "event_type": "separation",
+      "model_status": "observed",
+      "source_interval_s": [
+        2.3,
+        2.8
+      ],
+      "evidence_timestamps_s": [
+        2.3,
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8
+      ]
+    },
+    {
+      "id": 5,
+      "kind": 5,
+      "at": 2.35,
+      "event_type": "contact_release",
+      "model_status": "uncertain",
+      "source_interval_s": [
+        2.3,
+        2.4
+      ],
+      "evidence_timestamps_s": [
+        2.3,
+        2.4
+      ]
+    },
+    {
+      "id": 6,
+      "kind": 6,
+      "at": 2.4,
+      "event_type": "rebound",
+      "model_status": "observed",
+      "source_interval_s": [
+        2.4,
+        2.9
+      ],
+      "evidence_timestamps_s": [
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8,
+        2.9
+      ]
+    }
+  ]
+}

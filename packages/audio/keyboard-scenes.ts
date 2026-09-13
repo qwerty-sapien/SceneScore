@@ -52,9 +52,9 @@ function replacement(ep:Episode,hash:string):ScoreEvent[]{
 }
 // Compile complete passages; no independent cue layer. Bounds include neighboring
 // cycles so anticipations and sustained notes cross the loop seam correctly.
-export function compileDuet(start:number,end:number,markers:SceneMarker[],points:SettingPoint[],hash:string):ScoreEvent[]{
+export function compileDuet(start:number,end:number,markers:SceneMarker[],points:SettingPoint[],hash:string,repeatMarkers=true):ScoreEvent[]{
  const episodes:Episode[]=[];
- for(let cycle=Math.floor(start/LOOP)-1;cycle<=Math.floor(end/LOOP)+1;cycle++)for(const marker of markers){
+ for(let cycle=repeatMarkers?Math.floor(start/LOOP)-1:0;cycle<=(repeatMarkers?Math.floor(end/LOOP)+1:0);cycle++)for(const marker of markers){
   const at=cycle*LOOP+marker.at,window=eventWindow(marker.kind,at);
   if(window.end<=start||window.start>=end)continue;
   episodes.push({id:`${cycle}:${marker.id}`,marker,at,...window,lanes:marker.kind===1||marker.kind===4?['piano','guitar']:marker.kind===0||marker.kind===2?['piano']:['guitar']});
@@ -84,4 +84,14 @@ export function compileDuet(start:number,end:number,markers:SceneMarker[],points
   }
  }
  return result.sort((a,b)=>a.resolved_time_s-b.resolved_time_s||a.id.localeCompare(b.id));
+}
+
+// Fit the original four-bar phrase to a video loop while retaining real scene
+// seconds for markers, setting changes, scheduling and editable exports.
+export function compileTimedDuet(start:number,end:number,markers:SceneMarker[],points:SettingPoint[],hash:string,loopDuration=LOOP):ScoreEvent[]{
+ if(!Number.isFinite(loopDuration)||loopDuration<2||loopDuration>120)throw Error('Loop duration must be between 2 and 120 seconds');
+ const scale=loopDuration/LOOP;
+ if(scale===1)return compileDuet(start,end,markers,points,hash);
+ return compileDuet(start/scale,end/scale,markers.map(m=>({...m,at:m.at/scale})),points.map(p=>({...p,at:p.at/scale})),hash)
+  .map(e=>({...e,resolved_time_s:e.resolved_time_s*scale,duration_s:e.duration_s*scale,scene_time_s:e.scene_time_s===null?null:e.scene_time_s*scale}));
 }

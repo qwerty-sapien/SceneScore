@@ -1,0 +1,21 @@
+{
+  "status": "PASSED",
+  "pid": 3504,
+  "port": 50066,
+  "entry": "keyboard.html",
+  "assets": [
+    {
+      "path": "/assets/keyboard-DX--n6wN.js",
+      "bytes": 422972
+    },
+    {
+      "path": "/assets/keyboard-B6m-kCQU.css",
+      "bytes": 8944
+    }
+  ],
+  "video_sha256": "d3a980678cb8488f8e20658c4e135f7a73171950556b505bebbc34d33911e617",
+  "api_key_absent_from_build": true,
+  "server_closed": true,
+  "server_thread_joined": true,
+  "browser_playback": "NOT_RUN"
+}

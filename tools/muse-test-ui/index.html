@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Local Muse double-blink testing workspace"><title>Blink Lab · Muse</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<header><a class="brand" href="/" aria-label="Blink Lab home"><span class="mark">◉</span> blink<span>lab</span></a><div class="local"><i></i> LOCAL WORKSPACE</div></header>
+<section class="heading"><div><p class="eyebrow">MUSE MU-02 / GESTURE TESTING</p><h1>Two blinks. One signal.</h1><p class="intro">Calibrate, try a gesture, and see what the detector sees.</p></div><span id="modeBadge" class="badge">SIMULATION</span></section>
+<div class="workspace"><aside class="panel controls"><div class="section-title"><span class="step">01</span><h2>Set up your session</h2></div>
+<label for="source">Signal source</label><select id="source"><option value="synthetic">Simulation · no headset</option><option value="real_device">Muse MU-02 · Bluetooth</option></select>
+<div id="hardware" hidden><label for="name">Headset name <span class="muted">optional</span></label><input id="name" placeholder="Muse-1234" maxlength="80"><label class="check"><input id="unplugged" type="checkbox">My headset is unplugged and on my head.</label><p class="note">Charge off-head. Your MU-02 must be unplugged during use.</p></div>
+<label for="threshold" class="range-label">Detection threshold <output id="thresholdValue">5.0</output></label><input id="threshold" type="range" min="2" max="12" step="0.5" value="5"><div class="range-ends"><span>More sensitive</span><span>More selective</span></div>
+<button id="start" class="primary">Start simulation <span>↗</span></button><button id="stop" class="secondary" disabled>Stop session</button>
+<div class="session-tip"><span>↳</span><p id="sourceHelp">Explore the full detector with generated signals. No headset connection is made.</p></div>
+<div class="privacy"><span>●</span> Processed on this laptop.<br><span class="indent">No recording. No uploads.</span></div></aside>
+<section class="panel monitor"><div class="monitor-top"><div class="section-title"><span class="step">02</span><h2>Watch the signal</h2></div><span id="status" class="status">Idle</span></div>
+<div class="status-copy" aria-live="polite"><h3 id="instruction">Ready when you are.</h3><p id="detail">Start a session to see the two forehead channels.</p></div>
+<progress id="calibration" value="0" max="1" aria-label="Calibration progress"></progress>
+<div class="chart-head"><span><i class="legend teal"></i> AF7 <i class="legend blue"></i> AF8</span><span>FILTERED SIGNAL · µV</span></div><div class="chart"><canvas id="signal" aria-label="Live filtered EEG from AF7 and AF8"></canvas><span class="chart-label">LAST 8 SECONDS</span><span id="scale">± 200 µV</span></div>
+<div class="metrics"><div><span>Candidate blinks</span><strong id="blinks">0</strong></div><div class="accent"><span>Double blinks</span><strong id="doubles">0</strong></div><div><span>Session time</span><strong id="elapsed">00:00</strong></div></div>
+<div id="simulation" class="simulate"><div><h3>Try a signal</h3><p>Generated waveforms run through the same detector.</p></div><div class="gesture-buttons"><button data-count="1" disabled>Single</button><button data-count="2" disabled>Double <span>••</span></button><button data-count="3" disabled>Triple</button></div></div>
+<div id="liveHint" class="simulate" hidden><p>After calibration, try two comfortable blinks close together. Singles and triples should produce no double-blink event.</p></div>
+</section></div>
+<section class="panel log"><div class="log-top"><div class="section-title"><span class="step">03</span><h2>Session events</h2></div><span>Most recent first</span></div><div id="events" aria-live="polite"><div class="empty">Your session events will appear here.</div></div></section>
+<footer><span>BLINK LAB <span class="divider">/</span> EXPLORATORY DETECTOR</span><span id="disclaimer">Simulation tests software behavior, not real-headset accuracy.</span></footer>
+<div id="error" role="alert" hidden></div>
+</main><script src="/app.js"></script></body></html>

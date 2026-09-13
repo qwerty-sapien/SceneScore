@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Program Files\\ImageMagick-7.1.0-Q16-HDRI\\ffmpeg.EXE",
+    "-v",
+    "error",
+    "-nostdin",
+    "-threads",
+    "2",
+    "-i",
+    "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\blender_revamp\\evidence\\original-DRAFT.mp4",
+    "-vf",
+    "select=not(mod(n\\,8))+eq(n\\,239)",
+    "-vsync",
+    "0",
+    "-frames:v",
+    "31",
+    "-threads",
+    "2",
+    "-q:v",
+    "3",
+    "C:\\Users\\Yaw Tia\\Desktop\\Astra Hackathon\\SceneScore\\reports\\api-video-smoke\\20260913T063413252977Z\\frame-%03d.jpg"
+  ],
+  "pid": 23368,
+  "exit_code": 0,
+  "stderr": ""
+}

@@ -1,0 +1,31 @@
+{
+  "source_mode": "live_api",
+  "image_source_mode": "synthetic_blender_render",
+  "image": "blender_revamp\\evidence\\contact-sheet.jpg",
+  "image_sha256": "1b1265ccbdb0e3cd494548448bc696816a7edb94a4deaa90161d98a4d969c21f",
+  "prompt": "Describe the visible objects and the broad changes across this contact sheet in at most 100 words. Distinguish visible observations from uncertain physical contact. Do not infer audio or claim precise event times.",
+  "requested_model": "gpt-4.1-mini",
+  "detail": "low",
+  "max_output_tokens": 200,
+  "attempts": 1,
+  "utc": "2026-09-13T06:29:42.214001+00:00",
+  "approval": null,
+  "http_status": 200,
+  "request_id": "req_4fe1af472792429cb7f1d785f63dc579",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "status": "completed",
+  "usage": {
+    "input_tokens": 2477,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 133,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 2610
+  },
+  "text": "The contact sheet displays a pink spherical object labeled \"projectile\" and a vertical, stacked rectangular block composed of three colored segments: light green (bottom), pink (middle), and blue (top). Over time, the pink sphere moves from left towards the block's middle, contacting it at frame 14. Post-contact, the block segments begin to shift and topple, breaking from vertical to horizontal orientation by frame 29. By the end, the pink sphere remains floating near the segments, which settle in a horizontal line. The \"projectile\" label follows the pink sphere throughout. Visible changes include the sphere's movement and the block's structural collapse.",
+  "elapsed_seconds": 8.279
+}

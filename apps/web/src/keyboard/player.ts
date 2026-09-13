@@ -1,8 +1,8 @@
 import type {ScoreEvent} from '../../../../packages/contracts/generated';
 import {keyboardVoice} from '../../../../packages/audio/keyboard-voice';
 import {hash} from '../../../../packages/audio/model';
-import {SCORE,BAR,trimTrack,shifted,LIMIT,type Settings,type Ornament,type Touch} from '../../../../packages/audio/keyboard-score';
-import {LOOP,SCENE_EVENTS,compileDuet,settingsAt,type SceneMarker,type SettingPoint} from '../../../../packages/audio/keyboard-scenes';
+import {SCORE,trimTrack,shifted,LIMIT,type Settings,type Ornament,type Touch} from '../../../../packages/audio/keyboard-score';
+import {LOOP,SCENE_EVENTS,compileTimedDuet,settingsAt,type SceneMarker,type SettingPoint} from '../../../../packages/audio/keyboard-scenes';
 
 export class KeyboardPlayer{
  context:AudioContext|null=null;master:GainNode|null=null;
@@ -10,6 +10,9 @@ export class KeyboardPlayer{
  nodes=new Set<AudioBufferSourceNode>();
  scheduled=new Map<AudioBufferSourceNode,{event:ScoreEvent;gain:GainNode}>();
  markers:SceneMarker[]=[];markerId=0;
+ loopDuration=LOOP;sourceIdentity:unknown=null;
+ get beatDuration(){return this.loopDuration/16;}
+ get barDuration(){return this.loopDuration/4;}
  events:ScoreEvent[]=[];actions:{at:number;action:string;effective_s:number|null}[]=[];
  settings:Settings={transpose:0,ornament:'plain',touch:'detached'};
  points:SettingPoint[]=[{at:0,settings:{...this.settings}}];
@@ -28,7 +31,7 @@ export class KeyboardPlayer{
    this.context??=new AudioContext();
    if(!this.master){this.master=this.context.createGain();this.master.connect(this.context.destination);}
    await this.context.resume();this.initialSettings={...this.settings};this.takeGainDb=this.gainDb;
-   this.configHash=await hash({...SCORE,settings:this.initialSettings,gainDb:this.takeGainDb});
+   this.configHash=await hash({...SCORE,settings:this.initialSettings,gainDb:this.takeGainDb,loop_duration_s:this.loopDuration,source:this.sourceIdentity});
    if(generation!==this.generation)return;
    this.events=[];this.actions=[];this.duration=0;this.pendingKey=null;
    this.points=[{at:0,settings:{...this.settings}}];this.master.gain.value=10**(this.gainDb/20);
@@ -39,8 +42,8 @@ export class KeyboardPlayer{
  }
  rebuild(at:number){
   this.revision++;
-  this.compiledEnd=(Math.floor(at/LOOP)+2)*LOOP;
-  this.compiled=compileDuet(at,this.compiledEnd,this.markers,this.points,this.configHash);
+  this.compiledEnd=(Math.floor(at/this.loopDuration)+2)*this.loopDuration;
+  this.compiled=compileTimedDuet(at,this.compiledEnd,this.markers,this.points,this.configHash,this.loopDuration);
   this.cursor=0;
  }
  fill(){
@@ -80,17 +83,24 @@ export class KeyboardPlayer{
  log(action:string,effective_s:number|null){this.actions.push({at:this.now(),action,effective_s});this.actions=this.actions.slice(-2000);}
  addScene(kind:number,at:number){
   if(this.starting||!Number.isInteger(kind)||kind<0||kind>=7||!Number.isFinite(at)||this.markers.length>=64)return;
-  const marker={id:++this.markerId,kind,at:Math.max(0,Math.min(LOOP-.001,at))};this.markers=[...this.markers,marker];
+  const marker={id:++this.markerId,kind,at:Math.max(0,Math.min(this.loopDuration-.001,at))};this.markers=[...this.markers,marker];
   this.refreshFuture();this.log(`Replace passage: ${SCENE_EVENTS[kind].name} at ${marker.at.toFixed(3)}s`,this.running?this.now()+.012:null);this.onUpdate();
  }
  removeScene(id:number){this.markers=this.markers.filter(m=>m.id!==id);this.refreshFuture();this.log('Remove scene event',this.now()+.012);this.onUpdate();}
  clearScenes(){this.markers=[];this.refreshFuture();this.log('Clear scene events',this.now()+.012);this.onUpdate();}
+ loadScene(loopDuration:number,markers:SceneMarker[],sourceIdentity:unknown=null){
+  if(this.running||this.starting)throw Error('Stop playback before changing the scene');
+  if(!Number.isFinite(loopDuration)||loopDuration<2||loopDuration>120||markers.length>64||markers.some(m=>!Number.isInteger(m.kind)||m.kind<0||m.kind>6||!Number.isFinite(m.at)||m.at<0||m.at>=loopDuration))throw Error('Invalid scene timeline');
+  this.loopDuration=loopDuration;this.sourceIdentity=sourceIdentity;
+  this.markers=markers.map((m,i)=>({...m,id:i+1}));this.markerId=this.markers.length;
+  this.events=[];this.actions=[];this.duration=0;this.pendingKey=null;this.configHash='';this.onUpdate();
+ }
  change(action:'keyUp'|'keyDown'|Ornament|Touch){
   if(this.starting)return;
   if(action==='keyUp'||action==='keyDown'){
    const next=shifted(this.pendingKey??this.settings.transpose,action==='keyUp'?2:-2);
    if(this.running){
-    const at=Math.ceil((this.now()+.1)/BAR)*BAR;this.pendingKey=next;this.pendingAt=at;
+    const at=Math.ceil((this.now()+.1)/this.barDuration)*this.barDuration;this.pendingKey=next;this.pendingAt=at;
     this.points=this.points.filter(p=>p.at<at);this.points.push({at,settings:{...settingsAt(this.points,at),transpose:next}});
     this.refreshFuture();
    }else this.settings={...this.settings,transpose:next};

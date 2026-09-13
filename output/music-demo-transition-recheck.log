@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: exact frozen 216-entry table has concrete bounded voice leading and stable arrivals
+ok 1 - exact frozen 216-entry table has concrete bounded voice leading and stable arrivals
+  ---
+  duration_ms: 10.5182
+  type: 'test'
+  ...
+# Subtest: every enabled edge is indexed and jazz is inaccessible even for its ±2 edges
+ok 2 - every enabled edge is indexed and jazz is inaccessible even for its ±2 edges
+  ---
+  duration_ms: 2.3582
+  type: 'test'
+  ...
+# Subtest: all precomputed programs preserve independent lanes and acknowledgement velocity
+ok 3 - all precomputed programs preserve independent lanes and acknowledgement velocity
+  ---
+  duration_ms: 8.6846
+  type: 'test'
+  ...
+# Subtest: near-boundary selection uses earliest feasible safe arrival and honours strict expiry
+ok 4 - near-boundary selection uses earliest feasible safe arrival and honours strict expiry
+  ---
+  duration_ms: 0.6526
+  type: 'test'
+  ...
+# Subtest: accepted-path selector never traverses original score or constructs a program
+ok 5 - accepted-path selector never traverses original score or constructs a program
+  ---
+  duration_ms: 44.0672
+  type: 'test'
+  ...
+# Subtest: unaffected lead/object/brush/Foley events retain reference and all independent fields
+ok 6 - unaffected lead/object/brush/Foley events retain reference and all independent fields
+  ---
+  duration_ms: 0.7679
+  type: 'test'
+  ...
+# Subtest: a long affected sustain is split around the program without gap or double coverage
+ok 7 - a long affected sustain is split around the program without gap or double coverage
+  ---
+  duration_ms: 37.1297
+  type: 'test'
+  ...
+# Subtest: two signed modulations resolve sequentially and tonic variants remain bounded
+ok 8 - two signed modulations resolve sequentially and tonic variants remain bounded
+  ---
+  duration_ms: 0.7912
+  type: 'test'
+  ...
+# Subtest: successive overlays preserve a clipped sustain identity, timing and signed pitch history
+ok 9 - successive overlays preserve a clipped sustain identity, timing and signed pitch history
+  ---
+  duration_ms: 36.1433
+  type: 'test'
+  ...
+# Subtest: preparation rejects terminal or unordered arrivals, wrong table, and jazz activation
+ok 10 - preparation rejects terminal or unordered arrivals, wrong table, and jazz activation
+  ---
+  duration_ms: 19.9436
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1576.9058

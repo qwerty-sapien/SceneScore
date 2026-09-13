@@ -1,0 +1,13 @@
+{
+  "video_decoded_hashes": [
+    "SHA256=ad0c0da6aa9cc77680aaf48a84f848d95b4b52bf4cb16abe55da38c8de90dfba",
+    "SHA256=ad0c0da6aa9cc77680aaf48a84f848d95b4b52bf4cb16abe55da38c8de90dfba"
+  ],
+  "video_unchanged": true,
+  "audio_frames_per_channel": 305600,
+  "sample_rate": 48000,
+  "channels": 2,
+  "stem_sum_max_error_lsb": 1,
+  "mp4_sha256": "72965b4dcd395783e32a232985343a132bdb2e95d4d0085993754f7002770215",
+  "physical_playback": "NOT_RUN"
+}
